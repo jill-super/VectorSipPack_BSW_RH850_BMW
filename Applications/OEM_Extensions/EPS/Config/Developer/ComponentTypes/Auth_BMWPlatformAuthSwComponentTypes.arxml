@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>Auth</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                  <ELEMENTS>
+                    <SWC-IMPLEMENTATION UUID="F332A4AA-F2D1-4E5C-853E-2E3CDC160ACA">
+                      <SHORT-NAME>ImplAuth</SHORT-NAME>
+                      <CODE-DESCRIPTORS>
+                        <CODE>
+                          <SHORT-NAME>Default</SHORT-NAME>
+                          <ARTIFACT-DESCRIPTORS>
+                            <AUTOSAR-ENGINEERING-OBJECT>
+                              <SHORT-LABEL>Default</SHORT-LABEL>
+                              <CATEGORY>SWSRC</CATEGORY>
+                            </AUTOSAR-ENGINEERING-OBJECT>
+                          </ARTIFACT-DESCRIPTORS>
+                        </CODE>
+                      </CODE-DESCRIPTORS>
+                      <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/BMW/Platform/Auth/SwComponentTypes/Auth/SwcAuthInternalBehavior</BEHAVIOR-REF>
+                    </SWC-IMPLEMENTATION>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <APPLICATION-SW-COMPONENT-TYPE UUID="B44A9B9E-6B2D-4407-A0CE-3E8468262EAA">
+                      <SHORT-NAME>Auth</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="DV_ReadOnly">1</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <INTERNAL-BEHAVIORS>
+                        <SWC-INTERNAL-BEHAVIOR UUID="25927AF3-2C73-46A8-98F3-916DA5613AAA">
+                          <SHORT-NAME>SwcAuthInternalBehavior</SHORT-NAME>
+                          <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                        </SWC-INTERNAL-BEHAVIOR>
+                      </INTERNAL-BEHAVIORS>
+                    </APPLICATION-SW-COMPONENT-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

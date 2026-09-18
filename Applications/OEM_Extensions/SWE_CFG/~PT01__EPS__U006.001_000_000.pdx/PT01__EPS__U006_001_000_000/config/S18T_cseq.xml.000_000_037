@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSEQ xmlns="http://bmw.com/2005/psdz.data.cseq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- CSEQ fuer Baureihenverbund S18T
+Generate automaticly: 27.10.2016
+-->
+
+<!--
+DME als A-CAN-Gateway vor allen LP-CAN-Geraeten flashen
+-->
+<dependency>
+<preconditions>
+<ECU><baseVariantName name="DME_BAC2"/><diagnosticAddress physicalOffset="18"/></ECU>
+</preconditions>
+<dependors>
+<ECU><baseVariantName name="EGS7"/><diagnosticAddress physicalOffset="24"/></ECU><!-- LP_CAN -->
+<ECU><baseVariantName name="GWS2"/><diagnosticAddress physicalOffset="94"/></ECU><!-- LP_CAN -->
+</dependors>
+</dependency>
+
+<!--
+HU der Headunit als ETH-Master vor allen anderen Slave-ETH-Geraeten flashen
+-->
+<dependency>
+<preconditions>
+<ECU><baseVariantName name="HU_ENTRYNAV2"/><diagnosticAddress physicalOffset="99"/></ECU>
+<ECU><baseVariantName name="HU_NBT2"/><diagnosticAddress physicalOffset="99"/></ECU>
+</preconditions>
+<dependors>
+<ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/></ECU>
+<ECU><baseVariantName name="AMPT"/><diagnosticAddress physicalOffset="55"/></ECU>
+<ECU><baseVariantName name="ATM"/><diagnosticAddress physicalOffset="97"/></ECU><!-- ETH -->
+<ECU><baseVariantName name="DKOMBI2"/><diagnosticAddress physicalOffset="96"/></ECU><!-- ETH -->
+<ECU><baseVariantName name="DKOMBI5"/><diagnosticAddress physicalOffset="96"/></ECU>
+</dependors>
+</dependency>
+
+<!--
+ENS as Switch
+-->
+<dependency>
+<preconditions>
+<ECU><baseVariantName name="ENS"/><diagnosticAddress physicalOffset="17"/></ECU>
+</preconditions>
+<dependors>
+<ECU><baseVariantName name="KAFAS4"/><diagnosticAddress physicalOffset="93"/></ECU>
+
+<ECU><baseVariantName name="FRR2"/><diagnosticAddress physicalOffset="33"/></ECU>
+</dependors>
+</dependency>
+
+<!--
+SM Sequentiel
+-->
+<dependency>
+<preconditions>
+<ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="105"/></ECU>
+</preconditions>
+<dependors>
+<ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="106"/></ECU>
+<ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="109"/></ECU>
+<ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="110"/></ECU>
+</dependors>
+</dependency>
+
+<dependency>
+<preconditions>
+<ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="106"/></ECU>
+</preconditions>
+<dependors>
+<ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="109"/></ECU>
+<ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="110"/></ECU>
+</dependors>
+</dependency>
+
+<dependency>
+<preconditions>
+<ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="109"/></ECU>
+</preconditions>
+<dependors>
+<ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="110"/></ECU>
+</dependors>
+</dependency>
+
+<dependency>
+<preconditions>
+<ECU><baseVariantName name="DSC_BRS"/><diagnosticAddress physicalOffset="41"/></ECU>
+</preconditions>
+<dependors>
+<ECU><baseVariantName name="DSC_VIP"/><diagnosticAddress physicalOffset="57"/></ECU>
+</dependors>
+</dependency>
+
+</CSEQ>

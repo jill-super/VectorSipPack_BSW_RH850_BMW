@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * \file
+ *
+ *  \brief       BMW SWC IntegrationSample
+ *
+ *  This file contains the implementation of the BMW Sample SWC IntegrationSample
+ *  for usage in the BMW AUTOSAR Core Example.
+ *
+ * \project     BMW Platform Software
+ *
+ * \copyright   BMW AG 2016 - 2017
+ *
+ * \version     5.0.3
+ *
+ */
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0_STRICT_COMPACT.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>IntegrationSample</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <SWC-IMPLEMENTATION>
+                      <SHORT-NAME>IMPL_IntegrationSample</SHORT-NAME>
+                      <CODE-DESCRIPTORS>
+                        <CODE>
+                          <SHORT-NAME>Code1</SHORT-NAME>
+                          <ARTIFACT-DESCRIPTORS>
+                            <AUTOSAR-ENGINEERING-OBJECT>
+                              <SHORT-LABEL>-</SHORT-LABEL>
+                              <CATEGORY>-</CATEGORY>
+                            </AUTOSAR-ENGINEERING-OBJECT>
+                          </ARTIFACT-DESCRIPTORS>
+                        </CODE>
+                      </CODE-DESCRIPTORS>
+                      <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+                      <RESOURCE-CONSUMPTION>
+                        <SHORT-NAME>ResConsumption1</SHORT-NAME>
+                      </RESOURCE-CONSUMPTION>
+                      <SW-VERSION>5.0.3</SW-VERSION>
+                      <VENDOR-ID>5</VENDOR-ID>
+                      <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample</BEHAVIOR-REF>
+                    </SWC-IMPLEMENTATION>
+                    <APPLICATION-SW-COMPONENT-TYPE>
+                      <SHORT-NAME>IntegrationSample</SHORT-NAME>
+                      <PORTS>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>EcuRunState</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <MODE-SWITCH-SENDER-COM-SPEC>
+                              <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/IEcuRunState/EcuRunStateMode</MODE-GROUP-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </MODE-SWITCH-SENDER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/IntegrationSample/PortInterfaces/IEcuRunState</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>IntegrationSampleSimpleTimerPort_0</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <MODE-SWITCH-SENDER-COM-SPEC>
+                              <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/ISimpleTimer/SimpleTimerMode</MODE-GROUP-REF>
+                              <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                            </MODE-SWITCH-SENDER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/IntegrationSample/PortInterfaces/ISimpleTimer</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                       <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>EcuRunStateRequest</SHORT-NAME>
+                          <REQUIRED-COM-SPECS>
+                            <NONQUEUED-RECEIVER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/IEcuRunStateRequest/IntegrationSample_EcuRunStateRequestMode</DATA-ELEMENT-REF>
+                              <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                              <USES-END-TO-END-PROTECTION BINDING-TIME="SYSTEM-DESIGN-TIME">FALSE</USES-END-TO-END-PROTECTION>
+                              <ALIVE-TIMEOUT>0.0</ALIVE-TIMEOUT>
+                              <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                              <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                              <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                              <INIT-VALUE>
+                                <TEXT-VALUE-SPECIFICATION>
+                                  <VALUE>IntegrationSample_STARTUP</VALUE>
+                                </TEXT-VALUE-SPECIFICATION>
+                              </INIT-VALUE>
+                            </NONQUEUED-RECEIVER-COM-SPEC>
+                          </REQUIRED-COM-SPECS>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/IntegrationSample/PortInterfaces/IEcuRunStateRequest</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>IntegrationSample_PP_ServiceRequestManufacturerNotificationPort</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/IntegrationSample/Dcm/PortInterfaces/IntegrationSample_ServiceRequestNotification</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>PP_IS_ST_CON_VEH</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <NONQUEUED-SENDER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/IntegrationSample_Signal_ST_CON_VEH/VehicleState</DATA-ELEMENT-REF>
+                              <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                              <USES-END-TO-END-PROTECTION>0</USES-END-TO-END-PROTECTION>
+                              <INIT-VALUE>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <SHORT-LABEL>PP_IS_ST_CON_VEH_InvalidValue</SHORT-LABEL>
+                                  <VALUE>15</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </INIT-VALUE>
+                            </NONQUEUED-SENDER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/IntegrationSample/PortInterfaces/IntegrationSample_Signal_ST_CON_VEH</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>PP_ReadData_DemDataElementClass_KILOMETER</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/IntegrationSample/Dem/PortInterfaces/IntegrationSample_CSDataServices_DemDataElementClass_KILOMETER/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/IntegrationSample/Dem/PortInterfaces/IntegrationSample_CSDataServices_DemDataElementClass_KILOMETER</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>PP_Stm_CEL_Signal</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/IntegrationSample/Stm/PortInterfaces/IntegrationSample_CentralErrorLockSignalInterface</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+
+                         <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>RP_SA_Kilometer_R</SHORT-NAME>
+                              <REQUIRED-COM-SPECS>
+                                <NONQUEUED-RECEIVER-COM-SPEC>
+                                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_SA_Kilometer_R/Notifier</DATA-ELEMENT-REF>
+                                  <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                                  <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                                  <ALIVE-TIMEOUT>20.0</ALIVE-TIMEOUT>
+                                  <ENABLE-UPDATE>true</ENABLE-UPDATE>
+                                  <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                                  <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                                  <INIT-VALUE>
+                                    <RECORD-VALUE-SPECIFICATION>
+                                      <SHORT-LABEL>value_CrBrLeft1Dot6777215E7CrBrRight</SHORT-LABEL>
+                                      <FIELDS>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                          <SHORT-LABEL>value_1Dot6777215E7</SHORT-LABEL>
+                                          <VALUE BINDING-TIME="PRE-COMPILE-TIME">16777215</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                      </FIELDS>
+                                    </RECORD-VALUE-SPECIFICATION>
+                                  </INIT-VALUE>
+                                </NONQUEUED-RECEIVER-COM-SPEC>
+                              </REQUIRED-COM-SPECS>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_SA_Kilometer_R</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>RP_SGG_Rx_CON_VEH</SHORT-NAME>
+                          <REQUIRED-COM-SPECS>
+                            <NONQUEUED-RECEIVER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_SGG_CON_VEH_R/IntegrationSample_IDT_CON_VEH</DATA-ELEMENT-REF>
+                              <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                              <USES-END-TO-END-PROTECTION>0</USES-END-TO-END-PROTECTION>
+                              <ALIVE-TIMEOUT>0.5</ALIVE-TIMEOUT>
+                              <ENABLE-UPDATE>true</ENABLE-UPDATE>
+                              <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                              <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                              <INIT-VALUE>
+                                <RECORD-VALUE-SPECIFICATION>
+                                  <SHORT-LABEL>IntegrationSample_InitValues_SGG_Rx_CON_VEH</SHORT-LABEL>
+                                  <FIELDS>
+                                    <NUMERICAL-VALUE-SPECIFICATION>
+                                      <SHORT-LABEL>IV_SGG_Rx_CON_VEH_ST_CON_VEH</SHORT-LABEL>
+                                      <VALUE BINDING-TIME="PRE-COMPILE-TIME">0xF</VALUE>
+                                    </NUMERICAL-VALUE-SPECIFICATION>
+                                    <NUMERICAL-VALUE-SPECIFICATION>
+                                      <SHORT-LABEL>IV_SGG_Rx_CON_VEH_CTR_FKTN_PRTNT</SHORT-LABEL>
+                                      <VALUE BINDING-TIME="PRE-COMPILE-TIME">0xFFFFFFFF</VALUE>
+                                    </NUMERICAL-VALUE-SPECIFICATION>
+                                    <NUMERICAL-VALUE-SPECIFICATION>
+                                      <SHORT-LABEL>IV_SGG_Rx_CON_VEH_CTR_BS_PRTNT</SHORT-LABEL>
+                                      <VALUE BINDING-TIME="PRE-COMPILE-TIME">0xF</VALUE>
+                                    </NUMERICAL-VALUE-SPECIFICATION>
+                                  </FIELDS>
+                                </RECORD-VALUE-SPECIFICATION>
+                              </INIT-VALUE>
+                            </NONQUEUED-RECEIVER-COM-SPEC>
+                          </REQUIRED-COM-SPECS>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_SGG_CON_VEH_R</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+  
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>RP_VehicleStatus</SHORT-NAME>
+                          <REQUIRED-COM-SPECS>
+                            <NONQUEUED-RECEIVER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_FieldNotifierVehicleStatus/Notifier</DATA-ELEMENT-REF>
+                              <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                              <USES-END-TO-END-PROTECTION>0</USES-END-TO-END-PROTECTION>
+                              <ALIVE-TIMEOUT>21.0</ALIVE-TIMEOUT>
+                              <ENABLE-UPDATE>true</ENABLE-UPDATE>
+                              <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                              <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                             <INIT-VALUE>
+                                <RECORD-VALUE-SPECIFICATION>
+                                  <FIELDS>
+                                    <NUMERICAL-VALUE-SPECIFICATION>
+                                      <SHORT-LABEL>InitValue_statusEnergyFZM</SHORT-LABEL>
+                                      <VALUE>0</VALUE>
+                                    </NUMERICAL-VALUE-SPECIFICATION>
+                                    <NUMERICAL-VALUE-SPECIFICATION>
+                                      <SHORT-LABEL>InitValue_statusInterlockErrorMemoryFZM</SHORT-LABEL>
+                                      <VALUE>0</VALUE>
+                                    </NUMERICAL-VALUE-SPECIFICATION>
+                                  </FIELDS>
+                                </RECORD-VALUE-SPECIFICATION>
+                              </INIT-VALUE>
+                            </NONQUEUED-RECEIVER-COM-SPEC>
+                          </REQUIRED-COM-SPECS>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_FieldNotifierVehicleStatus</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+               </PORTS>
+                      <INTERNAL-BEHAVIORS>
+                        <SWC-INTERNAL-BEHAVIOR>
+                          <SHORT-NAME>IB_IntegrationSample</SHORT-NAME>
+                          <DATA-TYPE-MAPPING-REFS>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BMW/Platform/IntegrationSample/DataTypeMappingSets/IntegrationSampleModemappingEcuRunState</DATA-TYPE-MAPPING-REF>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BMW/Platform/IntegrationSample/DataTypeMappingSets/IntegrationSampleModemappingSimpleTimerMode</DATA-TYPE-MAPPING-REF>
+                          </DATA-TYPE-MAPPING-REFS>
+                          <EXCLUSIVE-AREAS>
+                            <EXCLUSIVE-AREA>
+                              <SHORT-NAME>EXA_IntegrationSample</SHORT-NAME>
+                            </EXCLUSIVE-AREA>
+                          </EXCLUSIVE-AREAS>
+                          <EVENTS>
+                            <TIMING-EVENT>
+                              <SHORT-NAME>IntegrationSample_SimpleTimer_TimingEvent</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/IntegrationSampleTimerFunction</START-ON-EVENT-REF>
+                              <PERIOD>0.1</PERIOD>
+                            </TIMING-EVENT>
+
+                            <DATA-RECEIVED-EVENT>
+                              <SHORT-NAME>DRE_SGG_Rx_CON_VEH</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/R_Receive_SGG_Rx_CON_VEH</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/RP_SGG_Rx_CON_VEH</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_SGG_CON_VEH_R/IntegrationSample_IDT_CON_VEH</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVED-EVENT>
+                                <DATA-RECEIVE-ERROR-EVENT>
+                              <SHORT-NAME>DRET_SGG_Rx_CON_VEH</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/R_Timeout_SGG_Rx_CON_VEH</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/RP_SGG_Rx_CON_VEH</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_SGG_CON_VEH_R/IntegrationSample_IDT_CON_VEH</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVE-ERROR-EVENT>
+                                  <DATA-RECEIVED-EVENT>
+                              <SHORT-NAME>DRE_SIG_MILE_KM_816_R</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/R_Receive_SIG_MILE_KM_816_R</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/RP_SA_Kilometer_R</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_SA_Kilometer_R/Notifier</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVED-EVENT>
+
+                             <DATA-RECEIVED-EVENT>
+                              <SHORT-NAME>EcuRunState</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/R_IntegrationSample_EcuRunStateHandler</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/EcuRunStateRequest</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/IEcuRunStateRequest/IntegrationSample_EcuRunStateRequestMode</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVED-EVENT>
+                            <DATA-RECEIVED-EVENT>
+                              <SHORT-NAME>DRE_VehicleStatus</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/R_Receive_VehicleStatus</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/RP_VehicleStatus</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_FieldNotifierVehicleStatus/Notifier</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVED-EVENT>
+                            <DATA-RECEIVE-ERROR-EVENT>
+                              <SHORT-NAME>DRET_VehicleStatus</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/R_Timeout_VehicleStatus</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/RP_VehicleStatus</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_FieldNotifierVehicleStatus/Notifier</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVE-ERROR-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>IntegrationSample_Event_ManufacturerConfirmation</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/IntegrationSample_Runnable_ManufacturerConfirmation</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IntegrationSample_PP_ServiceRequestManufacturerNotificationPort</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/IntegrationSample/Dcm/PortInterfaces/IntegrationSample_ServiceRequestNotification/Confirmation</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>IntegrationSample_Event_ManufacturerIndication</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/IntegrationSample_Runnable_ManufacturerIndication</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IntegrationSample_PP_ServiceRequestManufacturerNotificationPort</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/IntegrationSample/Dcm/PortInterfaces/IntegrationSample_ServiceRequestNotification/Indication</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>OIE_ReadDataMILE_KM</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/R_ReadDataMILE_KM</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/PP_ReadData_DemDataElementClass_KILOMETER</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/IntegrationSample/Dem/PortInterfaces/IntegrationSample_CSDataServices_DemDataElementClass_KILOMETER/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                          </EVENTS>
+                          <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+                          <INCLUDED-DATA-TYPE-SETS>
+                          </INCLUDED-DATA-TYPE-SETS>
+                          <RUNNABLES>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>IntegrationSample_Runnable_ManufacturerConfirmation</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>IntegrationSample_ManufacturerConfirmation</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>IntegrationSample_Runnable_ManufacturerIndication</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>IntegrationSample_ManufacturerIndication</SYMBOL>
+                            </RUNNABLE-ENTITY>
+
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>R_IntegrationSample_EcuRunStateHandler</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-READ-ACCESSS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>DRA_requestMode</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/EcuRunStateRequest</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/IEcuRunStateRequest/IntegrationSample_EcuRunStateRequestMode</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-READ-ACCESSS>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/EcuRunState</CONTEXT-P-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/IEcuRunState/EcuRunStateMode</TARGET-MODE-GROUP-REF>
+                                    </P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>MSP_Mode</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/EcuRunState</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/IEcuRunState/EcuRunStateMode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SYMBOL>IntegrationSample_EcuRunStateHandler</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>R_ReadDataMILE_KM</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/EXA_IntegrationSample</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>R_ReadDataMILE_KM</SYMBOL>
+                            </RUNNABLE-ENTITY>
+
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>R_Receive_SGG_Rx_CON_VEH</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/EXA_IntegrationSample</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>IntegrationSample_DRP0_SGG_Rx_CON_VEH</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/RP_SGG_Rx_CON_VEH</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_SGG_CON_VEH_R/IntegrationSample_IDT_CON_VEH</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                    <LOCAL-VARIABLE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_SGG_CON_VEH_R/IntegrationSample_IDT_CON_VEH</LOCAL-VARIABLE-REF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                              <DATA-SEND-POINTS>
+                                    <VARIABLE-ACCESS>
+                                  <SHORT-NAME>VariableAccess_ST_CON_VEH</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/PP_IS_ST_CON_VEH</PORT-PROTOTYPE-REF>
+                                      <ROOT-VARIABLE-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/IntegrationSample_Signal_ST_CON_VEH/VehicleState</ROOT-VARIABLE-DATA-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/IntegrationSample_Signal_ST_CON_VEH/VehicleState</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                  <SCOPE>COMMUNICATION-INTER-ECU</SCOPE>
+                                </VARIABLE-ACCESS>
+                                      </DATA-SEND-POINTS>
+                              <SYMBOL>R_Receive_SGG_Rx_CON_VEH</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                                <RUNNABLE-ENTITY>
+                              <SHORT-NAME>R_Timeout_SGG_Rx_CON_VEH</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Runnable_IS_R_Timeout_SGG_Rx_CON_VEH</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                                  <RUNNABLE-ENTITY>
+                              <SHORT-NAME>R_Receive_SIG_MILE_KM_816_R</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/EXA_IntegrationSample</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>IntegrationSample_VariableAccess_SIG_MILE_KM_816_R</SHORT-NAME>
+                                   <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/RP_SA_Kilometer_R</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_SA_Kilometer_R/Notifier</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                    <LOCAL-VARIABLE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_SA_Kilometer_R/Notifier</LOCAL-VARIABLE-REF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                              <SYMBOL>Runnable_IS_Receive_SIG_MILE_KM_816_R</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>IntegrationSampleTimerFunction</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <MODE-SWITCH-POINTS>
+                                  <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>MSP_SampleTimer_Mode_0</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IntegrationSampleSimpleTimerPort_0</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/ISimpleTimer/SimpleTimerMode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                                </MODE-SWITCH-POINTS>
+                              <SYMBOL>R_IntegrationSample_TimerFunction</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>R_Receive_VehicleStatus</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/EXA_IntegrationSample</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>IntegrationSample_VariableAccess_VehicleStatus</SHORT-NAME>
+                                   <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/RP_VehicleStatus</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_FieldNotifierVehicleStatus/Notifier</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                    <LOCAL-VARIABLE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/SRI_FieldNotifierVehicleStatus/Notifier</LOCAL-VARIABLE-REF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                               <DATA-SEND-POINTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>VariableAccess_centralErrorLock</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/PP_Stm_CEL_Signal</PORT-PROTOTYPE-REF>
+                                      <ROOT-VARIABLE-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/Stm/PortInterfaces/IntegrationSample_CentralErrorLockSignalInterface/centralErrorLock</ROOT-VARIABLE-DATA-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/IntegrationSample/Stm/PortInterfaces/IntegrationSample_CentralErrorLockSignalInterface/centralErrorLock</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                             </DATA-SEND-POINTS>
+                              <SYMBOL>Runnable_IS_R_Receive_VehicleStatus</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>R_Timeout_VehicleStatus</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Runnable_IS_R_Timeout_VehicleStatus</SYMBOL>
+                            </RUNNABLE-ENTITY>
+
+                          </RUNNABLES>
+                          <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                        </SWC-INTERNAL-BEHAVIOR>
+                      </INTERNAL-BEHAVIORS>
+                    </APPLICATION-SW-COMPONENT-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
+

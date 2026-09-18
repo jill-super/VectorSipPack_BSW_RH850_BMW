@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0_STRICT_COMPACT.xsd">
+   <AR-PACKAGES>
+      <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>StdDiag</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>BswImplementations</SHORT-NAME>
+                  <ELEMENTS>
+                    <BSW-IMPLEMENTATION>
+                      <SHORT-NAME>Impl_StdDiag_Bsw</SHORT-NAME>
+                      <!-- necessary for RTE to create BswModuleInstance for StdDiagClassic -->
+                      <VENDOR-SPECIFIC-MODULE-DEF-REFS>
+                         <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/BMW_DEF/StdDiagClassic</VENDOR-SPECIFIC-MODULE-DEF-REF>
+                      </VENDOR-SPECIFIC-MODULE-DEF-REFS>
+                    </BSW-IMPLEMENTATION>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

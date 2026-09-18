@@ -1,0 +1,36 @@
+# this file is generated automatically by MakeSupport
+
+obj/r_fcl_hw_access.o: ../../../BSW/Flash/FlashLib/r_fcl_hw_access.c Makefile.config  \
+ ../../../BSW/Flash/FlashLib/r_typedefs.h \
+ ../../../BSW/Flash/FlashLib/fcl_cfg.h \
+ ../../../BSW/Flash/FlashLib/r_fcl_types.h \
+ ../../../BSW/Flash/FlashLib/r_fcl_global.h \
+ ../../../BSW/Flash/FlashLib/r_fcl_env.h
+obj/r_fcl_user_if.o: ../../../BSW/Flash/FlashLib/r_fcl_user_if.c Makefile.config  \
+ ../../../BSW/Flash/FlashLib/r_typedefs.h \
+ ../../../BSW/Flash/FlashLib/fcl_cfg.h \
+ ../../../BSW/Flash/FlashLib/r_fcl_types.h \
+ ../../../BSW/Flash/FlashLib/r_fcl_global.h \
+ ../../../BSW/Flash/FlashLib/r_fcl.h \
+ ../../../BSW/Flash/FlashLib/r_fcl_env.h
+obj/flashdrv.o: ../../../BSW/Flash/flashdrv.c Makefile.config  \
+ ../../../BSW/Flash/flashdrv.h \
+ ../../../bsw/flash/flashlib/r_typedefs.h \
+ ../../../bsw/flash/flashlib/fcl_cfg.h \
+ ../../../bsw/flash/flashlib/r_fcl_types.h \
+ ../../../bsw/flash/flashlib/r_fcl_global.h \
+ ../../../bsw/flash/flashlib/r_fcl.h \
+ ../../../bsw/flash/flashlib/r_fcl_env.h
+
+# Manual file dependencies
+  
+
+# Assembler file dependencies
+
+obj/r_fcl_hw_access_asm.o: ../../../BSW/Flash/FlashLib/r_fcl_hw_access_asm.850 Makefile.config
+
+
+
+lib/libDRVFLS_RH850F1XREN01HISSUB.lib:  obj/r_fcl_hw_access.o obj/r_fcl_user_if.o 
+lib/libFBLDRVFLASH_RH850RV40HIS.lib:  obj/flashdrv.o 
+lib/libFlashDrv.lib:  obj/flashdrv.o obj/r_fcl_hw_access.o obj/r_fcl_user_if.o

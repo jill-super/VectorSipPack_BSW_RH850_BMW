@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-97369e62-3f19-4c77-8f73-190fe598f675" ID="id-97369e62-3f19-4c77-8f73-190fe598f675">
+        <SHORT-NAME>TFM2_DLC</SHORT-NAME>
+        <LONG-NAME>Tankfunktionsmodul ohne Coding</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-9a014417-9d9a-4b4e-819f-3769253cfd90" ID="id-9a014417-9d9a-4b4e-819f-3769253cfd90">
+                <SHORT-NAME>TFM2</SHORT-NAME>
+                <LONG-NAME>Tankfunktionsmodul ohne Coding</LONG-NAME>
+                <DESC>
+                    <p>Tankfunktionsmodul nicht Codierbar, BAC 3.x </p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>65000</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

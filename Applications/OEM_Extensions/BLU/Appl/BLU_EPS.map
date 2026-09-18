@@ -1,0 +1,504 @@
+Host OS:	Windows 7 Service Pack 1
+ELXR: Copyright (C) 1983-2015 Green Hills Software.  All Rights Reserved.
+Release: Compiler v2015.1.7
+Build Directory: [Directory] BTOWORKER6:c:/build_2015_1_bto/2015-10-21.2100-2015_1_bto/win64-comp
+Revision: [VCInfo] http://toolsvc/branches/release-branch-70-bto/src@544153 (built by build)
+Revision Date: Thu Oct 22 09:05:22 2015
+
+Release Date: Thu Oct 22 09:32:31 2015
+
+
+
+
+Load Map Mon Jan 22 10:56:13 2018
+Image Summary
+
+  Section              Base      Size(hex)    Size(dec)  SecOffs
+  HWEDESC              00007900  00000000            0   0000000
+  SRVCOMMONBM          00007b00  00000000            0   0000000
+  SHAREDSWEDATA        00007d00  00000000            0   0000000
+  CCRYPJUMPT           00057700  00000000            0   0000000
+  BOOTSWEDESC          00057900  00000000            0   0000000
+  BOOTSWESIGNATURE     0005791c  00000000            0   0000000
+  BOOTSWESTAT          00057b00  00000000            0   0000000
+  .rom_start           00058000  00000000            0   0000000
+  .ExceptionVectorTable 00058000  00000200          512   00002a0
+  .IntVectorTable      00058200  00000600         1536   00004a0
+  .Startup             00059000  00000048           72   0000aa0
+  .code_start          00059048  00000000            0   0000000
+  .text                00059050  00001ad6         6870   0000af0
+  .os_text             0005ab28  00000000            0   0000000
+  .R_FDL_Text          0005ab28  00000000            0   0000000
+  .MCU_CODE_RRAM_INTVEC 0005ab28  00000000            0   0000000
+  .MCU_CR_CODE_RRAM    0005ab28  00000000            0   0000000
+  .code_end            0005ab28  00000000            0   0000000
+  .const_start         0005ab28  00000000            0   0000000
+  .rozdata             0005ab28  00000000            0   0000000
+  .rosda_start         0005ab28  00000000            0   0000000
+  .robase              0005ab28  00000000            0   0000000
+  .rosdata             0005ab28  00001b70         7024   00025c8
+  .os_rosdata          0005c698  00000000            0   0000000
+  .rosda_end           0005c698  00000000            0   0000000
+  .rodata              0005c698  00000000            0   0000000
+  .R_FDL_Const         0005c698  00000000            0   0000000
+  .os_rodata           0005c698  00000000            0   0000000
+  .const_end           0005c698  00000000            0   0000000
+  .fixaddr             0005c698  00000000            0   0000000
+  .fixtype             0005c698  00000000            0   0000000
+  .secinfo             0005c698  00000084          132   0004138
+  .syscall             0005c71c  00000006            6   00041bc
+  .romtext             0005c724  00000002            2   00041c4
+  .romconst            0005c728  00000000            0   0000000
+  .const_init_data_start 0005c728  00000000            0   0000000
+  .romdata             0005c728  0000001c           28   00041c8
+  .romzdata            0005c744  00000000            0   0000000
+  .romsdata            0005c744  0000000c           12   00041e4
+  .romtdata            0005c750  00000000            0   0000000
+  .const_init_data_end 0005c750  00000000            0   0000000
+  SWE1DESC             000ff900  00000001            1   00041f0
+  BLUVALIDFLAG         000ff91c  00000000            0   0000000
+  BLUSTAT              000ffc00  00000002            2   00041f2
+  .ram_start           fede0000  00000000            0   0000000
+  FLASHDRV             fede0000  00003000        12288   0000000
+  BLUFLASHDRVBUF       fede3000  00000000            0   0000000
+  .data                fede3000  0000001c           28   00041c8
+  .R_FDL_Data          fede301c  00000000            0   0000000
+  .bss                 fede301c  0000000c           12   0000000
+  .os_data             fede3028  00000000            0   0000000
+  .os_bss              fede3028  00000000            0   0000000
+  .sda_start           fede3028  00000000            0   0000000
+  .sdabase             fede3028  00000000            0   0000000
+  .sdata               fede3028  0000000c           12   00041e4
+  .sbss                fede3034  00002065         8293   0000000
+  .os_sdata            fede509c  00000000            0   0000000
+  .os_sbss             fede509c  00000000            0   0000000
+  .sda_end             fede509c  00000000            0   0000000
+  .RAMCODE             fede509c  00000002            2   00041c4
+  .RAMCONST            fede50a0  00000000            0   0000000
+  .stack               fede50a0  00000400         1024   0000000
+  .zdata               fede54a0  00000000            0   0000000
+  .zbss                fede54a0  00000000            0   0000000
+  .tdata               fede54a0  00000000            0   0000000
+  DLOG_SWEDATA         fedf0900  00000000            0   0000000
+  DLOG_SWESTATUS       fedf0a00  00000000            0   0000000
+  DLOG_SWEINFOS        fedf0b00  00000000            0   0000000
+  BOOTSTATUS           fedf0c00  00000000            0   0000000
+  .ram_end             fedf0c00  00000000            0   0000000
+  .debug_info          00000000  0000816f        33135   00041f4
+  .debug_abbrev        00000000  000010f3         4339   000c363
+  .debug_line          00000000  00006249        25161   000d456
+  .debug_macinfo       00000000  00032839       206905   001369f
+  .debug_frame         00000000  00001004         4100   0045ed8
+  .note.renesas        00000000  00000050           80   0046edc
+  .linfix              00000000  000005a0         1440   0046f2c
+  .gstackfix           00000000  00000000            0   0000000
+
+Load Map Mon Jan 22 10:56:13 2018
+Module Summary
+
+  Origin+Size    Section          Module
+00059050+000110  .text            crt0.o
+00000000+000050  .note.renesas    <RENESAS ABI INFO>
+00000000+00044b  .debug_info      BUtil_AddressFormat.o
+00000000+0000fc  .debug_abbrev    BUtil_AddressFormat.o
+00000000+000410  .debug_line      BUtil_AddressFormat.o
+00000000+000afb  .debug_macinfo   BUtil_AddressFormat.o
+00000000+0000a8  .debug_frame     BUtil_AddressFormat.o
+0000044b+00069b  .debug_info      BUtil_Math.o
+000000fc+00013d  .debug_abbrev    BUtil_Math.o
+00000410+0004bb  .debug_line      BUtil_Math.o
+00000afb+000529  .debug_macinfo   BUtil_Math.o
+000000a8+00010c  .debug_frame     BUtil_Math.o
+00059160+000072  .text            Blu.o
+000ffc00+000002  BLUSTAT          Blu.o
+fede3034+000003  .sbss            Blu.o
+000ff900+000001  SWE1DESC         Blu.o
+0005ab28+000010  .rosdata         Blu.o
+00000ae6+000576  .debug_info      Blu.o
+00000239+000187  .debug_abbrev    Blu.o
+000008cb+0003e4  .debug_line      Blu.o
+00001024+0043e1  .debug_macinfo   Blu.o
+000001b4+0000fc  .debug_frame     Blu.o
+000591d2+000096  .text            Blu_HardwareAdapter.o
+0000105c+00042f  .debug_info      Blu_HardwareAdapter.o
+000003c0+0000c7  .debug_abbrev    Blu_HardwareAdapter.o
+00000caf+00057f  .debug_line      Blu_HardwareAdapter.o
+00005405+002ac1  .debug_macinfo   Blu_HardwareAdapter.o
+000002b0+000100  .debug_frame     Blu_HardwareAdapter.o
+00059268+0000ee  .text            Blu_StateFunctions.o
+0005ab38+00003c  .rosdata         Blu_StateFunctions.o
+fede3038+002000  .sbss            Blu_StateFunctions.o
+0000148b+00078f  .debug_info      Blu_StateFunctions.o
+00000487+000126  .debug_abbrev    Blu_StateFunctions.o
+0000122e+00044e  .debug_line      Blu_StateFunctions.o
+00007ec6+002e32  .debug_macinfo   Blu_StateFunctions.o
+000003b0+000110  .debug_frame     Blu_StateFunctions.o
+00059356+000068  .text            Blu_UserAdapter.o
+fede3028+00000c  .sdata           Blu_UserAdapter.o
+00001c1a+000605  .debug_info      Blu_UserAdapter.o
+000005ad+000182  .debug_abbrev    Blu_UserAdapter.o
+0000167c+000695  .debug_line      Blu_UserAdapter.o
+0000acf8+003029  .debug_macinfo   Blu_UserAdapter.o
+000004c0+0000fc  .debug_frame     Blu_UserAdapter.o
+000593be+000f0a  .text            Mcu.o
+fede5038+00000a  .sbss            Mcu.o
+0000221f+0023bf  .debug_info      Mcu.o
+0000072f+00017c  .debug_abbrev    Mcu.o
+00001d11+00163f  .debug_line      Mcu.o
+0000dd21+00e998  .debug_macinfo   Mcu.o
+000005bc+0003c8  .debug_frame     Mcu.o
+000045de+000891  .debug_info      Mcu_Irq.o
+000008ab+000123  .debug_abbrev    Mcu_Irq.o
+00003350+000777  .debug_line      Mcu_Irq.o
+0001c6b9+004619  .debug_macinfo   Mcu_Irq.o
+00000984+0001ac  .debug_frame     Mcu_Irq.o
+0005ab74+00007c  .rosdata         Mcu_PBcfg.o
+00004e6f+00076d  .debug_info      Mcu_PBcfg.o
+000009ce+000096  .debug_abbrev    Mcu_PBcfg.o
+00003ac7+00039f  .debug_line      Mcu_PBcfg.o
+00020cd2+001eb0  .debug_macinfo   Mcu_PBcfg.o
+fede5044+00001c  .sbss            Mcu_Ram.o
+000055dc+0007b9  .debug_info      Mcu_Ram.o
+00000a64+000085  .debug_abbrev    Mcu_Ram.o
+00003e66+000452  .debug_line      Mcu_Ram.o
+00022b82+002a66  .debug_macinfo   Mcu_Ram.o
+00005d95+00010d  .debug_info      Mcu_Version.o
+00000ae9+000018  .debug_abbrev    Mcu_Version.o
+000042b8+00041e  .debug_line      Mcu_Version.o
+000255e8+001481  .debug_macinfo   Mcu_Version.o
+0005abf0+0000bc  .rosdata         fbl_apfb.o
+00005ea2+0001a7  .debug_info      fbl_apfb.o
+00000b01+000088  .debug_abbrev    fbl_apfb.o
+000046d6+0003b8  .debug_line      fbl_apfb.o
+00026a69+001d8f  .debug_macinfo   fbl_apfb.o
+fede509c+000002  .RAMCODE         fbl_apwd.o
+00006049+0000eb  .debug_info      fbl_apwd.o
+00000b89+000056  .debug_abbrev    fbl_apwd.o
+00004a8e+000223  .debug_line      fbl_apwd.o
+000287f8+000a14  .debug_macinfo   fbl_apwd.o
+00000b30+0000a8  .debug_frame     fbl_apwd.o
+0005a2c8+00017a  .text            fbl_flio.o
+fede5060+000038  .sbss            fbl_flio.o
+fede0000+003000  FLASHDRV         fbl_flio.o
+00006134+000902  .debug_info      fbl_flio.o
+00000bdf+000127  .debug_abbrev    fbl_flio.o
+00004cb1+000625  .debug_line      fbl_flio.o
+0002920c+003140  .debug_macinfo   fbl_flio.o
+00000bd8+000150  .debug_frame     fbl_flio.o
+0005a442+00005e  .text            flash_if.o
+fede5098+000001  .sbss            flash_if.o
+00006a36+00051d  .debug_info      flash_if.o
+00000d06+00010f  .debug_abbrev    flash_if.o
+000052d6+000465  .debug_line      flash_if.o
+0002c34c+00242e  .debug_macinfo   flash_if.o
+00000d28+000114  .debug_frame     flash_if.o
+0005acac+0019ec  .rosdata         flashrom.o
+00006f53+0000fd  .debug_info      flashrom.o
+00000e15+000057  .debug_abbrev    flashrom.o
+0000573b+0003b8  .debug_line      flashrom.o
+0002e77a+00228d  .debug_macinfo   flashrom.o
+0005a4a0+00002a  .text            main.o
+00007050+000571  .debug_info      main.o
+00000e6c+000179  .debug_abbrev    main.o
+00005af3+00042b  .debug_line      main.o
+00030a07+001185  .debug_macinfo   main.o
+00000e3c+0000c0  .debug_frame     main.o
+00059000+000048  .Startup         startup.o
+00058000+000200  .ExceptionVectorTable startup.o
+00058200+000600  .IntVectorTable  startup.o
+000075c1+0000a1  .debug_info      startup.o
+00000fe5+000018  .debug_abbrev    startup.o
+00005f1e+000041  .debug_line      startup.o
+00031b8c+000011  .debug_macinfo   startup.o
+00007662+000b0d  .debug_info      vstdlib.o
+00000ffd+0000f6  .debug_abbrev    vstdlib.o
+00005f5f+0002ea  .debug_line      vstdlib.o
+00031b9d+000c9c  .debug_macinfo   vstdlib.o
+00000efc+000108  .debug_frame     vstdlib.o
+0005a4ca+000066  .text            libansi.a(ccexit.o)
+0005a530+0000f0  .text            libstartup.a(ind_mcpy.o)
+0005a620+000346  .text            libstartup.a(ind_crt0.o)
+0005a970+000060  .text            libstartup.a(ind_mset.o)
+0005a9d0+00006a  .text            libsys.a(ind_exit.o)
+fede3024+000004  .bss             libsys.a(ind_exit.o)
+0005c71c+000006  .syscall         libsys.a(ind_dots.o)
+0005aa3a+000022  .text            libsys.a(ind_call.o)
+0005aa5c+0000ba  .text            libsys.a(ind_crt1.o)
+fede3000+00001c  .data            libsys.a(ind_crt1.o)
+0005ab16+000006  .text            libsys.a(ind_lock.o)
+0005ab1c+00000a  .text            libsys.a(ind_errn.o)
+00000000+0005a0  .linfix          <Linker supplemental debug info>
+0005c698+000084  .secinfo         <section info>
+fede301c+000008  COMMON -> .bss   <commons>
+
+Load Map Mon Jan 22 10:56:13 2018
+Global Symbols (sorted alphabetically)
+
+ .IntVectorTable  00058200+000000 IVector
+ .ExceptionVectorTable 00058000+000000 XVector
+                  00000000+000068 _BUtil_GetAddressAndLengthByFormatIdentifier
+                  00000000+000052 _BUtil_Math_Divide64by32
+                  00000000+00002e _BUtil_Math_LeftShift32To64
+                  00000000+000040 _BUtil_Math_Multiplication32To64
+                  00000000+000022 _BUtil_Math_MultiplyNDivide
+                  00000000+000038 _BUtil_Math_RightShift64To32
+ .rosdata         0005ab28+000010 _BluSweCheckSum..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu.
+ SWE1DESC         000ff900+000001 _BluSweProcessClass..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu.
+ BLUSTAT          000ffc00+000002 _BluSweValidFlag..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu.
+ .rosdata         0005ab38+000008 _Blu_BlSegmentAddr..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu_StateFunctions.
+ .rosdata         0005ab40+000008 _Blu_BlSegmentLength..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu_StateFunctions.
+ .rosdata         0005ab48+000008 _Blu_BlSegmentNumber..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu_StateFunctions.
+ .rosdata         0005ab50+000004 _Blu_BlSourceAddress..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu_StateFunctions.
+ .rosdata         0005ab54+000004 _Blu_BlSourceLength..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu_StateFunctions.
+ .rosdata         0005ab58+000004 _Blu_BlTargetAddress..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu_StateFunctions.
+ .sdata           fede302c+000004 _Blu_BluSweSegmentAddr..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu_UserAdapter.
+ .sdata           fede3030+000004 _Blu_BluSweSegmentLength..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu_UserAdapter.
+ .sdata           fede3028+000004 _Blu_BluSweSegmentNumber..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu_UserAdapter.
+ .sbss            fede3038+002000 _Blu_FlashDriverBuffer..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu_StateFunctions.
+ .rosdata         0005ab5c+000018 _Blu_FunctionCall
+ .text            0005920a+000032 _Blu_Hardware_FlashDeInit
+ .text            0005923c+000012 _Blu_Hardware_FlashErase
+ .text            000591d2+000038 _Blu_Hardware_FlashInit
+ .text            0005924e+00001a _Blu_Hardware_FlashWrite
+ .text            00059160+00004e _Blu_Main
+ .sbss            fede3036+000001 _Blu_RetryCount..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu.
+ .sbss            fede3034+000001 _Blu_State..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu.
+ .sbss            fede3035+000001 _Blu_StateCount..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu.
+ .text            00059382+00003c _Blu_StateFctEraseAndReset
+ .text            00059268+000052 _Blu_StateFctEraseOldBootloader
+ .text            000591c0+000012 _Blu_StateFctFlashDeInit
+ .text            000591ae+000012 _Blu_StateFctFlashInit
+ .text            0005930c+00004a _Blu_StateFctVerify
+ .text            000592ba+000052 _Blu_StateFctWriteNewBootloader
+ .text            00059362+000020 _Blu_UserCompareBuffer
+ .text            00059358+00000a _Blu_UserFillBuffer
+ .text            00059356+000002 _Blu_WatchdogTrigger
+                  00058000+000000 _Bm_StartupApplication
+ .text            0005a4c8+000002 _Dem_ReportErrorStatus
+ .RAMCODE         fede509c+000002 _FblLookForWatchdog
+ .rosdata         0005abf4+0000b8 _FlashBlock
+ .text            0005a45c+00001c _FlashDeInit
+ .text            0005a362+00003a _FlashDriver_DeinitSync
+                  00000000+000038 _FlashDriver_GetVersionOfDriver
+ .text            0005a2c8+00009a _FlashDriver_InitSync
+ .text            0005a400+00003c _FlashDriver_REraseSync
+                  00000000+00009a _FlashDriver_RReadSync
+ .text            0005a39c+000064 _FlashDriver_RWriteSync
+ .text            0005a48c+000014 _FlashErase
+ .text            0005a442+00001a _FlashInit
+                  00000000+000008 _FlashInitMemory
+ .sbss            fede5098+000001 _FlashIsInit..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5Cflash_if.
+ .text            0005a478+000014 _FlashWrite
+                  00000000+000062 _MCU_ECM_EIC_ISR
+                  00000000+000052 _MCU_FEINT_ISR
+ .text            000598de+00016e _Mcu_ClearEcmErrorOutput..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            0005a0a2+000108 _Mcu_ClockOutputSelect..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            0005a04a+000058 _Mcu_ClockOutputSetDivider..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            00059a4c+00010e _Mcu_ConfigureCvm..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            00059dc4+000090 _Mcu_ConfigureEcm..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            00059cee+0000d6 _Mcu_ConfigureEcmDelayTimer..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            00059eb6+0000d8 _Mcu_ConfigureEcmRamErrors..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            00059e54+000062 _Mcu_ConfigureEcmRamErrorsSetting..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            00059b5a+00010e _Mcu_ConfigureEcmRegSettings..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            00059774+000060 _Mcu_ConfigureLvi..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            0005a276+000002 _Mcu_DistributePllClock
+ .text            00059830+0000ae _Mcu_EcmClearStatusRegister..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            00059c68+000086 _Mcu_EcmDelayTimerRegisterSetting..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            000597d4+00005c _Mcu_EcmErrorInitialNotification..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+                  00000000+000006 _Mcu_EcmReleaseErrorOutPin
+ .sbss            fede5040+000001 _Mcu_GblDriverStatus..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .sbss            fede5041+000001 _Mcu_GblResetStatusSaved..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            0005a278+00000c _Mcu_GetPllStatus
+                  00000000+000016 _Mcu_GetResetRawValue
+                  00000000+000018 _Mcu_GetResetReason
+ .sbss            fede5058+000004 _Mcu_GpClockSetting
+ .sbss            fede5054+000004 _Mcu_GpConfigPtr
+ .sbss            fede505c+000004 _Mcu_GpEcmSetting
+ .sbss            fede5044+000010 _Mcu_GpExtnClkSettingReg
+ .rosdata         0005aba4+000010 _Mcu_GstClockSetting
+ .rosdata         0005ab74+000030 _Mcu_GstConfiguration
+ .rosdata         0005abb4+000030 _Mcu_GstEcmSetting
+ .rosdata         0005abe4+00000c _Mcu_GstRamSetting
+ .sbss            fede5038+000004 _Mcu_GulLastResetReasonStatus..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .sbss            fede503c+000004 _Mcu_GulMcuSavedResfStatus..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            00059f8e+0000a4 _Mcu_HWInit..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            000595e6+000072 _Mcu_IdentifyEcmErrorSource..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            0005a032+000018 _Mcu_Init
+ .text            0005a242+000034 _Mcu_InitClock
+                  00000000+000198 _Mcu_IrqHandling..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu_Irq.
+ .text            00059724+000050 _Mcu_LviRegSettings..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            0005a284+000044 _Mcu_PerformReset
+ .text            00059658+0000cc _Mcu_SaveResetReason..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            0005a1aa+000098 _Mcu_SelectAdcClock..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+                  00000000+000002 _Mcu_SetMode
+ .text            0005943e+0000c8 _Mcu_StartUPEcmTest..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            000593be+000080 _Mcu_StartUPSwTest..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+ .text            00059506+0000e0 _Mcu_StartUPTest..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CMcu.
+                  00059000+000000 _RESET_CORE0
+                  00059000+000000 _RESET_CORE1
+                  00000000+00052a _VStdLib_MemCpy
+                  00000000+00001c _VStdLib_MemCpy16
+                  00000000+00001c _VStdLib_MemCpy32
+                  00000000+00000e _VStdLib_MemCpy_s
+                  00000000+000188 _VStdLib_MemSet
+ .text            0005a9d0+00006a __Exit
+                  fede3027+000000 __Local_RAM_Core0_Section_EndAddr
+                  fede0000+000000 __Local_RAM_Core0_Section_StartAddr
+                  fede3027+000000 __Local_RAM_DATA_Core0_Section_EndAddr
+                  fede3000+000000 __Local_RAM_DATA_Core0_Section_StartAddr
+                  fede549f+000000 __Local_RAM_STACK_Core0_Section_EndAddr
+                  fede50a0+000000 __Local_RAM_STACK_Core0_Section_StartAddr
+                  ffffffff+000000 __Peripheral_I_O_Section_EndAddr
+                  ff000000+000000 __Peripheral_I_O_Section_StartAddr
+                  fede54a0+000000 __StartupStack_Core0
+                  00000000+000000 ___atexit_cleanup_func
+                  00000000+000000 ___cpp_exception_cleanup
+                  00000000+000000 ___cpp_exception_init
+ .syscall         0005c71c+000006 ___dotsyscall
+                  00000000+000008 ___gh_errno_ptr
+                  00000000+00000a ___gh_get_errno
+                  00000000+000000 ___gh_iob_init
+ .text            0005ab1a+000002 ___gh_lock_init
+ .text            0005ab1c+00000a ___gh_set_errno
+ .text            0005ab16+000002 ___ghsLock
+ .text            0005ab18+000002 ___ghsUnlock
+                  00000000+000000 ___ghs_GetCurrentThreadID
+                  00000000+000000 ___ghs_GetCurrentThreadName
+                  00000000+000000 ___ghs_InterruptLock
+                  00000000+000000 ___ghs_InterruptUnlock
+                  00000000+000000 ___ghs_RunTimeErrorDetected
+                  00000000+000042 ___ghs_at_exit
+                  00000000+000000 ___ghs_board_cache_sync
+                  00000000+000000 ___ghs_board_devices_init
+                  00000000+000000 ___ghs_board_memory_init
+                  00000000+000000 ___ghs_call_table
+                  00000000+000000 ___ghs_checksum
+                  00000000+000000 ___ghs_coverage_init
+                  00000000+000000 ___ghs_cpp_exception_cleanup
+                  00000000+000000 ___ghs_cpp_exception_init
+                  00000000+000000 ___ghs_decompress
+                  00000000+000000 ___ghs_eofn_BUtil_GetAddressAndLengthByFormatIdentifier
+                  00000000+000000 ___ghs_eofn_BUtil_Math_Divide64by32
+                  00000000+000000 ___ghs_eofn_BUtil_Math_LeftShift32To64
+                  00000000+000000 ___ghs_eofn_BUtil_Math_Multiplication32To64
+                  00000000+000000 ___ghs_eofn_BUtil_Math_MultiplyNDivide
+                  00000000+000000 ___ghs_eofn_BUtil_Math_RightShift64To32
+ .text            0005923c+000000 ___ghs_eofn_Blu_Hardware_FlashDeInit
+ .text            0005924e+000000 ___ghs_eofn_Blu_Hardware_FlashErase
+ .text            0005920a+000000 ___ghs_eofn_Blu_Hardware_FlashInit
+ .text            00059268+000000 ___ghs_eofn_Blu_Hardware_FlashWrite
+ .text            000591ae+000000 ___ghs_eofn_Blu_Main
+ .text            000593be+000000 ___ghs_eofn_Blu_StateFctEraseAndReset
+ .text            000592ba+000000 ___ghs_eofn_Blu_StateFctEraseOldBootloader
+ .text            000591d2+000000 ___ghs_eofn_Blu_StateFctFlashDeInit
+ .text            000591c0+000000 ___ghs_eofn_Blu_StateFctFlashInit
+ .text            00059356+000000 ___ghs_eofn_Blu_StateFctVerify
+ .text            0005930c+000000 ___ghs_eofn_Blu_StateFctWriteNewBootloader
+ .text            00059382+000000 ___ghs_eofn_Blu_UserCompareBuffer
+ .text            00059362+000000 ___ghs_eofn_Blu_UserFillBuffer
+ .text            00059358+000000 ___ghs_eofn_Blu_WatchdogTrigger
+ .text            0005a4ca+000000 ___ghs_eofn_Dem_ReportErrorStatus
+ .RAMCODE         fede509e+000000 ___ghs_eofn_FblLookForWatchdog
+ .text            0005a478+000000 ___ghs_eofn_FlashDeInit
+ .text            0005a39c+000000 ___ghs_eofn_FlashDriver_DeinitSync
+                  00000000+000000 ___ghs_eofn_FlashDriver_GetVersionOfDriver
+ .text            0005a362+000000 ___ghs_eofn_FlashDriver_InitSync
+ .text            0005a43c+000000 ___ghs_eofn_FlashDriver_REraseSync
+                  00000000+000000 ___ghs_eofn_FlashDriver_RReadSync
+ .text            0005a400+000000 ___ghs_eofn_FlashDriver_RWriteSync
+ .text            0005a4a0+000000 ___ghs_eofn_FlashErase
+ .text            0005a45c+000000 ___ghs_eofn_FlashInit
+                  00000000+000000 ___ghs_eofn_FlashInitMemory
+ .text            0005a48c+000000 ___ghs_eofn_FlashWrite
+                  00000000+000000 ___ghs_eofn_MCU_ECM_EIC_ISR
+                  00000000+000000 ___ghs_eofn_MCU_FEINT_ISR
+ .text            0005a278+000000 ___ghs_eofn_Mcu_DistributePllClock
+                  00000000+000000 ___ghs_eofn_Mcu_EcmReleaseErrorOutPin
+ .text            0005a284+000000 ___ghs_eofn_Mcu_GetPllStatus
+                  00000000+000000 ___ghs_eofn_Mcu_GetResetRawValue
+                  00000000+000000 ___ghs_eofn_Mcu_GetResetReason
+ .text            0005a04a+000000 ___ghs_eofn_Mcu_Init
+ .text            0005a276+000000 ___ghs_eofn_Mcu_InitClock
+ .text            0005a2c8+000000 ___ghs_eofn_Mcu_PerformReset
+                  00000000+000000 ___ghs_eofn_Mcu_SetMode
+                  00000000+000000 ___ghs_eofn_VStdLib_MemCpy
+                  00000000+000000 ___ghs_eofn_VStdLib_MemCpy16
+                  00000000+000000 ___ghs_eofn_VStdLib_MemCpy32
+                  00000000+000000 ___ghs_eofn_VStdLib_MemCpy_s
+                  00000000+000000 ___ghs_eofn_VStdLib_MemSet
+ .text            0005a4c8+000000 ___ghs_eofn_main
+ .text            0005a620+000346 ___ghs_ind_crt0
+ .text            0005aa5c+0000ba ___ghs_ind_crt1
+ .syscall         0005c71c+000006 ___ghs_initial_dotsyscall
+                  00000000+000000 ___ghs_lock_create
+                  00000000+000000 ___ghs_lock_destroy
+                  00000000+000000 ___ghs_lock_lock
+                  00000000+000000 ___ghs_lock_unlock
+                  00000002+000000 ___ghs_log_fee_level
+                  00000000+000000 ___ghs_manprf_init
+                  00000000+000000 ___ghs_multicore_init_flag
+                  00000000+000018 ___ghs_multicore_wait_for_init
+                  00000000+000000 ___ghs_rambootcodeend
+                  00000000+000000 ___ghs_rambootcodestart
+                  00000000+000000 ___ghs_rombootcodeend
+                  00000000+000000 ___ghs_rombootcodestart
+                  00000000+000000 ___ghs_set_stack_chk_guard
+ .text            0005aa3a+000022 ___ghs_syscall
+                  00000000+000000 ___ghs_undefined_func
+ .fixaddr         0005c698+000000 ___ghsbegin_fixaddr
+ .fixtype         0005c698+000000 ___ghsbegin_fixtype
+                  00000000+000000 ___ghsbegin_picbase
+                  00000000+000000 ___ghsbegin_pidbase
+ .robase          0005ab28+000000 ___ghsbegin_robase
+ .sda_end         fede509c+000000 ___ghsbegin_sda_end
+ .sda_start       fede3028+000000 ___ghsbegin_sda_start
+ .sdabase         fede3028+000000 ___ghsbegin_sdabase
+ .secinfo         0005c698+000000 ___ghsbegin_secinfo
+ .secinfo         0005c6d4+000000 ___ghsbinfo_aclear
+ .secinfo         0005c710+000000 ___ghsbinfo_acopy
+ .secinfo         0005c71c+000000 ___ghsbinfo_bcopy
+ .secinfo         0005c698+00003c ___ghsbinfo_clear
+ .secinfo         0005c71c+000000 ___ghsbinfo_comacopy
+ .secinfo         0005c71c+000000 ___ghsbinfo_comcopy
+ .secinfo         0005c71c+000000 ___ghsbinfo_comtcopy
+ .secinfo         0005c6d4+000048 ___ghsbinfo_copy
+ .secinfo         0005c710+000000 ___ghsbinfo_tcopy
+ .secinfo         0005c71c+000000 ___ghseinfo_bcopy
+ .secinfo         0005c6d4+000000 ___ghseinfo_clear
+ .secinfo         0005c71c+000000 ___ghseinfo_comcopy
+ .secinfo         0005c71c+000000 ___ghseinfo_copy
+ .fixaddr         0005c698+000000 ___ghsend_fixaddr
+ .fixtype         0005c698+000000 ___ghsend_fixtype
+ .stack           fede54a0+000000 ___ghsend_stack
+                  00000000+000024 ___mcopy
+                  00000000+000000 __cleanup
+ .tdata           fede54a0+000000 __ep
+ .text            0005a9d0+00006a __exit
+                  00000000+000000 __ghs_rh850_misalign
+                  00000000+000000 __ghs_v800_r20_initializer
+                  00000000+000000 __ghs_v800_r21_initializer
+                  00000000+000000 __ghs_v800_r22_initializer
+                  00000000+000000 __ghs_v800_r23_initializer
+                  00000000+000000 __ghs_v800_r24_initializer
+                  00000001+000000 __ghs_v800_sda_model
+ .text            0005a43c+000006 __ghscallpatch__FblLookForWatchdog_0_0
+ .sda_start       fede4064+000000 __gp
+ .text            00059050+0000ee __start
+ .rosda_start     0005b8e0+000000 __tp
+ .Startup         00059000+000000 __usr_init
+ .bss             fede301c+000004 _environ
+ .bss             fede3020+000004 _errno
+ .text            0005a4ca+000066 _exit
+ FLASHDRV         fede0000+003000 _flashCode
+ .rosdata         0005acac+0019ec _flashDrvBlk0
+ .sbss            fede5060+000038 _flashParam..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5Cfbl_flio.
+ .rosdata         0005abf0+000001 _kNrOfFlashBlock
+ .text            0005a4a0+000028 _main
+ .text            0005a530+0000f0 _memcpy
+ .text            0005a530+0000f0 _memcpy..trg.2Frh850.2Fobjs.2Flibs.2Flibstartup.2Find_mcpy.
+ .text            0005a530+000000 _memcpy_mcopy
+ .text            0005a970+000060 _memset
+                  00000000+000008 _preventOptimization..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CApplications.5COEM_Extensions.5CBLU.5CAppl.5Cobj.5CBlu.
+                  fede0000+000000 _ram_start
+                  00000000+000000 _undefined_cleanup
+                  00000000+000000 _undefined_cleanup_func

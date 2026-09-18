@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<DIAG-LAYER-CONTAINER ID="id-48c4011c-a88b-4bed-bfa5-ff98dd8d8fa8" OID="id-48c4011c-a88b-4bed-bfa5-ff98dd8d8fa8">
+		<SHORT-NAME>EGS_DLC</SHORT-NAME>
+		<LONG-NAME>Elektronische Getriebesteuerung</LONG-NAME>
+		<BASE-VARIANTS>
+			<BASE-VARIANT ID="id-300527cf-49a4-4f0a-967b-9ffe5d3c921d" OID="id-300527cf-49a4-4f0a-967b-9ffe5d3c921d">
+				<SHORT-NAME>EGS</SHORT-NAME>
+				<LONG-NAME>Elektronische Getriebesteuerung Elektrische-Schaltung</LONG-NAME>
+				<DESC>
+					<p>
+automatically generated BASE-VARIANT instance EGS
+          </p>
+				</DESC>
+				<DIAG-DATA-DICTIONARY-SPEC>
+					<DATA-OBJECT-PROPS>
+						<DATA-OBJECT-PROP ID="id-d46e9814-a301-4597-a1ce-d8da863ec759" OID="id-d46e9814-a301-4597-a1ce-d8da863ec759">
+							<SHORT-NAME>PPC_TEXT_DOP</SHORT-NAME>
+							<LONG-NAME>ProgrammingPreCondition default text</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_00</SHORT-LABEL>
+											<LOWER-LIMIT>0</LOWER-LIMIT>
+											<UPPER-LIMIT>0</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>0</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>reserved</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_01</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>1</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>engine speed is not null</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_02</SHORT-LABEL>
+											<LOWER-LIMIT>2</LOWER-LIMIT>
+											<UPPER-LIMIT>2</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>2</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>immobilizer system is not unlocked</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_03</SHORT-LABEL>
+											<LOWER-LIMIT>3</LOWER-LIMIT>
+											<UPPER-LIMIT>3</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>3</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>gear box input speed is not null</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_04</SHORT-LABEL>
+											<LOWER-LIMIT>4</LOWER-LIMIT>
+											<UPPER-LIMIT>4</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>4</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>gear box output speed is not null</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_05</SHORT-LABEL>
+											<LOWER-LIMIT>5</LOWER-LIMIT>
+											<UPPER-LIMIT>5</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>5</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>vehicle speed is not null</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_06</SHORT-LABEL>
+											<LOWER-LIMIT>6</LOWER-LIMIT>
+											<UPPER-LIMIT>6</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>6</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>control active</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_07</SHORT-LABEL>
+											<LOWER-LIMIT>7</LOWER-LIMIT>
+											<UPPER-LIMIT>7</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>7</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>ignition off-on required</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_08</SHORT-LABEL>
+											<LOWER-LIMIT>8</LOWER-LIMIT>
+											<UPPER-LIMIT>8</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>8</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>no programming voltage</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_09</SHORT-LABEL>
+											<LOWER-LIMIT>9</LOWER-LIMIT>
+											<UPPER-LIMIT>9</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>9</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>ignition not activated (clamp 15 off)</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_0A</SHORT-LABEL>
+											<LOWER-LIMIT>10</LOWER-LIMIT>
+											<UPPER-LIMIT>10</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>10</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>vehicle electrical system voltage too low</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_0B</SHORT-LABEL>
+											<LOWER-LIMIT>11</LOWER-LIMIT>
+											<UPPER-LIMIT>11</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>11</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>temperature too high</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_0C</SHORT-LABEL>
+											<LOWER-LIMIT>12</LOWER-LIMIT>
+											<UPPER-LIMIT>12</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>12</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>temperature too low</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_0D</SHORT-LABEL>
+											<LOWER-LIMIT>13</LOWER-LIMIT>
+											<UPPER-LIMIT>13</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>13</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>---</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_0E_7F</SHORT-LABEL>
+											<LOWER-LIMIT>14</LOWER-LIMIT>
+											<UPPER-LIMIT>127</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>14</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>HIS reserved</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_80</SHORT-LABEL>
+											<LOWER-LIMIT>128</LOWER-LIMIT>
+											<UPPER-LIMIT>128</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>128</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>High Voltage is active</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_81</SHORT-LABEL>
+											<LOWER-LIMIT>129</LOWER-LIMIT>
+											<UPPER-LIMIT>129</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>129</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>Electric engine speed is not null</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_82_BF</SHORT-LABEL>
+											<LOWER-LIMIT>130</LOWER-LIMIT>
+											<UPPER-LIMIT>191</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>130</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>manufacturer reserved</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_C0</SHORT-LABEL>
+											<LOWER-LIMIT>192</LOWER-LIMIT>
+											<UPPER-LIMIT>192</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>192</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>gear box in wrong position. Switch to gear position P !</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_C1</SHORT-LABEL>
+											<LOWER-LIMIT>193</LOWER-LIMIT>
+											<UPPER-LIMIT>193</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>193</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>Vehicle status not ok. Switch off the engine!</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PPC_C2_FF</SHORT-LABEL>
+											<LOWER-LIMIT>194</LOWER-LIMIT>
+											<UPPER-LIMIT>255</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>194</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>supplier reserved</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+					</DATA-OBJECT-PROPS>
+				</DIAG-DATA-DICTIONARY-SPEC>
+				<COMPARAM-REFS>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+						<VALUE>10551</VALUE>
+						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+					</COMPARAM-REF>
+				</COMPARAM-REFS>
+				<PARENT-REFS>
+					<PARENT-REF DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" xsi:type="FUNCTIONAL-GROUP-REF"/>
+					<PARENT-REF DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" xsi:type="FUNCTIONAL-GROUP-REF"/>
+				</PARENT-REFS>
+			</BASE-VARIANT>
+		</BASE-VARIANTS>
+	</DIAG-LAYER-CONTAINER>
+</ODX>

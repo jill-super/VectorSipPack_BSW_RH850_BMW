@@ -1,0 +1,4632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2011 (http://www.altova.com) von Stefan Zerndl (BMW AG) bearbeitet -->
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="../diaglayer/odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MULTIPLE-ECU-JOB-SPEC ID="id-831a247b-3469-4149-b62a-7da9b8c17cb2" OID="id-831a247b-3469-4149-b62a-7da9b8c17cb2">
+    <SHORT-NAME>PROG_UDS_MEJ</SHORT-NAME>
+    <LONG-NAME>Multiple-ECU-Jobs for programming</LONG-NAME>
+    <ADMIN-DATA>
+      <LANGUAGE>eng</LANGUAGE>
+      <DOC-REVISIONS>
+        <DOC-REVISION>
+          <TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+          <REVISION-LABEL>001.000.000</REVISION-LABEL>
+          <STATE>Release</STATE>
+          <DATE>2006-09-14T13:00:00</DATE>
+          <MODIFICATIONS>
+            <MODIFICATION>
+              <CHANGE>Added</CHANGE>
+              <REASON>Initial Release</REASON>
+            </MODIFICATION>
+          </MODIFICATIONS>
+        </DOC-REVISION>
+        <DOC-REVISION>
+          <TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+          <REVISION-LABEL>001.000.001</REVISION-LABEL>
+          <STATE>Release</STATE>
+          <DATE>2006-09-29T11:00:00</DATE>
+          <MODIFICATIONS>
+            <MODIFICATION>
+              <CHANGE>Changed</CHANGE>
+              <REASON>The names of the jobs are adapted to the names of the Java classes</REASON>
+            </MODIFICATION>
+          </MODIFICATIONS>
+        </DOC-REVISION>
+        <DOC-REVISION>
+          <TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+          <REVISION-LABEL>001.000.002</REVISION-LABEL>
+          <STATE>Release</STATE>
+          <DATE>2007-08-03T17:00:00</DATE>
+          <MODIFICATIONS>
+            <MODIFICATION>
+              <CHANGE>Changed</CHANGE>
+              <REASON>All jobs assigned to the functional class "Programming"</REASON>
+            </MODIFICATION>
+          </MODIFICATIONS>
+        </DOC-REVISION>
+        <DOC-REVISION>
+          <TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+          <REVISION-LABEL>001.000.003</REVISION-LABEL>
+          <DATE>2007-09-24T15:45:00</DATE>
+          <MODIFICATIONS>
+            <MODIFICATION>
+              <CHANGE>PREPARE_VEHICLE_FOR_FLASH</CHANGE>
+              <REASON>changed</REASON>
+            </MODIFICATION>
+          </MODIFICATIONS>
+        </DOC-REVISION>
+        <DOC-REVISION>
+          <TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+          <REVISION-LABEL>001.000.004</REVISION-LABEL>
+          <DATE>2007-09-24T15:45:00</DATE>
+          <MODIFICATIONS>
+        	  <MODIFICATION>
+        	    <CHANGE>FINALIZE_VEHICLE_FLASH</CHANGE>
+        	    <REASON>changed</REASON>
+        	  </MODIFICATION>
+          </MODIFICATIONS>
+        </DOC-REVISION>
+        <DOC-REVISION>
+          <TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+          <REVISION-LABEL>001.000.005</REVISION-LABEL>
+          <DATE>2007-12-18T16:30:00</DATE>
+          <MODIFICATIONS>
+            <MODIFICATION>
+              <CHANGE>REQUEST_GWSZ</CHANGE>
+              <REASON>added</REASON>
+            </MODIFICATION>
+          </MODIFICATIONS>
+        </DOC-REVISION>
+        <DOC-REVISION>
+          <TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+          <REVISION-LABEL>001.000.006</REVISION-LABEL>
+          <DATE>2008-02-29T16:30:00</DATE>
+          <MODIFICATIONS>
+            <MODIFICATION>
+              <CHANGE>PREPARE_TAL_EXECUTION</CHANGE>
+              <REASON>changed</REASON>
+            </MODIFICATION>
+          </MODIFICATIONS>
+        </DOC-REVISION>
+        <DOC-REVISION>
+          <TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+          <REVISION-LABEL>001.000.007</REVISION-LABEL>
+          <DATE>2008-04-28T12:00:00</DATE>
+          <MODIFICATIONS>
+            <MODIFICATION>
+              <CHANGE>PREPARE_TAL_EXECUTION</CHANGE>
+              <REASON>changed</REASON>
+            </MODIFICATION>
+            <MODIFICATION>
+              <CHANGE>FINALIZE_VEHICLE_FLASH</CHANGE>
+              <REASON>changed</REASON>
+            </MODIFICATION>
+          </MODIFICATIONS>
+        </DOC-REVISION>
+      </DOC-REVISIONS>
+    </ADMIN-DATA>
+    <COMPANY-DATAS>
+      <COMPANY-DATA ID="id-d22c812d-1f4a-4ff7-a2f6-6f7a8a506a6a" OID="id-d22c812d-1f4a-4ff7-a2f6-6f7a8a506a6a">
+        <SHORT-NAME>PROG_T_SYSTEMS</SHORT-NAME>
+        <LONG-NAME>T-Systems GEI GmbH</LONG-NAME>
+        <TEAM-MEMBERS>
+          <TEAM-MEMBER ID="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4" OID="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4">
+            <SHORT-NAME>HARLFINGER</SHORT-NAME>
+            <LONG-NAME>Harlfinger, Clemens</LONG-NAME>
+            <ROLES>
+              <ROLE>Development</ROLE>
+            </ROLES>
+            <DEPARTMENT>VE-33</DEPARTMENT>
+            <PHONE>+49 (89) 1011-4556</PHONE>
+            <EMAIL>Clemens.Harlfinger@t-systems.com</EMAIL>
+          </TEAM-MEMBER>
+          <TEAM-MEMBER ID="id-36f13ef7-fd39-434a-a699-b254889539e8" OID="id-36f13ef7-fd39-434a-a699-b254889539e8">
+            <SHORT-NAME>HEFFNER</SHORT-NAME>
+            <LONG-NAME>Heffner, Alexander</LONG-NAME>
+            <ROLES>
+              <ROLE>Development</ROLE>
+            </ROLES>
+						<DEPARTMENT>VE-33</DEPARTMENT>
+						<PHONE>+49 (89) 1011-2966</PHONE>
+						<EMAIL>Alexander.Heffner@partner.bmw.de</EMAIL>
+					</TEAM-MEMBER>
+				</TEAM-MEMBERS>
+			</COMPANY-DATA>
+		</COMPANY-DATAS>
+		<MULTIPLE-ECU-JOBS>
+			<MULTIPLE-ECU-JOB ID="id-bab4df53-73a0-4b87-b403-f03b96832419" OID="id-bab4df53-73a0-4b87-b403-f03b96832419">
+				<SHORT-NAME>PREPARE_VEHICLE_FOR_FLASH</SHORT-NAME>
+				<LONG-NAME>MCD3_PrepareVehicleForFlash</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2006-09-14T13:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+							<REVISION-LABEL>001.000.001</REVISION-LABEL>
+							<DATE>2006-09-14T13:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+							<REVISION-LABEL>001.000.002</REVISION-LABEL>
+							<DATE>2008-09-24T15:45:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>changed</CHANGE>
+									<REASON>Added new input-params: CHECK_AEP, DURATION and ouput-param: PPO.</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.009</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_PrepareVehicleForFlash</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEF</SHORT-NAME>
+						<LONG-NAME>IgnoreErrorsFlag</LONG-NAME>
+						<DESC>
+							<p>
+Indicates whether to handle negative responses. 0: false (handle), 1: true (ignore). In case of false ignore errors and continue programming even in exceptional cases
+              </p>
+						</DESC>
+						<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>FLAMODE</SHORT-NAME>
+						<LONG-NAME>FlaMode</LONG-NAME>
+						<DESC>
+							<p>
+Indicates whether the FlaMode is activated or deactivated. 0: false (deactivated), 1: true (activated)
+              </p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CHECK_AEP</SHORT-NAME>
+						<LONG-NAME>CheckAEP</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>DURATION</SHORT-NAME>
+						<LONG-NAME>Duration</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-fda1e791-9ce4-4eeb-8107-9b0c41ceac55" OID="id-fda1e791-9ce4-4eeb-8107-9b0c41ceac55">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-6be2e423-88e0-4156-a30f-e0387cc4fc0b" OID="id-6be2e423-88e0-4156-a30f-e0387cc4fc0b">
+						<SHORT-NAME>CF</SHORT-NAME>
+						<LONG-NAME>ContinueFlag</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-6848b1f7-124a-4763-ad0f-d7eee53c7f9e" OID="id-6848b1f7-124a-4763-ad0f-d7eee53c7f9e">
+						<SHORT-NAME>PPO</SHORT-NAME>
+						<LONG-NAME>ProgrammingPowerOk</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-52726597-3782-40ec-a00f-674bb3a3e43d" OID="id-52726597-3782-40ec-a00f-674bb3a3e43d">
+						<SHORT-NAME>FAILED_PRECONDITIONS</SHORT-NAME>
+						<LONG-NAME>Failed Preconditions</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-5deae6ab-c191-47ad-b7d8-94d68535dc56"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-c61ae5d6-eaf8-4494-ba61-57cc0c8abdae" OID="id-c61ae5d6-eaf8-4494-ba61-57cc0c8abdae">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-bb42a43b-f10e-4e86-af23-f7a7e2e9bcbc" OID="id-bb42a43b-f10e-4e86-af23-f7a7e2e9bcbc">
+				<SHORT-NAME>CHECK_VEHICLE_PRE_CONDITIONS</SHORT-NAME>
+				<LONG-NAME>MCD3_CheckVehiclePreConditions</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.009</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_CheckVehiclePreConditions</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-4ccebf6a-05b3-4037-9768-27de5fb65b5f" OID="id-4ccebf6a-05b3-4037-9768-27de5fb65b5f">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-b2d8bf7b-1546-4b5b-b040-656febeba637" OID="id-b2d8bf7b-1546-4b5b-b040-656febeba637">
+						<SHORT-NAME>ECUS_PRECONDS</SHORT-NAME>
+						<LONG-NAME>EcusPreconditions</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-4486c477-0900-4207-847a-93f5d4b54898"/>
+  				</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-415517b8-69d9-425d-bd43-a2a02a4e028c" OID="id-415517b8-69d9-425d-bd43-a2a02a4e028c">
+				<SHORT-NAME>PREPARE_TAL_EXECUTION</SHORT-NAME>
+				<LONG-NAME>MCD3_PrepareTALExecution</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2006-09-14T16:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+							<REVISION-LABEL>001.000.001</REVISION-LABEL>
+							<DATE>2008-02-29T16:30:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>changed</CHANGE>
+									<REASON>added input parameter REPORT_FLASHPREREQS</REASON>
+								</MODIFICATION>
+								<MODIFICATION>
+									<CHANGE>changed</CHANGE>
+									<REASON>added output parameter FLASHPREREQS</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+							<REVISION-LABEL>001.000.002</REVISION-LABEL>
+							<DATE>2008-04-28T12:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>changed</CHANGE>
+									<REASON>added input parameter CHECK_FETRAFLA_MODE</REASON>
+								</MODIFICATION>
+								<MODIFICATION>
+									<CHANGE>changed</CHANGE>
+									<REASON>added output parameter FETRAFLAEL</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.010</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_PrepareTALExecution</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>REPORT_FLASHPREREQS</SHORT-NAME>
+						<LONG-NAME>reportFlashPreReqs</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CHECK_FETRAFLA_MODE</SHORT-NAME>
+						<LONG-NAME>checkFeTraFlaMode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IS_MANAGE_ROE_ENABLED</SHORT-NAME>
+						<LONG-NAME>IsManageRoeEnabled</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-a5b597a6-24d4-4245-b17f-8d7941da2407" OID="id-a5b597a6-24d4-4245-b17f-8d7941da2407">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-873d8c20-b897-4b62-95d3-04f039a076c1" OID="id-873d8c20-b897-4b62-95d3-04f039a076c1">
+						<SHORT-NAME>CF</SHORT-NAME>
+						<LONG-NAME>ContinueFlag</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-dd95fde5-fb15-4068-90da-f8bf5ab036cd" OID="id-dd95fde5-fb15-4068-90da-f8bf5ab036cd">
+						<SHORT-NAME>FLASHPREREQS</SHORT-NAME>
+						<LONG-NAME>FlashPreReqs</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-cecb2255-629b-4205-a73e-bad2458548b1"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-c8cf7ba2-9414-4118-889b-b7bb0c6f019c" OID="id-c8cf7ba2-9414-4118-889b-b7bb0c6f019c">
+						<SHORT-NAME>FETRAFLAEL</SHORT-NAME>
+						<LONG-NAME>FeTraFlaEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-10b235c6-82c0-40f2-aded-b28869101d86"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-a1740cb0-2bcf-11e5-a2cb-0800200c9a66" OID="id-a1740cb0-2bcf-11e5-a2cb-0800200c9a66">
+						<SHORT-NAME>FAILED_ECU_LIST</SHORT-NAME>
+						<LONG-NAME>FailedEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-35562c60-2bd0-11e5-a2cb-0800200c9a66"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-c5a188a7-2bfc-4664-93e7-0cbdb2e3120d" OID="id-c5a188a7-2bfc-4664-93e7-0cbdb2e3120d">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-12880850-aa60-4518-88a0-f5a706b45ad1" OID="id-12880850-aa60-4518-88a0-f5a706b45ad1">
+				<SHORT-NAME>FINALIZE_TAL_EXECUTION</SHORT-NAME>
+				<LONG-NAME>MCD3_FinalizeTALExecution</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2006-09-14T16:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.009</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_FinalizeTALExecution</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IS_MANAGE_ROE_ENABLED</SHORT-NAME>
+						<LONG-NAME>IsManageRoeEnabled</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-4d92b7db-76e4-4252-8583-2df75373fab0" OID="id-4d92b7db-76e4-4252-8583-2df75373fab0">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-370af426-3c9c-4439-91c8-fc76bcd3208f" OID="id-370af426-3c9c-4439-91c8-fc76bcd3208f">
+						<SHORT-NAME>FAILED_ECU_LIST</SHORT-NAME>
+						<LONG-NAME>FailedEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-35562c60-2bd0-11e5-a2cb-0800200c9a66"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-d1014760-a5a9-4bc6-a6f8-ecba14efac03" OID="id-d1014760-a5a9-4bc6-a6f8-ecba14efac03">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-80a052bb-d102-4af9-b3ef-5fb4451f40d1" OID="id-80a052bb-d102-4af9-b3ef-5fb4451f40d1">
+				<SHORT-NAME>FINALIZE_VEHICLE_FLASH</SHORT-NAME>
+				<LONG-NAME>MCD3_FinalizeVehicleFlash</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2006-09-14T16:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+							<REVISION-LABEL>001.000.001</REVISION-LABEL>
+							<DATE>2006-09-14T16:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>changed</CHANGE>
+									<REASON>added output parameter: list of incorrectly programmed BN2000 ECUs</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+							<REVISION-LABEL>001.000.002</REVISION-LABEL>
+							<DATE>2008-04-28T12:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>changed</CHANGE>
+									<REASON>added input parameter: list of ECUs to be set to FeTraFla mode</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.009</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_FinalizeVehicleFlash</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEF</SHORT-NAME>
+						<LONG-NAME>IgnoreErrorsFlag</LONG-NAME>
+						<DESC>
+							<p>
+Indicates whether to handle negative responses. 0: false (handle), 1: true (ignore). In case of false ignore errors and continue programming even in exceptional cases
+              </p>
+						</DESC>
+						<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>FLAMODE</SHORT-NAME>
+						<LONG-NAME>FlaMode</LONG-NAME>
+						<DESC>
+							<p>
+Indicates whether the FlaMode is activated or deactivated. 0: false (deactivated), 1: true (activated)
+              </p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>FEL</SHORT-NAME>
+						<LONG-NAME>FlashedEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>FETRAFLAEL</SHORT-NAME>
+						<LONG-NAME>FeTraFlaEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-10b235c6-82c0-40f2-aded-b28869101d86"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-a5222f3a-4502-4542-984b-385700cce00a" OID="id-a5222f3a-4502-4542-984b-385700cce00a">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-9ce8f1a7-606d-4b9e-890a-c7145e8af7d1" OID="id-9ce8f1a7-606d-4b9e-890a-c7145e8af7d1">
+						<SHORT-NAME>CF</SHORT-NAME>
+						<LONG-NAME>ContinueFlag</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-da1e9b6e-088d-438a-99ff-4cab69019f91" OID="id-da1e9b6e-088d-438a-99ff-4cab69019f91">
+						<SHORT-NAME>BN2000_ERRORS_LIST</SHORT-NAME>
+						<LONG-NAME>BN2000WithErrorsEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-31ef9dcd-922f-4264-8d48-1c6e2a2470fd" OID="id-31ef9dcd-922f-4264-8d48-1c6e2a2470fd">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-27ac7388-c702-4bee-a99a-d1dcef52955c" OID="id-27ac7388-c702-4bee-a99a-d1dcef52955c">
+				<SHORT-NAME>GENERATE_CONFIG_FROM_VEHICLE</SHORT-NAME>
+				<LONG-NAME>MCD3_GenerateConfigFromVehicle</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2006-09-14T16:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.009</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_GenerateConfigFromVehicle</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>MAX_PARALLEL_CHANNELS</SHORT-NAME>
+						<LONG-NAME>MaxParallelChannels</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-6d85b083-2d55-4279-bcdf-933ea4a3d86c" OID="id-6d85b083-2d55-4279-bcdf-933ea4a3d86c">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-cd19d85a-872a-4f6e-8a88-d35163d55c42" OID="id-cd19d85a-872a-4f6e-8a88-d35163d55c42">
+						<SHORT-NAME>UDSITEMS</SHORT-NAME>
+						<LONG-NAME>UDSItems</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-7a866b4e-7388-42dc-a824-7394b2d28ac5"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-aa550f7e-cde7-439b-bebf-618ecb387503" OID="id-aa550f7e-cde7-439b-bebf-618ecb387503">
+						<SHORT-NAME>KWPITEMS</SHORT-NAME>
+						<LONG-NAME>KWPItems</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-381314fa-a9af-4422-8c5e-0207ebe31d73"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-37a0dffd-452a-48a5-848b-afd611c26c15" OID="id-37a0dffd-452a-48a5-848b-afd611c26c15">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-8e1a3e27-868f-4a7a-a47d-5b87565e0335" OID="id-8e1a3e27-868f-4a7a-a47d-5b87565e0335">
+				<SHORT-NAME>REQUEST_CONTEXT_INFO_FROM_VEHICLE</SHORT-NAME>
+				<LONG-NAME>MCD3_RequestContextInfoFromVehicle</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2008-08-12T15:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.024</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_RequestContextInfoFromVehicle</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CONTEXTINFO_PROG_COUNTER</SHORT-NAME>
+						<LONG-NAME>ContextInfoProgrammingCounter</LONG-NAME>
+						<DESC>
+							<p>
+		       should programming counter be determined? 0 = no(false) , 1 = yes (true)
+              </p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CONTEXTINFO_SERIAL_NUMBER</SHORT-NAME>
+						<LONG-NAME>ContextInfoSerialNumber</LONG-NAME>
+						<DESC>
+							<p>
+		       should serial number be determined? 0 = no(false) , 1 = yes (true)
+              </p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CONTEXTINFO_SGBDID</SHORT-NAME>
+						<LONG-NAME>ContextInfoSGBDID</LONG-NAME>
+						<DESC>
+							<p>
+		       should sgbdid be determined? 0 = no(false) , 1 = yes (true)
+              </p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CONTEXTINFO_FTP</SHORT-NAME>
+						<LONG-NAME>ContextInfoFTP</LONG-NAME>
+						<DESC>
+							<p>
+		       should flash timing parameters be determined? 0 = no(false) , 1 = yes (true)
+              </p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CONTEXTINFO_MANUFACTURER</SHORT-NAME>
+						<LONG-NAME>ContextInfoManufacturer</LONG-NAME>
+						<DESC>
+							<p>
+		       should flash timing parameters be determined? 0 = no(false) , 1 = yes (true)
+              </p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CONTEXTINFO_MANUFACTURING_DATE</SHORT-NAME>
+						<LONG-NAME>ContextInfoManufacturingDate</LONG-NAME>
+						<DESC>
+							<p>
+		       should flash timing parameters be determined? 0 = no(false) , 1 = yes (true)
+              </p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CONTEXTINFO_LAST_PROGRAMMING_DATE</SHORT-NAME>
+						<LONG-NAME>ContextInfoLastProgrammingDate</LONG-NAME>
+						<DESC>
+							<p>
+		       should flash timing parameters be determined? 0 = no(false) , 1 = yes (true)
+              </p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CONTEXTINFO_PERFORMED_FLASH_CYCLES</SHORT-NAME>
+						<LONG-NAME>ContextInfoPerformedFlashCycles</LONG-NAME>
+						<DESC>
+							<p>
+		       should flash timing parameters be determined? 0 = no(false) , 1 = yes (true)
+              </p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CONTEXTINFO_REMAINING_FLASH_CYCLES</SHORT-NAME>
+						<LONG-NAME>ContextInfoRemainingFalshCycles</LONG-NAME>
+						<DESC>
+							<p>
+		       should flash timing parameters be determined? 0 = no(false) , 1 = yes (true)
+              </p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CONTEXTINFO_FINGERPRINT</SHORT-NAME>
+						<LONG-NAME>ContextInfoFingerprint</LONG-NAME>
+						<DESC>
+							<p>
+		       should flash timing parameters be determined? 0 = no(false) , 1 = yes (true)
+              </p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-d8746d2a-0d83-48d0-964e-a58b270d3189" OID="id-d8746d2a-0d83-48d0-964e-a58b270d3189">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-2a0d4c65-a814-466e-9e08-895bc54ef9f5" OID="id-2a0d4c65-a814-466e-9e08-895bc54ef9f5">
+						<SHORT-NAME>CONTEXTINFOS</SHORT-NAME>
+						<LONG-NAME>ContextInfos</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-f04152d9-b4f1-4099-810e-dfe21c7136cf"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-2457a551-4ac4-4075-b1b0-061b05f84178" OID="id-2457a551-4ac4-4075-b1b0-061b05f84178">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-a0bdbaa2-9fbc-4be2-bc1d-c81b81187a4a" OID="id-a0bdbaa2-9fbc-4be2-bc1d-c81b81187a4a">
+				<SHORT-NAME>CHECK_CONNECTION</SHORT-NAME>
+				<LONG-NAME>MCD3_CheckConnection</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-36f13ef7-fd39-434a-a699-b254889539e8"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2006-10-30T13:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.009</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_CheckConnection</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>DIRECTLINK</SHORT-NAME>
+						<LONG-NAME>DirectLink</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-5180d3e3-5125-452e-b678-6d13a889472e" OID="id-5180d3e3-5125-452e-b678-6d13a889472e">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-13e7c2d8-4dbc-47e2-b780-804809687ef6" OID="id-13e7c2d8-4dbc-47e2-b780-804809687ef6">
+						<SHORT-NAME>CR</SHORT-NAME>
+						<LONG-NAME>ConnectionReady</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-6cffced2-57e1-471f-bffe-4657e670ff12" OID="id-6cffced2-57e1-471f-bffe-4657e670ff12">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-78e9e169-4db5-4a08-87c2-b8049c93e1a6" OID="id-78e9e169-4db5-4a08-87c2-b8049c93e1a6">
+				<SHORT-NAME>CHECK_CONNECTION_FUNCTIONAL</SHORT-NAME>
+				<LONG-NAME>MCD3_CheckConnectionFunctional</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.009</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_CheckConnectionFunctional</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM OID="id-8ddac785-283b-47ab-a237-8e06069e4c45">
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM OID="id-c73b1f55-d2a6-4d69-baa3-3e533b25a28e">
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-98fd55b4-8d18-457a-bcf2-ec481c36cc36" OID="id-98fd55b4-8d18-457a-bcf2-ec481c36cc36">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-c9f7d160-4efc-4efc-b9b4-6d1768ca675b" OID="id-c9f7d160-4efc-4efc-b9b4-6d1768ca675b">
+						<SHORT-NAME>CR</SHORT-NAME>
+						<LONG-NAME>ConnectionReady</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF DOCREF="PROG_UDS" DOCTYPE="LAYER" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-4be1783d-8a42-47d2-a181-7f9a2e52eed4" OID="id-4be1783d-8a42-47d2-a181-7f9a2e52eed4">
+				<SHORT-NAME>GET_JOB_LIB_VERSION</SHORT-NAME>
+				<LONG-NAME>MCD3_GetJobLibraryVersion</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2007-08-02T19:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.009</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_GetJobLibraryVersion</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-fcd85d9b-841b-4025-8d41-7b03115dfc06" OID="id-fcd85d9b-841b-4025-8d41-7b03115dfc06">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-d8d1a418-91b6-4e59-895a-d86227287689" OID="id-d8d1a418-91b6-4e59-895a-d86227287689">
+						<SHORT-NAME>MAJOR</SHORT-NAME>
+						<LONG-NAME>Major version</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-27c0b745-2733-4e8c-be9d-760abdcaaf26" OID="id-27c0b745-2733-4e8c-be9d-760abdcaaf26">
+						<SHORT-NAME>MINOR</SHORT-NAME>
+						<LONG-NAME>Minor version</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-c03325b6-1892-4d9e-8205-8874e8aeb50c" OID="id-c03325b6-1892-4d9e-8205-8874e8aeb50c">
+						<SHORT-NAME>PATCH</SHORT-NAME>
+						<LONG-NAME>Patch version</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-f185abf3-9877-4e66-bcc7-ed24bd46a0e0" OID="id-f185abf3-9877-4e66-bcc7-ed24bd46a0e0">
+						<SHORT-NAME>DATE</SHORT-NAME>
+						<LONG-NAME>Date</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-3247579e-2027-4e6b-a127-a3f27de2520e" OID="id-3247579e-2027-4e6b-a127-a3f27de2520e">
+				<SHORT-NAME>PERFORM_MAINSERIES_IDENTIFICATION</SHORT-NAME>
+				<LONG-NAME>MCD3_PerformMainseriesIdentification</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2007-11-19T10:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.009</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_PerformMainseriesIdentification</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-9a4bbda8-6417-4c5f-a7cb-bd099c16b952" OID="id-9a4bbda8-6417-4c5f-a7cb-bd099c16b952">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-b5d5b931-6cb3-4dd0-8d9c-800cfd7a0696" OID="id-b5d5b931-6cb3-4dd0-8d9c-800cfd7a0696">
+						<SHORT-NAME>BRV</SHORT-NAME>
+						<LONG-NAME>Entwicklungsbaureihe</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-9a66e889-3361-4df4-861f-41c15d36f190" OID="id-9a66e889-3361-4df4-861f-41c15d36f190">
+						<SHORT-NAME>VIN</SHORT-NAME>
+						<LONG-NAME>VIN</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-cfe04442-bd9f-429b-8c0a-2cadbbdd1820" OID="id-cfe04442-bd9f-429b-8c0a-2cadbbdd1820">
+						<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+						<LONG-NAME>VCM diagnostic address</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-57efdd13-f0fd-4083-a33d-0b5653f89a2d" OID="id-57efdd13-f0fd-4083-a33d-0b5653f89a2d">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-9f549e74-02fe-4816-9d6b-9b7f97d9d873" OID="id-9f549e74-02fe-4816-9d6b-9b7f97d9d873">
+				<SHORT-NAME>REQUEST_GWSZ</SHORT-NAME>
+				<LONG-NAME>MCD3_RequestGWSZ</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2007-12-19T10:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.009</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_RequestGWSZ</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-cb30bde6-6857-4ce6-857c-bf672d9b146e" OID="id-cb30bde6-6857-4ce6-857c-bf672d9b146e">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-94f193e5-ffd1-4f22-86e3-e95c0c797a59" OID="id-94f193e5-ffd1-4f22-86e3-e95c0c797a59">
+						<SHORT-NAME>GWZ_ABS_RAM</SHORT-NAME>
+						<LONG-NAME>GWSZ (RAM)</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-c92b381c-9fad-4a7c-b251-c958be658495" OID="id-c92b381c-9fad-4a7c-b251-c958be658495">
+						<SHORT-NAME>GWZ_ABS_EEPROM</SHORT-NAME>
+						<LONG-NAME>GWSZ (EEPROM)</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-762e7915-0b5e-4c5c-a684-583cebdb8551" OID="id-762e7915-0b5e-4c5c-a684-583cebdb8551">
+						<SHORT-NAME>GWZ_OFFSET</SHORT-NAME>
+						<LONG-NAME>GWSZ (Offset)</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-44a3bc28-6ad8-45ba-ab4d-722b65fc4d38" OID="id-44a3bc28-6ad8-45ba-ab4d-722b65fc4d38">
+				<SHORT-NAME>ACTIVATE_PROG_MODE</SHORT-NAME>
+				<LONG-NAME>MCD3_ActivateProgModeCascade</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2008-08-08T18:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.025</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_ActivateProgModeCascade</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>PORT_MAPPING</SHORT-NAME>
+						<LONG-NAME>PortMapping</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IP_CONFIG_LIST</SHORT-NAME>
+						<LONG-NAME>IPConfigurationList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-b1e6547b-f43c-4eb9-a24c-a9f344a4f6aa"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CANCEL_TAL_ENABLED</SHORT-NAME>
+						<LONG-NAME>EnablingCancelTal</LONG-NAME>
+						<DESC>
+							<p>
+								<p>Allowed Values:</p>
+								<p>0 - disable setting CANCEL_TAL </p>
+								<p>1 - enable setting CANCEL_TAL</p>
+							</p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>ETHERNET_TOPOLOGY_LIST</SHORT-NAME>
+						<LONG-NAME>ListFromJobGenerateEthernetTopology</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-82158f41-e919-4786-a04e-98fb427d8c84"/>
+ 					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-6d9f8100-cf98-4bd0-8c08-ca136a69cad3" OID="id-6d9f8100-cf98-4bd0-8c08-ca136a69cad3">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-a2da2b22-aaf0-4a3d-b6ae-6d11175b474a" OID="id-a2da2b22-aaf0-4a3d-b6ae-6d11175b474a">
+						<SHORT-NAME>GW_CONFIG</SHORT-NAME>
+						<LONG-NAME>GWConfiguration</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-b589cf08-e626-4fc0-b716-1edefc18daf1"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-03e1a7b4-e8ee-477b-9ae1-662ca24ac187" OID="id-03e1a7b4-e8ee-477b-9ae1-662ca24ac187">
+						<SHORT-NAME>ACTIVATED_ECU_LIST</SHORT-NAME>
+						<LONG-NAME>List of successfully activated ECUs</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-91e21bae-df96-481d-9a20-04f3ba18bd25" OID="id-91e21bae-df96-481d-9a20-04f3ba18bd25">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-b2f34d20-4d4f-4850-89a5-8672af91f4b2" OID="id-b2f34d20-4d4f-4850-89a5-8672af91f4b2">
+				<SHORT-NAME>ACTIVATE_PROG_MODE_SERIAL</SHORT-NAME>
+				<LONG-NAME>MCD3_ActivateProgModeSerial</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2008-08-08T18:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>005.014.002</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_ActivateProgModeSerial</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>PORT_MAPPING</SHORT-NAME>
+						<LONG-NAME>PortMapping</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IP_CONFIG_LIST</SHORT-NAME>
+						<LONG-NAME>IPConfigurationList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-b1e6547b-f43c-4eb9-a24c-a9f344a4f6aa"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CANCEL_TAL_ENABLED</SHORT-NAME>
+						<LONG-NAME>EnablingCancelTal</LONG-NAME>
+						<DESC>
+							<p>
+								<p>Allowed Values:</p>
+								<p>0 - disable setting CANCEL_TAL </p>
+								<p>1 - enable setting CANCEL_TAL</p>
+							</p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>ETHERNET_TOPOLOGY_LIST</SHORT-NAME>
+						<LONG-NAME>ListFromJobGenerateEthernetTopology</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-82158f41-e919-4786-a04e-98fb427d8c84"/>
+ 					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-2ad8e923-3f19-41dc-8f6c-1ba0bda1ee00" OID="id-2ad8e923-3f19-41dc-8f6c-1ba0bda1ee00">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-cbdf66b0-2c3b-4d35-abc8-95d139c54bb0" OID="id-cbdf66b0-2c3b-4d35-abc8-95d139c54bb0">
+						<SHORT-NAME>GW_CONFIG</SHORT-NAME>
+						<LONG-NAME>GWConfiguration</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-b589cf08-e626-4fc0-b716-1edefc18daf1"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-fee6544d-ecb4-42d1-9f4c-8dcc3eee115c" OID="id-fee6544d-ecb4-42d1-9f4c-8dcc3eee115c">
+						<SHORT-NAME>ACTIVATED_ECU_LIST</SHORT-NAME>
+						<LONG-NAME>List of successfully activated ECUs</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-d1cea9a1-6206-412f-8416-2bbb6f2a9e51" OID="id-d1cea9a1-6206-412f-8416-2bbb6f2a9e51">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-3dcad324-6e77-47c4-ae2a-c716a0cb0870" OID="id-3dcad324-6e77-47c4-ae2a-c716a0cb0870">
+				<SHORT-NAME>ACTIVATE_CODING_MODE</SHORT-NAME>
+				<LONG-NAME>MCD3_ActivateCodingMode</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2008-08-08T18:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.025</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_ActivateCodingMode</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>PORT_MAPPING</SHORT-NAME>
+						<LONG-NAME>PortMapping</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IP_CONFIG_LIST</SHORT-NAME>
+						<LONG-NAME>IPConfigurationList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-b1e6547b-f43c-4eb9-a24c-a9f344a4f6aa"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-ce4e6330-ce4c-4964-906c-7738204f4a70" OID="id-ce4e6330-ce4c-4964-906c-7738204f4a70">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-8ca34bc4-3bc3-4301-a770-25878901cffb" OID="id-8ca34bc4-3bc3-4301-a770-25878901cffb">
+						<SHORT-NAME>GW_CONFIG</SHORT-NAME>
+						<LONG-NAME>GWConfiguration</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-b589cf08-e626-4fc0-b716-1edefc18daf1"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-ddd58a11-a042-4d66-83e9-7f3bba85d6c4" OID="id-ddd58a11-a042-4d66-83e9-7f3bba85d6c4">
+						<SHORT-NAME>ACTIVATED_ECU_LIST</SHORT-NAME>
+						<LONG-NAME>List of successfully activated ECUs</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-0ecfbad1-5c89-4e5e-86f7-044858265bce" OID="id-0ecfbad1-5c89-4e5e-86f7-044858265bce">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-e6640ba1-9a07-484f-93df-610055217bc9" OID="id-e6640ba1-9a07-484f-93df-610055217bc9">
+				<SHORT-NAME>DEACTIVATE_PROG_MODE</SHORT-NAME>
+				<LONG-NAME>MCD3_DeactivateProgModeNew</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2008-08-08T18:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.025</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_DeactivateProgModeNew</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>PORT_MAPPING</SHORT-NAME>
+						<LONG-NAME>PortMapping</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IP_CONFIG_LIST</SHORT-NAME>
+						<LONG-NAME>IPConfigurationList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-b1e6547b-f43c-4eb9-a24c-a9f344a4f6aa"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-054169b9-81fb-4174-a348-51bdba0d0775" OID="id-054169b9-81fb-4174-a348-51bdba0d0775">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-3966ff90-2c35-4a1e-a044-c32e234ee1cb" OID="id-3966ff90-2c35-4a1e-a044-c32e234ee1cb">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-315420ca-f946-4e1a-8d63-da7292baf593" OID="id-315420ca-f946-4e1a-8d63-da7292baf593">
+				<SHORT-NAME>DEACTIVATE_CODING_MODE</SHORT-NAME>
+				<LONG-NAME>MCD3_DeactivateCodingMode</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-6c8a7fdd-a0f8-4f86-8b99-442f9a9cd3c4"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2008-08-08T18:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>added</CHANGE>
+									<REASON>ODX data for existing Java job</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.003.025</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_DeactivateCodingMode</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>PORT_MAPPING</SHORT-NAME>
+						<LONG-NAME>PortMapping</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IP_CONFIG_LIST</SHORT-NAME>
+						<LONG-NAME>IPConfigurationList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-b1e6547b-f43c-4eb9-a24c-a9f344a4f6aa"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-fdc9fcc7-3c85-428a-bb4a-4c6c19f9a305" OID="id-fdc9fcc7-3c85-428a-bb4a-4c6c19f9a305">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-ada5b53d-7a9a-4e85-ac5d-fda0b7c0258c" OID="id-ada5b53d-7a9a-4e85-ac5d-fda0b7c0258c">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-0cd817a6-7909-4747-9d00-b9e4801304d9" OID="id-0cd817a6-7909-4747-9d00-b9e4801304d9">
+				<SHORT-NAME>PREPARE_VEHICLE_FOR_CODING</SHORT-NAME>
+				<LONG-NAME>MCD3_PrepareVehicleForCoding</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-f52dc28d-1f11-4bb2-992a-412c57abff31"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.001.003</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_PrepareVehicleForCoding</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEF</SHORT-NAME>
+						<LONG-NAME>IgnoreErrorsFlag</LONG-NAME>
+						<DESC>
+							<p>
+Indicates whether to handle negative responses. 0: false (handle), 1: true (ignore). In case of false ignore errors and continue programming even in exceptional cases
+              </p>
+						</DESC>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>ENABLE_TEMPORARY_ROE_DEACTIVATION</SHORT-NAME>
+						<LONG-NAME>EnableTemporaryRoeDeactivation</LONG-NAME>
+						<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-fe8a081c-83bc-4ee6-8547-790fc5a54da4" OID="id-fe8a081c-83bc-4ee6-8547-790fc5a54da4">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-7cb02fc3-4b00-4a36-aa55-6212ab4ebc12" OID="id-7cb02fc3-4b00-4a36-aa55-6212ab4ebc12">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-46f8016a-1f30-4668-b305-9e544df202fd" OID="id-46f8016a-1f30-4668-b305-9e544df202fd">
+				<SHORT-NAME>FINALIZE_VEHICLE_CODING</SHORT-NAME>
+				<LONG-NAME>MCD3_FinalizeVehicleCoding</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-f52dc28d-1f11-4bb2-992a-412c57abff31"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.001.003</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_FinalizeVehicleCoding</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEF</SHORT-NAME>
+						<LONG-NAME>IgnoreErrorsFlag</LONG-NAME>
+						<DESC>
+							<p>
+Indicates whether to handle negative responses. 0: false (handle), 1: true (ignore). In case of false ignore errors and continue programming even in exceptional cases
+              </p>
+						</DESC>
+						<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-c53296ad-fcf4-495b-84a0-bd58fbafaff1" OID="id-c53296ad-fcf4-495b-84a0-bd58fbafaff1">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-b181908c-6178-45e3-9ca3-84c5e98eaea8" OID="id-b181908c-6178-45e3-9ca3-84c5e98eaea8">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-8091344b-f97c-4550-bd5b-0e809b28a163" OID="id-8091344b-f97c-4550-bd5b-0e809b28a163">
+				<SHORT-NAME>PREPARE_VEHICLE_FOR_GATEWAY_TABLE_DEPLOY</SHORT-NAME>
+				<LONG-NAME>MCD3_PrepareVehicleForGWTBFlash</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-f52dc28d-1f11-4bb2-992a-412c57abff31"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.004.000</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_PrepareVehicleForGWTBFlash</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEF</SHORT-NAME>
+						<LONG-NAME>IgnoreErrorsFlag</LONG-NAME>
+						<DESC>
+							<p>
+Indicates whether to handle negative responses. 0: false (handle), 1: true (ignore). In case of false ignore errors and continue programming even in exceptional cases
+              </p>
+						</DESC>
+						<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-e8a307c6-f9a4-4862-aa9b-b608b3d58843" OID="id-e8a307c6-f9a4-4862-aa9b-b608b3d58843">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-f1b67289-2a10-481c-bb2b-88fd283ffa90" OID="id-f1b67289-2a10-481c-bb2b-88fd283ffa90">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-41852c7a-dc10-442f-ac7c-d1d291391b23" OID="id-41852c7a-dc10-442f-ac7c-d1d291391b23">
+				<SHORT-NAME>FINALIZE_VEHICLE_GATEWAY_TABLE_DEPLOY</SHORT-NAME>
+				<LONG-NAME>MCD3_FinalizeVehicleGWTBFlash</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-f52dc28d-1f11-4bb2-992a-412c57abff31"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.004.000</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_FinalizeVehicleGWTBFlash</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEF</SHORT-NAME>
+						<LONG-NAME>IgnoreErrorsFlag</LONG-NAME>
+						<DESC>
+							<p>
+Indicates whether to handle negative responses. 0: false (handle), 1: true (ignore). In case of false ignore errors and continue programming even in exceptional cases
+              </p>
+						</DESC>
+						<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+						<DOP-BASE-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-e7d9a70a-7432-43b9-b061-c5cf7ee43e67" OID="id-e7d9a70a-7432-43b9-b061-c5cf7ee43e67">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-dfa5c317-112d-47ab-b603-cac5d0dfac81" OID="id-dfa5c317-112d-47ab-b603-cac5d0dfac81">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-c00df3f5-1752-4476-8ac3-d3490e8e4b41" OID="id-c00df3f5-1752-4476-8ac3-d3490e8e4b41">
+				<SHORT-NAME>READ_SERIAL_NUMBERS_FROM_VEHICLE</SHORT-NAME>
+				<LONG-NAME>MCD3_ReadSerialNumbersFromVehicle</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-f52dc28d-1f11-4bb2-992a-412c57abff31"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.005.000</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_ReadSerialNumbersFromVehicle</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-ba742dd6-7869-4bb3-84e6-b4ca9330f6b3" OID="id-ba742dd6-7869-4bb3-84e6-b4ca9330f6b3">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-4acf7240-503c-4f9d-9dbe-16ff3ff40429" OID="id-4acf7240-503c-4f9d-9dbe-16ff3ff40429">
+						<SHORT-NAME>SERIAL_NUMBERS</SHORT-NAME>
+						<LONG-NAME>Read out Serials</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-31509fb2-1505-4543-b642-bf3a78c37762"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-da0da943-3eb3-4fdf-9d53-82d1813d08ce" OID="id-da0da943-3eb3-4fdf-9d53-82d1813d08ce">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-ac05d8d8-5d0a-4108-accd-55377bdbad82" OID="id-ac05d8d8-5d0a-4108-accd-55377bdbad82">
+				<SHORT-NAME>READ_ISTUFEN_FROM_VCM_FUNCTIONAL</SHORT-NAME>
+				<LONG-NAME>MCD3_ReadIStufenFromVcmFunctional</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.005.000</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_ReadIStufenFromVcmFunctional</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-bfe96edb-787d-435a-8ee3-a5f06f9f8206" OID="id-bfe96edb-787d-435a-8ee3-a5f06f9f8206">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-99903fec-1943-432f-8cb5-bba0d175f4c0" OID="id-99903fec-1943-432f-8cb5-bba0d175f4c0">
+						<SHORT-NAME>ISTUFE</SHORT-NAME>
+						<LONG-NAME>IStufe</LONG-NAME>
+						<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-c4013c2f-5a22-424c-b6f4-c400e0d237b6" OID="id-c4013c2f-5a22-424c-b6f4-c400e0d237b6">
+						<SHORT-NAME>SIGNATURE</SHORT-NAME>
+						<LONG-NAME>signature</LONG-NAME>
+						<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-ae165a2b-8353-4b6b-8606-90f103e1a2f9" OID="id-ae165a2b-8353-4b6b-8606-90f103e1a2f9">
+						<SHORT-NAME>VCM_BACKUP_RESOLVEABLE</SHORT-NAME>
+						<LONG-NAME>VcmBackupResolveable</LONG-NAME>
+						<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-fb16ce42-7053-4060-a420-e5e9d261a0a1"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-c25afad2-2f2b-4cbf-b946-e760e57b8f85" OID="id-c25afad2-2f2b-4cbf-b946-e760e57b8f85">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-b3dccc52-bb76-4354-802f-e03e7ac08575" DOCREF="VCM_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-d9752769-b847-4138-8019-5f688d8d8d96" OID="id-d9752769-b847-4138-8019-5f688d8d8d96">
+				<SHORT-NAME>READ_F11_DATA_FROM_CSM</SHORT-NAME>
+				<LONG-NAME>MCD3_ReadF11DataFromCsmClients</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.007.004</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_ReadF11DataFromCsmClients</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>FSCSM_ECU_LIST</SHORT-NAME>
+						<LONG-NAME>List of FsCSM ECUs</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-3bd9f97b-cbb7-4620-9954-06853c46cde8"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-f8c68a7c-ff19-4503-98d0-80e680209ac4" OID="id-f8c68a7c-ff19-4503-98d0-80e680209ac4">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-ab4912e4-198b-447e-a9c2-52c3bbd6b91d" OID="id-ab4912e4-198b-447e-a9c2-52c3bbd6b91d">
+						<SHORT-NAME>F11_DATA_FSCSM</SHORT-NAME>
+						<LONG-NAME>F11 Data FsCMS</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-a19d54a3-b7af-4b23-96e0-465b035b3306"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-28bd3d0d-c93a-4f7f-bc4e-83e8a4eb1cca" OID="id-28bd3d0d-c93a-4f7f-bc4e-83e8a4eb1cca">
+				<SHORT-NAME>EXECUTE_F25_SIGNAL_KEY_VERIFICATION</SHORT-NAME>
+				<LONG-NAME>MCD3_ExecuteF25SignalKeyVerification</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.007.004</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_ExecuteF25SignalKeyVerification</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>FSCSM_ECU_LIST</SHORT-NAME>
+						<LONG-NAME>List of FsCSM ECUs</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-3bd9f97b-cbb7-4620-9954-06853c46cde8"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-a42f086a-b82e-4079-b378-b4961cbe876e" OID="id-a42f086a-b82e-4079-b378-b4961cbe876e">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-107d3afa-fb03-4843-b0e8-e621e1e2d655" OID="id-107d3afa-fb03-4843-b0e8-e621e1e2d655">
+						<SHORT-NAME>MSM_ERC</SHORT-NAME>
+						<LONG-NAME>MSM Error Message</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-541379d5-bd35-4833-8f6e-611a5625c636" OID="id-541379d5-bd35-4833-8f6e-611a5625c636">
+						<SHORT-NAME>ERROR_CODE_LIST</SHORT-NAME>
+						<LONG-NAME>ErrorCodeList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-b2038529-8caa-4dd2-a889-6403cb905395"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-9fe648fc-7c5f-4043-bd7a-3831ad354163" OID="id-9fe648fc-7c5f-4043-bd7a-3831ad354163">
+				<SHORT-NAME>GENERATE_ETHERNET_TOPOLOGY</SHORT-NAME>
+				<LONG-NAME>MCD3_GenerateEthernetTopology</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.009.000</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_GenerateEthernetTopology</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>MODE</SHORT-NAME>
+						<LONG-NAME>Mode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>PARALLEL_FLASH_MODE_TYPE_4_ENABLED</SHORT-NAME>
+						<LONG-NAME>PARALLEL_FLASH_MODE_TYPE_4_ENABLED</LONG-NAME>
+            <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+						<DOP-BASE-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-7a20b8bc-6815-4932-b819-0a37e5a4cb9c" OID="id-7a20b8bc-6815-4932-b819-0a37e5a4cb9c">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-15afd2fd-4561-44c2-9d69-6cc2613bb1f0" OID="id-15afd2fd-4561-44c2-9d69-6cc2613bb1f0">
+						<SHORT-NAME>IP_CONFIG_LIST</SHORT-NAME>
+						<LONG-NAME>IPConfigList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-82158f41-e919-4786-a04e-98fb427d8c84"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-ae1a0632-fa6d-49a6-ac47-8b8aeb3d4d6f" OID="id-ae1a0632-fa6d-49a6-ac47-8b8aeb3d4d6f">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-8cbd5be3-5699-45a8-8bb0-dd4d5fc67a08" OID="id-8cbd5be3-5699-45a8-8bb0-dd4d5fc67a08">
+				<SHORT-NAME>DELAYED_RESET</SHORT-NAME>
+				<LONG-NAME>MCD3_DelayedReset</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>005.000.002</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_DelayedReset</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>DELAYED_RESET_ECU_LIST</SHORT-NAME>
+						<LONG-NAME>ListOfECUsWithDelayedReset</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-c6bb81cd-de29-4866-b547-6c3da3653e6a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-6a8aaac6-15b4-4526-a593-71edeedb323a" OID="id-6a8aaac6-15b4-4526-a593-71edeedb323a">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-88bdbe3a-960b-4e4c-a931-d490a06a7d1a" OID="id-88bdbe3a-960b-4e4c-a931-d490a06a7d1a">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-f7bbba62-cee4-453e-9cb9-3f663b243f99" OID="id-f7bbba62-cee4-453e-9cb9-3f663b243f99">
+				<SHORT-NAME>REQUEST_OBD_RELEVANT_DATA</SHORT-NAME>
+				<LONG-NAME>MCD3_RequestOBDRelevantData</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.009.000</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_RequestOBDRelevantData</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IEL</SHORT-NAME>
+						<LONG-NAME>InstalledEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>OBDEL</SHORT-NAME>
+						<LONG-NAME>OBDEcuList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-8bb37d6f-d6c6-4b56-9208-95e8d1b2a8ec" OID="id-8bb37d6f-d6c6-4b56-9208-95e8d1b2a8ec">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-73f7f27d-329c-492d-834d-0546f4ee1495" OID="id-73f7f27d-329c-492d-834d-0546f4ee1495">
+						<SHORT-NAME>OBD_CONFIG_LIST</SHORT-NAME>
+						<LONG-NAME>OBDConfigList</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-75ee7553-464e-4273-a830-9ac293db8b21"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-c1f74b8a-37dc-4078-bfea-af13b15927cd" OID="id-c1f74b8a-37dc-4078-bfea-af13b15927cd">
+				<SHORT-NAME>MCD3_IDR_BACKUP</SHORT-NAME>
+				<LONG-NAME>MCD3_IDR_backup</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>005.015.000</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.idr.MCD3_IDR_backup</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BACKUP_DIRECTORY</SHORT-NAME>
+						<LONG-NAME>BackupDirectory</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-b7cc29fd-863e-4dec-893f-71afeaaab8d3" OID="id-b7cc29fd-863e-4dec-893f-71afeaaab8d3">
+						<SHORT-NAME>FAILED_MEMORY_OBJECT_IDS</SHORT-NAME>
+						<LONG-NAME>Failed memory object IDs</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-5b1aa07a-a385-4249-a635-3e7ef577b36a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-8c1c5a7e-277e-4356-a32a-e896e1fd1179" OID="id-8c1c5a7e-277e-4356-a32a-e896e1fd1179">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-bb756c78-9d02-4471-892d-e37a8b3094fa" OID="id-bb756c78-9d02-4471-892d-e37a8b3094fa">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-2da7ffd0-93fd-401c-8ea6-079f07072b43" OID="id-2da7ffd0-93fd-401c-8ea6-079f07072b43">
+				<SHORT-NAME>MCD3_IDR_RESTORE</SHORT-NAME>
+				<LONG-NAME>MCD3_IDR_restore</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>005.015.000</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.idr.MCD3_IDR_restore</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BACKUP_FILE_NAMES</SHORT-NAME>
+						<LONG-NAME>Backup file names</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-9ef8ad7b-b1f4-4cd9-81aa-5bedd358816b"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-c146e653-7da5-43bb-ab1e-bc96d635ed19" OID="id-c146e653-7da5-43bb-ab1e-bc96d635ed19">
+						<SHORT-NAME>FAILED_MEMORY_OBJECT_IDS</SHORT-NAME>
+						<LONG-NAME>Failed memory object IDs</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-5b1aa07a-a385-4249-a635-3e7ef577b36a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-eb9d5308-ebc3-4df7-9d6f-6af080965877" OID="id-eb9d5308-ebc3-4df7-9d6f-6af080965877">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-e9f95940-c07f-4ad3-80bc-51ce04079208" OID="id-e9f95940-c07f-4ad3-80bc-51ce04079208">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-bfbcd312-79ea-4603-a296-d87e1c0680db" OID="id-bfbcd312-79ea-4603-a296-d87e1c0680db">
+				<SHORT-NAME>PREPARE_BACKUP</SHORT-NAME>
+				<LONG-NAME>MCD3_PrepareBackup</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.009.006</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.idr.MCD3_PrepareBackup</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-0164c667-5f6f-4e87-9e7f-2a60f3c63e89" OID="id-0164c667-5f6f-4e87-9e7f-2a60f3c63e89">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-5658d0e4-e925-479f-8b1e-e6ab51aa1332" OID="id-5658d0e4-e925-479f-8b1e-e6ab51aa1332">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-e0f1a89a-a41a-4693-9999-95ffd55c1ded" OID="id-e0f1a89a-a41a-4693-9999-95ffd55c1ded">
+				<SHORT-NAME>FINALIZE_BACKUP</SHORT-NAME>
+				<LONG-NAME>MCD3_FinalizeBackup</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.009.006</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.idr.MCD3_FinalizeBackup</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-d25a8b8e-609a-4fdb-9a74-461e13463405" OID="id-d25a8b8e-609a-4fdb-9a74-461e13463405">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-d5202482-2cbb-438e-8285-88c2495f1362" OID="id-d5202482-2cbb-438e-8285-88c2495f1362">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-1ecabd18-5562-4c88-a13b-1358043fb9ee" OID="id-1ecabd18-5562-4c88-a13b-1358043fb9ee">
+				<SHORT-NAME>PREPARE_ID_RESTORE</SHORT-NAME>
+				<LONG-NAME>MCD3_PrepareIDRestore</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.009.006</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.idr.MCD3_PrepareIDRestore</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-f5786801-0374-4090-85ab-210170d5baff" OID="id-f5786801-0374-4090-85ab-210170d5baff">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-6cad172d-84cd-41be-8471-d07bd0a7eab4" OID="id-6cad172d-84cd-41be-8471-d07bd0a7eab4">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-3443e296-3042-4c39-a475-cf42b2571549" OID="id-3443e296-3042-4c39-a475-cf42b2571549">
+				<SHORT-NAME>FINALIZE_ID_RESTORE</SHORT-NAME>
+				<LONG-NAME>MCD3_FinalizeIDRestore</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.009.006</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.idr.MCD3_FinalizeIDRestore</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-fab11cdf-200b-4226-9e86-1ac552358a22" OID="id-fab11cdf-200b-4226-9e86-1ac552358a22">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-c66e739b-40a9-4db2-9e13-5074fb2f7982" OID="id-c66e739b-40a9-4db2-9e13-5074fb2f7982">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-27a2f9ff-12e9-4a1b-8694-252896a71bcc" OID="id-27a2f9ff-12e9-4a1b-8694-252896a71bcc">
+				<SHORT-NAME>RESET_ECU_NEW</SHORT-NAME>
+				<LONG-NAME>MCD3_ResetECU</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>004.009.006</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.reset.MCD3_ResetECU</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>GW_ECU</SHORT-NAME>
+						<LONG-NAME>GatewayECU</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-39e307a5-e222-4675-bed3-48e8af3a8187"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>RESET_ECU</SHORT-NAME>
+						<LONG-NAME>ECUtobeResetted</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-39e307a5-e222-4675-bed3-48e8af3a8187"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>IS_BLU</SHORT-NAME>
+						<LONG-NAME>ResetAfterBTLD</LONG-NAME>
+						<DESC><p>Reset after BTLD Update 0: false (no), 1: true (yes)</p></DESC>
+						<DOP-BASE-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-b38312aa-b232-45e6-b6d9-7fbd86c0c663" OID="id-b38312aa-b232-45e6-b6d9-7fbd86c0c663">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-ef76feec-09cc-4652-9f62-e6123645a848" OID="id-ef76feec-09cc-4652-9f62-e6123645a848">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-4c6b9d23-2d70-4ddf-a81a-c28887c9d65d" OID="id-4c6b9d23-2d70-4ddf-a81a-c28887c9d65d">
+				<SHORT-NAME>SWITCH_IPECU_TO_PS</SHORT-NAME>
+				<LONG-NAME>MCD3_SwitchIPEcuToPS</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>001.001.004</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_SwitchIPEcuToPS</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>GW_ECU</SHORT-NAME>
+						<LONG-NAME>GatewayECU</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-39e307a5-e222-4675-bed3-48e8af3a8187"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>SWITCH_ECU</SHORT-NAME>
+						<LONG-NAME>ECUtobeSwitched</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-39e307a5-e222-4675-bed3-48e8af3a8187"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-cc88a165-11e4-44c5-ace7-a3d1d62a9ccb" OID="id-cc88a165-11e4-44c5-ace7-a3d1d62a9ccb">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-2a90d97c-f47d-4f57-a886-08593450431b" OID="id-2a90d97c-f47d-4f57-a886-08593450431b">
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+			<MULTIPLE-ECU-JOB ID="id-1ff79802-cbed-4ff8-99d9-dbfc203f0f57" OID="id-1ff79802-cbed-4ff8-99d9-dbfc203f0f57">
+				<SHORT-NAME>GET_SWID_FUNCTIONAL</SHORT-NAME>
+				<LONG-NAME>MCD3_GetSWIDFunctionalSWT</LONG-NAME>
+				<FUNCT-CLASS-REFS>
+					<FUNCT-CLASS-REF ID-REF="id-e86e68dd-3565-4087-9994-6627f12f74c0"/>
+				</FUNCT-CLASS-REFS>
+				<PROG-CODES>
+					<PROG-CODE>
+						<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+						<SYNTAX>JAR</SYNTAX>
+						<REVISION>005.000.005</REVISION>
+						<ENTRYPOINT>com.bmw.psdz.jobs.common.MCD3_GetSWIDFunctionalSWT</ENTRYPOINT>
+					</PROG-CODE>
+				</PROG-CODES>
+				<INPUT-PARAMS>
+					<INPUT-PARAM>
+						<SHORT-NAME>BUSNAME</SHORT-NAME>
+						<LONG-NAME>BusName</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</INPUT-PARAM>
+					<INPUT-PARAM>
+						<SHORT-NAME>CP</SHORT-NAME>
+						<LONG-NAME>CommunicationParams</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34"/>
+					</INPUT-PARAM>
+				</INPUT-PARAMS>
+				<OUTPUT-PARAMS>
+					<OUTPUT-PARAM ID="id-2cee8055-abbe-4b73-ac80-6ac46e39fda3" OID="id-2cee8055-abbe-4b73-ac80-6ac46e39fda3">
+						<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+						<LONG-NAME>PosRespMessage</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-8941902f-8393-4d73-bc80-26b056e14519" OID="id-8941902f-8393-4d73-bc80-26b056e14519">
+						<SHORT-NAME>ROUTINE_STATUS</SHORT-NAME>
+						<LONG-NAME>GesamtRueckgabeStatus</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</OUTPUT-PARAM>
+					<OUTPUT-PARAM ID="id-945b1161-d9e5-4b0d-b9b9-d5bd9514ec6b" OID="id-945b1161-d9e5-4b0d-b9b9-d5bd9514ec6b">
+						<SHORT-NAME>SGID_LIST</SHORT-NAME>
+						<LONG-NAME>List of SGs with SWIDs</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-b01f16d9-e388-4c82-8903-47bd3c3ceb0e"/>
+					</OUTPUT-PARAM>
+				</OUTPUT-PARAMS>
+				<NEG-OUTPUT-PARAMS>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+						<LONG-NAME>ErrorCode</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+						<LONG-NAME>ErrorDescription</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+						<LONG-NAME>ErrorSeverity</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+					</NEG-OUTPUT-PARAM>
+					<NEG-OUTPUT-PARAM>
+						<SHORT-NAME>TP_CONTROL</SHORT-NAME>
+						<LONG-NAME>TesterPresentControl</LONG-NAME>
+						<DOP-BASE-REF ID-REF="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09"/>
+					</NEG-OUTPUT-PARAM>
+				</NEG-OUTPUT-PARAMS>
+				<DIAG-LAYER-REFS>
+					<DIAG-LAYER-REF ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS" DOCTYPE="LAYER"/>
+				</DIAG-LAYER-REFS>
+				<AUDIENCE/>
+			</MULTIPLE-ECU-JOB>
+		</MULTIPLE-ECU-JOBS>
+		<DIAG-DATA-DICTIONARY-SPEC>
+			<ADMIN-DATA/>
+			<DATA-OBJECT-PROPS>
+				<DATA-OBJECT-PROP ID="id-28f16503-0b93-46d4-81e7-01350e2d1b8a" OID="id-28f16503-0b93-46d4-81e7-01350e2d1b8a">
+					<SHORT-NAME>STRING_IDENTICAL_DOP</SHORT-NAME>
+					<LONG-NAME>Identical function for strings</LONG-NAME>
+					<COMPU-METHOD>
+						<CATEGORY>IDENTICAL</CATEGORY>
+					</COMPU-METHOD>
+					<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UNICODE2STRING" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+						<MIN-LENGTH>0</MIN-LENGTH>
+					</DIAG-CODED-TYPE>
+					<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+				</DATA-OBJECT-PROP>
+				<DATA-OBJECT-PROP ID="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c" OID="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c">
+					<SHORT-NAME>UINT32_IDENTICAL_DOP</SHORT-NAME>
+					<LONG-NAME>Identical function for 4 byte unsigned integers</LONG-NAME>
+					<COMPU-METHOD>
+						<CATEGORY>IDENTICAL</CATEGORY>
+					</COMPU-METHOD>
+					<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+						<BIT-LENGTH>32</BIT-LENGTH>
+					</DIAG-CODED-TYPE>
+					<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+				</DATA-OBJECT-PROP>
+				<DATA-OBJECT-PROP ID="id-e44fa8f7-1942-43ac-90cc-7703efb619af" OID="id-e44fa8f7-1942-43ac-90cc-7703efb619af">
+					<SHORT-NAME>INT32_IDENTICAL_DOP</SHORT-NAME>
+					<LONG-NAME>Identical function for 4 byte integers</LONG-NAME>
+					<COMPU-METHOD>
+						<CATEGORY>IDENTICAL</CATEGORY>
+					</COMPU-METHOD>
+					<DIAG-CODED-TYPE BASE-DATA-TYPE="A_INT32" xsi:type="STANDARD-LENGTH-TYPE">
+						<BIT-LENGTH>32</BIT-LENGTH>
+					</DIAG-CODED-TYPE>
+					<PHYSICAL-TYPE BASE-DATA-TYPE="A_INT32"/>
+				</DATA-OBJECT-PROP>
+				<DATA-OBJECT-PROP ID="id-2c8db0dc-17eb-40c5-a37f-079f4d427b01" OID="id-2c8db0dc-17eb-40c5-a37f-079f4d427b01">
+					<SHORT-NAME>BYTEF_IDENTICAL_DOP</SHORT-NAME>
+					<LONG-NAME>Identical function for byte fields</LONG-NAME>
+					<COMPU-METHOD>
+						<CATEGORY>IDENTICAL</CATEGORY>
+					</COMPU-METHOD>
+					<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+						<MAX-LENGTH>4294967295</MAX-LENGTH>
+						<MIN-LENGTH>0</MIN-LENGTH>
+					</DIAG-CODED-TYPE>
+					<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+				</DATA-OBJECT-PROP>
+				<DATA-OBJECT-PROP ID="id-ac55a6ff-914a-4fad-a3c5-6ce08e93f942" OID="id-ac55a6ff-914a-4fad-a3c5-6ce08e93f942">
+					<SHORT-NAME>GetParamIdN11_DOP</SHORT-NAME>
+					<LONG-NAME>GetParameterId N11 DOP</LONG-NAME>
+					<COMPU-METHOD>
+						<CATEGORY>TEXTTABLE</CATEGORY>
+						<COMPU-INTERNAL-TO-PHYS>
+							<COMPU-SCALES>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_ID_VERSION</SHORT-LABEL>
+									<LOWER-LIMIT>1</LOWER-LIMIT>
+									<UPPER-LIMIT>1</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>1</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_ID_Version</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_FSCSM_KK</SHORT-LABEL>
+									<LOWER-LIMIT>32</LOWER-LIMIT>
+									<UPPER-LIMIT>32</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>32</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_FsCSM_KK</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_FSCSM_VK</SHORT-LABEL>
+									<LOWER-LIMIT>33</LOWER-LIMIT>
+									<UPPER-LIMIT>33</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>33</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_FsCSM_VK</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_PAIRING_CHECK</SHORT-LABEL>
+									<LOWER-LIMIT>34</LOWER-LIMIT>
+									<UPPER-LIMIT>34</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>34</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_PairingCheck</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_F30_EXISTS</SHORT-LABEL>
+									<LOWER-LIMIT>64</LOWER-LIMIT>
+									<UPPER-LIMIT>64</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>64</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_F30_exists</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_F50_EXISTS</SHORT-LABEL>
+									<LOWER-LIMIT>65</LOWER-LIMIT>
+									<UPPER-LIMIT>65</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>65</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_F50_exists</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_F71_EXISTS</SHORT-LABEL>
+									<LOWER-LIMIT>66</LOWER-LIMIT>
+									<UPPER-LIMIT>66</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>66</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_F71_exists</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_F300_EXISTS</SHORT-LABEL>
+									<LOWER-LIMIT>67</LOWER-LIMIT>
+									<UPPER-LIMIT>67</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>67</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_F300_exists</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_F12_EXISTS</SHORT-LABEL>
+									<LOWER-LIMIT>68</LOWER-LIMIT>
+									<UPPER-LIMIT>68</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>68</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_F12_exists</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_F14_EXISTS</SHORT-LABEL>
+									<LOWER-LIMIT>69</LOWER-LIMIT>
+									<UPPER-LIMIT>69</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>69</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_F14_exists</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_F15_EXISTS</SHORT-LABEL>
+									<LOWER-LIMIT>70</LOWER-LIMIT>
+									<UPPER-LIMIT>70</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>70</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_F15_exists</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_GETKEY_EXISTS</SHORT-LABEL>
+									<LOWER-LIMIT>71</LOWER-LIMIT>
+									<UPPER-LIMIT>71</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>71</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_GetKey_exists</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_BLOCKENCRYPT_EXISTS</SHORT-LABEL>
+									<LOWER-LIMIT>72</LOWER-LIMIT>
+									<UPPER-LIMIT>72</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>72</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_BlockEncrypt_exists</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_BLOCKDECRYPT_EXISTS</SHORT-LABEL>
+									<LOWER-LIMIT>73</LOWER-LIMIT>
+									<UPPER-LIMIT>73</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>73</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_BlockDecrypt_exists</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_SIGNMESSAGE_EXISTS</SHORT-LABEL>
+									<LOWER-LIMIT>74</LOWER-LIMIT>
+									<UPPER-LIMIT>74</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>74</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_SignMessage_exists</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_VERIFYMESSAGE_EXISTS</SHORT-LABEL>
+									<LOWER-LIMIT>75</LOWER-LIMIT>
+									<UPPER-LIMIT>75</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>75</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_VerifyMessage_exists</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+								<COMPU-SCALE>
+									<SHORT-LABEL>PARAM_ALL</SHORT-LABEL>
+									<LOWER-LIMIT>127</LOWER-LIMIT>
+									<UPPER-LIMIT>127</UPPER-LIMIT>
+									<COMPU-INVERSE-VALUE>
+										<V>127</V>
+									</COMPU-INVERSE-VALUE>
+									<COMPU-CONST>
+										<VT>Param_all</VT>
+									</COMPU-CONST>
+								</COMPU-SCALE>
+							</COMPU-SCALES>
+						</COMPU-INTERNAL-TO-PHYS>
+					</COMPU-METHOD>
+					<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+						<BIT-LENGTH>8</BIT-LENGTH>
+					</DIAG-CODED-TYPE>
+					<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+					<INTERNAL-CONSTR>
+						<LOWER-LIMIT>1</LOWER-LIMIT>
+						<UPPER-LIMIT>127</UPPER-LIMIT>
+						<SCALE-CONSTRS>
+							<SCALE-CONSTR VALIDITY="NOT-DEFINED">
+								<SHORT-LABEL>PARAMS_RESERVED_02_20</SHORT-LABEL>
+								<LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+								<UPPER-LIMIT INTERVAL-TYPE="CLOSED">32</UPPER-LIMIT>
+							</SCALE-CONSTR>
+							<SCALE-CONSTR VALIDITY="NOT-DEFINED">
+								<SHORT-LABEL>PARAMS_RESERVED_23_3F</SHORT-LABEL>
+								<LOWER-LIMIT INTERVAL-TYPE="CLOSED">35</LOWER-LIMIT>
+								<UPPER-LIMIT INTERVAL-TYPE="CLOSED">63</UPPER-LIMIT>
+							</SCALE-CONSTR>
+							<SCALE-CONSTR VALIDITY="NOT-DEFINED">
+								<SHORT-LABEL>PARAMS_RESERVED_4C_7E</SHORT-LABEL>
+								<LOWER-LIMIT INTERVAL-TYPE="CLOSED">76</LOWER-LIMIT>
+								<UPPER-LIMIT INTERVAL-TYPE="CLOSED">126</UPPER-LIMIT>
+							</SCALE-CONSTR>
+						</SCALE-CONSTRS>
+					</INTERNAL-CONSTR>
+				</DATA-OBJECT-PROP>
+			</DATA-OBJECT-PROPS>
+			<STRUCTURES>
+				<STRUCTURE ID="id-e58ff051-f59b-4e71-ae49-baf527e2ed06" OID="id-e58ff051-f59b-4e71-ae49-baf527e2ed06" IS-VISIBLE="true">
+					<SHORT-NAME>COMPARAM_STRUCT</SHORT-NAME>
+					<LONG-NAME>ComParam</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>CPK</SHORT-NAME>
+							<LONG-NAME>ComParamKey</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>CPV</SHORT-NAME>
+							<LONG-NAME>ComParamValue</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-5caa32a0-2c72-11e5-a2cb-0800200c9a66" OID="id-5caa32a0-2c72-11e5-a2cb-0800200c9a66" IS-VISIBLE="true">
+					<SHORT-NAME>ECU_ROE_STRUCT</SHORT-NAME>
+					<LONG-NAME>ROE failed ECUs</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+            <PARAM xsi:type="VALUE">
+               <SHORT-NAME>BV</SHORT-NAME>
+               <LONG-NAME>BaseVariant</LONG-NAME>
+               <DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+            </PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-39e307a5-e222-4675-bed3-48e8af3a8187" OID="id-39e307a5-e222-4675-bed3-48e8af3a8187" IS-VISIBLE="true">
+					<SHORT-NAME>ECU_STRUCT</SHORT-NAME>
+					<LONG-NAME>ECU</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BV</SHORT-NAME>
+							<LONG-NAME>BaseVariant</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-7c68e0cc-c7ad-4862-82c6-e4cf2055cebf" OID="id-7c68e0cc-c7ad-4862-82c6-e4cf2055cebf" IS-VISIBLE="true">
+					<SHORT-NAME>ECU_PRECOND_STRUCT</SHORT-NAME>
+					<LONG-NAME>ECU</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BV</SHORT-NAME>
+							<LONG-NAME>BaseVariant</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>PRECOND_LIST</SHORT-NAME>
+							<LONG-NAME>ListOfPreCond</LONG-NAME>
+							<DOP-REF ID-REF="id-2141da19-eb7a-4761-bc1d-af089d80f999"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-9beb5ee9-3d4d-4c46-bcb8-631f48c059f2" OID="id-9beb5ee9-3d4d-4c46-bcb8-631f48c059f2" IS-VISIBLE="true">
+					<SHORT-NAME>DELAYED_RESET_ECU_STRUCT</SHORT-NAME>
+					<LONG-NAME>ECU For Delayed Reset</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BV</SHORT-NAME>
+							<LONG-NAME>BaseVariant</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+  					<PARAM xsi:type="VALUE">
+  						<SHORT-NAME>BUSNAME</SHORT-NAME>
+  						<LONG-NAME>BusName</LONG-NAME>
+  						<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+  					</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS_GW</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BV_GW</SHORT-NAME>
+							<LONG-NAME>BaseVariant</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>TCPIP_Address</SHORT-NAME>
+							<LONG-NAME>TCPIP address</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>TCPIP_Port</SHORT-NAME>
+							<LONG-NAME>TCPIP port</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>RESULT_PROG_DEP</SHORT-NAME>
+							<LONG-NAME>ResultProgDepCheck</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-59754853-9fb8-4cea-a124-e4ccd1c23efc" OID="id-59754853-9fb8-4cea-a124-e4ccd1c23efc" IS-VISIBLE="true">
+					<SHORT-NAME>OBDTRIPLE_STRUCT</SHORT-NAME>
+					<LONG-NAME>ECU</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>OBD_IDENTIFIKATOR</SHORT-NAME>
+							<LONG-NAME>OBDIdentifikator</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>SUB_CVN</SHORT-NAME>
+							<LONG-NAME>SubCVN</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>CAL_ID</SHORT-NAME>
+							<LONG-NAME>CalId</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-70db778d-4c6d-45ea-a435-1eba54204238" OID="id-70db778d-4c6d-45ea-a435-1eba54204238" IS-VISIBLE="true">
+					<SHORT-NAME>IPECU_STRUCT</SHORT-NAME>
+					<LONG-NAME>IPECU</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BV</SHORT-NAME>
+							<LONG-NAME>BaseVariant</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BUSNAME</SHORT-NAME>
+							<LONG-NAME>BusName</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>TCPIP_Address</SHORT-NAME>
+							<LONG-NAME>TCPIP address</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>TCPIP_Port</SHORT-NAME>
+							<LONG-NAME>TCPIP port</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>PRIORITY</SHORT-NAME>
+							<LONG-NAME>Priority</LONG-NAME>
+							<DOP-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-f5ecf9aa-10e9-461f-81db-9d823c5f54f3" OID="id-f5ecf9aa-10e9-461f-81db-9d823c5f54f3" IS-VISIBLE="true">
+					<SHORT-NAME>EXT_IPECU_STRUCT</SHORT-NAME>
+					<LONG-NAME>Extended IP Ecu Structure</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BV</SHORT-NAME>
+							<LONG-NAME>BaseVariant</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BUSNAME</SHORT-NAME>
+							<LONG-NAME>BusName</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>TCPIP_Address</SHORT-NAME>
+							<LONG-NAME>TCPIP address</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>TCPIP_Port</SHORT-NAME>
+							<LONG-NAME>TCPIP port</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>PARALLEL_FLASH_MODE_TYPE</SHORT-NAME>
+							<LONG-NAME>ParallelFlashModeType</LONG-NAME>
+							<DOP-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>MODE_CHANGE_PARENT</SHORT-NAME>
+							<LONG-NAME>Mode Change for Parent</LONG-NAME>
+							<DOP-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS_PARENT</SHORT-NAME>
+							<LONG-NAME>Diag Adress Parent</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BV_PARENT</SHORT-NAME>
+							<LONG-NAME>BaseVariant Parent</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-1e953863-27ff-4750-b4c6-bb49cee86ac5" OID="id-1e953863-27ff-4750-b4c6-bb49cee86ac5" IS-VISIBLE="true">
+					<SHORT-NAME>GWECU_STRUCT</SHORT-NAME>
+					<LONG-NAME>GWECU</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BV</SHORT-NAME>
+							<LONG-NAME>BaseVariant</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>URL</SHORT-NAME>
+							<LONG-NAME>URL</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>ECU_LIST</SHORT-NAME>
+							<LONG-NAME>ECUList</LONG-NAME>
+							<DOP-REF ID-REF="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-cea6416c-b1fe-4fbb-8940-146b14954425" OID="id-cea6416c-b1fe-4fbb-8940-146b14954425" IS-VISIBLE="true">
+					<SHORT-NAME>OBDECU_STRUCT</SHORT-NAME>
+					<LONG-NAME>OBDECU</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BV</SHORT-NAME>
+							<LONG-NAME>BaseVariant</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>RESPONSE_STATUS</SHORT-NAME>
+							<LONG-NAME>ResponseStatus</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>OBD_TRIPLE</SHORT-NAME>
+							<LONG-NAME>OBDTriple</LONG-NAME>
+							<DOP-REF ID-REF="id-45b0cb26-9ebf-4f5f-8adc-927d6acb036f"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-f2b0ef2d-1e4a-4a76-b0af-85aba877d7f3" OID="id-f2b0ef2d-1e4a-4a76-b0af-85aba877d7f3" IS-VISIBLE="true">
+					<SHORT-NAME>SVK_STRUCT</SHORT-NAME>
+					<LONG-NAME>SVK</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>SVK</SHORT-NAME>
+							<LONG-NAME>SVK</LONG-NAME>
+							<DOP-REF ID-REF="id-2c8db0dc-17eb-40c5-a37f-079f4d427b01"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-de1d1088-b2fe-43a1-ab18-162ce21c358a" OID="id-de1d1088-b2fe-43a1-ab18-162ce21c358a" IS-VISIBLE="true">
+					<SHORT-NAME>L6DA_STRUCT</SHORT-NAME>
+					<LONG-NAME>L6DiagAddress</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>L6_DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>L6DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-b6791f41-ce0c-479f-bd28-0d88d163240b" OID="id-b6791f41-ce0c-479f-bd28-0d88d163240b" IS-VISIBLE="true">
+					<SHORT-NAME>BN2000DA_STRUCT</SHORT-NAME>
+					<LONG-NAME>BN2000DiagAddress</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BN2000_DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>BN2000DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-5fcfaae3-8716-48bf-addd-cd411e9052a4" OID="id-5fcfaae3-8716-48bf-addd-cd411e9052a4" IS-VISIBLE="true">
+					<SHORT-NAME>ECU_ID_ITEM_STRUCT</SHORT-NAME>
+					<LONG-NAME>ECUIdentItem</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>ICR</SHORT-NAME>
+							<LONG-NAME>identCheckResult</LONG-NAME>
+							<DOP-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>CHANGE_IDX</SHORT-NAME>
+							<LONG-NAME>changeIndex</LONG-NAME>
+							<DOP-REF ID-REF="id-2c8db0dc-17eb-40c5-a37f-079f4d427b01"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>HN</SHORT-NAME>
+							<LONG-NAME>hardwareNumber</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>HR</SHORT-NAME>
+							<LONG-NAME>hardwareReference</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>ZBNR</SHORT-NAME>
+							<LONG-NAME>ZBNR</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>COD_IDX</SHORT-NAME>
+							<LONG-NAME>codingIndex</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>PRGREF</SHORT-NAME>
+							<LONG-NAME>PrgRef</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DATAREF_DATAVERSION</SHORT-NAME>
+							<LONG-NAME>dataRef.dataVersion</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DATAREF_PROGVERSIONAUTHOR</SHORT-NAME>
+							<LONG-NAME>dataRef.programVersionAuthor</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DATAREF_PRGREF_PRGVERSION</SHORT-NAME>
+							<LONG-NAME>dataRef.prgRef.prgVersion</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DATAREF_PRGREF_PROJECTVARIANT</SHORT-NAME>
+							<LONG-NAME>dataRef.prgRef.projectVariant</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DATAREF_PRGREF_HWREF_HWSUPPLIER</SHORT-NAME>
+							<LONG-NAME>dataRef.prgRef.hwRef.hwSupplier</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DATAREF_PRGREF_HWREF_HWVERSION</SHORT-NAME>
+							<LONG-NAME>dataRef.prgRef.hwRef.hwVersion</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>PROG_STATE</SHORT-NAME>
+							<LONG-NAME>programmingStatus</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-7676cc7d-680c-4189-b23b-b35260d41e32" OID="id-7676cc7d-680c-4189-b23b-b35260d41e32" IS-VISIBLE="true">
+					<SHORT-NAME>UDS_ITEM_STRUCT</SHORT-NAME>
+					<LONG-NAME>structure to hold UDS data for the creation of a SVT</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>SVK</SHORT-NAME>
+							<LONG-NAME>SVK</LONG-NAME>
+							<DOP-REF ID-REF="id-2c8db0dc-17eb-40c5-a37f-079f4d427b01"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>RTSVKR</SHORT-NAME>
+							<LONG-NAME>RespondedToSVKRead</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>CISVT</SHORT-NAME>
+							<LONG-NAME>ContainedInSVT</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-1d2aff43-b4f0-4ed5-b474-0fd1b559a8d7" OID="id-1d2aff43-b4f0-4ed5-b474-0fd1b559a8d7" IS-VISIBLE="true">
+					<SHORT-NAME>KWP_ITEM_STRUCT</SHORT-NAME>
+					<LONG-NAME>structure to hold KWP data for the creation of a SVT</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>ECUIP</SHORT-NAME>
+							<LONG-NAME>ECUIdentParam</LONG-NAME>
+							<DOP-REF ID-REF="id-5fcfaae3-8716-48bf-addd-cd411e9052a4"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>RTSVKR</SHORT-NAME>
+							<LONG-NAME>RespondedToSVKRead</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>CISVT</SHORT-NAME>
+							<LONG-NAME>ContainedInSVT</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-c37a01fc-f7cc-44fd-b6a5-ce8072415ac2" OID="id-c37a01fc-f7cc-44fd-b6a5-ce8072415ac2" IS-VISIBLE="true">
+					<SHORT-NAME>CONTEXT_ITEM_STRUCT</SHORT-NAME>
+					<LONG-NAME>structure to hold context data for an ECU</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BV</SHORT-NAME>
+							<LONG-NAME>BaseVariant</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>SN</SHORT-NAME>
+							<LONG-NAME>SerialNumber</LONG-NAME>
+							<DOP-REF ID-REF="id-2c8db0dc-17eb-40c5-a37f-079f4d427b01"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>SGBDID</SHORT-NAME>
+							<LONG-NAME>SGBDID</LONG-NAME>
+							<DOP-REF ID-REF="id-2c8db0dc-17eb-40c5-a37f-079f4d427b01"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>PROGC</SHORT-NAME>
+							<LONG-NAME>ProgrammingCounter</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>AT</SHORT-NAME>
+							<LONG-NAME>AuthenticationTime</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BIT</SHORT-NAME>
+							<LONG-NAME>BootloaderInstallationTime</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>CMT</SHORT-NAME>
+							<LONG-NAME>CheckMemoryTime</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>EMT</SHORT-NAME>
+							<LONG-NAME>EraseMemoryTime</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>RESETTIME</SHORT-NAME>
+							<LONG-NAME>ResetTime</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>MANUFACTURER_ID</SHORT-NAME>
+							<LONG-NAME>ID des ECU Herstellers</LONG-NAME>
+							<DOP-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>MANUFACTURING_DATE</SHORT-NAME>
+							<LONG-NAME>Datum der ECU Herstellung</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>LAST_PROGRAMMING_DATE</SHORT-NAME>
+							<LONG-NAME>Datum der letzten Programmierung</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>PERFORMED_FLASH_CYCLES</SHORT-NAME>
+							<LONG-NAME>Anzahl der für das ECU erfolgten Programmierungen</LONG-NAME>
+							<DOP-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>REMAINING_FLASH_CYCLES</SHORT-NAME>
+							<LONG-NAME>Anzahl der für das ECU erfolgten Programmierungen</LONG-NAME>
+							<DOP-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>FP</SHORT-NAME>
+							<LONG-NAME>Fingerprint Long</LONG-NAME>
+							<DOP-REF ID-REF="id-2c8db0dc-17eb-40c5-a37f-079f4d427b01"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-cd3c55e6-ead2-4339-9ad9-599c1e1738dd" OID="id-cd3c55e6-ead2-4339-9ad9-599c1e1738dd" IS-VISIBLE="true">
+					<SHORT-NAME>FETRAFLA_ECU_STRUCT</SHORT-NAME>
+					<LONG-NAME>FeTraFla ECU structure</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>ECU</SHORT-NAME>
+							<LONG-NAME>ECU</LONG-NAME>
+							<DOP-REF ID-REF="id-39e307a5-e222-4675-bed3-48e8af3a8187"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>FETRAFLA_MODE</SHORT-NAME>
+							<LONG-NAME>FeTraFla mode</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-1bdbc121-ddb7-40ff-9be3-48d5cdae61d3" OID="id-1bdbc121-ddb7-40ff-9be3-48d5cdae61d3" IS-VISIBLE="true">
+					<SHORT-NAME>FLASHPREREQ_STRUCT</SHORT-NAME>
+					<LONG-NAME>FlashPreReq structure</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>ECU</SHORT-NAME>
+							<LONG-NAME>ECU</LONG-NAME>
+							<DOP-REF ID-REF="id-39e307a5-e222-4675-bed3-48e8af3a8187"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>PREREQ_ECU</SHORT-NAME>
+							<LONG-NAME>FlashPreReq ECU</LONG-NAME>
+							<DOP-REF ID-REF="id-39e307a5-e222-4675-bed3-48e8af3a8187"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-fb3cc6f6-3c15-4253-8da6-defc7d7d0218" OID="id-fb3cc6f6-3c15-4253-8da6-defc7d7d0218" IS-VISIBLE="true">
+					<SHORT-NAME>FAILED_PRECOND_STRUCT</SHORT-NAME>
+					<LONG-NAME>Failed Preconditions structure</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BV</SHORT-NAME>
+							<LONG-NAME>Basevariant</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>Diagnose Address</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+							<LONG-NAME>Error Message</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-c72d1d33-2881-42db-9ab1-d4f89abf03d7" OID="id-c72d1d33-2881-42db-9ab1-d4f89abf03d7" IS-VISIBLE="true">
+					<SHORT-NAME>SERIAL_STRUCT</SHORT-NAME>
+					<LONG-NAME>List of serials per ECU</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>SERIAL</SHORT-NAME>
+							<LONG-NAME>SerialNumber</LONG-NAME>
+							<DOP-REF ID-REF="id-2c8db0dc-17eb-40c5-a37f-079f4d427b01"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-b7a7d1dd-d963-4335-99f2-8ec53b561fe0" OID="id-b7a7d1dd-d963-4335-99f2-8ec53b561fe0" IS-VISIBLE="true">
+					<SHORT-NAME>MSM_N11_DATA_FSCSM_STRUCT</SHORT-NAME>
+					<LONG-NAME>MSM N11 Data FsCSM</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>PARAMETER_ID</SHORT-NAME>
+							<LONG-NAME>Parameter ID</LONG-NAME>
+							<BYTE-POSITION>0</BYTE-POSITION>
+							<DOP-REF ID-REF="id-ac55a6ff-914a-4fad-a3c5-6ce08e93f942"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>FSCSM_ID</SHORT-NAME>
+							<LONG-NAME>FsCSM ID</LONG-NAME>
+							<BYTE-POSITION>1</BYTE-POSITION>
+							<DOP-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-759d5d2a-50b3-4232-9dbd-0d21e59b72e6"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>PARAM_VALUE</SHORT-NAME>
+							<LONG-NAME>Parameter Value</LONG-NAME>
+							<BYTE-POSITION>2</BYTE-POSITION>
+							<DOP-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-759d5d2a-50b3-4232-9dbd-0d21e59b72e6"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-ecc335ad-15d2-4d56-896f-7c55b7128c6b" OID="id-ecc335ad-15d2-4d56-896f-7c55b7128c6b" IS-VISIBLE="true">
+					<SHORT-NAME>ECUERCLIST_STRUCT</SHORT-NAME>
+					<LONG-NAME>ECU Error List Structure</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+							<LONG-NAME>DiagAddress</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>ERC_RESULT</SHORT-NAME>
+							<LONG-NAME>ErrorCodeResult</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09" OID="id-934d7c90-a9b7-4ae4-baab-ae3fe8d67e09" IS-VISIBLE="true">
+			    <SHORT-NAME>TP_CONTROL_STRUCT</SHORT-NAME>
+			    <LONG-NAME>TPControl</LONG-NAME>
+			    <DESC><p>Structure returned by multiple ECU jobs to control the TesterPresent han-dling</p></DESC>
+			    <PARAMS>
+		        <PARAM xsi:type="VALUE">
+	            <SHORT-NAME>DISABLE_ALL</SHORT-NAME>
+	            <LONG-NAME>DisableAll</LONG-NAME>
+	            <DESC><p>Flag if TesterPresent handling should be disabled for all currently open TP logical links, false if 0</p></DESC>
+	            <PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+	            <DOP-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+		        </PARAM>
+		        <PARAM xsi:type="VALUE">
+	            <SHORT-NAME>DISABLE_LINKS</SHORT-NAME>
+	            <LONG-NAME>DisableLinks</LONG-NAME>
+	            <DESC><p>Disable TP handling for the contained TP_LINK_STRUCT's, ignored if DISABLE_ALL is !=0</p></DESC>
+	            <DOP-REF ID-REF="id-f61ef6f3-d9e6-425a-843e-a367a3bbbe92"/>
+		        </PARAM>
+		        <PARAM xsi:type="VALUE">
+	            <SHORT-NAME>ENABLE_LINKS</SHORT-NAME>
+	            <LONG-NAME>EnableLinks</LONG-NAME>
+	            <DESC><p>Enable TP handling for the contained TP_LINK_STRUCT's, first all links are disabled, then they are enabled</p></DESC>
+	            <DOP-REF ID-REF="id-f61ef6f3-d9e6-425a-843e-a367a3bbbe92"/>
+		        </PARAM>
+			    </PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-3c2790c2-cf3b-4b99-bb93-942c5d6252d6" OID="id-3c2790c2-cf3b-4b99-bb93-942c5d6252d6" IS-VISIBLE="true">
+			    <SHORT-NAME>TP_LINK_STRUCT</SHORT-NAME>
+			    <LONG-NAME>TesterPresentLink</LONG-NAME>
+			    <DESC><p>Structure for describing one logical link used for enabling/disabling TesterPresent handling</p></DESC>
+			    <PARAMS>
+		        <PARAM xsi:type="VALUE">
+	            <SHORT-NAME>LL_NAME</SHORT-NAME>
+	            <LONG-NAME>LogicalLinkName</LONG-NAME>
+	            <DESC><p>Full name of the logical link</p></DESC>
+	            <DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+		        </PARAM>
+		        <PARAM xsi:type="VALUE">
+		          <SHORT-NAME>BUSNAME</SHORT-NAME>
+	            <LONG-NAME>Busname</LONG-NAME>
+		          <DESC><p>Bus for the logical link</p></DESC>
+		          <DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+		        </PARAM>
+			    </PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-3fcc85d0-2b8c-49b8-b399-680910c8c365" OID="id-3fcc85d0-2b8c-49b8-b399-680910c8c365" IS-VISIBLE="true">
+					<SHORT-NAME>SGID_LIST_STRUCT</SHORT-NAME>
+					<LONG-NAME>SGID Liste mit SWIDs</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>SGID</SHORT-NAME>
+							<LONG-NAME>Steuergeraete-ID</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>SGID_ROUTINE_STATUS</SHORT-NAME>
+							<LONG-NAME>RoutineStatus des SGs</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>LIST_OF_SWIDS</SHORT-NAME>
+							<LONG-NAME>Liste der SWIDs</LONG-NAME>
+							<DOP-REF ID-REF="id-83912350-f75d-466c-a8ad-59b1c1b11445"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-567fae76-a275-4f41-9d5c-f6e9d92a9219" OID="id-567fae76-a275-4f41-9d5c-f6e9d92a9219" IS-VISIBLE="true">
+					<SHORT-NAME>SWID_LIST_STRUCT</SHORT-NAME>
+					<LONG-NAME>SWID Liste</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>APPLICATION_NUMBER</SHORT-NAME>
+							<LONG-NAME>Number of the Application</LONG-NAME>
+							<DOP-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+						</PARAM>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>UPGRADE_INDEX</SHORT-NAME>
+							<LONG-NAME>Upgrade Index</LONG-NAME>
+							<DOP-REF ID-REF="id-e44fa8f7-1942-43ac-90cc-7703efb619af"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-91076428-b2c2-41e5-9868-85e193cba9bb" OID="id-91076428-b2c2-41e5-9868-85e193cba9bb" IS-VISIBLE="true">
+					<SHORT-NAME>PRECOND_LIST_STRUCT</SHORT-NAME>
+					<LONG-NAME>PrecOndition Liste</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>PRECONDITION</SHORT-NAME>
+							<LONG-NAME>PreCondition</LONG-NAME>
+							<DOP-REF ID-REF="id-c77b0600-e6c4-4d83-9ebc-0ebeb1f9b28c"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-5b1aa07a-a385-4249-a635-3e7ef577b36a" OID="id-5b1aa07a-a385-4249-a635-3e7ef577b36a" IS-VISIBLE="true">
+					<SHORT-NAME>FAILED_MEMORY_OBJECT_IDS_STRUCT</SHORT-NAME>
+					<LONG-NAME>Liste der MemoryObjectIDs der MemoryObjects</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>MEMORY_OBJECT_IDENTIFIER</SHORT-NAME>
+							<LONG-NAME>Memory Object Identifier</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+				<STRUCTURE ID="id-9ef8ad7b-b1f4-4cd9-81aa-5bedd358816b" OID="id-9ef8ad7b-b1f4-4cd9-81aa-5bedd358816b" IS-VISIBLE="true">
+					<SHORT-NAME>BACKUP_FILE_NAMES_STRUCT</SHORT-NAME>
+					<LONG-NAME>Absolute Pfad der wiederherzustellenden Individualdaten Dateien</LONG-NAME>
+					<PARAMS>
+						<PARAM xsi:type="VALUE">
+							<SHORT-NAME>BACKUP_FILE_NAME</SHORT-NAME>
+							<LONG-NAME>Pfadname der Datei der Backupdaten</LONG-NAME>
+							<DOP-REF ID-REF="id-28f16503-0b93-46d4-81e7-01350e2d1b8a"/>
+						</PARAM>
+					</PARAMS>
+				</STRUCTURE>
+			</STRUCTURES>
+			<END-OF-PDU-FIELDS>
+				<END-OF-PDU-FIELD ID="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34" OID="id-ea6f4d39-e0dd-472b-87a2-44cbadb4dd34" IS-VISIBLE="true">
+					<SHORT-NAME>COMPARAMS_EOPFLD</SHORT-NAME>
+					<LONG-NAME>Comparams</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-e58ff051-f59b-4e71-ae49-baf527e2ed06"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979" OID="id-bdf7be8d-2d0e-4a83-95c4-6d1dde88a979" IS-VISIBLE="true">
+					<SHORT-NAME>ECULIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>InstalledEcuList</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-39e307a5-e222-4675-bed3-48e8af3a8187"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-4486c477-0900-4207-847a-93f5d4b54898" OID="id-4486c477-0900-4207-847a-93f5d4b54898" IS-VISIBLE="true">
+					<SHORT-NAME>ECUPRECOND_EOPFLD</SHORT-NAME>
+					<LONG-NAME>ECU_PRECOND_LIST</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-7c68e0cc-c7ad-4862-82c6-e4cf2055cebf"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-c6bb81cd-de29-4866-b547-6c3da3653e6a" OID="id-c6bb81cd-de29-4866-b547-6c3da3653e6a" IS-VISIBLE="true">
+					<SHORT-NAME>ECULIST_RESET_EOPFLD</SHORT-NAME>
+					<LONG-NAME>InstalledEcuListReset</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-9beb5ee9-3d4d-4c46-bcb8-631f48c059f2"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-45b0cb26-9ebf-4f5f-8adc-927d6acb036f" OID="id-45b0cb26-9ebf-4f5f-8adc-927d6acb036f" IS-VISIBLE="true">
+					<SHORT-NAME>OBDTRIPLE_EOPFLD</SHORT-NAME>
+					<LONG-NAME>OBDTriple List</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-59754853-9fb8-4cea-a124-e4ccd1c23efc"/>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-b1e6547b-f43c-4eb9-a24c-a9f344a4f6aa" OID="id-b1e6547b-f43c-4eb9-a24c-a9f344a4f6aa" IS-VISIBLE="true">
+					<SHORT-NAME>IPECULIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>IPEcuList</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-70db778d-4c6d-45ea-a435-1eba54204238"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-b589cf08-e626-4fc0-b716-1edefc18daf1" OID="id-b589cf08-e626-4fc0-b716-1edefc18daf1" IS-VISIBLE="true">
+					<SHORT-NAME>GWECULIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>GWEcuList</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-1e953863-27ff-4750-b4c6-bb49cee86ac5"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-7b20d27c-c99f-43e1-8726-6dbac4dde55a" OID="id-7b20d27c-c99f-43e1-8726-6dbac4dde55a" IS-VISIBLE="true">
+					<SHORT-NAME>SVKLIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>SVKItems</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-f2b0ef2d-1e4a-4a76-b0af-85aba877d7f3"/>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-9d30f324-a3af-4c07-ad88-27c2f001a52f" OID="id-9d30f324-a3af-4c07-ad88-27c2f001a52f" IS-VISIBLE="true">
+					<SHORT-NAME>L6DALIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>L6DiagAddresses</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-de1d1088-b2fe-43a1-ab18-162ce21c358a"/>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-0ec9ab7c-a5a3-47c4-83e3-f795c3716a3d" OID="id-0ec9ab7c-a5a3-47c4-83e3-f795c3716a3d" IS-VISIBLE="true">
+					<SHORT-NAME>ECU_ID_ITEMS_EOPFLD</SHORT-NAME>
+					<LONG-NAME>ECUIdentItems</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-5fcfaae3-8716-48bf-addd-cd411e9052a4"/>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-d018b422-89a5-4e6d-befa-647d08b7d978" OID="id-d018b422-89a5-4e6d-befa-647d08b7d978" IS-VISIBLE="true">
+					<SHORT-NAME>BN2000DALIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>BN2000DiagAddresses</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-b6791f41-ce0c-479f-bd28-0d88d163240b"/>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-7a866b4e-7388-42dc-a824-7394b2d28ac5" OID="id-7a866b4e-7388-42dc-a824-7394b2d28ac5" IS-VISIBLE="true">
+					<SHORT-NAME>UDS_ITEMS_EOPFLD</SHORT-NAME>
+					<LONG-NAME>UDS Items</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-7676cc7d-680c-4189-b23b-b35260d41e32"/>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-381314fa-a9af-4422-8c5e-0207ebe31d73" OID="id-381314fa-a9af-4422-8c5e-0207ebe31d73" IS-VISIBLE="true">
+					<SHORT-NAME>KWP_ITEMS_EOPFLD</SHORT-NAME>
+					<LONG-NAME>UDS Items</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-1d2aff43-b4f0-4ed5-b474-0fd1b559a8d7"/>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-f04152d9-b4f1-4099-810e-dfe21c7136cf" OID="id-f04152d9-b4f1-4099-810e-dfe21c7136cf" IS-VISIBLE="true">
+					<SHORT-NAME>CONTEXT_ITEMS_EOPFLD</SHORT-NAME>
+					<LONG-NAME>Context Items</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-c37a01fc-f7cc-44fd-b6a5-ce8072415ac2"/>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-cecb2255-629b-4205-a73e-bad2458548b1" OID="id-cecb2255-629b-4205-a73e-bad2458548b1" IS-VISIBLE="true">
+					<SHORT-NAME>FLASHPREREQS_EOPFLD</SHORT-NAME>
+					<LONG-NAME>FlashPreReqs</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-1bdbc121-ddb7-40ff-9be3-48d5cdae61d3"/>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-10b235c6-82c0-40f2-aded-b28869101d86" OID="id-10b235c6-82c0-40f2-aded-b28869101d86" IS-VISIBLE="true">
+					<SHORT-NAME>FETRAFLA_ECUS_EOPFLD</SHORT-NAME>
+					<LONG-NAME>FeTraFla ECUs</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-cd3c55e6-ead2-4339-9ad9-599c1e1738dd"/>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-35562c60-2bd0-11e5-a2cb-0800200c9a66" OID="id-35562c60-2bd0-11e5-a2cb-0800200c9a66" IS-VISIBLE="true">
+					<SHORT-NAME>FAILED_ROE_ECULIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>Failed RoE ECUs</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-5caa32a0-2c72-11e5-a2cb-0800200c9a66"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-5deae6ab-c191-47ad-b7d8-94d68535dc56" OID="id-5deae6ab-c191-47ad-b7d8-94d68535dc56" IS-VISIBLE="true">
+					<SHORT-NAME>FAILED_PRECOND_EOPFLD</SHORT-NAME>
+					<LONG-NAME>ECUs with failed Preconditions</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-fb3cc6f6-3c15-4253-8da6-defc7d7d0218"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-31509fb2-1505-4543-b642-bf3a78c37762" OID="id-31509fb2-1505-4543-b642-bf3a78c37762" IS-VISIBLE="true">
+					<SHORT-NAME>SERIALLIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>ListofSerials each ECU</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-c72d1d33-2881-42db-9ab1-d4f89abf03d7"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-3bd9f97b-cbb7-4620-9954-06853c46cde8" OID="id-3bd9f97b-cbb7-4620-9954-06853c46cde8" IS-VISIBLE="true">
+					<SHORT-NAME>FSCSMLIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>ListofFsCSM Clients</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-39e307a5-e222-4675-bed3-48e8af3a8187"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-a19d54a3-b7af-4b23-96e0-465b035b3306" OID="id-a19d54a3-b7af-4b23-96e0-465b035b3306" IS-VISIBLE="true">
+					<SHORT-NAME>F11PARAMLIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>ListofF11Params each FsCSM</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-b7a7d1dd-d963-4335-99f2-8ec53b561fe0"/>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-b2038529-8caa-4dd2-a889-6403cb905395" OID="id-b2038529-8caa-4dd2-a889-6403cb905395" IS-VISIBLE="true">
+					<SHORT-NAME>ERRORCODELIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>ListofErrorCodes each FsCSM Clients</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-ecc335ad-15d2-4d56-896f-7c55b7128c6b"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-82158f41-e919-4786-a04e-98fb427d8c84" OID="id-82158f41-e919-4786-a04e-98fb427d8c84" IS-VISIBLE="true">
+					<SHORT-NAME>IP_CONFG_LIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>IP Config List</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-f5ecf9aa-10e9-461f-81db-9d823c5f54f3"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-75ee7553-464e-4273-a830-9ac293db8b21" OID="id-75ee7553-464e-4273-a830-9ac293db8b21" IS-VISIBLE="true">
+					<SHORT-NAME>OBD_CONFG_LIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>OBD Config List</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-cea6416c-b1fe-4fbb-8940-146b14954425"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-f61ef6f3-d9e6-425a-843e-a367a3bbbe92" OID="id-f61ef6f3-d9e6-425a-843e-a367a3bbbe92" IS-VISIBLE="true">
+			    <SHORT-NAME>TP_LINK_EOPFLD</SHORT-NAME>
+			    <LONG-NAME>TesterPresentLinkList</LONG-NAME>
+			    <BASIC-STRUCTURE-REF ID-REF="id-3c2790c2-cf3b-4b99-bb93-942c5d6252d6"/>
+			    <MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+			    <MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-b01f16d9-e388-4c82-8903-47bd3c3ceb0e" OID="id-b01f16d9-e388-4c82-8903-47bd3c3ceb0e" IS-VISIBLE="true">
+					<SHORT-NAME>SGID_LIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>List of SWIDs</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-3fcc85d0-2b8c-49b8-b399-680910c8c365"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-83912350-f75d-466c-a8ad-59b1c1b11445" OID="id-83912350-f75d-466c-a8ad-59b1c1b11445" IS-VISIBLE="true">
+					<SHORT-NAME>SWID_LIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>List of SWIDs</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-567fae76-a275-4f41-9d5c-f6e9d92a9219"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+				<END-OF-PDU-FIELD ID="id-2141da19-eb7a-4761-bc1d-af089d80f999" OID="id-2141da19-eb7a-4761-bc1d-af089d80f999" IS-VISIBLE="true">
+					<SHORT-NAME>PRECOND_LIST_EOPFLD</SHORT-NAME>
+					<LONG-NAME>List of PreConditions</LONG-NAME>
+					<BASIC-STRUCTURE-REF ID-REF="id-91076428-b2c2-41e5-9868-85e193cba9bb"/>
+					<MAX-NUMBER-OF-ITEMS>255</MAX-NUMBER-OF-ITEMS>
+					<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+				</END-OF-PDU-FIELD>
+			</END-OF-PDU-FIELDS>
+		</DIAG-DATA-DICTIONARY-SPEC>
+		<FUNCT-CLASSS>
+			<FUNCT-CLASS ID="id-e86e68dd-3565-4087-9994-6627f12f74c0" OID="id-e86e68dd-3565-4087-9994-6627f12f74c0">
+				<SHORT-NAME>PROG</SHORT-NAME>
+				<LONG-NAME>Programming</LONG-NAME>
+			</FUNCT-CLASS>
+			<FUNCT-CLASS ID="id-f52dc28d-1f11-4bb2-992a-412c57abff31" OID="id-f52dc28d-1f11-4bb2-992a-412c57abff31">
+				<SHORT-NAME>COD</SHORT-NAME>
+				<LONG-NAME>Coding</LONG-NAME>
+			</FUNCT-CLASS>
+		</FUNCT-CLASSS>
+	</MULTIPLE-ECU-JOB-SPEC>
+</ODX>

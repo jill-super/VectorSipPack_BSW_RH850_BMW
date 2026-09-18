@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER ID="id-3349fc53-dd4b-4df6-970d-b8976bda8f22" OID="id-3349fc53-dd4b-4df6-970d-b8976bda8f22">
+        <SHORT-NAME>X_AP_DLC</SHORT-NAME>
+        <LONG-NAME>Audioplattform 2.0 </LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT ID="id-aa246aa5-d587-4a56-b5a7-83817534b638" OID="id-aa246aa5-d587-4a56-b5a7-83817534b638">
+                <SHORT-NAME>X_AP</SHORT-NAME>
+                <LONG-NAME>Audioplattform 2.0 </LONG-NAME>
+                <DESC>
+                    <p>X_Audioplattform2 BAC4 codierbar</p>
+                </DESC>
+				<COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

@@ -1,0 +1,2971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<DIAG-LAYER-CONTAINER ID="id-8edb75cd-09bc-45b3-82b5-27f5519ff970" OID="id-8edb75cd-09bc-45b3-82b5-27f5519ff970">
+		<SHORT-NAME>COD_KWP_DLC</SHORT-NAME>
+		<LONG-NAME>COD_KWP_DLC</LONG-NAME>
+		<FUNCTIONAL-GROUPS>
+			<FUNCTIONAL-GROUP ID="id-3e21c7a9-3423-49d4-bfe1-82a613a151f0" OID="id-3e21c7a9-3423-49d4-bfe1-82a613a151f0">
+				<SHORT-NAME>COD_KWP</SHORT-NAME>
+				<LONG-NAME>COD_KWP</LONG-NAME>
+				<ADMIN-DATA>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-495e58e6-7919-42c4-b003-5ad495cbfabc"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<DATE>2006-06-09T17:36:33</DATE>
+							<TOOL>DTS-Venice</TOOL>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>BMW_Steuergeraet</CHANGE>
+									<REASON>Instanz automatisch konvertiert von MCD-2D V1.2.2 nach ODX V2.0.1 mit Venice</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF DOCREF="ISO_14230_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-ef67ab77-4a16-4d1e-a9c2-3ca27263c80d"/>
+							<REVISION-LABEL>001.000.001</REVISION-LABEL>
+							<DATE>2006-11-29T12:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>MCD3_PrepareECUForCoding 001.000.001</CHANGE>
+									<REASON>changed</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF DOCREF="ISO_14230_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f840b968-735f-4527-a1c2-da6031f166e6"/>
+							<REVISION-LABEL>001.000.002</REVISION-LABEL>
+							<DATE>2007-08-02T18:30:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>changed</CHANGE>
+									<REASON>All jobs attached to the functional class "Coding"</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<COMPANY-DATAS>
+					<COMPANY-DATA ID="id-e3e19da8-c2c9-48c5-9d19-a78c240bcffb" OID="id-e3e19da8-c2c9-48c5-9d19-a78c240bcffb">
+						<SHORT-NAME>BMW_COD</SHORT-NAME>
+						<LONG-NAME>Bayerische Motorenwerke</LONG-NAME>
+						<ROLES>
+							<ROLE>MANUFACTURER</ROLE>
+						</ROLES>
+						<TEAM-MEMBERS>
+							<TEAM-MEMBER ID="id-495e58e6-7919-42c4-b003-5ad495cbfabc" OID="id-495e58e6-7919-42c4-b003-5ad495cbfabc">
+								<SHORT-NAME>REINHARD_HALLERMAYER</SHORT-NAME>
+								<LONG-NAME>Reinhard Hallermayer</LONG-NAME>
+								<ROLES>
+									<ROLE>IT</ROLE>
+								</ROLES>
+								<DEPARTMENT>ES-73</DEPARTMENT>
+								<EMAIL>Reinhard.Hallermayer@bmw.de</EMAIL>
+							</TEAM-MEMBER>
+						</TEAM-MEMBERS>
+					</COMPANY-DATA>
+				</COMPANY-DATAS>
+				<FUNCT-CLASSS>
+					<FUNCT-CLASS ID="id-dea99a12-9643-470e-91c8-6c44495de1f2" OID="id-dea99a12-9643-470e-91c8-6c44495de1f2">
+						<SHORT-NAME>COD</SHORT-NAME>
+						<LONG-NAME>Coding</LONG-NAME>
+					</FUNCT-CLASS>
+				</FUNCT-CLASSS>
+				<DIAG-DATA-DICTIONARY-SPEC>
+					<DATA-OBJECT-PROPS>
+						<DATA-OBJECT-PROP ID="id-3f7deb64-8c05-40a5-ac54-9cd38d8164ad" OID="id-3f7deb64-8c05-40a5-ac54-9cd38d8164ad">
+							<SHORT-NAME>RLI_COD_DOP</SHORT-NAME>
+							<LONG-NAME>BMW_RLI_recordLocalIdentifier</LONG-NAME>
+							<DESC>
+								<p>
+the parameter recordLocalIdentifier request message identifies a server (ECU specific local data record. This parameter shall be available in the server's memory. The recordIdentifier value shall either exist in fixed memory or temporarily storedin RAM if defined dynamically by the service dynamicallyDefineLocalIdentifer.
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<LOWER-LIMIT>0</LOWER-LIMIT>
+											<UPPER-LIMIT>0</UPPER-LIMIT>
+											<COMPU-CONST>
+												<VT TI="RBD_00">reservedByDocument 00</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>127</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="RLI_01_7F">recordLocalID 01-7F</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<LOWER-LIMIT>128</LOWER-LIMIT>
+											<UPPER-LIMIT>143</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>128</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="IO">identificationOption</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<LOWER-LIMIT>144</LOWER-LIMIT>
+											<UPPER-LIMIT>144</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>144</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="SVIN">kurzeFahrgestellnummer</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<LOWER-LIMIT>145</LOWER-LIMIT>
+											<UPPER-LIMIT>159</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>145</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="IO_2">identificationOption2</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<LOWER-LIMIT>160</LOWER-LIMIT>
+											<UPPER-LIMIT>239</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>160</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="RLI_A0_EF">recordLocalID A0-EF</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<LOWER-LIMIT>240</LOWER-LIMIT>
+											<UPPER-LIMIT>249</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>240</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="DDDLI_">dynamicallyDefinedLocalID</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<LOWER-LIMIT>250</LOWER-LIMIT>
+											<UPPER-LIMIT>254</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>250</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="SSS">systemSupplierSpecific</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<LOWER-LIMIT>255</LOWER-LIMIT>
+											<UPPER-LIMIT>255</UPPER-LIMIT>
+											<COMPU-CONST>
+												<VT TI="RBD_FF">reservedByDocument FF</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+									<COMPU-DEFAULT-VALUE>
+										<VT TI="NOTDEFINED">not defined</VT>
+									</COMPU-DEFAULT-VALUE>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-3731afce-5ad4-4204-ac42-f926150c6a9b" OID="id-3731afce-5ad4-4204-ac42-f926150c6a9b">
+							<SHORT-NAME>RCI_COD_DOP</SHORT-NAME>
+							<LONG-NAME>BMW_RCI_recordCommonIdentifier</LONG-NAME>
+							<DESC>
+								<p>
+The parameter recordCommonIdentifier (RCI_) in the readDataByCommonIdentifier service identifies a data record which is supported by multiple servers
+                  The purpose of common identifiers is to reference a unique parameter with the sam value accross multiple serves (ECUs) within a vehicle manufacturer.
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_INT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>16</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_INT32"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>12288</LOWER-LIMIT>
+								<UPPER-LIMIT>16127</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-5584bc9a-18d3-466d-a7eb-6f924b72bf6e" OID="id-5584bc9a-18d3-466d-a7eb-6f924b72bf6e">
+							<SHORT-NAME>KSBP_COD_DOP</SHORT-NAME>
+							<LONG-NAME>kmStandBeiProgrammierung</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>LINEAR</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<COMPU-RATIONAL-COEFFS>
+												<COMPU-NUMERATOR>
+													<V>0</V>
+													<V>600</V>
+												</COMPU-NUMERATOR>
+												<COMPU-DENOMINATOR>
+													<V>1</V>
+												</COMPU-DENOMINATOR>
+											</COMPU-RATIONAL-COEFFS>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+							<UNIT-REF DOCREF="UNITS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-fa56c998-fe48-4c40-a2f9-a2b726d1c10d"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-f16e1d0c-69de-4b49-909e-becb31e5d3de" OID="id-f16e1d0c-69de-4b49-909e-becb31e5d3de">
+							<SHORT-NAME>FA_COD_DOP</SHORT-NAME>
+							<LONG-NAME>Fahrzeugauftrag</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_ASCIISTRING" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MIN-LENGTH>1</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-bc4f0fef-7eac-4c16-9f20-af2a0ec71462" OID="id-bc4f0fef-7eac-4c16-9f20-af2a0ec71462">
+							<SHORT-NAME>VMECUVN_COD_DOP</SHORT-NAME>
+							<LONG-NAME>BMW_vehicleManufacturerECUhardwareVersionNumber</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-95f4dfdf-ab78-4d7a-9f37-e6aa6ece4744" OID="id-95f4dfdf-ab78-4d7a-9f37-e6aa6ece4744">
+							<SHORT-NAME>VMCI_COD_DOP</SHORT-NAME>
+							<LONG-NAME>BMW_vehicleManufacturerCodingIndex</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-7f6eadf5-d33f-4fc1-919a-91f429163ec0" OID="id-7f6eadf5-d33f-4fc1-919a-91f429163ec0">
+							<SHORT-NAME>VMDI_COD_DOP</SHORT-NAME>
+							<LONG-NAME>BMW_vehicleManufacturerDiagnosticIndex</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>16</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-5b8cf8c9-7b15-4425-9a8f-07322352b778" OID="id-5b8cf8c9-7b15-4425-9a8f-07322352b778">
+							<SHORT-NAME>VIN_COD_DOP</SHORT-NAME>
+							<LONG-NAME>VIN</LONG-NAME>
+							<DESC>
+								<p>
+Vehicle Identification Number
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_ASCIISTRING" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MAX-LENGTH>17</MAX-LENGTH>
+								<MIN-LENGTH>17</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-c401a164-9a9f-4ceb-9604-c99c6458c178" OID="id-c401a164-9a9f-4ceb-9604-c99c6458c178">
+							<SHORT-NAME>CDSNP1_COD_DOP</SHORT-NAME>
+							<LONG-NAME>calibrationDataSetNumberPart1</LONG-NAME>
+							<DESC>
+								<p>
+BMW-Datensatznummer (SoftwareNr.)
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" BASE-TYPE-ENCODING="BCD-P" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>20</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-189ff5a7-0c4e-4a79-b584-311563cbde5e" OID="id-189ff5a7-0c4e-4a79-b584-311563cbde5e">
+							<SHORT-NAME>VINS_COD_DOP</SHORT-NAME>
+							<LONG-NAME>VINshort</LONG-NAME>
+							<DESC>
+								<p>
+Short Vehicle Identification Number (last 7 digits of the  long 17-digit VIN)
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_ASCIISTRING" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MAX-LENGTH>7</MAX-LENGTH>
+								<MIN-LENGTH>7</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-329059f3-df1a-495d-bbc6-85bd581d4567" OID="id-329059f3-df1a-495d-bbc6-85bd581d4567">
+							<SHORT-NAME>PR_COD_DOP</SHORT-NAME>
+							<LONG-NAME>programmReferenz</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_ASCIISTRING" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MAX-LENGTH>12</MAX-LENGTH>
+								<MIN-LENGTH>12</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-ef83bfbf-f7ac-4166-9382-d44bcd8b79e4" OID="id-ef83bfbf-f7ac-4166-9382-d44bcd8b79e4">
+							<SHORT-NAME>CDSNP2_COD_DOP</SHORT-NAME>
+							<LONG-NAME>calibrationDataSetNumberPart2</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" BASE-TYPE-ENCODING="BCD-P" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>28</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-7c26a2c4-c761-418c-bf41-74666aa41a1b" OID="id-7c26a2c4-c761-418c-bf41-74666aa41a1b">
+							<SHORT-NAME>ANP2_COD_DOP</SHORT-NAME>
+							<LONG-NAME>assemblyNumberPart2</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>28</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-a1371b69-091b-4851-aac0-ff3ecf303563" OID="id-a1371b69-091b-4851-aac0-ff3ecf303563">
+							<SHORT-NAME>VIN10C_COD_DOP</SHORT-NAME>
+							<LONG-NAME>VINfirst10chars</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_ASCIISTRING" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MAX-LENGTH>10</MAX-LENGTH>
+								<MIN-LENGTH>10</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-8e9e0113-647d-45f8-abf3-ec0f7a104289" OID="id-8e9e0113-647d-45f8-abf3-ec0f7a104289">
+							<SHORT-NAME>ANP1_COD_DOP</SHORT-NAME>
+							<LONG-NAME>assemblyNumberPart1</LONG-NAME>
+							<DESC>
+								<p>
+BMW- Zusammenbaunummer
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>20</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-b3278370-d793-4388-a481-61ee47087f56" OID="id-b3278370-d793-4388-a481-61ee47087f56">
+							<SHORT-NAME>WCOHN_COD_DOP</SHORT-NAME>
+							<LONG-NAME>werksCodeOderHaendlerNummer</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" BASE-TYPE-ENCODING="BCD-P" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>24</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-8d91fe9b-67d1-4b18-b61b-627ed862ab31" OID="id-8d91fe9b-67d1-4b18-b61b-627ed862ab31">
+							<SHORT-NAME>RB3_COD_DOP</SHORT-NAME>
+							<LONG-NAME>reserveBytes3</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>24</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-65348b47-d9e7-42ad-b036-fc427c9c2a41" OID="id-65348b47-d9e7-42ad-b036-fc427c9c2a41">
+							<SHORT-NAME>PSTSN_COD_DOP</SHORT-NAME>
+							<LONG-NAME>programmingDeviceSerialNumber</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_ASCIISTRING" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MAX-LENGTH>4</MAX-LENGTH>
+								<MIN-LENGTH>4</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-3e0f2e0a-6e43-4f72-a5b4-e4e2ef39ea9c" OID="id-3e0f2e0a-6e43-4f72-a5b4-e4e2ef39ea9c">
+							<SHORT-NAME>SSI_COD_DOP</SHORT-NAME>
+							<LONG-NAME>BMW_systemSupplierIndex</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<LOWER-LIMIT>35</LOWER-LIMIT>
+											<UPPER-LIMIT>35</UPPER-LIMIT>
+											<COMPU-CONST>
+												<VT TI="0">Motorola</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+									<COMPU-DEFAULT-VALUE>
+										<VT TI="Default">unknown</VT>
+									</COMPU-DEFAULT-VALUE>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-6a931336-7e71-4302-9394-522bf43055d3" OID="id-6a931336-7e71-4302-9394-522bf43055d3">
+							<SHORT-NAME>UO_COD_DOP</SHORT-NAME>
+							<LONG-NAME>uifOffset</LONG-NAME>
+							<DESC>
+								<p>
+Offset auf naechsten gueltigen Blockeintrag
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-25a2025d-c4bd-438b-baea-6e167fd34cd4" OID="id-25a2025d-c4bd-438b-baea-6e167fd34cd4">
+							<SHORT-NAME>EROTANP1_COD_DOP</SHORT-NAME>
+							<LONG-NAME>exhaustRegulationOrTypeApprovalNumberPart1</LONG-NAME>
+							<DESC>
+								<p>
+According to the example in the VDA 14230-3 (July 1988) the length of the 'exhaustRegulationOrTypeApprovalNumber' is set to 6.
+                  Please adapt to the required length.
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" BASE-TYPE-ENCODING="BCD-P" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>20</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-4a3b5fc2-ff58-472f-8017-1d5fdb810560" OID="id-4a3b5fc2-ff58-472f-8017-1d5fdb810560">
+							<SHORT-NAME>SNOET_COD_DOP</SHORT-NAME>
+							<LONG-NAME>BMW_systemNameOrEngineType</LONG-NAME>
+							<DESC>
+								<p>
+According to the example in the VDA 14230-3 (July 1988) the length of the 'systemNameOrEngineType' is set to 6.
+                  Please adapt to the required length.
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>16</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-c831a4a8-5589-4ef2-af36-f5ea954af52c" OID="id-c831a4a8-5589-4ef2-af36-f5ea954af52c">
+							<SHORT-NAME>EROTANP2_COD_DOP</SHORT-NAME>
+							<LONG-NAME>exhaustRegulationOrTypeApprovalNumberPart2</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" BASE-TYPE-ENCODING="BCD-P" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>28</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf" OID="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf">
+							<SHORT-NAME>VN_COD_DOP</SHORT-NAME>
+							<LONG-NAME>versionNumber</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-06beb6d1-74a7-4566-9328-72ce03c8b21d" OID="id-06beb6d1-74a7-4566-9328-72ce03c8b21d">
+							<SHORT-NAME>PDT_COD_DOP</SHORT-NAME>
+							<LONG-NAME>programmingDeviceType</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_ASCIISTRING" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MAX-LENGTH>1</MAX-LENGTH>
+								<MIN-LENGTH>1</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-0b93d79f-726d-4cea-bd7c-65322ce34f27" OID="id-0b93d79f-726d-4cea-bd7c-65322ce34f27">
+							<SHORT-NAME>PECUHNP1_COD_DOP</SHORT-NAME>
+							<LONG-NAME>physicalECUHardwareNumberPart1</LONG-NAME>
+							<DESC>
+								<p>
+physical ECU hardware number
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>20</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-7a2b7a66-2704-4890-bab5-7d60dd66e40f" OID="id-7a2b7a66-2704-4890-bab5-7d60dd66e40f">
+							<SHORT-NAME>PECUHNP2_COD_DOP</SHORT-NAME>
+							<LONG-NAME>physicalECUHardwareNumberPart2</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>28</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-1872d2a3-93cc-4976-851b-928f1c9e95ed" OID="id-1872d2a3-93cc-4976-851b-928f1c9e95ed">
+							<SHORT-NAME>ECUIPMUXSD_COD_DOP</SHORT-NAME>
+							<LONG-NAME>BMW_ECUIdentificationParameterMUXSwitchDop</LONG-NAME>
+							<DESC>
+								<p>
+Dop for switch in MUX BMW_ECUIdentificationParameterMUX
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>128</LOWER-LIMIT>
+								<UPPER-LIMIT>159</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-9fba0011-fd21-437c-8b23-1db63af7b01b" OID="id-9fba0011-fd21-437c-8b23-1db63af7b01b">
+							<SHORT-NAME>AMUXSD_COD_DOP</SHORT-NAME>
+							<LONG-NAME>aifMUXSwitchDop</LONG-NAME>
+							<DESC>
+								<p>
+Dop for switch in MUX aifMUX
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-2b10dc22-ff22-43f4-8ae3-81ff1643745b" OID="id-2b10dc22-ff22-43f4-8ae3-81ff1643745b">
+							<SHORT-NAME>JOB_STATUS_COD_DOP</SHORT-NAME>
+							<LONG-NAME>JOB_STATUS_DOP</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_ASCIISTRING" BASE-TYPE-ENCODING="NONE" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MIN-LENGTH>0</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-ef57dd1c-b536-4e33-845f-9ae60a896479" OID="id-ef57dd1c-b536-4e33-845f-9ae60a896479">
+							<SHORT-NAME>TEL_COD_DOP</SHORT-NAME>
+							<LONG-NAME>TEL_DOP</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MIN-LENGTH>0</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-ac7f60d6-8ba0-4460-9b1e-8da39227419f" OID="id-ac7f60d6-8ba0-4460-9b1e-8da39227419f">
+							<SHORT-NAME>COD_CI_DOP</SHORT-NAME>
+							<LONG-NAME>changeIndex</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MAX-LENGTH>2</MAX-LENGTH>
+								<MIN-LENGTH>0</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-f1867d2f-b963-4cdf-b436-60a0a666246a" OID="id-f1867d2f-b963-4cdf-b436-60a0a666246a">
+							<SHORT-NAME>BYTEFIELD_0_1023_DOP</SHORT-NAME>
+							<LONG-NAME>Byte field with max. 1023 byte</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MAX-LENGTH>1023</MAX-LENGTH>
+								<MIN-LENGTH>0</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+						</DATA-OBJECT-PROP>
+					</DATA-OBJECT-PROPS>
+					<STRUCTURES>
+						<STRUCTURE ID="id-0e8cfe38-8f85-4241-bf3c-6c502cf9f65a" OID="id-0e8cfe38-8f85-4241-bf3c-6c502cf9f65a">
+							<SHORT-NAME>VMECUVNSTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>BMW_vehicleManufacturerECUhardwareVersionNumberSTRUCT</LONG-NAME>
+							<BYTE-SIZE>1</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMECUVN</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerECUhardwareVersionNumber</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-bc4f0fef-7eac-4c16-9f20-af2a0ec71462"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-e0917f92-1547-46d1-94b7-93ad5abc381f" OID="id-e0917f92-1547-46d1-94b7-93ad5abc381f">
+							<SHORT-NAME>ECUIDTSTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>BMW_ECUIdentificationDataTableSTRUCT</LONG-NAME>
+							<BYTE-SIZE>29</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMECUNP2</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerECUhardwareNumberPart2</LONG-NAME>
+									<BYTE-POSITION>2</BYTE-POSITION>
+									<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-d8284966-8c4a-4e8a-bb8c-574de630ce0e"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMECUVN</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerECUhardwareVersionNumber</LONG-NAME>
+									<BYTE-POSITION>6</BYTE-POSITION>
+									<DOP-REF ID-REF="id-bc4f0fef-7eac-4c16-9f20-af2a0ec71462"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMCI</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerCodingIndex</LONG-NAME>
+									<BYTE-POSITION>7</BYTE-POSITION>
+									<DOP-REF ID-REF="id-95f4dfdf-ab78-4d7a-9f37-e6aa6ece4744"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMDI</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerDiagnosticIndex</LONG-NAME>
+									<BYTE-POSITION>8</BYTE-POSITION>
+									<DOP-REF ID-REF="id-7f6eadf5-d33f-4fc1-919a-91f429163ec0"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>SNOET</SHORT-NAME>
+									<LONG-NAME>BMW_systemNameOrEngineType</LONG-NAME>
+									<DESC>
+										<p>
+According to the example in the VDA 14230-3 (July 1988) the length of the 'systemNameOrEngineType' is set to 6.
+                      Please adapt to the required length.
+                    </p>
+									</DESC>
+									<BYTE-POSITION>10</BYTE-POSITION>
+									<DOP-SNREF SHORT-NAME="SNOET_DOP"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>DOECUSTRUCT</SHORT-NAME>
+									<LONG-NAME>BMW_dateOfECUmanufacturingSTRUCT</LONG-NAME>
+									<BYTE-POSITION>12</BYTE-POSITION>
+									<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-d03f548b-1e1d-4e08-a980-afa68c39c093"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>SSI</SHORT-NAME>
+									<LONG-NAME>BMW_systemSupplierIndex</LONG-NAME>
+									<BYTE-POSITION>16</BYTE-POSITION>
+									<DOP-REF ID-REF="id-3e0f2e0a-6e43-4f72-a5b4-e4e2ef39ea9c"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMECULVN</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufECUsoftwareLayerVersionNumbers</LONG-NAME>
+									<BYTE-POSITION>17</BYTE-POSITION>
+									<DOP-REF ID-REF="id-02a09a0b-1f49-4572-a292-4bb886c94891"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-56cc8f95-abee-4352-8ba3-03c526870409" OID="id-56cc8f95-abee-4352-8ba3-03c526870409">
+							<SHORT-NAME>VMCISTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>BMW_vehicleManufacturerCodingIndexSTRUCT</LONG-NAME>
+							<BYTE-SIZE>1</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMCI</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerCodingIndex</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-95f4dfdf-ab78-4d7a-9f37-e6aa6ece4744"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-f464792e-cc78-4be1-b144-762a828f3a33" OID="id-f464792e-cc78-4be1-b144-762a828f3a33">
+							<SHORT-NAME>VMDISTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>BMW_vehicleManufacturerDiagnosticIndexSTRUCT</LONG-NAME>
+							<BYTE-SIZE>2</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMDI</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerDiagnosticIndex</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-7f6eadf5-d33f-4fc1-919a-91f429163ec0"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-45d57bed-b8b4-47e1-bd34-1b9aded4dbb3" OID="id-45d57bed-b8b4-47e1-bd34-1b9aded4dbb3">
+							<SHORT-NAME>CDSNSTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>calibrationDataSetNumberSTRUCT</LONG-NAME>
+							<BYTE-SIZE>6</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>CDSNP1</SHORT-NAME>
+									<LONG-NAME>calibrationDataSetNumberPart1</LONG-NAME>
+									<DESC>
+										<p>
+BMW-Datensatznummer (SoftwareNr.)
+                    </p>
+									</DESC>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<BIT-POSITION>4</BIT-POSITION>
+									<DOP-REF ID-REF="id-c401a164-9a9f-4ceb-9604-c99c6458c178"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>CDSNP2</SHORT-NAME>
+									<LONG-NAME>calibrationDataSetNumberPart2</LONG-NAME>
+									<BYTE-POSITION>2</BYTE-POSITION>
+									<DOP-REF ID-REF="id-ef83bfbf-f7ac-4166-9382-d44bcd8b79e4"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-a9a19c66-ebdb-4e74-a7aa-13b938b7f43e" OID="id-a9a19c66-ebdb-4e74-a7aa-13b938b7f43e">
+							<SHORT-NAME>ANSTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>assemblyNumberSTRUCT</LONG-NAME>
+							<BYTE-SIZE>6</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>ANP1</SHORT-NAME>
+									<LONG-NAME>assemblyNumberPart1</LONG-NAME>
+									<DESC>
+										<p>
+BMW- Zusammenbaunummer
+                    </p>
+									</DESC>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<BIT-POSITION>4</BIT-POSITION>
+									<DOP-REF ID-REF="id-8e9e0113-647d-45f8-abf3-ec0f7a104289"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>ANP2</SHORT-NAME>
+									<LONG-NAME>assemblyNumberPart2</LONG-NAME>
+									<BYTE-POSITION>2</BYTE-POSITION>
+									<DOP-REF ID-REF="id-7c26a2c4-c761-418c-bf41-74666aa41a1b"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-23fa8df8-6d41-4dd3-9152-69f8d4ba6c2f" OID="id-23fa8df8-6d41-4dd3-9152-69f8d4ba6c2f">
+							<SHORT-NAME>SSISTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>BMW_systemSupplierIndexSTRUCT</LONG-NAME>
+							<BYTE-SIZE>1</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>SSI</SHORT-NAME>
+									<LONG-NAME>BMW_systemSupplierIndex</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-3e0f2e0a-6e43-4f72-a5b4-e4e2ef39ea9c"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-02a09a0b-1f49-4572-a292-4bb886c94891" OID="id-02a09a0b-1f49-4572-a292-4bb886c94891">
+							<SHORT-NAME>VMECULVNSTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>BMW_vehicleManufECUsoftwareLayerVersionNumbersSTRUCT</LONG-NAME>
+							<BYTE-SIZE>12</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>MCV__SOLVNP1</SHORT-NAME>
+									<LONG-NAME>SoftwareLayerVersionNumberPart1</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>MCV__SOLVNP2</SHORT-NAME>
+									<LONG-NAME>SoftwareLayerVersionNumberPart2</LONG-NAME>
+									<BYTE-POSITION>1</BYTE-POSITION>
+									<DOP-REF ID-REF="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>MCV__SOLVNP3</SHORT-NAME>
+									<LONG-NAME>SoftwareLayerVersionNumberPart3</LONG-NAME>
+									<BYTE-POSITION>2</BYTE-POSITION>
+									<DOP-REF ID-REF="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>FSV__SOLVNP1</SHORT-NAME>
+									<LONG-NAME>SoftwareLayerVersionNumberPart1</LONG-NAME>
+									<BYTE-POSITION>3</BYTE-POSITION>
+									<DOP-REF ID-REF="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>FSV__SOLVNP2</SHORT-NAME>
+									<LONG-NAME>SoftwareLayerVersionNumberPart2</LONG-NAME>
+									<BYTE-POSITION>4</BYTE-POSITION>
+									<DOP-REF ID-REF="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>FSV__SOLVNP3</SHORT-NAME>
+									<LONG-NAME>SoftwareLayerVersionNumberPart3</LONG-NAME>
+									<BYTE-POSITION>5</BYTE-POSITION>
+									<DOP-REF ID-REF="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>OSV__SOLVNP1</SHORT-NAME>
+									<LONG-NAME>SoftwareLayerVersionNumberPart1</LONG-NAME>
+									<BYTE-POSITION>6</BYTE-POSITION>
+									<DOP-REF ID-REF="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>OSV__SOLVNP2</SHORT-NAME>
+									<LONG-NAME>SoftwareLayerVersionNumberPart2</LONG-NAME>
+									<BYTE-POSITION>7</BYTE-POSITION>
+									<DOP-REF ID-REF="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>OSV__SOLVNP3</SHORT-NAME>
+									<LONG-NAME>SoftwareLayerVersionNumberPart3</LONG-NAME>
+									<BYTE-POSITION>8</BYTE-POSITION>
+									<DOP-REF ID-REF="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>CU__SOLVNP1</SHORT-NAME>
+									<LONG-NAME>SoftwareLayerVersionNumberPart1</LONG-NAME>
+									<BYTE-POSITION>9</BYTE-POSITION>
+									<DOP-REF ID-REF="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>CU__SOLVNP2</SHORT-NAME>
+									<LONG-NAME>SoftwareLayerVersionNumberPart2</LONG-NAME>
+									<BYTE-POSITION>10</BYTE-POSITION>
+									<DOP-REF ID-REF="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>CU__SOLVNP3</SHORT-NAME>
+									<LONG-NAME>SoftwareLayerVersionNumberPart3</LONG-NAME>
+									<BYTE-POSITION>11</BYTE-POSITION>
+									<DOP-REF ID-REF="id-8bdc55c6-bfb7-469b-8d25-6772bc769faf"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-6816caf9-61e9-447c-aa13-fe395feb6d0e" OID="id-6816caf9-61e9-447c-aa13-fe395feb6d0e">
+							<SHORT-NAME>UIFSSTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>UIFblockShortSTRUCT</LONG-NAME>
+							<DESC>
+								<p>
+Anwenderinfofeld 18-byte
+                </p>
+							</DESC>
+							<BYTE-SIZE>18</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>UIFOFFSET</SHORT-NAME>
+									<LONG-NAME>uifOffset</LONG-NAME>
+									<DESC>
+										<p>
+Offset auf nchsten gltigen AIF-Blockeintrag
+                    </p>
+									</DESC>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-6a931336-7e71-4302-9394-522bf43055d3"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VINSHORT</SHORT-NAME>
+									<LONG-NAME>VINshort</LONG-NAME>
+									<DESC>
+										<p>
+Short Vehicle Identification Number (last 7 digits of the  long 17-digit VIN)
+                    </p>
+									</DESC>
+									<BYTE-POSITION>1</BYTE-POSITION>
+									<DOP-REF ID-REF="id-189ff5a7-0c4e-4a79-b584-311563cbde5e"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>PDSTRUCT</SHORT-NAME>
+									<LONG-NAME>programmingDateSTRUCT</LONG-NAME>
+									<DESC>
+										<p>
+According to the example in the VDA 14230-3 (July 1998) the length of the 'programmingDate' is set to 4.
+                    </p>
+									</DESC>
+									<BYTE-POSITION>8</BYTE-POSITION>
+									<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-d03f548b-1e1d-4e08-a980-afa68c39c093"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>ASN</SHORT-NAME>
+									<LONG-NAME>assemblyNumber</LONG-NAME>
+									<BYTE-POSITION>12</BYTE-POSITION>
+									<DOP-REF ID-REF="id-a9a19c66-ebdb-4e74-a7aa-13b938b7f43e"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-b04fec72-f682-43b7-bc91-54af6045204b" OID="id-b04fec72-f682-43b7-bc91-54af6045204b">
+							<SHORT-NAME>UIF_L_EXSTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>UIF_large_ExtensionSTRUCT</LONG-NAME>
+							<BYTE-SIZE>13</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VIN10C</SHORT-NAME>
+									<LONG-NAME>VINfirst10chars</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-a1371b69-091b-4851-aac0-ff3ecf303563"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>RB3</SHORT-NAME>
+									<LONG-NAME>reserveBytes3</LONG-NAME>
+									<BYTE-POSITION>10</BYTE-POSITION>
+									<DOP-REF ID-REF="id-8d91fe9b-67d1-4b18-b61b-627ed862ab31"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-bd51b5a6-8f1a-48bc-a3db-611528b01867" OID="id-bd51b5a6-8f1a-48bc-a3db-611528b01867">
+							<SHORT-NAME>PECUNSTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>BMW_physicalECUhardwareNumberSTRUCT</LONG-NAME>
+							<BYTE-SIZE>6</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>PECUHN1</SHORT-NAME>
+									<LONG-NAME>physicalECUHardwareNumberPart1</LONG-NAME>
+									<DESC>
+										<p>
+physical ECU hardware number
+                    </p>
+									</DESC>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<BIT-POSITION>4</BIT-POSITION>
+									<DOP-REF ID-REF="id-0b93d79f-726d-4cea-bd7c-65322ce34f27"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>PECUHN2</SHORT-NAME>
+									<LONG-NAME>physicalECUHardwareNumberPart2</LONG-NAME>
+									<DESC>
+										<p>
+physical ECU hardware number
+                    </p>
+									</DESC>
+									<BYTE-POSITION>2</BYTE-POSITION>
+									<DOP-REF ID-REF="id-7a2b7a66-2704-4890-bab5-7d60dd66e40f"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-1b0c638c-ec2f-4de4-8889-07181eaeb931" OID="id-1b0c638c-ec2f-4de4-8889-07181eaeb931">
+							<SHORT-NAME>UIFMSTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>UIFblockMediumSTRUCT</LONG-NAME>
+							<DESC>
+								<p>
+Anwenderinfofeld 51-byte
+                </p>
+							</DESC>
+							<BYTE-SIZE>51</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>UIFS</SHORT-NAME>
+									<LONG-NAME>UIFblockShort</LONG-NAME>
+									<DESC>
+										<p>
+Anwenderinfofeld 18-byte
+                    </p>
+									</DESC>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-6816caf9-61e9-447c-aa13-fe395feb6d0e"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>UIF_M_E</SHORT-NAME>
+									<LONG-NAME>UIF_medium_extension</LONG-NAME>
+									<BYTE-POSITION>18</BYTE-POSITION>
+									<DOP-REF ID-REF="id-a6948691-dbc1-4488-b1b7-1ec23171b8f1"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-c1e962c2-dcda-49bc-8dc3-24ebe8d782fc" OID="id-c1e962c2-dcda-49bc-8dc3-24ebe8d782fc">
+							<SHORT-NAME>RSCATSN_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>Werkscode und Programmiergeraete-Seriennummer bzw. Haendlernummer und Testerseriennummer</LONG-NAME>
+							<BYTE-SIZE>8</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>WCOHN</SHORT-NAME>
+									<LONG-NAME>werksCodeOderHaendlerNummer</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-b3278370-d793-4388-a481-61ee47087f56"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>PDT</SHORT-NAME>
+									<LONG-NAME>programmingDeviceType</LONG-NAME>
+									<BYTE-POSITION>3</BYTE-POSITION>
+									<DOP-REF ID-REF="id-06beb6d1-74a7-4566-9328-72ce03c8b21d"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>PSTSN</SHORT-NAME>
+									<LONG-NAME>Programming device serial number</LONG-NAME>
+									<BYTE-POSITION>4</BYTE-POSITION>
+									<DOP-REF ID-REF="id-65348b47-d9e7-42ad-b036-fc427c9c2a41"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-a6948691-dbc1-4488-b1b7-1ec23171b8f1" OID="id-a6948691-dbc1-4488-b1b7-1ec23171b8f1">
+							<SHORT-NAME>UIF_M_ESTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>UIF_medium_extensionSTRUCT</LONG-NAME>
+							<BYTE-SIZE>33</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>CDSNSTRUCT</SHORT-NAME>
+									<LONG-NAME>calibrationDataSetNumberSTRUCT</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-45d57bed-b8b4-47e1-bd34-1b9aded4dbb3"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>EROTANSTRUCT</SHORT-NAME>
+									<LONG-NAME>exhaustRegulationOrTypeApprovalNumberSTRUCT</LONG-NAME>
+									<BYTE-POSITION>6</BYTE-POSITION>
+									<DOP-REF ID-REF="id-9ef74ad2-9437-48ff-a237-2e5fcf7c82a5"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>RSCATSN</SHORT-NAME>
+									<LONG-NAME>Werkscode und Programmiergeraete-Seriennummer bzw. Haendlernummer und Testerseriennummer</LONG-NAME>
+									<BYTE-POSITION>12</BYTE-POSITION>
+									<DOP-REF ID-REF="id-c1e962c2-dcda-49bc-8dc3-24ebe8d782fc"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>KSBP</SHORT-NAME>
+									<LONG-NAME>kmStandBeiProgrammierung</LONG-NAME>
+									<BYTE-POSITION>20</BYTE-POSITION>
+									<DOP-REF ID-REF="id-5584bc9a-18d3-466d-a7eb-6f924b72bf6e"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>PR</SHORT-NAME>
+									<LONG-NAME>programmReferenz</LONG-NAME>
+									<BYTE-POSITION>21</BYTE-POSITION>
+									<DOP-REF ID-REF="id-329059f3-df1a-495d-bbc6-85bd581d4567"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-6ee7d35f-2348-4d3a-a744-4406883448f9" OID="id-6ee7d35f-2348-4d3a-a744-4406883448f9">
+							<SHORT-NAME>UIFLSTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>UIFblockLargeSTRUCT</LONG-NAME>
+							<DESC>
+								<p>
+Anwenderinfofeld 64-Bytes
+                </p>
+							</DESC>
+							<BYTE-SIZE>64</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>UIFM</SHORT-NAME>
+									<LONG-NAME>UIFblockMiddle</LONG-NAME>
+									<DESC>
+										<p>
+Anwenderinfofeld 51-byte
+                    </p>
+									</DESC>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-1b0c638c-ec2f-4de4-8889-07181eaeb931"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>UIF_L_EX</SHORT-NAME>
+									<LONG-NAME>UIF_large_Extension</LONG-NAME>
+									<BYTE-POSITION>51</BYTE-POSITION>
+									<DOP-REF ID-REF="id-b04fec72-f682-43b7-bc91-54af6045204b"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-9ef74ad2-9437-48ff-a237-2e5fcf7c82a5" OID="id-9ef74ad2-9437-48ff-a237-2e5fcf7c82a5">
+							<SHORT-NAME>EROTANSTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>exhaustRegulationOrTypeApprovalNumberSTRUCT</LONG-NAME>
+							<BYTE-SIZE>6</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>EROTANP1</SHORT-NAME>
+									<LONG-NAME>exhaustRegulationOrTypeApprovalNumberPart1</LONG-NAME>
+									<DESC>
+										<p>
+According to the example in the VDA 14230-3 (July 1988) the length of the 'exhaustRegulationOrTypeApprovalNumber' is set to 6.
+                      Please adapt to the required length.
+                    </p>
+									</DESC>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<BIT-POSITION>4</BIT-POSITION>
+									<DOP-REF ID-REF="id-25a2025d-c4bd-438b-baea-6e167fd34cd4"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>EROTANP2</SHORT-NAME>
+									<LONG-NAME>exhaustRegulationOrTypeApprovalNumberPart2</LONG-NAME>
+									<BYTE-POSITION>2</BYTE-POSITION>
+									<DOP-REF ID-REF="id-c831a4a8-5589-4ef2-af36-f5ea954af52c"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-8ee4e2e5-dd78-4764-84e7-663ae699dd4c" OID="id-8ee4e2e5-dd78-4764-84e7-663ae699dd4c">
+							<SHORT-NAME>VMECUNSTRUCT3_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>vehicleManufacturerECUhardwareNumberSTRUCT3</LONG-NAME>
+							<DESC>
+								<p>
+Structure is used by the response to service REI_VMECUHN_LESEN. Represents triple output of vehicleManufacturerECUhardwareNumber.
+                </p>
+							</DESC>
+							<BYTE-SIZE>18</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMECUN1__BMW_VMECUNP1</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerECUhardwareNumberPart1</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<BIT-POSITION>4</BIT-POSITION>
+									<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-43320bbc-b22f-48d1-acb5-2039b680e6df"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMECUN1__BMW_VMECUNP2</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerECUhardwareNumberPart2</LONG-NAME>
+									<BYTE-POSITION>2</BYTE-POSITION>
+									<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-d8284966-8c4a-4e8a-bb8c-574de630ce0e"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMECUN2__BMW_VMECUNP1</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerECUhardwareNumberPart1</LONG-NAME>
+									<BYTE-POSITION>6</BYTE-POSITION>
+									<BIT-POSITION>4</BIT-POSITION>
+									<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-43320bbc-b22f-48d1-acb5-2039b680e6df"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMECUN2__BMW_VMECUNP2</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerECUhardwareNumberPart2</LONG-NAME>
+									<BYTE-POSITION>8</BYTE-POSITION>
+									<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-d8284966-8c4a-4e8a-bb8c-574de630ce0e"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMECUN3__BMW_VMECUNP1</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerECUhardwareNumberPart1</LONG-NAME>
+									<BYTE-POSITION>12</BYTE-POSITION>
+									<BIT-POSITION>4</BIT-POSITION>
+									<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-43320bbc-b22f-48d1-acb5-2039b680e6df"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>VMECUN3__BMW_VMECUNP2</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerECUhardwareNumberPart2</LONG-NAME>
+									<BYTE-POSITION>14</BYTE-POSITION>
+									<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-d8284966-8c4a-4e8a-bb8c-574de630ce0e"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-42e0f325-edbc-4ac2-9b86-bdaec542653b" OID="id-42e0f325-edbc-4ac2-9b86-bdaec542653b">
+							<SHORT-NAME>AMUX_WRSTRUCT_COD_STRUCT</SHORT-NAME>
+							<LONG-NAME>aifMUX_WrapSTRUCT</LONG-NAME>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>AMUX_PARAM</SHORT-NAME>
+									<LONG-NAME>aifMUX_PARAM</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-ea037302-b09c-4e18-bf1d-1586117d22fc"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-b51e529c-2c7a-4781-a882-9f7bf97c2c24" OID="id-b51e529c-2c7a-4781-a882-9f7bf97c2c24">
+							<SHORT-NAME>PECUHWNUM_COD_WRAP_STRUCT</SHORT-NAME>
+							<LONG-NAME>BMW_physicalECUhardwareNumberDFIELD_WrapSTRUCT</LONG-NAME>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>PECUNDFIELD_PARAM</SHORT-NAME>
+									<LONG-NAME>BMW_physicalECUhardwareNumberDFIELD_PARAM</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-ee76b1fc-c9db-49c1-9999-a7a1e8606e0c"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-da17823e-294c-4b8c-912d-fad0820d0267" IS-VISIBLE="true" OID="id-da17823e-294c-4b8c-912d-fad0820d0267">
+							<SHORT-NAME>NCD_ENTRY_STRUCT</SHORT-NAME>
+							<LONG-NAME>NCDEntry structure</LONG-NAME>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>NCDEBA</SHORT-NAME>
+									<LONG-NAME>NCDEntryBlockAddress</LONG-NAME>
+									<DOP-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>NCDED</SHORT-NAME>
+									<LONG-NAME>NCDEntryData</LONG-NAME>
+									<DOP-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+					</STRUCTURES>
+					<END-OF-PDU-FIELDS>
+						<END-OF-PDU-FIELD ID="id-d4638f32-5407-439e-ba99-199d980c407b" IS-VISIBLE="true" OID="id-d4638f32-5407-439e-ba99-199d980c407b">
+							<SHORT-NAME>NCD_ENTRIES_EOPFLD</SHORT-NAME>
+							<LONG-NAME>NCDEntries</LONG-NAME>
+							<BASIC-STRUCTURE-REF ID-REF="id-da17823e-294c-4b8c-912d-fad0820d0267"/>
+							<MIN-NUMBER-OF-ITEMS>0</MIN-NUMBER-OF-ITEMS>
+						</END-OF-PDU-FIELD>
+						<END-OF-PDU-FIELD ID="id-ee76b1fc-c9db-49c1-9999-a7a1e8606e0c" OID="id-ee76b1fc-c9db-49c1-9999-a7a1e8606e0c">
+							<SHORT-NAME>PECUHWNUM_COD_EOPFLD</SHORT-NAME>
+							<LONG-NAME>BMW_physicalECUhardwareNumberDFIELD</LONG-NAME>
+							<BASIC-STRUCTURE-REF ID-REF="id-bd51b5a6-8f1a-48bc-a3db-611528b01867"/>
+						</END-OF-PDU-FIELD>
+					</END-OF-PDU-FIELDS>
+					<MUXS>
+						<MUX ID="id-0dc4b734-20ff-4aae-9df9-e286a7563c20" OID="id-0dc4b734-20ff-4aae-9df9-e286a7563c20">
+							<SHORT-NAME>ECUIPMUX_COD_MUX</SHORT-NAME>
+							<LONG-NAME>BMW_ECUIdentificationParameterMUX</LONG-NAME>
+							<DESC>
+								<p>
+The length of the ComplexDDOs  is set according to the example in the VDA 14230-3 (July 1998) .
+                  Please adapt to the required length.
+                </p>
+							</DESC>
+							<BYTE-POSITION>1</BYTE-POSITION>
+							<SWITCH-KEY>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<DATA-OBJECT-PROP-REF ID-REF="id-1872d2a3-93cc-4976-851b-928f1c9e95ed"/>
+							</SWITCH-KEY>
+							<CASES>
+								<CASE>
+									<SHORT-NAME>BMW_ECU_IDENTIFICATION_DATA_TABLE</SHORT-NAME>
+									<LONG-NAME>BMW_ECUIdentificationDataTable</LONG-NAME>
+									<STRUCTURE-REF ID-REF="id-e0917f92-1547-46d1-94b7-93ad5abc381f"/>
+									<LOWER-LIMIT>128</LOWER-LIMIT>
+									<UPPER-LIMIT>128</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_NOT_TO_BE_IMPLEMENTED_IN_BMWECUS_ECU_IDENTIFICATION_SCALING_TABLE</SHORT-NAME>
+									<LONG-NAME>BMW_notToBeImplementedInBMWECUs_ECUIdentificationScalingTable</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-0efbf8ec-1dc6-4f60-aa3a-81234735f5a0"/>
+									<LOWER-LIMIT>129</LOWER-LIMIT>
+									<UPPER-LIMIT>129</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_RESERVED_BY_DOCUMENT</SHORT-NAME>
+									<LONG-NAME>BMW_reservedByDocument</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-0efbf8ec-1dc6-4f60-aa3a-81234735f5a0"/>
+									<LOWER-LIMIT>130</LOWER-LIMIT>
+									<UPPER-LIMIT>133</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_CURRENT_UIF_DATA_TABLE</SHORT-NAME>
+									<LONG-NAME>BMW_currentUIFdataTable</LONG-NAME>
+									<STRUCTURE-REF ID-REF="id-42e0f325-edbc-4ac2-9b86-bdaec542653b"/>
+									<LOWER-LIMIT>134</LOWER-LIMIT>
+									<UPPER-LIMIT>134</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_PHYSICAL_ECU_HARDWARE_NUMBER</SHORT-NAME>
+									<LONG-NAME>BMW_physicalECUhardwareNumber</LONG-NAME>
+									<STRUCTURE-REF ID-REF="id-b51e529c-2c7a-4781-a882-9f7bf97c2c24"/>
+									<LOWER-LIMIT>135</LOWER-LIMIT>
+									<UPPER-LIMIT>135</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_CHANGE_INDEX</SHORT-NAME>
+									<LONG-NAME>BMW_changeIndex</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-05c5b415-ef0e-4f77-8cec-06de0ad67b2b"/>
+									<LOWER-LIMIT>136</LOWER-LIMIT>
+									<UPPER-LIMIT>136</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>SYSTEM_SUPPLIER_ECU_SERIAL_NUMBER</SHORT-NAME>
+									<LONG-NAME>systemSupplierECUSerialNumber</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-7a3a319a-ca6d-4184-a498-5c1ad4a3aa16"/>
+									<LOWER-LIMIT>137</LOWER-LIMIT>
+									<UPPER-LIMIT>137</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_SYSTEM_SUPPLIER_SPECIFIC</SHORT-NAME>
+									<LONG-NAME>BMW_systemSupplierSpecific</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-0efbf8ec-1dc6-4f60-aa3a-81234735f5a0"/>
+									<LOWER-LIMIT>138</LOWER-LIMIT>
+									<UPPER-LIMIT>143</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_VIN</SHORT-NAME>
+									<LONG-NAME>BMW_VIN</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-0f314fc6-4329-434e-94d2-7f610d5779f4"/>
+									<LOWER-LIMIT>144</LOWER-LIMIT>
+									<UPPER-LIMIT>144</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>VEHICLE_MANUFACTURER_ECU_HARDWARE_NUMBER</SHORT-NAME>
+									<LONG-NAME>vehicleManufacturerECUHardwareNumber</LONG-NAME>
+									<STRUCTURE-REF ID-REF="id-8ee4e2e5-dd78-4764-84e7-663ae699dd4c"/>
+									<LOWER-LIMIT>145</LOWER-LIMIT>
+									<UPPER-LIMIT>145</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_SYSTEM_SUPPLIER_ECU_HARDWARE_NUMBER</SHORT-NAME>
+									<LONG-NAME>BMW_systemSupplierECUHardwareNumber</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-8fa211bb-743a-4b86-867e-953e7371c849"/>
+									<LOWER-LIMIT>146</LOWER-LIMIT>
+									<UPPER-LIMIT>146</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>SYSTEM_SUPPLIER_ECU_HARDWARE_VERSION_NUMBER</SHORT-NAME>
+									<LONG-NAME>systemSupplierECUHardwareVersionNumber</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-2d8b5fb4-b664-48b3-8fc0-d98c159da2de"/>
+									<LOWER-LIMIT>147</LOWER-LIMIT>
+									<UPPER-LIMIT>147</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>SYSTEM_SUPPLIER_ECUSOFTWARE_NUMBER</SHORT-NAME>
+									<LONG-NAME>systemSupplierECUSoftwareNumber</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-9402a286-e769-408b-ae4c-0253d97b93f3"/>
+									<LOWER-LIMIT>148</LOWER-LIMIT>
+									<UPPER-LIMIT>148</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>SYSTEM_SUPPLIER_ECU_SOFTWARE_VERSION_NUMBER</SHORT-NAME>
+									<LONG-NAME>systemSupplierECUSoftwareVersionNumber</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-a8a9351f-77cf-4716-bfef-051f5900dce9"/>
+									<LOWER-LIMIT>149</LOWER-LIMIT>
+									<UPPER-LIMIT>149</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_EXHAUST_REGULATION_OR_TYPE_APPROVAL_NUMBER</SHORT-NAME>
+									<LONG-NAME>BMW_exhaustRegulationOrTypeApprovalNumber</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-8fa211bb-743a-4b86-867e-953e7371c849"/>
+									<LOWER-LIMIT>150</LOWER-LIMIT>
+									<UPPER-LIMIT>150</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_SYSTEM_NAME_OR_ENGINE_TYPE</SHORT-NAME>
+									<LONG-NAME>BMW_systemNameOrEngineType</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-a03fee53-3b64-4d25-8788-090af7e527ad"/>
+									<LOWER-LIMIT>151</LOWER-LIMIT>
+									<UPPER-LIMIT>151</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_REPAIR_SHOP_CODE_OR_TESTER_SERIAL_NUMBER</SHORT-NAME>
+									<LONG-NAME>BMW_repairShopCodeOrTesterSerialNumber</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-08e28fc7-8f6d-415d-a737-de9fed2d60bb"/>
+									<LOWER-LIMIT>152</LOWER-LIMIT>
+									<UPPER-LIMIT>152</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_PROGRAMMING_DATE</SHORT-NAME>
+									<LONG-NAME>BMW_programmingDate</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-d03f548b-1e1d-4e08-a980-afa68c39c093"/>
+									<LOWER-LIMIT>153</LOWER-LIMIT>
+									<UPPER-LIMIT>153</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_VEHICLE_MANUFACTURER_ECU_HARDWARE_VERSION_NUMBER</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerECUhardwareVersionNumber</LONG-NAME>
+									<STRUCTURE-REF ID-REF="id-0e8cfe38-8f85-4241-bf3c-6c502cf9f65a"/>
+									<LOWER-LIMIT>154</LOWER-LIMIT>
+									<UPPER-LIMIT>154</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_VEHICLE_MANUFACTURER_CODING_INDEX</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerCodingIndex</LONG-NAME>
+									<STRUCTURE-REF ID-REF="id-56cc8f95-abee-4352-8ba3-03c526870409"/>
+									<LOWER-LIMIT>155</LOWER-LIMIT>
+									<UPPER-LIMIT>155</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_VEHICLE_MANUFACTURER_DIAGNOSTIC_INDEX</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufacturerDiagnosticIndex</LONG-NAME>
+									<STRUCTURE-REF ID-REF="id-f464792e-cc78-4be1-b144-762a828f3a33"/>
+									<LOWER-LIMIT>156</LOWER-LIMIT>
+									<UPPER-LIMIT>156</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_DATE_OF_ECU_MANUFACTURING</SHORT-NAME>
+									<LONG-NAME>BMW_dateOfECUmanufacturing</LONG-NAME>
+									<STRUCTURE-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-d03f548b-1e1d-4e08-a980-afa68c39c093"/>
+									<LOWER-LIMIT>157</LOWER-LIMIT>
+									<UPPER-LIMIT>157</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_SYSTEM_SUPPLIER_INDEX</SHORT-NAME>
+									<LONG-NAME>BMW_systemSupplierIndex</LONG-NAME>
+									<STRUCTURE-REF ID-REF="id-23fa8df8-6d41-4dd3-9152-69f8d4ba6c2f"/>
+									<LOWER-LIMIT>158</LOWER-LIMIT>
+									<UPPER-LIMIT>158</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>BMW_VEHICLE_MANUF_ECU_SOFTWARE_LAYER_VERSION_NUMBERS</SHORT-NAME>
+									<LONG-NAME>BMW_vehicleManufECUsoftwareLayerVersionNumbers</LONG-NAME>
+									<STRUCTURE-REF ID-REF="id-02a09a0b-1f49-4572-a292-4bb886c94891"/>
+									<LOWER-LIMIT>159</LOWER-LIMIT>
+									<UPPER-LIMIT>159</UPPER-LIMIT>
+								</CASE>
+							</CASES>
+						</MUX>
+						<MUX ID="id-ea037302-b09c-4e18-bf1d-1586117d22fc" OID="id-ea037302-b09c-4e18-bf1d-1586117d22fc">
+							<SHORT-NAME>AIFMUX_COD_MUX</SHORT-NAME>
+							<LONG-NAME>aifMUX</LONG-NAME>
+							<BYTE-POSITION>0</BYTE-POSITION>
+							<SWITCH-KEY>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<DATA-OBJECT-PROP-REF ID-REF="id-9fba0011-fd21-437c-8b23-1db63af7b01b"/>
+							</SWITCH-KEY>
+							<DEFAULT-CASE>
+								<SHORT-NAME>64_BYTE_DEFAULT</SHORT-NAME>
+								<LONG-NAME>64_byte_default</LONG-NAME>
+								<STRUCTURE-REF ID-REF="id-6ee7d35f-2348-4d3a-a744-4406883448f9"/>
+							</DEFAULT-CASE>
+							<CASES>
+								<CASE>
+									<SHORT-NAME>18_BYTE</SHORT-NAME>
+									<LONG-NAME>18_byte</LONG-NAME>
+									<STRUCTURE-REF ID-REF="id-6816caf9-61e9-447c-aa13-fe395feb6d0e"/>
+									<LOWER-LIMIT>18</LOWER-LIMIT>
+									<UPPER-LIMIT>18</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>51_BYTE</SHORT-NAME>
+									<LONG-NAME>51_byte</LONG-NAME>
+									<STRUCTURE-REF ID-REF="id-1b0c638c-ec2f-4de4-8889-07181eaeb931"/>
+									<LOWER-LIMIT>51</LOWER-LIMIT>
+									<UPPER-LIMIT>51</UPPER-LIMIT>
+								</CASE>
+								<CASE>
+									<SHORT-NAME>64_BYTE</SHORT-NAME>
+									<LONG-NAME>64_byte</LONG-NAME>
+									<STRUCTURE-REF ID-REF="id-6ee7d35f-2348-4d3a-a744-4406883448f9"/>
+									<LOWER-LIMIT>64</LOWER-LIMIT>
+									<UPPER-LIMIT>64</UPPER-LIMIT>
+								</CASE>
+							</CASES>
+						</MUX>
+					</MUXS>
+				</DIAG-DATA-DICTIONARY-SPEC>
+				<DIAG-COMMS>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-f83f9d02-7e06-49a7-98b2-bc2df29bc4cd" OID="id-f83f9d02-7e06-49a7-98b2-bc2df29bc4cd">
+						<SHORT-NAME>WDBCI_FGNR_SCHREIBEN</SHORT-NAME>
+						<LONG-NAME>WDBCI_FGNR_SCHREIBEN - Schreiben der langen (17-stelligen) Fahrgestellnummer.</LONG-NAME>
+						<DESC>
+							<p>
+Für die beiden Steuergeräte, in denen der Fahrzeugauftrag abgelegt wird (z.B. im E65 CAS und LM), muss die lange 17-stellige Fahrgestellnummer abgelegt werden. Dieser nichtflüchtige Speicherbereich ist unter bestimmten Bedingungen (z.B. km-Stand überschreitet 250km, Airbag geschärft) für sicherheitsrelevante Steuergeräte nicht mehrfach überschreibbar. Aus der 17-stelligen Fahrgestellnummer können Informationen über Hersteller, Baureihe und Typ gewonnen werden, die für verschiedene Codier- und Diagnosesysteme wichtig sind. Diese Fahrgestellnummer ist unabhängig und zusätzlich zur Fahrgestellnummer im AIF abzulegen.
+              </p>
+						</DESC>
+						<ADMIN-DATA>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-495e58e6-7919-42c4-b003-5ad495cbfabc"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-06-09T17:36:33</DATE>
+									<TOOL>DTS-Venice</TOOL>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>FGNR_SCHREIBEN</CHANGE>
+											<REASON>Instanz automatisch konvertiert von MCD-2D V1.2.2 nach ODX V2.0.1 mit Venice</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14230_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-9dfe19ce-c754-44cb-ae95-65847545a499"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-cec57efb-bccc-46f1-b524-f6e701dd7142"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-e7db5b92-5288-4357-a4a7-b125c5a11aaf"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-8d1e9cfd-6291-4b8f-9f55-e249bb8339f1" OID="id-8d1e9cfd-6291-4b8f-9f55-e249bb8339f1">
+						<SHORT-NAME>REI_C_FG_LESEN</SHORT-NAME>
+						<LONG-NAME>REI_C_FG_LESEN - Kurze Fahrgestellnummer (7-stellig) lesen</LONG-NAME>
+						<DESC>
+							<p>
+Pro CBD, die codiert wird, sind die letzten sieben Stellen (ab KWP2000 verpflichtend) der 17-stelligen Fahrgestellnummer abzulegen. Der Speicherbereich ist mehrfach überschreibbar und nichtflüchtig. Die Fahrgestellnummer dient am Band zur Prüfung, ob das Steuergerät für das jeweilige Fahrzeug codiert wurde. In der Handelsorganisation kann diese Prüfung ebenfalls erfolgen. Diese Fahrgestellnummer ist unabhängig und zusätzlich zur Fahrgestellnummer im AIF abzulegen.
+                Auch für Steuergeräte, welche den FA enthalten und daher die lange Fahrgestellnummer nach Kapitel 0
+                implementieren müssen, gilt die Pflicht, auch die kurze Fahrgestellnummer zu unterstützen. Dabei muß aber
+                auf den gleichen Speicherbereich zugegriffen werden. Steuergeräteintern wird nur noch ein Flag gesetzt,
+                dass die kurze Fahrgestellnummer geschrieben wurde. Das Lesen der kurzen Fahrgestellnummer wird für
+                die Überprüfung eines ordnungsgemäßen Codierprozesses in der Fertigung benötigt.
+              </p>
+						</DESC>
+						<ADMIN-DATA>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-495e58e6-7919-42c4-b003-5ad495cbfabc"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-06-09T17:36:33</DATE>
+									<TOOL>DTS-Venice</TOOL>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>C_FG_LESEN</CHANGE>
+											<REASON>Instanz automatisch konvertiert von MCD-2D V1.2.2 nach ODX V2.0.1 mit Venice</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-9e43665c-ae40-4bf2-9ed4-81510fe2e25c"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-03fffed7-0fb5-4cc2-80ed-e43d6ee53d0d"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-e0518ef2-b6f0-4ba1-b95a-cb9634fad28f" OID="id-e0518ef2-b6f0-4ba1-b95a-cb9634fad28f">
+						<SHORT-NAME>WDBCI_C_AEI_SCHREIBEN</SHORT-NAME>
+						<LONG-NAME>WDBCI_C_AEI_SCHREIBEN - Aenderungsindex der Codierdaten schreiben</LONG-NAME>
+						<DESC>
+							<p>
+Der Änderungsindex der Codierdaten besteht aus ein bis zwei kleinen Buchstaben (Anlieferungszustand                muss 0x00 sein) und wird jeweils bei der administrativen Freigabe eines Baureihen-Codierdatenpaketes                inkrementiert. Für den Änderungsindex der Codierdaten sind pro CBD zwei Byte Speicher bereitzustellen.                Bei nur einem Buchstaben wird über die Codierapplikation das erste Byte mit einem Leerzeichen belegt und                geschrieben.                Über den Änderungsindex kann der Freigabestand der bei der letzten Codierung verwendeten Codierdaten                ermittelt und damit festgestellt werden, ob Änderungen bereits eingeflossen sind. Hierfür muss auf die entsprechende                Baureihe bezogen werden.                Ablageform: 2 Stellen                Speicherbedarf: ASCII                Beschreibung: 2 Byte Kein Eintrag in der CBD. Der Änderungsindex                wird von der Codierapplikation über den Eintrag                aus einer Tabelle (AEDOC) der Codierdaten                ermittelt.
+              </p>
+						</DESC>
+						<ADMIN-DATA>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-495e58e6-7919-42c4-b003-5ad495cbfabc"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-06-09T17:36:33</DATE>
+									<TOOL>DTS-Venice</TOOL>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>C_AEI_SCHREIBEN</CHANGE>
+											<REASON>Instanz automatisch konvertiert von MCD-2D V1.2.2 nach ODX V2.0.1 mit Venice</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-3a62bc68-df7b-4474-917c-af08de04251d"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-ab0bed1d-5e04-4529-b17f-310d61adc7db"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-d0455255-d41c-4d13-9d4c-e01d04cab36f" OID="id-d0455255-d41c-4d13-9d4c-e01d04cab36f">
+						<SHORT-NAME>RDBCI_C_FA_LESEN</SHORT-NAME>
+						<LONG-NAME>RDBCI_C_FA_LESEN - Fahrzeugauftrag lesen</LONG-NAME>
+						<DESC>
+							<p>
+Fahrzeugaufrag redunant im SG CAS und Lichtmodul abgelegt. Für zwei Steuergeräte einer Baureihe bzw. Plattform wie PL2, die immer verbaut sind, muss der
+                Fahrzeugauftrag implementiert werden. Im E65, E60 sind das CAS und LM, in der PL2 das CAS2 und
+                FRMFA. Der Fahrzeugauftrag ist im LH Codierung Teil 2: Fahrzeugauftrag ab E65, BMW-Nr. 6 905 863,
+                beschrieben.
+              </p>
+						</DESC>
+						<ADMIN-DATA>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-495e58e6-7919-42c4-b003-5ad495cbfabc"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-06-09T17:36:33</DATE>
+									<TOOL>DTS-Venice</TOOL>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>C_FA_LESEN</CHANGE>
+											<REASON>Instanz automatisch konvertiert von MCD-2D V1.2.2 nach ODX V2.0.1 mit Venice</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-ee1d9026-b8af-4961-9f15-5ff7f6b8099b"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-2284c541-1982-4d3c-be12-178bbdc5529c"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-5cfada90-413e-4b42-a68d-39d28bd36260" SEMANTIC="Identification" OID="id-5cfada90-413e-4b42-a68d-39d28bd36260">
+						<SHORT-NAME>REI_C_CI_LESEN</SHORT-NAME>
+						<LONG-NAME>REI_C_CI_LESEN - Identifikation ueber Codierindex</LONG-NAME>
+						<ADMIN-DATA>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-495e58e6-7919-42c4-b003-5ad495cbfabc"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-06-09T17:36:33</DATE>
+									<TOOL>DTS-Venice</TOOL>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>C_CI_LESEN</CHANGE>
+											<REASON>Instanz automatisch konvertiert von MCD-2D V1.2.2 nach ODX V2.0.1 mit Venice</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-cc534187-31f9-45f0-b3e5-12f47c645fe9"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-7d7273ba-8c49-490f-96c8-ef5b37049324"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-3d0b479d-a092-4f07-9f04-418754d97233" OID="id-3d0b479d-a092-4f07-9f04-418754d97233">
+						<SHORT-NAME>WDBCI_C_C_SCHREIBEN</SHORT-NAME>
+						<LONG-NAME>WDBCI_C_C_SCHREIBEN - Codierdaten schreiben</LONG-NAME>
+						<DESC>
+							<p>
+Auf die Codierdaten wird über die Diagnose mit folgenden Diagnostic Service zugegriffen. Der Parameter 1 muss in der Codierbeschreibungsdatei (CBD) als Blocknummer vorgegeben                sein. Die Blocknummer wird an das Application-Interface (API) übergeben und dort als Parameter 1 in das                Telegramm eingesetzt. Die Anzahl der Datenbytes unter jedem Codierdatenblock (Parameter 1) ist frei definierbar                und kann für verschiedene Blöcke unterschiedlich sein, bis zu einer maximalen Anzahl von 252 Byte.                Die aktuelle Codier-Toolkette kann pro Steuergerät maximal 1023 Bytes verarbeiten.
+              </p>
+						</DESC>
+						<ADMIN-DATA>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-495e58e6-7919-42c4-b003-5ad495cbfabc"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-06-09T17:36:33</DATE>
+									<TOOL>DTS-Venice</TOOL>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>C_C_SCHREIBEN</CHANGE>
+											<REASON>Instanz automatisch konvertiert von MCD-2D V1.2.2 nach ODX V2.0.1 mit Venice</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-c303b2e0-7f68-4760-a2b9-e148a46dffad"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-795fcbea-6ae9-4428-b819-d08dfa27eda3"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-8dba51b3-aead-46bc-9941-f7f2c7437ebf" OID="id-8dba51b3-aead-46bc-9941-f7f2c7437ebf">
+						<SHORT-NAME>RDBCI_FGNR_LESEN</SHORT-NAME>
+						<LONG-NAME>RDBCI_FGNR_LESEN - Lange Fahrgestellnummer lesen</LONG-NAME>
+						<DESC>
+							<p>
+Lesen der langen (17-stelligen) Fahrgestellnummer.
+              </p>
+						</DESC>
+						<ADMIN-DATA>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-495e58e6-7919-42c4-b003-5ad495cbfabc"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-06-09T17:36:33</DATE>
+									<TOOL>DTS-Venice</TOOL>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>FGNR_LESEN</CHANGE>
+											<REASON>Instanz automatisch konvertiert von MCD-2D V1.2.2 nach ODX V2.0.1 mit Venice</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-a0e2021b-75d5-470d-8b3a-89c0b00eb9c9"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-b3ab5713-8998-46de-812c-d02466551cac"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-19c9b29b-3a00-469e-8ef7-2ad7de95a654" OID="id-19c9b29b-3a00-469e-8ef7-2ad7de95a654">
+						<SHORT-NAME>RDBCI_C_AEI_LESEN</SHORT-NAME>
+						<LONG-NAME>RDBCI_C_AEI_LESEN - Aenderungsindex der Codierdaten lesen</LONG-NAME>
+						<DESC>
+							<p>
+Der Änderungsindex der Codierdaten besteht aus ein bis zwei kleinen Buchstaben (Anlieferungszustand
+                muss 0x00 sein) und wird jeweils bei der administrativen Freigabe eines Baureihen-Codierdatenpaketes
+                inkrementiert. Für den Änderungsindex der Codierdaten sind pro CBD zwei Byte Speicher bereitzustellen.
+                Bei nur einem Buchstaben wird über die Codierapplikation das erste Byte mit einem Leerzeichen belegt und
+                geschrieben.
+                Über den Änderungsindex kann der Freigabestand der bei der letzten Codierung verwendeten Codierdaten
+                ermittelt und damit festgestellt werden, ob Änderungen bereits eingeflossen sind. Hierfür muss auf die entsprechende
+                Baureihe bezogen werden.
+                Ablageform: 2 Stellen
+                Speicherbedarf: ASCII
+                Beschreibung: 2 Byte Kein Eintrag in der CBD. Der Änderungsindex wird von der Codierapplikation über den Eintrag aus einer Tabelle (AEDOC) der Codierdaten ermittelt.
+              </p>
+						</DESC>
+						<ADMIN-DATA>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-495e58e6-7919-42c4-b003-5ad495cbfabc"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-06-09T17:36:33</DATE>
+									<TOOL>DTS-Venice</TOOL>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>C_AEI_LESEN</CHANGE>
+											<REASON>Instanz automatisch konvertiert von MCD-2D V1.2.2 nach ODX V2.0.1 mit Venice</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-d544358e-07d4-4102-9e3a-087223e05593"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-2b1346f8-c847-4abd-ac90-b23922669c1a"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-dbc7d5cd-17c7-4578-9b3a-830199798a55" OID="id-dbc7d5cd-17c7-4578-9b3a-830199798a55">
+						<SHORT-NAME>WDBLI_C_FG_SCHREIBEN</SHORT-NAME>
+						<LONG-NAME>WDBLI_C_FG_SCHREIBEN - Fahrgestellnummer schreiben</LONG-NAME>
+						<DESC>
+							<p>
+Pro CBD, die codiert wird, sind die letzten sieben Stellen (ab KWP2000 verpflichtend) der 17-stelligen Fahrgestellnummer abzulegen. Der Speicherbereich ist mehrfach überschreibbar und nichtflüchtig. Die Fahrgestellnummer dient am Band zur Prüfung, ob das Steuergerät für das jeweilige Fahrzeug codiert wurde. In der Handelsorganisation kann diese Prüfung ebenfalls erfolgen. Diese Fahrgestellnummer ist unabhängig und zusätzlich zur Fahrgestellnummer im AIF abzulegen.
+              </p>
+						</DESC>
+						<ADMIN-DATA>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-495e58e6-7919-42c4-b003-5ad495cbfabc"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-06-09T17:36:33</DATE>
+									<TOOL>DTS-Venice</TOOL>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>C_FG_SCHREIBEN</CHANGE>
+											<REASON>Instanz automatisch konvertiert von MCD-2D V1.2.2 nach ODX V2.0.1 mit Venice</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-d5eabf41-8fd1-42a8-810a-942bc2639aba"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-50e56268-a5f0-40d3-996a-f0b2e3a3ec86"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-93df7341-1754-41a2-ad6b-e5c1db7470c0" OID="id-93df7341-1754-41a2-ad6b-e5c1db7470c0">
+						<SHORT-NAME>RDBCI_C_C_LESEN</SHORT-NAME>
+						<LONG-NAME>RDBCI_C_C_LESEN - Codierdaten lesen</LONG-NAME>
+						<DESC>
+							<p>
+Auf die Codierdaten wird über die Diagnose mit folgenden Diagnostic Service zugegriffen. Der Parameter 1 muss in der Codierbeschreibungsdatei (CBD) als Blocknummer vorgegeben
+                sein. Die Blocknummer wird an das Application-Interface (API) übergeben und dort als Parameter 1 in das
+                Telegramm eingesetzt. Die Anzahl der Datenbytes unter jedem Codierdatenblock (Parameter 1) ist frei definierbar
+                und kann für verschiedene Blöcke unterschiedlich sein, bis zu einer maximalen Anzahl von 252 Byte.
+                Die aktuelle Codier-Toolkette kann pro Steuergerät maximal 1023 Bytes verarbeiten.
+              </p>
+						</DESC>
+						<ADMIN-DATA>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-495e58e6-7919-42c4-b003-5ad495cbfabc"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-06-09T17:36:33</DATE>
+									<TOOL>DTS-Venice</TOOL>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>C_C_LESEN</CHANGE>
+											<REASON>Instanz automatisch konvertiert von MCD-2D V1.2.2 nach ODX V2.0.1 mit Venice</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-aafbe21d-ff1c-4ca7-b6e4-9e9c82211741"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-dc58452a-b1cc-4529-afb9-0a59583d4bb6"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-aa69a954-7cb2-4b97-acca-c291631856d6" OID="id-aa69a954-7cb2-4b97-acca-c291631856d6">
+						<SHORT-NAME>WDBCI_C_FA_SCHREIBEN</SHORT-NAME>
+						<LONG-NAME>WDBCI_C_FA_SCHREIBEN - Fahrzeugauftrag schreiben</LONG-NAME>
+						<DESC>
+							<p>
+Fahrzeugaufrag redunant im SG CAS und Lichtmodul abgelegt. Für zwei Steuergeräte einer Baureihe bzw. Plattform wie PL2, die immer verbaut sind, muss der                Fahrzeugauftrag implementiert werden. Im E65, E60 sind das CAS und LM, in der PL2 das CAS2 und                FRMFA. Der Fahrzeugauftrag ist im LH Codierung Teil 2: Fahrzeugauftrag ab E65, BMW-Nr. 6 905 863,                beschrieben.
+              </p>
+						</DESC>
+						<ADMIN-DATA>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-495e58e6-7919-42c4-b003-5ad495cbfabc"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-06-09T17:36:33</DATE>
+									<TOOL>DTS-Venice</TOOL>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>C_FA_SCHREIBEN</CHANGE>
+											<REASON>Instanz automatisch konvertiert von MCD-2D V1.2.2 nach ODX V2.0.1 mit Venice</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-f0fc2359-ca92-4dc6-aeba-b3eb8ae1d027"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-9200ba4a-ef79-4fc3-9c0b-8fc8b3c98ec1"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<SINGLE-ECU-JOB ID="id-cf92b4b0-59d1-43f3-9fa2-a4ca89dfa8af" OID="id-cf92b4b0-59d1-43f3-9fa2-a4ca89dfa8af">
+						<SHORT-NAME>AUTH_ECU_FOR_CODING</SHORT-NAME>
+						<LONG-NAME>MCD3_AuthenticateECUforCoding</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.kwp2000.MCD3_AuthenticateECUforCoding</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>KEY</SHORT-NAME>
+								<LONG-NAME>Key</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-bfe94292-e73c-4af9-aad7-65fa6d29fd7a" OID="id-bfe94292-e73c-4af9-aad7-65fa6d29fd7a">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-b141218c-5ea0-4e5d-9b2d-4c189c520076" OID="id-b141218c-5ea0-4e5d-9b2d-4c189c520076">
+						<SHORT-NAME>FINALIZE_ECU_CODING</SHORT-NAME>
+						<LONG-NAME>MCD3_FinalizeECUCoding</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.kwp2000.MCD3_FinalizeECUCoding</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>CPS</SHORT-NAME>
+								<LONG-NAME>CPS</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>CHANGE_IDX</SHORT-NAME>
+								<LONG-NAME>changeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>CS</SHORT-NAME>
+								<LONG-NAME>CodingSuccessfully</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-8ecb1506-277c-4179-91c8-389383ad0ca0" OID="id-8ecb1506-277c-4179-91c8-389383ad0ca0">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-6e2d8230-ba27-11dd-ad8b-0800200c9a66" OID="id-6e2d8230-ba27-11dd-ad8b-0800200c9a66">
+								<SHORT-NAME>RESET_WAITTIME</SHORT-NAME>
+								<LONG-NAME>reset wait time</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-fb16ce42-7053-4060-a420-e5e9d261a0a1" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-9e643b73-bf70-45bb-974c-7219c8767006" OID="id-9e643b73-bf70-45bb-974c-7219c8767006">
+						<SHORT-NAME>PERFORM_ECU_CODING</SHORT-NAME>
+						<LONG-NAME>MCD3_PerformECUCoding</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.kwp2000.MCD3_PerformECUCoding</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>SBA</SHORT-NAME>
+								<LONG-NAME>SignatureBlockAddress</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>SD</SHORT-NAME>
+								<LONG-NAME>SignatureData</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>NCDENTRIES</SHORT-NAME>
+								<LONG-NAME>NCDEntries</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-d4638f32-5407-439e-ba99-199d980c407b"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-9514c083-8339-4db7-895e-f17956990de5" OID="id-9514c083-8339-4db7-895e-f17956990de5">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-a468d175-7694-457a-bfbe-62251abb4467" OID="id-a468d175-7694-457a-bfbe-62251abb4467">
+						<SHORT-NAME>PREPARE_ECU_FOR_CODING</SHORT-NAME>
+						<LONG-NAME>MCD3_PrepareECUforCoding</LONG-NAME>
+						<ADMIN-DATA>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF DOCREF="ISO_14230_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f840b968-735f-4527-a1c2-da6031f166e6"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-11-02T12:00:00</DATE>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>added</CHANGE>
+											<REASON>required for dynamically loadable programming process</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF DOCREF="ISO_14230_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-ef67ab77-4a16-4d1e-a9c2-3ca27263c80d"/>
+									<REVISION-LABEL>001.000.001</REVISION-LABEL>
+									<DATE>2006-11-29T12:00:00</DATE>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>changed</CHANGE>
+											<REASON>added parameter "extendedAuthValue" required for unified job interface</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.kwp2000.MCD3_PrepareECUforCoding</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>SEEDTYPE</SHORT-NAME>
+								<LONG-NAME>SeedType</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>TESTERID</SHORT-NAME>
+								<LONG-NAME>TesterID</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-4134f06a-cdfa-4700-9136-76fa895fdc4d" OID="id-4134f06a-cdfa-4700-9136-76fa895fdc4d">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-23a051e4-5271-4848-8c5e-956ecdd56957" OID="id-23a051e4-5271-4848-8c5e-956ecdd56957">
+								<SHORT-NAME>SEED</SHORT-NAME>
+								<LONG-NAME>Seed</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-102e7be0-1631-4e55-9de3-8b2d85fbb09d" OID="id-102e7be0-1631-4e55-9de3-8b2d85fbb09d">
+								<SHORT-NAME>EAV</SHORT-NAME>
+								<LONG-NAME>extendedAuthValue</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-50de755f-61b6-4ae8-a85c-d85eaf63128d" OID="id-50de755f-61b6-4ae8-a85c-d85eaf63128d">
+						<SHORT-NAME>READ_CPS_FROM_ECU</SHORT-NAME>
+						<LONG-NAME>MCD3_ReadCPSfromECU</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.kwp2000.MCD3_ReadCPSfromECU</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-5bbc571b-21f3-410f-a4da-5b95f32b4741" OID="id-5bbc571b-21f3-410f-a4da-5b95f32b4741">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-18641dd0-4cb8-48c6-85f9-ed4def58225c" OID="id-18641dd0-4cb8-48c6-85f9-ed4def58225c">
+								<SHORT-NAME>DATA</SHORT-NAME>
+								<LONG-NAME>Data</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-baf07184-6c00-4eaa-b2c5-37a3ee13a560" OID="id-baf07184-6c00-4eaa-b2c5-37a3ee13a560">
+						<SHORT-NAME>READ_NCD_FROM_ECU</SHORT-NAME>
+						<LONG-NAME>MCD3_ReadNCDFromECU</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-dea99a12-9643-470e-91c8-6c44495de1f2"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.kwp2000.MCD3_ReadNCDFromECU</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>BA</SHORT-NAME>
+								<LONG-NAME>BlockAddress</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-f23894a3-1808-4220-8f37-7398bff8ae54" OID="id-f23894a3-1808-4220-8f37-7398bff8ae54">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-033939cb-2c1b-45e3-ab9d-5e1edc3534dd" OID="id-033939cb-2c1b-45e3-ab9d-5e1edc3534dd">
+								<SHORT-NAME>DATA</SHORT-NAME>
+								<LONG-NAME>Data</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+				</DIAG-COMMS>
+				<REQUESTS>
+					<REQUEST ID="id-3a62bc68-df7b-4474-917c-af08de04251d" OID="id-3a62bc68-df7b-4474-917c-af08de04251d">
+						<SHORT-NAME>WDBCI_C_AEI_SCHREIBEN_REQ</SHORT-NAME>
+						<LONG-NAME>WDBCI_C_AEI_SCHREIBEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>WDBCI</SHORT-NAME>
+								<LONG-NAME>ServiceID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>46</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_CIOCD</SHORT-NAME>
+								<LONG-NAME>RCI_CIOCD</LONG-NAME>
+								<DESC>
+									<p>
+change index of coding data
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>changeIndexOfCodingData</PHYSICAL-DEFAULT-VALUE>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RV_CIOCD</SHORT-NAME>
+								<LONG-NAME>RV_CIOCD</LONG-NAME>
+								<DESC>
+									<p>
+AenderungsIndex der Codierdaten
+                  </p>
+								</DESC>
+								<BYTE-POSITION>3</BYTE-POSITION>
+								<DOP-REF ID-REF="id-ac7f60d6-8ba0-4460-9b1e-8da39227419f"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-ee1d9026-b8af-4961-9f15-5ff7f6b8099b" OID="id-ee1d9026-b8af-4961-9f15-5ff7f6b8099b">
+						<SHORT-NAME>RDBCI_C_FA_LESEN_REQ</SHORT-NAME>
+						<LONG-NAME>RDBCI_C_FA_LESEN_REQ</LONG-NAME>
+						<DESC>
+							<p>
+Parameter RCI mit Range $3F00 bis $3FFE.
+              </p>
+						</DESC>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RDBCI</SHORT-NAME>
+								<LONG-NAME>ServiceID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>34</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_VO</SHORT-NAME>
+								<LONG-NAME>RCI_VO</LONG-NAME>
+								<DESC>
+									<p>
+vehicle order - Fahrzeugauftrag
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>vehicleOrder</PHYSICAL-DEFAULT-VALUE>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-9e43665c-ae40-4bf2-9ed4-81510fe2e25c" OID="id-9e43665c-ae40-4bf2-9ed4-81510fe2e25c">
+						<SHORT-NAME>REI_C_FG_LESEN_REQ</SHORT-NAME>
+						<LONG-NAME>REI_C_FG_LESEN Request</LONG-NAME>
+						<DESC>
+							<p>
+Ablageform: 7 Stellen ASCII
+                Speicherbedarf: 7 Byte
+                Beschreibung: Kein Eintrag in der CBD. Die Fahrgestellnummer wird von der Codierapplikation als Systemdatum ermittelt.
+              </p>
+						</DESC>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>REI</SHORT-NAME>
+								<LONG-NAME>ServiceID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>26</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>IO_VIN</SHORT-NAME>
+								<LONG-NAME>IO_VIN</LONG-NAME>
+								<DESC>
+									<p>
+VIN (Vehicle Identification Number)
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>VIN - Vehicle Identification Number</PHYSICAL-DEFAULT-VALUE>
+								<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-023d4b4b-94a2-4a3f-8558-1fef7af9c1fa"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-cc534187-31f9-45f0-b3e5-12f47c645fe9" OID="id-cc534187-31f9-45f0-b3e5-12f47c645fe9">
+						<SHORT-NAME>REI_C_CI_LESEN_REQ</SHORT-NAME>
+						<LONG-NAME>REI_C_CI_LESEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>REI</SHORT-NAME>
+								<LONG-NAME>ServiceID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>26</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>IO_VMCI</SHORT-NAME>
+								<LONG-NAME>IO_VMCI</LONG-NAME>
+								<DESC>
+									<p>
+vehicleManufactureECUHardwareVersionNumber
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>BMW_vehicleManufacturerCodingIndex</PHYSICAL-DEFAULT-VALUE>
+								<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-023d4b4b-94a2-4a3f-8558-1fef7af9c1fa"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-c303b2e0-7f68-4760-a2b9-e148a46dffad" OID="id-c303b2e0-7f68-4760-a2b9-e148a46dffad">
+						<SHORT-NAME>WDBCI_C_C_SCHREIBEN_REQ</SHORT-NAME>
+						<LONG-NAME>WDBCI_C_C_SCHREIBEN_Request</LONG-NAME>
+						<DESC>
+							<p>
+Note: Regarding document "Diagnose LH T8 (8 358 774.4)" (chapter 7.6.2) parameter recordValue is at least 1 byte large. Therefore it is  implemented using DDO variableLength.
+        Die Daten sind "rechtsbuendig" im Speicher abzulegen. Sie werden zusammen mit einem Block Codierdaten
+                mit dem gewoehnlichen Telegramm fuer "Codierdaten schreiben" ins Steuergeraet gebracht.
+                Siehe Kapitel 4.2 "Codierdaten lesen / schreiben"
+              </p>
+						</DESC>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>WDBCI</SHORT-NAME>
+								<LONG-NAME>ServiceID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>46</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_CDS</SHORT-NAME>
+								<LONG-NAME>RCI_CDS</LONG-NAME>
+								<DESC>
+									<p>
+coding data set
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>12288</PHYSICAL-DEFAULT-VALUE>
+								<DOP-SNREF SHORT-NAME="RCI_COD_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RV_BINAER_BUFFER</SHORT-NAME>
+								<LONG-NAME>RV_CDS</LONG-NAME>
+								<DESC>
+									<p>
+coding data set - Die aktuelle Codier-Toolkette kann pro Steuergeraet maximal 1023 Bytes verarbeiten. Als Argument wird ein vorgefuellter Binaerbuffer uebergeben
+                  </p>
+								</DESC>
+								<BYTE-POSITION>3</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>00FF00</PHYSICAL-DEFAULT-VALUE>
+								<DOP-REF ID-REF="id-f1867d2f-b963-4cdf-b436-60a0a666246a"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-a0e2021b-75d5-470d-8b3a-89c0b00eb9c9" OID="id-a0e2021b-75d5-470d-8b3a-89c0b00eb9c9">
+						<SHORT-NAME>RDBCI_FGNR_LESEN_REQ</SHORT-NAME>
+						<LONG-NAME>RDBCI_FGNR_LESEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RDBCI</SHORT-NAME>
+								<LONG-NAME>ServiceID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>34</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_LVIN</SHORT-NAME>
+								<LONG-NAME>RCI_LVIN</LONG-NAME>
+								<DESC>
+									<p>
+Fahrgestellnummer  (lang)
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>fullVehicleIdentificationNumber</PHYSICAL-DEFAULT-VALUE>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-d544358e-07d4-4102-9e3a-087223e05593" OID="id-d544358e-07d4-4102-9e3a-087223e05593">
+						<SHORT-NAME>RDBCI_C_AEI_LESEN_REQ</SHORT-NAME>
+						<LONG-NAME>RDBCI_C_AEI_LESEN_Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RDBCI</SHORT-NAME>
+								<LONG-NAME>ServiceID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>34</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_CIOCD</SHORT-NAME>
+								<LONG-NAME>RCI_CIOCD</LONG-NAME>
+								<DESC>
+									<p>
+change index of coding data
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>changeIndexOfCodingData</PHYSICAL-DEFAULT-VALUE>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-d5eabf41-8fd1-42a8-810a-942bc2639aba" OID="id-d5eabf41-8fd1-42a8-810a-942bc2639aba">
+						<SHORT-NAME>WDBLI_C_FG_SCHREIBEN_REQ</SHORT-NAME>
+						<LONG-NAME>WDBLI_C_FG_SCHREIBEN Request</LONG-NAME>
+						<DESC>
+							<p>
+Ablageform: 7 Stellen ASCII
+                Speicherbedarf: 7 Byte
+                Beschreibung: Kein Eintrag in der CBD. Die Fahrgestellnummer wird von der Codierapplikation als Systemdatum ermittelt.
+              </p>
+						</DESC>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>WDBLI</SHORT-NAME>
+								<LONG-NAME>ServiceID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>59</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RLI_SVIN</SHORT-NAME>
+								<LONG-NAME>RLI_SVIN</LONG-NAME>
+								<DESC>
+									<p>
+recordLocalIdentifier - short VIN
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>kurzeFahrgestellnummer</PHYSICAL-DEFAULT-VALUE>
+								<DOP-SNREF SHORT-NAME="RLI_COD_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RV_FG_NR</SHORT-NAME>
+								<LONG-NAME>RV_SVIN</LONG-NAME>
+								<DESC>
+									<p>
+Fahrgestellnummer (7-stellig)
+                  </p>
+								</DESC>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-dd087b0c-789b-487b-bd74-4aeae9b98175"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-aafbe21d-ff1c-4ca7-b6e4-9e9c82211741" OID="id-aafbe21d-ff1c-4ca7-b6e4-9e9c82211741">
+						<SHORT-NAME>RDBCI_C_C_LESEN_REQ</SHORT-NAME>
+						<LONG-NAME>RDBCI_C_C_LESEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RDBCI</SHORT-NAME>
+								<LONG-NAME>ServiceID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>34</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_CDS</SHORT-NAME>
+								<LONG-NAME>RCI_CDS</LONG-NAME>
+								<DESC>
+									<p>
+coding data set - Memory Block ID
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>12288</PHYSICAL-DEFAULT-VALUE>
+								<DOP-SNREF SHORT-NAME="RCI_COD_DOP"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-f0fc2359-ca92-4dc6-aeba-b3eb8ae1d027" OID="id-f0fc2359-ca92-4dc6-aeba-b3eb8ae1d027">
+						<SHORT-NAME>WDBCI_C_FA_SCHREIBEN_REQ</SHORT-NAME>
+						<LONG-NAME>WDBCI_C_FA_SCHREIBEN Request</LONG-NAME>
+						<DESC>
+							<p>
+Parameter RCI mit Range $3F00 bis $3FFE.
+              </p>
+						</DESC>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>WDBCI</SHORT-NAME>
+								<LONG-NAME>ServiceID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>46</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_VO</SHORT-NAME>
+								<LONG-NAME>RCI_recordCommonIdentifier</LONG-NAME>
+								<DESC>
+									<p>
+The parameter recordCommonIdentifier (RCI_) in the readDataByCommonIdentifier service identifies a data record which is supported by multiple servers
+                    The purpose of common identifiers is to reference a unique parameter with the sam value accross multiple serves (ECUs) within a vehicle manufacturer.
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>vehicleOrder</PHYSICAL-DEFAULT-VALUE>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RV_VO</SHORT-NAME>
+								<LONG-NAME>Fahrzeugauftrag</LONG-NAME>
+								<BYTE-POSITION>3</BYTE-POSITION>
+								<DOP-REF ID-REF="id-f16e1d0c-69de-4b49-909e-becb31e5d3de"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-cec57efb-bccc-46f1-b524-f6e701dd7142" OID="id-cec57efb-bccc-46f1-b524-f6e701dd7142">
+						<SHORT-NAME>WDBCI_FGNR_SCHREIBEN_REQ</SHORT-NAME>
+						<LONG-NAME>RDBCI_FGNR_SCHREIBEN Request</LONG-NAME>
+						<DESC>
+							<p>
+Ablageform 17 Stellen ASCII
+                Speicherbedarf 17 Byte 
+                Beschreibung Kein Eintrag in der CBD. Die Fahrgestellnummer wird von der Codierapplikation als Systemdatum ermittelt.
+              </p>
+						</DESC>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>WDBCI</SHORT-NAME>
+								<LONG-NAME>ServiceID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>46</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_LVIN</SHORT-NAME>
+								<LONG-NAME>RCI_LVIN</LONG-NAME>
+								<DESC>
+									<p>
+recordCommonIdentifier - Fahrgestellnummer (lang)
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>fullVehicleIdentificationNumber</PHYSICAL-DEFAULT-VALUE>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RV_LVIN</SHORT-NAME>
+								<LONG-NAME>RV_LVIN</LONG-NAME>
+								<DESC>
+									<p>
+recordValue - Fahrgestellnummer (lang)
+                  </p>
+								</DESC>
+								<BYTE-POSITION>3</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="VIN_COD_DOP"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+				</REQUESTS>
+				<POS-RESPONSES>
+					<POS-RESPONSE ID="id-ab0bed1d-5e04-4529-b17f-310d61adc7db" OID="id-ab0bed1d-5e04-4529-b17f-310d61adc7db">
+						<SHORT-NAME>WDBCI_C_AEI_SCHREIBEN_RESP</SHORT-NAME>
+						<LONG-NAME>WDBCI_C_AEI_SCHREIBEN</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>WDBCIPR</SHORT-NAME>
+								<LONG-NAME>ResponseID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>110</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_CIOCD</SHORT-NAME>
+								<LONG-NAME>RCI_CIOCD</LONG-NAME>
+								<DESC>
+									<p>
+change index of coding data
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-2284c541-1982-4d3c-be12-178bbdc5529c" OID="id-2284c541-1982-4d3c-be12-178bbdc5529c">
+						<SHORT-NAME>RDBCI_C_FA_LESEN_RESP</SHORT-NAME>
+						<LONG-NAME>RDBCI_C_FA_LESEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RDBCIPR</SHORT-NAME>
+								<LONG-NAME>ResponseID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>98</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_VO</SHORT-NAME>
+								<LONG-NAME>RCI_VO</LONG-NAME>
+								<DESC>
+									<p>
+vehicle order - Fahrzeugauftrag
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RV_VO</SHORT-NAME>
+								<LONG-NAME>RV_VO</LONG-NAME>
+								<DESC>
+									<p>
+vehicle order - Fahrzeugauftrag
+                  </p>
+								</DESC>
+								<BYTE-POSITION>3</BYTE-POSITION>
+								<DOP-REF ID-REF="id-f16e1d0c-69de-4b49-909e-becb31e5d3de"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-03fffed7-0fb5-4cc2-80ed-e43d6ee53d0d" OID="id-03fffed7-0fb5-4cc2-80ed-e43d6ee53d0d">
+						<SHORT-NAME>REI_C_FG_LESEN_RESP</SHORT-NAME>
+						<LONG-NAME>REI_C_FG_LESEN_Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>REIPR</SHORT-NAME>
+								<LONG-NAME>ResponseID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>90</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>IRV_IO_VIN</SHORT-NAME>
+								<LONG-NAME>IRV_IO_VIN</LONG-NAME>
+								<DESC>
+									<p>
+VIN (Vehicle Identification Number)
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-023d4b4b-94a2-4a3f-8558-1fef7af9c1fa"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>IRV_ECUIP_VIN</SHORT-NAME>
+								<LONG-NAME>IRV_ECUIP_VIN</LONG-NAME>
+								<DESC>
+									<p>
+VIN (Vehicle Identification Number)
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<DOP-REF ID-REF="id-0dc4b734-20ff-4aae-9df9-e286a7563c20"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-7d7273ba-8c49-490f-96c8-ef5b37049324" OID="id-7d7273ba-8c49-490f-96c8-ef5b37049324">
+						<SHORT-NAME>REI_C_CI_LESEN_RESP</SHORT-NAME>
+						<LONG-NAME>REI_C_CI_LESEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>REIPR</SHORT-NAME>
+								<LONG-NAME>ResponseID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>90</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>IRV_IO_VMCI</SHORT-NAME>
+								<LONG-NAME>IRV_IO_VMCI</LONG-NAME>
+								<DESC>
+									<p>
+vehicleManufactureECUHardwareVersionNumber
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<DOP-REF DOCREF="ISO_14230_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-023d4b4b-94a2-4a3f-8558-1fef7af9c1fa"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>ID_COD_INDEX</SHORT-NAME>
+								<LONG-NAME>IRV_ECUIP_VMCI</LONG-NAME>
+								<DESC>
+									<p>
+vehicleManufactureECUHardwareVersionNumber
+                  </p>
+								</DESC>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<DOP-REF ID-REF="id-f464792e-cc78-4be1-b144-762a828f3a33"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-795fcbea-6ae9-4428-b819-d08dfa27eda3" OID="id-795fcbea-6ae9-4428-b819-d08dfa27eda3">
+						<SHORT-NAME>WDBCI_C_C_SCHREIBEN_RESP</SHORT-NAME>
+						<LONG-NAME>WDBCI_Codierdaten_Schreiben Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>WDBCIPR</SHORT-NAME>
+								<LONG-NAME>ResponseID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>110</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_CDS</SHORT-NAME>
+								<LONG-NAME>RCI_CDS</LONG-NAME>
+								<DESC>
+									<p>
+coding data set
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-b3ab5713-8998-46de-812c-d02466551cac" OID="id-b3ab5713-8998-46de-812c-d02466551cac">
+						<SHORT-NAME>RDBCI_FGNR_LESEN_RESP</SHORT-NAME>
+						<LONG-NAME>RDBCI_FGNR_LESEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RDBCIPR</SHORT-NAME>
+								<LONG-NAME>ResponseID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>98</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_LVIN</SHORT-NAME>
+								<LONG-NAME>RCI_LVIN</LONG-NAME>
+								<DESC>
+									<p>
+Fahrgestellnummer (lang)
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RV_LVIN</SHORT-NAME>
+								<LONG-NAME>RV_LVIN</LONG-NAME>
+								<DESC>
+									<p>
+Fahrgestellnummer (lang)
+                  </p>
+								</DESC>
+								<BYTE-POSITION>3</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="VIN_COD_DOP"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-2b1346f8-c847-4abd-ac90-b23922669c1a" OID="id-2b1346f8-c847-4abd-ac90-b23922669c1a">
+						<SHORT-NAME>RDBCI_C_AEI_LESEN_RESP</SHORT-NAME>
+						<LONG-NAME>RDBCI_C_AEI_LESEN_Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RDBCIPR</SHORT-NAME>
+								<LONG-NAME>ResponseID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>98</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_CIOCD</SHORT-NAME>
+								<LONG-NAME>RCI_CIOCD</LONG-NAME>
+								<DESC>
+									<p>
+change index of coding data
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>COD_AE_INDEX</SHORT-NAME>
+								<LONG-NAME>RV_CIOCD</LONG-NAME>
+								<DESC>
+									<p>
+change index of coding data - Aenderungsindex max. 2-stellig ASCII inkl. Ziffern
+                  </p>
+								</DESC>
+								<BYTE-POSITION>3</BYTE-POSITION>
+								<DOP-REF ID-REF="id-ac7f60d6-8ba0-4460-9b1e-8da39227419f"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-50e56268-a5f0-40d3-996a-f0b2e3a3ec86" OID="id-50e56268-a5f0-40d3-996a-f0b2e3a3ec86">
+						<SHORT-NAME>WDBLI_C_FG_SCHREIBEN_RESP</SHORT-NAME>
+						<LONG-NAME>WDBLI_C_FG_SCHREIBEN_Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>WDBLIPR</SHORT-NAME>
+								<LONG-NAME>ResponseID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>123</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RLI_SVIN</SHORT-NAME>
+								<LONG-NAME>RLI_SVIN</LONG-NAME>
+								<DESC>
+									<p>
+short Vehicle Identification Number
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="RLI_COD_DOP"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-dc58452a-b1cc-4529-afb9-0a59583d4bb6" OID="id-dc58452a-b1cc-4529-afb9-0a59583d4bb6">
+						<SHORT-NAME>RDBCI_C_C_LESEN_RESP</SHORT-NAME>
+						<LONG-NAME>RDBCI_C_C_LESEN_Response</LONG-NAME>
+						<DESC>
+							<p>
+Als Argument wird ein vorgefuellter Binaerbuffer uebergeben; Der Binaerbuffer hat folgenden Aufbau;
+                Byte 0              : Datentyp (1:Daten, 2:Maskendaten);
+                Byte 1              : (unbenutzt) Wortbreite (1:Byte, 2:Word, 3:DWord);
+                Byte 2              : (unbenutzt) Byteordnung (0:LSB zuerst, 1 MSB zuerst);
+                Byte 3              : Adressierung (0: freie Adressierung, 1:Blockadressierung);
+                Byte 4              : (unbenutzt) Byteparameter 1;
+                Byte 5,6            : (unbenutzt) WordParameter 1 (low/high);
+                Byte 7,8            : (unbenutzt) WordParameter 2 (low/high);
+                Byte 9,10,11,12     : (unbenutzt) Maske (linksbuendig);
+                Byte 13,14          : Anzahl Bytedaten (low/high);
+                Byte 15,16          : (unbenutzt) Anzahl Wortdaten (low/high);
+                Byte 17,18,19,20    : Wortadresse (low/highbyte, low/highword);
+                Byte 21,....        : Codierdaten;
+                Byte 21+Anzahl Daten: ETX (0x03); ;
+                Die Daten sind "rechtsbündig" im Speicher abzulegen. Sie werden zusammen mit einem Block Codierdaten
+                mit dem gewöhnlichen Telegramm für ?Codierdaten schreiben? ins Steuergerät gebracht.
+                Siehe Kapitel 4.2 ?Codierdaten lesen / schreiben?
+              </p>
+						</DESC>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RDBCIPR</SHORT-NAME>
+								<LONG-NAME>ResponseID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>98</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_CDS</SHORT-NAME>
+								<LONG-NAME>RCI_CDS</LONG-NAME>
+								<DESC>
+									<p>
+coding data set - Memory Block ID
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RV_CODIER_DATEN</SHORT-NAME>
+								<LONG-NAME>RV_CDS</LONG-NAME>
+								<DESC>
+									<p>
+coding data set - Die aktuelle Codier-Toolkette kann pro Steuergerät maximal 1023 Bytes verarbeiten.
+                  </p>
+								</DESC>
+								<BYTE-POSITION>3</BYTE-POSITION>
+								<DOP-REF ID-REF="id-f1867d2f-b963-4cdf-b436-60a0a666246a"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-9200ba4a-ef79-4fc3-9c0b-8fc8b3c98ec1" OID="id-9200ba4a-ef79-4fc3-9c0b-8fc8b3c98ec1">
+						<SHORT-NAME>WDBCI_C_FA_SCHREIBEN_RESP</SHORT-NAME>
+						<LONG-NAME>WDBCI_C_FA_SCHREIBEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>WDBCIPR</SHORT-NAME>
+								<LONG-NAME>ResponseID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>110</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI</SHORT-NAME>
+								<LONG-NAME>RCI_VO</LONG-NAME>
+								<DESC>
+									<p>
+The parameter recordCommonIdentifier (RCI_) in the readDataByCommonIdentifier service identifies a data record which is supported by multiple servers
+                    The purpose of common identifiers is to reference a unique parameter with the sam value accross multiple serves (ECUs) within a vehicle manufacturer.
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-e7db5b92-5288-4357-a4a7-b125c5a11aaf" OID="id-e7db5b92-5288-4357-a4a7-b125c5a11aaf">
+						<SHORT-NAME>WDBCI_FGNR_SCHREIBEN_RESP</SHORT-NAME>
+						<LONG-NAME>WDBCI_FGNR_SCHREIBEN_RESP</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>WDBCIPR</SHORT-NAME>
+								<LONG-NAME>ResponseID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>110</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RCI_LVIN</SHORT-NAME>
+								<LONG-NAME>RCI_LVIN</LONG-NAME>
+								<DESC>
+									<p>
+recordCommonID - Fahrgestellnummer (lang)
+                  </p>
+								</DESC>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="RCI_DOP"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+				</POS-RESPONSES>
+				<IMPORT-REFS>
+					<IMPORT-REF DOCREF="DOPS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-cce678a9-19ff-4e38-86ba-22ac18a6270c"/>
+					<IMPORT-REF DOCREF="UNITS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-b6315bcc-2c68-4976-aa1c-3dec7f94acd0"/>
+				</IMPORT-REFS>
+				<PARENT-REFS>
+					<PARENT-REF DOCREF="ISO_14230_BMW_TCP_DLC" DOCTYPE="CONTAINER" ID-REF="id-5799b722-8bee-4373-895f-c7635eba2cd7" xsi:type="PROTOCOL-REF"/>
+					<PARENT-REF DOCREF="ISO_14230_BMW_CAN_DLC" DOCTYPE="CONTAINER" ID-REF="id-edc4ddf1-d19e-431e-b6d8-95ad657cd556" xsi:type="PROTOCOL-REF"/>
+				</PARENT-REFS>
+			</FUNCTIONAL-GROUP>
+		</FUNCTIONAL-GROUPS>
+	</DIAG-LAYER-CONTAINER>
+</ODX>

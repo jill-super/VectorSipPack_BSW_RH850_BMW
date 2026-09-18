@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ODX MODEL-VERSION="2.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="odx.xsd">
+  <DIAG-LAYER-CONTAINER ID="id-1a7dffa4-0b6d-4a98-839c-4388ab4de648" OID="id-1a7dffa4-0b6d-4a98-839c-4388ab4de648">
+    <SHORT-NAME>VSW2_DLC</SHORT-NAME>
+    <LONG-NAME>Video Switch (Highspeed CAN)</LONG-NAME>
+    <BASE-VARIANTS>
+      <BASE-VARIANT ID="id-6616902f-8e82-45f9-8483-114479a425d2" OID="id-6616902f-8e82-45f9-8483-114479a425d2">
+        <SHORT-NAME>VSW2</SHORT-NAME>
+        <LONG-NAME>Video Switch (Highspeed CAN)</LONG-NAME>
+        <COMPARAM-REFS>
+          <COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+            <VALUE>3455</VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          </COMPARAM-REF>
+        </COMPARAM-REFS>
+        <PARENT-REFS>
+          <PARENT-REF DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" xsi:type="FUNCTIONAL-GROUP-REF"/>
+        </PARENT-REFS>
+      </BASE-VARIANT>
+    </BASE-VARIANTS>
+  </DIAG-LAYER-CONTAINER>
+</ODX>

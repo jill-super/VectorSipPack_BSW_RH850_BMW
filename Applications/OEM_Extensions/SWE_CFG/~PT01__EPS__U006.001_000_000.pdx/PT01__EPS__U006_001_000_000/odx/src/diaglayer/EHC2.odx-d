@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DIAG-LAYER-CONTAINER ID="id-adc507a0-4c08-4e8d-9b8c-0bcf5ec8af33" OID="id-adc507a0-4c08-4e8d-9b8c-0bcf5ec8af33">
+    <SHORT-NAME>EHC2_DLC</SHORT-NAME>
+    <LONG-NAME>EHC2_DLC</LONG-NAME>
+    <BASE-VARIANTS>
+      <BASE-VARIANT ID="id-bc0182b3-92ef-4498-915b-ad3d7412d87b" OID="id-bc0182b3-92ef-4498-915b-ad3d7412d87b">
+        <SHORT-NAME>EHC2</SHORT-NAME>
+        <LONG-NAME>Electronic Height Control (2 steht für 2 Achsen)</LONG-NAME>
+        <DESC>
+          <p>
+automatically generated BASE-VARIANT instance EHC2
+          </p>
+        </DESC>
+        <COMPARAM-REFS>
+		<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16"> 
+			<VALUE>2371</VALUE>
+			<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP" />
+		</COMPARAM-REF>
+        </COMPARAM-REFS>
+        <PARENT-REFS>
+          <PARENT-REF DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="PROG_LS_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-4646c54a-1f42-4da6-a628-b66976713291" xsi:type="FUNCTIONAL-GROUP-REF"/>
+        </PARENT-REFS>
+      </BASE-VARIANT>
+    </BASE-VARIANTS>
+  </DIAG-LAYER-CONTAINER>
+</ODX>

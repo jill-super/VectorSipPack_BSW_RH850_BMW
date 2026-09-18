@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-492b358a-16ff-4a28-b05f-9df253201916" ID="id-492b358a-16ff-4a28-b05f-9df253201916">
+        <SHORT-NAME>DSC_DLC</SHORT-NAME>
+        <LONG-NAME>Dynamische Stabilitätscontrol</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-6f3163fc-af9d-462d-ad3e-645ad2d6556f" ID="id-6f3163fc-af9d-462d-ad3e-645ad2d6556f">
+                <SHORT-NAME>DSC</SHORT-NAME>
+                <LONG-NAME>Dynamische Stabilitätscontrol</LONG-NAME>
+                <DESC>
+                    <p>
+automatically generated BASE-VARIANT instance DSC</p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>65000</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

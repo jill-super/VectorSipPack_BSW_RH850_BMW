@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSEQ xmlns="http://bmw.com/2005/psdz.data.cseq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bmw.com/2005/psdz.data.cseq">
+	<!-- Aenderungsdokumentation CSEQ V099
+	Datum        Version    Author    Aenderung
+	28.04.2013   0.0.1      P.Picard  Initiale Erstellung	
+	-->
+	<!--*****************************X_BMS zuerst codieren*******************************************-->
+	<dependency>
+		<preconditions>
+			<ECU><baseVariantName name="X_BMS"/><diagnosticAddress physicalOffset="18"/></ECU>
+		</preconditions>
+		<dependors>
+      <ECU><baseVariantName name="X_AUDIO"/><diagnosticAddress physicalOffset="99"/></ECU>			
+			<ECU><baseVariantName name="X_BCO"/><diagnosticAddress physicalOffset="114"/></ECU>
+			<ECU><baseVariantName name="X_KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU>
+		</dependors>
+	</dependency>
+</CSEQ>

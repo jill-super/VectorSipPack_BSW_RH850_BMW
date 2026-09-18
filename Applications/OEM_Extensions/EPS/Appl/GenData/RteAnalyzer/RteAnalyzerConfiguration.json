@@ -1,0 +1,1301 @@
+{
+   "description" : "RTE Analyzer configuration file",
+   "version" : "1.0.2",
+   "BswOsApplication" : "OsApplication_QM",
+   "DataConsistencyAPIGroupList" : [
+      {
+         "CanBeNested" : "0",
+         "HandleIndex" : "-1",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "DisableAllInterrupts",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "0",
+         "LocksSameCore" : "1",
+         "ProhibitedAPIFunctions" : [
+            "^(Wait|Set)Event",
+            "^(Activate|Chain|Terminate)Task",
+            "^Suspend(All|OS)Interrupts",
+            "^GetResource",
+            "^osDisable.",
+            "^Schedule"
+         ],
+         "Type" : "INTERRUPT",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "EnableAllInterrupts",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      },
+      {
+         "CanBeNested" : "0",
+         "HandleIndex" : "-1",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osDisableGlobalAM",
+               "RequiresTrustedContext" : "0"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osDisableGlobalKM",
+               "RequiresTrustedContext" : "1"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osDisableGlobalUM",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "0",
+         "LocksSameCore" : "1",
+         "ProhibitedAPIFunctions" : [
+            "^(Wait|Set)Event",
+            "^(Activate|Chain|Terminate)Task",
+            "^DisableAllInterrupts",
+            "^GetResource",
+            "^osDisable.",
+            "^Schedule"
+         ],
+         "Type" : "INTERRUPT",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osEnableGlobalAM",
+               "RequiresTrustedContext" : "0"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osEnableGlobalKM",
+               "RequiresTrustedContext" : "1"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osEnableGlobalUM",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      },
+      {
+         "CanBeNested" : "0",
+         "HandleIndex" : "-1",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osDisableLevelAM",
+               "RequiresTrustedContext" : "0"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osDisableLevelKM",
+               "RequiresTrustedContext" : "1"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osDisableLevelUM",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "0",
+         "LocksSameCore" : "1",
+         "ProhibitedAPIFunctions" : [
+            "^(Wait|Set)Event",
+            "^(Activate|Chain|Terminate)Task",
+            "^DisableAllInterrupts",
+            "^GetResource",
+            "^osDisable.",
+            "^Schedule"
+         ],
+         "Type" : "INTERRUPT",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osEnableLevelAM",
+               "RequiresTrustedContext" : "0"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osEnableLevelKM",
+               "RequiresTrustedContext" : "1"
+            },
+            {
+               "CanBeUsedInISRContext" : "0",
+               "Name" : "osEnableLevelUM",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      },
+      {
+         "CanBeNested" : "1",
+         "HandleIndex" : "-1",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "SuspendAllInterrupts",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "0",
+         "LocksSameCore" : "1",
+         "ProhibitedAPIFunctions" : [
+            "^(Wait|Set)Event",
+            "^(Activate|Chain|Terminate)Task",
+            "^DisableAllInterrupts",
+            "^GetResource",
+            "^osDisable.",
+            "^Schedule"
+         ],
+         "Type" : "INTERRUPT",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "ResumeAllInterrupts",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      },
+      {
+         "CanBeNested" : "1",
+         "HandleIndex" : "-1",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "SuspendOSInterrupts",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "0",
+         "LocksSameCore" : "1",
+         "ProhibitedAPIFunctions" : [
+            "^(Wait|Set)Event",
+            "^(Activate|Chain|Terminate)Task",
+            "^DisableAllInterrupts",
+            "^GetResource",
+            "^osDisable.",
+            "^Schedule"
+         ],
+         "Type" : "INTERRUPT",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "ResumeOSInterrupts",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      },
+      {
+         "CanBeNested" : "0",
+         "HandleIndex" : "0",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "GetResource",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "0",
+         "LocksSameCore" : "1",
+         "ProhibitedAPIFunctions" : [
+            "^(Wait|Set)Event",
+            "^(Activate|Chain|Terminate)Task",
+            "^Schedule"
+         ],
+         "Type" : "RESOURCE",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "ReleaseResource",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      },
+      {
+         "CanBeNested" : "0",
+         "HandleIndex" : "0",
+         "LockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "GetSpinlock",
+               "RequiresTrustedContext" : "0"
+            }
+         ],
+         "LocksOtherCores" : "1",
+         "LocksSameCore" : "0",
+         "ProhibitedAPIFunctions" : [
+            "^(Wait|Set)Event",
+            "^(Activate|Chain|Terminate)Task",
+            "^Schedule"
+         ],
+         "Type" : "SPINLOCK",
+         "UnlockAPIList" : [
+            {
+               "CanBeUsedInISRContext" : "1",
+               "Name" : "ReleaseSpinlock",
+               "RequiresTrustedContext" : "0"
+            }
+         ]
+      }
+   ],
+   "ISRList" : [
+      {
+         "ExecutedOnTaskLevel" : "0",
+         "NamePattern" : "Rte_LdComCbk.*"
+      },
+      {
+         "ExecutedOnTaskLevel" : "1",
+         "NamePattern" : "Rte_GetMirror.*"
+      },
+      {
+         "ExecutedOnTaskLevel" : "1",
+         "NamePattern" : "Rte_SetMirror.*"
+      },
+      {
+         "ExecutedOnTaskLevel" : "1",
+         "NamePattern" : "Rte_NvMNotifyJobFinished.*"
+      },
+      {
+         "ExecutedOnTaskLevel" : "1",
+         "NamePattern" : "Rte_NvMNotifyInitBlock.*"
+      }
+   ],
+   "InitFunctionNamePatternList" : [
+      "Rte_InitMemory",
+      "SchM_Init",
+      "Rte_Start"
+   ],
+   "InlineFunctionNamePatternList" : [
+      "Rte_QAddElement.*",
+      "Rte_QUnqueueElement.*",
+      "Rte_MemCmp.*",
+      "Rte_DecDisableFlags.*",
+      "Rte_IncDisableFlags.*",
+      "E2EXf_.*"
+   ],
+   "MemCpyFunctionNamePatternList" : [
+      "^llvm.memcpy",
+      "^memcpy",
+      "^Rte_MemCpy.*",
+      "^SomeIpXf_MemCpy.*",
+      "^VStdMemCpy_Func",
+      "^CanTSyn_MemCpy",
+      "^CanTp_Util_MemCpy",
+      "^IpBase_Copy"
+   ],
+   "MemSetFunctionNamePatternList" : [
+      "^.*memset",
+      "^.*MemSet",
+      "^Rte_MemClr"
+   ],
+   "NonReentrantFunctionList" : [
+      {
+         "HandleIndex" : "0",
+         "NamePatternList" : [
+            "Com_SendSignal",
+            "Com_InvalidateSignal",
+            "Com_UpdateShadowSignal",
+            "Com_InvalidateSignalGroup"
+         ],
+         "NoConcurrentCallsOnDifferentCores" : "0",
+         "NoConcurrentCallsOnSameCore" : "1"
+      },
+      {
+         "HandleIndex" : "0",
+         "NamePatternList" : [
+            "Com_ReceiveShadowSignal",
+            "Com_ReceiveSignalGroup"
+         ],
+         "NoConcurrentCallsOnDifferentCores" : "0",
+         "NoConcurrentCallsOnSameCore" : "1"
+      },
+      {
+         "HandleIndex" : "0",
+         "NamePatternList" : [
+            "LdCom_TriggerTransmit"
+         ],
+         "NoConcurrentCallsOnDifferentCores" : "0",
+         "NoConcurrentCallsOnSameCore" : "1"
+      },
+      {
+         "HandleIndex" : "-1",
+         "NamePatternList" : [
+            "^IocSend_(.+)(_[:digit:]+)?",
+            "^IocWrite_(.+)(_[:digit:]+)?",
+            "^IocReceive_(.+)",
+            "^IocRead_(.+)"
+         ],
+         "NoConcurrentCallsOnDifferentCores" : "1",
+         "NoConcurrentCallsOnSameCore" : "1"
+      }
+   ],
+   "NotReportedConcurrentAccessList" : [
+      {
+         "Justification" : "Accesses to the server queue are synchronized with SetEvent and WaitEvent",
+         "NamePattern" : "Rte_CS_ServerQueue_.*",
+         "Type" : "VARIABLE"
+      },
+      {
+         "Justification" : "Accesses to the client queue are synchronized with SetEvent and WaitEvent",
+         "NamePattern" : "Rte_CS_ClientQueue_.*",
+         "Type" : "VARIABLE"
+      },
+      {
+         "Justification" : "Accesses to the client queue are synchronized with SetEvent and WaitEvent",
+         "NamePattern" : "Rte_CS_ClientQueue2_.*",
+         "Type" : "VARIABLE"
+      },
+      {
+         "Justification" : "Only error in runnable stubs. Will be fixed with ESCAN00085617",
+         "NamePattern" : ".*_FctPtr",
+         "Type" : "VARIABLE"
+      },
+      {
+         "Justification" : "Accesses to the waiting task list are synchronized with SetEvent and WaitEvent",
+         "NamePattern" : "Rte_CS_WaitingTaskList_.*",
+         "Type" : "VARIABLE"
+      },
+      {
+         "Justification" : "Concurrent access is prevented by idle flags and sequence",
+         "NamePattern" : "^Ioc(Read|Write)_Rte_CS_OutParams_",
+         "Type" : "FUNCTION"
+      }
+   ],
+   "OsAPIFunctions" : [
+      "^os.",
+      "^Com_.",
+      "^LdCom_.",
+      "^(Get|Wait|Clear|Set)Event$",
+      "^(Disable|Enable|Suspend|Resume)AllInterrupts$",
+      "^(Suspend|Resume)OSInterrupts$",
+      "^(Activate|Terminate|Chain)Task$",
+      "^(SetRel|Cancel)Alarm$",
+      "^Get(Core|Task)ID$",
+      "^(Get|Release)(Resource|Spinlock)$",
+      "^Schedule$"
+   ],
+   "OsApplicationList" : [
+      {
+         "CoreId" : "0",
+         "IsTrusted" : "1",
+         "OsApplicationName" : "OsApplication_ASIL",
+         "SafetyLevel" : "5"
+      },
+      {
+         "CoreId" : "0",
+         "IsTrusted" : "0",
+         "OsApplicationName" : "OsApplication_QM",
+         "SafetyLevel" : "1"
+      },
+      {
+         "CoreId" : "0",
+         "IsTrusted" : "1",
+         "OsApplicationName" : "SystemApplication_OsCore_CORE0",
+         "SafetyLevel" : "0"
+      }
+   ],
+   "PlatformSettings" : {
+      "MaxAtomicMemoryAccess" : "4"
+   },
+   "SIPDirectories" : [
+      "D:\\usr\\usage\\Delivery\\CBD17x\\CBD1700369\\D04\\external\\"
+   ],
+   "SourceFileList" : [
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TestControl"
+         ],
+         "SourceFile" : "Source/TestControl.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Rte"
+         ],
+         "SourceFile" : "../Rte.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Rte_OsApplication_ASIL"
+         ],
+         "SourceFile" : "../Rte_OsApplication_ASIL.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Rte_OsApplication_QM"
+         ],
+         "SourceFile" : "../Rte_OsApplication_QM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Rte_SystemApplication_OsCore_CORE0"
+         ],
+         "SourceFile" : "../Rte_SystemApplication_OsCore_CORE0.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/BswM"
+         ],
+         "SourceFile" : "Source/BswM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_BswM"
+         ],
+         "SourceFile" : "Source/TSC_SchM_BswM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Com"
+         ],
+         "SourceFile" : "Source/Com.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Com"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Com.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/ComM"
+         ],
+         "SourceFile" : "Source/ComM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_ComM"
+         ],
+         "SourceFile" : "Source/TSC_SchM_ComM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Dcm"
+         ],
+         "SourceFile" : "Source/Dcm.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Dcm"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Dcm.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Dem"
+         ],
+         "SourceFile" : "Source/Dem.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Dem"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Dem.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Det"
+         ],
+         "SourceFile" : "Source/Det.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Det"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Det.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/EcuM"
+         ],
+         "SourceFile" : "Source/EcuM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_EcuM"
+         ],
+         "SourceFile" : "Source/TSC_SchM_EcuM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Fee_30_SmallSector"
+         ],
+         "SourceFile" : "Source/Fee_30_SmallSector.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Fee_30_SmallSector"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Fee_30_SmallSector.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Fls"
+         ],
+         "SourceFile" : "Source/Fls.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Fls"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Fls.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Fr"
+         ],
+         "SourceFile" : "Source/Fr.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Fr"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Fr.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/FrIf"
+         ],
+         "SourceFile" : "Source/FrIf.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_FrIf"
+         ],
+         "SourceFile" : "Source/TSC_SchM_FrIf.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/FrSM"
+         ],
+         "SourceFile" : "Source/FrSM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_FrSM"
+         ],
+         "SourceFile" : "Source/TSC_SchM_FrSM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/FrTp"
+         ],
+         "SourceFile" : "Source/FrTp.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_FrTp"
+         ],
+         "SourceFile" : "Source/TSC_SchM_FrTp.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/IpduM"
+         ],
+         "SourceFile" : "Source/IpduM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_IpduM"
+         ],
+         "SourceFile" : "Source/TSC_SchM_IpduM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Mcu"
+         ],
+         "SourceFile" : "Source/Mcu.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Mcu"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Mcu.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/NvM"
+         ],
+         "SourceFile" : "Source/NvM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_NvM"
+         ],
+         "SourceFile" : "Source/TSC_SchM_NvM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/PduR"
+         ],
+         "SourceFile" : "Source/PduR.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_PduR"
+         ],
+         "SourceFile" : "Source/TSC_SchM_PduR.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Port"
+         ],
+         "SourceFile" : "Source/Port.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Port"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Port.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/WdgM"
+         ],
+         "SourceFile" : "Source/WdgM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_WdgM"
+         ],
+         "SourceFile" : "Source/TSC_SchM_WdgM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Wdg_59_DriverA"
+         ],
+         "SourceFile" : "Source/Wdg_59_DriverA.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Wdg_59_DriverA"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Wdg_59_DriverA.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Xcp"
+         ],
+         "SourceFile" : "Source/Xcp.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Xcp"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Xcp.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/BMW_Application_Connector_Dummy"
+         ],
+         "SourceFile" : "Source/BMW_Application_Connector_Dummy.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_BMW_Application_Connector_Dummy"
+         ],
+         "SourceFile" : "Source/TSC_BMW_Application_Connector_Dummy.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/BMW_Application_Main"
+         ],
+         "SourceFile" : "Source/BMW_Application_Main.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_BMW_Application_Main"
+         ],
+         "SourceFile" : "Source/TSC_BMW_Application_Main.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Bs"
+         ],
+         "SourceFile" : "Source/Bs.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_Bs"
+         ],
+         "SourceFile" : "Source/TSC_Bs.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_BswM"
+         ],
+         "SourceFile" : "Source/TSC_BswM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_ComM"
+         ],
+         "SourceFile" : "Source/TSC_ComM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Darh"
+         ],
+         "SourceFile" : "Source/Darh.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_Darh"
+         ],
+         "SourceFile" : "Source/TSC_Darh.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_Dcm"
+         ],
+         "SourceFile" : "Source/TSC_Dcm.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/DemMaster_0"
+         ],
+         "SourceFile" : "Source/DemMaster_0.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_DemMaster_0"
+         ],
+         "SourceFile" : "Source/TSC_DemMaster_0.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/DemSatellite_0"
+         ],
+         "SourceFile" : "Source/DemSatellite_0.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_DemSatellite_0"
+         ],
+         "SourceFile" : "Source/TSC_DemSatellite_0.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/DemWrapper"
+         ],
+         "SourceFile" : "Source/DemWrapper.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_DemWrapper"
+         ],
+         "SourceFile" : "Source/TSC_DemWrapper.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_Det"
+         ],
+         "SourceFile" : "Source/TSC_Det.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Dlog"
+         ],
+         "SourceFile" : "Source/Dlog.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_Dlog"
+         ],
+         "SourceFile" : "Source/TSC_Dlog.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_EcuM"
+         ],
+         "SourceFile" : "Source/TSC_EcuM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/IntegrationSample"
+         ],
+         "SourceFile" : "Source/IntegrationSample.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_IntegrationSample"
+         ],
+         "SourceFile" : "Source/TSC_IntegrationSample.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_NvM"
+         ],
+         "SourceFile" : "Source/TSC_NvM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Omc"
+         ],
+         "SourceFile" : "Source/Omc.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_Omc"
+         ],
+         "SourceFile" : "Source/TSC_Omc.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Os_OsCore_CORE0_swc"
+         ],
+         "SourceFile" : "Source/Os_OsCore_CORE0_swc.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_Os_OsCore_CORE0_swc"
+         ],
+         "SourceFile" : "Source/TSC_Os_OsCore_CORE0_swc.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/StdDiag"
+         ],
+         "SourceFile" : "Source/StdDiag.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_StdDiag"
+         ],
+         "SourceFile" : "Source/TSC_StdDiag.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/Stm"
+         ],
+         "SourceFile" : "Source/Stm.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_Stm"
+         ],
+         "SourceFile" : "Source/TSC_Stm.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/SysTime"
+         ],
+         "SourceFile" : "Source/SysTime.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SysTime"
+         ],
+         "SourceFile" : "Source/TSC_SysTime.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/WdgM_OsApplication_ASIL"
+         ],
+         "SourceFile" : "Source/WdgM_OsApplication_ASIL.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "D:/usr/usage/Delivery/CBD17x/CBD1700369/D04/external/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_WdgM_OsApplication_ASIL"
+         ],
+         "SourceFile" : "Source/TSC_WdgM_OsApplication_ASIL.c"
+      }
+   ],
+   "TaskList" : [
+      {
+         "OsApplication" : "OsApplication_QM",
+         "Preemptive" : "0",
+         "Priority" : "45",
+         "TaskName" : "Default_Appl_Init_Task"
+      },
+      {
+         "OsApplication" : "OsApplication_QM",
+         "Preemptive" : "1",
+         "Priority" : "5",
+         "TaskName" : "Default_Appl_Task"
+      },
+      {
+         "OsApplication" : "OsApplication_QM",
+         "Preemptive" : "1",
+         "Priority" : "58",
+         "TaskName" : "Default_BAC_Appl_BMW_Task"
+      },
+      {
+         "OsApplication" : "OsApplication_ASIL",
+         "Preemptive" : "1",
+         "Priority" : "65",
+         "TaskName" : "Default_BSW_Sync_Task"
+      },
+      {
+         "OsApplication" : "OsApplication_ASIL",
+         "Preemptive" : "1",
+         "Priority" : "0",
+         "TaskName" : "Default_Background_Task"
+      },
+      {
+         "OsApplication" : "OsApplication_ASIL",
+         "Preemptive" : "0",
+         "Priority" : "80",
+         "TaskName" : "Default_Init_Task"
+      },
+      {
+         "OsApplication" : "OsApplication_QM",
+         "Preemptive" : "1",
+         "Priority" : "10",
+         "TaskName" : "Default_RTE_Mode_switch_Task"
+      },
+      {
+         "OsApplication" : "SystemApplication_OsCore_CORE0",
+         "Preemptive" : "1",
+         "Priority" : "4294967295",
+         "TaskName" : "IdleTask_OsCore_CORE0"
+      },
+      {
+         "OsApplication" : "OsApplication_ASIL",
+         "Preemptive" : "1",
+         "Priority" : "60",
+         "TaskName" : "OsTask_BSW_ASIL"
+      },
+      {
+         "OsApplication" : "SystemApplication_OsCore_CORE0",
+         "Preemptive" : "1",
+         "Priority" : "20",
+         "TaskName" : "OsTask_LowPrioNvm"
+      }
+   ],
+   "TemplateDataBaseDirectory" : "D:\\usr\\usage\\Delivery\\CBD17x\\CBD1700369\\D04\\external\\Generators\\Rte"
+}

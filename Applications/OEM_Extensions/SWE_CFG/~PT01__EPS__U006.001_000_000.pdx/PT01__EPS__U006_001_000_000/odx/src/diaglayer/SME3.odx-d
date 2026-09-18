@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-fbc6ef3f-8a6c-41fe-b019-1b96eaa91115" ID="id-fbc6ef3f-8a6c-41fe-b019-1b96eaa91115">
+        <SHORT-NAME>SME3_DLC</SHORT-NAME>
+        <LONG-NAME>Speicher Management Elektronik</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-0f84a6c2-c88a-4aa5-b83f-b1cf12beb1d9" ID="id-0f84a6c2-c88a-4aa5-b83f-b1cf12beb1d9">
+                <SHORT-NAME>SME3</SHORT-NAME>
+                <LONG-NAME>Speicher Management Elektronik</LONG-NAME>
+                <DESC>
+                    <p>Speicher Management Elektronik</p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>3455</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

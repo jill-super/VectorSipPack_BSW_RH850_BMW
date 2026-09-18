@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<DIAG-LAYER-CONTAINER ID="id-c3cc6521-0a31-494b-8209-3300d5b8d798" OID="id-c3cc6521-0a31-494b-8209-3300d5b8d798">
+		<SHORT-NAME>EMF_DLC</SHORT-NAME>
+		<LONG-NAME>Elektromechanische Feststellbremse</LONG-NAME>
+		<BASE-VARIANTS>
+			<BASE-VARIANT ID="id-f862f018-fd9f-4bf6-8bf9-1f8576f88403" OID="id-f862f018-fd9f-4bf6-8bf9-1f8576f88403">
+				<SHORT-NAME>EMF</SHORT-NAME>
+				<LONG-NAME>Elektromechanische Feststellbremse</LONG-NAME>
+				<DESC>
+					<p>
+automatically generated BASE-VARIANT instance EMF
+          </p>
+				</DESC>
+				<COMPARAM-REFS>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+						<VALUE>5000</VALUE>
+						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+					</COMPARAM-REF>
+				</COMPARAM-REFS>
+				<PARENT-REFS>
+					<PARENT-REF DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" xsi:type="FUNCTIONAL-GROUP-REF"/>
+					<PARENT-REF DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" xsi:type="FUNCTIONAL-GROUP-REF"/>
+				</PARENT-REFS>
+			</BASE-VARIANT>
+		</BASE-VARIANTS>
+	</DIAG-LAYER-CONTAINER>
+</ODX>

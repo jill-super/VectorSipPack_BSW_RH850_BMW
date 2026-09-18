@@ -1,0 +1,50 @@
+---
+title: BSW RH850 BMW Documentation
+description: AUTOSAR Basic Software for Renesas RH850, tailored for BMW — Vector MICROSAR SIP CBD1700369.
+template: splash
+hero:
+  tagline: AUTOSAR BSW on Renesas RH850 for BMW — Vector MICROSAR SIP, documented module by module.
+  actions:
+    - text: Browse AUTOSAR layers
+      link: ./layers/
+      icon: right-arrow
+    - text: Vector SIP overview
+      link: ./sip/
+      icon: document
+      variant: secondary
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <Card title="Services" icon="gear">
+    NvM, Dem, Dcm, EcuM, Os, WdgM, Csm/Cry, E2E and more — the system services of the SIP.
+  </Card>
+  <Card title="Communication" icon="comment">
+    FlexRay cluster (Fr, FrIf, FrSM, FrTp), Com, PduR, SecOC, XCP and the COM stack.
+  </Card>
+  <Card title="MCAL & ECU Abstraction" icon="puzzle">
+    Renesas RH850 MCAL integration plus IoHwAb, WdgIf and MemIf abstraction.
+  </Card>
+  <Card title="Vector vs. custom" icon="information">
+    Every module page states its origin: Vector MICROSAR, BMW custom, or third-party.
+  </Card>
+</CardGrid>
+
+## Start here
+
+<LinkCard
+  title="AUTOSAR layer overview"
+  description="Module tables per layer with Vector/custom origin."
+  href="./layers/"
+/>
+<LinkCard
+  title="Vector SIP (CBD1700369_D04, SIP 19.06.14)"
+  description="Delivery metadata, version check and per-module SIP pages."
+  href="./sip/"
+/>
+<LinkCard
+  title="Converted Vector documentation"
+  description="All 70 PDFs converted to searchable Markdown pages."
+  href="./general/"
+/>

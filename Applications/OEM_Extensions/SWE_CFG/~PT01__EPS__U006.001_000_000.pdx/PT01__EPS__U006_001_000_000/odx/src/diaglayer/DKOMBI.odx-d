@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-894bd375-8a1c-4079-a969-ccd0344c59d1" ID="id-894bd375-8a1c-4079-a969-ccd0344c59d1">
+        <SHORT-NAME>DKOMBI_DLC</SHORT-NAME>
+        <LONG-NAME>Display Kombi Instrument</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-9d8a8bb6-c5d0-4fbb-852e-cd3d82736497" ID="id-9d8a8bb6-c5d0-4fbb-852e-cd3d82736497">
+                <SHORT-NAME>DKOMBI</SHORT-NAME>
+                <LONG-NAME>Display Kombi Instrument</LONG-NAME>
+                <DESC>
+                    <p></p>
+                </DESC>
+		        		<COMPARAM-REFS>
+				        	<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+						        <VALUE>8651</VALUE>
+						        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+					        </COMPARAM-REF>				
+				        </COMPARAM-REFS>                        
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="GWSZ_DLC" ID-REF="id-d5d78338-2b70-40e1-a238-d4eefec8bd45"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="VCM_UDS_DLC" ID-REF="id-b3dccc52-bb76-4354-802f-e03e7ac08575">
+						<NOT-INHERITED-DIAG-COMMS>
+							<NOT-INHERITED-DIAG-COMM>
+								<DIAG-COMM-SNREF SHORT-NAME="READ_DATA_BY_IDENTIFIER_PLAIN"/>
+							</NOT-INHERITED-DIAG-COMM>
+							<NOT-INHERITED-DIAG-COMM>
+								<DIAG-COMM-SNREF SHORT-NAME="WRITE_DATA_BY_IDENTIFIER_PLAIN"/>
+							</NOT-INHERITED-DIAG-COMM>
+						</NOT-INHERITED-DIAG-COMMS>
+					</PARENT-REF>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

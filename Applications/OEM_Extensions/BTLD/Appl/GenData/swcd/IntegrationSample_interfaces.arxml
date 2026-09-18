@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * \file
+ *
+ *  \brief       BMW SWC IntegrationSample
+ *
+ *  This file contains the implementation of the BMW Sample SWC IntegrationSample
+ *  for usage in the BMW AUTOSAR Core Example.
+ *
+ * \project     BMW Platform Software
+ *
+ * \copyright   BMW AG 2016 - 2017
+ *
+ * \version     5.0.3
+ *
+ */
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0_STRICT_COMPACT.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>IntegrationSample</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                   <ELEMENTS>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>CM_SimpleTimerState</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>0</LOWER-LIMIT>
+                            <UPPER-LIMIT>0</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IntegrationSample_Timer_FIRE</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>1</LOWER-LIMIT>
+                            <UPPER-LIMIT>1</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IntegrationSample_Timer_IDLE</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>2</LOWER-LIMIT>
+                            <UPPER-LIMIT>2</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IntegrationSample_Timer_RUNNING</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                  <ELEMENTS>
+                    <DATA-TYPE-MAPPING-SET>
+                      <SHORT-NAME>IntegrationSampleModemappingSimpleTimerMode</SHORT-NAME>
+                      <MODE-REQUEST-TYPE-MAPS>
+                        <MODE-REQUEST-TYPE-MAP>
+                          <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/IntegrationSample/ImplementationDataTypes/IntegrationSample_SimpleTimerStateType</IMPLEMENTATION-DATA-TYPE-REF>
+                          <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP">/BMW/Platform/IntegrationSample/ModeDeclarationGroups/IntegrationSample_SimpleTimerState</MODE-GROUP-REF>
+                        </MODE-REQUEST-TYPE-MAP>
+                      </MODE-REQUEST-TYPE-MAPS>
+                    </DATA-TYPE-MAPPING-SET>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>IntegrationSample_SimpleTimerStateType</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/BMW/Platform/IntegrationSample/CompuMethods/CM_SimpleTimerState</COMPU-METHOD-REF>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                  <ELEMENTS>
+                    <MODE-DECLARATION-GROUP>
+                      <SHORT-NAME>IntegrationSample_SimpleTimerState</SHORT-NAME>
+                      <CATEGORY>EXPLICIT_ORDER</CATEGORY>
+                      <INITIAL-MODE-REF DEST="MODE-DECLARATION">/BMW/Platform/IntegrationSample/ModeDeclarationGroups/IntegrationSample_SimpleTimerState/IntegrationSample_Timer_IDLE</INITIAL-MODE-REF>
+                      <MODE-DECLARATIONS>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>IntegrationSample_Timer_IDLE</SHORT-NAME>
+                          <VALUE>0</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>IntegrationSample_Timer_RUNNING</SHORT-NAME>
+                          <VALUE>1</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>IntegrationSample_Timer_FIRE</SHORT-NAME>
+                          <VALUE>2</VALUE>
+                        </MODE-DECLARATION>
+                      </MODE-DECLARATIONS>
+                      <ON-TRANSITION-VALUE>3</ON-TRANSITION-VALUE>
+                    </MODE-DECLARATION-GROUP>
+                 </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                  <ELEMENTS>
+
+                    <MODE-SWITCH-INTERFACE>
+                      <SHORT-NAME>ISimpleTimer</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <MODE-GROUP>
+                        <SHORT-NAME>SimpleTimerMode</SHORT-NAME>
+                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                        <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/BMW/Platform/IntegrationSample/ModeDeclarationGroups/IntegrationSample_SimpleTimerState</TYPE-TREF>
+                      </MODE-GROUP>
+                    </MODE-SWITCH-INTERFACE>
+
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

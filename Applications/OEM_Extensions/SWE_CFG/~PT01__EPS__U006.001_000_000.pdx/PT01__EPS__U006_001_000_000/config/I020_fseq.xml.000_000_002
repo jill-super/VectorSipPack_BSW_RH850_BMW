@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FSEQ xmlns="http://bmw.com/2005/psdz.data.fseq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<seqInfo seqType="FSEQ" brv="I020" version="000.000.001" author="Michael Fischer" comment="Initial File" lastModified="20170602-120000"/>
+<!-- FSEQ fuer Baureihenverbund I020 ... Datei werden automatisch generiert
+
+  Aenderungsdokumentation
+   Datum         Version    Author        Aenderung                                                        
+   02.06.2017    0.0.1    	M.Fischer     Temporär Initial befüllung
+   31.10.2017    0.0.2    	P.Picard      EE-3-R Aufgabe - Ausgabe
+ -->
+ 
+ <!--
+ INGA als Gateway vor allen anderen Steuergeräten
+ -->
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="INGA18_GW"/><diagnosticAddress physicalOffset="16"/></ECU>
+    <ECU><baseVariantName name="INGA21_GW"/><diagnosticAddress physicalOffset="16"/></ECU>
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="EVALBORAD3"/><diagnosticAddress physicalOffset="125"/></ECU>
+    <ECU><baseVariantName name="EVALBOARD3"/><diagnosticAddress physicalOffset="126"/></ECU>
+    <ECU><baseVariantName name="EVALBOARD3"/><diagnosticAddress physicalOffset="127"/></ECU>
+    <ECU><baseVariantName name="EVALBOARD4"/><diagnosticAddress physicalOffset="131"/></ECU>
+  </dependors>
+ </dependency>
+</FSEQ>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DIAG-LAYER-CONTAINER ID="id-8d1756ca-0bbc-4666-9fd3-9041438c33fe" OID="id-8d1756ca-0bbc-4666-9fd3-9041438c33fe">
+    <SHORT-NAME>CVM_DLC</SHORT-NAME>
+    <LONG-NAME>Cabrio Verdeck Modul</LONG-NAME>
+    <BASE-VARIANTS>
+      <BASE-VARIANT ID="id-3434348a-2b26-42c1-8b51-e635b991cc8f" OID="id-3434348a-2b26-42c1-8b51-e635b991cc8f">
+        <SHORT-NAME>CVM</SHORT-NAME>
+        <LONG-NAME>Cabrio Verdeck Modul</LONG-NAME>
+        <DESC>
+          <p>
+manually generated BASE-VARIANT instance CVM
+          </p>
+        </DESC>
+        <COMPARAM-REFS>
+          <COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+            <VALUE>3455</VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          </COMPARAM-REF>
+        </COMPARAM-REFS> 
+        <PARENT-REFS>
+          <PARENT-REF DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" xsi:type="FUNCTIONAL-GROUP-REF"/>
+        </PARENT-REFS>
+      </BASE-VARIANT>
+    </BASE-VARIANTS>
+  </DIAG-LAYER-CONTAINER>
+</ODX>

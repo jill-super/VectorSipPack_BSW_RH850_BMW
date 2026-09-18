@@ -1,0 +1,24 @@
+/* ICE setup */               
+connect 850eserv2 -rh850 -e1lpd4=11000 -dclock=16000,0,swoff -df=E:\uti\compiler\GHS\comp_201517\rh850\dr7f701319.dvf -id ffffffffffffffffffffffffffffffff -noiop 
+                                         
+/* Set target clock */                   
+target dclock 16000 0 swoff 
+                                         
+/* Disable interrupts */                 
+target reg psw=0x0020                    
+                                         
+/* Unmask reset sources */               
+target pinmask k                         
+                                         
+/* load program and go to main */        
+load BM_EPS.elf    
+load ..\..\BTLD\Appl\BTLD.elf            
+                                         
+/* Set breakpoint to main */             
+b main                                   
+                                         
+/* Reset target */                       
+target rst                               
+                                         
+/* Run application*/                     
+c                                        

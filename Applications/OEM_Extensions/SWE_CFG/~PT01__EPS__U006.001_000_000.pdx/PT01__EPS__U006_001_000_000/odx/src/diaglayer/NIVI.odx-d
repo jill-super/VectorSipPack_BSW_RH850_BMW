@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-a115d904-0e28-4b33-867c-0f1ccefd9fe9" ID="id-a115d904-0e28-4b33-867c-0f1ccefd9fe9">
+        <SHORT-NAME>NIVI_DLC</SHORT-NAME>
+        <LONG-NAME>Night Vision</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-743e4a97-b320-417f-a224-97cfe52b28d8" ID="id-743e4a97-b320-417f-a224-97cfe52b28d8">
+                <SHORT-NAME>NIVI</SHORT-NAME>
+                <LONG-NAME>Night Vision</LONG-NAME>
+                <DESC>
+                    <p>
+automatically generated BASE-VARIANT instance NIVI</p>
+                </DESC>
+                <ADMIN-DATA>
+                    <LANGUAGE>eng</LANGUAGE>
+                    <DOC-REVISIONS>
+                        <DOC-REVISION>
+                            <TEAM-MEMBER-REF DOCTYPE="CONTAINER" DOCREF="ISO_14229_SERVICES_BMW_DLC" ID-REF="id-79529914-0b9d-4eeb-8c46-7030b0fa7054"/>
+                            <REVISION-LABEL>001.000.001</REVISION-LABEL>
+                            <STATE>Release</STATE>
+                            <DATE>2007-08-03T10:25:00</DATE>
+                            <MODIFICATIONS>
+<MODIFICATION>
+    <CHANGE>Changed</CHANGE>
+    <REASON>All jobs attached to the functional class &quot;SWT&quot;</REASON>
+</MODIFICATION>
+                            </MODIFICATIONS>
+                        </DOC-REVISION>
+                    </DOC-REVISIONS>
+                </ADMIN-DATA>
+                <DIAG-DATA-DICTIONARY-SPEC>
+                    <DATA-OBJECT-PROPS>
+                        <DATA-OBJECT-PROP OID="id-16c02aba-d91c-4628-bc8a-8a844d3a71ce" ID="id-16c02aba-d91c-4628-bc8a-8a844d3a71ce">
+                            <SHORT-NAME>NIVI_DID_DOP</SHORT-NAME>
+                            <LONG-NAME>recordDataIdentifier</LONG-NAME>
+                            <COMPU-METHOD>
+<CATEGORY>TEXTTABLE</CATEGORY>
+<COMPU-INTERNAL-TO-PHYS>
+    <COMPU-SCALES>
+        <COMPU-SCALE>
+            <SHORT-LABEL>SDS_NIVI_D387</SHORT-LABEL>
+            <LOWER-LIMIT>54151</LOWER-LIMIT>
+            <UPPER-LIMIT>54151</UPPER-LIMIT>
+            <COMPU-INVERSE-VALUE>
+                <V>54151.0</V>
+            </COMPU-INVERSE-VALUE>
+            <COMPU-CONST>
+                <VT>STATUS_DIEBSTAHLSCHUTZ</VT>
+            </COMPU-CONST>
+        </COMPU-SCALE>
+    </COMPU-SCALES>
+</COMPU-INTERNAL-TO-PHYS>
+                            </COMPU-METHOD>
+                            <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+<BIT-LENGTH>16</BIT-LENGTH>
+                            </DIAG-CODED-TYPE>
+                            <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+                        </DATA-OBJECT-PROP>
+                        <DATA-OBJECT-PROP OID="id-39dc8f96-4511-478f-91fc-b7512727bd70" ID="id-39dc8f96-4511-478f-91fc-b7512727bd70">
+                            <SHORT-NAME>SDS_NIVI_DOP</SHORT-NAME>
+                            <LONG-NAME>STATUS_DIEBSTAHLSCHUTZ_NIVI</LONG-NAME>
+                            <COMPU-METHOD>
+<CATEGORY>TEXTTABLE</CATEGORY>
+<COMPU-INTERNAL-TO-PHYS>
+    <COMPU-SCALES>
+        <COMPU-SCALE>
+            <SHORT-LABEL>OK_00</SHORT-LABEL>
+            <LOWER-LIMIT>0</LOWER-LIMIT>
+            <UPPER-LIMIT>0</UPPER-LIMIT>
+            <COMPU-INVERSE-VALUE>
+                <V>0.0</V>
+            </COMPU-INVERSE-VALUE>
+            <COMPU-CONST>
+                <VT>Zuordnung in Ordnung</VT>
+            </COMPU-CONST>
+        </COMPU-SCALE>
+        <COMPU-SCALE>
+            <SHORT-LABEL>KAMERA_ECU_01</SHORT-LABEL>
+            <LOWER-LIMIT>1</LOWER-LIMIT>
+            <UPPER-LIMIT>1</UPPER-LIMIT>
+            <COMPU-INVERSE-VALUE>
+                <V>1.0</V>
+            </COMPU-INVERSE-VALUE>
+            <COMPU-CONST>
+                <VT>Kamera passt nicht zur ECU</VT>
+            </COMPU-CONST>
+        </COMPU-SCALE>
+        <COMPU-SCALE>
+            <SHORT-LABEL>ECU_FZG_02</SHORT-LABEL>
+            <LOWER-LIMIT>2</LOWER-LIMIT>
+            <UPPER-LIMIT>2</UPPER-LIMIT>
+            <COMPU-INVERSE-VALUE>
+                <V>2.0</V>
+            </COMPU-INVERSE-VALUE>
+            <COMPU-CONST>
+                <VT>ECU passt nicht zum Fahrzeug</VT>
+            </COMPU-CONST>
+        </COMPU-SCALE>
+        <COMPU-SCALE>
+            <SHORT-LABEL>KAMERA_ECU_FZG_03</SHORT-LABEL>
+            <LOWER-LIMIT>3</LOWER-LIMIT>
+            <UPPER-LIMIT>3</UPPER-LIMIT>
+            <COMPU-INVERSE-VALUE>
+                <V>3.0</V>
+            </COMPU-INVERSE-VALUE>
+            <COMPU-CONST>
+                <VT>Kamera passt nicht zur ECU und ECU passt nicht zum Fahrzeug</VT>
+            </COMPU-CONST>
+        </COMPU-SCALE>
+        <COMPU-SCALE>
+            <SHORT-LABEL>FSC_CHECK_INCOMPLETE_04</SHORT-LABEL>
+            <LOWER-LIMIT>4</LOWER-LIMIT>
+            <UPPER-LIMIT>4</UPPER-LIMIT>
+            <COMPU-INVERSE-VALUE>
+                <V>4.0</V>
+            </COMPU-INVERSE-VALUE>
+            <COMPU-CONST>
+                <VT>FSCs noch nicht vollstaendig geprueft oder Standard-FSC-Pruefung fehlgeschlagen</VT>
+            </COMPU-CONST>
+        </COMPU-SCALE>
+    </COMPU-SCALES>
+</COMPU-INTERNAL-TO-PHYS>
+                            </COMPU-METHOD>
+                            <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+<BIT-LENGTH>8</BIT-LENGTH>
+                            </DIAG-CODED-TYPE>
+                            <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+                            <INTERNAL-CONSTR>
+<LOWER-LIMIT>0</LOWER-LIMIT>
+<UPPER-LIMIT>4</UPPER-LIMIT>
+                            </INTERNAL-CONSTR>
+                        </DATA-OBJECT-PROP>
+                    </DATA-OBJECT-PROPS>
+                </DIAG-DATA-DICTIONARY-SPEC>
+                <DIAG-COMMS>
+                    <DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" IS-MANDATORY="true" OID="id-72e43d80-03dc-4ebf-ad0e-813266088363" ID="id-72e43d80-03dc-4ebf-ad0e-813266088363">
+                        <SHORT-NAME>RDBI_SDS_NIVI</SHORT-NAME>
+                        <LONG-NAME>ReadDataByIdentifier STATUS_DIEBSTAHLSCHUTZ_NIVI</LONG-NAME>
+                        <FUNCT-CLASS-REFS>
+                            <FUNCT-CLASS-REF DOCTYPE="CONTAINER" DOCREF="ISO_14229_SERVICES_BMW_DLC" ID-REF="id-1b25b982-6629-49b2-9e54-b8afe6b364f0"/>
+                        </FUNCT-CLASS-REFS>
+                        <AUDIENCE/>
+                        <REQUEST-REF ID-REF="id-55621a4c-c8b8-444a-8aec-3fb22910668b"/>
+                        <POS-RESPONSE-REFS>
+                            <POS-RESPONSE-REF ID-REF="id-87f96c4f-8af4-4ce7-bc7c-4f7362833fdd"/>
+                        </POS-RESPONSE-REFS>
+                    </DIAG-SERVICE>
+                    <SINGLE-ECU-JOB OID="id-2a67973c-8417-48d8-970b-3b3ca4b2ec85" ID="id-2a67973c-8417-48d8-970b-3b3ca4b2ec85">
+                        <SHORT-NAME>SWT_REQUEST_STATUS_FOR_ECU</SHORT-NAME>
+                        <LONG-NAME>MCD3_SWTRequestStatusForECU</LONG-NAME>
+                        <FUNCT-CLASS-REFS>
+                            <FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="SWT_UDS" ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+                        </FUNCT-CLASS-REFS>
+                        <AUDIENCE/>
+                        <PROG-CODES>
+                            <PROG-CODE>
+<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+<SYNTAX>JAR</SYNTAX>
+<REVISION>001.001.000</REVISION>
+<ENTRYPOINT>com.bmw.psdz.jobs.swt.nivi.MCD3_SWTRequestStatusForECU</ENTRYPOINT>
+                            </PROG-CODE>
+                        </PROG-CODES>
+                        <INPUT-PARAMS>
+                            <INPUT-PARAM>
+<SHORT-NAME>APN</SHORT-NAME>
+<LONG-NAME>ApplicationNumber</LONG-NAME>
+<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0"/>
+                            </INPUT-PARAM>
+                            <INPUT-PARAM>
+<SHORT-NAME>UI</SHORT-NAME>
+<LONG-NAME>UpgradeIndex</LONG-NAME>
+<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0"/>
+                            </INPUT-PARAM>
+                            <INPUT-PARAM>
+<SHORT-NAME>PERIODC</SHORT-NAME>
+<LONG-NAME>PeriodicalCheck</LONG-NAME>
+<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0"/>
+                            </INPUT-PARAM>
+                            <INPUT-PARAM>
+<SHORT-NAME>IS_GET_FSC_ENABLED</SHORT-NAME>
+<LONG-NAME>IsGetFscEnabled</LONG-NAME>
+<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0"/>
+                            </INPUT-PARAM>
+                        </INPUT-PARAMS>
+                        <OUTPUT-PARAMS>
+                            <OUTPUT-PARAM OID="id-854fd6a4-d91f-4a20-a713-8f7b850d137d" ID="id-854fd6a4-d91f-4a20-a713-8f7b850d137d">
+<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+<LONG-NAME>PosRespMessage</LONG-NAME>
+<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+                            </OUTPUT-PARAM>
+                            <OUTPUT-PARAM OID="id-0d9a0550-8290-476d-a2f8-9dfd5b5307f0" ID="id-0d9a0550-8290-476d-a2f8-9dfd5b5307f0">
+<SHORT-NAME>VIN</SHORT-NAME>
+<LONG-NAME>VIN</LONG-NAME>
+<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+                            </OUTPUT-PARAM>
+                            <OUTPUT-PARAM OID="id-80cc192e-391e-4075-bbb0-d8840c78b993" ID="id-80cc192e-391e-4075-bbb0-d8840c78b993">
+<SHORT-NAME>SLR</SHORT-NAME>
+<LONG-NAME>StatusLesenResult</LONG-NAME>
+<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+                            </OUTPUT-PARAM>
+                            <OUTPUT-PARAM OID="id-3eb998ce-1a23-41a9-a91a-fa821ab40734" ID="id-3eb998ce-1a23-41a9-a91a-fa821ab40734">
+<SHORT-NAME>LH_NUMBER</SHORT-NAME>
+<LONG-NAME>LastenheftNummer</LONG-NAME>
+<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+                            </OUTPUT-PARAM>
+                            <OUTPUT-PARAM OID="id-2af80a37-9826-4714-8762-c96ea11f80a1" ID="id-2af80a37-9826-4714-8762-c96ea11f80a1">
+<SHORT-NAME>SWT_LIB_VERSION</SHORT-NAME>
+<LONG-NAME>SWTLibraryVersion</LONG-NAME>
+<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+                            </OUTPUT-PARAM>
+                            <OUTPUT-PARAM OID="id-a9fefe36-1e22-44b0-818a-1d84f481fd3f" ID="id-a9fefe36-1e22-44b0-818a-1d84f481fd3f">
+<SHORT-NAME>SWT_APP_SIG_STATUS_LIST</SHORT-NAME>
+<LONG-NAME>SWTAppSignaturStatus</LONG-NAME>
+<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="SWT_UDS" ID-REF="id-54240fd2-1095-40db-a9de-5f3b347cf442"/>
+                            </OUTPUT-PARAM>
+                        </OUTPUT-PARAMS>
+                        <NEG-OUTPUT-PARAMS>
+                            <NEG-OUTPUT-PARAM>
+<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+<LONG-NAME>ErrorCode</LONG-NAME>
+<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+                            </NEG-OUTPUT-PARAM>
+                            <NEG-OUTPUT-PARAM>
+<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+<LONG-NAME>ErrorDescription</LONG-NAME>
+<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+                            </NEG-OUTPUT-PARAM>
+                            <NEG-OUTPUT-PARAM>
+<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+<LONG-NAME>ErrorSeverity</LONG-NAME>
+<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+                            </NEG-OUTPUT-PARAM>
+                        </NEG-OUTPUT-PARAMS>
+                    </SINGLE-ECU-JOB>
+                </DIAG-COMMS>
+                <REQUESTS>
+                    <REQUEST OID="id-55621a4c-c8b8-444a-8aec-3fb22910668b" ID="id-55621a4c-c8b8-444a-8aec-3fb22910668b">
+                        <SHORT-NAME>RDBI_SDS_NIVI_REQ</SHORT-NAME>
+                        <LONG-NAME>ReadDataByIdentifier STATUS_DIEBSTAHLSCHUTZ_NIVI Request</LONG-NAME>
+                        <PARAMS>
+                            <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+<SHORT-NAME>RDBI</SHORT-NAME>
+<LONG-NAME>ReadDataByIdentifier Service Id</LONG-NAME>
+<BYTE-POSITION>0</BYTE-POSITION>
+<CODED-VALUE>34</CODED-VALUE>
+<DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+    <BIT-LENGTH>8</BIT-LENGTH>
+</DIAG-CODED-TYPE>
+                            </PARAM>
+                            <PARAM xsi:type="PHYS-CONST">
+<SHORT-NAME>DID</SHORT-NAME>
+<LONG-NAME>dataIdentifier</LONG-NAME>
+<BYTE-POSITION>1</BYTE-POSITION>
+<PHYS-CONSTANT-VALUE>STATUS_DIEBSTAHLSCHUTZ</PHYS-CONSTANT-VALUE>
+<DOP-REF ID-REF="id-16c02aba-d91c-4628-bc8a-8a844d3a71ce"/>
+                            </PARAM>
+                        </PARAMS>
+                    </REQUEST>
+                </REQUESTS>
+                <POS-RESPONSES>
+                    <POS-RESPONSE OID="id-87f96c4f-8af4-4ce7-bc7c-4f7362833fdd" ID="id-87f96c4f-8af4-4ce7-bc7c-4f7362833fdd">
+                        <SHORT-NAME>RDBI_SDS_NIVI_RESP</SHORT-NAME>
+                        <LONG-NAME>ReadDataByIdentifier STATUS_DIEBSTAHLSCHUTZ_NIVI Response</LONG-NAME>
+                        <PARAMS>
+                            <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+<SHORT-NAME>RDBIPR</SHORT-NAME>
+<LONG-NAME>ReadDataByIdentifier Response Service Id</LONG-NAME>
+<BYTE-POSITION>0</BYTE-POSITION>
+<CODED-VALUE>98</CODED-VALUE>
+<DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+    <BIT-LENGTH>8</BIT-LENGTH>
+</DIAG-CODED-TYPE>
+                            </PARAM>
+                            <PARAM xsi:type="MATCHING-REQUEST-PARAM">
+<SHORT-NAME>DID</SHORT-NAME>
+<LONG-NAME>dataIdentifier</LONG-NAME>
+<BYTE-POSITION>1</BYTE-POSITION>
+<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+<BYTE-LENGTH>2</BYTE-LENGTH>
+                            </PARAM>
+                            <PARAM xsi:type="VALUE">
+<SHORT-NAME>SDS_NIVI</SHORT-NAME>
+<LONG-NAME>STATUS_DIEBSTAHLSCHUTZ_NIVI</LONG-NAME>
+<BYTE-POSITION>3</BYTE-POSITION>
+<DOP-REF ID-REF="id-39dc8f96-4511-478f-91fc-b7512727bd70"/>
+                            </PARAM>
+                            <PARAM xsi:type="VALUE">
+<SHORT-NAME>SDS_NIVI_BYTE</SHORT-NAME>
+<LONG-NAME>STATUS_DIEBSTAHLSCHUTZ_NIVI (Byte)</LONG-NAME>
+<BYTE-POSITION>3</BYTE-POSITION>
+<DOP-REF DOCTYPE="CONTAINER" DOCREF="ISO_14229_SERVICES_BMW_DLC" ID-REF="id-d654f803-f973-421c-9e3c-2a448e606c82"/>
+                            </PARAM>
+                        </PARAMS>
+                    </POS-RESPONSE>
+                </POS-RESPONSES>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a">
+                        <VALUE>3</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a">
+                        <VALUE>3</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>7500</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <IMPORT-REFS>
+                    <IMPORT-REF DOCTYPE="CONTAINER" DOCREF="DOPS_BMW_DLC" ID-REF="id-cce678a9-19ff-4e38-86ba-22ac18a6270c"/>
+                </IMPORT-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="SWT_UDS_DLC" ID-REF="id-8cb94aae-551f-41e4-bddd-2ba1232564d5"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

@@ -1,0 +1,2255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+*  \file
+*
+*  \brief       Bs external interfaces
+*
+*  This file contains the software component description of the Bs module
+*  for usage in the BMW AUTOSAR Core.
+*
+*  \project     BMW AUTOSAR Core
+*
+*  \copyright   BMW AG 2016 - 2017
+*
+*  \version     5.3.0
+*
+*  \remarks     -
+*
+*/
+
+/*
+*
+*  THIS FILE WAS GENERATED. DO NOT MODIFY!
+*
+*  GENERATOR       : BMW PAGe 1.1.0
+*
+*  GENERATION TIME : 2018-01-22 11:15:00.451154
+*
+*/
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0_STRICT_COMPACT.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>Bs</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>Csm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                      <ELEMENTS>
+                        <COMPU-METHOD>
+                          <SHORT-NAME>CM_Crypto_VerifyResultType</SHORT-NAME>
+                          <CATEGORY>TEXTTABLE</CATEGORY>
+                          <COMPU-INTERNAL-TO-PHYS>
+                            <COMPU-SCALES>
+                              <COMPU-SCALE>
+                                <SHORT-LABEL>CRYPTO_E_VER_OK</SHORT-LABEL>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>CRYPTO_E_VER_OK</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <SHORT-LABEL>CRYPTO_E_VER_NOT_OK</SHORT-LABEL>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>CRYPTO_E_VER_NOT_OK</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                            </COMPU-SCALES>
+                          </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                      <ELEMENTS>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>Crypto_VerifyResultType</SHORT-NAME>
+                          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/BMW/Platform/Bs/Csm/CompuMethods/CM_Crypto_VerifyResultType</COMPU-METHOD-REF>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>Csm_HashDataType_SecureToken</SHORT-NAME>
+                          <CATEGORY>ARRAY</CATEGORY>
+                          <SUB-ELEMENTS>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                              <SHORT-NAME>SubCsm_HashDataType_SecureToken</SHORT-NAME>
+                              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                              <ARRAY-SIZE>260</ARRAY-SIZE>
+                              <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          </SUB-ELEMENTS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>Csm_HashResultType_SecureToken</SHORT-NAME>
+                          <CATEGORY>ARRAY</CATEGORY>
+                          <SUB-ELEMENTS>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                              <SHORT-NAME>SubCsm_HashResultType_SecureToken</SHORT-NAME>
+                              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                              <ARRAY-SIZE>32</ARRAY-SIZE>
+                              <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          </SUB-ELEMENTS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>Csm_SignatureGenerateDataType_Csr</SHORT-NAME>
+                          <CATEGORY>ARRAY</CATEGORY>
+                          <SUB-ELEMENTS>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                              <SHORT-NAME>SubCsm_SignatureGenerateDataType_Csr</SHORT-NAME>
+                              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                              <ARRAY-SIZE>32</ARRAY-SIZE>
+                              <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          </SUB-ELEMENTS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>Csm_SignatureGenerateResultType_Csr</SHORT-NAME>
+                          <CATEGORY>ARRAY</CATEGORY>
+                          <SUB-ELEMENTS>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                              <SHORT-NAME>SubCsm_SignatureGenerateResultType_Csr</SHORT-NAME>
+                              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                              <ARRAY-SIZE>32</ARRAY-SIZE>
+                              <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          </SUB-ELEMENTS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>Csm_SignatureVerifyCompareType_SecureToken</SHORT-NAME>
+                          <CATEGORY>ARRAY</CATEGORY>
+                          <SUB-ELEMENTS>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                              <SHORT-NAME>SubCsm_SignatureVerifyCompareType_SecureToken</SHORT-NAME>
+                              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                              <ARRAY-SIZE>32</ARRAY-SIZE>
+                              <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          </SUB-ELEMENTS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>Csm_SignatureVerifyDataType_SecureToken</SHORT-NAME>
+                          <CATEGORY>ARRAY</CATEGORY>
+                          <SUB-ELEMENTS>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                              <SHORT-NAME>SubCsm_SignatureVerifyDataType_SecureToken</SHORT-NAME>
+                              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                              <ARRAY-SIZE>32</ARRAY-SIZE>
+                              <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          </SUB-ELEMENTS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                      <ELEMENTS>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>CsmHash_SecureToken</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>Hash</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>dataBuffer</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Csm/ImplementationDataTypes/Csm_HashDataType_SecureToken</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>dataLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>resultBuffer</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Csm/ImplementationDataTypes/Csm_HashResultType_SecureToken</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>resultLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmHash_SecureToken/CSM_E_BUSY</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmHash_SecureToken/CSM_E_SMALL_BUFFER</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmHash_SecureToken/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_BUSY</SHORT-NAME>
+                              <ERROR-CODE>2</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_SMALL_BUFFER</SHORT-NAME>
+                              <ERROR-CODE>3</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>CsmKeyManagement_Certificate</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>CertificateParse</SHORT-NAME>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_Certificate/CSM_E_BUSY</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_Certificate/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>CertificateVerify</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>verifyKeyId</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>verifyPtr</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Csm/ImplementationDataTypes/Crypto_VerifyResultType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>KeyElementGet</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>keyElementId</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>keyPtr</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>keyLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_Certificate/CSM_E_BUSY</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_Certificate/CSM_E_KEY_NOT_AVAILABLE</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_Certificate/CSM_E_KEY_READ_FAIL</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_Certificate/CSM_E_SMALL_BUFFER</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_Certificate/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>KeyElementSet</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>keyElementId</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>keyPtr</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>keyLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_Certificate/CSM_E_BUSY</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_Certificate/CSM_E_KEY_SIZE_MISMATCH</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_Certificate/CSM_E_KEY_WRITE_FAIL</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_Certificate/CSM_E_SMALL_BUFFER</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_Certificate/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_BUSY</SHORT-NAME>
+                              <ERROR-CODE>2</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_SMALL_BUFFER</SHORT-NAME>
+                              <ERROR-CODE>3</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_KEY_READ_FAIL</SHORT-NAME>
+                              <ERROR-CODE>6</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_KEY_WRITE_FAIL</SHORT-NAME>
+                              <ERROR-CODE>7</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_KEY_NOT_AVAILABLE</SHORT-NAME>
+                              <ERROR-CODE>8</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_KEY_SIZE_MISMATCH</SHORT-NAME>
+                              <ERROR-CODE>10</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>CsmKeyManagement_CsrKey</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>KeyElementGet</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>keyElementId</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>keyPtr</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>keyLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_CsrKey/CSM_E_BUSY</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_CsrKey/CSM_E_KEY_NOT_AVAILABLE</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_CsrKey/CSM_E_KEY_READ_FAIL</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_CsrKey/CSM_E_SMALL_BUFFER</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_CsrKey/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>KeyGenerate</SHORT-NAME>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_CsrKey/CSM_E_BUSY</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmKeyManagement_CsrKey/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_BUSY</SHORT-NAME>
+                              <ERROR-CODE>2</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_SMALL_BUFFER</SHORT-NAME>
+                              <ERROR-CODE>3</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_KEY_READ_FAIL</SHORT-NAME>
+                              <ERROR-CODE>6</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_KEY_WRITE_FAIL</SHORT-NAME>
+                              <ERROR-CODE>7</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_KEY_NOT_AVAILABLE</SHORT-NAME>
+                              <ERROR-CODE>8</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_KEY_SIZE_MISMATCH</SHORT-NAME>
+                              <ERROR-CODE>10</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>CsmSignatureGenerate_Csr</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>SignatureGenerate</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>dataBuffer</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Csm/ImplementationDataTypes/Csm_SignatureGenerateDataType_Csr</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>dataLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>resultBuffer</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Csm/ImplementationDataTypes/Csm_SignatureGenerateResultType_Csr</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>resultLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>INOUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmSignatureGenerate_Csr/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmSignatureGenerate_Csr/CSM_E_BUSY</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmSignatureGenerate_Csr/CSM_E_SMALL_BUFFER</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_BUSY</SHORT-NAME>
+                              <ERROR-CODE>2</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_SMALL_BUFFER</SHORT-NAME>
+                              <ERROR-CODE>3</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>CsmSignatureVerify_SecureToken</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>SignatureVerify</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>dataBuffer</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Csm/ImplementationDataTypes/Csm_SignatureVerifyDataType_SecureToken</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>dataLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>compareBuffer</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Csm/ImplementationDataTypes/Csm_SignatureVerifyCompareType_SecureToken</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>compareLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>resultBuffer</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Csm/ImplementationDataTypes/Crypto_VerifyResultType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmSignatureVerify_SecureToken/CSM_E_BUSY</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmSignatureVerify_SecureToken/CSM_E_SMALL_BUFFER</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Csm/PortInterfaces/CsmSignatureVerify_SecureToken/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_BUSY</SHORT-NAME>
+                              <ERROR-CODE>2</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>CSM_E_SMALL_BUFFER</SHORT-NAME>
+                              <ERROR-CODE>3</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>Dcm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                      <ELEMENTS>
+                        <COMPU-METHOD>
+                          <SHORT-NAME>CM_NegativeResponseCodeType</SHORT-NAME>
+                          <CATEGORY>TEXTTABLE</CATEGORY>
+                          <COMPU-INTERNAL-TO-PHYS>
+                            <COMPU-SCALES>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">16</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">16</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_GENERALREJECT</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">19</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">19</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_INCORRECTMESSAGELENGTHORINVALIDFORMAT</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">33</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">33</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_BUSYREPEATREQUEST</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">34</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">34</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_CONDITIONSNOTCORRECT</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">36</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">36</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_REQUESTSEQUENCEERROR</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">49</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">49</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_REQUESTOUTOFRANGE</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">51</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">51</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_SECURITYACCESSDENIED</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">114</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">114</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_GENERALPROGRAMMINGFAILURE</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">126</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">126</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_SUBFUNCTIONNOTSUPPORTEDINACTIVESESSION</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">129</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">129</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_RPMTOOHIGH</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">130</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">130</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_RPMTOOLOW</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">131</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">131</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_ENGINEISRUNNING</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">132</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">132</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_ENGINEISNOTRUNNING</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">133</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">133</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_ENGINERUNTIMETOOLOW</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">134</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">134</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_TEMPERATURETOOHIGH</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">135</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">135</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_TEMPERATURETOOLOW</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">136</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">136</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_VEHICLESPEEDTOOHIGH</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">137</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">137</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_VEHICLESPEEDTOOLOW</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">138</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">138</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_THROTTLE_PEDALTOOHIGH</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">139</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">139</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_THROTTLE_PEDALTOOLOW</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">140</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">140</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_TRANSMISSIONRANGENOTINNEUTRAL</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">141</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">141</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_TRANSMISSIONRANGENOTINGEAR</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">143</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">143</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_BRAKESWITCH_NOTCLOSED</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">144</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">144</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_SHIFTERLEVERNOTINPARK</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">145</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">145</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_TORQUECONVERTERCLUTCHLOCKED</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">146</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">146</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_VOLTAGETOOHIGH</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">147</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">147</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_E_VOLTAGETOOLOW</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                            </COMPU-SCALES>
+                          </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                        <COMPU-METHOD>
+                          <SHORT-NAME>CM_OpStatusType</SHORT-NAME>
+                          <CATEGORY>TEXTTABLE</CATEGORY>
+                          <COMPU-INTERNAL-TO-PHYS>
+                            <COMPU-SCALES>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_INITIAL</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_PENDING</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_CANCEL</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">3</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DCM_FORCE_RCRRP_OK</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                            </COMPU-SCALES>
+                          </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                      <ELEMENTS>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>Dcm_NegativeResponseCodeType</SHORT-NAME>
+                          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/BMW/Platform/Bs/Dcm/CompuMethods/CM_NegativeResponseCodeType</COMPU-METHOD-REF>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>Dcm_OpStatusType</SHORT-NAME>
+                          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/BMW/Platform/Bs/Dcm/CompuMethods/CM_OpStatusType</COMPU-METHOD-REF>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>RCDataArrayType</SHORT-NAME>
+                          <CATEGORY>ARRAY</CATEGORY>
+                          <SUB-ELEMENTS>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                              <SHORT-NAME>SubRCDataArrayType</SHORT-NAME>
+                              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                              <ARRAY-SIZE>260</ARRAY-SIZE>
+                              <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          </SUB-ELEMENTS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                      <ELEMENTS>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>DataServices_FunctionGroupStatus</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>ReadData</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>OpStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_OpStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>Data</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_FunctionGroupStatus/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_FunctionGroupStatus/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>ConditionCheckRead</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>OpStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_OpStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>ErrorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_FunctionGroupStatus/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_FunctionGroupStatus/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>DCM_E_PENDING</SHORT-NAME>
+                              <ERROR-CODE>10</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>DataServices_ReadWrite</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>WriteData</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>Data</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>DataLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>OpStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_OpStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>ErrorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_ReadWrite/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_ReadWrite/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>ReadData</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>OpStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_OpStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>Data</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_ReadWrite/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_ReadWrite/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>ReadDataLength</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>OpStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_OpStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>DataLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_ReadWrite/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_ReadWrite/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>ConditionCheckRead</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>OpStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_OpStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>ErrorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_ReadWrite/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_ReadWrite/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>DCM_E_PENDING</SHORT-NAME>
+                              <ERROR-CODE>10</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>DataServices_VarLength</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>ReadData</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>OpStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_OpStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>Data</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_VarLength/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_VarLength/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>ReadDataLength</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>OpStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_OpStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>DataLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_VarLength/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_VarLength/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>ConditionCheckRead</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>OpStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_OpStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>ErrorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_VarLength/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_VarLength/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>DCM_E_PENDING</SHORT-NAME>
+                              <ERROR-CODE>10</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE T="2017-02-02T16:46:11+01:00" UUID="55c6c3fb-63b4-4b1b-8f54-eff3584cf3f9">
+                          <SHORT-NAME>RoutineServices_In</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION T="2017-02-02T16:46:20+01:00" UUID="cfe531b9-9ece-4c24-ba67-dc5eb473b4e0">
+                              <SHORT-NAME>Start</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE T="2017-02-02T16:39:55+01:00" UUID="26e338e4-495f-4284-a07a-feb1c3075579">
+                                  <SHORT-NAME>DataIn</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE UUID="a4090510-2171-467c-b5d4-42acc85942d4">
+                                  <SHORT-NAME>OpStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_OpStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE UUID="ebec0e31-9777-4f2f-a1fc-d39a555b19ae">
+                                  <SHORT-NAME>CurrentDataLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE UUID="8fe633ce-04ea-45ee-ba96-4700ba0167fc">
+                                  <SHORT-NAME>ErrorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_In/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_In/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR UUID="42fe9f2a-bd7d-4c76-8220-2f1f45df3986">
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR UUID="2f5be9bc-7381-426a-b214-253da17f2527">
+                              <SHORT-NAME>DCM_E_PENDING</SHORT-NAME>
+                              <ERROR-CODE>10</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>RoutineServices_InOut</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>Start</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>DataIn</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>OpStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_OpStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>DataOut</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>CurrentDataLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>INOUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>ErrorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_InOut/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_InOut/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>DCM_E_PENDING</SHORT-NAME>
+                              <ERROR-CODE>10</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE T="2017-02-02T16:43:02+01:00">
+                          <SHORT-NAME>RoutineServices_NoParam</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION T="2017-02-02T16:45:02+01:00">
+                              <SHORT-NAME>Start</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>OpStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_OpStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>ErrorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_NoParam/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_NoParam/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>DCM_E_PENDING</SHORT-NAME>
+                              <ERROR-CODE>10</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE T="2017-02-02T16:43:02+01:00" UUID="aa7dc456-40bf-4afc-82b0-23d0cbe718cc">
+                          <SHORT-NAME>RoutineServices_Out</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION T="2017-02-02T16:45:02+01:00" UUID="f4ac6a90-6eee-4fc1-9314-96324a427be2">
+                              <SHORT-NAME>Start</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE UUID="eb5fb6a1-a114-467c-a5a2-95ed3cbb9b22">
+                                  <SHORT-NAME>OpStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_OpStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE T="2017-02-02T16:40:03+01:00" UUID="94fe401f-a8e8-469d-b130-97afdc70ea83">
+                                  <SHORT-NAME>DataOut</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE UUID="d6dff9cd-2a81-4295-a212-bcbd96c67333">
+                                  <SHORT-NAME>CurrentDataLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE UUID="8c8f2f9b-219c-4d6c-b2e6-d99b8da7e908">
+                                  <SHORT-NAME>ErrorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_Out/E_NOT_OK</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_Out/DCM_E_PENDING</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR UUID="f39e4547-329c-4791-8aed-b3fd87d3d801">
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR UUID="9cdbd5ed-90b7-473d-a611-f0664190d46c">
+                              <SHORT-NAME>DCM_E_PENDING</SHORT-NAME>
+                              <ERROR-CODE>10</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>Dem</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                      <ELEMENTS>
+                        <COMPU-METHOD>
+                          <SHORT-NAME>CM_Dem_EventStatusType</SHORT-NAME>
+                          <CATEGORY>TEXTTABLE</CATEGORY>
+                          <COMPU-INTERNAL-TO-PHYS>
+                            <COMPU-SCALES>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DEM_EVENT_STATUS_PASSED</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DEM_EVENT_STATUS_FAILED</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DEM_EVENT_STATUS_PREPASSED</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">3</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DEM_EVENT_STATUS_PREFAILED</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">4</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">4</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>DEM_EVENT_STATUS_FDC_THRESHOLD_REACHED</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                            </COMPU-SCALES>
+                          </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>DataConstrs</SHORT-NAME>
+                      <ELEMENTS>
+                        <DATA-CONSTR>
+                          <SHORT-NAME>CONSTR_EventStatusType</SHORT-NAME>
+                          <DATA-CONSTR-RULES>
+                            <DATA-CONSTR-RULE>
+                              <INTERNAL-CONSTRS>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">4</UPPER-LIMIT>
+                              </INTERNAL-CONSTRS>
+                            </DATA-CONSTR-RULE>
+                          </DATA-CONSTR-RULES>
+                        </DATA-CONSTR>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                      <ELEMENTS>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>Dem_EventStatusType</SHORT-NAME>
+                          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/BMW/Platform/Bs/Dem/CompuMethods/CM_Dem_EventStatusType</COMPU-METHOD-REF>
+                                <DATA-CONSTR-REF DEST="DATA-CONSTR">/BMW/Platform/Bs/Dem/DataConstrs/CONSTR_EventStatusType</DATA-CONSTR-REF>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                      <ELEMENTS>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>Bs_DiagnosticMonitor</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>SetEventStatus</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>EventStatus</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dem/ImplementationDataTypes/Dem_EventStatusType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dem/PortInterfaces/Bs_DiagnosticMonitor/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>Det</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                      <ELEMENTS>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>Bs_DETService</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>ReportError</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>InstanceId</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>ApiId</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>ErrorId</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Det/PortInterfaces/Bs_DETService/E_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_OK</SHORT-NAME>
+                              <ERROR-CODE>0</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>Dlog</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                      <ELEMENTS>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>Dlog_EcuUidArrayType</SHORT-NAME>
+                          <CATEGORY>ARRAY</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL></SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <SUB-ELEMENTS>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                              <SHORT-NAME>Dlog_EcuUidSubArrayType</SHORT-NAME>
+                              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                              <ARRAY-SIZE>16</ARRAY-SIZE>
+                              <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          </SUB-ELEMENTS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                      <ELEMENTS>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>DataServices_EcuUid</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>ReadData</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>Data</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dlog/ImplementationDataTypes/Dlog_EcuUidArrayType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/Dlog/PortInterfaces/DataServices_EcuUid/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>NvM</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                      <ELEMENTS>
+                        <COMPU-METHOD>
+                          <SHORT-NAME>CM_RequestResultType</SHORT-NAME>
+                          <CATEGORY>TEXTTABLE</CATEGORY>
+                          <COMPU-INTERNAL-TO-PHYS>
+                            <COMPU-SCALES>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>NVM_REQ_OK</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>NVM_REQ_NOT_OK</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>NVM_REQ_PENDING</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">3</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>NVM_REQ_INTEGRITY_FAILED</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">4</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">4</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>NVM_REQ_BLOCK_SKIPPED</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">5</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">5</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>NVM_REQ_NV_INVALIDATED</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">6</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">6</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>NVM_REQ_CANCELED</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">7</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">7</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>NVM_REQ_REDUNDANCY_FAILED</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                              <COMPU-SCALE>
+                                <LOWER-LIMIT INTERVAL-TYPE="CLOSED">8</LOWER-LIMIT>
+                                <UPPER-LIMIT INTERVAL-TYPE="CLOSED">8</UPPER-LIMIT>
+                                <COMPU-CONST>
+                                  <VT>NVM_REQ_RESTORED_FROM_ROM</VT>
+                                </COMPU-CONST>
+                              </COMPU-SCALE>
+                            </COMPU-SCALES>
+                          </COMPU-INTERNAL-TO-PHYS>
+                        </COMPU-METHOD>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                      <ELEMENTS>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>NvM_DstPtrType</SHORT-NAME>
+                          <CATEGORY>DATA_REFERENCE</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-POINTER-TARGET-PROPS>
+                                  <TARGET-CATEGORY>VALUE</TARGET-CATEGORY>
+                                  <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_Platform/BaseTypes/void</BASE-TYPE-REF>
+                                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                  </SW-DATA-DEF-PROPS>
+                                </SW-POINTER-TARGET-PROPS>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>NvM_RequestResultType</SHORT-NAME>
+                          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <COMPU-METHOD-REF DEST="COMPU-METHOD">/BMW/Platform/Bs/NvM/CompuMethods/CM_RequestResultType</COMPU-METHOD-REF>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>NvM_SrcPtrType</SHORT-NAME>
+                          <CATEGORY>DATA_REFERENCE</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-POINTER-TARGET-PROPS>
+                                  <TARGET-CATEGORY>VALUE</TARGET-CATEGORY>
+                                  <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_Platform/BaseTypes/void</BASE-TYPE-REF>
+                                        <SW-IMPL-POLICY>CONST</SW-IMPL-POLICY>
+                                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                  </SW-DATA-DEF-PROPS>
+                                </SW-POINTER-TARGET-PROPS>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                      <ELEMENTS>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>Bs_NvMAdmin</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>SetBlockProtection</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>ProtectionEnabled</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMAdmin/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>Bs_NvMNotifyInitBlock</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>InitBlock</SHORT-NAME>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMNotifyInitBlock/E_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_OK</SHORT-NAME>
+                              <ERROR-CODE>0</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>Bs_NvMNotifyJobFinished</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>JobFinished</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>ServiceId</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>JobResult</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/NvM/ImplementationDataTypes/NvM_RequestResultType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMNotifyJobFinished/E_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_OK</SHORT-NAME>
+                              <ERROR-CODE>0</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>Bs_NvMService</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>GetErrorStatus</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>RequestResultPtr</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/NvM/ImplementationDataTypes/NvM_RequestResultType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMService/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>SetRamBlockStatus</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>BlockChanged</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMService/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>ReadBlock</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>DstPtr</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/NvM/ImplementationDataTypes/NvM_DstPtrType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMService/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>WriteBlock</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>SrcPtr</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/NvM/ImplementationDataTypes/NvM_SrcPtrType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMService/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SecOC</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                      <ELEMENTS>
+                        <IMPLEMENTATION-DATA-TYPE>
+                          <SHORT-NAME>SecOC_FreshnessArrayType</SHORT-NAME>
+                          <CATEGORY>ARRAY</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL></SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <SUB-ELEMENTS>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                              <SHORT-NAME>SecOC_FreshnessSubArrayType</SHORT-NAME>
+                              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                              <ARRAY-SIZE>8</ARRAY-SIZE>
+                              <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          </SUB-ELEMENTS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                      <ELEMENTS>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>FreshnessManagement</SHORT-NAME>
+                          <IS-SERVICE>true</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>GetRxFreshnessAuthData</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>freshnessValueId</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>truncatedFreshnessValue</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/SecOC/ImplementationDataTypes/SecOC_FreshnessArrayType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>truncatedFreshnessValueLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>authenticDataFreshnessValue</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/SecOC/ImplementationDataTypes/SecOC_FreshnessArrayType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>authenticDataFreshnessValueLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>authVerifyAttempts</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>freshnessValue</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/SecOC/ImplementationDataTypes/SecOC_FreshnessArrayType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>freshnessValueLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>INOUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/SecOC/PortInterfaces/FreshnessManagement/E_OK</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/SecOC/PortInterfaces/FreshnessManagement/E_BUSY</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/SecOC/PortInterfaces/FreshnessManagement/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>GetTxFreshnessTruncData</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>freshnessValueId</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>freshnessValue</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/SecOC/ImplementationDataTypes/SecOC_FreshnessArrayType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>freshnessValueLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>INOUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>truncatedFreshnessValue</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/SecOC/ImplementationDataTypes/SecOC_FreshnessArrayType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>truncatedFreshnessValueLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>INOUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/SecOC/PortInterfaces/FreshnessManagement/E_OK</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/SecOC/PortInterfaces/FreshnessManagement/E_BUSY</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/SecOC/PortInterfaces/FreshnessManagement/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>SPduTxConfirmation</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>freshnessValueId</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/SecOC/PortInterfaces/FreshnessManagement/E_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_BUSY</SHORT-NAME>
+                              <ERROR-CODE>2</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_OK</SHORT-NAME>
+                              <ERROR-CODE>0</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>StdDiag</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                      <ELEMENTS>
+                        <CLIENT-SERVER-INTERFACE>
+                          <SHORT-NAME>StdDiag_Adue</SHORT-NAME>
+                          <IS-SERVICE>false</IS-SERVICE>
+                          <OPERATIONS>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>UploadPreprocess</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>parameter</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>parameterSize</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>errorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_RUNNING</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>UploadPostprocess</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>parameter</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>parameterSize</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>errorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_RUNNING</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>DownloadPreprocess</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>parameter</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>parameterSize</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>errorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_RUNNING</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>DownloadPostprocess</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>parameter</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>parameterSize</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>errorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_RUNNING</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>Upload</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>blockSequenceCounter</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>data</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>length</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>errorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_RUNNING</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>Download</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>blockSequenceCounter</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>data</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/RCDataArrayType</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARRAY-BASE-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>length</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>errorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_RUNNING</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>RequestUpload</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>dataFormatIdentifier</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>size</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>maxBlockLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>errorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_RUNNING</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>RequestDownload</SHORT-NAME>
+                              <ARGUMENTS>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>dataFormatIdentifier</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>size</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>IN</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>maxBlockLength</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                                <ARGUMENT-DATA-PROTOTYPE>
+                                  <SHORT-NAME>errorCode</SHORT-NAME>
+                                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/Dcm/ImplementationDataTypes/Dcm_NegativeResponseCodeType</TYPE-TREF>
+                                  <DIRECTION>OUT</DIRECTION>
+                                  <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                                </ARGUMENT-DATA-PROTOTYPE>
+                              </ARGUMENTS>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_RUNNING</POSSIBLE-ERROR-REF>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_NOT_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>RequestDownloadExit</SHORT-NAME>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>RequestUploadExit</SHORT-NAME>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                            <CLIENT-SERVER-OPERATION>
+                              <SHORT-NAME>CancelOperation</SHORT-NAME>
+                              <POSSIBLE-ERROR-REFS>
+                                <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/E_OK</POSSIBLE-ERROR-REF>
+                              </POSSIBLE-ERROR-REFS>
+                            </CLIENT-SERVER-OPERATION>
+                          </OPERATIONS>
+                          <POSSIBLE-ERRORS>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_RUNNING</SHORT-NAME>
+                              <ERROR-CODE>10</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                              <ERROR-CODE>1</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                            <APPLICATION-ERROR>
+                              <SHORT-NAME>E_OK</SHORT-NAME>
+                              <ERROR-CODE>0</ERROR-CODE>
+                            </APPLICATION-ERROR>
+                          </POSSIBLE-ERRORS>
+                        </CLIENT-SERVER-INTERFACE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

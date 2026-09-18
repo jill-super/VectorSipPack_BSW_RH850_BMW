@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-efede6b0-aeef-495c-955d-0a5e8bffb74a" ID="id-efede6b0-aeef-495c-955d-0a5e8bffb74a">
+        <SHORT-NAME>X_BCA_DLC</SHORT-NAME>
+        <LONG-NAME>BodyControllerAuthority (Behoerde)</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-041952b2-f540-495e-abc8-925620c342af" ID="id-041952b2-f540-495e-abc8-925620c342af">
+                <SHORT-NAME>X_BCA</SHORT-NAME>
+                <LONG-NAME>BodyControllerAuthority (Behoerde)</LONG-NAME>
+                <DESC>
+                    <p>Steuergeraet zur Ansteuerung von Behoerdenkomponenten in Sonderfahrzeugen</p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

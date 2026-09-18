@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-7e8967d2-61c6-4a72-bbc0-de08440924ec" ID="id-7e8967d2-61c6-4a72-bbc0-de08440924ec">
+        <SHORT-NAME>ICAM_DLC</SHORT-NAME>
+        <LONG-NAME>ICAM Rundumsicht Kamaerasystem</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-2bde5e91-a432-4b54-9849-31ff059a604a" ID="id-2bde5e91-a432-4b54-9849-31ff059a604a">
+                <SHORT-NAME>ICAM</SHORT-NAME>
+                <LONG-NAME>ICAM Rundumsicht Kamaerasystem</LONG-NAME>
+                <DESC>
+                    <p>ICAM Rundumsicht Kamerasystem</p>
+                </DESC>
+        <COMPARAM-REFS>
+          <COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+            <VALUE>3455</VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          </COMPARAM-REF>
+        </COMPARAM-REFS> 
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

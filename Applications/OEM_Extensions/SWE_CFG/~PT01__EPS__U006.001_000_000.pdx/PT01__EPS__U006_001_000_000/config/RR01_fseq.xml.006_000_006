@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FSEQ xmlns="http://bmw.com/2005/psdz.data.fseq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- FSEQ fuer Baureihenverbund RR01 Seriies II
+  
+  Aenderungsdokumentation
+	Datum         	Version    	Author    			Aenderung
+	21.09.2009    6.0.0     	G.Buecherl    	Inital
+	03.12.2010    6.0.1     	P.Picard   	    ZBE insert
+	01.04.2011    6.0.2     	P.Picard   	    CGW, ACP insert
+	06.05.2011    6.0.3     	P.Picard   	    TRSVC 0x06 > 0x77
+	28.07.2011    6.0.4     	P.Picard   	    supportsParallelMostFlash deleted
+	01.02.2013    6.0.5         P.Picard        HU_NBT, HU_NBT2, _RSE_HIGH_NBT, RSE_HIGH_NBT2 insert
+	01.03.2013    6.0.6		    S.Zerndl        HU_NBT, HU_NBT2, _RSE_HIGH_NBT, RSE_HIGH_NBT2 removed, only in RR4
+	-->
+  <!--   
+  ZGW als Mastergateway vor allem anderen flashen
+  -->
+  <dependency>
+    <preconditions>
+      <ECU><baseVariantName name="ZGW"/><diagnosticAddress physicalOffset="16"/></ECU>
+    </preconditions>
+    <dependors>
+      <ECU><baseVariantName name="ACP"/><diagnosticAddress physicalOffset="62"/></ECU>
+      <ECU><baseVariantName name="AMP"/><diagnosticAddress physicalOffset="55"/></ECU>
+      <ECU><baseVariantName name="AMP_TOPLR"/><diagnosticAddress physicalOffset="55"/></ECU>
+      <ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/></ECU>
+      <ECU><baseVariantName name="HU_CIC"/><diagnosticAddress physicalOffset="99"/></ECU>
+      <ECU><baseVariantName name="CGW"/><diagnosticAddress physicalOffset="39"/></ECU>
+      <ECU><baseVariantName name="CMB_ECALL"/><diagnosticAddress physicalOffset="97"/></ECU>
+      <ECU><baseVariantName name="CMB_MEDIA"/><diagnosticAddress physicalOffset="54"/></ECU>
+      <ECU><baseVariantName name="MMC_UDS"/><diagnosticAddress physicalOffset="49"/></ECU>
+      <ECU><baseVariantName name="RSE_HIGH"/><diagnosticAddress physicalOffset="38"/></ECU>
+      <ECU><baseVariantName name="TV_MODUL"/><diagnosticAddress physicalOffset="75"/></ECU>
+      <ECU><baseVariantName name="VSW"/><diagnosticAddress physicalOffset="72"/></ECU>
+      <ECU><baseVariantName name="TRSVC"/><diagnosticAddress physicalOffset="119"/></ECU>
+      <ECU><baseVariantName name="IHKA"/><diagnosticAddress physicalOffset="120"/></ECU>
+      <ECU><baseVariantName name="CID"/><diagnosticAddress physicalOffset="115"/></ECU>
+      <ECU><baseVariantName name="CID"/><diagnosticAddress physicalOffset="116"/></ECU>
+      <ECU><baseVariantName name="CID"/><diagnosticAddress physicalOffset="117"/></ECU>
+      <ECU><baseVariantName name="ZBE"/><diagnosticAddress physicalOffset="103"/></ECU><!-- K_CAN -->
+      <ECU><baseVariantName name="ZBE"/><diagnosticAddress physicalOffset="104"/></ECU><!-- K_CAN -->
+      <ECU><baseVariantName name="ZBE2"/><diagnosticAddress physicalOffset="103"/></ECU><!-- K_CAN -->
+      <ECU><baseVariantName name="ZBE2"/><diagnosticAddress physicalOffset="104"/></ECU><!-- K_CAN -->
+    </dependors>
+  </dependency>
+  <!--
+  Bootloader der Headunit als MOST-Master vor allen anderen MOST-Geraeten flashen
+  -->
+  <dependency>
+    <preconditions>
+      <ECU><baseVariantName name="HU_CIC"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU>
+    </preconditions>
+    <dependors>
+      <ECU><baseVariantName name="AMP_TOPLR"/><diagnosticAddress physicalOffset="55"/></ECU>
+      <ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/></ECU>
+      <ECU><baseVariantName name="CMB_MEDIA"/><diagnosticAddress physicalOffset="54"/></ECU>
+      <ECU><baseVariantName name="MMC_UDS"/><diagnosticAddress physicalOffset="49"/></ECU>
+      <ECU><baseVariantName name="RSE_HIGH"/><diagnosticAddress physicalOffset="38"/></ECU>
+      <ECU><baseVariantName name="RSE_MID"/><diagnosticAddress physicalOffset="38"/></ECU>
+      <ECU><baseVariantName name="TV_MODUL"/><diagnosticAddress physicalOffset="75"/></ECU>
+    </dependors>
+  </dependency>
+  
+  <!--
+  Bootloader aller L6-MOST-Geraete vor dem Bootloader des AMP_TOPLR02 
+  als L6-Geraet mit NIC-Baustein flashen
+  -->
+  <dependency>
+    <preconditions>
+      <ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/><taCategory name="blFlash"/></ECU>
+      <ECU><baseVariantName name="CMB_MEDIA"/><diagnosticAddress physicalOffset="54"/><taCategory name="blFlash"/></ECU>
+      <ECU><baseVariantName name="MMC_UDS"/><diagnosticAddress physicalOffset="49"/><taCategory name="blFlash"/></ECU>
+      <ECU><baseVariantName name="RSE_HIGH"/><diagnosticAddress physicalOffset="38"/><taCategory name="blFlash"/></ECU>
+      <ECU><baseVariantName name="RSE_MID"/><diagnosticAddress physicalOffset="38"/><taCategory name="blFlash"/></ECU>
+      <ECU><baseVariantName name="TV_MODUL"/><diagnosticAddress physicalOffset="75"/><taCategory name="blFlash"/></ECU>
+    </preconditions>
+    <dependors>
+      <ECU><baseVariantName name="AMP_TOPLR"/><diagnosticAddress physicalOffset="55"/><taCategory name="blFlash"/></ECU>
+    </dependors>
+  </dependency>
+</FSEQ>

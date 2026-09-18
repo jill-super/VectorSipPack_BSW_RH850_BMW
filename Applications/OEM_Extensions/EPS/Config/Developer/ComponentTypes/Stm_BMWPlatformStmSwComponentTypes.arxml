@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>Stm</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                  <ELEMENTS>
+                    <SWC-IMPLEMENTATION UUID="7AA62CA5-9328-4A79-B3DA-503620A9178B">
+                      <SHORT-NAME>Stm_Implementation</SHORT-NAME>
+                      <CODE-DESCRIPTORS>
+                        <CODE>
+                          <SHORT-NAME>Code</SHORT-NAME>
+                          <ARTIFACT-DESCRIPTORS>
+                            <AUTOSAR-ENGINEERING-OBJECT>
+                              <SHORT-LABEL>Default</SHORT-LABEL>
+                              <CATEGORY>SWSRC</CATEGORY>
+                            </AUTOSAR-ENGINEERING-OBJECT>
+                          </ARTIFACT-DESCRIPTORS>
+                        </CODE>
+                      </CODE-DESCRIPTORS>
+                      <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/BMW/Platform/Stm/SwComponentTypes/Stm/Stm_InternalBehavior</BEHAVIOR-REF>
+                    </SWC-IMPLEMENTATION>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <APPLICATION-SW-COMPONENT-TYPE UUID="FB5E956A-C1E0-4F11-8B3B-815BB0DD15B9">
+                      <SHORT-NAME>Stm</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="DV_ReadOnly">1</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <PORTS>
+                        <P-PORT-PROTOTYPE UUID="0FDDF226-2153-4EE6-8716-93A2D6218F55">
+                          <SHORT-NAME>CentralErrorLockModeSwitchPort</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <MODE-SWITCH-SENDER-COM-SPEC>
+                              <ENHANCED-MODE-API>true</ENHANCED-MODE-API>
+                              <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockModeInterface/currentCentralErrorLockMode</MODE-GROUP-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </MODE-SWITCH-SENDER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockModeInterface</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="DC57624B-40FB-4B5A-B072-95684E419C8E">
+                          <SHORT-NAME>EnergyModeSwitchPort</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <MODE-SWITCH-SENDER-COM-SPEC>
+                              <ENHANCED-MODE-API>true</ENHANCED-MODE-API>
+                              <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/EnergyStateModeInterface/currentEnergyMode</MODE-GROUP-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </MODE-SWITCH-SENDER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/Stm/PortInterfaces/EnergyStateModeInterface</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="C57A5A78-70CD-430F-83D4-D9FAF5AD9384">
+                          <SHORT-NAME>VehicleStateModeSwitchPort</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <MODE-SWITCH-SENDER-COM-SPEC>
+                              <ENHANCED-MODE-API>true</ENHANCED-MODE-API>
+                              <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/VehicleStateModeInterface/currentVehicleStateMode</MODE-GROUP-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </MODE-SWITCH-SENDER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/Stm/PortInterfaces/VehicleStateModeInterface</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="8BB3ECB9-EC0A-4E40-B6B8-A03514087592">
+                          <SHORT-NAME>CentralErrorLockEnableCondition</SHORT-NAME>
+                          <REQUIRED-COM-SPECS>
+                            <CLIENT-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Stm/Dem/PortInterfaces/EnableCondition/SetEnableCondition</OPERATION-REF>
+                            </CLIENT-COM-SPEC>
+                          </REQUIRED-COM-SPECS>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Stm/Dem/PortInterfaces/EnableCondition</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="8E4A588F-E183-4992-93C3-EA56C3B9BF67">
+                          <SHORT-NAME>CentralErrorLockRx</SHORT-NAME>
+                          <REQUIRED-COM-SPECS>
+                            <NONQUEUED-RECEIVER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockSignalInterface/centralErrorLock</DATA-ELEMENT-REF>
+                              <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                              <ALIVE-TIMEOUT>21</ALIVE-TIMEOUT>
+                              <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                              <FILTER>
+                                <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                              </FILTER>
+                              <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                              <INIT-VALUE>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <SHORT-LABEL>InitValueCentralErrorLock</SHORT-LABEL>
+                                  <VALUE>3</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </INIT-VALUE>
+                            </NONQUEUED-RECEIVER-COM-SPEC>
+                          </REQUIRED-COM-SPECS>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockSignalInterface</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="C23A6E26-5371-4B20-8E3B-AD82AFFF82E1">
+                          <SHORT-NAME>EMLockSignalReceptionModeNotificationPort</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/Stm/PortInterfaces/EMLockSignalReceptionModeInterface</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="9877096F-D980-475C-8E97-B0212222A031">
+                          <SHORT-NAME>EnergyModeRx</SHORT-NAME>
+                          <REQUIRED-COM-SPECS>
+                            <NONQUEUED-RECEIVER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/EnergyStateSignalInterface/energyState</DATA-ELEMENT-REF>
+                              <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                              <ALIVE-TIMEOUT>21</ALIVE-TIMEOUT>
+                              <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                              <FILTER>
+                                <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                              </FILTER>
+                              <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                              <INIT-VALUE>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <SHORT-LABEL>InitValueEnergyModeRx</SHORT-LABEL>
+                                  <VALUE>15</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </INIT-VALUE>
+                            </NONQUEUED-RECEIVER-COM-SPEC>
+                          </REQUIRED-COM-SPECS>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/Stm/PortInterfaces/EnergyStateSignalInterface</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="391E5AE5-FD92-4227-BF60-38FC644C8DF6">
+                          <SHORT-NAME>VehicleStateRx</SHORT-NAME>
+                          <REQUIRED-COM-SPECS>
+                            <NONQUEUED-RECEIVER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/VehicleStateSignalInterface/VehicleState</DATA-ELEMENT-REF>
+                              <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                              <ALIVE-TIMEOUT>0.5</ALIVE-TIMEOUT>
+                              <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                              <FILTER>
+                                <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                              </FILTER>
+                              <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                              <INIT-VALUE>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <SHORT-LABEL>InitValueVehicleStateRx</SHORT-LABEL>
+                                  <VALUE>0</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </INIT-VALUE>
+                            </NONQUEUED-RECEIVER-COM-SPEC>
+                          </REQUIRED-COM-SPECS>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/Stm/PortInterfaces/VehicleStateSignalInterface</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                      </PORTS>
+                      <INTERNAL-BEHAVIORS>
+                        <SWC-INTERNAL-BEHAVIOR UUID="80FB4149-BFA5-4926-B38F-9F3FF5288717">
+                          <SHORT-NAME>Stm_InternalBehavior</SHORT-NAME>
+                          <DATA-TYPE-MAPPING-REFS>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BMW/Platform/Stm/DataTypeMappingSets/Stm_EnergyStateModeRequestTypeMap</DATA-TYPE-MAPPING-REF>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BMW/Platform/Stm/DataTypeMappingSets/Stm_EMLS_Mapping</DATA-TYPE-MAPPING-REF>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BMW/Platform/Stm/DataTypeMappingSets/Stm_CentralErrorLockModeRequestTypeMap</DATA-TYPE-MAPPING-REF>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BMW/Platform/Stm/DataTypeMappingSets/Stm_VehicleStatModeRequestTypeMap</DATA-TYPE-MAPPING-REF>
+                          </DATA-TYPE-MAPPING-REFS>
+                          <EXCLUSIVE-AREAS>
+                            <EXCLUSIVE-AREA UUID="3886F45F-507F-4A4F-AD98-1844764111DF">
+                              <SHORT-NAME>CentralErrorLockReadWrite_EA</SHORT-NAME>
+                            </EXCLUSIVE-AREA>
+                          </EXCLUSIVE-AREAS>
+                          <EVENTS>
+                            <DATA-RECEIVE-ERROR-EVENT UUID="59F81E18-F3DB-4E4A-8312-F7B97A232F88">
+                              <SHORT-NAME>DRET_Runnable_ErrorCentralErrorLock_CentralErrorLockRx_centralErrorLock</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Stm/SwComponentTypes/Stm/Stm_InternalBehavior/Runnable_ErrorCentralErrorLock</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockRx</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockSignalInterface/centralErrorLock</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVE-ERROR-EVENT>
+                            <DATA-RECEIVE-ERROR-EVENT UUID="5970F71D-B363-4E40-B47D-A382BF211F8D">
+                              <SHORT-NAME>DRET_Runnable_ErrorEnergyMode_EnergyModeRx_energyState</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Stm/SwComponentTypes/Stm/Stm_InternalBehavior/Runnable_ErrorEnergyMode</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/EnergyModeRx</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/EnergyStateSignalInterface/energyState</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVE-ERROR-EVENT>
+                            <DATA-RECEIVE-ERROR-EVENT UUID="8706B9C0-894D-4ABE-9C56-8B1AF3177D19">
+                              <SHORT-NAME>DRET_Runnable_ErrorVehicleState_VehicleStateRx_VehicleState</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Stm/SwComponentTypes/Stm/Stm_InternalBehavior/Runnable_ErrorVehicleState</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/VehicleStateRx</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/VehicleStateSignalInterface/VehicleState</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVE-ERROR-EVENT>
+                            <SWC-MODE-SWITCH-EVENT UUID="DB1D506D-C7BE-4957-B624-E39A48432747">
+                              <SHORT-NAME>MST_Runnable_InitialCELSupervision_0</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Stm/SwComponentTypes/Stm/Stm_InternalBehavior/Runnable_InitialCELSupervision</START-ON-EVENT-REF>
+                              <ACTIVATION>ON-ENTRY</ACTIVATION>
+                              <MODE-IREFS>
+                                <MODE-IREF>
+                                  <CONTEXT-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/EMLockSignalReceptionModeNotificationPort</CONTEXT-PORT-REF>
+                                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/EMLockSignalReceptionModeInterface/currentEMLockSignalReceptionMode</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/BMW/Platform/Stm/ModeDeclarationGroups/ErrorMemoryLockSignalReceptionMode/EM_LOCK_RECEIVABLE</TARGET-MODE-DECLARATION-REF>
+                                </MODE-IREF>
+                              </MODE-IREFS>
+                            </SWC-MODE-SWITCH-EVENT>
+                            <DATA-RECEIVED-EVENT UUID="06881D97-F494-41C7-B956-CC60651AEAF7">
+                              <SHORT-NAME>DRT_Runnable_ReceiveCentralErrorLock_CentralErrorLockRx_centralErrorLock</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Stm/SwComponentTypes/Stm/Stm_InternalBehavior/Runnable_ReceiveCentralErrorLock</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockRx</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockSignalInterface/centralErrorLock</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVED-EVENT>
+                            <DATA-RECEIVED-EVENT UUID="A2582A74-FE74-4247-BD87-B410ECE461AE">
+                              <SHORT-NAME>DRT_Runnable_ReceiveEnergyMode_EnergyModeRx_energyState</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Stm/SwComponentTypes/Stm/Stm_InternalBehavior/Runnable_ReceiveEnergyMode</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/EnergyModeRx</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/EnergyStateSignalInterface/energyState</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVED-EVENT>
+                            <DATA-RECEIVED-EVENT UUID="A3D9D3DD-8B6D-4975-94EF-97B61683A290">
+                              <SHORT-NAME>DRT_Runnable_ReceiveVehicleState_VehicleStateRx_VehicleState</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Stm/SwComponentTypes/Stm/Stm_InternalBehavior/Runnable_ReceiveVehicleState</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/VehicleStateRx</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/VehicleStateSignalInterface/VehicleState</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVED-EVENT>
+                            <SWC-MODE-SWITCH-EVENT UUID="E4E96B9F-B858-4A29-876B-734115FF08CA">
+                              <SHORT-NAME>MST_Runnable_StopCentralErrorLockSupervision_0</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Stm/SwComponentTypes/Stm/Stm_InternalBehavior/Runnable_StopCentralErrorLockSupervision</START-ON-EVENT-REF>
+                              <ACTIVATION>ON-ENTRY</ACTIVATION>
+                              <MODE-IREFS>
+                                <MODE-IREF>
+                                  <CONTEXT-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/EMLockSignalReceptionModeNotificationPort</CONTEXT-PORT-REF>
+                                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/EMLockSignalReceptionModeInterface/currentEMLockSignalReceptionMode</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/BMW/Platform/Stm/ModeDeclarationGroups/ErrorMemoryLockSignalReceptionMode/EM_LOCK_NOT_RECEIVABLE</TARGET-MODE-DECLARATION-REF>
+                                </MODE-IREF>
+                              </MODE-IREFS>
+                            </SWC-MODE-SWITCH-EVENT>
+                          </EVENTS>
+                          <PORT-API-OPTIONS>
+                            <PORT-API-OPTION>
+                              <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                              <ERROR-HANDLING>NO-TRANSFORMER-ERROR-HANDLING</ERROR-HANDLING>
+                              <INDIRECT-API>false</INDIRECT-API>
+                              <PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockEnableCondition</PORT-REF>
+                            </PORT-API-OPTION>
+                            <PORT-API-OPTION>
+                              <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                              <ERROR-HANDLING>NO-TRANSFORMER-ERROR-HANDLING</ERROR-HANDLING>
+                              <INDIRECT-API>false</INDIRECT-API>
+                              <PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockModeSwitchPort</PORT-REF>
+                            </PORT-API-OPTION>
+                            <PORT-API-OPTION>
+                              <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                              <ERROR-HANDLING>NO-TRANSFORMER-ERROR-HANDLING</ERROR-HANDLING>
+                              <INDIRECT-API>false</INDIRECT-API>
+                              <PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockRx</PORT-REF>
+                            </PORT-API-OPTION>
+                            <PORT-API-OPTION>
+                              <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                              <ERROR-HANDLING>NO-TRANSFORMER-ERROR-HANDLING</ERROR-HANDLING>
+                              <INDIRECT-API>false</INDIRECT-API>
+                              <PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/EMLockSignalReceptionModeNotificationPort</PORT-REF>
+                            </PORT-API-OPTION>
+                            <PORT-API-OPTION>
+                              <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                              <ERROR-HANDLING>NO-TRANSFORMER-ERROR-HANDLING</ERROR-HANDLING>
+                              <INDIRECT-API>false</INDIRECT-API>
+                              <PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/EnergyModeRx</PORT-REF>
+                            </PORT-API-OPTION>
+                            <PORT-API-OPTION>
+                              <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                              <ERROR-HANDLING>NO-TRANSFORMER-ERROR-HANDLING</ERROR-HANDLING>
+                              <INDIRECT-API>false</INDIRECT-API>
+                              <PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/EnergyModeSwitchPort</PORT-REF>
+                            </PORT-API-OPTION>
+                            <PORT-API-OPTION>
+                              <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                              <ERROR-HANDLING>NO-TRANSFORMER-ERROR-HANDLING</ERROR-HANDLING>
+                              <INDIRECT-API>false</INDIRECT-API>
+                              <PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/VehicleStateModeSwitchPort</PORT-REF>
+                            </PORT-API-OPTION>
+                            <PORT-API-OPTION>
+                              <ENABLE-TAKE-ADDRESS>false</ENABLE-TAKE-ADDRESS>
+                              <ERROR-HANDLING>NO-TRANSFORMER-ERROR-HANDLING</ERROR-HANDLING>
+                              <INDIRECT-API>false</INDIRECT-API>
+                              <PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/VehicleStateRx</PORT-REF>
+                            </PORT-API-OPTION>
+                          </PORT-API-OPTIONS>
+                          <RUNNABLES>
+                            <RUNNABLE-ENTITY UUID="E7E6E4D5-228B-4FFD-AC9B-970D617CD8FA">
+                              <SHORT-NAME>Runnable_ErrorCentralErrorLock</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <RUNS-INSIDE-EXCLUSIVE-AREA-REFS>
+                                <RUNS-INSIDE-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/BMW/Platform/Stm/SwComponentTypes/Stm/Stm_InternalBehavior/CentralErrorLockReadWrite_EA</RUNS-INSIDE-EXCLUSIVE-AREA-REF>
+                              </RUNS-INSIDE-EXCLUSIVE-AREA-REFS>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockModeSwitchPort</CONTEXT-P-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockModeInterface/currentCentralErrorLockMode</TARGET-MODE-GROUP-REF>
+                                    </P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>SWITCH_CentralErrorLockModeSwitchPort_currentCentralErrorLockMode</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockModeSwitchPort</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockModeInterface/currentCentralErrorLockMode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>SC_CentralErrorLockEnableCondition_SetEnableCondition</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockEnableCondition</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Stm/Dem/PortInterfaces/EnableCondition/SetEnableCondition</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Stm_ErrorCentralErrorLock</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="BCF7F980-FCC1-4854-B1B3-45130896DDCD">
+                              <SHORT-NAME>Runnable_ErrorEnergyMode</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/EnergyModeSwitchPort</CONTEXT-P-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/EnergyStateModeInterface/currentEnergyMode</TARGET-MODE-GROUP-REF>
+                                    </P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>SWITCH_EnergyModeSwitchPort_currentEnergyMode</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/EnergyModeSwitchPort</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/EnergyStateModeInterface/currentEnergyMode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SYMBOL>Stm_ErrorEnergyMode</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="409418D9-704F-49A0-AEF4-C30ED571A2E1">
+                              <SHORT-NAME>Runnable_ErrorVehicleState</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/VehicleStateModeSwitchPort</CONTEXT-P-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/VehicleStateModeInterface/currentVehicleStateMode</TARGET-MODE-GROUP-REF>
+                                    </P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>SWITCH_VehicleStateModeSwitchPort_currentVehicleStateMode</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/VehicleStateModeSwitchPort</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/VehicleStateModeInterface/currentVehicleStateMode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SYMBOL>Stm_ErrorVehicleState</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="E5829A4E-CCC8-4EDD-8DDD-777F951E7573">
+                              <SHORT-NAME>Runnable_InitialCELSupervision</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <RUNS-INSIDE-EXCLUSIVE-AREA-REFS>
+                                <RUNS-INSIDE-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/BMW/Platform/Stm/SwComponentTypes/Stm/Stm_InternalBehavior/CentralErrorLockReadWrite_EA</RUNS-INSIDE-EXCLUSIVE-AREA-REF>
+                              </RUNS-INSIDE-EXCLUSIVE-AREA-REFS>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockModeSwitchPort</CONTEXT-P-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockModeInterface/currentCentralErrorLockMode</TARGET-MODE-GROUP-REF>
+                                    </P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>SC_CentralErrorLockEnableCondition_SetEnableCondition</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockEnableCondition</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Stm/Dem/PortInterfaces/EnableCondition/SetEnableCondition</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Stm_InitialCentralErrorLockSupervision</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="26823A47-D6D9-4085-9E68-9906593C003A">
+                              <SHORT-NAME>Runnable_ReceiveCentralErrorLock</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <RUNS-INSIDE-EXCLUSIVE-AREA-REFS>
+                                <RUNS-INSIDE-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/BMW/Platform/Stm/SwComponentTypes/Stm/Stm_InternalBehavior/CentralErrorLockReadWrite_EA</RUNS-INSIDE-EXCLUSIVE-AREA-REF>
+                              </RUNS-INSIDE-EXCLUSIVE-AREA-REFS>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>REC_CentralErrorLockRx_centralErrorLock</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockRx</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockSignalInterface/centralErrorLock</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockModeSwitchPort</CONTEXT-P-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockModeInterface/currentCentralErrorLockMode</TARGET-MODE-GROUP-REF>
+                                    </P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>SWITCH_CentralErrorLockModeSwitchPort_currentCentralErrorLockMode</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockModeSwitchPort</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockModeInterface/currentCentralErrorLockMode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>SC_CentralErrorLockEnableCondition_SetEnableCondition</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockEnableCondition</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Stm/Dem/PortInterfaces/EnableCondition/SetEnableCondition</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Stm_ReceiveCentralErrorLock</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="F926D659-F41D-4551-863D-BEA1884E2125">
+                              <SHORT-NAME>Runnable_ReceiveEnergyMode</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>REC_EnergyModeRx_energyState</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/EnergyModeRx</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/EnergyStateSignalInterface/energyState</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/EnergyModeSwitchPort</CONTEXT-P-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/EnergyStateModeInterface/currentEnergyMode</TARGET-MODE-GROUP-REF>
+                                    </P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>SWITCH_EnergyModeSwitchPort_currentEnergyMode</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/EnergyModeSwitchPort</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/EnergyStateModeInterface/currentEnergyMode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SYMBOL>Stm_ReceiveEnergyMode</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="06EA0638-8C9B-4269-9C82-40073342E151">
+                              <SHORT-NAME>Runnable_ReceiveVehicleState</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>REC_VehicleStateRx_VehicleState</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/VehicleStateRx</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/VehicleStateSignalInterface/VehicleState</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/VehicleStateModeSwitchPort</CONTEXT-P-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/VehicleStateModeInterface/currentVehicleStateMode</TARGET-MODE-GROUP-REF>
+                                    </P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>SWITCH_VehicleStateModeSwitchPort_currentVehicleStateMode</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/VehicleStateModeSwitchPort</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/VehicleStateModeInterface/currentVehicleStateMode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SYMBOL>Stm_ReceiveVehicleState</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="85BE0E01-D080-413D-AF1E-D5B2FC34BD61">
+                              <SHORT-NAME>Runnable_StopCentralErrorLockSupervision</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <RUNS-INSIDE-EXCLUSIVE-AREA-REFS>
+                                <RUNS-INSIDE-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/BMW/Platform/Stm/SwComponentTypes/Stm/Stm_InternalBehavior/CentralErrorLockReadWrite_EA</RUNS-INSIDE-EXCLUSIVE-AREA-REF>
+                              </RUNS-INSIDE-EXCLUSIVE-AREA-REFS>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockModeSwitchPort</CONTEXT-P-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockModeInterface/currentCentralErrorLockMode</TARGET-MODE-GROUP-REF>
+                                    </P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>SWITCH_CentralErrorLockModeSwitchPort_currentCentralErrorLockMode</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockModeSwitchPort</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Stm/PortInterfaces/CentralErrorLockModeInterface/currentCentralErrorLockMode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>SC_CentralErrorLockEnableCondition_SetEnableCondition</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Stm/SwComponentTypes/Stm/CentralErrorLockEnableCondition</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Stm/Dem/PortInterfaces/EnableCondition/SetEnableCondition</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Stm_StopCentralErrorLockSupervision</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                          </RUNNABLES>
+                          <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                        </SWC-INTERNAL-BEHAVIOR>
+                      </INTERNAL-BEHAVIORS>
+                    </APPLICATION-SW-COMPONENT-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<DIAG-LAYER-CONTAINER ID="id-73bb7ab0-89f1-47fd-8991-6ce16ff154cb" OID="id-73bb7ab0-89f1-47fd-8991-6ce16ff154cb">
+		<SHORT-NAME>PROG_UDS_DLC</SHORT-NAME>
+		<LONG-NAME>Programming Services and Jobs for UDS</LONG-NAME>
+		<FUNCTIONAL-GROUPS>
+			<FUNCTIONAL-GROUP ID="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" OID="id-063e2d04-dd5a-430e-a110-fb679fbb3d78">
+				<SHORT-NAME>PROG_UDS</SHORT-NAME>
+				<LONG-NAME>Programming Services and Jobs for UDS</LONG-NAME>
+				<FUNCT-CLASSS>
+					<FUNCT-CLASS ID="id-abcbf3bd-aa21-42c7-90e9-c356ba8e9549" OID="id-abcbf3bd-aa21-42c7-90e9-c356ba8e9549">
+						<SHORT-NAME>PROG_DME</SHORT-NAME>
+						<LONG-NAME>Programming DME Specific</LONG-NAME>
+					</FUNCT-CLASS>
+				</FUNCT-CLASSS>
+				<DIAG-COMMS>
+					<DIAG-SERVICE ADDRESSING="PHYSICAL" ID="id-b4c96e67-e2c7-443d-a9c8-0b9cee446cb0" OID="id-b4c96e67-e2c7-443d-a9c8-0b9cee446cb0">
+						<SHORT-NAME>TD</SHORT-NAME>
+						<LONG-NAME>TransferData</LONG-NAME>
+						<DESC>
+							<p>
+The TransferData service is used by the client to transfer data either from the client to the server (download) or from the server to the client (upload).The data transfer direction is defined by the preceding RequestDownload or RequestUpload service. If the client initiated a RequestDownload the data to be downloaded is included in the parameter(s) transferRequestParameter in the TransferData request message(s). If the client initiated a RequestUpload the data to be uploaded is included in the parameter(s) transferResponseParameter in the TransferData response message(s).The TransferData service request includes a blockSequenceCounter to allow for an improved error handling in case a TransferData service fails during a sequence of multiple TransferData requests. The blockSequenceCounter of the server shall be initialized to one (1) when receiving a RequestDownload (34 hex) or RequestUpload (35 hex) request message. This means that the first TransferData (36 hex) request message following the RequestDownload (34 hex) or RequestUpload (35 hex) request message starts with a blockSequenceCounter of one (1).IMPORTANT - The server and the client shall meet the request and response message behaviour as specified in section 6.5.3 Request message without sub-function parameter and server response behaviour in the event that those addressing methods are implemented for this service.
+              </p>
+						</DESC>
+						<SDGS>
+							<SDG>
+								<SDG-CAPTION ID="id-0a737336-7b30-4c5a-ae8c-9598b1dceb47" OID="id-0a737336-7b30-4c5a-ae8c-9598b1dceb47">
+									<SHORT-NAME>TIMEOUTS</SHORT-NAME>
+									<LONG-NAME>Timeouts</LONG-NAME>
+								</SDG-CAPTION>
+								<SD SI="P2_TIMEOUT">10000</SD>
+							</SDG>
+						</SDGS>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-d211b4bd-23f7-4b12-b096-00f3364a1e46"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF DOCREF="ISO_14229_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-ecd7acf2-21c1-403e-93bd-a9691b738b66"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF DOCREF="ISO_14229_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-bce922d6-59a8-425f-9f07-9091a8fb0abf"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-3b97df30-82c2-11e0-b278-0800200c9a66" OID="id-3b97df30-82c2-11e0-b278-0800200c9a66">
+						<SHORT-NAME>WDBI_DME_ABGLEICH_VERSTELLEN</SHORT-NAME>
+						<LONG-NAME>writeDataByIdentifierDmeAbgleichVerstellen</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-abcbf3bd-aa21-42c7-90e9-c356ba8e9549"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-abcb89c0-8c04-49c1-8c6a-efb6ac4090b7"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-078098be-3a96-4ef7-bdfc-d297f6a45e61"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-3b97df30-82c2-11e0-b278-0800200c9a77" OID="id-3b97df30-82c2-11e0-b278-0800200c9a77">
+						<SHORT-NAME>WDBI_DME_ABGLEICH_PROG</SHORT-NAME>
+						<LONG-NAME>writeDataByIdentifierDmeAbgleichProg</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-abcbf3bd-aa21-42c7-90e9-c356ba8e9549"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-fbcb89c0-8c04-49c1-8c6a-efb6ac4090c7"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-078098be-3a96-4ef7-bdfc-d297f6a45e61"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<SINGLE-ECU-JOB ID="id-5168413f-cf8c-4d1b-892d-855cd804472a" OID="id-5168413f-cf8c-4d1b-892d-855cd804472a">
+						<SHORT-NAME>UPDATE_EEPROM</SHORT-NAME>
+						<LONG-NAME>MCD3_PerformUpdateEeprom</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-abcbf3bd-aa21-42c7-90e9-c356ba8e9549"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.000.000</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.coding.dme.MCD3_PerformUpdateEeprom</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-8640d25d-a529-49a8-91cd-3bf6f40f5765" OID="id-8640d25d-a529-49a8-91cd-3bf6f40f5765">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+				</DIAG-COMMS>
+				<REQUESTS>
+					<REQUEST ID="id-abcb89c0-8c04-49c1-8c6a-efb6ac4090b7" OID="id-abcb89c0-8c04-49c1-8c6a-efb6ac4090b7">
+						<SHORT-NAME>WDBI_DME_ABGLEICH_VERSTELLEN_REQ</SHORT-NAME>
+						<LONG-NAME>writeDataByIdentifierDmeAbgleichVerstellen Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>WDBI</SHORT-NAME>
+								<LONG-NAME>WriteDataByIdentifier Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>46</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>WDBI_DID</SHORT-NAME>
+								<LONG-NAME>dataIdentifier</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>24514</PHYSICAL-DEFAULT-VALUE>
+								<DOP-REF ID-REF="id-041f6548-6c0c-48de-a7af-a83da8a82e02" DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>WDBI_DATARECORD</SHORT-NAME>
+								<LONG-NAME>dataRecord</LONG-NAME>
+								<BYTE-POSITION>3</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>196608</PHYSICAL-DEFAULT-VALUE>
+								<DOP-REF ID-REF="id-b529da6b-f7f6-47ec-bff2-74ecd191c080" DOCREF="DOPS_BMW" DOCTYPE="LAYER"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-fbcb89c0-8c04-49c1-8c6a-efb6ac4090c7" OID="id-fbcb89c0-8c04-49c1-8c6a-efb6ac4090c7">
+						<SHORT-NAME>WDBI_DME_ABGLEICH_PROG_REQ</SHORT-NAME>
+						<LONG-NAME>writeDataByIdentifierDmeAbgleichProgRequest</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>WDBI</SHORT-NAME>
+								<LONG-NAME>WriteDataByIdentifier Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>46</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>WDBI_DID</SHORT-NAME>
+								<LONG-NAME>dataIdentifier</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>24514</PHYSICAL-DEFAULT-VALUE>
+								<DOP-REF ID-REF="id-041f6548-6c0c-48de-a7af-a83da8a82e02" DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>WDBI_DATARECORD</SHORT-NAME>
+								<LONG-NAME>dataRecord</LONG-NAME>
+								<BYTE-POSITION>3</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>262144</PHYSICAL-DEFAULT-VALUE>
+								<DOP-REF ID-REF="id-b529da6b-f7f6-47ec-bff2-74ecd191c080" DOCREF="DOPS_BMW" DOCTYPE="LAYER"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+				</REQUESTS>
+				<COMPARAM-REFS>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-4e782744-6c7c-4c4c-980a-d0ce3270a33e">
+						<VALUE>1</VALUE>
+						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+					</COMPARAM-REF>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-4e782744-6c7c-4c4c-980a-d0ce3270a33e">
+						<VALUE>1</VALUE>
+						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+					</COMPARAM-REF>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-0871f50a-746d-4e7b-bed7-9f5e646e37de">
+						<VALUE>1</VALUE>
+						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+					</COMPARAM-REF>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-0871f50a-746d-4e7b-bed7-9f5e646e37de">
+						<VALUE>1</VALUE>
+						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+					</COMPARAM-REF>
+				</COMPARAM-REFS>
+				<IMPORT-REFS>
+					<IMPORT-REF DOCREF="DOPS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-cce678a9-19ff-4e38-86ba-22ac18a6270c"/>
+					<IMPORT-REF DOCREF="UNITS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-b6315bcc-2c68-4976-aa1c-3dec7f94acd0"/>
+				</IMPORT-REFS>
+				<PARENT-REFS>
+					<PARENT-REF DOCREF="ISO_14229_BMW_CAN" DOCTYPE="LAYER" ID-REF="id-9356813b-9d18-4a9d-b691-e8142ca51dce" xsi:type="PROTOCOL-REF"/>
+					<PARENT-REF DOCREF="ISO_14229_BMW_TCP" DOCTYPE="LAYER" ID-REF="id-accd7022-28f2-4985-bd0f-de89220636ca" xsi:type="PROTOCOL-REF"/>
+					<PARENT-REF DOCREF="ISO_14229_BMW_MOST" DOCTYPE="LAYER" ID-REF="id-793c7b20-94db-47f9-9e63-2dc324cd3816" xsi:type="PROTOCOL-REF"/>
+					<PARENT-REF DOCREF="ISO_14229_BMW_FLEXRAY" DOCTYPE="LAYER" ID-REF="id-1aa8da4d-8268-4064-af7e-9a9808c38eae" xsi:type="PROTOCOL-REF"/>
+					<PARENT-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-0396d9da-824a-4ca3-aff2-435c93f0b206" xsi:type="ECU-SHARED-DATA-REF"/>
+				</PARENT-REFS>
+			</FUNCTIONAL-GROUP>
+		</FUNCTIONAL-GROUPS>
+	</DIAG-LAYER-CONTAINER>
+</ODX>

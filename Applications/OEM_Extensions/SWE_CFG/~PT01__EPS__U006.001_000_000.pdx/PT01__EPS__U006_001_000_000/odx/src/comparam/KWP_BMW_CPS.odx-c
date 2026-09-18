@@ -1,0 +1,2410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2011 (http://www.altova.com) von Stefan Zerndl (BMW AG) bearbeitet -->
+<ODX MODEL-VERSION="2.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="odx.xsd">
+	<COMPARAM-SPEC ID="id-e555a4c3-528f-4f41-8ab2-e33671c5f103" OID="id-e555a4c3-528f-4f41-8ab2-e33671c5f103">
+		<SHORT-NAME>KWP_BMW_CPS</SHORT-NAME>
+		<LONG-NAME>DiagCanV</LONG-NAME>
+		<COMPARAMS>
+			<COMPARAM ID="id-759492d6-edf7-4f64-b948-16cbb2c489cf" OID="id-759492d6-edf7-4f64-b948-16cbb2c489cf" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="INIT">
+				<SHORT-NAME>Baudrate</SHORT-NAME>
+				<LONG-NAME>Baudrate</LONG-NAME>
+				<DESC>
+					<p>
+Baudrate of CAN Channel in bit/s
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>500000</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-61a2a80e-4604-4f70-8d29-2b0bae547723"/>
+			</COMPARAM>
+			<COMPARAM ID="id-8ebd51dc-4497-4503-8273-64654a376361" OID="id-8ebd51dc-4497-4503-8273-64654a376361" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>FillerByteHandling</SHORT-NAME>
+				<LONG-NAME>FillerByteHandling</LONG-NAME>
+				<DESC>
+					<p>
+Fill up CAN frames with CANFrameFillerByte for DLC=8
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>disabled</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-762ffbe7-058f-4e0f-88ce-c6b6331a7838"/>
+			</COMPARAM>
+			<COMPARAM ID="id-2cadd06e-122e-4e1d-a056-18528a1899b4" OID="id-2cadd06e-122e-4e1d-a056-18528a1899b4" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>CANFrameFillerByte</SHORT-NAME>
+				<LONG-NAME>CANFrameFillerByte</LONG-NAME>
+				<DESC>
+					<p>
+Value inserted into CAN frame to fill up data bytes
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>255</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-3c3d8b71-3af2-4782-9608-fec63bcbc57e"/>
+			</COMPARAM>
+			<COMPARAM ID="id-9e26e240-f190-4409-be3e-6bea8cd3a8b9" OID="id-9e26e240-f190-4409-be3e-6bea8cd3a8b9" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>PhysicalRequestCANID</SHORT-NAME>
+				<LONG-NAME>PhysicalRequestCANID</LONG-NAME>
+				<DESC>
+					<p>
+Request identifier for physical addressing (MSB = 1 to force identifier to 29bit)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>000007E0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-15b7d6ab-3c88-495a-9fa4-c430b22b032e"/>
+			</COMPARAM>
+			<COMPARAM ID="id-7d39e44e-8c93-4676-9895-f0c070f14c8c" OID="id-7d39e44e-8c93-4676-9895-f0c070f14c8c" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>PhysicalResponseCANID</SHORT-NAME>
+				<LONG-NAME>PhysicalResponseCANID</LONG-NAME>
+				<DESC>
+					<p>
+Response identifier for physical addressing (MSB = 1 to force identifier to 29bit)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>000007E8</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-883791f0-3e78-43ba-9fc0-57f2d06e2b11"/>
+			</COMPARAM>
+			<COMPARAM ID="id-a44839ef-7b05-4cb7-8e14-95114913a3b9" OID="id-a44839ef-7b05-4cb7-8e14-95114913a3b9" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>FunctionalRequestCANID</SHORT-NAME>
+				<LONG-NAME>FunctionalRequestCANID</LONG-NAME>
+				<DESC>
+					<p>
+Request identifier for functional addressing (MSB = 1 to force identifier to 29bit)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>000007DF</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-dd7e9404-cd29-43a4-bc5d-47eb45aac699"/>
+			</COMPARAM>
+			<COMPARAM ID="id-d7ce3f76-51ec-4a28-9c3e-57ce23f4c1a0" OID="id-d7ce3f76-51ec-4a28-9c3e-57ce23f4c1a0" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>FunctionalCANIDTable</SHORT-NAME>
+				<LONG-NAME>FunctionalCANIDTable</LONG-NAME>
+				<DESC>
+					<p>
+Touples of PhysicalRequest and -ResponseCANIDs in case of functional addressing (MSB = 1 to force identifier to 29bit)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>000007E0000007E8000007E1000007E9</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-bb657af8-8694-4eea-a19b-5e2f29e03e74"/>
+			</COMPARAM>
+			<COMPARAM ID="id-067cc300-ddae-44ba-a51e-f266efb0e350" OID="id-067cc300-ddae-44ba-a51e-f266efb0e350" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="INIT">
+				<SHORT-NAME>PhysicalInterface</SHORT-NAME>
+				<LONG-NAME>Physical Interface</LONG-NAME>
+				<DESC>
+					<p>
+Configuration of physical layer
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>Highspeed Interface</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-07fdd17b-7a23-49a1-bef3-f2e8e4271c7a"/>
+			</COMPARAM>
+			<COMPARAM ID="id-215820bb-b1c1-4f48-adfe-01ca6f013bdc" OID="id-215820bb-b1c1-4f48-adfe-01ca6f013bdc" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="INIT">
+				<SHORT-NAME>BitSampleRate</SHORT-NAME>
+				<LONG-NAME>BitSampleRate</LONG-NAME>
+				<DESC>
+					<p>
+Number of Samples per Bit on CAN Bus
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>1-Sample</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-bb9a7a9d-c148-484e-bdd1-ea34ba74eeba"/>
+			</COMPARAM>
+			<COMPARAM ID="id-c8bd5cec-3e17-4037-917e-d60a71502624" OID="id-c8bd5cec-3e17-4037-917e-d60a71502624" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="INIT">
+				<SHORT-NAME>BaudrateHandling</SHORT-NAME>
+				<LONG-NAME>BaudrateHandling</LONG-NAME>
+				<DESC>
+					<p>
+Use of Bus Parameters or Baudrate Settings
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>use Baudrate Settings</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-10ca55e4-5e01-4923-bb1e-5cf5136f71a2"/>
+			</COMPARAM>
+			<COMPARAM ID="id-d6aa9a09-c08a-48d1-94bf-cfdb3f75f934" OID="id-d6aa9a09-c08a-48d1-94bf-cfdb3f75f934" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="INIT">
+				<SHORT-NAME>SamplePoint</SHORT-NAME>
+				<LONG-NAME>SamplePoint</LONG-NAME>
+				<DESC>
+					<p>
+Bit Sample Point in hundredth of percent
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>8125</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-84d11d5a-0746-40f5-8fbf-74e8684cf290"/>
+			</COMPARAM>
+			<COMPARAM ID="id-d95a33dc-ca9c-4815-aa97-008d2f151bae" OID="id-d95a33dc-ca9c-4815-aa97-008d2f151bae" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="INIT">
+				<SHORT-NAME>SJWPercent</SHORT-NAME>
+				<LONG-NAME>SJWPercent</LONG-NAME>
+				<DESC>
+					<p>
+SynchronisationJumpWidth in hundredth of percent
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>625</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-0c51b3d7-a4ea-42c4-be36-08d10159c49f"/>
+			</COMPARAM>
+			<COMPARAM ID="id-de430a6e-5bcd-46d9-9c12-201b45096220" OID="id-de430a6e-5bcd-46d9-9c12-201b45096220" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="INIT">
+				<SHORT-NAME>Prescaler</SHORT-NAME>
+				<LONG-NAME>Prescaler</LONG-NAME>
+				<DESC>
+					<p>
+CAN prescaler value (1..32)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-e3a60b3b-dc04-478f-b385-4ee5fefaca7c"/>
+			</COMPARAM>
+			<COMPARAM ID="id-bb968d1a-f02b-4fa7-b3a9-7d52a0a403ad" OID="id-bb968d1a-f02b-4fa7-b3a9-7d52a0a403ad" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="INIT">
+				<SHORT-NAME>SynchronisationJumpWidth</SHORT-NAME>
+				<LONG-NAME>SynchronisationJumpWidth</LONG-NAME>
+				<DESC>
+					<p>
+CAN synchronisation jump width (1..4)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-52b41802-5078-44b2-b4dc-2c608f2a4295"/>
+			</COMPARAM>
+			<COMPARAM ID="id-ea253f3e-10e1-4d6f-804f-ac79344ef61e" OID="id-ea253f3e-10e1-4d6f-804f-ac79344ef61e" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="INIT">
+				<SHORT-NAME>TimeSegment1</SHORT-NAME>
+				<LONG-NAME>Time Segment 1</LONG-NAME>
+				<DESC>
+					<p>
+Time segment 1 value (1..16)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>12</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-8fe8f766-f692-4c79-9dea-72c03dc187cb"/>
+			</COMPARAM>
+			<COMPARAM ID="id-fe53b072-e7fd-4ead-81c7-2ee14d0a0efc" OID="id-fe53b072-e7fd-4ead-81c7-2ee14d0a0efc" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="INIT">
+				<SHORT-NAME>TimeSegment2</SHORT-NAME>
+				<LONG-NAME>Time Segment 2</LONG-NAME>
+				<DESC>
+					<p>
+Time segment 2 value (1..8)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>3</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-7f8996dd-bcab-496b-9838-f6a7a7725b4c"/>
+			</COMPARAM>
+			<COMPARAM ID="id-87ddbe51-676c-4ff4-b9f0-0904f09da97f" OID="id-87ddbe51-676c-4ff4-b9f0-0904f09da97f" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>TesterPresentMessage</SHORT-NAME>
+				<LONG-NAME>TesterPresentMessage</LONG-NAME>
+				<DESC>
+					<p>
+Tester present message
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>3E02</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-9767e2a4-6bc5-4073-9679-b31a0d68d08c"/>
+			</COMPARAM>
+			<COMPARAM ID="id-624a66e0-0bba-454e-9b54-fd8ad439597b" OID="id-624a66e0-0bba-454e-9b54-fd8ad439597b" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>TesterPresentRespReq</SHORT-NAME>
+				<LONG-NAME>TesterPresentRespReq</LONG-NAME>
+				<DESC>
+					<p>
+Response necessary for tester present request
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-96bf9c60-ee5d-43a7-bb95-7a82cceef44d"/>
+			</COMPARAM>
+			<COMPARAM ID="id-3c6000a0-2043-4e59-9026-336fb5222351" OID="id-3c6000a0-2043-4e59-9026-336fb5222351" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>TimeTesterPresent</SHORT-NAME>
+				<LONG-NAME>TimeTesterPresent</LONG-NAME>
+				<DESC>
+					<p>
+Time between TesterPresentMessages
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>2000</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-c48403e5-8b5c-4a49-9f7d-a46c85a63cc0"/>
+			</COMPARAM>
+			<COMPARAM ID="id-9ca0308e-96c3-4d2b-939e-6428ac04b2e5" OID="id-9ca0308e-96c3-4d2b-939e-6428ac04b2e5" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>TesterPresentHandling</SHORT-NAME>
+				<LONG-NAME>TesterPresentHandling</LONG-NAME>
+				<DESC>
+					<p>
+Automatic transmission of TesterPresentMessages
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-41bf3d94-8a48-4bf6-8c96-5fb692af1c69"/>
+			</COMPARAM>
+			<COMPARAM ID="id-b4cc649c-67fe-476d-ab1a-046cb2ea2443" OID="id-b4cc649c-67fe-476d-ab1a-046cb2ea2443" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>Bs</SHORT-NAME>
+				<LONG-NAME>Bs</LONG-NAME>
+				<DESC>
+					<p>
+Timeout until reception of the next FlowControl (1..10000ms)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>1000</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-63776da1-8fb6-48ba-a1e1-42ccfcb0b6ad"/>
+			</COMPARAM>
+			<COMPARAM ID="id-c8db96bb-8ac4-4009-a369-4743a2806a1e" OID="id-c8db96bb-8ac4-4009-a369-4743a2806a1e" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>Br</SHORT-NAME>
+				<LONG-NAME>Br</LONG-NAME>
+				<DESC>
+					<p>
+Time until transmission of the next FlowControl (0..10000ms)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>10</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-090a5050-5f32-4870-b9ce-e05d5cdd645a"/>
+			</COMPARAM>
+			<COMPARAM ID="id-a5ba7969-7c43-4f44-ab6b-f5b2170c4563" OID="id-a5ba7969-7c43-4f44-ab6b-f5b2170c4563" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>Cs</SHORT-NAME>
+				<LONG-NAME>Cs</LONG-NAME>
+				<DESC>
+					<p>
+Time until transmission of the next consecutive frame (0..10000ms)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>10</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-49d57b66-6296-4e9c-affa-efb0bc2f8e0a"/>
+			</COMPARAM>
+			<COMPARAM ID="id-7de538e3-e328-480a-99b6-02eb803f6ad2" OID="id-7de538e3-e328-480a-99b6-02eb803f6ad2" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>Cr</SHORT-NAME>
+				<LONG-NAME>Cr</LONG-NAME>
+				<DESC>
+					<p>
+Timeout for transmission of the next ConsecutiveFrame (1..10000ms)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>1000</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-bc4f9e60-7588-418e-80bd-75cbd432d7b6"/>
+			</COMPARAM>
+			<COMPARAM ID="id-6e76ac33-4e18-47b7-8936-baa077e985a2" OID="id-6e76ac33-4e18-47b7-8936-baa077e985a2" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>RequestTime</SHORT-NAME>
+				<LONG-NAME>RequestTime</LONG-NAME>
+				<DESC>
+					<p>
+Time between ECU response and following tester request (0..10000ms)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>10</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-eb1d6f71-42ab-4293-abdd-598424dcc921"/>
+			</COMPARAM>
+			<COMPARAM ID="id-daa873f3-17b5-4070-b511-2e061ee8c6da" OID="id-daa873f3-17b5-4070-b511-2e061ee8c6da" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>ResponseTimeout</SHORT-NAME>
+				<LONG-NAME>ResponseTimeout</LONG-NAME>
+				<DESC>
+					<p>
+Timeout between tester request and first frame of ECU response (1..65500ms)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>1000</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-03778868-dc78-4f4f-be2c-800a575c998f"/>
+			</COMPARAM>
+			<COMPARAM ID="id-392a56ae-2ab5-4c4f-8aaa-e10b079fefff" OID="id-392a56ae-2ab5-4c4f-8aaa-e10b079fefff" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>DiagnosticAddress</SHORT-NAME>
+				<LONG-NAME>DiagnosticAddress</LONG-NAME>
+				<DESC>
+					<p>
+Diagnostic address of target (ECU), used for extended addressing
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-eba3ec37-a2ab-4093-8e3c-3887af170b20"/>
+			</COMPARAM>
+			<COMPARAM ID="id-381b4770-f10d-4386-ab9b-7cc378179f33" OID="id-381b4770-f10d-4386-ab9b-7cc378179f33" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>AddressingScheme</SHORT-NAME>
+				<LONG-NAME>AddressingScheme</LONG-NAME>
+				<DESC>
+					<p>
+Type of addressing (normal, extended, normal send - extended receive, extended send - normal receive)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-66a5e8de-3341-47c9-bf13-993a5644ca43"/>
+			</COMPARAM>
+			<COMPARAM ID="id-b2fa8a4c-0105-42ae-8cef-4e4a9f2fdfe2" OID="id-b2fa8a4c-0105-42ae-8cef-4e4a9f2fdfe2" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>AddressExtension</SHORT-NAME>
+				<LONG-NAME>AddressExtension</LONG-NAME>
+				<DESC>
+					<p>
+address extension
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-c1124e2f-0fe3-4eea-a1f3-956043905609"/>
+			</COMPARAM>
+			<COMPARAM ID="id-b2fa8a4c-0106-42ae-8cef-4e4a9f2fdfe2" OID="id-b2fa8a4c-0106-42ae-8cef-4e4a9f2fdfe2" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ADDRESS_EXTENSION_RX</SHORT-NAME>
+				<LONG-NAME>AddressExtension RX</LONG-NAME>
+				<DESC>
+					<p>
+Diagnostic address of tester, used for extended addressing (pass-through).
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>241</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-c1124e2f-0fe3-4eea-a1f3-956043905609"/>
+			</COMPARAM>
+			<COMPARAM ID="id-b2fa8a4c-0107-42ae-8cef-4e4a9f2fdfe2" OID="id-b2fa8a4c-0107-42ae-8cef-4e4a9f2fdfe2" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ADDRESS_EXTENSION_TX</SHORT-NAME>
+				<LONG-NAME>AddressExtension TX</LONG-NAME>
+				<DESC>
+					<p>
+Diagnostic address of target (ECU), used for extended addressing (pass-through).
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-c1124e2f-0fe3-4eea-a1f3-956043905609"/>
+			</COMPARAM>
+			<COMPARAM ID="id-45391d6f-1cb8-45b4-8a47-326937beb24a" OID="id-45391d6f-1cb8-45b4-8a47-326937beb24a" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>InitializationMode</SHORT-NAME>
+				<LONG-NAME>InitializationMode</LONG-NAME>
+				<DESC>
+					<p>
+Addressing method used (physical, functional)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>Physical</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-f296a448-ff5f-42d6-96b4-4f2435ecf482"/>
+			</COMPARAM>
+			<COMPARAM ID="id-8094a718-aaee-459a-8ada-0087494424d9" OID="id-8094a718-aaee-459a-8ada-0087494424d9" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ResponseRequired</SHORT-NAME>
+				<LONG-NAME>ResponseRequired</LONG-NAME>
+				<DESC>
+					<p>
+Response necessary for service (except TesterPresentMessage)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>required</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-59918232-fc2e-4547-bb54-6f8e87a4eb27"/>
+			</COMPARAM>
+			<COMPARAM ID="id-82045ac6-6851-4864-a01f-3c173a35e8ed" OID="id-82045ac6-6851-4864-a01f-3c173a35e8ed" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>BlocksizeRequest</SHORT-NAME>
+				<LONG-NAME>BlocksizeRequest</LONG-NAME>
+				<DESC>
+					<p>
+Consecutive frames of tester request sent before waiting for FlowControl
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>3</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-079d8016-eabe-4ea0-a316-74ca26bfef2c"/>
+			</COMPARAM>
+			<COMPARAM ID="id-cfe0eef0-4dda-444a-a097-ad9b359ea2c8" OID="id-cfe0eef0-4dda-444a-a097-ad9b359ea2c8" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>BlocksizeResponse</SHORT-NAME>
+				<LONG-NAME>BlocksizeResponse</LONG-NAME>
+				<DESC>
+					<p>
+Consecutive frames of ECU response before sending a FlowControl
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>3</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-5cf44c70-ef1f-4c5d-bc61-db917e9dec23"/>
+			</COMPARAM>
+			<COMPARAM ID="id-0cd4452a-d509-47a0-a997-2022be2e7fae" OID="id-0cd4452a-d509-47a0-a997-2022be2e7fae" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>BlocksizeHandling</SHORT-NAME>
+				<LONG-NAME>BlocksizeHandling</LONG-NAME>
+				<DESC>
+					<p>
+Handling of blocksize sent by the ECU
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>use ECU Blocksize</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-368cdd92-0e5f-4fd0-b72d-737a81b26106"/>
+			</COMPARAM>
+			<COMPARAM ID="id-08003c63-8496-4260-a7bb-ee2c5bc11b34" OID="id-08003c63-8496-4260-a7bb-ee2c5bc11b34" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>RC78Handling</SHORT-NAME>
+				<LONG-NAME>RC78Handling</LONG-NAME>
+				<DESC>
+					<p>
+Handling of RC78ResponseTimeout and RC78Repetitions
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>enabled</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-a0cf1792-1d58-413a-a1e1-9ac4c33bceea"/>
+			</COMPARAM>
+			<COMPARAM ID="id-6adcd3b4-3f53-44c7-8890-9bab0fe38588" OID="id-6adcd3b4-3f53-44c7-8890-9bab0fe38588" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>RC78Repetitions</SHORT-NAME>
+				<LONG-NAME>RC78Repetitions</LONG-NAME>
+				<DESC>
+					<p>
+Allowed number of responses with response code RC78ResponsePending (0..65500)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>255</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-d7e2a991-183c-4eed-9991-aefb0fe8a51f"/>
+			</COMPARAM>
+			<COMPARAM ID="id-d4328104-584d-40fa-8c22-bcc9a314fcfd" OID="id-d4328104-584d-40fa-8c22-bcc9a314fcfd" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>RC78ResponseTimeout</SHORT-NAME>
+				<LONG-NAME>RC78ResponseTimeout</LONG-NAME>
+				<DESC>
+					<p>
+Timeout for ECU response in case of RC78ResponsePending response code (1..65500ms)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>4000</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-53afe1ef-5aca-45b1-9644-d605e538c2e3"/>
+			</COMPARAM>
+			<COMPARAM ID="id-7c0bb7de-a717-4e35-ada6-59b8597370ab" OID="id-7c0bb7de-a717-4e35-ada6-59b8597370ab" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>RC21Handling</SHORT-NAME>
+				<LONG-NAME>RC21Handling</LONG-NAME>
+				<DESC>
+					<p>
+Handling of RC21Repetitions
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>enabled</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-a0cf1792-1d58-413a-a1e1-9ac4c33bceea"/>
+			</COMPARAM>
+			<COMPARAM ID="id-3fc8dd46-5bfa-4985-84fc-e2f7c7d6cf26" OID="id-3fc8dd46-5bfa-4985-84fc-e2f7c7d6cf26" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>CP_REQREPCOUNT</SHORT-NAME>
+				<LONG-NAME>RC21Repetitions</LONG-NAME>
+				<DESC>
+					<p>
+Allowed number of request repetitions in case of response code RC21 busy - repeat request (0..65500)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>255</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-fa379319-3984-421e-b80f-3df7f21310d5"/>
+			</COMPARAM>
+			<COMPARAM ID="id-b9ff407f-d2cf-4129-80e5-5ed5d612adb6" OID="id-b9ff407f-d2cf-4129-80e5-5ed5d612adb6" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>NumberOfWaitFrames</SHORT-NAME>
+				<LONG-NAME>NumberOfWaitFrames</LONG-NAME>
+				<DESC>
+					<p>
+Maximum number of wait frames accepted from ECU (0..65500)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>255</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-71a5861f-3423-42d9-a86f-92a795a2f0b5"/>
+			</COMPARAM>
+			<COMPARAM ID="id-8097404a-4ad6-4a26-9986-dd636dae1685" OID="id-8097404a-4ad6-4a26-9986-dd636dae1685" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="ERRHDL">
+				<SHORT-NAME>NumberOfErrorRepetitions</SHORT-NAME>
+				<LONG-NAME>NumberOfErrorRepetitions</LONG-NAME>
+				<DESC>
+					<p>
+Number of repetitions in case of communication errors (0..255)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-ab59b870-cb6d-419d-8072-41353fd3f263"/>
+			</COMPARAM>
+			<COMPARAM ID="id-8cd4715d-a1a9-44df-b7dd-e32e63d921a7" OID="id-8cd4715d-a1a9-44df-b7dd-e32e63d921a7" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ForceNotAckToComError</SHORT-NAME>
+				<LONG-NAME>ForceNotAckToComError</LONG-NAME>
+				<DESC>
+					<p>
+Force to Communication Error if a not acknowledged response was received
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>disabled</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-762ffbe7-058f-4e0f-88ce-c6b6331a7838"/>
+			</COMPARAM>
+			<COMPARAM ID="id-897347bf-6ed4-456f-8973-690bc9a0c5ec" OID="id-897347bf-6ed4-456f-8973-690bc9a0c5ec" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>SeparationTimeRequest</SHORT-NAME>
+				<LONG-NAME>SeparationTimeRequest</LONG-NAME>
+				<DESC>
+					<p>
+Minimum time between consecutive frames in tester request (0..1000ms)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>10</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-4226291b-269d-45f1-a10e-33d497d6ce78"/>
+			</COMPARAM>
+			<COMPARAM ID="id-dfed058f-9c6c-4974-a15b-5eaa065e1d44" OID="id-dfed058f-9c6c-4974-a15b-5eaa065e1d44" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>SeparationTimeResponse</SHORT-NAME>
+				<LONG-NAME>SeparationTimeResponse</LONG-NAME>
+				<DESC>
+					<p>
+SeparationTime inserted in FlowControl for ECU response (0..255ms)
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-09fe5ee3-e649-4eae-9a4d-7c34cce05e23"/>
+			</COMPARAM>
+			<COMPARAM ID="id-27882155-4ca5-4bea-b38e-d6f28ed45f21" OID="id-27882155-4ca5-4bea-b38e-d6f28ed45f21" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>SeparationTimeHandling</SHORT-NAME>
+				<LONG-NAME>SeparationTimeHandling</LONG-NAME>
+				<DESC>
+					<p>
+Use SeparationTime sent by ECU within FlowControl
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>use ECU value</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-bb006415-dfb4-4905-896d-048086d2df2d"/>
+			</COMPARAM>
+			<COMPARAM ID="id-8f5a9988-9751-41ab-9dfe-5b341ec4ed4b" OID="id-8f5a9988-9751-41ab-9dfe-5b341ec4ed4b" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>IgnoreSeqNumErrors</SHORT-NAME>
+				<LONG-NAME>IgnoreSeqNumErrors</LONG-NAME>
+				<DESC>
+					<p>
+Turn off the verification of the sequencenumber for consecutive frames
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>disabled</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-762ffbe7-058f-4e0f-88ce-c6b6331a7838"/>
+			</COMPARAM>
+			<COMPARAM ID="id-99e63e64-1670-4c67-81ec-aa79e666e7b1" OID="id-99e63e64-1670-4c67-81ec-aa79e666e7b1" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>StartSequenceNumber</SHORT-NAME>
+				<LONG-NAME>StartSequenceNumber</LONG-NAME>
+				<DESC>
+					<p>
+Start value for the sequencenumber for consecutive frames
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-ab5e2ff5-ba95-4953-9f96-8a8f991a143c"/>
+			</COMPARAM>
+			<COMPARAM ID="id-f62de610-b6c7-475d-bb2f-b0b5099f2ecf" OID="id-f62de610-b6c7-475d-bb2f-b0b5099f2ecf" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>EnhancedTPHandling</SHORT-NAME>
+				<LONG-NAME>EnhancedTPHandling</LONG-NAME>
+				<DESC>
+					<p>
+Switch to enable the enhanced TP handling
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>disabled</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-762ffbe7-058f-4e0f-88ce-c6b6331a7838"/>
+			</COMPARAM>
+			<COMPARAM ID="id-d6cb26b0-6273-472c-8c48-dd7f8af533f7" OID="id-d6cb26b0-6273-472c-8c48-dd7f8af533f7" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ETP_SingleFrameHandling</SHORT-NAME>
+				<LONG-NAME>ETP_SingleFrameHandling</LONG-NAME>
+				<DESC>
+					<p>
+Switch to enable the handling for single frames
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>disabled</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-762ffbe7-058f-4e0f-88ce-c6b6331a7838"/>
+			</COMPARAM>
+			<COMPARAM ID="id-00af0aa5-cf6b-4399-a501-1002c95237d8" OID="id-00af0aa5-cf6b-4399-a501-1002c95237d8" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ETP_SingleFrameValue</SHORT-NAME>
+				<LONG-NAME>ETP_SingleFrameValue</LONG-NAME>
+				<DESC>
+					<p>
+PCI-Byte for the single frame
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-a8be2b6a-09fc-43d3-9f84-d19ce0328f94"/>
+			</COMPARAM>
+			<COMPARAM ID="id-c8a27246-7da4-487d-b86b-7559cf626e85" OID="id-c8a27246-7da4-487d-b86b-7559cf626e85" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ETP_FirstFrameHandling</SHORT-NAME>
+				<LONG-NAME>ETP_FirstFrameHandling</LONG-NAME>
+				<DESC>
+					<p>
+Switch to enable the handling for first frames
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>disabled</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-762ffbe7-058f-4e0f-88ce-c6b6331a7838"/>
+			</COMPARAM>
+			<COMPARAM ID="id-d6a2a3aa-19fc-41cb-8c94-5a802c57fde9" OID="id-d6a2a3aa-19fc-41cb-8c94-5a802c57fde9" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ETP_FirstFrameValue</SHORT-NAME>
+				<LONG-NAME>ETP_FirstFrameValue</LONG-NAME>
+				<DESC>
+					<p>
+PCI-Byte for the first frame
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>256</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-53773ccf-336f-4c22-833b-05119811c605"/>
+			</COMPARAM>
+			<COMPARAM ID="id-4a9ee7c9-9226-40c7-80f0-29d8cb16a226" OID="id-4a9ee7c9-9226-40c7-80f0-29d8cb16a226" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ETP_ConsecutiveFrameHandling</SHORT-NAME>
+				<LONG-NAME>ETP_ConsecutiveFrameHandling</LONG-NAME>
+				<DESC>
+					<p>
+Switch to enable the handling for consecutive frames
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>disabled</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-762ffbe7-058f-4e0f-88ce-c6b6331a7838"/>
+			</COMPARAM>
+			<COMPARAM ID="id-b357d86b-cdc0-46dd-8445-24b27b1fc3d7" OID="id-b357d86b-cdc0-46dd-8445-24b27b1fc3d7" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ETP_ConsecutiveFrameValue</SHORT-NAME>
+				<LONG-NAME>ETP_ConsecutiveFrameValue</LONG-NAME>
+				<DESC>
+					<p>
+PCI-Byte for the consecutive frame
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>32</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-67a5734b-8825-4e81-b2ec-2da89269b54e"/>
+			</COMPARAM>
+			<COMPARAM ID="id-7ec08cc8-14d0-42a2-87cb-d89200018d0d" OID="id-7ec08cc8-14d0-42a2-87cb-d89200018d0d" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ETP_NumberOfCorrectCFs</SHORT-NAME>
+				<LONG-NAME>ETP_NumberOfCorrectCFs</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>3</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-e8094f14-70c4-4422-8c8b-6163caeb33f8"/>
+			</COMPARAM>
+			<COMPARAM ID="id-b5d62eed-e770-455e-a85e-26b6589e5765" OID="id-b5d62eed-e770-455e-a85e-26b6589e5765" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ETP_WaitFrameHandling</SHORT-NAME>
+				<LONG-NAME>ETP_WaitFrameHandling</LONG-NAME>
+				<DESC>
+					<p>
+Switch to enable the handling for wait frames
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>disabled</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-762ffbe7-058f-4e0f-88ce-c6b6331a7838"/>
+			</COMPARAM>
+			<COMPARAM ID="id-d81bb98e-6492-42b1-8642-6b088ec8e044" OID="id-d81bb98e-6492-42b1-8642-6b088ec8e044" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ETP_WaitFrameNumber</SHORT-NAME>
+				<LONG-NAME>ETP_WaitFrameNumber</LONG-NAME>
+				<DESC>
+					<p>
+Number of flow control frames before sending a wait frame
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>3</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-67a5734b-8825-4e81-b2ec-2da89269b54e"/>
+			</COMPARAM>
+			<COMPARAM ID="id-0d5eba48-7f68-49f7-acb2-93d64d1730bf" OID="id-0d5eba48-7f68-49f7-acb2-93d64d1730bf" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ETP_FlowControlFrameHandling</SHORT-NAME>
+				<LONG-NAME>ETP_FlowControlFrameHandling</LONG-NAME>
+				<DESC>
+					<p>
+Switch to enable the handling for flow control frames
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>disabled</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-762ffbe7-058f-4e0f-88ce-c6b6331a7838"/>
+			</COMPARAM>
+			<COMPARAM ID="id-cdcf3d49-ae87-4885-9364-c9b4bd782dd4" OID="id-cdcf3d49-ae87-4885-9364-c9b4bd782dd4" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>ETP_FlowControlFrame</SHORT-NAME>
+				<LONG-NAME>ETP_FlowControlFrame</LONG-NAME>
+				<DESC>
+					<p>
+user defines flow control frame
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>300000</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-4ffeb17c-f9c7-4a06-a782-162902148a14"/>
+			</COMPARAM>
+			<COMPARAM ID="id-59fe8ab4-df4f-46b0-8f00-04d63cc92367" OID="id-59fe8ab4-df4f-46b0-8f00-04d63cc92367" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>P2max</SHORT-NAME>
+				<LONG-NAME>P2max</LONG-NAME>
+				<DESC>
+					<p>
+Timeout between tester request and first frame of ECU response (1..65500ms).
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>2000</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-f4bb0e81-fd07-49be-a12b-6495dcb10c1c"/>
+			</COMPARAM>
+			<COMPARAM ID="id-5c9970c3-efb2-491f-bb18-e7a6d1c5cf8d" OID="id-5c9970c3-efb2-491f-bb18-e7a6d1c5cf8d" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>UIF_SIZE</SHORT-NAME>
+				<LONG-NAME>UIF_SIZE</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>18</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-3a260b6d-0359-4781-9408-3669389ba044" OID="id-3a260b6d-0359-4781-9408-3669389ba044" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>LAST_UIF_OVERWRITABLE</SHORT-NAME>
+				<LONG-NAME>LAST_UIF_OVERWRITABLE</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-946e3822-dcee-42b1-9d56-dc706445fd09" OID="id-946e3822-dcee-42b1-9d56-dc706445fd09" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>MAX_NR_OF_UIF</SHORT-NAME>
+				<LONG-NAME>MAX_NR_OF_UIF</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>2</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-07be9df5-5ffd-4f3d-931f-1f64169e8e7c"/>
+			</COMPARAM>
+			<COMPARAM ID="id-73e713dd-3758-4c8d-9f6c-2779a0c50c4d" OID="id-73e713dd-3758-4c8d-9f6c-2779a0c50c4d" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>UNUSED_UIF_AVAILABLE_MARKER</SHORT-NAME>
+				<LONG-NAME>UNUSED_UIF_AVAILABLE_MARKER</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>255</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-fbb86534-0051-4737-9f87-de6457765fd3" OID="id-fbb86534-0051-4737-9f87-de6457765fd3" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>DUAL_STAGE_PRG</SHORT-NAME>
+				<LONG-NAME>DUAL_STAGE_PRG</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-353c731f-0571-4c16-9459-b3b1db9c0be2" OID="id-353c731f-0571-4c16-9459-b3b1db9c0be2" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>BSU_TIME</SHORT-NAME>
+				<LONG-NAME>BSU_TIME</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-99a063e1-0c0f-4a83-845d-a2668ff5f8ff"/>
+			</COMPARAM>
+			<COMPARAM ID="id-6ece6da3-748f-438f-b098-e2004cfed907" OID="id-6ece6da3-748f-438f-b098-e2004cfed907" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>ISO14229</SHORT-NAME>
+				<LONG-NAME>ISO14229 supported</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-96bf9c60-ee5d-43a7-bb95-7a82cceef44d"/>
+			</COMPARAM>
+			<COMPARAM ID="id-74b710e4-d911-4a15-8bc0-0a9067d4e92b" OID="id-74b710e4-d911-4a15-8bc0-0a9067d4e92b" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>PROGRAMMING</SHORT-NAME>
+				<LONG-NAME>Programming supported</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-96bf9c60-ee5d-43a7-bb95-7a82cceef44d"/>
+			</COMPARAM>
+			<COMPARAM ID="id-43841aae-5528-46e2-85f7-654c2101b0d9" OID="id-43841aae-5528-46e2-85f7-654c2101b0d9" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>CODING</SHORT-NAME>
+				<LONG-NAME>Coding supported</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-4d185ea1-a7ad-4576-8418-1e080f65524b" OID="id-4d185ea1-a7ad-4576-8418-1e080f65524b" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>NGSC</SHORT-NAME>
+				<LONG-NAME>NGSC used</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-96bf9c60-ee5d-43a7-bb95-7a82cceef44d"/>
+			</COMPARAM>
+			<COMPARAM ID="id-2a842e16-a09b-40f5-8a8a-8dcd23f0b770" OID="id-2a842e16-a09b-40f5-8a8a-8dcd23f0b770" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>SECURITY</SHORT-NAME>
+				<LONG-NAME>Security functions supported</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-96bf9c60-ee5d-43a7-bb95-7a82cceef44d"/>
+			</COMPARAM>
+			<COMPARAM ID="id-b27fbfe8-97a2-48f9-aca5-0b18ff9a75aa" OID="id-b27fbfe8-97a2-48f9-aca5-0b18ff9a75aa" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>SWT</SHORT-NAME>
+				<LONG-NAME>SWT supported</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-96bf9c60-ee5d-43a7-bb95-7a82cceef44d"/>
+			</COMPARAM>
+			<COMPARAM ID="id-bbf7c13f-b642-483e-8285-538296a09d10" OID="id-bbf7c13f-b642-483e-8285-538296a09d10" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>INDIVIDUAL_DATA</SHORT-NAME>
+				<LONG-NAME>ECU stores individual data</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-96bf9c60-ee5d-43a7-bb95-7a82cceef44d"/>
+			</COMPARAM>
+			<COMPARAM ID="id-c44f38cd-536f-40cd-8bf4-fac68bd2effd" OID="id-c44f38cd-536f-40cd-8bf4-fac68bd2effd" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>ACTIVE_SIGNALING</SHORT-NAME>
+				<LONG-NAME>Active signaling supported</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-96bf9c60-ee5d-43a7-bb95-7a82cceef44d"/>
+			</COMPARAM>
+			<COMPARAM ID="id-42c48976-41aa-4b99-9790-bceb4efd937d" OID="id-42c48976-41aa-4b99-9790-bceb4efd937d" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+				<SHORT-NAME>BUS_CHANNELS</SHORT-NAME>
+				<LONG-NAME>Logical channels per bus</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-ad343393-e320-44bb-bbd7-db1d962a5538" OID="id-ad343393-e320-44bb-bbd7-db1d962a5538" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>DIAG_ADDRESS</SHORT-NAME>
+				<LONG-NAME>Diagnostic address (physical)</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-efb78dd8-e1ac-4530-87e0-16803a202d3b" OID="id-efb78dd8-e1ac-4530-87e0-16803a202d3b" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>FLASH_WRITE_SPEED</SHORT-NAME>
+				<LONG-NAME>Flash write datarate of ECU</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>25678</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-453ffe03-ac24-4cd2-8fa1-9df345b1b58d"/>
+			</COMPARAM>
+			<COMPARAM ID="id-c5d40112-5f5b-4011-b0cc-abc5a6971467" OID="id-c5d40112-5f5b-4011-b0cc-abc5a6971467" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+				<SHORT-NAME>BUS_SPEED</SHORT-NAME>
+				<LONG-NAME>Datarate of bus</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-453ffe03-ac24-4cd2-8fa1-9df345b1b58d"/>
+			</COMPARAM>
+			<COMPARAM ID="id-d77f3dc9-e8eb-400f-aaef-8ca17fe7c0a0" OID="id-d77f3dc9-e8eb-400f-aaef-8ca17fe7c0a0" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+				<SHORT-NAME>BUS</SHORT-NAME>
+				<LONG-NAME>Bus used by ZGW</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>FFFFFFFFFF</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-bcbea6f8-ad4f-48e8-ac7e-3d2ec42bf467"/>
+			</COMPARAM>
+			<COMPARAM ID="id-5d01a84e-8d69-4828-ab45-ec59b0122287" OID="id-5d01a84e-8d69-4828-ab45-ec59b0122287" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>DIAGADDR_TESTER</SHORT-NAME>
+				<LONG-NAME>Tester address</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>244</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-6f13def9-d5d9-457a-8495-5e3dad9cc734" OID="id-6f13def9-d5d9-457a-8495-5e3dad9cc734" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>MOST_DEVICE_ID</SHORT-NAME>
+				<LONG-NAME>MOST device ID</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>968</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-02377ecb-80cd-4dc2-82ef-da22ca8447a1"/>
+			</COMPARAM>
+			<COMPARAM ID="id-f975d62b-7bad-478a-a6bf-bdf4af138eb5" OID="id-f975d62b-7bad-478a-a6bf-bdf4af138eb5" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>MOST_T_DEVICE_ID</SHORT-NAME>
+				<LONG-NAME>MOST tester device ID</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-02377ecb-80cd-4dc2-82ef-da22ca8447a1"/>
+			</COMPARAM>
+			<COMPARAM ID="id-4ea49597-3f93-4b94-9273-6adba22ea747" OID="id-4ea49597-3f93-4b94-9273-6adba22ea747" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>MOST_FBLOCK_ID</SHORT-NAME>
+				<LONG-NAME>MOST FBlock ID</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>6</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-4768e654-5cf4-4b97-a4a1-b70f3f7535a9" OID="id-4768e654-5cf4-4b97-a4a1-b70f3f7535a9" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>MOST_T_FBLOCK_ID</SHORT-NAME>
+				<LONG-NAME>MOST tester FBlock ID</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>6</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-032512bd-346a-4adc-99ee-57115d45d941" OID="id-032512bd-346a-4adc-99ee-57115d45d941" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>MOST_FKT_ID</SHORT-NAME>
+				<LONG-NAME>MOST Fkt ID</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>80</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-7057535e-e5f9-44a7-bccf-a96bfd1972df"/>
+			</COMPARAM>
+			<COMPARAM ID="id-f990b7b4-6339-441c-b844-fd6b3f1f4f88" OID="id-f990b7b4-6339-441c-b844-fd6b3f1f4f88" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>MOST_T_FKT_ID</SHORT-NAME>
+				<LONG-NAME>MOST tester Fkt ID</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>80</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-7057535e-e5f9-44a7-bccf-a96bfd1972df"/>
+			</COMPARAM>
+			<COMPARAM ID="id-88670986-905c-4fea-941c-868c0e7e6340" OID="id-88670986-905c-4fea-941c-868c0e7e6340" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>MOST_INST_ID</SHORT-NAME>
+				<LONG-NAME>MOST Inst ID</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-9d45ba44-67f8-4a10-be64-8acac27205e6" OID="id-9d45ba44-67f8-4a10-be64-8acac27205e6" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>MOST_T_INST_ID</SHORT-NAME>
+				<LONG-NAME>MOST tester Inst ID</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>241</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-b1e15bcf-3347-451d-b6c0-87588dc38167" OID="id-b1e15bcf-3347-451d-b6c0-87588dc38167" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>MOST_OPTYPE</SHORT-NAME>
+				<LONG-NAME>MOST OP Type</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-5dec922e-4258-4072-ac04-d8ba818d3fe4"/>
+			</COMPARAM>
+			<COMPARAM ID="id-82424f71-718f-4941-90ad-dbeb702668c1" OID="id-82424f71-718f-4941-90ad-dbeb702668c1" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+				<SHORT-NAME>MOST_T_OPTYPE</SHORT-NAME>
+				<LONG-NAME>MOST tester OP Type</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-5dec922e-4258-4072-ac04-d8ba818d3fe4"/>
+			</COMPARAM>
+			<COMPARAM ID="id-d77f3dc9-e8ec-400f-aaef-8ca17fe7c0a0" OID="id-d77f3dc9-e8ec-400f-aaef-8ca17fe7c0a0" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+				<SHORT-NAME>TL_BLOCKSIZE_MAX</SHORT-NAME>
+				<LONG-NAME>maximum data block size for a specific bus</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>65521</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-02377ecb-80cd-4dc2-82ef-da22ca8447a1"/>
+			</COMPARAM>
+			<COMPARAM ID="id-d77f3dc9-e8ed-400f-aaef-8ca17fe7c0a0" OID="id-d77f3dc9-e8ed-400f-aaef-8ca17fe7c0a0" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>TA_PREPROC</SHORT-NAME>
+				<LONG-NAME>TA category preprocessing handler</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>65535</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-02377ecb-80cd-4dc2-82ef-da22ca8447a1"/>
+			</COMPARAM>
+			<COMPARAM ID="id-d77f3dc9-e8ee-400f-aaef-8ca17fe7c0a0" OID="id-d77f3dc9-e8ee-400f-aaef-8ca17fe7c0a0" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>TA_POSTPROC</SHORT-NAME>
+				<LONG-NAME>TA category postprocessing handler</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>65535</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-02377ecb-80cd-4dc2-82ef-da22ca8447a1"/>
+			</COMPARAM>
+			<COMPARAM ID="id-70b230c8-435c-4567-b6e4-dc253ed0c47f" OID="id-70b230c8-435c-4567-b6e4-dc253ed0c47f" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>P2_MAX_RX</SHORT-NAME>
+				<LONG-NAME>maximum execution time</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>10000</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-fbe69573-75b2-41a5-90e3-49c303337c33"/>
+			</COMPARAM>
+			<COMPARAM ID="id-4f14d68b-e11d-4691-be15-de1816d2c234" OID="id-4f14d68b-e11d-4691-be15-de1816d2c234" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>P2_MAX_EXTENSION</SHORT-NAME>
+				<LONG-NAME>P2 extension time (functional)</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>200</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-fbe69573-75b2-41a5-90e3-49c303337c33"/>
+			</COMPARAM>
+			<COMPARAM ID="id-3fb3b0ae-853f-4d88-857c-6089d52ffdc2" OID="id-3fb3b0ae-853f-4d88-857c-6089d52ffdc2" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>MAX_REPEAT_ON_TIMEOUTP2</SHORT-NAME>
+				<LONG-NAME>maximum number of repetitions after P2 timeout</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-fbe69573-75b2-41a5-90e3-49c303337c33"/>
+			</COMPARAM>
+			<COMPARAM ID="id-ffffb58f-0bae-4058-bcc9-7f7f834bf366" OID="id-ffffb58f-0bae-4058-bcc9-7f7f834bf366" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>MAX_BUSY_REPEAT_REQUEST</SHORT-NAME>
+				<LONG-NAME>maximum number of repetitions after negative response with RC21 (busy - repeat request)</LONG-NAME>
+				<DESC>
+					<p>
+Temporary replacement for standard comparameter RC21Handling.
+Default value definition: MAX_BUSY_REPEAT_REQUEST := P2_MAX_RX/REPETITION_LATENCY
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>10</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-fbe69573-75b2-41a5-90e3-49c303337c33"/>
+			</COMPARAM>
+			<COMPARAM ID="id-5e1b071e-5d22-411f-827a-eba7e736db71" OID="id-5e1b071e-5d22-411f-827a-eba7e736db71" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>P2_EXTENSION_FACTOR</SHORT-NAME>
+				<LONG-NAME>extension factor for P2 timer during low level retry (percent)</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>100</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-fbe69573-75b2-41a5-90e3-49c303337c33"/>
+			</COMPARAM>
+			<COMPARAM ID="id-6f1d5333-dc92-410e-80dc-a68e75850def" OID="id-6f1d5333-dc92-410e-80dc-a68e75850def" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>REPETITION_LATENCY</SHORT-NAME>
+				<LONG-NAME>time between P2 timeout/negative response with RC21 and next transmission of repeated request</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>1000</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-fbe69573-75b2-41a5-90e3-49c303337c33"/>
+			</COMPARAM>
+			<COMPARAM ID="id-b542fd32-1eb5-4530-b0eb-84bd74ebe4fc" OID="id-b542fd32-1eb5-4530-b0eb-84bd74ebe4fc" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>TCPIP_AUTOCLOSETIME</SHORT-NAME>
+				<LONG-NAME>TCPIP autoclose timeout when idle (ms)</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>360000000</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-fbe69573-75b2-41a5-90e3-49c303337c33"/>
+			</COMPARAM>
+			<COMPARAM ID="id-5aee3689-e2e0-453e-95d7-bec8d4c706d3" OID="id-5aee3689-e2e0-453e-95d7-bec8d4c706d3" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>TXACK_MAX</SHORT-NAME>
+				<LONG-NAME>T2 TX acknowledge timeout (ms)</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>2000</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-fbe69573-75b2-41a5-90e3-49c303337c33"/>
+			</COMPARAM>
+			<COMPARAM ID="id-70802497-32e5-4e7a-9f7a-04ba2bad94db" OID="id-70802497-32e5-4e7a-9f7a-04ba2bad94db" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+				<SHORT-NAME>P2Star</SHORT-NAME>
+				<LONG-NAME>P2*</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>6500</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-fbe69573-75b2-41a5-90e3-49c303337c33"/>
+			</COMPARAM>
+			<COMPARAM ID="id-3b87a452-5147-48af-bfd7-2bb75181873b" OID="id-3b87a452-5147-48af-bfd7-2bb75181873b" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>MODE_CHANGE</SHORT-NAME>
+				<LONG-NAME>mode change supported</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-bbe8befa-e0cd-4faa-8c19-518fd03969f3" OID="id-bbe8befa-e0cd-4faa-8c19-518fd03969f3" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>MODE_CHANGE_CODING</SHORT-NAME>
+				<LONG-NAME>mode change coding supported</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-dc12fd6b-47b1-4dd4-96b0-82a7d593ba6a" OID="id-dc12fd6b-47b1-4dd4-96b0-82a7d593ba6a" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+				<SHORT-NAME>MAX_CHANNELS_APPMODE</SHORT-NAME>
+				<LONG-NAME>Logical channels per bus in ApplicationMode (Mastergateway)</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>2</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-b3ee667c-c454-4686-90ad-c11295eda718" OID="id-b3ee667c-c454-4686-90ad-c11295eda718" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+				<SHORT-NAME>MAX_BLOCKSIZE_APPMODE</SHORT-NAME>
+				<LONG-NAME>maximum data block size for a specific bus in ApplicationMode (Mastergateway)</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>4092</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-02377ecb-80cd-4dc2-82ef-da22ca8447a1"/>
+			</COMPARAM>
+			<COMPARAM ID="id-34e1a02d-e19c-474e-bbe7-50a5d27e349b" OID="id-34e1a02d-e19c-474e-bbe7-50a5d27e349b" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>MASTERGATEWAY</SHORT-NAME>
+				<LONG-NAME>Mastergateway Indicator</LONG-NAME>
+				<DESC>
+					<p>0=no Mastergateway
+1=is Mastergateway
+
+Is set at odx-v only one time!!!!          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-929c4cb8-af87-43ef-a6ba-6b38f3412319" OID="id-929c4cb8-af87-43ef-a6ba-6b38f3412319" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>ADDITIONAL_P2</SHORT-NAME>
+				<LONG-NAME>Additional Time for Programmingsession Timings supplied by ECUs. Reason: Delays on line</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>1500</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-fbe69573-75b2-41a5-90e3-49c303337c33"/>
+			</COMPARAM>
+			<COMPARAM ID="id-6e402c70-c623-4560-8dd3-cfea2ee447ed" OID="id-6e402c70-c623-4560-8dd3-cfea2ee447ed" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>AWAIT_TP_ACK</SHORT-NAME>
+				<LONG-NAME>Should TP skipped if there was no HSFZ ACK for it (0=no, 1=yes)</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-1745a5eb-ff45-49b3-9b9d-a27b0691fee8" OID="id-1745a5eb-ff45-49b3-9b9d-a27b0691fee8" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="ECU-PROPERTY">
+				<SHORT-NAME>HTTP_ENABLED</SHORT-NAME>
+				<LONG-NAME>Is HTTP Flash possible</LONG-NAME>
+				<DESC>
+					<p>Do ECU support HTTP-Flash
+				0=Check inactive
+				1=Check active
+          </p>
+				</DESC>
+				<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd"/>
+			</COMPARAM>
+			<COMPARAM ID="id-619dd80b-cea0-4e84-8334-6801a6973057" OID="id-619dd80b-cea0-4e84-8334-6801a6973057" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+				<SHORT-NAME>MAX_BLOCKSIZE_BUS</SHORT-NAME>
+				<LONG-NAME>Defines the max. Blocksize for specific bus</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>4093</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-02377ecb-80cd-4dc2-82ef-da22ca8447a1"/>
+			</COMPARAM>
+			<COMPARAM ID="id-3585b2fc-233e-4810-828c-d5299d164ec8" OID="id-3585b2fc-233e-4810-828c-d5299d164ec8" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+				<SHORT-NAME>MAX_BLOCKSIZE_GW_APPMODE</SHORT-NAME>
+				<LONG-NAME>Defines the max. Blocksize for a GW Ecu in AppMode</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>4092</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-02377ecb-80cd-4dc2-82ef-da22ca8447a1"/>
+			</COMPARAM>
+			<COMPARAM ID="id-8b4f2fd1-0db5-4a08-8d3a-32f3c891b516" OID="id-8b4f2fd1-0db5-4a08-8d3a-32f3c891b516" CPTYPE="OEM-SPECIFIC" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+				<SHORT-NAME>MAX_BLOCKSIZE_GW_PROGMODE</SHORT-NAME>
+				<LONG-NAME>Defines the max. Blocksize for a GW Ecu in ProgMode</LONG-NAME>
+				<PHYSICAL-DEFAULT-VALUE>65521</PHYSICAL-DEFAULT-VALUE>
+				<DATA-OBJECT-PROP-REF ID-REF="id-02377ecb-80cd-4dc2-82ef-da22ca8447a1"/>
+			</COMPARAM>
+		</COMPARAMS>
+		<DATA-OBJECT-PROPS>
+			<DATA-OBJECT-PROP ID="id-61a2a80e-4604-4f70-8d29-2b0bae547723" OID="id-61a2a80e-4604-4f70-8d29-2b0bae547723">
+				<SHORT-NAME>Baudrate</SHORT-NAME>
+				<LONG-NAME>Baudrate</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>1</LOWER-LIMIT>
+					<UPPER-LIMIT>100000000</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>1</LOWER-LIMIT>
+							<UPPER-LIMIT>100000000</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-3c3d8b71-3af2-4782-9608-fec63bcbc57e" OID="id-3c3d8b71-3af2-4782-9608-fec63bcbc57e">
+				<SHORT-NAME>CANFrameFillerByte</SHORT-NAME>
+				<LONG-NAME>CANFrameFillerByte</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>255</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-15b7d6ab-3c88-495a-9fa4-c430b22b032e" OID="id-15b7d6ab-3c88-495a-9fa4-c430b22b032e">
+				<SHORT-NAME>PhysicalRequestCANID</SHORT-NAME>
+				<LONG-NAME>PhysicalRequestCANID</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+					<MAX-LENGTH>4</MAX-LENGTH>
+					<MIN-LENGTH>4</MIN-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-883791f0-3e78-43ba-9fc0-57f2d06e2b11" OID="id-883791f0-3e78-43ba-9fc0-57f2d06e2b11">
+				<SHORT-NAME>PhysicalResponseCANID</SHORT-NAME>
+				<LONG-NAME>PhysicalResponseCANID</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+					<MAX-LENGTH>4</MAX-LENGTH>
+					<MIN-LENGTH>4</MIN-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-dd7e9404-cd29-43a4-bc5d-47eb45aac699" OID="id-dd7e9404-cd29-43a4-bc5d-47eb45aac699">
+				<SHORT-NAME>FunctionalRequestCANID</SHORT-NAME>
+				<LONG-NAME>FunctionalRequestCANID</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+					<MAX-LENGTH>4</MAX-LENGTH>
+					<MIN-LENGTH>4</MIN-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-bb657af8-8694-4eea-a19b-5e2f29e03e74" OID="id-bb657af8-8694-4eea-a19b-5e2f29e03e74">
+				<SHORT-NAME>FunctionalCANIDTable</SHORT-NAME>
+				<LONG-NAME>FunctionalCANIDTable</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+					<MAX-LENGTH>800</MAX-LENGTH>
+					<MIN-LENGTH>8</MIN-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-07fdd17b-7a23-49a1-bef3-f2e8e4271c7a" OID="id-07fdd17b-7a23-49a1-bef3-f2e8e4271c7a">
+				<SHORT-NAME>PhysicalInterface</SHORT-NAME>
+				<LONG-NAME>Physical Interface</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>TEXTTABLE</CATEGORY>
+					<COMPU-INTERNAL-TO-PHYS>
+						<COMPU-SCALES>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>1</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="0">Highspeed Interface</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>2</LOWER-LIMIT>
+								<UPPER-LIMIT>2</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="1">Lowspeed Interface</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+						</COMPU-SCALES>
+					</COMPU-INTERNAL-TO-PHYS>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-bb9a7a9d-c148-484e-bdd1-ea34ba74eeba" OID="id-bb9a7a9d-c148-484e-bdd1-ea34ba74eeba">
+				<SHORT-NAME>BitSampleRate</SHORT-NAME>
+				<LONG-NAME>BitSampleRate</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>TEXTTABLE</CATEGORY>
+					<COMPU-INTERNAL-TO-PHYS>
+						<COMPU-SCALES>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>0</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="0">1-Sample</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>1</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="1">3-Sample</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+						</COMPU-SCALES>
+					</COMPU-INTERNAL-TO-PHYS>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-10ca55e4-5e01-4923-bb1e-5cf5136f71a2" OID="id-10ca55e4-5e01-4923-bb1e-5cf5136f71a2">
+				<SHORT-NAME>BaudrateHandling</SHORT-NAME>
+				<LONG-NAME>BaudrateHandling</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>TEXTTABLE</CATEGORY>
+					<COMPU-INTERNAL-TO-PHYS>
+						<COMPU-SCALES>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>0</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="0">use Bus Parameters</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>2</LOWER-LIMIT>
+								<UPPER-LIMIT>2</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="1">use Baudrate Settings</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+						</COMPU-SCALES>
+					</COMPU-INTERNAL-TO-PHYS>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-84d11d5a-0746-40f5-8fbf-74e8684cf290" OID="id-84d11d5a-0746-40f5-8fbf-74e8684cf290">
+				<SHORT-NAME>SamplePoint</SHORT-NAME>
+				<LONG-NAME>SamplePoint</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>16</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>1</LOWER-LIMIT>
+					<UPPER-LIMIT>10000</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>1</LOWER-LIMIT>
+							<UPPER-LIMIT>10000</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-0c51b3d7-a4ea-42c4-be36-08d10159c49f" OID="id-0c51b3d7-a4ea-42c4-be36-08d10159c49f">
+				<SHORT-NAME>SJWPercent</SHORT-NAME>
+				<LONG-NAME>SJWPercent</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>16</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>1</LOWER-LIMIT>
+					<UPPER-LIMIT>10000</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>1</LOWER-LIMIT>
+							<UPPER-LIMIT>10000</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-e3a60b3b-dc04-478f-b385-4ee5fefaca7c" OID="id-e3a60b3b-dc04-478f-b385-4ee5fefaca7c">
+				<SHORT-NAME>Prescaler</SHORT-NAME>
+				<LONG-NAME>Prescaler</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>1</LOWER-LIMIT>
+							<UPPER-LIMIT>32</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-52b41802-5078-44b2-b4dc-2c608f2a4295" OID="id-52b41802-5078-44b2-b4dc-2c608f2a4295">
+				<SHORT-NAME>SynchronisationJumpWidth</SHORT-NAME>
+				<LONG-NAME>SynchronisationJumpWidth</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>1</LOWER-LIMIT>
+					<UPPER-LIMIT>4</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>1</LOWER-LIMIT>
+							<UPPER-LIMIT>4</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-8fe8f766-f692-4c79-9dea-72c03dc187cb" OID="id-8fe8f766-f692-4c79-9dea-72c03dc187cb">
+				<SHORT-NAME>TimeSegment1</SHORT-NAME>
+				<LONG-NAME>Time Segment1</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>1</LOWER-LIMIT>
+					<UPPER-LIMIT>16</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>1</LOWER-LIMIT>
+							<UPPER-LIMIT>16</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-7f8996dd-bcab-496b-9838-f6a7a7725b4c" OID="id-7f8996dd-bcab-496b-9838-f6a7a7725b4c">
+				<SHORT-NAME>TimeSegment2</SHORT-NAME>
+				<LONG-NAME>Source Time Segment2</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>7</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>1</LOWER-LIMIT>
+					<UPPER-LIMIT>8</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>1</LOWER-LIMIT>
+							<UPPER-LIMIT>8</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-9767e2a4-6bc5-4073-9679-b31a0d68d08c" OID="id-9767e2a4-6bc5-4073-9679-b31a0d68d08c">
+				<SHORT-NAME>TesterPresentMessage</SHORT-NAME>
+				<LONG-NAME>TesterPresentMessage</LONG-NAME>
+				<DESC>
+					<p>
+Tester present message
+          </p>
+				</DESC>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+					<MAX-LENGTH>7</MAX-LENGTH>
+					<MIN-LENGTH>1</MIN-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-20555887-f77f-4a99-8208-36749ea18e81" OID="id-20555887-f77f-4a99-8208-36749ea18e81">
+				<SHORT-NAME>TESTER_PRESENT_REQ_DOP</SHORT-NAME>
+				<LONG-NAME>TesterPresentRespReq</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>TEXTTABLE</CATEGORY>
+					<COMPU-INTERNAL-TO-PHYS>
+						<COMPU-SCALES>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>0</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="0">not required</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>1</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="1">required</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+						</COMPU-SCALES>
+					</COMPU-INTERNAL-TO-PHYS>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-c48403e5-8b5c-4a49-9f7d-a46c85a63cc0" OID="id-c48403e5-8b5c-4a49-9f7d-a46c85a63cc0">
+				<SHORT-NAME>TimeTesterPresent</SHORT-NAME>
+				<LONG-NAME>TimeTesterPresent</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>10000</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>10000</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+				<UNIT-REF ID-REF="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-41bf3d94-8a48-4bf6-8c96-5fb692af1c69" OID="id-41bf3d94-8a48-4bf6-8c96-5fb692af1c69">
+				<SHORT-NAME>TesterPresentHandling</SHORT-NAME>
+				<LONG-NAME>TesterPresentHandling</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-63776da1-8fb6-48ba-a1e1-42ccfcb0b6ad" OID="id-63776da1-8fb6-48ba-a1e1-42ccfcb0b6ad">
+				<SHORT-NAME>Bs</SHORT-NAME>
+				<LONG-NAME>Bs</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>1</LOWER-LIMIT>
+					<UPPER-LIMIT>10000</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>1</LOWER-LIMIT>
+							<UPPER-LIMIT>10000</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+				<UNIT-REF ID-REF="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-090a5050-5f32-4870-b9ce-e05d5cdd645a" OID="id-090a5050-5f32-4870-b9ce-e05d5cdd645a">
+				<SHORT-NAME>Br</SHORT-NAME>
+				<LONG-NAME>Br</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>10000</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>10000</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+				<UNIT-REF ID-REF="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-49d57b66-6296-4e9c-affa-efb0bc2f8e0a" OID="id-49d57b66-6296-4e9c-affa-efb0bc2f8e0a">
+				<SHORT-NAME>Cs</SHORT-NAME>
+				<LONG-NAME>Cs</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>10000</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>10000</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+				<UNIT-REF ID-REF="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-bc4f9e60-7588-418e-80bd-75cbd432d7b6" OID="id-bc4f9e60-7588-418e-80bd-75cbd432d7b6">
+				<SHORT-NAME>Cr</SHORT-NAME>
+				<LONG-NAME>Cr</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>1</LOWER-LIMIT>
+					<UPPER-LIMIT>10000</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>1</LOWER-LIMIT>
+							<UPPER-LIMIT>10000</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+				<UNIT-REF ID-REF="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-eb1d6f71-42ab-4293-abdd-598424dcc921" OID="id-eb1d6f71-42ab-4293-abdd-598424dcc921">
+				<SHORT-NAME>RequestTime</SHORT-NAME>
+				<LONG-NAME>RequestTime</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>10000</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>10000</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+				<UNIT-REF ID-REF="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-03778868-dc78-4f4f-be2c-800a575c998f" OID="id-03778868-dc78-4f4f-be2c-800a575c998f">
+				<SHORT-NAME>ResponseTimeout</SHORT-NAME>
+				<LONG-NAME>ResponseTimeout</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>1</LOWER-LIMIT>
+					<UPPER-LIMIT>65500</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>1</LOWER-LIMIT>
+							<UPPER-LIMIT>65500</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+				<UNIT-REF ID-REF="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-eba3ec37-a2ab-4093-8e3c-3887af170b20" OID="id-eba3ec37-a2ab-4093-8e3c-3887af170b20">
+				<SHORT-NAME>DiagnosticAddress</SHORT-NAME>
+				<LONG-NAME>DiagnosticAddress</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>255</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-66a5e8de-3341-47c9-bf13-993a5644ca43" OID="id-66a5e8de-3341-47c9-bf13-993a5644ca43">
+				<SHORT-NAME>AddressingScheme</SHORT-NAME>
+				<LONG-NAME>AddressingScheme</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>2</UPPER-LIMIT>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-c1124e2f-0fe3-4eea-a1f3-956043905609" OID="id-c1124e2f-0fe3-4eea-a1f3-956043905609">
+				<SHORT-NAME>AddressExtension</SHORT-NAME>
+				<LONG-NAME>Address extension</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-f296a448-ff5f-42d6-96b4-4f2435ecf482" OID="id-f296a448-ff5f-42d6-96b4-4f2435ecf482">
+				<SHORT-NAME>InitializationMode</SHORT-NAME>
+				<LONG-NAME>InitializationMode</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>TEXTTABLE</CATEGORY>
+					<COMPU-INTERNAL-TO-PHYS>
+						<COMPU-SCALES>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>1</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="0">Physical</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>2</LOWER-LIMIT>
+								<UPPER-LIMIT>2</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="1">Functional</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+						</COMPU-SCALES>
+					</COMPU-INTERNAL-TO-PHYS>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-59918232-fc2e-4547-bb54-6f8e87a4eb27" OID="id-59918232-fc2e-4547-bb54-6f8e87a4eb27">
+				<SHORT-NAME>ResponseRequired</SHORT-NAME>
+				<LONG-NAME>ResponseRequired</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>TEXTTABLE</CATEGORY>
+					<COMPU-INTERNAL-TO-PHYS>
+						<COMPU-SCALES>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>0</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="0">not required</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>1</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="1">required</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>2</LOWER-LIMIT>
+								<UPPER-LIMIT>2</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="2">not required for Start/Stop</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+						</COMPU-SCALES>
+					</COMPU-INTERNAL-TO-PHYS>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-079d8016-eabe-4ea0-a316-74ca26bfef2c" OID="id-079d8016-eabe-4ea0-a316-74ca26bfef2c">
+				<SHORT-NAME>BlocksizeRequest</SHORT-NAME>
+				<LONG-NAME>BlocksizeRequest</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>255</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-5cf44c70-ef1f-4c5d-bc61-db917e9dec23" OID="id-5cf44c70-ef1f-4c5d-bc61-db917e9dec23">
+				<SHORT-NAME>BlocksizeResponse</SHORT-NAME>
+				<LONG-NAME>BlocksizeResponse</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>255</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-368cdd92-0e5f-4fd0-b72d-737a81b26106" OID="id-368cdd92-0e5f-4fd0-b72d-737a81b26106">
+				<SHORT-NAME>BlocksizeHandling</SHORT-NAME>
+				<LONG-NAME>BlocksizeHandling</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>TEXTTABLE</CATEGORY>
+					<COMPU-INTERNAL-TO-PHYS>
+						<COMPU-SCALES>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>0</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="0">use ECU Blocksize</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>1</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="1">use BlocksizeRequest</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+						</COMPU-SCALES>
+					</COMPU-INTERNAL-TO-PHYS>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-d7e2a991-183c-4eed-9991-aefb0fe8a51f" OID="id-d7e2a991-183c-4eed-9991-aefb0fe8a51f">
+				<SHORT-NAME>RC78Repetitions</SHORT-NAME>
+				<LONG-NAME>$78Repetitions</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>65500</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>65500</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-53afe1ef-5aca-45b1-9644-d605e538c2e3" OID="id-53afe1ef-5aca-45b1-9644-d605e538c2e3">
+				<SHORT-NAME>RC78ResponseTimeout</SHORT-NAME>
+				<LONG-NAME>$78ResponseTimeout</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>1</LOWER-LIMIT>
+					<UPPER-LIMIT>65500</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>1</LOWER-LIMIT>
+							<UPPER-LIMIT>65500</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+				<UNIT-REF ID-REF="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-fa379319-3984-421e-b80f-3df7f21310d5" OID="id-fa379319-3984-421e-b80f-3df7f21310d5">
+				<SHORT-NAME>RC21Repetitions</SHORT-NAME>
+				<LONG-NAME>$21Repetitions</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>8</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-71a5861f-3423-42d9-a86f-92a795a2f0b5" OID="id-71a5861f-3423-42d9-a86f-92a795a2f0b5">
+				<SHORT-NAME>NumberOfWaitFrames</SHORT-NAME>
+				<LONG-NAME>NumberOfWaitFrames</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>65500</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>65500</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-ab59b870-cb6d-419d-8072-41353fd3f263" OID="id-ab59b870-cb6d-419d-8072-41353fd3f263">
+				<SHORT-NAME>NumberOfErrorRepetitions</SHORT-NAME>
+				<LONG-NAME>NumberOfErrorRepetitions</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>255</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-4226291b-269d-45f1-a10e-33d497d6ce78" OID="id-4226291b-269d-45f1-a10e-33d497d6ce78">
+				<SHORT-NAME>SeparationTimeRequest</SHORT-NAME>
+				<LONG-NAME>SeparationTimeRequest</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>1000</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>1000</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+				<UNIT-REF ID-REF="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-09fe5ee3-e649-4eae-9a4d-7c34cce05e23" OID="id-09fe5ee3-e649-4eae-9a4d-7c34cce05e23">
+				<SHORT-NAME>SeparationTimeResponse</SHORT-NAME>
+				<LONG-NAME>SeparationTimeResponse</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>255</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+				<UNIT-REF ID-REF="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-bb006415-dfb4-4905-896d-048086d2df2d" OID="id-bb006415-dfb4-4905-896d-048086d2df2d">
+				<SHORT-NAME>SeparationTimeHandling</SHORT-NAME>
+				<LONG-NAME>SeparationTimeHandling</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>TEXTTABLE</CATEGORY>
+					<COMPU-INTERNAL-TO-PHYS>
+						<COMPU-SCALES>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>0</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="0">use ECU value</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>1</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="1">use SeparationTimeRequest</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+						</COMPU-SCALES>
+					</COMPU-INTERNAL-TO-PHYS>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-ab5e2ff5-ba95-4953-9f96-8a8f991a143c" OID="id-ab5e2ff5-ba95-4953-9f96-8a8f991a143c">
+				<SHORT-NAME>StartSequenceNumber</SHORT-NAME>
+				<LONG-NAME>StartSequenceNumber</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>8</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>15</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>15</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-a8be2b6a-09fc-43d3-9f84-d19ce0328f94" OID="id-a8be2b6a-09fc-43d3-9f84-d19ce0328f94">
+				<SHORT-NAME>ETP_SingleFrameValue</SHORT-NAME>
+				<LONG-NAME>ETP_SingleFrameValue</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>8</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>255</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-53773ccf-336f-4c22-833b-05119811c605" OID="id-53773ccf-336f-4c22-833b-05119811c605">
+				<SHORT-NAME>ETP_FirstFrameValue</SHORT-NAME>
+				<LONG-NAME>ETP_FirstFrameValue</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>16</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>65535</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>65535</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-67a5734b-8825-4e81-b2ec-2da89269b54e" OID="id-67a5734b-8825-4e81-b2ec-2da89269b54e">
+				<SHORT-NAME>ETP_ConsecutiveFrameValue</SHORT-NAME>
+				<LONG-NAME>ETP_ConsecutiveFrameValue</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>8</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>255</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-e8094f14-70c4-4422-8c8b-6163caeb33f8" OID="id-e8094f14-70c4-4422-8c8b-6163caeb33f8">
+				<SHORT-NAME>ETP_NumberOfCorrectCFs</SHORT-NAME>
+				<LONG-NAME>ETP_NumberOfCorrectCFs</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>8</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>255</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-4bfb4f42-cbb4-4521-945b-3d1b2e00dd23" OID="id-4bfb4f42-cbb4-4521-945b-3d1b2e00dd23">
+				<SHORT-NAME>ETP_WAIT_FRAME_NUMBER_DOP</SHORT-NAME>
+				<LONG-NAME>ETP_WaitFrameNumber</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>8</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>0</LOWER-LIMIT>
+							<UPPER-LIMIT>255</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-4ffeb17c-f9c7-4a06-a782-162902148a14" OID="id-4ffeb17c-f9c7-4a06-a782-162902148a14">
+				<SHORT-NAME>ETP_FlowControlFrame</SHORT-NAME>
+				<LONG-NAME>ETP_FlowControlFrame</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+					<MAX-LENGTH>3</MAX-LENGTH>
+					<MIN-LENGTH>1</MIN-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-762ffbe7-058f-4e0f-88ce-c6b6331a7838" OID="id-762ffbe7-058f-4e0f-88ce-c6b6331a7838">
+				<SHORT-NAME>EnableDisable</SHORT-NAME>
+				<LONG-NAME>EnableDisable</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>TEXTTABLE</CATEGORY>
+					<COMPU-INTERNAL-TO-PHYS>
+						<COMPU-SCALES>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>0</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="0">disabled</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>1</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="1">enabled</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+						</COMPU-SCALES>
+					</COMPU-INTERNAL-TO-PHYS>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>8</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-a0cf1792-1d58-413a-a1e1-9ac4c33bceea" OID="id-a0cf1792-1d58-413a-a1e1-9ac4c33bceea">
+				<SHORT-NAME>EnableDisableInvert</SHORT-NAME>
+				<LONG-NAME>EnableDisableInvert</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>TEXTTABLE</CATEGORY>
+					<COMPU-INTERNAL-TO-PHYS>
+						<COMPU-SCALES>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>0</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="0">enabled</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>1</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT TI="1">disabled</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+						</COMPU-SCALES>
+					</COMPU-INTERNAL-TO-PHYS>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>8</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-202ce456-490b-480a-b147-e9829f016440" OID="id-202ce456-490b-480a-b147-e9829f016440">
+				<SHORT-NAME>UIF_SIZE_DOP</SHORT-NAME>
+				<LONG-NAME>UIF_SIZE_DOP</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>8</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-c346ed1a-ede7-4bef-b722-f066746c790d" OID="id-c346ed1a-ede7-4bef-b722-f066746c790d">
+				<SHORT-NAME>LAST_UIF_OVERWRITABLE_DOP</SHORT-NAME>
+				<LONG-NAME>LAST_UIF_OVERWRITABLE_DOP</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>TEXTTABLE</CATEGORY>
+					<COMPU-INTERNAL-TO-PHYS>
+						<COMPU-SCALES>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>1</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT>yes</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>254</LOWER-LIMIT>
+								<UPPER-LIMIT>254</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT>no</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+						</COMPU-SCALES>
+					</COMPU-INTERNAL-TO-PHYS>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>8</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-07be9df5-5ffd-4f3d-931f-1f64169e8e7c" OID="id-07be9df5-5ffd-4f3d-931f-1f64169e8e7c">
+				<SHORT-NAME>MAX_NR_OF_UIF_DOP</SHORT-NAME>
+				<LONG-NAME>MAX_NR_OF_UIF</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>8</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>2</LOWER-LIMIT>
+					<UPPER-LIMIT>255</UPPER-LIMIT>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-ca0253a5-9c15-4ff3-8ce8-5310bbe69c9b" OID="id-ca0253a5-9c15-4ff3-8ce8-5310bbe69c9b">
+				<SHORT-NAME>UNUSED_UIF_AVAILABLE_MARKER_DOP</SHORT-NAME>
+				<LONG-NAME>UNUSED_UIF_AVAILABLE_MARKER_DOP</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>TEXTTABLE</CATEGORY>
+					<COMPU-INTERNAL-TO-PHYS>
+						<COMPU-SCALES>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>0</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT>0x00</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+							<COMPU-SCALE>
+								<LOWER-LIMIT>255</LOWER-LIMIT>
+								<UPPER-LIMIT>255</UPPER-LIMIT>
+								<COMPU-CONST>
+									<VT>0xFF</VT>
+								</COMPU-CONST>
+							</COMPU-SCALE>
+						</COMPU-SCALES>
+					</COMPU-INTERNAL-TO-PHYS>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>8</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-99a063e1-0c0f-4a83-845d-a2668ff5f8ff" OID="id-99a063e1-0c0f-4a83-845d-a2668ff5f8ff">
+				<SHORT-NAME>BSU_TIME_DOP</SHORT-NAME>
+				<LONG-NAME>BSU_TIME_DOP</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<UNIT-REF ID-REF="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-bcbea6f8-ad4f-48e8-ac7e-3d2ec42bf467" OID="id-bcbea6f8-ad4f-48e8-ac7e-3d2ec42bf467">
+				<SHORT-NAME>BUS_DOP</SHORT-NAME>
+				<LONG-NAME>BUS</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+					<MAX-LENGTH>16</MAX-LENGTH>
+					<MIN-LENGTH>1</MIN-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-96bf9c60-ee5d-43a7-bb95-7a82cceef44d" OID="id-96bf9c60-ee5d-43a7-bb95-7a82cceef44d">
+				<SHORT-NAME>BOOLEAN_1BIT_IDENTICAL_DOP</SHORT-NAME>
+				<LONG-NAME>BOOLEAN_1BIT_IDENTICAL</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>1</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>1</UPPER-LIMIT>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-5dec922e-4258-4072-ac04-d8ba818d3fe4" OID="id-5dec922e-4258-4072-ac04-d8ba818d3fe4">
+				<SHORT-NAME>4BIT_IDENTICAL_DOP</SHORT-NAME>
+				<LONG-NAME>4BIT_IDENTICAL</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>4</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>15</UPPER-LIMIT>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd" OID="id-2e7d2766-ab00-48d4-85fc-c50c3eae03fd">
+				<SHORT-NAME>BYTE_1BYTE_IDENTICAL_DOP</SHORT-NAME>
+				<LONG-NAME>BYTE_1BYTE_IDENTICAL</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>8</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-7057535e-e5f9-44a7-bccf-a96bfd1972df" OID="id-7057535e-e5f9-44a7-bccf-a96bfd1972df">
+				<SHORT-NAME>12BIT_IDENTICAL_DOP</SHORT-NAME>
+				<LONG-NAME>12BIT_IDENTICAL</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>12</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>0</LOWER-LIMIT>
+					<UPPER-LIMIT>4095</UPPER-LIMIT>
+				</INTERNAL-CONSTR>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-453ffe03-ac24-4cd2-8fa1-9df345b1b58d" OID="id-453ffe03-ac24-4cd2-8fa1-9df345b1b58d">
+				<SHORT-NAME>DATARATE_4BYTE_IDENTICAL_DOP</SHORT-NAME>
+				<LONG-NAME>DATARATE_4BYTE_IDENTICAL</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<UNIT-REF ID-REF="id-3584af6f-5e0f-463f-9f90-bb5bbd19e381"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-02377ecb-80cd-4dc2-82ef-da22ca8447a1" OID="id-02377ecb-80cd-4dc2-82ef-da22ca8447a1">
+				<SHORT-NAME>2BYTE_IDENTICAL_DOP</SHORT-NAME>
+				<LONG-NAME>2BYTE_IDENTICAL</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>16</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<UNIT-REF ID-REF="id-3584af6f-5e0f-463f-9f90-bb5bbd19e381"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-f4bb0e81-fd07-49be-a12b-6495dcb10c1c" OID="id-f4bb0e81-fd07-49be-a12b-6495dcb10c1c">
+				<SHORT-NAME>P2max</SHORT-NAME>
+				<LONG-NAME>P2max</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+				<INTERNAL-CONSTR>
+					<LOWER-LIMIT>1</LOWER-LIMIT>
+					<UPPER-LIMIT>65500</UPPER-LIMIT>
+					<SCALE-CONSTRS>
+						<SCALE-CONSTR VALIDITY="VALID">
+							<SHORT-LABEL>Value OK</SHORT-LABEL>
+							<LOWER-LIMIT>1</LOWER-LIMIT>
+							<UPPER-LIMIT>65500</UPPER-LIMIT>
+						</SCALE-CONSTR>
+					</SCALE-CONSTRS>
+				</INTERNAL-CONSTR>
+				<UNIT-REF ID-REF="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d"/>
+			</DATA-OBJECT-PROP>
+			<DATA-OBJECT-PROP ID="id-fbe69573-75b2-41a5-90e3-49c303337c33" OID="id-fbe69573-75b2-41a5-90e3-49c303337c33">
+				<SHORT-NAME>4BYTE_IDENTICAL_DOP</SHORT-NAME>
+				<LONG-NAME>4BYTE_IDENTICAL</LONG-NAME>
+				<COMPU-METHOD>
+					<CATEGORY>IDENTICAL</CATEGORY>
+				</COMPU-METHOD>
+				<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+					<BIT-LENGTH>32</BIT-LENGTH>
+				</DIAG-CODED-TYPE>
+				<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+			</DATA-OBJECT-PROP>
+		</DATA-OBJECT-PROPS>
+		<UNIT-SPEC>
+			<UNITS>
+				<UNIT ID="id-4ae2c111-429d-45dd-bd60-ae195f90635a" OID="id-4ae2c111-429d-45dd-bd60-ae195f90635a">
+					<SHORT-NAME>S</SHORT-NAME>
+					<LONG-NAME>second</LONG-NAME>
+					<DISPLAY-NAME>s</DISPLAY-NAME>
+					<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+					<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+					<PHYSICAL-DIMENSION-REF ID-REF="id-8a0f9085-87d8-42eb-95f3-ed71eecf92c6"/>
+				</UNIT>
+				<UNIT ID="id-0ec5c497-84bf-4540-90da-0f3fcd60c373" OID="id-0ec5c497-84bf-4540-90da-0f3fcd60c373">
+					<SHORT-NAME>BAUD</SHORT-NAME>
+					<LONG-NAME>baud</LONG-NAME>
+					<DISPLAY-NAME>baud</DISPLAY-NAME>
+					<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+					<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+					<PHYSICAL-DIMENSION-REF ID-REF="id-78e07b0f-b5c0-434b-bf73-da949a6d71ea"/>
+				</UNIT>
+				<UNIT ID="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d" OID="id-dba8e92b-673f-4dc5-8c7b-cbab2599209d">
+					<SHORT-NAME>MS</SHORT-NAME>
+					<LONG-NAME>millisecond</LONG-NAME>
+					<DISPLAY-NAME>ms</DISPLAY-NAME>
+					<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+					<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+					<PHYSICAL-DIMENSION-REF ID-REF="id-8a0f9085-87d8-42eb-95f3-ed71eecf92c6"/>
+				</UNIT>
+				<UNIT ID="id-0c453e98-6390-459a-b5b1-4741c28fbfe6" OID="id-0c453e98-6390-459a-b5b1-4741c28fbfe6">
+					<SHORT-NAME>100US</SHORT-NAME>
+					<LONG-NAME>100 microseconds</LONG-NAME>
+					<DISPLAY-NAME>100 us</DISPLAY-NAME>
+					<FACTOR-SI-TO-UNIT>0.0001</FACTOR-SI-TO-UNIT>
+					<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+					<PHYSICAL-DIMENSION-REF ID-REF="id-8a0f9085-87d8-42eb-95f3-ed71eecf92c6"/>
+				</UNIT>
+				<UNIT ID="id-3584af6f-5e0f-463f-9f90-bb5bbd19e381" OID="id-3584af6f-5e0f-463f-9f90-bb5bbd19e381">
+					<SHORT-NAME>BYTE_PER_S</SHORT-NAME>
+					<LONG-NAME>Byte per second</LONG-NAME>
+					<DISPLAY-NAME>Byte/s</DISPLAY-NAME>
+					<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+					<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+					<PHYSICAL-DIMENSION-REF ID-REF="id-95b935d9-3541-4461-afa8-af92ed50b0b3"/>
+				</UNIT>
+			</UNITS>
+			<PHYSICAL-DIMENSIONS>
+				<PHYSICAL-DIMENSION ID="id-8a0f9085-87d8-42eb-95f3-ed71eecf92c6" OID="id-8a0f9085-87d8-42eb-95f3-ed71eecf92c6">
+					<SHORT-NAME>S</SHORT-NAME>
+					<LONG-NAME>second</LONG-NAME>
+					<TIME-EXP>1</TIME-EXP>
+				</PHYSICAL-DIMENSION>
+				<PHYSICAL-DIMENSION ID="id-78e07b0f-b5c0-434b-bf73-da949a6d71ea" OID="id-78e07b0f-b5c0-434b-bf73-da949a6d71ea">
+					<SHORT-NAME>BAUD</SHORT-NAME>
+					<LONG-NAME>baud</LONG-NAME>
+					<TIME-EXP>-1</TIME-EXP>
+				</PHYSICAL-DIMENSION>
+				<PHYSICAL-DIMENSION ID="id-95b935d9-3541-4461-afa8-af92ed50b0b3" OID="id-95b935d9-3541-4461-afa8-af92ed50b0b3">
+					<SHORT-NAME>FREQUENCY</SHORT-NAME>
+					<LONG-NAME>frequency</LONG-NAME>
+					<TIME-EXP>-1</TIME-EXP>
+				</PHYSICAL-DIMENSION>
+			</PHYSICAL-DIMENSIONS>
+		</UNIT-SPEC>
+	</COMPARAM-SPEC>
+</ODX>

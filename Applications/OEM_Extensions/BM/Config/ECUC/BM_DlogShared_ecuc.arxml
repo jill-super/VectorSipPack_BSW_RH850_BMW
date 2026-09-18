@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ActiveEcuC</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="16d85fd3-151b-49ce-b2fa-ec5c281a0ede">
+          <SHORT-NAME>DlogShared</SHORT-NAME>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="DV:CfgPostBuild">
+                <SD GID="DV:postBuildVariantSupport">false</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/BMW_DEF/DlogShared</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="ee0fa292-8ceb-437b-b548-08da0a7b7490">
+              <SHORT-NAME>DlogSharedGeneral</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="ded19a16-de44-49a9-97eb-cd7ae90c3f7b">
+                  <SHORT-NAME>Logistic</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/DlogEcuSerialNumberLength</DEFINITION-REF>
+                      <VALUE>10</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/DlogEcuSerialNumberDefault</DEFINITION-REF>
+                      <VALUE>1234567890</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/DlogEcuManufactoringDateDefault</DEFINITION-REF>
+                      <VALUE>0x03,0x11,0x17</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/DlogNumberOfSvkBackups</DEFINITION-REF>
+                      <VALUE>3</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/DlogHweDevelopmentInfoLength</DEFINITION-REF>
+                      <VALUE>10</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/DlogSweDevelopmentInfoLength</DEFINITION-REF>
+                      <VALUE>16</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/DlogProgrammingCounterMaxValue</DEFINITION-REF>
+                      <VALUE>1000</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/DlogHweTableInitFromRom</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="235bd0d2-8eb7-48b0-85b6-9b349067ae5f">
+                      <SHORT-NAME>ConfigSet</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/ConfigSet</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="5e6d34c3-0512-4752-8f1a-2f2cd21ac757">
+                          <SHORT-NAME>HweData</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/ConfigSet/HweData</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/ConfigSet/HweData/ProcessClass</DEFINITION-REF>
+                              <VALUE>DLOG_PROCESSCLASS_HWEL</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/ConfigSet/HweData/Id</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/ConfigSet/HweData/VersionMajor</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/ConfigSet/HweData/VersionMinor</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/ConfigSet/HweData/VersionPatch</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/ConfigSet/HweData/DevelopmentInfo</DEFINITION-REF>
+                              <VALUE>HWEDATA</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="1cbac98e-3bca-4940-9858-ba875a6172c7">
+                      <SHORT-NAME>HWModificationIndex</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/HWModificationIndex</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/HWModificationIndex/HWModificationIndex</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/HWModificationIndex/HWModel</DEFINITION-REF>
+                          <VALUE>DLOG_HWM_A_MUSTER</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Logistic/HWModificationIndex/SupplierInfoFied</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="5b07ee3b-24a5-4052-a547-9395442cab5a">
+                  <SHORT-NAME>MemorySegmentation</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/MemorySegmentation</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="e0d87188-1eea-4be4-b3e0-ddcc328b7f24">
+                      <SHORT-NAME>Blocks_32k</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/MemorySegmentation/Entry</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/MemorySegmentation/Entry/StartAddress</DEFINITION-REF>
+                          <VALUE>65536</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/MemorySegmentation/Entry/SegmentSize</DEFINITION-REF>
+                          <VALUE>32768</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/MemorySegmentation/Entry/NumberOfSegments</DEFINITION-REF>
+                          <VALUE>30</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="27952161-4f72-426b-852d-71d831ed8a33">
+                      <SHORT-NAME>Blocks_8k</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/MemorySegmentation/Entry</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/MemorySegmentation/Entry/StartAddress</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/MemorySegmentation/Entry/SegmentSize</DEFINITION-REF>
+                          <VALUE>8192</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/MemorySegmentation/Entry/NumberOfSegments</DEFINITION-REF>
+                          <VALUE>8</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="631fd9f4-fd2e-42dc-a3d5-ca662646f4b5">
+                  <SHORT-NAME>Swe</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SignatureLength</DEFINITION-REF>
+                      <VALUE>260</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/MaxNumberOfSwes</DEFINITION-REF>
+                      <VALUE>16</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/CrcSkipSize</DEFINITION-REF>
+                      <VALUE>255</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/BluSweId</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="e5625eac-2ea8-468c-ae6f-3b0ac7e91a39">
+                      <SHORT-NAME>BTLD</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweId</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweDescriptionTableAddress</DEFINITION-REF>
+                          <VALUE>358656</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweSignatureAddress</DEFINITION-REF>
+                          <VALUE>358684</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/CpuId</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweGroup</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/DlogShared/DlogSharedGeneral/Swe/ALL_OBLIGATORY</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="cb3daf03-512b-4dc4-803d-c4d908107010">
+                          <SHORT-NAME>SignatureBlock</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SignatureBlock</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SignatureBlock/StartAddress</DEFINITION-REF>
+                              <VALUE>32768</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SignatureBlock/Size</DEFINITION-REF>
+                              <VALUE>325916</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="f1f5340a-ef14-43c4-839d-4e9ab1066852">
+                          <SHORT-NAME>LogisticData</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/LogisticData</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/LogisticData/ProcessClass</DEFINITION-REF>
+                              <VALUE>DLOG_PROCESSCLASS_BTLD</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/LogisticData/DevelopmentInfo</DEFINITION-REF>
+                              <VALUE>BTLD</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="677ad977-54fb-4736-81bc-961f26f0fa27">
+                          <SHORT-NAME>SweBlock</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweBlock</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweBlock/BlockStartAddress</DEFINITION-REF>
+                              <VALUE>32768</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweBlock/BlockSize</DEFINITION-REF>
+                              <VALUE>327680</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="62a1563f-1d20-4b99-a9af-af602b408bca">
+                      <SHORT-NAME>ALL_OBLIGATORY</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweGroupConfiguration</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweGroupConfiguration/GroupType</DEFINITION-REF>
+                          <VALUE>ALLOBLIGATORY</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="77119bed-0917-4e29-8367-38cc012ae18f">
+                      <SHORT-NAME>APPL</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweId</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweDescriptionTableAddress</DEFINITION-REF>
+                          <VALUE>1046784</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweSignatureAddress</DEFINITION-REF>
+                          <VALUE>1046812</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/CpuId</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweGroup</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/DlogShared/DlogSharedGeneral/Swe/ALL_OBLIGATORY</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="a30a18f4-ced0-423f-91f7-3be90d16784a">
+                          <SHORT-NAME>SignatureBlock</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SignatureBlock</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SignatureBlock/StartAddress</DEFINITION-REF>
+                              <VALUE>360448</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SignatureBlock/Size</DEFINITION-REF>
+                              <VALUE>686364</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="954ed15d-79f1-43d3-98b1-0b08221a3a85">
+                          <SHORT-NAME>LogisticData</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/LogisticData</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/LogisticData/ProcessClass</DEFINITION-REF>
+                              <VALUE>DLOG_PROCESSCLASS_SWFL</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/LogisticData/DevelopmentInfo</DEFINITION-REF>
+                              <VALUE>SWFLAPPL</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="a3eb4323-5c4f-4f66-b266-65d0342e178b">
+                          <SHORT-NAME>SweBlock</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweBlock</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweBlock/BlockStartAddress</DEFINITION-REF>
+                              <VALUE>360448</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/Swe/SweConfiguration/SweBlock/BlockSize</DEFINITION-REF>
+                              <VALUE>688128</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="bbbea3f7-faec-4d15-8861-d8a66b80291c">
+                  <SHORT-NAME>TimingParameter</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/TimingParameter</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/TimingParameter/EraseMemoryTime</DEFINITION-REF>
+                      <VALUE>100</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/TimingParameter/CheckMemoryTime</DEFINITION-REF>
+                      <VALUE>60</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/TimingParameter/BootloaderInstallTime</DEFINITION-REF>
+                      <VALUE>100</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/TimingParameter/AuthentificationTime</DEFINITION-REF>
+                      <VALUE>10</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/TimingParameter/ResetTime</DEFINITION-REF>
+                      <VALUE>10</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedGeneral/TimingParameter/TransferDataTime</DEFINITION-REF>
+                      <VALUE>60</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="10226de3-bff9-4148-bf7b-904d5e63f21e">
+              <SHORT-NAME>DlogSharedPlatform</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/DlogSharedPlatform</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedPlatform/ConvertExtAddress2IntPointer</DEFINITION-REF>
+                  <VALUE>((uint32)extAddress)</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedPlatform/ConvertIntPointer2ExtAddress</DEFINITION-REF>
+                  <VALUE>((uint32)intPointer)</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedPlatform/FlashPageSize</DEFINITION-REF>
+                  <VALUE>256</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedPlatform/FlashErasedByte</DEFINITION-REF>
+                  <VALUE>255</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedPlatform/EccErrorState</DEFINITION-REF>
+                  <VALUE>INVALID</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedPlatform/HandleEccRom</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/BMW_DEF/DlogShared/DlogSharedPlatform/MultiCpuEnable</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="4206b636-479a-4943-a13c-b4fa696e7725">
+              <SHORT-NAME>Dlog_MultiConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/Dlog_MultiConfig</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/Dlog_MultiConfig/EcuId</DEFINITION-REF>
+                  <VALUE>48</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <REFERENCE-VALUES>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/BMW_DEF/DlogShared/Dlog_MultiConfig/ConfigSet</DEFINITION-REF>
+                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/DlogShared/DlogSharedGeneral/Logistic/ConfigSet</VALUE-REF>
+                </ECUC-REFERENCE-VALUE>
+              </REFERENCE-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="61b381de-dc73-4f1a-b2f3-fe8271c23e69">
+              <SHORT-NAME>CommonPublishedInformation</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/BMW_DEF/DlogShared/CommonPublishedInformation</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/CommonPublishedInformation/SwMajorVersion</DEFINITION-REF>
+                  <VALUE>5</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/CommonPublishedInformation/SwMinorVersion</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/BMW_DEF/DlogShared/CommonPublishedInformation/SwPatchVersion</DEFINITION-REF>
+                  <ANNOTATIONS>
+                    <ANNOTATION>
+                      <ANNOTATION-ORIGIN>DV:UserDefined</ANNOTATION-ORIGIN>
+                    </ANNOTATION>
+                  </ANNOTATIONS>
+                  <VALUE>3</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

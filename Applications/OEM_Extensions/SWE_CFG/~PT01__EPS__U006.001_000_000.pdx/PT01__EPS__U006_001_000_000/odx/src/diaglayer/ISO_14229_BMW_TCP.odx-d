@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DIAG-LAYER-CONTAINER ID="id-3076c759-0077-4b45-ac55-95ec2ba1bb93" OID="id-3076c759-0077-4b45-ac55-95ec2ba1bb93">
+    <SHORT-NAME>ISO_14229_BMW_TCP_DLC</SHORT-NAME>
+    <LONG-NAME>ISO14229 on TCP/IP BMW</LONG-NAME>
+    <ADMIN-DATA/>
+    <PROTOCOLS>
+      <PROTOCOL TYPE="ISO_15765_3_on_ISO_15765_2" ID="id-accd7022-28f2-4985-bd0f-de89220636ca" OID="id-accd7022-28f2-4985-bd0f-de89220636ca">
+        <SHORT-NAME>ISO_14229_BMW_TCP</SHORT-NAME>
+        <LONG-NAME>ISO14229 on TCP/IP BMW Specification</LONG-NAME>
+        <DESC>
+          <p>
+Road vehicles - Unified diagnostic services (UDS) - according to ISO 14229-1 Draft International Standard 2005-03-31.
+          </p>
+        </DESC>
+        <ADMIN-DATA>
+          <LANGUAGE>eng</LANGUAGE>
+          <DOC-REVISIONS>
+            <DOC-REVISION>
+              <TEAM-MEMBER-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-582251e8-a9b9-4e5a-bd33-29fc7d8fb101"/>
+              <REVISION-LABEL>001.000.000</REVISION-LABEL>
+              <STATE>Release</STATE>
+              <DATE>2006-01-16T16:00:00</DATE>
+              <MODIFICATIONS>
+                <MODIFICATION>
+                  <CHANGE>Added</CHANGE>
+                  <REASON>Initial Release</REASON>
+                </MODIFICATION>
+              </MODIFICATIONS>
+            </DOC-REVISION>
+          </DOC-REVISIONS>
+        </ADMIN-DATA>
+        <COMPARAM-REFS>
+          <COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-2914a394-aafd-4e62-b82f-f9bde800e90c">
+            <VALUE>244</VALUE>
+          </COMPARAM-REF>
+          <COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-c4429312-ab4f-4e03-8eae-7c8b597ccfdb">
+	    <VALUE>10000000</VALUE>
+       	  </COMPARAM-REF>
+        </COMPARAM-REFS>
+        <COMPARAM-SPEC-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-7d0dd6ce-5fc5-4ed0-adef-58459e82fb3f"/>
+        <PARENT-REFS>
+          <PARENT-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-d66c6e27-e963-4684-b88f-54276d894fb9" xsi:type="ECU-SHARED-DATA-REF"/>
+        </PARENT-REFS>
+      </PROTOCOL>
+    </PROTOCOLS>
+  </DIAG-LAYER-CONTAINER>
+</ODX>

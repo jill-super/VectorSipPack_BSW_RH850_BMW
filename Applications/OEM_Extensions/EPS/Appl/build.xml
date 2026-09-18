@@ -1,0 +1,469 @@
+<?xml version="1.0"?>
+<!--
+ File: build.xml
+ Description: Build file for NAntSupport 02.02.00 and above
+
+ AUTHOR IDENTITY
+ ===================================================================================================================
+ Name                          Initials      Company
+ ============================  ============  =======================================================================
+ Roland Reinl                  virrro        Vector Informatik GmbH
+ ===================================================================================================================
+ REVISION HISTORY
+ ===================================================================================================================
+ Version   Date        Author  Description
+ ========  ==========  ======  =====================================================================================
+ 02.05.00  2016-08-12  virrro  Added history, merged build files
+ 02.05.01  2016-09-09  virrro  Created version 02.05.01 (no changes in this file)
+ 02.05.02  2016-09-23  virrro  Added support for quoted targets in dep files in Avanti(no changes in this file)
+ 02.06.00  2016-09-27  virrro  Added support for generated make files, Fixed tasking compiler dependency handling
+ 02.07.00  2016-10-18  virrro  Added map file argument filter for GHS RH850. Added all as default target
+           2016-10-24  virrro  Added Makefile.Project.Part.Defines dependency
+           2016-10-24  virrro  Added parameters for creating hex files
+ 02.08.00  2016-11-29  virrro  Added support for AURIXPLUS platform
+ 02.09.00  2016-12-15  virrro  Extracted delivery targets to separate file
+ 02.09.01  2017-01-05  virrro  No changes in build scripts
+ 02.10.00  2017-01-16  virrro  Added DERIVATIVE property
+                               Added AS/CC/LB/LD VERSION and LC properties
+                               Added support for Aurix GNU platform
+ 02.10.01  2017-02-23  virrro  Added SipModificationChecker target
+ 02.11.00  2017-03-01  virrro  Adapted to new folder structure
+ 02.11.01  2017-03-01  virrro  No changes in this file
+ 02.12.00  2017-03-02  virrro  No changes in this file
+ 02.12.01  2017-05-23  virrro  No changes in this file
+ 02.12.02  2017-05-31  virrro  No changes in this file
+ 02.13.00  2017-06-16  virrro  No changes in this file
+ 02.13.01  2017-07-14  virrro  No changes in this file
+ 02.13.02  2017-07-18  virrro  Added support additional object files
+-->
+<project name="EPS" default="all">
+  <property name="MAKESUPPORT_DIR" value="..\..\..\MakeSupport"/>
+  <property name="ROOT" value="..\..\..\.."/>
+  <property name="GLOBAL_COMP_DIR" value="BSW"/>
+  <property name="BSW_ROOT" value="..\..\..\../BSW"/>
+  <property name="GENDATA_DIR" value="GenData"/>
+  <property name="COMPILER_MANUFACTURER" value="GHS"/>
+  <property name="PLATFORM" value="RH850"/>
+  <property name="DERIVATIVE" value="701319"/>
+
+  <!-- Compiler configuration -->
+  <property name="CC" value="D:\uti\GHS\RH850\comp_201517\ccrh850.exe"/>
+  <property name="AS" value="D:\uti\GHS\RH850\comp_201517\ccrh850.exe"/>
+  <property name="LD" value="D:\uti\GHS\RH850\comp_201517\ccrh850.exe"/>
+  <property name="LB" value="D:\uti\GHS\RH850\comp_201517\ccrh850.exe"/>
+  <property name="HEX" value="D:\uti\GHS\RH850\comp_201517\gsrec.exe"/>
+  <property name="LLVM" value="C:\Program Files\LLVM\bin\clang.exe"/>
+
+  <!-- Environment variables needed for CYGWIN and license -->
+  <setenv name="CYGWIN" value="nodosfilewarning"/>
+  <setenv name="PATH" value="%PATH%;${MAKESUPPORT_DIR}/cmd;"/>
+  <setenv name="WRSD_LICENSE_FILE" value="7594@vistrlic1.vi.vector.int"/>
+  <setenv name="GHS_LMHOST" value="vistrlic1.vi.vector.int"/>
+  <setenv name="GHS_LMWHICH" value="ghs"/>
+  <setenv name="RLM_LICENSE" value="vistrlic1@7591"/>
+
+  <!--
+  Configure the output detail of the project by using the following values:
+  Debug   : Show debug, info, warning, error and fatal messages
+  Info    : Show info, warning, error and fatal messages
+  Warning : Show warning, error and fatal messages
+  Error   : Show error and fatal messages
+  Fatal   : Show only fatal messages
+  -->
+  <property name="LOG_LEVEL" value="Info"/>
+
+  <!--
+  NANT >> Directory Configuration
+  The paths for dep file, object file, build file, error file, ...
+  -->
+  <property name="BUILD_PATH" value="."/>
+  <property name="OBJ_PATH" value="obj"/>
+  <property name="ERR_PATH" value="err"/>
+  <property name="CC_DEP_PATH" value="obj"/>
+  <property name="AS_DEP_PATH" value="obj"/>
+  <property name="LD_DEP_PATH" value="dep"/>
+  <property name="LOG_PATH" value="log"/>
+  <property name="LST_PATH" value="lst"/>
+  <property name="LIB_PATH" value="lib"/>
+
+  <!--
+  NANT >> Suffix of output files
+  Suffix for dep file, object file, build file, error file, ...
+  -->
+  <property name="ASM_SUFFIX" value="asm"/>
+  <property name="OBJ_SUFFIX" value="o"/>
+  <property name="DEP_SUFFIX" value="d"/>
+  <property name="BIN_SUFFIX" value="elf"/>
+  <property name="ERR_SUFFIX" value="err"/>
+  <property name="LOG_SUFFIX" value=""/>
+  <property name="LST_SUFFIX" value="lst"/>
+  <property name="LNK_SUFFIX" value="ld"/>
+  <property name="LIB_SUFFIX" value="lib"/>
+  <property name="HEX_SUFFIX" value=""/>
+
+  <!--
+  NANT >> Switch configuration for the CrossCompile
+
+  IncSw  : includeswitch
+  DefSw  : defineswitch
+  OutArg : outfilearg
+
+  SCC  : dependency scanner
+  CC   : C compiler
+  AS   : assembler
+  LD   : linker
+  AR   : archiver
+  -->
+  <property name="SCC_IncSw" value="-I"/>
+  <property name="SCC_DefSw" value="-D"/>
+  <property name="SCC_OutArg" value=""/>
+  <property name="CC_IncSw" value="-I"/>
+  <property name="CC_DefSw" value="-D"/>
+  <property name="CC_OutArg" value="-o "/>
+  <property name="AS_IncSw" value="-I"/>
+  <property name="AS_DefSw" value="-D"/>
+  <property name="AS_OutArg" value="-o"/>
+  <property name="LD_IncSw" value="-L"/>
+  <property name="LD_DefSw" value=""/>
+  <property name="LD_OutArg" value="-o "/>
+  <property name="AR_INCSW" value=""/>
+  <property name="AR_LIBDIR" value=""/>
+  <property name="AR_LIBEXT" value=""/>
+
+  <!--
+  NANT >> Linker fileset configuration
+  This configures whether the linker needs the object fileset specified at the "link" target.
+  Most compilers need it ==> false
+  -->
+  <property name="LNK_FILESET_OFF" value="false"/>
+
+  <property name="MODULE_LIST_PROJECT" value="CCL_ASR4COMMCFG5 CCL_ASR4SMFR CP_ASR4XCP CP_XCPONFRASR DIAG_ASR4DCM DIAG_ASR4DEM DRVCRYPTO_CRYWRAPPER DRVCRY_RH850ICUS DRVFR_XERAYASR DRVTRANS_TJA1082FRDIOSPIASR ECUAB_ASRIOHWAB GW_ASRPDURCFG5 IF_ASR4IFWD IF_ASRIFCRY IF_ASRIFFEESMALLSECTOR IF_ASRIFFR IF_ASRIFMEM IL_ASRCOMCFG5 IL_ASRIPDUMCFG5 IL_ASRSECOC MCAL_RH850P1XREN03ASR4SUB MEMSERVICE_ASRNVM OS_PLATFORMRH850GEN7 SECURITY_ASRCSM SYSSERVICE_ASR4BSWMCFG5 SYSSERVICE_ASR4ECUM SYSSERVICE_ASR4WDM SYSSERVICE_ASRCAL SYSSERVICE_ASRCRC SYSSERVICE_ASRDET SYSSERVICE_E2ELIB TP_ISO10681 VSTDLIB"/>
+  <property name="LIBRARIES_TO_BUILD" value="BswM Cal Com ComM Crc CryIf Cry_30_Rh850Icus Crypto_30_CryWrapper Csm Dcm Dem Det E2EXf EcuM Fee_30_SmallSector Fr FrIf FrSM FrXcp IpduM MemIf NvM PduR Tp_Iso10681 WdgIf WdgM Xcp"/>
+
+  <!-- Turn on/off the effect of below switches. "True" = all _USED switches are ignored -->
+  <!-- Set it to false by default so NAnt works in the same way as the make environment -->
+  <property name="MODULES_USED_SWITCH_ALL_OFF" value="False"/>
+
+  <property name="CCL_ASR4COMMCFG5_USED" value="true"/>
+  <property name="CCL_ASR4SMFR_USED" value="true"/>
+  <property name="CP_ASR4XCP_USED" value="true"/>
+  <property name="CP_XCPONFRASR_USED" value="true"/>
+  <property name="DIAG_ASR4DCM_USED" value="true"/>
+  <property name="DIAG_ASR4DEM_USED" value="true"/>
+  <property name="DRVCRYPTO_CRYWRAPPER_USED" value="true"/>
+  <property name="DRVCRY_RH850ICUS_USED" value="true"/>
+  <property name="DRVFR_XERAYASR_USED" value="true"/>
+  <property name="DRVTRANS_TJA1082FRDIOSPIASR_USED" value="false"/>
+  <property name="ECUAB_ASRIOHWAB_USED" value="true"/>
+  <property name="GW_ASRPDURCFG5_USED" value="true"/>
+  <property name="IF_ASR4IFWD_USED" value="true"/>
+  <property name="IF_ASRIFCRY_USED" value="true"/>
+  <property name="IF_ASRIFFEESMALLSECTOR_USED" value="true"/>
+  <property name="IF_ASRIFFR_USED" value="true"/>
+  <property name="IF_ASRIFMEM_USED" value="true"/>
+  <property name="IL_ASRCOMCFG5_USED" value="true"/>
+  <property name="IL_ASRIPDUMCFG5_USED" value="true"/>
+  <property name="IL_ASRSECOC_USED" value="false"/>
+  <property name="MCAL_RH850P1XREN03ASR4SUB_USED" value="true"/>
+  <property name="MEMSERVICE_ASRNVM_USED" value="true"/>
+  <property name="OS_PLATFORMRH850GEN7_USED" value="true"/>
+  <property name="SECURITY_ASRCSM_USED" value="true"/>
+  <property name="SYSSERVICE_ASR4BSWMCFG5_USED" value="true"/>
+  <property name="SYSSERVICE_ASR4ECUM_USED" value="true"/>
+  <property name="SYSSERVICE_ASR4WDM_USED" value="true"/>
+  <property name="SYSSERVICE_ASRCAL_USED" value="true"/>
+  <property name="SYSSERVICE_ASRCRC_USED" value="true"/>
+  <property name="SYSSERVICE_ASRDET_USED" value="true"/>
+  <property name="SYSSERVICE_E2ELIB_USED" value="false"/>
+  <property name="TP_ISO10681_USED" value="true"/>
+  <property name="VSTDLIB_USED" value="true"/>
+  <property name="RTE_USED" value="true"/>
+  <property name="COMXF_USED" value="true"/>
+  <property name="SOMEIPXF_USED" value="false"/>
+  <property name="E2EXF_USED" value="true"/>
+
+  <property name="CCL_ASR4COMMCFG5_PATH" value="BSW\ComM"/>
+  <property name="CCL_ASR4SMFR_PATH" value="BSW\FrSM"/>
+  <property name="CP_ASR4XCP_PATH" value="BSW\Xcp"/>
+  <property name="CP_XCPONFRASR_PATH" value="BSW\FrXcp"/>
+  <property name="DIAG_ASR4DCM_PATH" value="BSW\Dcm"/>
+  <property name="DIAG_ASR4DEM_PATH" value="BSW\Dem"/>
+  <property name="DRVCRYPTO_CRYWRAPPER_PATH" value="BSW\Crypto_30_CryWrapper"/>
+  <property name="DRVCRY_RH850ICUS_PATH" value="BSW\Cry_30_Rh850Icus"/>
+  <property name="DRVFR_XERAYASR_PATH" value="BSW\Fr"/>
+  <property name="DRVTRANS_TJA1082FRDIOSPIASR_PATH" value="BSW\FrTrcv_30_Tja1082"/>
+  <property name="ECUAB_ASRIOHWAB_PATH" value="BSW\IoHwAb"/>
+  <property name="GW_ASRPDURCFG5_PATH" value="BSW\PduR"/>
+  <property name="IF_ASR4IFWD_PATH" value="BSW\WdgIf"/>
+  <property name="IF_ASRIFCRY_PATH" value="BSW\CryIf"/>
+  <property name="IF_ASRIFFEESMALLSECTOR_PATH" value="BSW\Fee_30_SmallSector"/>
+  <property name="IF_ASRIFFR_PATH" value="BSW\FrIf"/>
+  <property name="IF_ASRIFMEM_PATH" value="BSW\MemIf"/>
+  <property name="IL_ASRCOMCFG5_PATH" value="BSW\Com"/>
+  <property name="IL_ASRIPDUMCFG5_PATH" value="BSW\IpduM"/>
+  <property name="IL_ASRSECOC_PATH" value="BSW\SecOC"/>
+  <property name="MCAL_RH850P1XREN03ASR4SUB_PATH" value="BSW\Mcal_Rh850P1x"/>
+  <property name="MEMSERVICE_ASRNVM_PATH" value="BSW\NvM"/>
+  <property name="OS_PLATFORMRH850GEN7_PATH" value="BSW\Os"/>
+  <property name="SECURITY_ASRCSM_PATH" value="BSW\Csm"/>
+  <property name="SYSSERVICE_ASR4BSWMCFG5_PATH" value="BSW\BswM"/>
+  <property name="SYSSERVICE_ASR4ECUM_PATH" value="BSW\EcuM"/>
+  <property name="SYSSERVICE_ASR4WDM_PATH" value="BSW\WdgM"/>
+  <property name="SYSSERVICE_ASRCAL_PATH" value="BSW\Cal"/>
+  <property name="SYSSERVICE_ASRCRC_PATH" value="BSW\Crc"/>
+  <property name="SYSSERVICE_ASRDET_PATH" value="BSW\Det"/>
+  <property name="SYSSERVICE_E2ELIB_PATH" value="BSW\E2E"/>
+  <property name="TP_ISO10681_PATH" value="BSW\Tp_Iso10681"/>
+  <property name="VSTDLIB_PATH" value="BSW\VStdLib"/>
+
+  <!-- File set containing all application source files -->
+  <fileset id="app.cc.files">
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/BUtil/src/BUtil_AddressFormat.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/BUtil/src/BUtil_Math.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_AESEncrypt.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_AES_Common.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_CBCMacGenerate.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_CBCMacVerify.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_CbcPkcs5Decrypt.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_CbcPkcs5Decrypt_Common.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_Common.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_DESCommon.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_DESDecrypt.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_DESEncrypt.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_DifHellmanCalcSecret.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_LN.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_MD5.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_PBKDF1.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_PKCS1Vrfy.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_SSG.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_SigBMWVrfy.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/src/Cpl_SymKeyExtract.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Darh/src/Darh.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Dlog/src/Dlog_Ecu.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Dlog/src/Dlog_Memory.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Dlog/src/Dlog_Mode.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Dlog/src/Dlog_ProgCounter.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Dlog/src/Dlog_SgbdId.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Dlog/src/Dlog_Svk.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Dlog/src/Dlog_Swe.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Dlog/src/Dlog_SweException.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Dlog/src/Dlog_SweGet.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Dlog/src/Dlog_SweInit.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Dlog/src/Dlog_SweStatus.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Dlog/src/Dlog_TimingParameters.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Omc/src/Omc.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Srv/src/Srv_BootMode.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/StdDiag/src/StdDiag.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Stm/src/Stm.c"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/SysTime/src/SysTime.c"/>
+    <include name="GenData/Cpl_AESEncrypt_Cfg.c"/>
+    <include name="GenData/Cpl_CBCMacGenerate_Cfg.c"/>
+    <include name="GenData/Cpl_CBCMacVerify_Cfg.c"/>
+    <include name="GenData/Cpl_CbcPkcs5Decrypt_Cfg.c"/>
+    <include name="GenData/Cpl_DESDecrypt_Cfg.c"/>
+    <include name="GenData/Cpl_DESEncrypt_Cfg.c"/>
+    <include name="GenData/Cpl_DifHellmanCalcSecret_Cfg.c"/>
+    <include name="GenData/Cpl_JmpTable.c"/>
+    <include name="GenData/Cpl_Keys.c"/>
+    <include name="GenData/Cpl_MD5_Cfg.c"/>
+    <include name="GenData/Cpl_PBKDF1_Cfg.c"/>
+    <include name="GenData/Cpl_PKCS1Vrfy_Cfg.c"/>
+    <include name="GenData/Cpl_SHA_Cfg.c"/>
+    <include name="GenData/Cpl_SSG_Cfg.c"/>
+    <include name="GenData/Cpl_SigBMWVrfy_Cfg.c"/>
+    <include name="GenData/Cpl_SymKeyExtract_Cfg.c"/>
+    <include name="GenData/Dlog_HweTable.c"/>
+    <include name="GenData/Dlog_Nvm.c"/>
+    <include name="GenData/Dlog_PBCfg.c"/>
+    <include name="GenData/Dlog_SvkBackup.c"/>
+    <include name="GenData/Dlog_SweTable.c"/>
+    <include name="GenData/StdDiag_Cfg.c"/>
+    <include name="GenData/Stm_PBCfg.c"/>
+    <include name="Source/ApplFr_Stubs.c"/>
+    <include name="Source/BMW_Application_Connector_Dummy.c"/>
+    <include name="Source/BMW_Application_Main.c"/>
+    <include name="Source/BMW_Application_ModeRequestor.c"/>
+    <include name="Source/BRS/BrsAsrInit.c"/>
+    <include name="Source/BRS/BrsAsrMain.c"/>
+    <include name="Source/BRS/BrsHw.c"/>
+    <include name="Source/BRS/BrsIntTb.c"/>
+    <include name="Source/BRS/BrsPreMain_c0.c"/>
+    <include name="Source/BRS/BrsStartup_c0.c"/>
+    <include name="Source/BswInit.c"/>
+    <include name="Source/BswInit_Callout_Stubs.c"/>
+    <include name="Source/BswM_Callout_Stubs.c"/>
+    <include name="Source/Dcm_Callout_Stubs.c"/>
+    <include name="Source/Dcm_Stub_DSD_Sid_Fcn.c"/>
+    <include name="Source/EcuM_Callout_Stubs.c"/>
+    <include name="Source/Os_Callout_Stubs.c"/>
+    <include name="Source/ProgConditions.c"/>
+    <include name="Source/StartApplication.c"/>
+    <include name="Source/XcpAppl.c"/>
+  </fileset>
+
+  <!-- File set containing all application assembler files -->
+  <fileset id="app.as.files">
+  </fileset>
+  <!-- File set containing all additional object files -->
+  <fileset id="app.object.files">
+  </fileset>
+
+
+  <!-- Directory set containing all application include directories -->
+  <dirset id="app.cc.includes">
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/BUtil/include"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Cpl/include"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Darh/include"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Dlog/include"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Omc/include"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Srv/include"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/StdDiag/include"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/Stm/include"/>
+    <include name="../../../../ThirdParty/BAC4_2/Supply/core/SysTime/include"/>
+    <include name="../../_Common"/>
+    <include name="../../_Common/BRS"/>
+    <include name="../../_Common/Compiler_Cfg"/>
+    <include name="../../_Common/Memmap"/>
+    <include name="GenData"/>
+    <include name="GenData/Components"/>
+    <include name="GenData/include"/>
+    <include name="Include"/>
+    <include name="Include/BRS"/>
+  </dirset>
+
+  <!-- Directory set containing all application include directories for the assembler -->
+  <dirset id="app.as.includes">
+  </dirset>
+
+  <!-- Directory set containing all compiler include directories -->
+  <dirset id="compiler.cc.includes">
+    <include name="D:/uti/GHS/RH850/comp_201517/ansi"/>
+    <include name="D:/uti/GHS/RH850/comp_201517/include/v800"/>
+  </dirset>
+
+  <!-- CFLAGS_ and FILTER_ properties for source files -->
+
+  <!-- Build Options Selection: VECTOR / CUSTOMER -->
+  <property name="ASFLAGS_SELECTOR" value="VECTOR"/>
+  <property name="CFLAGS_SELECTOR"  value="VECTOR"/>
+  <property name="LDFLAGS_SELECTOR" value="VECTOR"/>
+
+  <!-- DEP_DEFINES -->
+  <property name="DEP_DEFINES" value=""/>
+  <property name="DEP_DEFINES" value="${DEP_DEFINES} BRS_DERIVATIVE_701319"/>
+  <property name="DEP_DEFINES" value="${DEP_DEFINES} BRS_OSC_CLK=16"/>
+  <property name="DEP_DEFINES" value="${DEP_DEFINES} BRS_TIMEBASE_CLOCK=160"/>
+  <property name="DEP_DEFINES" value="${DEP_DEFINES} BRS_OS_USECASE_OSGEN7"/>
+  <property name="DEP_DEFINES" value="${DEP_DEFINES} BRS_EVA_BOARD_"/>
+  <property name="DEP_DEFINES" value="${DEP_DEFINES} BRS_DERIVATIVE_GROUP_P1M"/>
+  <property name="DEP_DEFINES" value="${DEP_DEFINES} BRS_PLATFORM_RH850"/>
+  <property name="DEP_DEFINES" value="${DEP_DEFINES} BRS_COMP_GHS"/>
+  <property name="DEP_DEFINES" value="${DEP_DEFINES} BRS_CPU_RAM_SIZE="/>
+  <property name="DEP_DEFINES" value="${DEP_DEFINES} BRS_CPU_RAM_START="/>
+
+  <!-- ASFLAGS_VECTOR_MAKESUPPORT -->
+  <property name="ASFLAGS_VECTOR_MAKESUPPORT" value=""/>
+
+  <!-- ASFLAGS_VECTOR_OPTIONS -->
+  <property name="ASFLAGS_VECTOR_OPTIONS" value=""/>
+
+  <!-- ASFLAGS_CUSTOMER_OPTIONS -->
+  <property name="ASFLAGS_CUSTOMER_OPTIONS" value=""/>
+
+  <!-- CFLAGS_VECTOR_MAKESUPPORT -->
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value=""/>
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value="${CFLAGS_VECTOR_MAKESUPPORT} -DBRS_DERIVATIVE_701319"/>
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value="${CFLAGS_VECTOR_MAKESUPPORT} -DBRS_OSC_CLK=16"/>
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value="${CFLAGS_VECTOR_MAKESUPPORT} -DBRS_TIMEBASE_CLOCK=160"/>
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value="${CFLAGS_VECTOR_MAKESUPPORT} -DBRS_EVA_BOARD_"/>
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value="${CFLAGS_VECTOR_MAKESUPPORT} -DBRS_DERIVATIVE_GROUP_P1M"/>
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value="${CFLAGS_VECTOR_MAKESUPPORT} -DBRS_OS_USECASE_OSGEN7"/>
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value="${CFLAGS_VECTOR_MAKESUPPORT} -DBRS_PLATFORM_RH850"/>
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value="${CFLAGS_VECTOR_MAKESUPPORT} -DBRS_COMP_GHS"/>
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value="${CFLAGS_VECTOR_MAKESUPPORT} -DBRS_CPU_LOCAL_RAM_SIZE_CORE0=128"/>
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value="${CFLAGS_VECTOR_MAKESUPPORT} -DBRS_CPU_RAM_START_CORE0=0xFEDE0000"/>
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value="${CFLAGS_VECTOR_MAKESUPPORT} -object_dir=obj"/>
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value="${CFLAGS_VECTOR_MAKESUPPORT} -DOs_WDG_59_DRIVERA_TRIGGERFUNCTION_CAT2_ISR"/>
+  <property name="CFLAGS_VECTOR_MAKESUPPORT" value="${CFLAGS_VECTOR_MAKESUPPORT} -c"/>
+
+  <!-- CFLAGS_VECTOR_OPTIONS -->
+  <property name="CFLAGS_VECTOR_OPTIONS" value=""/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} -cpu=rh850g3m"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} -needprototype"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} -Wundef"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} --no_commons"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} -G"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} -dual_debug"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} -noobj"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} -pragma_asm_inline"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} -inline_prologue"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} --long_long"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} -fsoft"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} -sda=all"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} -large_sda"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} -Ogeneral"/>
+  <property name="CFLAGS_VECTOR_OPTIONS" value="${CFLAGS_VECTOR_OPTIONS} -registermode=32"/>
+
+  <!-- CFLAGS_CUSTOMER_OPTIONS -->
+  <property name="CFLAGS_CUSTOMER_OPTIONS" value=""/>
+
+  <!-- LDFLAGS_VECTOR_MAKESUPPORT -->
+  <property name="LDFLAGS_VECTOR_MAKESUPPORT" value=""/>
+  <property name="LDFLAGS_VECTOR_MAKESUPPORT" value="${LDFLAGS_VECTOR_MAKESUPPORT} -cpu=rh850g3m"/>
+  <property name="LDFLAGS_VECTOR_MAKESUPPORT" value="${LDFLAGS_VECTOR_MAKESUPPORT} --preprocess_linker_directive_full"/>
+  <property name="LDFLAGS_VECTOR_MAKESUPPORT" value="${LDFLAGS_VECTOR_MAKESUPPORT} -e"/>
+  <property name="LDFLAGS_VECTOR_MAKESUPPORT" value="${LDFLAGS_VECTOR_MAKESUPPORT} __usr_init_c0"/>
+  <property name="LDFLAGS_VECTOR_MAKESUPPORT" value="${LDFLAGS_VECTOR_MAKESUPPORT} EPS.ld"/>
+
+  <!-- LDFLAGS_VECTOR_OPTIONS -->
+  <property name="LDFLAGS_VECTOR_OPTIONS" value=""/>
+  <property name="LDFLAGS_VECTOR_OPTIONS" value="${LDFLAGS_VECTOR_OPTIONS} -Manx"/>
+  <property name="LDFLAGS_VECTOR_OPTIONS" value="${LDFLAGS_VECTOR_OPTIONS} -G"/>
+  <property name="LDFLAGS_VECTOR_OPTIONS" value="${LDFLAGS_VECTOR_OPTIONS} -dual_debug"/>
+  <property name="LDFLAGS_VECTOR_OPTIONS" value="${LDFLAGS_VECTOR_OPTIONS} -sda=all"/>
+  <property name="LDFLAGS_VECTOR_OPTIONS" value="${LDFLAGS_VECTOR_OPTIONS} -large_sda"/>
+  <property name="LDFLAGS_VECTOR_OPTIONS" value="${LDFLAGS_VECTOR_OPTIONS} -Ogeneral"/>
+
+  <!-- LDFLAGS_CUSTOMER_OPTIONS -->
+  <property name="LDFLAGS_CUSTOMER_OPTIONS" value=""/>
+
+  <!-- Flags for creating libaries -->
+  <property name="LBFLAGS" value=":archiver.args=-c -archive -o build.xml"/>
+
+  <!-- Flags for retrieving version information from compiler toolchain -->
+  <property name="AS_VERSION_FLAGS" value="test.asm -V"/>
+  <property name="AS_VERSION_LINE_COUNT" value="5"/>
+  <property name="AS_VERSION_LINE_OFFSET" value="1"/>
+  <property name="AS_VERSION_EXIT_CODE" value="0"/>
+
+  <property name="CC_VERSION_FLAGS" value="-V dummy.c"/>
+  <property name="CC_VERSION_LINE_COUNT" value="5"/>
+  <property name="CC_VERSION_LINE_OFFSET" value="1"/>
+  <property name="CC_VERSION_EXIT_CODE" value="0"/>
+
+  <property name="LD_VERSION_FLAGS" value="-V dummy.c"/>
+  <property name="LD_VERSION_LINE_COUNT" value="5"/>
+  <property name="LD_VERSION_LINE_OFFSET" value="1"/>
+  <property name="LD_VERSION_EXIT_CODE" value="0"/>
+
+  <property name="LB_VERSION_FLAGS" value="-V dummy.c"/>
+  <property name="LB_VERSION_LINE_COUNT" value="5"/>
+  <property name="LB_VERSION_LINE_OFFSET" value="1"/>
+  <property name="LB_VERSION_EXIT_CODE" value="0"/>
+
+  <!-- Flags for creating/updating dependency files during compiling/assembling/linking -->
+  <property name="DEP_FLAGS_CC" value="-MD" dynamic="true"/>
+  <property name="DEP_FLAGS_AS" value="-MD" dynamic="true"/>
+  <property name="DEP_FLAGS_LD" value="-MD" dynamic="true"/>
+
+  <property name="HEXFLAGS" value="-nos5 -skip .tdata EPS.elf  -o "/>
+
+  <property name="NAntScriptDir" value="${avanti::get-base-directory()}/../Scripts/NAnt"/>
+  <include buildfile="${NAntScriptDir}/NAnt.Global.Targets.xml"/>
+  <property name="NAntIntFile" value="${NAntScriptDir}/NAnt.Integration.Targets.xml"/>
+  <include buildfile="${NAntIntFile}" if="${file::exists(NAntIntFile)}"/>
+
+  <!-- Include BSW data. Added if condition because BSW component include is not available during bootstrapping -->
+  <property name="BSW_Include_File" value="NAnt-files/Gen/AllBswModules.xml"/>
+  <include buildfile="${BSW_Include_File}" if="${file::exists(BSW_Include_File)}"/>
+</project>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER ID="id-00d17dd9-eb9a-47bb-8365-bb49f5904f9a" OID="id-00d17dd9-eb9a-47bb-8365-bb49f5904f9a">
+        <SHORT-NAME>UPAD_TIP_DLC</SHORT-NAME>
+        <LONG-NAME>Ultra Plattform Automated Driving Third Image Processor</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT ID="id-88fbe569-38fa-42cd-929e-44c4c9ee0044" OID="id-88fbe569-38fa-42cd-929e-44c4c9ee0044">
+                <SHORT-NAME>UPAD_TIP</SHORT-NAME>
+                <LONG-NAME>Ultra Plattform Automated Driving Third Image Processor</LONG-NAME>
+                <DESC>
+                    <p>codierbar, BAC 4.3, SFA</p>
+                </DESC>
+				<COMPARAM-REFS>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+						<VALUE>2</VALUE>
+						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+					</COMPARAM-REF>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+						<VALUE>2</VALUE>
+						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+					</COMPARAM-REF>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-0e6aba7e-214d-428a-98e1-55aaf139a75e">
+          				<VALUE>1</VALUE>
+          				<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+          			</COMPARAM-REF>
+          			<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-0e6aba7e-214d-428a-98e1-55aaf139a75e">
+          				<VALUE>1</VALUE>
+          				<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          			</COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER"/>
+					<PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-950206a6-d0ba-44a4-b250-3ae9ab110e49" DOCREF="COD2_UDS_DLC" DOCTYPE="CONTAINER"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-2-2.xsd">
+  <ADMIN-DATA>
+    <USED-LANGUAGES/>
+    <SDGS>
+      <SDG GID="CREATION-INFO">
+        <SD GID="SYMPHONY-VERSION">sp2018.125</SD>
+        <SD GID="TRANSFORMER-VERSION">1.0.0.201606010943</SD>
+        <SD GID="SY_MODEL_NAME">RootProject_ECU_EF-SYMPHONY-TESTSG_Combined</SD>
+        <SD GID="CREATION-DATE">2016.10.18 - 01:56:11</SD>
+      </SDG>
+    </SDGS>
+  </ADMIN-DATA>
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Units</SHORT-NAME>
+          <ELEMENTS>
+            <UNIT>
+              <SHORT-NAME>ampere</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="SYMPHONY_SOURCE_DESCRIPTION">
+                    <SD GID="SOURCE_CLASS">com.bmw.symphony.exporter.autosar412.symphony10.transform.datatypes.AR_UnitBuilder</SD>
+                    <SD GID="SOURCE_CACHE">_createCache_createUnit</SD>
+                    <SD GID="SOURCE_URI.0">platform:/resource/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined.sym#/BMW/Units/ampere?type=PhysicalUnit&amp;units_ampere</SD>
+                    <SD GID="SOURCE_SOURCEINFO.0.ModelCombiner">platform:/resource/Symphony.Masterdata/units.sym#/BMW/Units/ampere?type=PhysicalUnit&amp;units_ampere</SD>
+                    <SD GID="SOURCE_TO_STRING.0">com.bmw.symphony.sym10.impl.PhysicalUnitImpl@7bfb46b2 (name: ampere) (ampere: 1, candela: 0, denominatorOfFactor: 1.0, displayName: A, kelvin: 0, kilogram: 0, meter: 0, mol: 0, numeratorOfFactor: 1.0, offset: 0.0, second: 0)</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DISPLAY-NAME>A</DISPLAY-NAME>
+              <FACTOR-SI-TO-UNIT>1.0</FACTOR-SI-TO-UNIT>
+              <OFFSET-SI-TO-UNIT>0.0</OFFSET-SI-TO-UNIT>
+              <PHYSICAL-DIMENSION-REF DEST="PHYSICAL-DIMENSION">/BMW/Units/PhysicalDimensions/ampere</PHYSICAL-DIMENSION-REF>
+            </UNIT>
+            <UNIT>
+              <SHORT-NAME>degree_per_second</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="SYMPHONY_SOURCE_DESCRIPTION">
+                    <SD GID="SOURCE_CLASS">com.bmw.symphony.exporter.autosar412.symphony10.transform.datatypes.AR_UnitBuilder</SD>
+                    <SD GID="SOURCE_CACHE">_createCache_createUnit</SD>
+                    <SD GID="SOURCE_URI.0">platform:/resource/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined.sym#/BMW/Units/degree_per_second?type=PhysicalUnit&amp;units_degree_per_second</SD>
+                    <SD GID="SOURCE_SOURCEINFO.0.ModelCombiner">platform:/resource/Symphony.Masterdata/units.sym#/BMW/Units/degree_per_second?type=PhysicalUnit&amp;units_degree_per_second</SD>
+                    <SD GID="SOURCE_TO_STRING.0">com.bmw.symphony.sym10.impl.PhysicalUnitImpl@3ef77de8 (name: degree_per_second) (ampere: 0, candela: 0, denominatorOfFactor: 180.0, displayName: °/s, kelvin: 0, kilogram: 0, meter: 0, mol: 0, numeratorOfFactor: 3.141592653589793, offset: 0.0, second: -1)</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DISPLAY-NAME>°/s</DISPLAY-NAME>
+              <FACTOR-SI-TO-UNIT>3.141592653589793</FACTOR-SI-TO-UNIT>
+              <OFFSET-SI-TO-UNIT>0.0</OFFSET-SI-TO-UNIT>
+              <PHYSICAL-DIMENSION-REF DEST="PHYSICAL-DIMENSION">/BMW/Units/PhysicalDimensions/degree_per_second</PHYSICAL-DIMENSION-REF>
+            </UNIT>
+            <UNIT>
+              <SHORT-NAME>kilometer_per_hour</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="SYMPHONY_SOURCE_DESCRIPTION">
+                    <SD GID="SOURCE_CLASS">com.bmw.symphony.exporter.autosar412.symphony10.transform.datatypes.AR_UnitBuilder</SD>
+                    <SD GID="SOURCE_CACHE">_createCache_createUnit</SD>
+                    <SD GID="SOURCE_URI.0">platform:/resource/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined.sym#/BMW/Units/kilometer_per_hour?type=PhysicalUnit&amp;units_kilometer_per_hour</SD>
+                    <SD GID="SOURCE_SOURCEINFO.0.ModelCombiner">platform:/resource/Symphony.Masterdata/units.sym#/BMW/Units/kilometer_per_hour?type=PhysicalUnit&amp;units_kilometer_per_hour</SD>
+                    <SD GID="SOURCE_TO_STRING.0">com.bmw.symphony.sym10.impl.PhysicalUnitImpl@ef342c2 (name: kilometer_per_hour) (ampere: 0, candela: 0, denominatorOfFactor: 3600.0, displayName: km/h, kelvin: 0, kilogram: 0, meter: 0, mol: 0, numeratorOfFactor: 1000.0, offset: 0.0, second: -1)</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DISPLAY-NAME>km/h</DISPLAY-NAME>
+              <FACTOR-SI-TO-UNIT>1000.0</FACTOR-SI-TO-UNIT>
+              <OFFSET-SI-TO-UNIT>0.0</OFFSET-SI-TO-UNIT>
+              <PHYSICAL-DIMENSION-REF DEST="PHYSICAL-DIMENSION">/BMW/Units/PhysicalDimensions/kilometer_per_hour</PHYSICAL-DIMENSION-REF>
+            </UNIT>
+            <UNIT>
+              <SHORT-NAME>kilonewton</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="SYMPHONY_SOURCE_DESCRIPTION">
+                    <SD GID="SOURCE_CLASS">com.bmw.symphony.exporter.autosar412.symphony10.transform.datatypes.AR_UnitBuilder</SD>
+                    <SD GID="SOURCE_CACHE">_createCache_createUnit</SD>
+                    <SD GID="SOURCE_URI.0">platform:/resource/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined.sym#/BMW/Units/kilonewton?type=PhysicalUnit&amp;units_kilonewton</SD>
+                    <SD GID="SOURCE_SOURCEINFO.0.ModelCombiner">platform:/resource/Symphony.Masterdata/units.sym#/BMW/Units/kilonewton?type=PhysicalUnit&amp;units_kilonewton</SD>
+                    <SD GID="SOURCE_TO_STRING.0">com.bmw.symphony.sym10.impl.PhysicalUnitImpl@2d05291f (name: kilonewton) (ampere: 0, candela: 0, denominatorOfFactor: 1.0, displayName: kN, kelvin: 0, kilogram: 1, meter: 1, mol: 0, numeratorOfFactor: 1000.0, offset: 0.0, second: -2)</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DISPLAY-NAME>kN</DISPLAY-NAME>
+              <FACTOR-SI-TO-UNIT>1000.0</FACTOR-SI-TO-UNIT>
+              <OFFSET-SI-TO-UNIT>0.0</OFFSET-SI-TO-UNIT>
+              <PHYSICAL-DIMENSION-REF DEST="PHYSICAL-DIMENSION">/BMW/Units/PhysicalDimensions/kilonewton</PHYSICAL-DIMENSION-REF>
+            </UNIT>
+            <UNIT>
+              <SHORT-NAME>kilowatt</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="SYMPHONY_SOURCE_DESCRIPTION">
+                    <SD GID="SOURCE_CLASS">com.bmw.symphony.exporter.autosar412.symphony10.transform.datatypes.AR_UnitBuilder</SD>
+                    <SD GID="SOURCE_CACHE">_createCache_createUnit</SD>
+                    <SD GID="SOURCE_URI.0">platform:/resource/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined.sym#/BMW/Units/kilowatt?type=PhysicalUnit&amp;units_kilowatt</SD>
+                    <SD GID="SOURCE_SOURCEINFO.0.ModelCombiner">platform:/resource/Symphony.Masterdata/units.sym#/BMW/Units/kilowatt?type=PhysicalUnit&amp;units_kilowatt</SD>
+                    <SD GID="SOURCE_TO_STRING.0">com.bmw.symphony.sym10.impl.PhysicalUnitImpl@53a86a22 (name: kilowatt) (ampere: 0, candela: 0, denominatorOfFactor: 1.0, displayName: kW, kelvin: 0, kilogram: 1, meter: 2, mol: 0, numeratorOfFactor: 1000.0, offset: 0.0, second: -3)</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DISPLAY-NAME>kW</DISPLAY-NAME>
+              <FACTOR-SI-TO-UNIT>1000.0</FACTOR-SI-TO-UNIT>
+              <OFFSET-SI-TO-UNIT>0.0</OFFSET-SI-TO-UNIT>
+              <PHYSICAL-DIMENSION-REF DEST="PHYSICAL-DIMENSION">/BMW/Units/PhysicalDimensions/kilowatt</PHYSICAL-DIMENSION-REF>
+            </UNIT>
+          </ELEMENTS>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>PhysicalDimensions</SHORT-NAME>
+              <ELEMENTS>
+                <PHYSICAL-DIMENSION>
+                  <SHORT-NAME>ampere</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="SYMPHONY_SOURCE_DESCRIPTION">
+                        <SD GID="SOURCE_CLASS">com.bmw.symphony.exporter.autosar412.symphony10.transform.datatypes.AR_PhysicalDimensionBuilder</SD>
+                        <SD GID="SOURCE_CACHE">_createCache_createPhysicalDimension</SD>
+                        <SD GID="SOURCE_URI.0">platform:/resource/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined.sym#/BMW/Units/ampere?type=PhysicalUnit&amp;units_ampere</SD>
+                        <SD GID="SOURCE_SOURCEINFO.0.ModelCombiner">platform:/resource/Symphony.Masterdata/units.sym#/BMW/Units/ampere?type=PhysicalUnit&amp;units_ampere</SD>
+                        <SD GID="SOURCE_TO_STRING.0">com.bmw.symphony.sym10.impl.PhysicalUnitImpl@7bfb46b2 (name: ampere) (ampere: 1, candela: 0, denominatorOfFactor: 1.0, displayName: A, kelvin: 0, kilogram: 0, meter: 0, mol: 0, numeratorOfFactor: 1.0, offset: 0.0, second: 0)</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <LENGTH-EXP>0</LENGTH-EXP>
+                  <MASS-EXP>0</MASS-EXP>
+                  <TIME-EXP>0</TIME-EXP>
+                  <CURRENT-EXP>1</CURRENT-EXP>
+                  <TEMPERATURE-EXP>0</TEMPERATURE-EXP>
+                  <MOLAR-AMOUNT-EXP>0</MOLAR-AMOUNT-EXP>
+                  <LUMINOUS-INTENSITY-EXP>0</LUMINOUS-INTENSITY-EXP>
+                </PHYSICAL-DIMENSION>
+                <PHYSICAL-DIMENSION>
+                  <SHORT-NAME>degree_per_second</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="SYMPHONY_SOURCE_DESCRIPTION">
+                        <SD GID="SOURCE_CLASS">com.bmw.symphony.exporter.autosar412.symphony10.transform.datatypes.AR_PhysicalDimensionBuilder</SD>
+                        <SD GID="SOURCE_CACHE">_createCache_createPhysicalDimension</SD>
+                        <SD GID="SOURCE_URI.0">platform:/resource/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined.sym#/BMW/Units/degree_per_second?type=PhysicalUnit&amp;units_degree_per_second</SD>
+                        <SD GID="SOURCE_SOURCEINFO.0.ModelCombiner">platform:/resource/Symphony.Masterdata/units.sym#/BMW/Units/degree_per_second?type=PhysicalUnit&amp;units_degree_per_second</SD>
+                        <SD GID="SOURCE_TO_STRING.0">com.bmw.symphony.sym10.impl.PhysicalUnitImpl@3ef77de8 (name: degree_per_second) (ampere: 0, candela: 0, denominatorOfFactor: 180.0, displayName: °/s, kelvin: 0, kilogram: 0, meter: 0, mol: 0, numeratorOfFactor: 3.141592653589793, offset: 0.0, second: -1)</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <LENGTH-EXP>0</LENGTH-EXP>
+                  <MASS-EXP>0</MASS-EXP>
+                  <TIME-EXP>-1</TIME-EXP>
+                  <CURRENT-EXP>0</CURRENT-EXP>
+                  <TEMPERATURE-EXP>0</TEMPERATURE-EXP>
+                  <MOLAR-AMOUNT-EXP>0</MOLAR-AMOUNT-EXP>
+                  <LUMINOUS-INTENSITY-EXP>0</LUMINOUS-INTENSITY-EXP>
+                </PHYSICAL-DIMENSION>
+                <PHYSICAL-DIMENSION>
+                  <SHORT-NAME>kilometer_per_hour</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="SYMPHONY_SOURCE_DESCRIPTION">
+                        <SD GID="SOURCE_CLASS">com.bmw.symphony.exporter.autosar412.symphony10.transform.datatypes.AR_PhysicalDimensionBuilder</SD>
+                        <SD GID="SOURCE_CACHE">_createCache_createPhysicalDimension</SD>
+                        <SD GID="SOURCE_URI.0">platform:/resource/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined.sym#/BMW/Units/kilometer_per_hour?type=PhysicalUnit&amp;units_kilometer_per_hour</SD>
+                        <SD GID="SOURCE_SOURCEINFO.0.ModelCombiner">platform:/resource/Symphony.Masterdata/units.sym#/BMW/Units/kilometer_per_hour?type=PhysicalUnit&amp;units_kilometer_per_hour</SD>
+                        <SD GID="SOURCE_TO_STRING.0">com.bmw.symphony.sym10.impl.PhysicalUnitImpl@ef342c2 (name: kilometer_per_hour) (ampere: 0, candela: 0, denominatorOfFactor: 3600.0, displayName: km/h, kelvin: 0, kilogram: 0, meter: 0, mol: 0, numeratorOfFactor: 1000.0, offset: 0.0, second: -1)</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <LENGTH-EXP>0</LENGTH-EXP>
+                  <MASS-EXP>0</MASS-EXP>
+                  <TIME-EXP>-1</TIME-EXP>
+                  <CURRENT-EXP>0</CURRENT-EXP>
+                  <TEMPERATURE-EXP>0</TEMPERATURE-EXP>
+                  <MOLAR-AMOUNT-EXP>0</MOLAR-AMOUNT-EXP>
+                  <LUMINOUS-INTENSITY-EXP>0</LUMINOUS-INTENSITY-EXP>
+                </PHYSICAL-DIMENSION>
+                <PHYSICAL-DIMENSION>
+                  <SHORT-NAME>kilonewton</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="SYMPHONY_SOURCE_DESCRIPTION">
+                        <SD GID="SOURCE_CLASS">com.bmw.symphony.exporter.autosar412.symphony10.transform.datatypes.AR_PhysicalDimensionBuilder</SD>
+                        <SD GID="SOURCE_CACHE">_createCache_createPhysicalDimension</SD>
+                        <SD GID="SOURCE_URI.0">platform:/resource/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined.sym#/BMW/Units/kilonewton?type=PhysicalUnit&amp;units_kilonewton</SD>
+                        <SD GID="SOURCE_SOURCEINFO.0.ModelCombiner">platform:/resource/Symphony.Masterdata/units.sym#/BMW/Units/kilonewton?type=PhysicalUnit&amp;units_kilonewton</SD>
+                        <SD GID="SOURCE_TO_STRING.0">com.bmw.symphony.sym10.impl.PhysicalUnitImpl@2d05291f (name: kilonewton) (ampere: 0, candela: 0, denominatorOfFactor: 1.0, displayName: kN, kelvin: 0, kilogram: 1, meter: 1, mol: 0, numeratorOfFactor: 1000.0, offset: 0.0, second: -2)</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <LENGTH-EXP>1</LENGTH-EXP>
+                  <MASS-EXP>1</MASS-EXP>
+                  <TIME-EXP>-2</TIME-EXP>
+                  <CURRENT-EXP>0</CURRENT-EXP>
+                  <TEMPERATURE-EXP>0</TEMPERATURE-EXP>
+                  <MOLAR-AMOUNT-EXP>0</MOLAR-AMOUNT-EXP>
+                  <LUMINOUS-INTENSITY-EXP>0</LUMINOUS-INTENSITY-EXP>
+                </PHYSICAL-DIMENSION>
+                <PHYSICAL-DIMENSION>
+                  <SHORT-NAME>kilowatt</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="SYMPHONY_SOURCE_DESCRIPTION">
+                        <SD GID="SOURCE_CLASS">com.bmw.symphony.exporter.autosar412.symphony10.transform.datatypes.AR_PhysicalDimensionBuilder</SD>
+                        <SD GID="SOURCE_CACHE">_createCache_createPhysicalDimension</SD>
+                        <SD GID="SOURCE_URI.0">platform:/resource/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined/RootProject_ECU_EF-SYMPHONY-TESTSG_Combined.sym#/BMW/Units/kilowatt?type=PhysicalUnit&amp;units_kilowatt</SD>
+                        <SD GID="SOURCE_SOURCEINFO.0.ModelCombiner">platform:/resource/Symphony.Masterdata/units.sym#/BMW/Units/kilowatt?type=PhysicalUnit&amp;units_kilowatt</SD>
+                        <SD GID="SOURCE_TO_STRING.0">com.bmw.symphony.sym10.impl.PhysicalUnitImpl@53a86a22 (name: kilowatt) (ampere: 0, candela: 0, denominatorOfFactor: 1.0, displayName: kW, kelvin: 0, kilogram: 1, meter: 2, mol: 0, numeratorOfFactor: 1000.0, offset: 0.0, second: -3)</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <LENGTH-EXP>2</LENGTH-EXP>
+                  <MASS-EXP>1</MASS-EXP>
+                  <TIME-EXP>-3</TIME-EXP>
+                  <CURRENT-EXP>0</CURRENT-EXP>
+                  <TEMPERATURE-EXP>0</TEMPERATURE-EXP>
+                  <MOLAR-AMOUNT-EXP>0</MOLAR-AMOUNT-EXP>
+                  <LUMINOUS-INTENSITY-EXP>0</LUMINOUS-INTENSITY-EXP>
+                </PHYSICAL-DIMENSION>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

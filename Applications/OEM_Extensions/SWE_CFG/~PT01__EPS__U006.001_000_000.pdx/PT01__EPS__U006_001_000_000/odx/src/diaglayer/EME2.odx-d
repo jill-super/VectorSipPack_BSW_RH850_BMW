@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-0d1cc4d3-643c-4f32-9056-3105707b09a0" ID="id-0d1cc4d3-643c-4f32-9056-3105707b09a0">
+        <SHORT-NAME>EME2_DLC</SHORT-NAME>
+        <LONG-NAME>Elektro-Motor-Elektronik Gen 2.0 </LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-6a3da669-c49b-4074-8a87-3c610d6b59ab" ID="id-6a3da669-c49b-4074-8a87-3c610d6b59ab">
+                <SHORT-NAME>EME2</SHORT-NAME>
+                <LONG-NAME>Elektro-Motor-Elektronik Gen 2.0 </LONG-NAME>
+                <DESC>
+                    <p>automatically generated BASE-VARIANT instance EME2</p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>3455</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78">
+                        <NOT-INHERITED-DIAG-COMMS>
+                            <NOT-INHERITED-DIAG-COMM>
+                                <DIAG-COMM-SNREF SHORT-NAME="RC_EM_IE"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+                                <DIAG-COMM-SNREF SHORT-NAME="RC_EM_AE"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                        </NOT-INHERITED-DIAG-COMMS>
+                    </PARENT-REF>
+                    <PARENT-REF DOCREF="SC65_SERVICES_DLC" DOCTYPE="CONTAINER" ID-REF="id-995efd4e-1365-434b-bbcf-2a1c32bf2a09"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="IDR_UDS_DLC" ID-REF="id-91e2ce4c-a274-4f02-a601-92f937695337"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

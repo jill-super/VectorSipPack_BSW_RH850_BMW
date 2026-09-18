@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-eba6f731-758d-4a63-9e42-a438c43efb7b" ID="id-eba6f731-758d-4a63-9e42-a438c43efb7b">
+        <SHORT-NAME>BDC_GW_DLC</SHORT-NAME>
+        <LONG-NAME>Body Domain Controller</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-9a5c3c4c-d9c9-4f5d-a1f5-60cc0c6c8e9c" ID="id-9a5c3c4c-d9c9-4f5d-a1f5-60cc0c6c8e9c">
+                <SHORT-NAME>BDC_GW</SHORT-NAME>
+                <LONG-NAME>Body Domain Controller</LONG-NAME>
+                <DESC>
+                    <p>Body Domain Controller</p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-4ff03dc8-e2cd-4f61-aab0-c0f639869771">
+                        <VALUE>1</VALUE>
+                        <DESC>
+                            <p>
+							Eigentlich unterstützt das BDC keine Modusumschaltung. Wegen des Subnetzmaskenvergleiches kann jedoch vorerst auf diese Bedatung nicht verzichtet werden. Es wäre im PSdZ zuerst ein CR umzusetzen der ermöglicht, das die IP-Parameter des Mastergateways unabhängig von einer tatsächlichen Umschaltung an den ActivateProgModeJob übergeben werden. Das BDC_GW antwortet auf ActivateProgMode erst einmal mit RequestOutOfRange und damit analog zum Ur-ZGW. Somit wird die Modusumschaltung als i.O. erkannt.
+							</p>
+                        </DESC>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-464fe8db-1059-43e9-ad5f-a7984612aa2f">
+                        <VALUE>1</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-9ea50368-9e83-4a86-980a-7aeed9487723">
+                        <VALUE>1</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-9ea50368-9e83-4a86-980a-7aeed9487723">
+                        <VALUE>1</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>114558</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-b6aa9bcd-d2e5-4731-bfd5-5e8c123ba128">
+                        <VALUE>4092</VALUE>
+                        <DESC><p>COMPARAM MAX_BLOCKSIZE_GW_PROGMODE 65521 mit 4092 ueberschrieben</p></DESC>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-4a354e0d-6336-4771-bbef-5c2378a59c4f">
+                        <VALUE>0</VALUE>
+                        <DESC><p>COMPARAM MGW_NEEDS_SLEEP_AFTER_APFM auf false gesetzt</p></DESC>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+        				</COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78">
+                        <NOT-INHERITED-DIAG-COMMS>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="READ_DATA_BY_IDENTIFIER_PLAIN"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="WRITE_DATA_BY_IDENTIFIER_PLAIN"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="FINALIZE_ECU_BL_UPDATE"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="INSTALL_ECU_BL"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="FINALIZE_ECU_FLASH"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="PREPARE_ECU_FOR_BL_UPDATE"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="PREPARE_ECU_FOR_FLASH"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="GET_SVK_FROM_ECU"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                        </NOT-INHERITED-DIAG-COMMS>
+                    </PARENT-REF>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="VCM_UDS_DLC" ID-REF="id-b3dccc52-bb76-4354-802f-e03e7ac08575"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="AUTH_UDS_DLC" ID-REF="id-33d5c47f-46b7-4f1e-9922-62b72b15eab0"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="GW_SERVICES_DLC" ID-REF="id-7860971b-9003-4aa3-9119-802a992f90d4">
+                        <NOT-INHERITED-DIAG-COMMS>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="READ_DATA_BY_IDENTIFIER_PLAIN"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="WRITE_DATA_BY_IDENTIFIER_PLAIN"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                        </NOT-INHERITED-DIAG-COMMS>
+                    </PARENT-REF>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

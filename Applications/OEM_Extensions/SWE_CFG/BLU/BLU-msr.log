@@ -1,0 +1,69 @@
+  18 - Command Open: output type BTLD
+  21 - Command SET_SREC_FORMAT: Set output file format Motorola SRec with 32 Bit address range
+  21 - Command SET_SREC_FORMAT: 20 (hex) bytes per line
+  27 - Set identifier to BTLD_000064BD_001_000_000
+  30 - Set development info field: SWEGEN-BLU
+  35 - Read data block [8000 - FFFF] from file: IN_BTLD_000064BD_001_000_000.MSR
+  36 - Move memory block from [8000 - FFFF] to [90000 - 97FFF]
+  37 - Read data block [10000 - 17FFF] from file: IN_BTLD_000064BD_001_000_000.MSR
+  38 - Move memory block from [10000 - 17FFF] to [98000 - 9FFFF]
+  39 - Read data block [18000 - 1FFFF] from file: IN_BTLD_000064BD_001_000_000.MSR
+  40 - Move memory block from [18000 - 1FFFF] to [A0000 - A7FFF]
+  41 - Read data block [20000 - 27FFF] from file: IN_BTLD_000064BD_001_000_000.MSR
+  42 - Move memory block from [20000 - 27FFF] to [A8000 - AFFFF]
+  43 - Read data block [28000 - 2FFFF] from file: IN_BTLD_000064BD_001_000_000.MSR
+  44 - Move memory block from [28000 - 2FFFF] to [B0000 - B7FFF]
+  45 - Read data block [30000 - 37FFF] from file: IN_BTLD_000064BD_001_000_000.MSR
+  46 - Move memory block from [30000 - 37FFF] to [B8000 - BFFFF]
+  47 - Read data block [38000 - 3FFFF] from file: IN_BTLD_000064BD_001_000_000.MSR
+  48 - Move memory block from [38000 - 3FFFF] to [C0000 - C7FFF]
+  49 - Read data block [40000 - 47FFF] from file: IN_BTLD_000064BD_001_000_000.MSR
+  50 - Move memory block from [40000 - 47FFF] to [C8000 - CFFFF]
+  51 - Read data block [48000 - 4FFFF] from file: IN_BTLD_000064BD_001_000_000.MSR
+  52 - Move memory block from [48000 - 4FFFF] to [D0000 - D7FFF]
+  53 - Read data block [50000 - 57FFF] from file: IN_BTLD_000064BD_001_000_000.MSR
+  54 - Move memory block from [50000 - 57FFF] to [D8000 - DFFFF]
+  58 - Read data block [58000 - 5FFFF] from file: IN_BLU_EPS.SX
+  59 - Read data block [60000 - 67FFF] from file: IN_BLU_EPS.SX
+  60 - Read data block [68000 - 6FFFF] from file: IN_BLU_EPS.SX
+  61 - Read data block [70000 - 77FFF] from file: IN_BLU_EPS.SX
+  62 - Read data block [78000 - 7FFFF] from file: IN_BLU_EPS.SX
+  63 - Read data block [80000 - 87FFF] from file: IN_BLU_EPS.SX
+  64 - Read data block [88000 - 8FFFF] from file: IN_BLU_EPS.SX
+  65 - Read data block [E0000 - E7FFF] from file: IN_BLU_EPS.SX
+  66 - Read data block [E8000 - EFFFF] from file: IN_BLU_EPS.SX
+  67 - Read data block [F0000 - F7FFF] from file: IN_BLU_EPS.SX
+  68 - Read data block [F8000 - FF91B] from file: IN_BLU_EPS.SX
+  69 - Read data block [FF91C - FFFFF] from file: IN_BLU_EPS.SX
+ 107 - Command SIGN: Setting key file for signing to C:\EC-APPS\ESG\SWE-GENERATOR\KEYS\OFFICIAL_TEST_KEY_ASYM_2048.KEY
+ 110 - Create identifier in description table at address 000FF900
+ 115 - SHA256 Hash value over signature blocks: 3F0EE2E865F1210B4899FB6592FD0381380D0B81C12D89DE63550DD360ED17B8
+ 115 - Signatur: 00000040C34253191327556D664BB24835EBB41E50806C12FAB63D278A8F052ED024AD4D2E8A167E0458107D5293B29B4548FC1A5091B89B83A388C41CE57D568FF933FC32E1109E6B2EA1C4BF2DCDAFF2C856C24022CA9A8549FE0ED9D50D31FB5A521C7BA414260EDB2F449900CCC48BDEDDF0AD48B2A7F6201A8674B88AE28F712C8097415B28A4C4232E3D1DC58429E88EACC9478BCD6B7F394818BA1F675B705E0BD871D606C10EFA5110722E536EF01AE36952A7A7AD2BC9F3D3A91934270FC9F2B4040A0DAA7DF79043A2E714FAB79B8B5CA12958649A0FA3E927253B5FC77B5EF62C47CE89CA9C2A164694B92031744827504561633B0EC90F257B78D85AF3A6
+ 107 - Command SIGN: File Signed with key: C:\EC-APPS\ESG\SWE-GENERATOR\KEYS\OFFICIAL_TEST_KEY_ASYM_2048.KEY
+ 115 - Sorting 22 memory blocks in ascending order
+    - Output blocks [58000 5FFFF], [60000 67FFF], [68000 6FFFF], [70000 77FFF], [78000 7FFFF], [80000 87FFF], [88000 8FFFF], [90000 97FFF], [98000 9FFFF], [A0000 A7FFF], [A8000 AFFFF], [B0000 B7FFF], [B8000 BFFFF], [C0000 C7FFF], [C8000 CFFFF], [D0000 D7FFF], [D8000 DFFFF], [E0000 E7FFF], [E8000 EFFFF], [F0000 F7FFF], [F8000 FFFFF]  can be merged to one output block [58000 FFFFF]
+  73 - create output block [58000 5FFFF] from 1 input blocks with COMPRESS_NRV
+  74 - create output block [60000 67FFF] from 1 input blocks with COMPRESS_NRV
+  75 - create output block [68000 6FFFF] from 1 input blocks with COMPRESS_NRV
+  76 - create output block [70000 77FFF] from 1 input blocks with COMPRESS_NRV
+  77 - create output block [78000 7FFFF] from 1 input blocks with COMPRESS_NRV
+  78 - create output block [80000 87FFF] from 1 input blocks with COMPRESS_NRV
+  79 - create output block [88000 8FFFF] from 1 input blocks with COMPRESS_NRV
+  80 - create output block [90000 97FFF] from 1 input blocks with COMPRESS_NRV
+  81 - create output block [98000 9FFFF] from 1 input blocks with COMPRESS_NRV
+  82 - create output block [A0000 A7FFF] from 1 input blocks with COMPRESS_NRV
+  83 - create output block [A8000 AFFFF] from 1 input blocks with COMPRESS_NRV
+  84 - create output block [B0000 B7FFF] from 1 input blocks with COMPRESS_NRV
+  85 - create output block [B8000 BFFFF] from 1 input blocks with COMPRESS_NRV
+  86 - create output block [C0000 C7FFF] from 1 input blocks with COMPRESS_NRV
+  87 - create output block [C8000 CFFFF] from 1 input blocks with COMPRESS_NRV
+  88 - create output block [D0000 D7FFF] from 1 input blocks with COMPRESS_NRV
+  89 - create output block [D8000 DFFFF] from 1 input blocks with COMPRESS_NRV
+  90 - create output block [E0000 E7FFF] from 1 input blocks with COMPRESS_NRV
+  91 - create output block [E8000 EFFFF] from 1 input blocks with COMPRESS_NRV
+  92 - create output block [F0000 F7FFF] from 1 input blocks with COMPRESS_NRV
+  93 - create output block [F8000 FFFFF] from 2 input blocks with COMPRESS_NRV
+ 115 - Create CRC-16 entry: ;$CHECKSUM CRC16 CAC1 E
+ 115 - Create output file: D:\usr\usage\Delivery\CBD17x\CBD1700369\D04\internal\.\..\external\Applications\OEM_Extensions\SWE_CFG\BLU\btld_000064bd_001_000_000.msr
+ 115 - Command CLOSE: close input and output files
+ 117 - CONFIG FILE FINISHED

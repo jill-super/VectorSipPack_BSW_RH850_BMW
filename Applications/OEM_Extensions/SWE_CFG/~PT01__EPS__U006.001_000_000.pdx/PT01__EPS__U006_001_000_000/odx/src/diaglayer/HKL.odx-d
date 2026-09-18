@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DIAG-LAYER-CONTAINER ID="id-85590e2b-782e-4d01-9011-c9e9d74d0867" OID="id-85590e2b-782e-4d01-9011-c9e9d74d0867">
+    <SHORT-NAME>HKL_DLC</SHORT-NAME>
+    <LONG-NAME>Heckklappenlift</LONG-NAME>
+    <BASE-VARIANTS>
+      <BASE-VARIANT ID="id-547f7823-a204-4349-b384-d9f14aca06ef" OID="id-547f7823-a204-4349-b384-d9f14aca06ef">
+        <SHORT-NAME>HKL</SHORT-NAME>
+        <LONG-NAME>Heckklappenlift</LONG-NAME>
+        <DESC>
+          <p>
+automatically generated BASE-VARIANT instance HKL
+          </p>
+        </DESC>
+        <COMPARAM-REFS>
+		<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16"> 
+			<VALUE>1946</VALUE>
+			<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP" />
+		</COMPARAM-REF>
+        </COMPARAM-REFS>
+        <PARENT-REFS>
+          <PARENT-REF DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="PROG_LS_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-4646c54a-1f42-4da6-a628-b66976713291" xsi:type="FUNCTIONAL-GROUP-REF"/>
+        </PARENT-REFS>
+      </BASE-VARIANT>
+    </BASE-VARIANTS>
+  </DIAG-LAYER-CONTAINER>
+</ODX>

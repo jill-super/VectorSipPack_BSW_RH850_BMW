@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-fe9bbe9c-5330-41ae-aeef-b3967f917fcf" ID="id-fe9bbe9c-5330-41ae-aeef-b3967f917fcf">
+        <SHORT-NAME>OBC2_DLC</SHORT-NAME>
+        <LONG-NAME>Onboard Charger</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-2f68aa57-8838-471c-b001-aa56f619e013" ID="id-2f68aa57-8838-471c-b001-aa56f619e013">
+                <SHORT-NAME>OBC2</SHORT-NAME>
+                <LONG-NAME>Onboard Charger</LONG-NAME>
+                <DESC>
+                    <p>Onboard Charger ohne CSM</p>
+                </DESC>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

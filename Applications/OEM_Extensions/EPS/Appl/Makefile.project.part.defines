@@ -1,0 +1,542 @@
+###############################################################################
+#  Makefile.project.part.defines
+###############################################################################
+# MakeSupport type: AUTOSAR
+
+
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Root of the project (dir where the additionally used components reside) from the
+# scope of the makefile location.
+# E.g. makefile is located under
+#    d:\usr\develop\can\PAG\HC08\COSMIC\testsuit\appl
+# and the components like drv, il reside under
+#    d:\usr\develop\can\PAG\HC08\COSMIC
+# The root is given (relative to the Makefile)
+#    ROOT = ..\..\..\..
+#------------------------------------------------------------------------------
+ROOT = ..\..\..\..
+THIRDPARTY_ROOT = $(ROOT)\ThirdParty\BAC4_3\Supply
+
+
+NANT_USED = 1
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# $(GENTOOL_DIR) contains the path to your version.info file
+# E.g.:    GENTOOL_DIR = $(ROOT)\Generators\Components
+#------------------------------------------------------------------------------
+GENTOOL_DIR = $(ROOT)\Generators\Components
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Version of Makefile.project.part.defines
+#------------------------------------------------------------------------------
+MPPD_VERSION = 32
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Path to which *.obj, *.err, *.lst will be moved/generated
+#------------------------------------------------------------------------------
+OBJ_PATH = obj
+ERR_PATH = err
+LST_PATH = lst
+LOG_PATH = log
+LIB_PATH = lib
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Redirect error output to stdout (and not only to *.err files)
+#------------------------------------------------------------------------------
+ERR_TO_STDOUT = 1
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# $(GENDATA_DIR) contains the directory into which the ecu specific data is
+# generated
+# E.g.: GENDATA_DIR = GenData
+#------------------------------------------------------------------------------
+GENDATA_DIR = GenData
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# $(GENDATA_OS_DIR) contains the directory into which the ecu osspecific data is
+# generated
+# E.g.: GENDATA_OS_DIR = GenDataOs
+#------------------------------------------------------------------------------
+GENDATA_OS_DIR = $(GENDATA_DIR)
+
+#------------------------------------------------------------------------------
+# Use Autosar Makefiles
+#------------------------------------------------------------------------------
+USE_AUTOSAR_MAKE = 1
+
+#------------------------------------------------------------------------------
+# Subfolder of BSW components (mandatory BSW with konStruct 1.7.xx or newer)
+#------------------------------------------------------------------------------
+GLOBAL_COMP_DIR = BSW
+
+#------------------------------------------------------------------------------
+# Subfolder of ASR software components# Relative to $(ROOT)\$(GLOBAL_COMP_DIR)
+#------------------------------------------------------------------------------
+GLOBAL_SWC_DIR = ..\SWC
+
+#------------------------------------------------------------------------------
+# Subfolder of Third Party components (e.g. Third Party MCAL)# Relative to $(ROOT)\$(GLOBAL_COMP_DIR)
+#------------------------------------------------------------------------------
+GLOBAL_THIRDPARTY_DIR = ..\ThirdParty
+
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Define usage of the generated RTE makefile
+# $(RTE_MAKEFILE_DIR) contains the directory into which RTE makefile is generated
+# Please note: If you are using RTE 4.11 or lower (MSR4 R15 and lower), the
+# generated RTE makefile will not work with the Vector MakeSupport. Add the 
+# RTE source files manually in this case and comment out RTE_MAKEFILE_DIR
+#------------------------------------------------------------------------------
+RTE_MAKEFILE_DIR = $(GENDATA_DIR)\mak
+
+ifneq ($(RTE_MAKEFILE_DIR),)
+include $(RTE_MAKEFILE_DIR)\Rte_rules.mak
+include $(RTE_MAKEFILE_DIR)\Rte_defs.mak
+include $(RTE_MAKEFILE_DIR)\Rte_check.mak
+endif
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Define usage of the generated ComXf Transformer makefile
+# $(COMXF_MAKEFILE_DIR) contains the directory into which ComXf Transformer makefile is generated
+#------------------------------------------------------------------------------
+#COMXF_MAKEFILE_DIR = $(GENDATA_DIR)\mak
+
+ifneq ($(COMXF_MAKEFILE_DIR),)
+include $(COMXF_MAKEFILE_DIR)\ComXf_rules.mak
+include $(COMXF_MAKEFILE_DIR)\ComXf_defs.mak
+include $(COMXF_MAKEFILE_DIR)\ComXf_check.mak
+endif
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Define usage of the generated E2eXf Transformer makefile
+# $(E2EXF_MAKEFILE_DIR) contains the directory into which E2eXf Transformer makefile is generated
+#------------------------------------------------------------------------------
+#E2EXF_MAKEFILE_DIR = $(GENDATA_DIR)\mak
+
+ifneq ($(E2EXF_MAKEFILE_DIR),)
+include $(E2EXF_MAKEFILE_DIR)\E2eXf_rules.mak
+include $(E2EXF_MAKEFILE_DIR)\E2eXf_defs.mak
+include $(E2EXF_MAKEFILE_DIR)\E2eXf_check.mak
+endif
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# $(TGFGENDATA_DIR) contains the directory into which the Test Generator
+# Framework data is generated
+# E.g.: TGFGENDATA_DIR = TGFGenData
+#------------------------------------------------------------------------------
+TGFGENDATA_DIR =
+
+ifneq ($(TGFGENDATA_DIR),)
+include $(TGFGENDATA_DIR)\Makefile.Appl
+endif
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# $(STARTAPPL_MAKE_USED) defines if the the StartApplication makefile shall be used
+# $(STARTAPPLGENDATA_DIR) contains the folder of the makefile for the start application
+# E.g.: STARTAPPLGENDATA_DIR = $(GENDATA_DIR)\mak
+#------------------------------------------------------------------------------
+STARTAPPL_MAKE_USED = 0
+STARTAPPLGENDATA_DIR =
+
+ifeq ($(STARTAPPL_MAKE_USED),1)
+include $(STARTAPPLGENDATA_DIR)\Makefile.StartApplication
+endif
+
+
+#------------------------------------------------------------------------------
+#------------------------- MUST be filled out ---------------------------------
+# Define MCAL modules that shall be excluded from build
+#------------------------------------------------------------------------------
+MCAL_EXCLUDE_ADC    = 1
+MCAL_EXCLUDE_DIO    = 1
+MCAL_EXCLUDE_GPT    = 1
+MCAL_EXCLUDE_ICU    = 1
+MCAL_EXCLUDE_MCU    = 0
+MCAL_EXCLUDE_PORT   = 0
+MCAL_EXCLUDE_PWM    = 1
+MCAL_EXCLUDE_SPI    = 1
+MCAL_EXCLUDE_WDG    = 0
+MCAL_EXCLUDE_FLS    = 0
+MCAL_EXCLUDE_FEE    = 1
+MCAL_EXCLUDE_EEP    = 1
+MCAL_EXCLUDE_CRY    = 1
+MCAL_EXCLUDE_SAFETY = 1
+MCAL_EXCLUDE_FLSTST = 1
+MCAL_EXCLUDE_RAMTST = 1
+MCAL_EXCLUDE_CORTST = 1
+
+E2E_USE_PROFIL1=1
+E2E_USE_PROFIL2=0
+E2E_USE_PROFIL4=0
+E2E_USE_PROFIL5=0
+E2E_USE_PROFIL6=0
+E2E_USE_PROFIL7=0
+E2E_USE_PROFILJLR=0
+
+###############################################################################
+#  Modules
+###############################################################################
+MODULE_LIST_PROJECT += CCL_ASR4COMMCFG5
+MODULE_LIST_PROJECT += CCL_ASR4SMFR
+MODULE_LIST_PROJECT += CP_ASR4XCP
+MODULE_LIST_PROJECT += CP_XCPONFRASR
+MODULE_LIST_PROJECT += DIAG_ASR4DCM
+MODULE_LIST_PROJECT += DIAG_ASR4DEM
+MODULE_LIST_PROJECT += DRVCRY_RH850ICUS
+MODULE_LIST_PROJECT += DRVCRYPTO_CRYWRAPPER
+MODULE_LIST_PROJECT += DRVFR_XERAYASR
+MODULE_LIST_PROJECT += DRVTRANS_TJA1082FRDIOSPIASR
+MODULE_LIST_PROJECT += ECUAB_ASRIOHWAB
+MODULE_LIST_PROJECT += GW_ASRPDURCFG5
+MODULE_LIST_PROJECT += IF_ASR4IFWD
+MODULE_LIST_PROJECT += IF_ASRIFCRY
+MODULE_LIST_PROJECT += IF_ASRIFFEESMALLSECTOR
+MODULE_LIST_PROJECT += IF_ASRIFFR
+MODULE_LIST_PROJECT += IF_ASRIFMEM
+MODULE_LIST_PROJECT += IL_ASRCOMCFG5
+MODULE_LIST_PROJECT += IL_ASRIPDUMCFG5
+MODULE_LIST_PROJECT += IL_ASRSECOC
+MODULE_LIST_PROJECT += MCAL_RH850P1XREN03ASR4SUB
+MODULE_LIST_PROJECT += MEMSERVICE_ASRNVM
+MODULE_LIST_PROJECT += OS_PLATFORMRH850GEN7
+MODULE_LIST_PROJECT += SECURITY_ASRCSM
+MODULE_LIST_PROJECT += SYSSERVICE_ASR4BSWMCFG5
+MODULE_LIST_PROJECT += SYSSERVICE_ASR4ECUM
+MODULE_LIST_PROJECT += SYSSERVICE_ASR4WDM
+MODULE_LIST_PROJECT += SYSSERVICE_ASRCAL
+MODULE_LIST_PROJECT += SYSSERVICE_ASRCRC
+MODULE_LIST_PROJECT += SYSSERVICE_ASRDET
+MODULE_LIST_PROJECT += SYSSERVICE_E2ELIB
+MODULE_LIST_PROJECT += TP_ISO10681
+MODULE_LIST_PROJECT += VSTDLIB
+
+
+CCL_ASR4COMMCFG5_USED                                            = 1
+CCL_ASR4SMFR_USED                                                = 1
+CP_ASR4XCP_USED                                                  = 1
+CP_XCPONFRASR_USED                                               = 1
+DIAG_ASR4DCM_USED                                                = 1
+DIAG_ASR4DEM_USED                                                = 1
+DRVCRY_RH850ICUS_USED                                            = 0
+DRVCRYPTO_CRYWRAPPER_USED                                        = 0
+DRVFR_XERAYASR_USED                                              = 1
+DRVTRANS_TJA1082FRDIOSPIASR_USED                                 = 0
+ECUAB_ASRIOHWAB_USED                                             = 1
+GW_ASRPDURCFG5_USED                                              = 1
+IF_ASR4IFWD_USED                                                 = 1
+IF_ASRIFCRY_USED                                                 = 0
+IF_ASRIFFEESMALLSECTOR_USED                                      = 1
+IF_ASRIFFR_USED                                                  = 1
+IF_ASRIFMEM_USED                                                 = 1
+IL_ASRCOMCFG5_USED                                               = 1
+IL_ASRIPDUMCFG5_USED                                             = 1
+IL_ASRSECOC_USED                                                 = 0
+MCAL_RH850P1XREN03ASR4SUB_USED                                   = 1
+MEMSERVICE_ASRNVM_USED                                           = 1
+OS_PLATFORMRH850GEN7_USED                                        = 1
+SECURITY_ASRCSM_USED                                             = 0
+SYSSERVICE_ASR4BSWMCFG5_USED                                     = 1
+SYSSERVICE_ASR4ECUM_USED                                         = 1
+SYSSERVICE_ASR4WDM_USED                                          = 1
+SYSSERVICE_ASRCAL_USED                                           = 0
+SYSSERVICE_ASRCRC_USED                                           = 1
+SYSSERVICE_ASRDET_USED                                           = 1
+SYSSERVICE_E2ELIB_USED                                           = 0
+TP_ISO10681_USED                                                 = 1
+VSTDLIB_USED                                                     = 1
+
+
+CCL_ASR4COMMCFG5_PATH                                            = BSW\ComM
+CCL_ASR4SMFR_PATH                                                = BSW\FrSM
+CP_ASR4XCP_PATH                                                  = BSW\Xcp
+CP_XCPONFRASR_PATH                                               = BSW\FrXcp
+DIAG_ASR4DCM_PATH                                                = BSW\Dcm
+DIAG_ASR4DEM_PATH                                                = BSW\Dem
+DRVCRY_RH850ICUS_PATH                                            = BSW\Cry_30_Rh850Icus
+DRVCRYPTO_CRYWRAPPER_PATH                                        = BSW\Crypto_30_CryWrapper
+DRVFR_XERAYASR_PATH                                              = BSW\Fr
+DRVTRANS_TJA1082FRDIOSPIASR_PATH                                 = BSW\FrTrcv_30_Tja1082
+ECUAB_ASRIOHWAB_PATH                                             = BSW\IoHwAb
+GW_ASRPDURCFG5_PATH                                              = BSW\PduR
+IF_ASR4IFWD_PATH                                                 = BSW\WdgIf
+IF_ASRIFCRY_PATH                                                 = BSW\CryIf
+IF_ASRIFFEESMALLSECTOR_PATH                                      = BSW\Fee_30_SmallSector
+IF_ASRIFFR_PATH                                                  = BSW\FrIf
+IF_ASRIFMEM_PATH                                                 = BSW\MemIf
+IL_ASRCOMCFG5_PATH                                               = BSW\Com
+IL_ASRIPDUMCFG5_PATH                                             = BSW\IpduM
+IL_ASRSECOC_PATH                                                 = BSW\SecOC
+MCAL_RH850P1XREN03ASR4SUB_PATH                                   = BSW\Mcal_Rh850P1x
+MEMSERVICE_ASRNVM_PATH                                           = BSW\NvM
+OS_PLATFORMRH850GEN7_PATH                                        = BSW\Os
+SECURITY_ASRCSM_PATH                                             = BSW\Csm
+SYSSERVICE_ASR4BSWMCFG5_PATH                                     = BSW\BswM
+SYSSERVICE_ASR4ECUM_PATH                                         = BSW\EcuM
+SYSSERVICE_ASR4WDM_PATH                                          = BSW\WdgM
+SYSSERVICE_ASRCAL_PATH                                           = BSW\Cal
+SYSSERVICE_ASRCRC_PATH                                           = BSW\Crc
+SYSSERVICE_ASRDET_PATH                                           = BSW\Det
+SYSSERVICE_E2ELIB_PATH                                           = BSW\E2E
+TP_ISO10681_PATH                                                 = BSW\Tp_Iso10681
+VSTDLIB_PATH                                                     = BSW\VStdLib
+
+
+#DATA_SOURCE_LST += $(GENDATA_DIR)\v_par.c
+
+
+
+###############################################################################
+#  Application (Appl)
+###############################################################################
+
+# Source files
+APP_SOURCE_LST += Source\BswM_UserCallouts.c
+APP_SOURCE_LST += Source\Dcm_Stub_DSD_Sid_Fcn.c
+APP_SOURCE_LST += Source\startup.c
+APP_SOURCE_LST += Source\Appl_Main.c
+APP_SOURCE_LST += Source\DemWrapper.c
+APP_SOURCE_LST += Source\MyBootMode.c
+APP_SOURCE_LST += Source\BMW_Application_Main.c
+APP_SOURCE_LST += Source\BMW_Application_Connector_Dummy.c
+
+# additional application include directories
+ADDITIONAL_INCLUDES += Include
+ADDITIONAL_INCLUDES += $(GENDATA_DIR)\Components
+ADDITIONAL_INCLUDES += ..\..\_Common
+ADDITIONAL_INCLUDES += ..\..\_Common\Memmap
+ADDITIONAL_INCLUDES += ..\..\_Common\Compiler_Cfg
+
+
+#application source files
+APP_SOURCE_LST += Source\EcuM_Callout_Stubs.c
+APP_SOURCE_LST += Source\BswM_Callout_Stubs.c
+APP_SOURCE_LST += Source\BswInit_Callout_Stubs.c
+APP_SOURCE_LST += Source\Dcm_Callout_Stubs.c
+APP_SOURCE_LST += Source\Os_Callout_Stubs.c
+APP_SOURCE_LST += Source\BswInit.c
+APP_SOURCE_LST += Source\XcpAppl.c
+APP_SOURCE_LST += Source\ApplFr_Stubs.c
+
+
+###############################################################################
+#  Application (APPL)			<BAC MODULES LIST FOR APPLICATIOn>
+###############################################################################
+
+THIRDPARTY_ROOT = $(ROOT)\ThirdParty\BAC4_3\Supply
+
+######################### Bs #################################################
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\classic\src\Bs_ApplAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\classic\src\Bs_ErrMemAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\classic\src\Bs_DlogAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\classic\src\Bs_MgmtAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\classic\src\Bs_NvMAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\classic\src\Bs_SecOcAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\classic\src\Bs_SfaDataAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\generic\src\Bs_CertDiag.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\generic\src\Bs_CertMan.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\generic\src\Bs_Lcs.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\generic\src\Bs_SecEcuMode.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\generic\src\Bs_SecOcDiag.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\generic\src\Bs_SfaDiag.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Bs\generic\src\Bs_SfaToken.c
+APP_SOURCE_LST += $(GENDATA_DIR)\Bs_UDSAdapter.c
+APP_SOURCE_LST += $(GENDATA_DIR)\Bs_CertDataAdapter.c
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Bs\classic\include
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Bs\generic\src
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Bs\generic\include
+
+######################### BUtil #############################################
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\BUtil\classic\src\BUtil_UDSAdapterHelper.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\BUtil\generic\src\BUtil_AddressFormat.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\BUtil\generic\src\BUtil_Math.c
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\BUtil\classic\include
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\BUtil\classic\include\BUtil
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\BUtil\generic\include
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\BUtil\generic\include\BUtil
+
+######################### Coding #############################################
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Coding\classic\src\Coding_ConcAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Coding\classic\src\Coding_CryptoAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Coding\classic\src\Coding_DlogAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Coding\classic\src\Coding_ErrMemAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Coding\classic\src\Coding_MgmtAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Coding\classic\src\Coding_NvMAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Coding\classic\src\Coding_TimerAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Coding\classic\src\Coding_UDSAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Coding\classic\src\Coding_VinAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Coding\generic\src\Coding.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Coding\generic\src\Coding_Data.c
+#APP_SOURCE_LST += $(GENDATA_DIR)\Coding_ApplAdapter.c
+#APP_SOURCE_LST += $(GENDATA_DIR)\Coding_FuncAdapter.c
+#APP_SOURCE_LST += $(GENDATA_DIR)\Coding_Cfg.c
+#APP_SOURCE_LST += $(GENDATA_DIR)\Coding_Function.c
+#APP_SOURCE_LST += $(GENDATA_DIR)\CodingSample.c
+#APP_SOURCE_LST += $(GENDATA_DIR)\CodingTestClient.c
+#ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Coding\classic\include
+#ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Coding\generic\include
+
+######################### Darh ###############################################
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Darh\classic\src\Darh_ApplAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Darh\classic\src\Darh_ConcAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Darh\classic\src\Darh_ErrMemAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Darh\classic\src\Darh_NvMAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Darh\classic\src\Darh_UDSAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Darh\classic\src\Darh_DataServicesHandler.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Darh\classic\src\Darh_EvtDataChngdHandler.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Darh\classic\src\Darh_MgmtHandler.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Darh\generic\src\Darh.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Darh\generic\src\Darh_QueueHandler.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Darh\generic\src\Darh_RoutineControl.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Darh\generic\src\Darh_ReadActivelyReportedDTCs.c
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Darh\classic\src
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Darh\generic\include
+
+######################### Dlog ##############################################
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\classic\src\Dlog_BootMode.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\classic\src\Dlog_CodingAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\classic\src\Dlog_Ecu.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\classic\src\Dlog_Memory.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\classic\src\Dlog_Mode.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\classic\src\Dlog_NvMAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\classic\src\Dlog_Swe.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\classic\src\Dlog_SweGet.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\classic\src\Dlog_SweException.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\classic\src\Dlog_SweInit.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\classic\src\Dlog_SweStatus.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\classic\src\Dlog_TimingParameters.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\classic\src\Dlog_UserAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\generic\src\Dlog_SvkGen.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Dlog\generic\src\Dlog_SweGen.c
+APP_SOURCE_LST += $(GENDATA_DIR)\Dlog_HweTable.c
+APP_SOURCE_LST += $(GENDATA_DIR)\Dlog_Nvm.c
+APP_SOURCE_LST += $(GENDATA_DIR)\Dlog_PBCfg.c
+APP_SOURCE_LST += $(GENDATA_DIR)\Dlog_SweTable.c
+APP_SOURCE_LST += $(GENDATA_DIR)\Dlog_UDSAdapter.c
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Dlog\classic\include
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Dlog\generic\include
+
+######################## EthDiagMM #########################
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\generic\src\EthDiagMM.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\generic\src\EthDiagMM_AliveCheck.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\generic\src\EthDiagMM_UDS.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\generic\src\EthDiagMM_Helper.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\generic\src\EthDiagMM_HsFz.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\generic\src\EthDiagMM_Rx.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\generic\src\EthDiagMM_SM.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\generic\src\EthDiagMM_TransmitQueue.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\generic\src\EthDiagMM_Tx.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\classic\src\EthDiagMM_AdapterHelper.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\classic\src\EthDiagMM_BusAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\classic\src\EthDiagMM_DcmProtocolAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\classic\src\EthDiagMM_UDSAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\classic\src\EthDiagMM_MgmtAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\classic\src\EthDiagMM_BswM.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\classic\src\EthDiagMM_TimerAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\EthDiagMM\classic\src\EthDiagMM_Swc.c
+#APP_SOURCE_LST += $(GENDATA_DIR)\EthDiagMM_Cfg.c
+#ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\EthDiagMM\generic\src
+#ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\EthDiagMM\generic\include
+#ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\EthDiagMM\classic\include
+
+########################## Omc ##########################
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Omc\generic\src\Omc.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Omc\generic\src\Omc_Data.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Omc\classic\src\Omc_ApplAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Omc\classic\src\Omc_StdDiagAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Omc\classic\src\Omc_MgmtAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Omc\classic\src\Omc_NvMAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Omc\classic\src\Omc_UDSAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Omc\classic\src\Omc_ErrMemAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Omc\classic\src\Omc_ConcAdapter.c
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Omc\generic\include
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Omc\classic\include
+
+########################## PiaClient ##########################
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\generic\src\PiaClient.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\generic\src\PiaClient_Data.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\generic\src\PiaClient_ProfileDataInfo.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\generic\src\PiaClient_Serializer.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\classic.testclient\src\PiaClientTestClient.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\classic.sample\src\PiaClientSample.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\classic\src\PiaClient_TP.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\classic\src\PiaClient_Timer.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\classic\src\PiaClient_ProfileIdRequestor.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\classic\src\PiaClient_NvMAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\classic\src\PiaClient_MgmtAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\classic\src\PiaClient_IDRLAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\classic\src\PiaClient_ConcurrencyAdapter.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\classic\src\PiaClient_Com.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\PiaClient\classic\src\PiaClient_ServiceInterface.c
+#APP_SOURCE_LST += $(GENDATA_DIR)\PiaClient_ApplicationAdapter.c
+#ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\PiaClient\generic\include
+#ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\PiaClient\classic.testclient\include
+#ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\PiaClient\classic.sample\include
+#ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\PiaClient\classic\include
+
+######################### Std_Diag ##########################
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\generic\src\StdDiag.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\generic\src\StdDiag_ProgPreparation.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\generic\src\StdDiag_ActiveSessionState.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\generic\src\StdDiag_SgbdIndex.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\generic\src\StdDiag_CheckProgPrecondition.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\generic\src\StdDiag_IDRL.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\classic\src\StdDiagClassic.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\classic\src\StdDiag_UDSAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\classic\src\StdDiag_OmcAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\classic\src\StdDiag_DarhAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\classic\src\StdDiag_ErrMemAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\classic\src\StdDiag_AppAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\classic\src\StdDiag_StmAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\classic\src\StdDiag_MgmtAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\classic\src\StdDiag_IDRLAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\StdDiag\classic\src\StdDiag_Dlt.c
+APP_SOURCE_LST += $(GENDATA_DIR)\StdDiag_Cfg.c
+APP_SOURCE_LST += $(GENDATA_DIR)\StdDiagClassic_Cfg.c
+APP_SOURCE_LST += $(GENDATA_DIR)\StdDiagClassic_PBCfg.c
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\StdDiag\generic\src
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\StdDiag\generic\include
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\StdDiag\classic\include
+
+######################### Stm ##########################
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Stm\generic\src\Stm.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Stm\classic\src\Stm_ComAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Stm\classic\src\Stm_ErrMemAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Stm\classic\src\Stm_MgmtAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Stm\classic\src\Stm_TimerAdapter.c
+APP_SOURCE_LST += $(GENDATA_DIR)\StmClassic_PBCfg.c
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Stm\generic\include
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Stm\classic\include
+
+######################### SysTime ##########################
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\SysTime\generic\src\SysTime.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\SysTime\classic\src\SysTimeClassic.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\SysTime\classic\src\SysTime_TimerAdapter.c
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\SysTime\classic\src\SysTime_ConcAdapter.c
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\SysTime\classic\include
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\SysTime\generic\include
+
+######################### Integration ##########################
+APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Integration\classic.sample\src\IntegrationSample.c
+APP_SOURCE_LST += $(GENDATA_DIR)\IntegrationSample_code.c
+ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Integration\classic.sample\include
+ADDITIONAL_INCLUDES += $(COMPILER_INC)
+
+######################### Vin ##########################
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Vin\src\Vin.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Vin\src\Vin_Com.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Vin\src\Vin_Dlog.c
+#APP_SOURCE_LST += $(THIRDPARTY_ROOT)\core\Vin\src\Vin_Ssv.c
+#APP_SOURCE_LST += $(GENDATA_DIR)\Vin_PBCfg.c
+#ADDITIONAL_INCLUDES += $(THIRDPARTY_ROOT)\core\Vin\include

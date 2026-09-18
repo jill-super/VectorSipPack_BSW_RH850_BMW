@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DIAG-LAYER-CONTAINER ID="id-60bdbcf9-5f6c-44d9-8625-88a675e84192" OID="id-60bdbcf9-5f6c-44d9-8625-88a675e84192">
+    <SHORT-NAME>PROG_LS_UDS_DLC</SHORT-NAME>
+    <LONG-NAME>Programming Services and Jobs for UDS (low speed)</LONG-NAME>
+    <FUNCTIONAL-GROUPS>
+      <FUNCTIONAL-GROUP ID="id-4646c54a-1f42-4da6-a628-b66976713291" OID="id-4646c54a-1f42-4da6-a628-b66976713291">
+        <SHORT-NAME>PROG_LS_UDS</SHORT-NAME>
+        <LONG-NAME>Programming Services and Jobs for UDS (low speed)</LONG-NAME>
+        <ADMIN-DATA>
+          <LANGUAGE>eng</LANGUAGE>
+          <DOC-REVISIONS>
+            <DOC-REVISION>
+              <TEAM-MEMBER-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-582251e8-a9b9-4e5a-bd33-29fc7d8fb101"/>
+              <REVISION-LABEL>001.000.000</REVISION-LABEL>
+              <STATE>RELEASE</STATE>
+              <DATE>2006-07-24T18:00:00</DATE>
+              <MODIFICATIONS>
+                <MODIFICATION>
+                  <CHANGE>initial release</CHANGE>
+                  <REASON>required for functional addressing via low-speed CAN</REASON>
+                </MODIFICATION>
+              </MODIFICATIONS>
+            </DOC-REVISION>
+          </DOC-REVISIONS>
+        </ADMIN-DATA>
+        <COMPARAM-REFS>
+          <COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-c4429312-ab4f-4e03-8eae-7c8b597ccfdb">
+            <VALUE>100000</VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+          </COMPARAM-REF>
+          <COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-4e782744-6c7c-4c4c-980a-d0ce3270a33e">
+            <VALUE>1</VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+          </COMPARAM-REF>
+          <COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-0871f50a-746d-4e7b-bed7-9f5e646e37de">
+            <VALUE>1</VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+          </COMPARAM-REF>
+        </COMPARAM-REFS>
+        <IMPORT-REFS>
+          <IMPORT-REF DOCREF="DOPS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-cce678a9-19ff-4e38-86ba-22ac18a6270c"/>
+          <IMPORT-REF DOCREF="UNITS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-b6315bcc-2c68-4976-aa1c-3dec7f94acd0"/>
+        </IMPORT-REFS>
+        <PARENT-REFS>
+          <PARENT-REF DOCREF="ISO_14229_BMW_CAN" DOCTYPE="LAYER" ID-REF="id-9356813b-9d18-4a9d-b691-e8142ca51dce" xsi:type="PROTOCOL-REF">
+            <NOT-INHERITED-DIAG-COMMS>
+              <NOT-INHERITED-DIAG-COMM>
+                <DIAG-COMM-SNREF SHORT-NAME="TD"/>
+              </NOT-INHERITED-DIAG-COMM>
+            </NOT-INHERITED-DIAG-COMMS>
+          </PARENT-REF>
+          <PARENT-REF DOCREF="ISO_14229_BMW_TCP" DOCTYPE="LAYER" ID-REF="id-accd7022-28f2-4985-bd0f-de89220636ca" xsi:type="PROTOCOL-REF">
+            <NOT-INHERITED-DIAG-COMMS>
+              <NOT-INHERITED-DIAG-COMM>
+                <DIAG-COMM-SNREF SHORT-NAME="TD"/>
+              </NOT-INHERITED-DIAG-COMM>
+            </NOT-INHERITED-DIAG-COMMS>
+          </PARENT-REF>
+          <PARENT-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-0396d9da-824a-4ca3-aff2-435c93f0b206" xsi:type="ECU-SHARED-DATA-REF"/>
+        </PARENT-REFS>
+      </FUNCTIONAL-GROUP>
+    </FUNCTIONAL-GROUPS>
+  </DIAG-LAYER-CONTAINER>
+</ODX>

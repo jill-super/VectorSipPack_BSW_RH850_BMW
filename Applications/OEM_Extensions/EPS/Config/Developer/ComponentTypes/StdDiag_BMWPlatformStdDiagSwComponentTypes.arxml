@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>StdDiag</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                  <ELEMENTS>
+                    <SWC-IMPLEMENTATION UUID="A5CFD6AC-7DCA-4C74-92DC-E525BB7B3323">
+                      <SHORT-NAME>Impl_StdDiag</SHORT-NAME>
+                      <CODE-DESCRIPTORS>
+                        <CODE>
+                          <SHORT-NAME>Default</SHORT-NAME>
+                          <ARTIFACT-DESCRIPTORS>
+                            <AUTOSAR-ENGINEERING-OBJECT>
+                              <SHORT-LABEL>Default</SHORT-LABEL>
+                              <CATEGORY>SWSRC</CATEGORY>
+                            </AUTOSAR-ENGINEERING-OBJECT>
+                          </ARTIFACT-DESCRIPTORS>
+                        </CODE>
+                      </CODE-DESCRIPTORS>
+                      <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag</BEHAVIOR-REF>
+                    </SWC-IMPLEMENTATION>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <APPLICATION-SW-COMPONENT-TYPE UUID="7E2F8F6F-2AB0-4E93-BB86-13FFE95AE2D5">
+                      <SHORT-NAME>StdDiag</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="DV_ReadOnly">1</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <PORTS>
+                        <P-PORT-PROTOTYPE UUID="8E2DBAAE-C9B3-40C4-AE2C-8144802C935C">
+                          <SHORT-NAME>ActiveSessionState</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/DataServices_ActiveSessionState/ConditionCheckRead</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/DataServices_ActiveSessionState/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/StdDiag/Dcm/PortInterfaces/DataServices_ActiveSessionState</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="A7221D50-9A98-4568-B13C-143CAC0A1986">
+                          <SHORT-NAME>AllowOpModeChangePort</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Omc/PortInterfaces/OmcModesCallouts/AllowOpModeSwitch</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/StdDiag/Omc/PortInterfaces/OmcModesCallouts</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="0D7BEA9F-CDBF-4FF2-8232-321560908566">
+                          <SHORT-NAME>CheckProgrammingPreconditions</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/RoutineServices_CheckProgrammingPreconditions/Start</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/StdDiag/Dcm/PortInterfaces/RoutineServices_CheckProgrammingPreconditions</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="6F1B0704-2281-4E05-A00C-E8369975C391">
+                          <SHORT-NAME>ClearSecondaryErrorMemory</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/RoutineServices_ClearDTCSecondaryErrorMemory/Start</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/StdDiag/Dcm/PortInterfaces/RoutineServices_ClearDTCSecondaryErrorMemory</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="B607A507-5E60-44F5-8B02-3D9FC36F725D">
+                          <SHORT-NAME>ComControlModeRequestPort</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <NONQUEUED-SENDER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/ComControlModeRequestInterface/requestedMode</DATA-ELEMENT-REF>
+                              <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                            </NONQUEUED-SENDER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/StdDiag/PortInterfaces/ComControlModeRequestInterface</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="C881C495-9054-48B1-BD77-00DB5CAA4927">
+                          <SHORT-NAME>DiagCommLoopback</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/RoutineServices_DiagCommLoopback/Start</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/StdDiag/Dcm/PortInterfaces/RoutineServices_DiagCommLoopback</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="2CFF015A-6C57-4E31-8B0A-E004797CE934">
+                          <SHORT-NAME>LifeCycle</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <MODE-SWITCH-SENDER-COM-SPEC>
+                              <ENHANCED-MODE-API>true</ENHANCED-MODE-API>
+                              <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/ILifeCycle/Mode</MODE-GROUP-REF>
+                              <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                            </MODE-SWITCH-SENDER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/StdDiag/PortInterfaces/ILifeCycle</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="FC522F0D-54B1-4005-9D20-304A2629C42F">
+                          <SHORT-NAME>ServiceRequestManufacturerNotificationPort</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/ServiceRequestNotification/Confirmation</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/ServiceRequestNotification/Indication</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/StdDiag/Dcm/PortInterfaces/ServiceRequestNotification</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="35C47CE0-CFF7-4794-B3FB-325199863339">
+                          <SHORT-NAME>SgbdIndex</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/DataServices_SgbdIndex/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/StdDiag/Dcm/PortInterfaces/DataServices_SgbdIndex</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="0A01C33D-133A-4EF0-8739-4667F60989CD">
+                          <SHORT-NAME>AllowOpModeChangeCbkPort</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/StdDiag/Omc/PortInterfaces/OmcModesCalloutsResult</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="61727F1A-4171-47EF-887E-7E3126C1BE91">
+                          <SHORT-NAME>ClearDTCPort</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/StdDiag/Dem/PortInterfaces/CddIf</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="BE1672C0-42BF-448D-ACDE-CF12D48A06BC">
+                          <SHORT-NAME>ComControlNormalModeAccessPort</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/StdDiag/PortInterfaces/ComControlNormalNotificationInterface</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="6C3863B4-25F2-4530-871F-DCDFE2E03C9B">
+                          <SHORT-NAME>DCMServicesPort</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/StdDiag/Dcm/PortInterfaces/StdDiagDCMServices</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="9BD36F9C-5D42-41E1-A726-7071470B2206">
+                          <SHORT-NAME>EnableConditionPort</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/StdDiag/Dem/PortInterfaces/EnableCondition</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="526CEF16-5780-422E-B817-977060AD14A7">
+                          <SHORT-NAME>ExtendedOperatingModeControlPort</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/StdDiag/Omc/PortInterfaces/ExtendedOperatingModeNotification</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="8CA7B7F4-7A59-40D4-A67B-9B42985E3B2A">
+                          <SHORT-NAME>LifeCycleRequest</SHORT-NAME>
+                          <REQUIRED-COM-SPECS>
+                            <NONQUEUED-RECEIVER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/ILifeCycleRequest/requestMode</DATA-ELEMENT-REF>
+                              <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                              <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                              <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                              <FILTER>
+                                <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                              </FILTER>
+                              <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                              <INIT-VALUE>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <SHORT-LABEL>StdDiag_requestModeInitialValue</SHORT-LABEL>
+                                  <VALUE>2</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </INIT-VALUE>
+                            </NONQUEUED-RECEIVER-COM-SPEC>
+                          </REQUIRED-COM-SPECS>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/StdDiag/PortInterfaces/ILifeCycleRequest</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="9F5E8411-3E09-4166-912E-84AFE6957011">
+                          <SHORT-NAME>OperatingModeControlPort</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/StdDiag/Omc/PortInterfaces/OperatingModeNotification</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="E6D4E8B3-6FC1-49EE-8A2A-E1C7A631C22A">
+                          <SHORT-NAME>ReportErrorPort</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/StdDiag/Det/PortInterfaces/DETService</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="68F2A563-C5F1-410A-8243-A157DF6F7744">
+                          <SHORT-NAME>RoeStatePort</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/StdDiag/Darh/PortInterfaces/RoeStateInterface</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="EF686BFD-4CF8-4AA7-B325-DDC910590041">
+                          <SHORT-NAME>SessionChangeIndicationPort</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/StdDiag/PortInterfaces/SessionChangeIndicationInterface</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="A3C89A6D-D30D-4FC4-998A-7BBEE5449AEE">
+                          <SHORT-NAME>VehicleStatePort</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/StdDiag/Stm/PortInterfaces/VehicleStateModeInterface</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                      </PORTS>
+                      <INTERNAL-BEHAVIORS>
+                        <SWC-INTERNAL-BEHAVIOR UUID="E8D340A5-0F08-4FBA-A92B-F34ED4D8B175">
+                          <SHORT-NAME>IntBhv_StdDiag</SHORT-NAME>
+                          <DATA-TYPE-MAPPING-REFS>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BMW/Platform/StdDiag/Stm/DataTypeMappingSets/Stm_VehicleStatModeRequestTypeMap</DATA-TYPE-MAPPING-REF>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BMW/Platform/StdDiag/Omc/DataTypeMappingSets/Omc_DataTypeMappingSets</DATA-TYPE-MAPPING-REF>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BMW/Platform/StdDiag/DataTypeMappingSets/StdDiag_DataTypeMappingSet</DATA-TYPE-MAPPING-REF>
+                          </DATA-TYPE-MAPPING-REFS>
+                          <EVENTS>
+                            <OPERATION-INVOKED-EVENT UUID="34564E47-901C-4D08-B263-D61F5B534E9E">
+                              <SHORT-NAME>Event_AllowOpModeChange</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag/AllowOpModeChange</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/AllowOpModeChangePort</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Omc/PortInterfaces/OmcModesCallouts/AllowOpModeSwitch</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="AA68FE3B-11DC-4E5C-9A06-2DDF0F7E104E">
+                              <SHORT-NAME>Event_ConditionCheckActiveSessionState</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag/ConditionCheckActiveSessionState</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ActiveSessionState</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/DataServices_ActiveSessionState/ConditionCheckRead</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <DATA-RECEIVED-EVENT UUID="72452910-0A7A-45F6-AFEF-AA58F2E7FC75">
+                              <SHORT-NAME>LifeCycleRequest</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag/LifeCycleHandler</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/LifeCycleRequest</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/ILifeCycleRequest/requestMode</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="68E9E9D5-76AE-4545-A617-EE1355381BAE">
+                              <SHORT-NAME>Event_ManufacturerConfirmation</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag/ManufacturerConfirmation</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ServiceRequestManufacturerNotificationPort</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/ServiceRequestNotification/Confirmation</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="AA05C31A-177F-4CE2-8EF3-314400D910B2">
+                              <SHORT-NAME>Event_ManufacturerIndication</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag/ManufacturerIndication</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ServiceRequestManufacturerNotificationPort</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/ServiceRequestNotification/Indication</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="AACCBBFF-901E-433E-A5E8-5610E7158384">
+                              <SHORT-NAME>Event_OpModeChangeCancelled</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag/OpModeChangeCancelled</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/AllowOpModeChangePort</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Omc/PortInterfaces/OmcModesCallouts/OpModeSwitchCancelled</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="3F9626DE-08BE-464A-A42C-0E00EDA955C6">
+                              <SHORT-NAME>Event_ReadDataActiveSessionState</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag/ReadDataActiveSessionState</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ActiveSessionState</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/DataServices_ActiveSessionState/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="07480113-6292-4DDC-9A6A-07B061BC2E18">
+                              <SHORT-NAME>Event_ReadDataSgbdIndex</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag/ReadDataSgbdIndex</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/SgbdIndex</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/DataServices_SgbdIndex/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="B09D3252-C9BC-448F-8E50-81FE293F8CE4">
+                              <SHORT-NAME>Event_RoutineControlStartCheckProgrammingPreconditions</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag/RoutineControlStartCheckProgrammingPreconditions</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/CheckProgrammingPreconditions</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/RoutineServices_CheckProgrammingPreconditions/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="DCA75507-6F00-4081-BC60-AF0D6019EA20">
+                              <SHORT-NAME>Event_RoutineControlStartClearDTCSecondaryErrorMemory</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag/RoutineControlStartClearDTCSecondaryErrorMemory</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ClearSecondaryErrorMemory</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/RoutineServices_ClearDTCSecondaryErrorMemory/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="B2FEED16-A887-449E-8756-4D75ED45CD0A">
+                              <SHORT-NAME>Event_RoutineControlStartDiagCommLoopback</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag/RoutineControlStartDiagCommLoopback</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/DiagCommLoopback</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/RoutineServices_DiagCommLoopback/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <SWC-MODE-SWITCH-EVENT UUID="599BF91F-345E-42C7-835E-B1ADB127D12A">
+                              <SHORT-NAME>Event_SessionChange_DefaultSession</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag/SessionChange_DefaultSession</START-ON-EVENT-REF>
+                              <ACTIVATION>ON-ENTRY</ACTIVATION>
+                              <MODE-IREFS>
+                                <MODE-IREF>
+                                  <CONTEXT-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/SessionChangeIndicationPort</CONTEXT-PORT-REF>
+                                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/SessionChangeIndicationInterface/SessionModeDeclarationGroup</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/BMW/Platform/StdDiag/ModeDeclarationGroups/StdDiag_SessionModeGroup/STDDIAG_DEFAULT_SESSION</TARGET-MODE-DECLARATION-REF>
+                                </MODE-IREF>
+                              </MODE-IREFS>
+                            </SWC-MODE-SWITCH-EVENT>
+                            <SWC-MODE-SWITCH-EVENT UUID="02D31FAC-6A7D-4A85-A152-3D40E16DE285">
+                              <SHORT-NAME>Event_SessionChange_OtherSession</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/IntBhv_StdDiag/SessionChange_OtherSession</START-ON-EVENT-REF>
+                              <ACTIVATION>ON-ENTRY</ACTIVATION>
+                              <MODE-IREFS>
+                                <MODE-IREF>
+                                  <CONTEXT-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/SessionChangeIndicationPort</CONTEXT-PORT-REF>
+                                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/SessionChangeIndicationInterface/SessionModeDeclarationGroup</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/BMW/Platform/StdDiag/ModeDeclarationGroups/StdDiag_SessionModeGroup/STDDIAG_OTHER_SESSION</TARGET-MODE-DECLARATION-REF>
+                                </MODE-IREF>
+                              </MODE-IREFS>
+                            </SWC-MODE-SWITCH-EVENT>
+                          </EVENTS>
+                          <RUNNABLES>
+                            <RUNNABLE-ENTITY UUID="9CC6F3EE-D0C2-4DB8-8506-D1CF4D1FA9C5">
+                              <SHORT-NAME>AllowOpModeChange</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/VehicleStatePort</CONTEXT-R-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/Stm/PortInterfaces/VehicleStateModeInterface/currentVehicleStateMode</TARGET-MODE-GROUP-REF>
+                                    </R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <SYMBOL>StdDiag_AllowOpModeChange</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="E9245E49-2A5D-4947-A7B1-185CD17DD5F6">
+                              <SHORT-NAME>ConditionCheckActiveSessionState</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_DcmGetSesCtrlType</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/DCMServicesPort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/StdDiagDCMServices/GetSesCtrlType</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_DetError</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ReportErrorPort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Det/PortInterfaces/DETService/ReportError</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>StdDiag_ConditionCheckActiveSessionState</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="D858828F-6CBF-4CC9-9078-EA9C127C9857">
+                              <SHORT-NAME>LifeCycleHandler</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-READ-ACCESSS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>requestedMode</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/LifeCycleRequest</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/ILifeCycleRequest/requestMode</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-READ-ACCESSS>
+                              <DATA-SEND-POINTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>VariableAccess_requestComMode</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ComControlModeRequestPort</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/ComControlModeRequestInterface/requestedMode</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-SEND-POINTS>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ExtendedOperatingModeControlPort</CONTEXT-R-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/Omc/PortInterfaces/ExtendedOperatingModeNotification/currentExtendedOperatingMode</TARGET-MODE-GROUP-REF>
+                                    </R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/OperatingModeControlPort</CONTEXT-R-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/Omc/PortInterfaces/OperatingModeNotification/currentOperatingMode</TARGET-MODE-GROUP-REF>
+                                    </R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/LifeCycle</CONTEXT-P-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/ILifeCycle/Mode</TARGET-MODE-GROUP-REF>
+                                    </P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>LifeCycle</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/LifeCycle</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/ILifeCycle/Mode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_DcmGetSesCtrlType</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/DCMServicesPort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dcm/PortInterfaces/StdDiagDCMServices/GetSesCtrlType</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_DetError</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ReportErrorPort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Det/PortInterfaces/DETService/ReportError</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_EnableCondition</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/EnableConditionPort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dem/PortInterfaces/EnableCondition/SetEnableCondition</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_SetRoeSuspended</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/RoeStatePort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Darh/PortInterfaces/RoeStateInterface/GetRoeState</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>StdDiag_LifeCycleHandler</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="2A3FDB05-6AF8-46C3-98E9-C0681ED0C2F6">
+                              <SHORT-NAME>ManufacturerConfirmation</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-SEND-POINTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>VariableAccess_requestComMode</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ComControlModeRequestPort</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/ComControlModeRequestInterface/requestedMode</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-SEND-POINTS>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/OperatingModeControlPort</CONTEXT-R-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/Omc/PortInterfaces/OperatingModeNotification/currentOperatingMode</TARGET-MODE-GROUP-REF>
+                                    </R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ExtendedOperatingModeControlPort</CONTEXT-R-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/Omc/PortInterfaces/ExtendedOperatingModeNotification/currentExtendedOperatingMode</TARGET-MODE-GROUP-REF>
+                                    </R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ComControlNormalModeAccessPort</CONTEXT-R-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/ComControlNormalNotificationInterface/CommunicationModeDeclarationGroup</TARGET-MODE-GROUP-REF>
+                                    </R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_DetError</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ReportErrorPort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Det/PortInterfaces/DETService/ReportError</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_EnableCondition</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/EnableConditionPort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dem/PortInterfaces/EnableCondition/SetEnableCondition</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_SetRoeSuspended</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/RoeStatePort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Darh/PortInterfaces/RoeStateInterface/GetRoeState</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>StdDiag_ManufacturerConfirmation</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="ACC141AE-D7C5-4864-8B50-9B169CF08A89">
+                              <SHORT-NAME>ManufacturerIndication</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/OperatingModeControlPort</CONTEXT-R-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/Omc/PortInterfaces/OperatingModeNotification/currentOperatingMode</TARGET-MODE-GROUP-REF>
+                                    </R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_DetError</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ReportErrorPort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Det/PortInterfaces/DETService/ReportError</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>StdDiag_ManufacturerIndication</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="2C9F37FF-83A7-424D-BAB4-762507FE0AC1">
+                              <SHORT-NAME>OpModeChangeCancelled</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>StdDiag_OpModeChangeCancelled</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="4C863345-08AB-433B-AA4C-F93137644F24">
+                              <SHORT-NAME>ReadDataActiveSessionState</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>StdDiag_ReadActiveSessionState</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="42755D11-4FAF-42EA-88A7-C0ADADBFF424">
+                              <SHORT-NAME>ReadDataSgbdIndex</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>StdDiag_ReadSgbdIndex</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="8370F419-78AE-4479-BEF7-4819562DCD0E">
+                              <SHORT-NAME>RoutineControlStartCheckProgrammingPreconditions</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>StdDiag_RoutineControlStartCheckProgrammingPreconditions</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="3D4EB317-2167-416D-9F66-86B0EE2EEA2F">
+                              <SHORT-NAME>RoutineControlStartClearDTCSecondaryErrorMemory</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_ClearDTC</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ClearDTCPort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dem/PortInterfaces/CddIf/ClearDTC</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>StdDiag_RoutineControlStartClearDTCSecondaryErrorMemory</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="6E587590-CACF-4C6B-844B-ECABE54B3E11">
+                              <SHORT-NAME>RoutineControlStartDiagCommLoopback</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>StdDiag_RoutineControlStartDiagCommLoopback</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="57430EB5-B001-4AA2-B4E7-228B818A4C71">
+                              <SHORT-NAME>SessionChange_DefaultSession</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-SEND-POINTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>VariableAccess_requestComMode</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ComControlModeRequestPort</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/ComControlModeRequestInterface/requestedMode</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-SEND-POINTS>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ComControlNormalModeAccessPort</CONTEXT-R-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/PortInterfaces/ComControlNormalNotificationInterface/CommunicationModeDeclarationGroup</TARGET-MODE-GROUP-REF>
+                                    </R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/OperatingModeControlPort</CONTEXT-R-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/Omc/PortInterfaces/OperatingModeNotification/currentOperatingMode</TARGET-MODE-GROUP-REF>
+                                    </R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ExtendedOperatingModeControlPort</CONTEXT-R-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/StdDiag/Omc/PortInterfaces/ExtendedOperatingModeNotification/currentExtendedOperatingMode</TARGET-MODE-GROUP-REF>
+                                    </R-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_DetError</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ReportErrorPort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Det/PortInterfaces/DETService/ReportError</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_EnableCondition</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/EnableConditionPort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Dem/PortInterfaces/EnableCondition/SetEnableCondition</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_SetRoeSuspended</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/RoeStatePort</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/StdDiag/Darh/PortInterfaces/RoeStateInterface/GetRoeState</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>StdDiag_SesChgIndication_DefaultSession</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="DE3D6225-310D-4659-A201-93F0A9B7049C">
+                              <SHORT-NAME>SessionChange_OtherSession</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>StdDiag_SesChgIndication_OtherSession</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                          </RUNNABLES>
+                          <SERVICE-DEPENDENCYS>
+                            <SWC-SERVICE-DEPENDENCY UUID="B46AD61F-FF62-46B4-A8BC-F2DE6CB31EBC">
+                              <SHORT-NAME>StdDiag_DiagnosticCommunicationManagerServiceNeeds_DCMServices</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/DCMServicesPort</PORT-PROTOTYPE-REF>
+                                  <ROLE>DCMServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-COMMUNICATION-MANAGER-NEEDS UUID="EB48680E-D1F6-42B6-AE32-9D2A7AF88E6F">
+                                  <SHORT-NAME>sn_StdDiag_DiagnosticCommunicationManagerServiceNeeds_DCMServices</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                </DIAGNOSTIC-COMMUNICATION-MANAGER-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="6074936D-2CC0-4C1E-A0FD-1F92C575F896">
+                              <SHORT-NAME>StdDiag_DiagnosticCommunicationManagerServiceNeeds_ServiceRequestNotification</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ServiceRequestManufacturerNotificationPort</PORT-PROTOTYPE-REF>
+                                  <ROLE>ServiceRequestNotification</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-COMMUNICATION-MANAGER-NEEDS UUID="957CE35B-89D3-46C4-A470-0855E2B72926">
+                                  <SHORT-NAME>sn_StdDiag_DiagnosticCommunicationManagerServiceNeeds</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                </DIAGNOSTIC-COMMUNICATION-MANAGER-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="1DB071A1-8FC0-4354-8D2B-151886BBE9E6">
+                              <SHORT-NAME>StdDiag_DiagnosticEventManagerServiceNeeds_EnableCondition</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/EnableConditionPort</PORT-PROTOTYPE-REF>
+                                  <ROLE>EnableCondition</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-EVENT-MANAGER-NEEDS UUID="E290BF18-97AC-4DD4-8052-624A7C509CDD">
+                                  <SHORT-NAME>sn_StdDiag_DiagnosticEventManagerServiceNeeds_EnableCondition</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                </DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="016BA081-AABD-4DBA-BC9D-171203B7F0EE">
+                              <SHORT-NAME>StdDiag_DiagnosticValueServiceNeeds_ActiveSessionState</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ActiveSessionState</PORT-PROTOTYPE-REF>
+                                  <ROLE>DataServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-VALUE-NEEDS UUID="FBC30918-FF9E-484A-8431-F853E5EF23E6">
+                                  <SHORT-NAME>sn_StdDiag_DiagnosticValueServiceNeeds_ActiveSessionState</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DID-NUMBER>61696</DID-NUMBER>
+                                </DIAGNOSTIC-VALUE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="615D7878-3F90-4937-B17B-B7E7B3953A56">
+                              <SHORT-NAME>StdDiag_DiagnosticRoutineServiceNeeds_CheckProgrammingPreconditions</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/CheckProgrammingPreconditions</PORT-PROTOTYPE-REF>
+                                  <ROLE>RoutineServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-ROUTINE-NEEDS>
+                                  <SHORT-NAME>sn_StdDiag_DiagnosticRoutingServiceNeeds_CheckProgrammingPreconditions</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DIAG-ROUTINE-TYPE>SYNCHRONOUS</DIAG-ROUTINE-TYPE>
+                                  <RID-NUMBER>515</RID-NUMBER>
+                                </DIAGNOSTIC-ROUTINE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="A3D1BB22-30D5-42F6-A267-F5F9358C7049">
+                              <SHORT-NAME>StdDiag_DiagnosticRoutineServiceNeeds_ClearDTCSecondaryErrorMemory</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ClearSecondaryErrorMemory</PORT-PROTOTYPE-REF>
+                                  <ROLE>RoutineServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-ROUTINE-NEEDS>
+                                  <SHORT-NAME>sn_StdDiag_DiagnosticRoutineServiceNeeds_ClearDTCSecondaryErrorMemory</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DIAG-ROUTINE-TYPE>ASYNCHRONOUS</DIAG-ROUTINE-TYPE>
+                                  <RID-NUMBER>3846</RID-NUMBER>
+                                </DIAGNOSTIC-ROUTINE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="0447F8F7-DB5B-423D-8909-B1154D96D039">
+                              <SHORT-NAME>StdDiag_DiagnosticRoutineServiceNeeds_DiagCommLoopBack</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/DiagCommLoopback</PORT-PROTOTYPE-REF>
+                                  <ROLE>RoutineServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-ROUTINE-NEEDS>
+                                  <SHORT-NAME>sn_StdDiag_DiagnosticRoutingServiceNeeds_DiagCommLoopBack</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DIAG-ROUTINE-TYPE>SYNCHRONOUS</DIAG-ROUTINE-TYPE>
+                                  <RID-NUMBER>771</RID-NUMBER>
+                                </DIAGNOSTIC-ROUTINE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                          </SERVICE-DEPENDENCYS>
+                          <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                        </SWC-INTERNAL-BEHAVIOR>
+                      </INTERNAL-BEHAVIORS>
+                    </APPLICATION-SW-COMPONENT-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

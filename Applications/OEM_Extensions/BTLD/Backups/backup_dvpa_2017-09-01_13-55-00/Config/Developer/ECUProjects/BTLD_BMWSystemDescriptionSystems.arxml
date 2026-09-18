@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>SystemDescription</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>EndtoEndProtections</SHORT-NAME>
+              <ELEMENTS>
+                <END-TO-END-PROTECTION-SET>
+                  <SHORT-NAME>EndToEndProtectionSet</SHORT-NAME>
+                  <END-TO-END-PROTECTIONS>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_ACLNY_MASSCNTR</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_ACLNY_MASSCNTR</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>31</DATA-ID>
+                          <DATA-ID>31</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>48</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_ACLNY_MASSCNTR</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/ACLNY_MASSCNTR</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_AVL_FORC_GRD</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_AVL_FORC_GRD</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>190</DATA-ID>
+                          <DATA-ID>190</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>40</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_AVL_FORC_GRD</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/AVL_FORC_GRD</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_AVL_PO_EPS</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_AVL_PO_EPS</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>186</DATA-ID>
+                          <DATA-ID>186</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>64</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_AVL_PO_EPS</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/AVL_PO_EPS</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_AVL_RPM_WHL</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_AVL_RPM_WHL</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>17</DATA-ID>
+                          <DATA-ID>17</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>96</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_AVL_RPM_WHL</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/AVL_RPM_WHL</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_AVL_STMOM_DV_ACT</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_AVL_STMOM_DV_ACT</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>108</DATA-ID>
+                          <DATA-ID>108</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>32</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_AVL_STMOM_DV_ACT</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/AVL_STMOM_DV_ACT</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_CON_VEH</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_CON_VEH</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>197</DATA-ID>
+                          <DATA-ID>197</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>64</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_CON_VEH</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/CON_VEH</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_DISP_CC_EPS</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_DISP_CC_EPS</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>3148</DATA-ID>
+                          <DATA-ID>3148</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>3</DATA-ID-MODE>
+                        <DATA-LENGTH>40</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>12</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_DISP_CC_EPS</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/DISP_CC_EPS</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_DT_EST</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_DT_EST</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>230</DATA-ID>
+                          <DATA-ID>230</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>128</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_DT_EST</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/DT_EST</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_ENERG_DGR_DRDY</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_ENERG_DGR_DRDY</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>56</DATA-ID>
+                          <DATA-ID>56</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>64</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>56</CRC-OFFSET>
+                        <COUNTER-OFFSET>52</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_ENERG_DGR_DRDY</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/ENERG_DGR_DRDY</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_ENSU_SFY</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_ENSU_SFY</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>628</DATA-ID>
+                          <DATA-ID>628</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>3</DATA-ID-MODE>
+                        <DATA-LENGTH>64</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>12</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_ENSU_SFY</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/ENSU_SFY</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_OFFS_QUAD_EPS</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_OFFS_QUAD_EPS</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>229</DATA-ID>
+                          <DATA-ID>229</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>40</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_OFFS_QUAD_EPS</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/OFFS_QUAD_EPS</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_ST_EST</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_ST_EST</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>112</DATA-ID>
+                          <DATA-ID>112</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>40</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_ST_EST</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/ST_EST</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_SU_EPS</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_SU_EPS</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>131</DATA-ID>
+                          <DATA-ID>131</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>64</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>56</CRC-OFFSET>
+                        <COUNTER-OFFSET>52</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_SU_EPS</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/SU_EPS</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_TAR_ESTP_VIRT_FTAX</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_TAR_ESTP_VIRT_FTAX</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>52</DATA-ID>
+                          <DATA-ID>52</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>64</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_TAR_ESTP_VIRT_FTAX</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/TAR_ESTP_VIRT_FTAX</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_TAR_QTA_STRMOM_DV</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_TAR_QTA_STRMOM_DV</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>109</DATA-ID>
+                          <DATA-ID>109</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>64</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_TAR_QTA_STRMOM_DV</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/TAR_QTA_STRMOM_DV</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_TAR_STMOM_DV_ACT</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_TAR_STMOM_DV_ACT</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>179</DATA-ID>
+                          <DATA-ID>179</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>64</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_TAR_STMOM_DV_ACT</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/TAR_STMOM_DV_ACT</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_V_VEH</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_V_VEH</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>12</DATA-ID>
+                          <DATA-ID>12</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>40</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_V_VEH</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/V_VEH</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                    <END-TO-END-PROTECTION>
+                      <SHORT-NAME>e2e_VYAW_VEH</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="SystemSignalGroup">/BMW/SystemDescription/SystemSignalGroups/e2eGrp_VYAW_VEH</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <END-TO-END-PROFILE>
+                        <CATEGORY>PROFILE_01</CATEGORY>
+                        <DATA-IDS>
+                          <DATA-ID>14</DATA-ID>
+                          <DATA-ID>14</DATA-ID>
+                        </DATA-IDS>
+                        <DATA-ID-MODE>0</DATA-ID-MODE>
+                        <DATA-LENGTH>48</DATA-LENGTH>
+                        <MAX-DELTA-COUNTER-INIT>14</MAX-DELTA-COUNTER-INIT>
+                        <CRC-OFFSET>0</CRC-OFFSET>
+                        <COUNTER-OFFSET>8</COUNTER-OFFSET>
+                        <DATA-ID-NIBBLE-OFFSET>0</DATA-ID-NIBBLE-OFFSET>
+                      </END-TO-END-PROFILE>
+                      <END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                        <END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                          <DATA-OFFSET>0</DATA-OFFSET>
+                          <I-SIGNAL-GROUP-REF DEST="I-SIGNAL-GROUP">/BMW/SystemDescription/ISignalGroups/e2eGrp_VYAW_VEH</I-SIGNAL-GROUP-REF>
+                          <I-SIGNAL-I-PDU-REF DEST="I-SIGNAL-I-PDU">/BMW/SystemDescription/Pdus/VYAW_VEH</I-SIGNAL-I-PDU-REF>
+                        </END-TO-END-PROTECTION-I-SIGNAL-I-PDU>
+                      </END-TO-END-PROTECTION-I-SIGNAL-I-PDUS>
+                    </END-TO-END-PROTECTION>
+                  </END-TO-END-PROTECTIONS>
+                </END-TO-END-PROTECTION-SET>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>Systems</SHORT-NAME>
+              <ELEMENTS>
+                <SYSTEM UUID="8767EBBB-7DC3-4F59-9DC9-04C86D9519A5">
+                  <SHORT-NAME>Systems_SOLITAER_A_FlexRay_EPS</SHORT-NAME>
+                  <CATEGORY>SYSTEM_EXTRACT</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DV_SDG:ECUProject">
+                        <SDG-CAPTION>
+                          <SHORT-NAME>ECUProject_DBMWDSystemDescriptionDSystemsDBTLD</SHORT-NAME>
+                        </SDG-CAPTION>
+                        <SD GID="ShortName">BTLD</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <MAPPINGS>
+                    <SYSTEM-MAPPING>
+                      <SHORT-NAME>Systems_SOLITAER_A_FlexRay_EPS_MPPNG</SHORT-NAME>
+                    </SYSTEM-MAPPING>
+                  </MAPPINGS>
+                  <ROOT-SOFTWARE-COMPOSITIONS>
+                    <ROOT-SW-COMPOSITION-PROTOTYPE UUID="EE87601A-EDB0-4850-BE72-C0799FB810B2">
+                      <SHORT-NAME>ECU_Composition</SHORT-NAME>
+                      <SOFTWARE-COMPOSITION-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/ECUCompositionTypes/ECU_Composition</SOFTWARE-COMPOSITION-TREF>
+                    </ROOT-SW-COMPOSITION-PROTOTYPE>
+                  </ROOT-SOFTWARE-COMPOSITIONS>
+                </SYSTEM>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>ECUCompositionTypes</SHORT-NAME>
+      <ELEMENTS>
+        <COMPOSITION-SW-COMPONENT-TYPE UUID="9FCDF5F1-6317-43B0-9BE8-246BE21FADE6">
+          <SHORT-NAME>ECU_Composition</SHORT-NAME>
+        </COMPOSITION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

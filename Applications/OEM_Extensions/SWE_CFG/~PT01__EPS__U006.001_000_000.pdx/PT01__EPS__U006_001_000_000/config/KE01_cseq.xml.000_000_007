@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSEQ xmlns="http://bmw.com/2005/psdz.data.cseq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bmw.com/2005/psdz.data.cseq">
+
+	<!-- Aenderungsdokumentation CSEQ KE01
+	  Datum        Version    Author    Aenderung
+    24.02.2012   0.0.0      S.Zerndl  Initiale Erstellung
+    01.04.2012   0.0.1      P.Picard  X_DWA inserted
+    01.01.2013   0.0.2      P.Picard  X_BMS2 inserted
+		01.02.2013   0.0.3      P.Picard  X_EWS inserted
+		01.03.2013   0.0.4      P.Picard  X_BSK inserted
+		31.10.2013   0.0.5      P.Picard  X_ZES inserted
+		26.06.2015   0.0.6      P.Picard  X_OBCNV inserted
+	  17.05.2016   0.0.7      P.Picard  X_AE2 inserted
+	-->
+	<!--*****************************X_BMS/X_AE zuerst codieren*******************************************-->
+	<dependency>
+		<preconditions>
+			<ECU><baseVariantName name="X_AE"/><diagnosticAddress physicalOffset="18"/></ECU>
+			<ECU><baseVariantName name="X_AE2"/><diagnosticAddress physicalOffset="18"/></ECU>
+			<ECU><baseVariantName name="X_BMS"/><diagnosticAddress physicalOffset="18"/></ECU>
+			<ECU><baseVariantName name="X_BMS2"/><diagnosticAddress physicalOffset="18"/></ECU>
+			<ECU><baseVariantName name="X_ZES"/><diagnosticAddress physicalOffset="18"/></ECU>
+		</preconditions>
+		<dependors>
+			<ECU><baseVariantName name="X_BCO"/><diagnosticAddress physicalOffset="114"/></ECU>
+			<ECU><baseVariantName name="X_DCDC"/><diagnosticAddress physicalOffset="21"/></ECU>
+			<ECU><baseVariantName name="X_DWA"/><diagnosticAddress physicalOffset="65"/></ECU>
+			<ECU><baseVariantName name="X_EWS"/><diagnosticAddress physicalOffset="64"/></ECU>
+			<ECU><baseVariantName name="X_IABS"/><diagnosticAddress physicalOffset="41"/></ECU>
+			<ECU><baseVariantName name="X_KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU>
+			<ECU><baseVariantName name="X_OBCNV"/><diagnosticAddress physicalOffset="21"/></ECU>
+			<ECU><baseVariantName name="X_SME"/><diagnosticAddress physicalOffset="07"/></ECU>
+      <ECU><baseVariantName name="X_BSK"/><diagnosticAddress physicalOffset="07"/></ECU>
+      <ECU><baseVariantName name="X_BSK"/><diagnosticAddress physicalOffset="20"/></ECU>
+      <ECU><baseVariantName name="X_BSK"/><diagnosticAddress physicalOffset="27"/></ECU>
+      <ECU><baseVariantName name="X_BSK"/><diagnosticAddress physicalOffset="30"/></ECU>
+		</dependors>
+	</dependency>
+</CSEQ>

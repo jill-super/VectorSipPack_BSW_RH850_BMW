@@ -1,0 +1,27 @@
+#!build                        
+default:                       
+        program                
+        :compilation=assembly  
+        :sourcedirs=..\..\..\..\BSW\ComM  
+        :sourcedirs=..\..\..\..\BSW\FrSM  
+        :sourcedirs=..\..\..\..\BSW\Xcp  
+        :sourcedirs=..\..\..\..\BSW\FrXcp  
+        :sourcedirs=..\..\..\..\BSW\Dcm  
+        :sourcedirs=..\..\..\..\BSW\Fr  
+        :sourcedirs=..\..\..\..\BSW\IoHwAb  
+        :sourcedirs=..\..\..\..\BSW\PduR  
+        :sourcedirs=..\..\..\..\BSW\Fee_30_SmallSector  
+        :sourcedirs=..\..\..\..\BSW\FrIf  
+        :sourcedirs=..\..\..\..\BSW\MemIf  
+        :sourcedirs=..\..\..\..\BSW\Mcal_Rh850P1x  
+        :sourcedirs=..\..\..\..\BSW\Os  
+        :sourcedirs=..\..\..\..\BSW\BswM  
+        :sourcedirs=..\..\..\..\BSW\EcuM  
+        :sourcedirs=..\..\..\..\BSW\Crc  
+        :sourcedirs=..\..\..\..\BSW\Det  
+        :sourcedirs=..\..\..\..\BSW\Tp_Iso10681  
+        :sourcedirs=..\..\..\..\BSW\VStdLib  
+BTLD.ld  
+        linker_file            
+BTLD.rc             
+        custom                 

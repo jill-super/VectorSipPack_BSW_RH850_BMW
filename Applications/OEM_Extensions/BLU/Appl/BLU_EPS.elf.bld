@@ -1,0 +1,10 @@
+#!build                        
+default:                       
+        program                
+        :compilation=assembly  
+        :sourcedirs=..\..\..\..\BSW\Mcal_Rh850P1x  
+        :sourcedirs=..\..\..\..\BSW\VStdLib  
+BLU_EPS.ld  
+        linker_file            
+BLU_EPS.rc             
+        custom                 

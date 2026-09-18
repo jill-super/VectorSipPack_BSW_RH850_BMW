@@ -1,0 +1,6031 @@
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  \verbatim
+ *  Copyright (c) 2007 - 2017 by Vector Informatik GmbH.                                           All rights reserved.
+ *
+ *                Please note, that this file contains example configuration used by the 
+ *                MICROSAR BSW. This code may influence the behaviour of the MICROSAR BSW
+ *                in principle. Therefore, great care must be taken to verify
+ *                the correctness of the implementation.
+ *
+ *                The contents of the originally delivered files are only examples respectively
+ *                implementation proposals. With regard to the fact that these functions
+ *                are meant for demonstration purposes only, the liability of Vector Informatik
+ *                shall be expressly excluded in cases of ordinary negligence, 
+ *                to the extent admissible by law or statute.
+ *  \endverbatim
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *         File:  _MemMap.h
+ *    Component:  -
+ *       Module:  -
+ *    Generator:  -
+ *
+ *  Description:  This File is a template for the MemMap.h
+ *                This file has to be extended with the memory section defined for all BSW modules
+ *                which are used.
+ *
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  MISRA VIOLATIONS
+ *  -------------------------------------------------------------------------------------------------------------------
+ *
+ *
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *  AUTHOR IDENTITY
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  Name                          Initials      Company
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  Joachim Kalmbach              Jk            Vector Informatik GmbH
+ *  Heike Honert                  Ht            Vector Informatik GmbH
+ *  Eugen Stripling               Seu           Vector Informatik GmbH
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  REVISION HISTORY
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  Version   Date        Author  Change Id     Description
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  01.00.00  2007-08-01  Jk                    Initial creation
+ *  01.01.00  2007-12-14  Jk                    Component specific defines filtering added
+ *  01.01.02  2008-11-04  Jk                    Component specific defines filtering added
+ *  01.01.03  2008-12-17  Ht                    Improve list of components  (Tp_AsrTpCan,Tp_AsrTpFr,DrvMcu,DrvIcu added)
+ *  01.01.04  2009-04-27  Ht                    improve list of components  (Cp_XcpOnCanAsr, Il_AsrIpduM, If_VxFblDcm,
+ *                                              If_VxFblVpm_Volvo_ab, DrvFls added)
+ *  01.01.05  2009-04-24  Msr                   Renamed J1939_AsrBase as TpJ1939_AsrBase
+ *  01.01.06  2009-06-03  Ht                    Improve list of components (Adc, Dio, Gpt, Pwm, Spi, Wdg, Fls, Port, Fim)
+ *  01.02.00  2009-08-01  Ht                    Improve list of components (Fee_30_Inst2, Can, ...Sub)
+ *                                              Support filtering for RTE
+ *  01.02.01  2009-08-18  HH                    replaced C++ comment by C comment
+ *  01.02.02  2009-09-02  Lo                    add external Flash driver support
+ *  01.02.03  2009-09-12  Lo                    add DrvFls_Mcs12xFslftm01ExtVx
+ *                        Ht                    Improve list of components (CanTrcv_30_Tja1040dio,
+ *                                                Eth, EthTrcv, EthIf, SoAd, TcpIp, EthSM)
+ *  01.03.00  2009-10-30  Ht                    support R8: change EthTrcv to EthTrcv_30_Canoeemu
+ *                                              support EthTrcv_30_Dp83848
+ *                                              change CanTrcv_30_Xdio to CanTrcv_30___Your_Trcv__
+ *                                              change CanTrcv_30_Tja1040dio to CanTrcv_30_Tja1041
+ *                                              change name FrTrcv to FrTrcv_30_Tja1080dio
+ *                        Lo                    add Cp_AsrXcp
+ *                        Ht                    add Cp_XcpOnFrAsr
+ *  01.03.01  2010-01-13  Ht                    support SysService_AsrCal
+ *  01.03.02  2010-02-15  Ht                    support SysService_SswRcs_Daimler, SysService_Tls, Tp_Http, 
+ *                                                      SysService_Dns, SysService_Json, DrvTrans_GenericLindioAsr
+ *                        Lo                    add Diag_AsrDem for all OEMs
+ *                                              rename internal variables and filter methods
+ *  01.04.00  2010-03-04  Ht                    change name FrTrcv_30_Tja1080dio to FrTrcv_30_Tja1080
+ *  01.04.01  2010-03-10  Ht                    support DrvTrans_GenericFrAsr, DrvTrans_As8223FrspiAsr, DrvEep and If_AsrIfEa
+ *  01.04.02  2010-04-07  Lo                    change IfFee to real components and add If_AsrIfWdV85xNec01Sub
+ *  01.04.03  2010-06-11  Ht                    add CanTrcv_30_Tja1043
+ *                        Lo                    add Il_AsrIpduMEbBmwSub
+ *  01.04.04  2010-08-24  Ht                    add CanTrcv_30_Tle62512G, DrvEep_XAt25128EAsr, Tp_AsrTpFrEbBmwSub
+ *  01.05.00  2010-08-24  Ht                    support R10:
+ *                                              change LinTrcv_30_Tle7259dio to LinTrcv_30_Tle7259
+ *  01.05.01  2010-10-14  Ht                    add VStdLib, SysService_SswScc, SysService_IpBase, SysService_Crypto
+ *  01.05.02  2010-10-20  Ht                    support comments for Package Merge Tool
+ *  01.05.03  2010-11-03  Ht                    add SysService_E2eLibTttechSub, SysService_E2ePwTttechSub
+ *  01.05.04  2010-11-16  Ht                    add SysService_Exi, DrvTrans_Int6400EthAsr, Cdd_AsrCdd_Fiat, Diag_AsrDem_Fiat
+ *  01.05.05  2010-12-17  Ht                    add SysService_AsrSchM, DrvEep_XXStubAsr, DrvIcu_Tms570Tinhet01ExtVx
+ *                                                  DrvWd_XTle4278gEAsr, DrvWd_XXStubAsr
+ *  01.05.06  2011-02-17  Ht                    add DrvEed, SysService_AsrBswM
+ *  01.05.07  2011-03-04  Ht                    add DrvTrans_Tja1055CandioAsr
+ *                                              rename CanTrcv_30_Tja1040dio to CanTrcv_30_Tja1040
+ *                                              add SysService_XmlEngine
+ *  01.06.00  2011-03-15  Ht                    support ASR4.0
+ *                                              add Ccl_Asr4ComM, Ccl_Asr4SmCan, Nm_Asr4NmIf, Nm_AsrNmDirOsek
+ *  01.06.01  2011-04-15  Ht                    add Diag_AsrDcm_<OEM>
+ *  01.06.02  2011-06-17  Ht                    correct Diag_AsrDcm_<OEM>
+ *                                              add Monitoring_AsrDlt and Monitoring_GenericMeasurement
+ *  01.06.03  2011-09-20  Ht                    add DrvTrans_Tja1145CanSpiAsr, DrvTrans_E52013CanspiAsr, DrvFls_XXStubAsr,
+ *                                              If_AsrIfFeeV85xNec05Sub, If_AsrIfFeeV85xNec06Sub, If_AsrIfFeeV85xNec07Sub
+ *                                              SysService_AsrWdMTttechSub and If_AsrIfWdTttechSub
+ *  01.06.04  2011-11-22  Ht                    add If_AsrIfFeeTiSub, 
+ *                                              ESCAN00054718: add Cdd_AsrCdd
+ *  01.06.05  2011-12-09  Ht                    add Tp_IpV4, Tp_IpV6
+ *  01.06.06  2011-12-14  Ht                    add Monitoring_RuntimeMeasurement
+ *  01.06.07  2012-01-03  Ht                    add DrvI2c, SysService_Asr4BswM
+ *  01.06.08  2012-01-31  Ht                    add DrvTrans_Ar7000EthAsr, DrvTrans_GenericEthmiiAsr
+ *  01.06.09  2012-03-06  Ht                    add If_AsrIfFeeMb9df126Fuji01Sub, 
+ *                                              Infineon_Tc1767Inf01Sub, Infineon_Tc178xInf01Sub, Infineon_Tc1797Inf01Sub, Infineon_Tc1797Inf02Sub
+ *  01.06.10  2012-03-13  Ht                    add Gw_AsrPduRCfg5, Il_AsrComCfg5, Il_AsrIpduMCfg5, Cdd_AsrCddCfg5,
+ *                                              Tp_Asr4TpCan, Diag_Asr4Dcm, Diag_Asr4Dem
+ *  01.06.11  2012-03-20  Ht                    add Cp_AsrCcp, Cp_XcpOnTcpIpAsr
+ *  01.07.00  2012-07-26  Ht                    ESCAN00059365: [AUTOSAR4, compiler warning]: Wrong define name in #undef statement causes re-definition warning
+ *                                              add Nm_Asr4NmCan, Nm_Asr4NmFr, Infineon_Xc2000Inf01Sub, Ccl_Asr4ComMCfg5, SysService_Asr4BswMCfg5, SysService_Asr4EcuM, SysService_AsrRamTst,
+ *                                                  Ccl_Asr4SmLin 
+ *            2012-09-04  Ht                    add support for ASR specification 4.0 R3
+ *  01.07.01  2012-10-23  Seu                   add SysService_XmlSecurity
+ *  01.07.02  2013-01-10  Seu                   MISRA deviation comments added
+ *  01.08.00  2013-03-01  Seu    ESCAN00065501  AR4-325: Add support for Post-build RAM memory section
+ *            2013-04-12  Seu    ESCAN00066614  Add the deviation for violation of MISRA rule 19.6
+ *  01.09.00  2013-12-10  Seu    ESCAN00072537  Add *_NOCACHE_* memory sections for variables
+ *            2013-12-16  Seu                   MISRA compliance: usage of character "'" removed, typos corrected
+ *  01.10.00  2016-09-27  Seu                   FEATC-317: FEAT-2002: CommonAsr__Common: Support 64 Bit Signal Types for COM according to ASR 4.2.2
+ *  01.11.00  2017-07-05  Seu    ESCAN00095756  FEAT-2455: Support ASR4.2 compatible MemMap for MCALs
+ *            2017-08-01  Seu    ESCAN00096129  MEMMAP_SW_MINOR_VERSION / MEM_SW_MINOR_VERSION is not correct
+ *********************************************************************************************************************/
+
+/* PRQA S 0841 MEMMAP_0841_TAG */ /* MD_MSR_19.6 */
+
+/**********************************************************************************************************************
+ * INCLUDES
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *  GLOBAL CONSTANT MACROS
+ *********************************************************************************************************************/
+
+ /* PRQA S 0883 1 */ /* MD_MemMap_19.15 */
+#undef MEMMAP_VENDOR_ID /* PRQA S 0841 */ /* MD_MSR_19.6 */
+
+#define MEMMAP_VENDOR_ID        (30u)
+
+/* AUTOSAR Software Specification Version Information */
+
+
+# undef MEMMAP_AR_RELEASE_MAJOR_VERSION /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_AR_RELEASE_MINOR_VERSION /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_AR_RELEASE_REVISION_VERSION /* PRQA S 0841 */ /* MD_MSR_19.6 */
+
+/* AUTOSAR release 4.0 R3 */
+# define MEMMAP_AR_RELEASE_MAJOR_VERSION       (4u)
+# define MEMMAP_AR_RELEASE_MINOR_VERSION       (0u)
+# define MEMMAP_AR_RELEASE_REVISION_VERSION    (3u)
+
+/* compatiblity to older versions */
+# undef MEM_AR_RELEASE_MAJOR_VERSION /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEM_AR_RELEASE_MINOR_VERSION /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEM_AR_RELEASE_PATCH_VERSION /* PRQA S 0841 */ /* MD_MSR_19.6 */
+
+# define MEM_AR_RELEASE_MAJOR_VERSION          MEMMAP_AR_RELEASE_MAJOR_VERSION
+# define MEM_AR_RELEASE_MINOR_VERSION          MEMMAP_AR_RELEASE_MINOR_VERSION
+# define MEM_AR_RELEASE_PATCH_VERSION          MEMMAP_AR_RELEASE_REVISION_VERSION
+
+
+# undef MEMMAP_SW_MAJOR_VERSION /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_SW_MINOR_VERSION /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_SW_PATCH_VERSION /* PRQA S 0841 */ /* MD_MSR_19.6 */
+
+# define MEMMAP_SW_MAJOR_VERSION     (1u)
+# define MEMMAP_SW_MINOR_VERSION     (11u)
+# define MEMMAP_SW_PATCH_VERSION     (0u)
+
+/* compatiblity to older versions */
+# undef MEM_SW_MAJOR_VERSION /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEM_SW_MINOR_VERSION /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEM_SW_PATCH_VERSION /* PRQA S 0841 */ /* MD_MSR_19.6 */
+
+# define MEM_SW_MAJOR_VERSION        MEMMAP_SW_MAJOR_VERSION 
+# define MEM_SW_MINOR_VERSION        MEMMAP_SW_MINOR_VERSION 
+# define MEM_SW_PATCH_VERSION        MEMMAP_SW_PATCH_VERSION 
+  
+#if !defined (MEMMAP_DIRECT)
+  #define MEMMAP_ERROR
+#endif
+
+/* Package Merger: Start Section MemMapModuleList */
+
+#if defined (BM) || defined(FLASHDRIVER)
+/* nothing to include for BLU, BM and FLASFDRIVER */
+#elif defined (BLU)
+	#include "Rte_MemMap.h"
+#elif defined ( BTLD )
+	#include "Rte_MemMap.h"
+	#include "Os_MemMap.h"
+#else
+	#include "Rte_MemMap.h"
+	#include "WdgM_OsMemMap.h"
+	#include "Os_MemMap.h"
+#endif
+
+
+/**********************************************************************************************************************
+ *  WD_FBL START 
+ *********************************************************************************************************************/
+ #ifdef WD_FBL_TRIGGER_START_SEC_CODE
+  #pragma ghs section text=".RAMCODE"
+  #undef WD_FBL_TRIGGER_START_SEC_CODE
+  #define START_SEC_CODE                            /* mapped to default code section */
+  #undef MEMMAP_ERROR
+#endif
+
+#ifdef WD_FBL_TRIGGER_STOP_SEC_CODE
+  #undef WD_FBL_TRIGGER_STOP_SEC_CODE
+  #define STOP_SEC_CODE                             /* default code stop section */
+  #pragma ghs section text=default
+  #undef MEMMAP_ERROR
+#endif
+/**********************************************************************************************************************
+ *  WD_FBL END
+ *********************************************************************************************************************/
+
+ #ifdef FBLHEADER_START_SEC_CONST_EXPORT
+# undef FBLHEADER_START_SEC_CONST_EXPORT
+# define START_SEC_CONST_16BIT
+#endif
+#ifdef FBLHEADER_STOP_SEC_CONST_EXPORT
+# undef FBLHEADER_STOP_SEC_CONST_EXPORT
+# define STOP_SEC_CONST
+#endif
+
+/**********************************************************************************************************************
+ *  MIO START
+ *********************************************************************************************************************/
+#ifdef FBLMIO_START_SEC_CODE
+  #undef FBLMIO_START_SEC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef FBLMIO_STOP_SEC_CODE
+  #undef FBLMIO_STOP_SEC_CODE
+  #define STOP_SEC_CODE
+#endif
+/**********************************************************************************************************************
+ *  MIO END
+ *********************************************************************************************************************/
+
+
+ 
+/**********************************************************************************************************************
+ *  FLIO START
+ *********************************************************************************************************************/
+#ifdef FLASHCODE_START_SEC_VAR
+  #undef FLASHCODE_START_SEC_VAR
+  #pragma ghs startdata
+  #pragma ghs section bss="FLASHDRV"
+  #undef MEMMAP_ERROR
+#endif
+
+#ifdef FLASHCODE_STOP_SEC_VAR
+  #undef FLASHCODE_STOP_SEC_VAR
+  #pragma ghs section bss=default
+  #pragma ghs enddata
+  #undef MEMMAP_ERROR
+#endif
+
+#ifdef FLASHCODE_START_SEC_VAR_EXPORT
+  #undef FLASHCODE_START_SEC_VAR_EXPORT
+  #pragma ghs startdata
+  #pragma ghs section bss="FLASHDRV"
+  #undef MEMMAP_ERROR
+#endif
+
+#ifdef FLASHCODE_STOP_SEC_VAR_EXPORT
+  #undef FLASHCODE_STOP_SEC_VAR_EXPORT
+  #pragma ghs section bss=default
+  #pragma ghs enddata
+  #undef MEMMAP_ERROR
+#endif
+/**********************************************************************************************************************
+ *  FLIO END
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *  WD_STUB START 
+ *********************************************************************************************************************/
+#ifdef WD_STUB_TRIGGER_START_SEC_CODE
+  #undef WD_STUB_TRIGGER_START_SEC_CODE
+  #pragma ghs section text=".RAMCODE"
+  #define START_SEC_CODE                            /* mapped to default code section */
+  #undef MEMMAP_ERROR
+#endif
+
+#ifdef WD_STUB_TRIGGER_STOP_SEC_CODE
+  #undef WD_STUB_TRIGGER_STOP_SEC_CODE
+  #pragma ghs section text=default
+  #define STOP_SEC_CODE                             /* default code stop section */
+  #undef MEMMAP_ERROR
+#endif
+/**********************************************************************************************************************
+ *  WD_STUB END
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *  BOOTLOADER START 
+ *********************************************************************************************************************/
+#ifdef BOOTMAIN_START_SEC_CODE
+  #undef BOOTMAIN_START_SEC_CODE
+  #define START_SEC_CODE                            /* mapped to default code section */
+#endif
+
+#ifdef BOOTMAIN_STOP_SEC_CODE
+  #undef BOOTMAIN_STOP_SEC_CODE
+  #define STOP_SEC_CODE                             /* default code stop section */
+#endif
+/**********************************************************************************************************************
+ *  BOOTLOADER END
+ *********************************************************************************************************************/
+ 
+ /**********************************************************************************************************************
+ *  FLASH START 
+ *********************************************************************************************************************/
+#ifdef FLASH_IF_START_SEC_FLASHCODE
+  #undef FLASH_IF_START_SEC_FLASHCODE
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef FLASH_IF_STOP_SEC_FLASHCODE
+  #undef FLASH_IF_STOP_SEC_FLASHCODE
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLASH_START_SEC_CODE_CALLBACKS
+  #undef FLASH_START_SEC_CODE_CALLBACKS
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef FLASH_STOP_SEC_CODE_CALLBACKS
+  #undef FLASH_STOP_SEC_CODE_CALLBACKS
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLASHDRV_START_SEC_CONST_EXPORT 
+  #undef FLASHDRV_START_SEC_CONST_EXPORT 
+  #define START_SEC_CONST_8BIT
+#endif
+
+#ifdef FLASHDRV_STOP_SEC_CONST_EXPORT 
+  #undef FLASHDRV_STOP_SEC_CONST_EXPORT 
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef FLASHDRV_START_SEC_CONST 
+  #undef FLASHDRV_START_SEC_CONST 
+  #define START_SEC_CONST_8BIT
+#endif
+
+#ifdef FLASHDRV_STOP_SEC_CONST 
+  #undef FLASHDRV_STOP_SEC_CONST 
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef FLASHIF_START_SEC_VAR_ZERO_INIT_8BIT
+  #undef FLASHIF_START_SEC_VAR_ZERO_INIT_8BIT 
+  #define START_SEC_VAR_ZERO_INIT_8BIT
+#endif
+
+#ifdef FLASHIF_STOP_SEC_VAR_ZERO_INIT_8BIT
+  #undef FLASHIF_STOP_SEC_VAR_ZERO_INIT_8BIT
+  #define STOP_SEC_VAR
+#endif
+/**********************************************************************************************************************
+ *  FLASH END 
+ *********************************************************************************************************************/
+
+
+ 
+/**********************************************************************************************************************
+ *  PROG START
+ *********************************************************************************************************************/
+#ifdef Prog_START_SEC_CODE
+  #undef Prog_START_SEC_CODE
+  #define START_SEC_CODE                            /* mapped to default code section */
+#endif
+
+#ifdef Prog_STOP_SEC_CODE
+  #undef Prog_STOP_SEC_CODE
+  #define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+#ifdef Prog_START_SEC_CONST_32
+  #undef Prog_START_SEC_CONST_32
+  #define START_SEC_CONST_32BIT
+#endif
+
+#ifdef Prog_STOP_SEC_CONST_32
+  #undef Prog_STOP_SEC_CONST_32
+  #define STOP_SEC_CONST
+#endif
+
+#if defined Prog_START_SEC_VAR_NO_INIT_32
+  #undef Prog_START_SEC_VAR_NO_INIT_32
+  #define START_SEC_VAR_NOINIT_32BIT
+#endif
+
+#if defined Prog_STOP_SEC_VAR_NO_INIT_32
+  #undef Prog_STOP_SEC_VAR_NO_INIT_32
+  #define STOP_SEC_VAR
+#endif
+
+#if defined Prog_START_SEC_VAR_POWER_ON_CLEARED_32
+  #undef Prog_START_SEC_VAR_POWER_ON_CLEARED_32
+  #pragma ghs section sbss="PROG_LASTREQUESTDOWNLOADADDRESS"
+  #undef MEMMAP_ERROR
+#endif
+
+#if defined Prog_STOP_SEC_VAR_POWER_ON_CLEARED_32
+  #undef Prog_STOP_SEC_VAR_POWER_ON_CLEARED_32
+  #pragma ghs section sbss=default
+  #undef MEMMAP_ERROR
+#endif
+
+#ifdef Prog_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef Prog_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef Prog_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef Prog_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef Prog_START_SEC_VAR_UNSPECIFIED
+  #undef Prog_START_SEC_VAR_UNSPECIFIED
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef Prog_STOP_SEC_VAR_UNSPECIFIED
+  #undef Prog_STOP_SEC_VAR_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef Prog_START_SEC_VAR_SAVED_ZONE_UNSPECIFIED
+  #undef Prog_START_SEC_VAR_SAVED_ZONE_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef Prog_STOP_SEC_VAR_SAVED_ZONE_UNSPECIFIED
+  #undef Prog_STOP_SEC_VAR_SAVED_ZONE_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef Prog_START_SEC_VAR_NOINIT_NVM_DATA
+  #undef Prog_START_SEC_VAR_NOINIT_NVM_DATA
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef Prog_STOP_SEC_VAR_NOINIT_NVM_DATA
+  #undef Prog_STOP_SEC_VAR_NOINIT_NVM_DATA
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef Prog_START_SEC_VAR_NO_INIT_DATA
+  #undef Prog_START_SEC_VAR_NO_INIT_DATA
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef Prog_STOP_SEC_VAR_NO_INIT_DATA
+  #undef Prog_STOP_SEC_VAR_NO_INIT_DATA
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef Prog_START_SEC_VAR_INIT_UNSPECIFIED
+  #undef Prog_START_SEC_VAR_INIT_UNSPECIFIED
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef Prog_STOP_SEC_VAR_INIT_UNSPECIFIED
+  #undef Prog_STOP_SEC_VAR_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+
+#ifdef ProgSample_START_SEC_CODE
+  #undef ProgSample_START_SEC_CODE
+  #define START_SEC_CODE                            /* mapped to default code section */
+#endif
+
+#ifdef ProgSample_STOP_SEC_CODE
+  #undef ProgSample_STOP_SEC_CODE
+  #define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+#ifdef ProgSample_START_SEC_VAR_INIT_UNSPECIFIED
+  #undef ProgSample_START_SEC_VAR_INIT_UNSPECIFIED
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef ProgSample_STOP_SEC_VAR_INIT_UNSPECIFIED
+  #undef ProgSample_STOP_SEC_VAR_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#if defined ProgSample_START_SEC_VAR_INIT_8
+  #undef ProgSample_START_SEC_VAR_INIT_8
+  #define START_SEC_VAR_INIT_8BIT
+#endif
+
+#if defined ProgSample_STOP_SEC_VAR_INIT_8
+  #undef ProgSample_STOP_SEC_VAR_INIT_8
+  #define STOP_SEC_VAR
+#endif
+
+#if defined ProgSample_START_SEC_VAR_INIT_16
+  #undef ProgSample_START_SEC_VAR_INIT_16
+  #define START_SEC_VAR_INIT_16BIT
+#endif
+
+#if defined ProgSample_STOP_SEC_VAR_INIT_16
+  #undef ProgSample_STOP_SEC_VAR_INIT_16
+  #define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  PROG END
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *  COMM START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef COMM_START_SEC_CODE
+  #undef COMM_START_SEC_CODE                        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+  #define START_SEC_CODE                            /* mapped to default code section */
+#endif
+#ifdef COMM_STOP_SEC_CODE
+  #undef COMM_STOP_SEC_CODE                         /* PRQA S 0841 */ /* MD_MSR_19.6 */
+  #define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#ifdef COMM_START_SEC_CONST_8BIT
+# undef COMM_START_SEC_CONST_8BIT                   /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_8BIT                       /* mapped to default const 8bit section */
+#endif
+#ifdef COMM_STOP_SEC_CONST_8BIT
+# undef COMM_STOP_SEC_CONST_8BIT                    /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST                             /* default const stop section */
+#endif
+
+#ifdef COMM_START_SEC_CONST_16BIT
+# undef COMM_START_SEC_CONST_16BIT                  /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_16BIT
+#endif
+#ifdef COMM_STOP_SEC_CONST_16BIT
+# undef COMM_STOP_SEC_CONST_16BIT                   /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#ifdef COMM_START_SEC_CONST_UNSPECIFIED
+# undef COMM_START_SEC_CONST_UNSPECIFIED            /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef COMM_STOP_SEC_CONST_UNSPECIFIED
+# undef COMM_STOP_SEC_CONST_UNSPECIFIED             /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+/* CONST PBCFG sections */
+
+#ifdef COMM_START_SEC_PBCFG
+# undef COMM_START_SEC_PBCFG                        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef COMM_STOP_SEC_PBCFG
+# undef COMM_STOP_SEC_PBCFG                         /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR NOINIT sections */
+
+#ifdef COMM_START_SEC_VAR_NOINIT_8BIT
+# undef COMM_START_SEC_VAR_NOINIT_8BIT              /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef COMM_STOP_SEC_VAR_NOINIT_8BIT
+# undef COMM_STOP_SEC_VAR_NOINIT_8BIT               /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#ifdef COMM_START_SEC_VAR_NOINIT_16BIT
+# undef COMM_START_SEC_VAR_NOINIT_16BIT             /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+#ifdef COMM_STOP_SEC_VAR_NOINIT_16BIT
+# undef COMM_STOP_SEC_VAR_NOINIT_16BIT              /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#ifdef COMM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef COMM_START_SEC_VAR_NOINIT_UNSPECIFIED       /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef COMM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef COMM_STOP_SEC_VAR_NOINIT_UNSPECIFIED        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+/* VAR PBCFG sections */
+
+#ifdef COMM_START_SEC_VAR_PBCFG
+# undef COMM_START_SEC_VAR_PBCFG                     /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_PBCFG                         /* mapped to default var pbcfg section */
+#endif
+#ifdef COMM_STOP_SEC_VAR_PBCFG
+# undef COMM_STOP_SEC_VAR_PBCFG                      /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR                                /* default var stop section */
+#endif
+
+/* VAR ZERO INIT sections */
+
+#ifdef COMM_START_SEC_VAR_ZERO_INIT_8BIT
+# undef COMM_START_SEC_VAR_ZERO_INIT_8BIT           /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_8BIT
+#endif
+#ifdef COMM_STOP_SEC_VAR_ZERO_INIT_8BIT
+# undef COMM_STOP_SEC_VAR_ZERO_INIT_8BIT            /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#ifdef COMM_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef COMM_START_SEC_VAR_ZERO_INIT_UNSPECIFIED    /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+#ifdef COMM_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef COMM_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED     /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+/* VAR NVRAM sections */
+
+#ifdef COMM_START_SEC_VAR_SAVED_ZONE0_UNSPECIFIED
+# undef COMM_START_SEC_VAR_SAVED_ZONE0_UNSPECIFIED  /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_FAST_NOINIT_UNSPECIFIED
+#endif
+#ifdef COMM_STOP_SEC_VAR_SAVED_ZONE0_UNSPECIFIED
+# undef COMM_STOP_SEC_VAR_SAVED_ZONE0_UNSPECIFIED   /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  COMM END
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *  FrSM START
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef FRSM_START_SEC_CODE
+  #undef FRSM_START_SEC_CODE
+  #define START_SEC_CODE                            /* mapped to default code section */
+#endif
+#ifdef FRSM_STOP_SEC_CODE
+  #undef FRSM_STOP_SEC_CODE
+  #define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+
+
+#ifdef FRSM_START_SEC_CONST_32BIT
+# undef FRSM_START_SEC_CONST_32BIT
+# define START_SEC_CONST_32BIT
+#endif
+#ifdef FRSM_STOP_SEC_CONST_32BIT
+# undef FRSM_STOP_SEC_CONST_32BIT
+# define STOP_SEC_CONST
+#endif
+
+
+#ifdef FRSM_START_SEC_CONST_UNSPECIFIED
+# undef FRSM_START_SEC_CONST_UNSPECIFIED
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef FRSM_STOP_SEC_CONST_UNSPECIFIED
+# undef FRSM_STOP_SEC_CONST_UNSPECIFIED
+# define STOP_SEC_CONST
+#endif
+
+/* FAST CONST sections */
+
+
+
+/* Postbuild CFG CONST sections */
+
+/* Root pointer to postbuild data */
+#ifdef FRSM_START_SEC_PBCFG_ROOT
+# undef FRSM_START_SEC_PBCFG_ROOT
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef FRSM_STOP_SEC_PBCFG_ROOT
+# undef FRSM_STOP_SEC_PBCFG_ROOT
+# define STOP_SEC_CONST
+#endif
+
+/* Tables for postbuild data */
+#ifdef FRSM_START_SEC_PBCFG
+# undef FRSM_START_SEC_PBCFG
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef FRSM_STOP_SEC_PBCFG
+# undef FRSM_STOP_SEC_PBCFG
+# define STOP_SEC_CONST
+#endif
+
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR INIT sections */
+
+
+/* VAR NOINIT sections */
+
+#ifdef FRSM_START_SEC_VAR_NOINIT_8BIT
+# undef FRSM_START_SEC_VAR_NOINIT_8BIT
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef FRSM_STOP_SEC_VAR_NOINIT_8BIT
+# undef FRSM_STOP_SEC_VAR_NOINIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef FRSM_START_SEC_VAR_NOINIT_16BIT
+# undef FRSM_START_SEC_VAR_NOINIT_16BIT
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+#ifdef FRSM_STOP_SEC_VAR_NOINIT_16BIT
+# undef FRSM_STOP_SEC_VAR_NOINIT_16BIT
+# define STOP_SEC_VAR
+#endif
+
+
+#ifdef FRSM_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef FRSM_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+#ifdef FRSM_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef FRSM_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+
+#ifdef FRSM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef FRSM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef FRSM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef FRSM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+
+/* VAR ZERO INIT sections */
+
+#ifdef FRSM_START_SEC_VAR_ZERO_INIT_8BIT
+# undef FRSM_START_SEC_VAR_ZERO_INIT_8BIT
+# define START_SEC_VAR_ZERO_INIT_8BIT
+#endif
+#ifdef FRSM_STOP_SEC_VAR_ZERO_INIT_8BIT
+# undef FRSM_STOP_SEC_VAR_ZERO_INIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+/* VAR FAST INIT sections */
+
+
+/* VAR FAST NOINIT sections */
+
+
+/* VAR FAST ZERO INIT sections */
+
+
+
+/**********************************************************************************************************************
+ *  FrSM END
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *  Cdd_AsrCdd START 
+ *********************************************************************************************************************/
+/* Copy the memory mapping defines for each of your configured CDDs and replace the prefix _CDD with the MSN of your configured CDD as higher case. */
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef _CDD_START_SEC_CODE
+# undef _CDD_START_SEC_CODE
+# define START_SEC_CODE
+#endif
+#ifdef _CDD_STOP_SEC_CODE
+# undef _CDD_STOP_SEC_CODE
+# define STOP_SEC_CODE
+#endif
+
+/* Add additional memory mapping defines for each of you configured CDDs here. */
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+/* FAST CONST sections */
+
+/* Postbuild CFG CONST sections */
+
+/* Root table for postbuild data */
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR INIT sections */
+
+/* VAR NOINIT sections */
+
+/* VAR ZERO INIT sections */
+
+/* VAR FAST INIT sections */
+
+/* VAR FAST NOINIT sections */
+
+/* VAR FAST ZERO INIT sections */
+
+/**********************************************************************************************************************
+ *  Cdd_AsrCdd END
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *  XCP START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#if defined(XCP_START_SEC_CODE)
+# undef XCP_START_SEC_CODE      /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CODE         /* mapped to default code section */
+#endif
+#if defined(XCP_STOP_SEC_CODE)
+# undef XCP_STOP_SEC_CODE       /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CODE          /* default code stop section */
+#endif
+
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#if defined(XCP_START_SEC_CONST_8BIT)
+# undef XCP_START_SEC_CONST_8BIT  /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_8BIT     /* mapped to default const 8bit section */
+#endif
+#if defined(XCP_STOP_SEC_CONST_8BIT)
+# undef XCP_STOP_SEC_CONST_8BIT   /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST           /* default const stop section */
+#endif
+
+#if defined(XCP_START_SEC_CONST_16BIT)
+# undef XCP_START_SEC_CONST_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_16BIT
+#endif
+#if defined(XCP_STOP_SEC_CONST_16BIT)
+# undef XCP_STOP_SEC_CONST_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#if defined(XCP_START_SEC_CONST_32BIT)
+# undef XCP_START_SEC_CONST_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_32BIT
+#endif
+#if defined(XCP_STOP_SEC_CONST_32BIT)
+# undef XCP_STOP_SEC_CONST_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#if defined(XCP_START_SEC_CONST_UNSPECIFIED)
+# undef XCP_START_SEC_CONST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#if defined(XCP_STOP_SEC_CONST_UNSPECIFIED)
+# undef XCP_STOP_SEC_CONST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+
+/* Postbuild CFG CONST sections */
+
+#if defined(XCP_START_SEC_PBCFG)
+# undef XCP_START_SEC_PBCFG /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_PBCFG
+#endif
+#if defined(XCP_STOP_SEC_PBCFG)
+# undef XCP_STOP_SEC_PBCFG /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR INIT sections */
+
+#if defined(XCP_START_SEC_VAR_INIT_8BIT)
+# undef XCP_START_SEC_VAR_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_8BIT      /* mapped to default var init 8bit section */
+#endif
+#if defined(XCP_STOP_SEC_VAR_INIT_8BIT)
+# undef XCP_STOP_SEC_VAR_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR                /* default var stop section */
+#endif
+
+#if defined(XCP_START_SEC_VAR_INIT_16BIT)
+# undef XCP_START_SEC_VAR_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_16BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_INIT_16BIT)
+# undef XCP_STOP_SEC_VAR_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_INIT_32BIT)
+# undef XCP_START_SEC_VAR_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_32BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_INIT_32BIT)
+# undef XCP_STOP_SEC_VAR_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_INIT_UNSPECIFIED)
+# undef XCP_START_SEC_VAR_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+#if defined(XCP_STOP_SEC_VAR_INIT_UNSPECIFIED)
+# undef XCP_STOP_SEC_VAR_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+
+/* VAR NOINIT sections */
+
+#if defined(XCP_START_SEC_VAR_NOINIT_8BIT)
+# undef XCP_START_SEC_VAR_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOINIT_8BIT)
+# undef XCP_STOP_SEC_VAR_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_NOINIT_16BIT)
+# undef XCP_START_SEC_VAR_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOINIT_16BIT)
+# undef XCP_STOP_SEC_VAR_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_NOINIT_32BIT)
+# undef XCP_START_SEC_VAR_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_32BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOINIT_32BIT)
+# undef XCP_STOP_SEC_VAR_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_NOINIT_UNSPECIFIED)
+# undef XCP_START_SEC_VAR_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+# undef XCP_STOP_SEC_VAR_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+/* ESCAN00065501 */
+#if defined(XCP_START_SEC_VAR_PBCFG)
+# undef XCP_START_SEC_VAR_PBCFG /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_PBCFG
+#endif
+#if defined(XCP_STOP_SEC_VAR_PBCFG)
+# undef XCP_STOP_SEC_VAR_PBCFG /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+
+/* VAR ZERO INIT sections */
+
+#if defined(XCP_START_SEC_VAR_ZERO_INIT_8BIT)
+# undef XCP_START_SEC_VAR_ZERO_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_8BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_ZERO_INIT_8BIT)
+# undef XCP_STOP_SEC_VAR_ZERO_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_ZERO_INIT_16BIT)
+# undef XCP_START_SEC_VAR_ZERO_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_16BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_ZERO_INIT_16BIT)
+# undef XCP_STOP_SEC_VAR_ZERO_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_ZERO_INIT_32BIT)
+# undef XCP_START_SEC_VAR_ZERO_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_32BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_ZERO_INIT_32BIT)
+# undef XCP_STOP_SEC_VAR_ZERO_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_ZERO_INIT_UNSPECIFIED)
+# undef XCP_START_SEC_VAR_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+#if defined(XCP_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED)
+# undef XCP_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+
+/* VAR NOCACHE INIT sections */
+
+#if defined(XCP_START_SEC_VAR_NOCACHE_INIT_8BIT)
+# undef XCP_START_SEC_VAR_NOCACHE_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOCACHE_INIT_8BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOCACHE_INIT_8BIT)
+# undef XCP_STOP_SEC_VAR_NOCACHE_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_NOCACHE_INIT_16BIT)
+# undef XCP_START_SEC_VAR_NOCACHE_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOCACHE_INIT_16BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOCACHE_INIT_16BIT)
+# undef XCP_STOP_SEC_VAR_NOCACHE_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_NOCACHE_INIT_32BIT)
+# undef XCP_START_SEC_VAR_NOCACHE_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOCACHE_INIT_32BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOCACHE_INIT_32BIT)
+# undef XCP_STOP_SEC_VAR_NOCACHE_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_NOCACHE_INIT_UNSPECIFIED)
+# undef XCP_START_SEC_VAR_NOCACHE_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOCACHE_INIT_UNSPECIFIED
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOCACHE_INIT_UNSPECIFIED)
+# undef XCP_STOP_SEC_VAR_NOCACHE_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+/* VAR NOCACHE NOINIT sections */
+
+#if defined(XCP_START_SEC_VAR_NOCACHE_NOINIT_8BIT)
+# undef XCP_START_SEC_VAR_NOCACHE_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOCACHE_NOINIT_8BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOCACHE_NOINIT_8BIT)
+# undef XCP_STOP_SEC_VAR_NOCACHE_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_NOCACHE_NOINIT_16BIT)
+# undef XCP_START_SEC_VAR_NOCACHE_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOCACHE_NOINIT_16BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOCACHE_NOINIT_16BIT)
+# undef XCP_STOP_SEC_VAR_NOCACHE_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_NOCACHE_NOINIT_32BIT)
+# undef XCP_START_SEC_VAR_NOCACHE_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOCACHE_NOINIT_32BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOCACHE_NOINIT_32BIT)
+# undef XCP_STOP_SEC_VAR_NOCACHE_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_NOCACHE_NOINIT_UNSPECIFIED)
+# undef XCP_START_SEC_VAR_NOCACHE_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOCACHE_NOINIT_UNSPECIFIED
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOCACHE_NOINIT_UNSPECIFIED)
+# undef XCP_STOP_SEC_VAR_NOCACHE_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+/* VAR NOCACHE ZERO INIT sections */
+
+#if defined(XCP_START_SEC_VAR_NOCACHE_ZERO_INIT_8BIT)
+# undef XCP_START_SEC_VAR_NOCACHE_ZERO_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOCACHE_ZERO_INIT_8BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOCACHE_ZERO_INIT_8BIT)
+# undef XCP_STOP_SEC_VAR_NOCACHE_ZERO_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_NOCACHE_ZERO_INIT_16BIT)
+# undef XCP_START_SEC_VAR_NOCACHE_ZERO_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOCACHE_ZERO_INIT_16BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOCACHE_ZERO_INIT_16BIT)
+# undef XCP_STOP_SEC_VAR_NOCACHE_ZERO_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_NOCACHE_ZERO_INIT_32BIT)
+# undef XCP_START_SEC_VAR_NOCACHE_ZERO_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOCACHE_ZERO_INIT_32BIT
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOCACHE_ZERO_INIT_32BIT)
+# undef XCP_STOP_SEC_VAR_NOCACHE_ZERO_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(XCP_START_SEC_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED)
+# undef XCP_START_SEC_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED
+#endif
+#if defined(XCP_STOP_SEC_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED)
+# undef XCP_STOP_SEC_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+/* VAR Safe sections */
+#if defined (XCP_START_SEC_VAR_INIT_UNSPECIFIED_SAFE)
+# undef XCP_START_SEC_VAR_INIT_UNSPECIFIED_SAFE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+#if defined (XCP_STOP_SEC_VAR_INIT_UNSPECIFIED_SAFE)
+# undef XCP_STOP_SEC_VAR_INIT_UNSPECIFIED_SAFE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  XCP END
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *  FRXCP START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef FRXCP_START_SEC_CODE 
+    #undef FRXCP_START_SEC_CODE 
+    #define START_SEC_CODE
+#endif
+
+#ifdef FRXCP_STOP_SEC_CODE 
+    #undef FRXCP_STOP_SEC_CODE 
+    #define STOP_SEC_CODE
+#endif
+
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#ifdef FRXCP_START_SEC_CONST_UNSPECIFIED 
+    #undef FRXCP_START_SEC_CONST_UNSPECIFIED 
+    #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef FRXCP_STOP_SEC_CONST_UNSPECIFIED 
+    #undef FRXCP_STOP_SEC_CONST_UNSPECIFIED 
+    #define STOP_SEC_CONST
+#endif
+
+#ifdef FRXCP_START_SEC_CONST_16BIT 
+    #undef FRXCP_START_SEC_CONST_16BIT 
+    #define START_SEC_CONST_16BIT
+#endif
+
+#ifdef FRXCP_STOP_SEC_CONST_16BIT 
+    #undef FRXCP_STOP_SEC_CONST_16BIT 
+    #define STOP_SEC_CONST
+#endif
+
+#ifdef FRXCP_START_SEC_CONST_8BIT 
+    #undef FRXCP_START_SEC_CONST_8BIT 
+    #define START_SEC_CONST_8BIT
+#endif
+
+#ifdef FRXCP_STOP_SEC_CONST_8BIT 
+    #undef FRXCP_STOP_SEC_CONST_8BIT 
+    #define STOP_SEC_CONST
+#endif
+
+#ifdef FRXCP_START_SEC_PBCFG
+    #undef FRXCP_START_SEC_PBCFG
+    #define START_SEC_CONST_PBCFG
+#endif
+
+#ifdef FRXCP_STOP_SEC_PBCFG
+    #undef FRXCP_STOP_SEC_PBCFG
+    #define STOP_SEC_CONST
+#endif
+
+
+/*******  VAR sections  **********************************************************************************************/
+
+#ifdef FRXCP_START_SEC_VAR_NOINIT_UNSPECIFIED 
+    #undef FRXCP_START_SEC_VAR_NOINIT_UNSPECIFIED 
+    #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef FRXCP_STOP_SEC_VAR_NOINIT_UNSPECIFIED 
+    #undef FRXCP_STOP_SEC_VAR_NOINIT_UNSPECIFIED 
+    #define STOP_SEC_VAR
+#endif
+
+#ifdef FRXCP_START_SEC_VAR_NOINIT_8BIT 
+    #undef FRXCP_START_SEC_VAR_NOINIT_8BIT 
+    #define START_SEC_VAR_NOINIT_8BIT
+#endif
+
+#ifdef FRXCP_STOP_SEC_VAR_NOINIT_8BIT 
+    #undef FRXCP_STOP_SEC_VAR_NOINIT_8BIT 
+    #define STOP_SEC_VAR
+#endif
+
+#ifdef FRXCP_START_SEC_VAR_PBCFG
+    #undef FRXCP_START_SEC_VAR_PBCFG
+    #define START_SEC_VAR_PBCFG
+#endif
+
+#ifdef FRXCP_STOP_SEC_VAR_PBCFG
+    #undef FRXCP_STOP_SEC_VAR_PBCFG
+    #define STOP_SEC_VAR
+#endif
+
+#ifdef FRXCP_START_SEC_VAR_INIT_8BIT 
+    #undef FRXCP_START_SEC_VAR_INIT_8BIT 
+    #define START_SEC_VAR_INIT_8BIT
+#endif
+
+#ifdef FRXCP_STOP_SEC_VAR_INIT_8BIT 
+    #undef FRXCP_STOP_SEC_VAR_INIT_8BIT 
+    #define STOP_SEC_VAR
+#endif
+
+#ifdef FRXCP_START_SEC_VAR_INIT_UNSPECIFIED_SAFE 
+    #undef FRXCP_START_SEC_VAR_INIT_UNSPECIFIED_SAFE 
+    #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef FRXCP_STOP_SEC_VAR_INIT_UNSPECIFIED_SAFE 
+    #undef FRXCP_STOP_SEC_VAR_INIT_UNSPECIFIED_SAFE 
+    #define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  FRXCP END
+ *********************************************************************************************************************/
+
+/* ==== Start sections mapping ==== */
+#ifdef DCM_START_SEC_CONST_8
+# undef DCM_START_SEC_CONST_8                                        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_8                                           /* mapped to default const section */
+#endif
+
+#ifdef DCM_START_SEC_CONST_16
+# undef DCM_START_SEC_CONST_16                                       /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_16                                          /* mapped to default const section */
+#endif
+
+#ifdef DCM_START_SEC_CONST_32
+# undef DCM_START_SEC_CONST_32                                       /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_32                                          /* mapped to default const section */
+#endif
+
+#ifdef DCM_START_SEC_CONST_UNSPECIFIED
+# undef DCM_START_SEC_CONST_UNSPECIFIED                              /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_UNSPECIFIED                                 /* mapped to default const section */
+#endif
+
+#ifdef DCM_START_SEC_CALIB_8
+# undef DCM_START_SEC_CALIB_8                                        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_8                                           /* mapped to default const section */
+#endif
+
+#ifdef DCM_START_SEC_CALIB_16
+# undef DCM_START_SEC_CALIB_16                                       /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_16                                          /* mapped to default const section */
+#endif
+
+#ifdef DCM_START_SEC_CALIB_32
+# undef DCM_START_SEC_CALIB_32                                       /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_32                                          /* mapped to default const section */
+#endif
+
+#ifdef DCM_START_SEC_CALIB_UNSPECIFIED
+# undef DCM_START_SEC_CALIB_UNSPECIFIED                              /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_UNSPECIFIED                                 /* mapped to default const section */
+#endif
+
+#ifdef DCM_START_SEC_PBCFG
+# undef DCM_START_SEC_PBCFG                                          /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_PBCFG                                       /* mapped to default const section */
+#endif
+
+#ifdef DCM_START_SEC_VAR_PBCFG
+# undef DCM_START_SEC_VAR_PBCFG                                      /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_PBCFG                                         /* mapped to default var section */
+#endif
+
+#ifdef DCM_START_SEC_VAR_INIT_8
+# undef DCM_START_SEC_VAR_INIT_8                                   	 /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_8                                        /* mapped to default initialized var section */
+#endif
+
+#ifdef DCM_START_SEC_VAR_NO_INIT_8
+# undef DCM_START_SEC_VAR_NO_INIT_8                                  /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NO_INIT_8                                     /* mapped to default var section */
+#endif
+
+#ifdef DCM_START_SEC_VAR_NO_INIT_16
+# undef DCM_START_SEC_VAR_NO_INIT_16                                 /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NO_INIT_16                                    /* mapped to default var section */
+#endif
+
+#ifdef DCM_START_SEC_VAR_NO_INIT_32
+# undef DCM_START_SEC_VAR_NO_INIT_32                                 /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NO_INIT_32                                    /* mapped to default var section */
+#endif
+
+#ifdef DCM_START_SEC_VAR_INIT_32
+# undef DCM_START_SEC_VAR_INIT_32                                  	 /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_32                                       /* mapped to default initialized var section */
+#endif
+
+#ifdef DCM_START_SEC_VAR_NO_INIT_UNSPECIFIED
+# undef DCM_START_SEC_VAR_NO_INIT_UNSPECIFIED                        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NO_INIT_UNSPECIFIED                           /* mapped to default var section */
+#endif
+
+#ifdef DCM_START_SEC_CODE
+# undef DCM_START_SEC_CODE                                           /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CODE                                              /* mapped to default code section */
+#endif
+
+#ifdef DCM_START_SEC_APPL_CODE
+# undef DCM_START_SEC_APPL_CODE                                      /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CODE                                              /* mapped to default code section */
+#endif
+
+#ifdef DCM_START_SEC_CALLOUT_CODE
+# undef DCM_START_SEC_CALLOUT_CODE                                   /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CODE                                              /* mapped to default code section */
+#endif
+
+/* ==== Stop sections mapping ==== */
+#ifdef DCM_STOP_SEC_CONST_8
+# undef DCM_STOP_SEC_CONST_8                                         /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST                                              /* default const section */
+#endif
+
+#ifdef DCM_STOP_SEC_CONST_16
+# undef DCM_STOP_SEC_CONST_16                                        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST                                              /* default const section */
+#endif
+
+#ifdef DCM_STOP_SEC_CONST_32
+# undef DCM_STOP_SEC_CONST_32
+# define STOP_SEC_CONST                                              /* default const section */
+#endif
+
+#ifdef DCM_STOP_SEC_CONST_UNSPECIFIED
+# undef DCM_STOP_SEC_CONST_UNSPECIFIED                               /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST                                              /* default const section */
+#endif
+
+#ifdef DCM_STOP_SEC_CALIB_8
+# undef DCM_STOP_SEC_CALIB_8                                         /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST                                              /* default const section */
+#endif
+
+#ifdef DCM_STOP_SEC_CALIB_16
+# undef DCM_STOP_SEC_CALIB_16                                        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST                                              /* default const section */
+#endif
+
+#ifdef DCM_STOP_SEC_CALIB_32
+# undef DCM_STOP_SEC_CALIB_32
+# define STOP_SEC_CONST                                              /* default const section */
+#endif
+
+#ifdef DCM_STOP_SEC_CALIB_UNSPECIFIED
+# undef DCM_STOP_SEC_CALIB_UNSPECIFIED                               /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST                                              /* default const section */
+#endif
+
+#ifdef DCM_STOP_SEC_PBCFG
+# undef DCM_STOP_SEC_PBCFG                                           /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST                                              /* default const section */
+#endif
+
+#ifdef DCM_STOP_SEC_VAR_INIT_8
+# undef DCM_STOP_SEC_VAR_INIT_8                                   	 /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR                                                /* default initialized var section */
+#endif
+
+#ifdef DCM_STOP_SEC_VAR_NO_INIT_8
+# undef DCM_STOP_SEC_VAR_NO_INIT_8                                   /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR                                                /* default var section */
+#endif
+
+#ifdef DCM_STOP_SEC_VAR_NO_INIT_16
+# undef DCM_STOP_SEC_VAR_NO_INIT_16                                  /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR                                                /* default var section */
+#endif
+
+#ifdef DCM_STOP_SEC_VAR_NO_INIT_32
+# undef DCM_STOP_SEC_VAR_NO_INIT_32                                  /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR                                                /* default var section */
+#endif
+
+#ifdef DCM_STOP_SEC_VAR_INIT_32
+# undef DCM_STOP_SEC_VAR_INIT_32                                  	 /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR                                                /* default initialized var section */
+#endif
+
+#ifdef DCM_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+# undef DCM_STOP_SEC_VAR_NO_INIT_UNSPECIFIED                         /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR                                                /* default var section */
+#endif
+
+#ifdef DCM_STOP_SEC_VAR_PBCFG
+# undef DCM_STOP_SEC_VAR_PBCFG                                       /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR                                                /* default var section */
+#endif
+
+#ifdef DCM_STOP_SEC_CODE
+# undef DCM_STOP_SEC_CODE                                            /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CODE                                               /* default code section */
+#endif
+
+#ifdef DCM_STOP_SEC_APPL_CODE
+# undef DCM_STOP_SEC_APPL_CODE                                       /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CODE                                               /* default code section */
+#endif
+
+#ifdef DCM_STOP_SEC_CALLOUT_CODE
+# undef DCM_STOP_SEC_CALLOUT_CODE                                    /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CODE                                               /* default code section */
+#endif
+
+/** DEM **********************************************************************/
+/*---------------------START-MODULE-SPECIFIC-START-SECTIONS------------------*/
+
+                                                            /* code sections */
+/*---------------------------------------------------------------------------*/
+
+#if defined (DEM_START_SEC_CODE)
+# undef DEM_START_SEC_CODE                                                     /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CODE
+#endif
+
+#if defined (DEM_START_SEC_CALLOUT_CODE)
+# undef DEM_START_SEC_CALLOUT_CODE                                             /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CODE
+#endif
+
+#if defined (DEM_START_SEC_CODE_LIB)
+# undef DEM_START_SEC_CODE_LIB                                                 /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CODE
+#endif
+
+                                               /* uninitialized RAM sections */
+/*---------------------------------------------------------------------------*/
+
+#if defined (DEM_START_SEC_VAR_NOINIT_8BIT)
+# undef DEM_START_SEC_VAR_NOINIT_8BIT                                          /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#if defined (DEM_START_SEC_VAR_NOINIT_16BIT)
+# undef DEM_START_SEC_VAR_NOINIT_16BIT                                         /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+#if defined (DEM_START_SEC_VAR_NOINIT_32BIT)
+# undef DEM_START_SEC_VAR_NOINIT_32BIT                                         /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_32BIT
+#endif
+#if defined (DEM_START_SEC_VAR_NOINIT_UNSPECIFIED)
+# undef DEM_START_SEC_VAR_NOINIT_UNSPECIFIED                                   /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#if defined (DEM_START_SEC_VAR_UNCACHED_UNSPECIFIED)
+# undef DEM_START_SEC_VAR_UNCACHED_UNSPECIFIED                                 /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#if defined (DEM_START_SEC_VAR_NOINIT_UNSPECIFIED_SAT0)
+# undef DEM_START_SEC_VAR_NOINIT_UNSPECIFIED_SAT0                             /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#if defined (DEM_START_SEC_VAR_NOINIT_UNSPECIFIED_SAT1)
+# undef DEM_START_SEC_VAR_NOINIT_UNSPECIFIED_SAT1                             /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+                                                 /* initialized RAM sections */
+/*---------------------------------------------------------------------------*/
+
+#if defined (DEM_START_SEC_VAR_INIT_8BIT)
+# undef DEM_START_SEC_VAR_INIT_8BIT                                            /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_8BIT
+#endif
+#if defined (DEM_START_SEC_VAR_INIT_32BIT)
+# undef DEM_START_SEC_VAR_INIT_32BIT                                           /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_32BIT
+#endif
+
+                                              /* post-buildable RAM sections */
+/*---------------------------------------------------------------------------*/
+#if defined (DEM_START_SEC_VAR_PBCFG)
+# undef DEM_START_SEC_VAR_PBCFG                                                /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_PBCFG
+#endif
+
+
+                                                          /* NV RAM sections */
+/*---------------------------------------------------------------------------*/
+
+#if defined (DEM_START_SEC_VAR_SAVED_ZONE0_8BIT)
+# undef DEM_START_SEC_VAR_SAVED_ZONE0_8BIT                                     /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+
+#if defined (DEM_START_SEC_VAR_SAVED_ZONE0_UNSPECIFIED)
+# undef DEM_START_SEC_VAR_SAVED_ZONE0_UNSPECIFIED                              /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#if defined (DEM_START_SEC_CONST_SAVED_RECOVERY_ZONE0)
+# undef DEM_START_SEC_CONST_SAVED_RECOVERY_ZONE0                               /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+
+                                                             /* ROM sections */
+/*---------------------------------------------------------------------------*/
+
+#if defined (DEM_START_SEC_CONST_8BIT)
+# undef DEM_START_SEC_CONST_8BIT                                               /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_8BIT
+#endif
+#if defined (DEM_START_SEC_CONST_16BIT)
+# undef DEM_START_SEC_CONST_16BIT                                              /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_16BIT
+#endif
+#if defined (DEM_START_SEC_CONST_32BIT)
+# undef DEM_START_SEC_CONST_32BIT                                              /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_32BIT
+#endif
+#if defined (DEM_START_SEC_CONST_UNSPECIFIED)
+# undef DEM_START_SEC_CONST_UNSPECIFIED                                        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#if defined (DEM_START_SEC_CONFIG_DATA_UNSPECIFIED)
+# undef DEM_START_SEC_CONFIG_DATA_UNSPECIFIED                                  /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#if defined (DEM_START_SEC_PBCFG_ROOT)
+# undef DEM_START_SEC_PBCFG_ROOT                                               /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_PBCFG
+#endif
+
+#if defined (DEM_START_SEC_CALIB_UNSPECIFIED)
+# undef DEM_START_SEC_CALIB_UNSPECIFIED                                        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#if defined (DEM_START_SEC_CALIB_8BIT)
+# undef DEM_START_SEC_CALIB_8BIT                                               /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_8BIT
+#endif
+
+#if defined (DEM_START_SEC_PBCFG)
+# undef DEM_START_SEC_PBCFG                                                    /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_PBCFG
+#endif
+
+
+
+/*---------------------STOP-MODULE-SPECIFIC-START-SECTIONS-------------------*/
+
+/*---------------------START-MODULE-SPECIFIC-STOP-SECTIONS-------------------*/
+
+
+                                                            /* code sections */
+/*---------------------------------------------------------------------------*/
+
+#if defined (DEM_STOP_SEC_CODE)
+# undef DEM_STOP_SEC_CODE                                                      /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CODE
+#endif
+
+#if defined (DEM_STOP_SEC_CALLOUT_CODE)
+# undef DEM_STOP_SEC_CALLOUT_CODE                                              /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CODE
+#endif
+
+#if defined (DEM_STOP_SEC_CODE_LIB)
+# undef DEM_STOP_SEC_CODE_LIB                                                  /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CODE
+#endif
+
+                                               /* uninitialized RAM sections */
+/*---------------------------------------------------------------------------*/
+
+#if defined (DEM_STOP_SEC_VAR_NOINIT_8BIT)
+# undef DEM_STOP_SEC_VAR_NOINIT_8BIT                                           /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+#if defined (DEM_STOP_SEC_VAR_NOINIT_16BIT)
+# undef DEM_STOP_SEC_VAR_NOINIT_16BIT                                          /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+#if defined (DEM_STOP_SEC_VAR_NOINIT_32BIT)
+# undef DEM_STOP_SEC_VAR_NOINIT_32BIT                                          /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+#if defined (DEM_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+# undef DEM_STOP_SEC_VAR_NOINIT_UNSPECIFIED                                    /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined (DEM_STOP_SEC_VAR_UNCACHED_UNSPECIFIED)
+# undef DEM_STOP_SEC_VAR_UNCACHED_UNSPECIFIED                                  /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined (DEM_STOP_SEC_VAR_NOINIT_UNSPECIFIED_SAT0)
+# undef DEM_STOP_SEC_VAR_NOINIT_UNSPECIFIED_SAT0                               /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined (DEM_STOP_SEC_VAR_NOINIT_UNSPECIFIED_SAT1)
+# undef DEM_STOP_SEC_VAR_NOINIT_UNSPECIFIED_SAT1                               /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+
+                                                 /* initialized RAM sections */
+/*---------------------------------------------------------------------------*/
+
+#if defined (DEM_STOP_SEC_VAR_INIT_8BIT)
+# undef DEM_STOP_SEC_VAR_INIT_8BIT                                             /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+#if defined (DEM_STOP_SEC_VAR_INIT_32BIT)
+# undef DEM_STOP_SEC_VAR_INIT_32BIT                                            /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+                                              /* post-buildable RAM sections */
+/*---------------------------------------------------------------------------*/
+#if defined (DEM_STOP_SEC_VAR_PBCFG)
+# undef DEM_STOP_SEC_VAR_PBCFG                                                 /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+                                                          /* NV RAM sections */
+/*---------------------------------------------------------------------------*/
+
+#if defined (DEM_STOP_SEC_VAR_SAVED_ZONE0_UNSPECIFIED)
+# undef DEM_STOP_SEC_VAR_SAVED_ZONE0_UNSPECIFIED                               /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined (DEM_STOP_SEC_VAR_SAVED_ZONE0_8BIT)
+# undef DEM_STOP_SEC_VAR_SAVED_ZONE0_8BIT                                      /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined (DEM_STOP_SEC_CONST_SAVED_RECOVERY_ZONE0)
+# undef DEM_STOP_SEC_CONST_SAVED_RECOVERY_ZONE0                                /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+                                                             /* ROM sections */
+/*---------------------------------------------------------------------------*/
+
+#if defined (DEM_STOP_SEC_CONST_8BIT)
+# undef DEM_STOP_SEC_CONST_8BIT                                                /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+#if defined (DEM_STOP_SEC_CONST_16BIT)
+# undef DEM_STOP_SEC_CONST_16BIT                                               /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+#if defined (DEM_STOP_SEC_CONST_32BIT)
+# undef DEM_STOP_SEC_CONST_32BIT                                               /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+#if defined (DEM_STOP_SEC_CONST_UNSPECIFIED)
+# undef DEM_STOP_SEC_CONST_UNSPECIFIED                                         /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#if defined (DEM_STOP_SEC_PBCFG_ROOT)
+# undef DEM_STOP_SEC_PBCFG_ROOT                                                /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#if defined (DEM_STOP_SEC_CALIB_UNSPECIFIED)
+# undef DEM_STOP_SEC_CALIB_UNSPECIFIED                                         /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+#if defined (DEM_STOP_SEC_CALIB_8BIT)
+# undef DEM_STOP_SEC_CALIB_8BIT                                                /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#if defined (DEM_STOP_SEC_PBCFG)
+# undef DEM_STOP_SEC_PBCFG                                                     /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#include "Dem_MemMap.h"
+
+/*---------------------STOP-MODULE-SPECIFIC-STOP-SECTIONS--------------------*/
+/** End of DEM ***************************************************************/
+
+
+
+/**********************************************************************************************************************
+ *  CRY_30_RH850ICUS START
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef CRY_30_RH850ICUS_START_SEC_CODE
+  #undef CRY_30_RH850ICUS_START_SEC_CODE
+  #define START_SEC_CODE                            /* mapped to default code section */
+#endif
+#ifdef CRY_30_RH850ICUS_STOP_SEC_CODE
+  #undef CRY_30_RH850ICUS_STOP_SEC_CODE
+  #define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+#ifdef CRY_30_RH850ICUS_START_SEC_CONST_UNSPECIFIED
+# undef CRY_30_RH850ICUS_START_SEC_CONST_UNSPECIFIED
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef CRY_30_RH850ICUS_STOP_SEC_CONST_UNSPECIFIED
+# undef CRY_30_RH850ICUS_STOP_SEC_CONST_UNSPECIFIED
+# define STOP_SEC_CONST
+#endif
+
+/* CONST sections */
+#ifdef CRY_30_RH850ICUS_START_SEC_CONST_8BIT
+# undef CRY_30_RH850ICUS_START_SEC_CONST_8BIT
+# define START_SEC_CONST_8BIT
+#endif
+#ifdef CRY_30_RH850ICUS_STOP_SEC_CONST_8BIT
+# undef CRY_30_RH850ICUS_STOP_SEC_CONST_8BIT
+# define STOP_SEC_CONST
+#endif
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR INIT sections */
+
+#ifdef CRY_30_RH850ICUS_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef CRY_30_RH850ICUS_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+#ifdef CRY_30_RH850ICUS_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef CRY_30_RH850ICUS_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+/* VAR NOINIT sections */
+
+#ifdef CRY_30_RH850ICUS_START_SEC_VAR_NOINIT_8BIT
+# undef CRY_30_RH850ICUS_START_SEC_VAR_NOINIT_8BIT
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef CRY_30_RH850ICUS_STOP_SEC_VAR_NOINIT_8BIT
+# undef CRY_30_RH850ICUS_STOP_SEC_VAR_NOINIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef CRY_30_RH850ICUS_START_SEC_VAR_NOINIT_32BIT
+# undef CRY_30_RH850ICUS_START_SEC_VAR_NOINIT_32BIT
+# define START_SEC_VAR_NOINIT_32BIT
+#endif
+#ifdef CRY_30_RH850ICUS_STOP_SEC_VAR_NOINIT_32BIT
+# undef CRY_30_RH850ICUS_STOP_SEC_VAR_NOINIT_32BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef CRY_30_RH850ICUS_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef CRY_30_RH850ICUS_START_SEC_VAR_NOINIT_UNSPECIFIED
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef CRY_30_RH850ICUS_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef CRY_30_RH850ICUS_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  CRY_30_RH850ICUS END
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *  CRYPTO_30_CRYWRAPPER START
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef CRYPTO_30_CRYWRAPPER_START_SEC_CODE
+# undef CRYPTO_30_CRYWRAPPER_START_SEC_CODE
+# define START_SEC_CODE                            /* mapped to default code section */
+#endif
+#ifdef CRYPTO_30_CRYWRAPPER_STOP_SEC_CODE
+# undef CRYPTO_30_CRYWRAPPER_STOP_SEC_CODE
+# define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+#ifdef CRYPTO_30_CRYWRAPPER_START_SEC_APPL_CODE
+# undef CRYPTO_30_CRYWRAPPER_START_SEC_APPL_CODE                    /* mapped to default code section */
+# define START_SEC_CODE
+#endif
+#ifdef CRYPTO_30_CRYWRAPPER_STOP_SEC_APPL_CODE
+# undef CRYPTO_30_CRYWRAPPER_STOP_SEC_APPL_CODE
+# define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#ifdef CRYPTO_30_CRYWRAPPER_START_SEC_CONST_UNSPECIFIED
+# undef CRYPTO_30_CRYWRAPPER_START_SEC_CONST_UNSPECIFIED
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef CRYPTO_30_CRYWRAPPER_STOP_SEC_CONST_UNSPECIFIED
+# undef CRYPTO_30_CRYWRAPPER_STOP_SEC_CONST_UNSPECIFIED
+# define STOP_SEC_CONST
+#endif
+
+#ifdef CRYPTO_30_CRYWRAPPER_START_SEC_CONST_8BIT
+# undef CRYPTO_30_CRYWRAPPER_START_SEC_CONST_8BIT
+# define START_SEC_CONST_8BIT
+#endif
+
+#ifdef CRYPTO_30_CRYWRAPPER_STOP_SEC_CONST_8BIT
+# undef CRYPTO_30_CRYWRAPPER_STOP_SEC_CONST_8BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef CRYPTO_30_CRYWRAPPER_START_SEC_CONST_16BIT
+# undef CRYPTO_30_CRYWRAPPER_START_SEC_CONST_16BIT
+# define START_SEC_CONST_16BIT
+#endif
+
+#ifdef CRYPTO_30_CRYWRAPPER_STOP_SEC_CONST_16BIT
+# undef CRYPTO_30_CRYWRAPPER_STOP_SEC_CONST_16BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef CRYPTO_30_CRYWRAPPER_START_SEC_CONST_32BIT
+# undef CRYPTO_30_CRYWRAPPER_START_SEC_CONST_32BIT
+# define START_SEC_CONST_32BIT
+#endif
+
+#ifdef CRYPTO_30_CRYWRAPPER_STOP_SEC_CONST_32BIT
+# undef CRYPTO_30_CRYWRAPPER_STOP_SEC_CONST_32BIT
+# define STOP_SEC_CONST
+#endif
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR NOINIT sections */
+
+#ifdef CRYPTO_30_CRYWRAPPER_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef CRYPTO_30_CRYWRAPPER_START_SEC_VAR_NOINIT_UNSPECIFIED
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef CRYPTO_30_CRYWRAPPER_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef CRYPTO_30_CRYWRAPPER_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+
+#ifdef CRYPTO_30_CRYWRAPPER_START_SEC_VAR_NOINIT_8BIT
+# undef CRYPTO_30_CRYWRAPPER_START_SEC_VAR_NOINIT_8BIT
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef CRYPTO_30_CRYWRAPPER_STOP_SEC_VAR_NOINIT_8BIT
+# undef CRYPTO_30_CRYWRAPPER_STOP_SEC_VAR_NOINIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef CRYPTO_30_CRYWRAPPER_START_SEC_VAR_NOINIT_16BIT
+# undef CRYPTO_30_CRYWRAPPER_START_SEC_VAR_NOINIT_16BIT
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+#ifdef CRYPTO_30_CRYWRAPPER_STOP_SEC_VAR_NOINIT_16BIT
+# undef CRYPTO_30_CRYWRAPPER_STOP_SEC_VAR_NOINIT_16BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef CRYPTO_30_CRYWRAPPER_START_SEC_VAR_NOINIT_32BIT
+# undef CRYPTO_30_CRYWRAPPER_START_SEC_VAR_NOINIT_32BIT
+# define START_SEC_VAR_NOINIT_32BIT
+#endif
+#ifdef CRYPTO_30_CRYWRAPPER_STOP_SEC_VAR_NOINIT_32BIT
+# undef CRYPTO_30_CRYWRAPPER_STOP_SEC_VAR_NOINIT_32BIT
+# define STOP_SEC_VAR
+#endif
+
+/* VAR ZERO INIT sections */
+
+#ifdef CRYPTO_30_CRYWRAPPER_START_SEC_VAR_ZERO_INIT_8BIT
+# undef CRYPTO_30_CRYWRAPPER_START_SEC_VAR_ZERO_INIT_8BIT
+# define START_SEC_VAR_ZERO_INIT_8BIT
+#endif
+#ifdef CRYPTO_30_CRYWRAPPER_STOP_SEC_VAR_ZERO_INIT_8BIT
+# undef CRYPTO_30_CRYWRAPPER_STOP_SEC_VAR_ZERO_INIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef CRYPTO_30_CRYWRAPPER_START_SEC_VAR_ZERO_INIT_32BIT
+# undef CRYPTO_30_CRYWRAPPER_START_SEC_VAR_ZERO_INIT_32BIT
+# define START_SEC_VAR_ZERO_INIT_32BIT
+#endif
+#ifdef CRYPTO_30_CRYWRAPPER_STOP_SEC_VAR_ZERO_INIT_32BIT
+# undef CRYPTO_30_CRYWRAPPER_STOP_SEC_VAR_ZERO_INIT_32BIT
+# define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  CRYPTO_30_CRYWRAPPER END
+ *********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************
+ *  FR START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef FR_START_SEC_CODE
+# undef FR_START_SEC_CODE
+# define START_SEC_CODE                                               /* mapped to default code section */
+#endif
+#ifdef FR_STOP_SEC_CODE
+# undef FR_STOP_SEC_CODE
+# define STOP_SEC_CODE                                                /* default code stop section */
+#endif
+
+
+#ifdef FR_START_SEC_CODE_ISR
+# undef FR_START_SEC_CODE_ISR
+# define START_SEC_CODE_ISR                                           /* mapped to default ISR code section */
+#endif
+#ifdef FR_STOP_SEC_CODE_ISR
+# undef FR_STOP_SEC_CODE_ISR
+# define STOP_SEC_CODE                                                /* default code stop section */
+#endif
+
+#ifdef FR_APPL_START_SEC_CODE
+# undef FR_APPL_START_SEC_CODE
+# define START_SEC_CODE
+#endif
+
+#ifdef FR_APPL_STOP_SEC_CODE
+# undef FR_APPL_STOP_SEC_CODE
+# define STOP_SEC_CODE
+#endif
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#ifdef FR_START_SEC_CONST_32BIT
+# undef FR_START_SEC_CONST_32BIT
+# define START_SEC_CONST_32BIT
+#endif
+#ifdef FR_STOP_SEC_CONST_32BIT
+# undef FR_STOP_SEC_CONST_32BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef FR_START_SEC_CONST_16BIT
+# undef FR_START_SEC_CONST_16BIT
+# define START_SEC_CONST_16BIT
+#endif
+#ifdef FR_STOP_SEC_CONST_16BIT
+# undef FR_STOP_SEC_CONST_16BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef FR_START_SEC_CONST_8BIT
+# undef FR_START_SEC_CONST_8BIT
+# define START_SEC_CONST_8BIT
+#endif
+#ifdef FR_STOP_SEC_CONST_8BIT
+# undef FR_STOP_SEC_CONST_8BIT
+# define STOP_SEC_CONST
+#endif
+
+
+#ifdef FR_START_SEC_CONST_UNSPECIFIED
+# undef FR_START_SEC_CONST_UNSPECIFIED
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef FR_STOP_SEC_CONST_UNSPECIFIED
+# undef FR_STOP_SEC_CONST_UNSPECIFIED
+# define STOP_SEC_CONST
+#endif
+
+
+/* Postbuild CFG CONST sections */
+
+#ifdef FR_START_SEC_PBCFG_ROOT
+# undef FR_START_SEC_PBCFG_ROOT
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef FR_STOP_SEC_PBCFG_ROOT
+# undef FR_STOP_SEC_PBCFG_ROOT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef FR_START_SEC_PBCFG
+# undef FR_START_SEC_PBCFG
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef FR_STOP_SEC_PBCFG
+# undef FR_STOP_SEC_PBCFG
+# define STOP_SEC_CONST
+#endif
+
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR NOINIT sections */
+
+#ifdef FR_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef FR_START_SEC_VAR_NOINIT_UNSPECIFIED
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef FR_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef FR_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+/* VAR FAST NOINIT sections */
+
+#ifdef FR_START_SEC_VAR_FAST_NOINIT_UNSPECIFIED
+# undef FR_START_SEC_VAR_FAST_NOINIT_UNSPECIFIED
+# define START_SEC_VAR_FAST_NOINIT_UNSPECIFIED
+#endif
+#ifdef FR_STOP_SEC_VAR_FAST_NOINIT_UNSPECIFIED
+# undef FR_STOP_SEC_VAR_FAST_NOINIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+#ifdef FR_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef FR_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+#ifdef FR_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef FR_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  FR END
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *  FRTRCV_30_TJA1082 START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef FRTRCV_30_TJA1082_START_SEC_CODE
+    #undef FRTRCV_30_TJA1082_START_SEC_CODE
+    #define START_SEC_CODE
+#endif
+
+#ifdef FRTRCV_30_TJA1082_STOP_SEC_CODE 
+    #undef FRTRCV_30_TJA1082_STOP_SEC_CODE 
+    #define STOP_SEC_CODE
+#endif
+
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#ifdef FRTRCV_30_TJA1082_START_SEC_CONST_UNSPECIFIED 
+    #undef FRTRCV_30_TJA1082_START_SEC_CONST_UNSPECIFIED 
+    #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef FRTRCV_30_TJA1082_STOP_SEC_CONST_UNSPECIFIED 
+    #undef FRTRCV_30_TJA1082_STOP_SEC_CONST_UNSPECIFIED 
+    #define STOP_SEC_CONST
+#endif
+
+
+/*******  VAR sections  **********************************************************************************************/
+
+#ifdef FRTRCV_30_TJA1082_START_SEC_VAR_NOINIT_UNSPECIFIED 
+    #undef FRTRCV_30_TJA1082_START_SEC_VAR_NOINIT_UNSPECIFIED 
+    #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef FRTRCV_30_TJA1082_STOP_SEC_VAR_NOINIT_UNSPECIFIED 
+    #undef FRTRCV_30_TJA1082_STOP_SEC_VAR_NOINIT_UNSPECIFIED 
+    #define STOP_SEC_VAR
+#endif
+
+#ifdef FRTRCV_30_TJA1082_START_SEC_VAR_NOINIT_32BIT
+    #undef FRTRCV_30_TJA1082_START_SEC_VAR_NOINIT_32BIT
+    #define START_SEC_VAR_NOINIT_32BIT
+#endif
+#ifdef FRTRCV_30_TJA1082_STOP_SEC_VAR_NOINIT_32BIT
+    #undef FRTRCV_30_TJA1082_STOP_SEC_VAR_NOINIT_32BIT
+    #define STOP_SEC_VAR
+#endif
+
+#ifdef FRTRCV_30_TJA1082_START_SEC_VAR_NOINIT_8BIT
+    #undef FRTRCV_30_TJA1082_START_SEC_VAR_NOINIT_8BIT 
+    #define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef FRTRCV_30_TJA1082_STOP_SEC_VAR_NOINIT_8BIT 
+    #undef FRTRCV_30_TJA1082_STOP_SEC_VAR_NOINIT_8BIT 
+    #define STOP_SEC_VAR
+#endif
+
+#ifdef FRTRCV_30_TJA1082_START_SEC_VAR_ZERO_INIT_UNSPECIFIED 
+    #undef FRTRCV_30_TJA1082_START_SEC_VAR_ZERO_INIT_UNSPECIFIED 
+    #define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+
+#ifdef FRTRCV_30_TJA1082_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED 
+    #undef FRTRCV_30_TJA1082_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED 
+    #define STOP_SEC_VAR
+#endif
+
+
+/**********************************************************************************************************************
+ *  FRTRCV_30_TJA1082 END
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *  EcuAb_AsrIoHwAb START
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef IOHWAB_START_SEC_CODE
+    #undef IOHWAB_START_SEC_CODE
+    #define START_SEC_CODE
+#endif
+#ifdef IOHWAB_STOP_SEC_CODE
+    #undef IOHWAB_STOP_SEC_CODE
+    #define STOP_SEC_CODE
+#endif
+
+/*******  CONST sections  ********************************************************************************************/
+
+#ifdef IOHWAB_START_SEC_CONST_32
+    #undef IOHWAB_START_SEC_CONST_32
+    #define START_SEC_CONST_32
+#endif
+#ifdef IOHWAB_STOP_SEC_CONST_32
+    #undef IOHWAB_STOP_SEC_CONST_32
+    #define STOP_SEC_CONST
+#endif
+
+/*******  VAR sections  **********************************************************************************************/
+
+#ifdef IOHWAB_START_SEC_VAR_NO_INIT_UNSPECIFIED
+    #undef IOHWAB_START_SEC_VAR_NO_INIT_UNSPECIFIED
+    #define START_SEC_VAR_NO_INIT_UNSPECIFIED
+#endif
+#ifdef IOHWAB_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+    #undef IOHWAB_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+    #define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  EcuAb_AsrIoHwAb END
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *  PDUR START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef PDUR_START_SEC_CODE
+# undef PDUR_START_SEC_CODE
+# define START_SEC_CODE
+#endif
+#ifdef PDUR_STOP_SEC_CODE
+# undef PDUR_STOP_SEC_CODE
+# define STOP_SEC_CODE
+#endif
+
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#ifdef PDUR_START_SEC_CONST_8BIT
+# undef PDUR_START_SEC_CONST_8BIT
+# define START_SEC_CONST_8BIT
+#endif
+#ifdef PDUR_STOP_SEC_CONST_8BIT
+# undef PDUR_STOP_SEC_CONST_8BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef PDUR_START_SEC_CONST_16BIT
+# undef PDUR_START_SEC_CONST_16BIT
+# define START_SEC_CONST_16BIT
+#endif
+#ifdef PDUR_STOP_SEC_CONST_16BIT
+# undef PDUR_STOP_SEC_CONST_16BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef PDUR_START_SEC_CONST_32BIT
+# undef PDUR_START_SEC_CONST_32BIT
+# define START_SEC_CONST_32BIT
+#endif
+#ifdef PDUR_STOP_SEC_CONST_32BIT
+# undef PDUR_STOP_SEC_CONST_32BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef PDUR_START_SEC_CONST_UNSPECIFIED
+# undef PDUR_START_SEC_CONST_UNSPECIFIED
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef PDUR_STOP_SEC_CONST_UNSPECIFIED
+# undef PDUR_STOP_SEC_CONST_UNSPECIFIED
+# define STOP_SEC_CONST
+#endif
+
+/* FAST CONST sections */
+
+
+/* Postbuild CFG CONST sections */
+
+/* Root table for postbuild data */
+#ifdef PDUR_START_SEC_PBCFG
+# undef PDUR_START_SEC_PBCFG
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef PDUR_STOP_SEC_PBCFG
+# undef PDUR_STOP_SEC_PBCFG
+# define STOP_SEC_CONST
+#endif
+
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR INIT sections */
+
+#ifdef PDUR_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef PDUR_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+#ifdef PDUR_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef PDUR_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+#ifdef PDUR_START_SEC_VAR_ZERO_INIT_8BIT
+# undef PDUR_START_SEC_VAR_ZERO_INIT_8BIT
+# define START_SEC_VAR_ZERO_INIT_8BIT
+#endif
+#ifdef PDUR_STOP_SEC_VAR_ZERO_INIT_8BIT
+# undef PDUR_STOP_SEC_VAR_ZERO_INIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+
+/* VAR NOINIT sections */
+
+#ifdef PDUR_START_SEC_VAR_NOINIT_8BIT
+# undef PDUR_START_SEC_VAR_NOINIT_8BIT
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef PDUR_STOP_SEC_VAR_NOINIT_8BIT
+# undef PDUR_STOP_SEC_VAR_NOINIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef PDUR_START_SEC_VAR_NOINIT_16BIT
+# undef PDUR_START_SEC_VAR_NOINIT_16BIT
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+#ifdef PDUR_STOP_SEC_VAR_NOINIT_16BIT
+# undef PDUR_STOP_SEC_VAR_NOINIT_16BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef PDUR_START_SEC_VAR_NOINIT_32BIT
+# undef PDUR_START_SEC_VAR_NOINIT_32BIT
+# define START_SEC_VAR_NOINIT_32BIT
+#endif
+#ifdef PDUR_STOP_SEC_VAR_NOINIT_32BIT
+# undef PDUR_STOP_SEC_VAR_NOINIT_32BIT
+# define STOP_SEC_VAR
+#endif
+
+
+#ifdef PDUR_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef PDUR_START_SEC_VAR_NOINIT_UNSPECIFIED
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef PDUR_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef PDUR_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+#ifdef PDUR_START_SEC_BUFFER_VAR_NOINIT_8BIT
+# undef PDUR_START_SEC_BUFFER_VAR_NOINIT_8BIT
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef PDUR_STOP_SEC_BUFFER_VAR_NOINIT_8BIT
+# undef PDUR_STOP_SEC_BUFFER_VAR_NOINIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+/* Postbuild CFG VAR sections */
+
+#ifdef PDUR_START_SEC_VAR_PBCFG
+# undef PDUR_START_SEC_VAR_PBCFG
+# define START_SEC_VAR_PBCFG
+#endif
+#ifdef PDUR_STOP_SEC_VAR_PBCFG
+# undef PDUR_STOP_SEC_VAR_PBCFG
+# define STOP_SEC_VAR
+#endif
+
+
+/* VAR ZERO INIT sections */
+
+
+
+/* VAR FAST INIT sections */
+
+
+
+/* VAR FAST NOINIT sections */
+
+
+/* VAR FAST ZERO INIT sections */
+
+
+
+/**********************************************************************************************************************
+ *  PDUR END
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *  WDGIF START
+ *********************************************************************************************************************/
+
+#if defined( BLU ) || defined ( BM ) || defined ( BTLD ) || defined(FLASHDRIVER)
+#else
+	#include "WdgIf_MemMap.h"
+#endif
+
+/*******  CODE sections **********************************************************************************************/
+
+#if defined WDGIF_START_SEC_CODE
+# undef WDGIF_START_SEC_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CODE
+#endif
+#if defined WDGIF_STOP_SEC_CODE
+# undef WDGIF_STOP_SEC_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CODE
+#endif
+
+
+/*******  CONST sections  ********************************************************************************************/
+
+#if defined WDGIF_START_SEC_CONST_8BIT
+# undef WDGIF_START_SEC_CONST_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_8BIT
+#endif
+#if defined WDGIF_STOP_SEC_CONST_8BIT
+# undef WDGIF_STOP_SEC_CONST_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#if defined WDGIF_START_SEC_CONST_16BIT
+# undef WDGIF_START_SEC_CONST_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_16BIT
+#endif
+#if defined WDGIF_STOP_SEC_CONST_16BIT
+# undef WDGIF_STOP_SEC_CONST_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#if defined WDGIF_START_SEC_CONST_32BIT
+# undef WDGIF_START_SEC_CONST_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_32BIT
+#endif
+#if defined WDGIF_STOP_SEC_CONST_32BIT
+# undef WDGIF_STOP_SEC_CONST_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#if defined WDGIF_START_SEC_CONST_UNSPECIFIED
+# undef WDGIF_START_SEC_CONST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#if defined WDGIF_STOP_SEC_CONST_UNSPECIFIED
+# undef WDGIF_STOP_SEC_CONST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR INIT sections */
+
+#if defined WDGIF_START_SEC_VAR_INIT_8BIT
+# undef WDGIF_START_SEC_VAR_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_8BIT
+#endif
+#if defined WDGIF_STOP_SEC_VAR_INIT_8BIT
+# undef WDGIF_STOP_SEC_VAR_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGIF_START_SEC_VAR_INIT_16BIT
+# undef WDGIF_START_SEC_VAR_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_16BIT
+#endif
+#if defined WDGIF_STOP_SEC_VAR_INIT_16BIT
+# undef WDGIF_STOP_SEC_VAR_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGIF_START_SEC_VAR_INIT_32BIT
+# undef WDGIF_START_SEC_VAR_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_32BIT
+#endif
+#if defined WDGIF_STOP_SEC_VAR_INIT_32BIT
+# undef WDGIF_STOP_SEC_VAR_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGIF_START_SEC_VAR_INIT_UNSPECIFIED
+# undef WDGIF_START_SEC_VAR_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+#if defined WDGIF_STOP_SEC_VAR_INIT_UNSPECIFIED
+# undef WDGIF_STOP_SEC_VAR_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+
+/* VAR NOINIT sections */
+
+#if defined WDGIF_START_SEC_VAR_NOINIT_8BIT
+# undef WDGIF_START_SEC_VAR_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#if defined WDGIF_STOP_SEC_VAR_NOINIT_8BIT
+# undef WDGIF_STOP_SEC_VAR_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGIF_START_SEC_VAR_NOINIT_16BIT
+# undef WDGIF_START_SEC_VAR_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+#if defined WDGIF_STOP_SEC_VAR_NOINIT_16BIT
+# undef WDGIF_STOP_SEC_VAR_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGIF_START_SEC_VAR_NOINIT_32BIT
+# undef WDGIF_START_SEC_VAR_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_32BIT
+#endif
+#if defined WDGIF_STOP_SEC_VAR_NOINIT_32BIT
+# undef WDGIF_STOP_SEC_VAR_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGIF_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef WDGIF_START_SEC_VAR_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#if defined WDGIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef WDGIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+
+/* VAR ZERO_INIT sections */
+
+#if defined WDGIF_START_SEC_VAR_ZERO_INIT_8BIT
+# undef WDGIF_START_SEC_VAR_ZERO_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_8BIT
+#endif
+#if defined WDGIF_STOP_SEC_VAR_ZERO_INIT_8BIT
+# undef WDGIF_STOP_SEC_VAR_ZERO_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGIF_START_SEC_VAR_ZERO_INIT_16BIT
+# undef WDGIF_START_SEC_VAR_ZERO_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_16BIT
+#endif
+#if defined WDGIF_STOP_SEC_VAR_ZERO_INIT_16BIT
+# undef WDGIF_STOP_SEC_VAR_ZERO_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGIF_START_SEC_VAR_ZERO_INIT_32BIT
+# undef WDGIF_START_SEC_VAR_ZERO_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_32BIT
+#endif
+#if defined WDGIF_STOP_SEC_VAR_ZERO_INIT_32BIT
+# undef WDGIF_STOP_SEC_VAR_ZERO_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGIF_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef WDGIF_START_SEC_VAR_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+#if defined WDGIF_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef WDGIF_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+
+/**********************************************************************************************************************
+ *  WDGIF END
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *  CRYIF START
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef CRYIF_START_SEC_CODE
+# undef CRYIF_START_SEC_CODE
+# define START_SEC_CODE                            /* mapped to default code section */
+#endif
+#ifdef CRYIF_STOP_SEC_CODE
+# undef CRYIF_STOP_SEC_CODE
+# define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#ifdef CRYIF_START_SEC_CONST_UNSPECIFIED
+# undef CRYIF_START_SEC_CONST_UNSPECIFIED
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef CRYIF_STOP_SEC_CONST_UNSPECIFIED
+# undef CRYIF_STOP_SEC_CONST_UNSPECIFIED
+# define STOP_SEC_CONST
+#endif
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR NOINIT sections */
+
+
+/* VAR ZERO INIT sections */
+
+#ifdef CRYIF_START_SEC_VAR_ZERO_INIT_8BIT
+# undef CRYIF_START_SEC_VAR_ZERO_INIT_8BIT
+# define START_SEC_VAR_ZERO_INIT_8BIT
+#endif
+#ifdef CRYIF_STOP_SEC_VAR_ZERO_INIT_8BIT
+# undef CRYIF_STOP_SEC_VAR_ZERO_INIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  CRYIF END
+ *********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************
+ *  If_AsrIfFeeSmallSector START
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef FEE_30_SMALLSECTOR_START_SEC_CODE
+    #undef FEE_30_SMALLSECTOR_START_SEC_CODE
+    #define START_SEC_CODE
+#endif
+#ifdef FEE_30_SMALLSECTOR_STOP_SEC_CODE
+    #undef FEE_30_SMALLSECTOR_STOP_SEC_CODE
+    #define STOP_SEC_CODE
+#endif
+
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#ifdef FEE_30_SMALLSECTOR_START_SEC_CONST_8BIT
+    #undef FEE_30_SMALLSECTOR_START_SEC_CONST_8BIT
+    #define START_SEC_CONST_8BIT
+#endif
+#ifdef FEE_30_SMALLSECTOR_STOP_SEC_CONST_8BIT
+    #undef FEE_30_SMALLSECTOR_STOP_SEC_CONST_8BIT
+    #define STOP_SEC_CONST
+#endif
+
+#ifdef FEE_30_SMALLSECTOR_START_SEC_CONST_16BIT
+    #undef FEE_30_SMALLSECTOR_START_SEC_CONST_16BIT
+    #define START_SEC_CONST_16BIT
+#endif
+#ifdef FEE_30_SMALLSECTOR_STOP_SEC_CONST_16BIT
+    #undef FEE_30_SMALLSECTOR_STOP_SEC_CONST_16BIT
+    #define STOP_SEC_CONST
+#endif
+
+#ifdef FEE_30_SMALLSECTOR_START_SEC_CONST_32BIT
+    #undef FEE_30_SMALLSECTOR_START_SEC_CONST_32BIT
+    #define START_SEC_CONST_32BIT
+#endif
+#ifdef FEE_30_SMALLSECTOR_STOP_SEC_CONST_32BIT
+    #undef FEE_30_SMALLSECTOR_STOP_SEC_CONST_32BIT
+    #define STOP_SEC_CONST
+#endif
+
+#ifdef FEE_30_SMALLSECTOR_START_SEC_CONST_UNSPECIFIED
+    #undef FEE_30_SMALLSECTOR_START_SEC_CONST_UNSPECIFIED
+    #define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef FEE_30_SMALLSECTOR_STOP_SEC_CONST_UNSPECIFIED
+    #undef FEE_30_SMALLSECTOR_STOP_SEC_CONST_UNSPECIFIED
+    #define STOP_SEC_CONST
+#endif
+
+
+/*******  VAR sections  ********************************************************************************************/
+
+/* VAR NOINIT sections */
+
+#ifdef FEE_30_SMALLSECTOR_START_SEC_VAR_NOINIT_UNSPECIFIED
+    #undef FEE_30_SMALLSECTOR_START_SEC_VAR_NOINIT_UNSPECIFIED
+    #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef FEE_30_SMALLSECTOR_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+    #undef FEE_30_SMALLSECTOR_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+    #define STOP_SEC_VAR
+#endif
+
+/* VAR FAST sections */
+
+#ifdef FEE_30_SMALLSECTOR_START_SEC_VAR_FAST_INIT_UNSPECIFIED
+    #undef FEE_30_SMALLSECTOR_START_SEC_VAR_FAST_INIT_UNSPECIFIED
+    #define START_SEC_VAR_FAST_INIT_UNSPECIFIED
+#endif
+#ifdef FEE_30_SMALLSECTOR_STOP_SEC_VAR_FAST_INIT_UNSPECIFIED
+    #undef FEE_30_SMALLSECTOR_STOP_SEC_VAR_FAST_INIT_UNSPECIFIED
+    #define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  If_AsrIfFeeSmallSector END
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *  FRIF START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef FRIF_START_SEC_CODE
+  #undef FRIF_START_SEC_CODE                        /* PRQA S 0841 */
+  #define START_SEC_CODE                            /* mapped to default code section */
+#endif
+#ifdef FRIF_STOP_SEC_CODE
+  #undef FRIF_STOP_SEC_CODE                         /* PRQA S 0841 */
+  #define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+#ifdef FRIF_START_SEC_APPL_CODE
+  #undef FRIF_START_SEC_APPL_CODE                   /* PRQA S 0841 */
+  #define START_SEC_CODE                            /* mapped to default appl code section */
+#endif
+#ifdef FRIF_STOP_SEC_APPL_CODE
+  #undef FRIF_STOP_SEC_APPL_CODE                    /* PRQA S 0841 */
+  #define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#ifdef FRIF_START_SEC_CONST_32BIT
+# undef FRIF_START_SEC_CONST_32BIT                  /* PRQA S 0841 */
+# define START_SEC_CONST_32BIT
+#endif
+#ifdef FRIF_STOP_SEC_CONST_32BIT
+# undef FRIF_STOP_SEC_CONST_32BIT                   /* PRQA S 0841 */
+# define STOP_SEC_CONST
+#endif
+
+#ifdef FRIF_START_SEC_CONST_UNSPECIFIED
+# undef FRIF_START_SEC_CONST_UNSPECIFIED            /* PRQA S 0841 */
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef FRIF_STOP_SEC_CONST_UNSPECIFIED  
+# undef FRIF_STOP_SEC_CONST_UNSPECIFIED             /* PRQA S 0841 */
+# define STOP_SEC_CONST
+#endif
+
+/* Postbuild CFG CONST sections */
+
+#ifdef FRIF_START_SEC_PBCFG
+# undef FRIF_START_SEC_PBCFG                        /* PRQA S 0841 */
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef FRIF_STOP_SEC_PBCFG
+# undef FRIF_STOP_SEC_PBCFG                         /* PRQA S 0841 */
+# define STOP_SEC_CONST
+#endif
+
+#ifdef FRIF_START_SEC_PBCFG_ROOT
+# undef FRIF_START_SEC_PBCFG_ROOT                   /* PRQA S 0841 */
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef FRIF_STOP_SEC_PBCFG_ROOT
+# undef FRIF_STOP_SEC_PBCFG_ROOT                    /* PRQA S 0841 */
+# define STOP_SEC_CONST
+#endif
+
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR INIT sections */
+
+#ifdef FRIF_START_SEC_VAR_INIT_UNSPECIFIED
+# undef FRIF_START_SEC_VAR_INIT_UNSPECIFIED         /* PRQA S 0841 */
+# define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+#ifdef FRIF_STOP_SEC_VAR_INIT_UNSPECIFIED
+# undef FRIF_STOP_SEC_VAR_INIT_UNSPECIFIED          /* PRQA S 0841 */
+# define STOP_SEC_VAR
+#endif
+
+#ifdef FRIF_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef FRIF_START_SEC_VAR_NOINIT_UNSPECIFIED       /* PRQA S 0841 */
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef FRIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef FRIF_STOP_SEC_VAR_NOINIT_UNSPECIFIED        /* PRQA S 0841 */
+# define STOP_SEC_VAR
+#endif
+
+
+/* VAR ZERO INIT sections */
+
+#ifdef FRIF_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef FRIF_START_SEC_VAR_ZERO_INIT_UNSPECIFIED    /* PRQA S 0841 */
+# define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+#ifdef FRIF_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef FRIF_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED     /* PRQA S 0841 */
+# define STOP_SEC_VAR
+#endif
+
+/* PBCFG section for flexible RAM management */
+
+#ifdef FRIF_START_SEC_VAR_PBCFG
+# undef FRIF_START_SEC_VAR_PBCFG       /* PRQA S 0841 */
+# define START_SEC_VAR_PBCFG
+#endif
+#ifdef FRIF_STOP_SEC_VAR_PBCFG
+# undef FRIF_STOP_SEC_VAR_PBCFG        /* PRQA S 0841 */
+# define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  FRIF END
+ *********************************************************************************************************************/
+
+#ifdef MEMIF_START_SEC_CONST_8BIT 
+    #undef MEMIF_START_SEC_CONST_8BIT 
+    #define START_SEC_CONST_8BIT
+#endif
+
+#ifdef MEMIF_STOP_SEC_CONST_8BIT 
+    #undef MEMIF_STOP_SEC_CONST_8BIT 
+    #define STOP_SEC_CONST
+#endif
+
+
+#ifdef MEMIF_START_SEC_CONST_32BIT
+    #undef MEMIF_START_SEC_CONST_32BIT
+    #define START_SEC_CONST_32BIT
+#endif
+
+#ifdef MEMIF_STOP_SEC_CONST_32BIT
+    #undef MEMIF_STOP_SEC_CONST_32BIT
+    #define STOP_SEC_CONST
+#endif
+
+
+#ifdef MEMIF_START_SEC_CODE
+    #undef MEMIF_START_SEC_CODE
+    #define START_SEC_CODE
+#endif
+
+#ifdef MEMIF_STOP_SEC_CODE
+    #undef MEMIF_STOP_SEC_CODE
+    #define STOP_SEC_CODE
+#endif
+
+/**********************************************************************************************************************
+ *  Com START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef COM_START_SEC_CODE
+# undef COM_START_SEC_CODE
+# define START_SEC_CODE
+#endif
+#ifdef COM_STOP_SEC_CODE
+# undef COM_STOP_SEC_CODE
+# define STOP_SEC_CODE
+#endif
+/* COM application callback code section (Rte_Cbk.h)*/
+#ifdef COM_START_SEC_APPL_CODE
+# undef COM_START_SEC_APPL_CODE
+# define START_SEC_CODE
+#endif
+#ifdef COM_STOP_SEC_APPL_CODE
+# undef COM_STOP_SEC_APPL_CODE
+# define STOP_SEC_CODE
+#endif
+
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#ifdef COM_START_SEC_CONST_8BIT
+# undef COM_START_SEC_CONST_8BIT
+# define START_SEC_CONST_8BIT
+#endif
+#ifdef COM_STOP_SEC_CONST_8BIT
+# undef COM_STOP_SEC_CONST_8BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef COM_START_SEC_CONST_16BIT
+# undef COM_START_SEC_CONST_16BIT
+# define START_SEC_CONST_16BIT
+#endif
+#ifdef COM_STOP_SEC_CONST_16BIT
+# undef COM_STOP_SEC_CONST_16BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef COM_START_SEC_CONST_32BIT
+# undef COM_START_SEC_CONST_32BIT
+# define START_SEC_CONST_32BIT
+#endif
+#ifdef COM_STOP_SEC_CONST_32BIT
+# undef COM_STOP_SEC_CONST_32BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef COM_START_SEC_CONST_64BIT
+# undef COM_START_SEC_CONST_64BIT
+# define START_SEC_CONST_64BIT
+#endif
+#ifdef COM_STOP_SEC_CONST_64BIT
+# undef COM_STOP_SEC_CONST_64BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef COM_START_SEC_CONST_UNSPECIFIED
+# undef COM_START_SEC_CONST_UNSPECIFIED
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef COM_STOP_SEC_CONST_UNSPECIFIED
+# undef COM_STOP_SEC_CONST_UNSPECIFIED
+# define STOP_SEC_CONST
+#endif
+
+#ifdef COM_START_SEC_PBCFG
+# undef COM_START_SEC_PBCFG
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef COM_STOP_SEC_PBCFG
+# undef COM_STOP_SEC_PBCFG
+# define STOP_SEC_CONST
+#endif
+
+#ifdef COM_START_SEC_VAR_PBCFG
+# undef COM_START_SEC_VAR_PBCFG
+# define START_SEC_VAR_PBCFG
+#endif
+#ifdef COM_STOP_SEC_VAR_PBCFG
+# undef COM_STOP_SEC_VAR_PBCFG
+# define STOP_SEC_VAR
+#endif
+
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR INIT sections */
+
+#ifdef COM_START_SEC_VAR_INIT_UNSPECIFIED
+# undef COM_START_SEC_VAR_INIT_UNSPECIFIED
+# define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+#ifdef COM_STOP_SEC_VAR_INIT_UNSPECIFIED
+# undef COM_STOP_SEC_VAR_INIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+#ifdef COM_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef COM_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+#ifdef COM_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef COM_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+#ifdef COM_START_SEC_VAR_ZERO_INIT_8BIT
+# undef COM_START_SEC_VAR_ZERO_INIT_8BIT
+# define START_SEC_VAR_ZERO_INIT_8BIT
+#endif
+#ifdef COM_STOP_SEC_VAR_ZERO_INIT_8BIT
+# undef COM_STOP_SEC_VAR_ZERO_INIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+/* VAR NOINIT sections */
+
+#ifdef COM_START_SEC_VAR_NOINIT_BOOLEAN
+# undef COM_START_SEC_VAR_NOINIT_BOOLEAN
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef COM_STOP_SEC_VAR_NOINIT_BOOLEAN
+# undef COM_STOP_SEC_VAR_NOINIT_BOOLEAN
+# define STOP_SEC_VAR
+#endif
+
+#ifdef COM_START_SEC_VAR_NOINIT_8BIT
+# undef COM_START_SEC_VAR_NOINIT_8BIT
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef COM_STOP_SEC_VAR_NOINIT_8BIT
+# undef COM_STOP_SEC_VAR_NOINIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef COM_START_SEC_VAR_NOINIT_16BIT
+# undef COM_START_SEC_VAR_NOINIT_16BIT
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+#ifdef COM_STOP_SEC_VAR_NOINIT_16BIT
+# undef COM_STOP_SEC_VAR_NOINIT_16BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef COM_START_SEC_VAR_NOINIT_32BIT
+# undef COM_START_SEC_VAR_NOINIT_32BIT
+# define START_SEC_VAR_NOINIT_32BIT
+#endif
+#ifdef COM_STOP_SEC_VAR_NOINIT_32BIT
+# undef COM_STOP_SEC_VAR_NOINIT_32BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef COM_START_SEC_VAR_NOINIT_64BIT
+# undef COM_START_SEC_VAR_NOINIT_64BIT
+# define START_SEC_VAR_NOINIT_64BIT
+#endif
+#ifdef COM_STOP_SEC_VAR_NOINIT_64BIT
+# undef COM_STOP_SEC_VAR_NOINIT_64BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef COM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef COM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef COM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef COM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+
+/* VAR ZERO INIT sections */
+
+
+
+/* VAR FAST INIT sections */
+
+
+
+/* VAR FAST NOINIT sections */
+
+
+/* VAR FAST ZERO INIT sections */
+
+
+
+/**********************************************************************************************************************
+ *  Com END
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *  IpduM START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef IPDUM_START_SEC_CODE
+# undef IPDUM_START_SEC_CODE
+# define START_SEC_CODE /* mapped to default code section */
+#endif
+#ifdef IPDUM_STOP_SEC_CODE
+# undef IPDUM_STOP_SEC_CODE
+# define STOP_SEC_CODE  /* default code stop section */
+#endif
+
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* Postbuild CFG CONST sections */
+
+#ifdef IPDUM_START_SEC_PBCFG_8BIT
+# undef IPDUM_START_SEC_PBCFG_8BIT
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef IPDUM_STOP_SEC_PBCFG_8BIT
+# undef IPDUM_STOP_SEC_PBCFG_8BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef IPDUM_START_SEC_PBCFG_16BIT
+# undef IPDUM_START_SEC_PBCFG_16BIT
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef IPDUM_STOP_SEC_PBCFG_16BIT
+# undef IPDUM_STOP_SEC_PBCFG_16BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef IPDUM_START_SEC_PBCFG_32BIT
+# undef IPDUM_START_SEC_PBCFG_32BIT
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef IPDUM_STOP_SEC_PBCFG_32BIT
+# undef IPDUM_STOP_SEC_PBCFG_32BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef IPDUM_START_SEC_PBCFG_UNSPECIFIED
+# undef IPDUM_START_SEC_PBCFG_UNSPECIFIED
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef IPDUM_STOP_SEC_PBCFG_UNSPECIFIED
+# undef IPDUM_STOP_SEC_PBCFG_UNSPECIFIED
+# define STOP_SEC_CONST
+#endif
+
+#ifdef IPDUM_START_SEC_PBCFG
+# undef IPDUM_START_SEC_PBCFG
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef IPDUM_STOP_SEC_PBCFG
+# undef IPDUM_STOP_SEC_PBCFG
+# define STOP_SEC_CONST
+#endif
+
+#ifdef IPDUM_START_SEC_VAR_PBCFG
+# undef IPDUM_START_SEC_VAR_PBCFG
+# define START_SEC_VAR_PBCFG
+#endif
+#ifdef IPDUM_STOP_SEC_VAR_PBCFG
+# undef IPDUM_STOP_SEC_VAR_PBCFG
+# define STOP_SEC_VAR
+#endif
+
+#ifdef IPDUM_START_SEC_CONST_8BIT
+# undef IPDUM_START_SEC_CONST_8BIT
+# define START_SEC_CONST_8BIT
+#endif
+#ifdef IPDUM_STOP_SEC_CONST_8BIT
+# undef IPDUM_STOP_SEC_CONST_8BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef IPDUM_START_SEC_CONST_16BIT
+# undef IPDUM_START_SEC_CONST_16BIT
+# define START_SEC_CONST_16BIT
+#endif
+#ifdef IPDUM_STOP_SEC_CONST_16BIT
+# undef IPDUM_STOP_SEC_CONST_16BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef IPDUM_START_SEC_CONST_32BIT
+# undef IPDUM_START_SEC_CONST_32BIT
+# define START_SEC_CONST_32BIT
+#endif
+#ifdef IPDUM_STOP_SEC_CONST_32BIT
+# undef IPDUM_STOP_SEC_CONST_32BIT
+# define STOP_SEC_CONST
+#endif
+
+#ifdef IPDUM_START_SEC_CONST_UNSPECIFIED
+# undef IPDUM_START_SEC_CONST_UNSPECIFIED
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef IPDUM_STOP_SEC_CONST_UNSPECIFIED
+# undef IPDUM_STOP_SEC_CONST_UNSPECIFIED
+# define STOP_SEC_CONST
+#endif
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR ZERO INIT sections */
+
+#ifdef IPDUM_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef IPDUM_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+#ifdef IPDUM_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# undef IPDUM_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+#ifdef IPDUM_START_SEC_VAR_ZERO_INIT_8BIT
+# undef IPDUM_START_SEC_VAR_ZERO_INIT_8BIT
+# define START_SEC_VAR_INIT_8BIT
+#endif
+#ifdef IPDUM_STOP_SEC_VAR_ZERO_INIT_8BIT
+# undef IPDUM_STOP_SEC_VAR_ZERO_INIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+/* VAR INIT sections */
+
+#ifdef IPDUM_START_SEC_VAR_INIT_UNSPECIFIED
+# undef IPDUM_START_SEC_VAR_INIT_UNSPECIFIED
+# define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+#ifdef IPDUM_STOP_SEC_VAR_INIT_UNSPECIFIED
+# undef IPDUM_STOP_SEC_VAR_INIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+#ifdef IPDUM_START_SEC_VAR_INIT_8BIT
+# undef IPDUM_START_SEC_VAR_INIT_8BIT
+# define START_SEC_VAR_INIT_8BIT
+#endif
+#ifdef IPDUM_STOP_SEC_VAR_INIT_8BIT
+# undef IPDUM_STOP_SEC_VAR_INIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+/* VAR NOINIT sections */
+
+#ifdef IPDUM_START_SEC_VAR_NOINIT_8BIT
+# undef IPDUM_START_SEC_VAR_NOINIT_8BIT
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef IPDUM_STOP_SEC_VAR_NOINIT_8BIT
+# undef IPDUM_STOP_SEC_VAR_NOINIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef IPDUM_START_SEC_VAR_NOINIT_16BIT
+# undef IPDUM_START_SEC_VAR_NOINIT_16BIT
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+#ifdef IPDUM_STOP_SEC_VAR_NOINIT_16BIT
+# undef IPDUM_STOP_SEC_VAR_NOINIT_16BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef IPDUM_START_SEC_VAR_NOINIT_32BIT
+# undef IPDUM_START_SEC_VAR_NOINIT_32BIT
+# define START_SEC_VAR_NOINIT_32BIT
+#endif
+#ifdef IPDUM_STOP_SEC_VAR_NOINIT_32BIT
+# undef IPDUM_STOP_SEC_VAR_NOINIT_32BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef IPDUM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef IPDUM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef IPDUM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef IPDUM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  IpduM END
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *  SECOC START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#if defined(SECOC_START_SEC_CODE)
+# undef SECOC_START_SEC_CODE      /* PRQA S 0841 */     /* MD_MSR_19.6 */
+# define START_SEC_CODE /* mapped to default code section */
+#endif
+
+#if defined(SECOC_STOP_SEC_CODE)
+# undef SECOC_STOP_SEC_CODE       /* PRQA S 0841 */     /* MD_MSR_19.6 */
+# define STOP_SEC_CODE  /* default code stop section */
+#endif
+
+#if defined(SECOC_START_SEC_APPL_CODE)
+# undef SECOC_START_SEC_APPL_CODE      /* PRQA S 0841 */        /* MD_MSR_19.6 */
+# define START_SEC_CODE /* mapped to default code section */
+#endif
+
+#if defined(SECOC_STOP_SEC_APPL_CODE)
+# undef SECOC_STOP_SEC_APPL_CODE       /* PRQA S 0841 */        /* MD_MSR_19.6 */
+# define STOP_SEC_CODE  /* default code stop section */
+#endif
+
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#if defined(SECOC_START_SEC_CONST_8BIT)
+# undef SECOC_START_SEC_CONST_8BIT  /* PRQA S 0841 */   /* MD_MSR_19.6 */
+# define START_SEC_CONST_8BIT   /* mapped to default const 8bit section */
+#endif
+#if defined(SECOC_STOP_SEC_CONST_8BIT)
+# undef SECOC_STOP_SEC_CONST_8BIT   /* PRQA S 0841 */   /* MD_MSR_19.6 */
+# define STOP_SEC_CONST /* default const stop section */
+#endif
+
+#if defined(SECOC_START_SEC_CONST_16BIT)
+# undef SECOC_START_SEC_CONST_16BIT /* PRQA S 0841 */   /* MD_MSR_19.6 */
+# define START_SEC_CONST_16BIT
+#endif
+#if defined(SECOC_STOP_SEC_CONST_16BIT)
+# undef SECOC_STOP_SEC_CONST_16BIT /* PRQA S 0841 */    /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#if defined(SECOC_START_SEC_CONST_32BIT)
+# undef SECOC_START_SEC_CONST_32BIT /* PRQA S 0841 */   /* MD_MSR_19.6 */
+# define START_SEC_CONST_32BIT
+#endif
+#if defined(SECOC_STOP_SEC_CONST_32BIT)
+# undef SECOC_STOP_SEC_CONST_32BIT /* PRQA S 0841 */    /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#if defined(SECOC_START_SEC_CONST_UNSPECIFIED)
+# undef SECOC_START_SEC_CONST_UNSPECIFIED /* PRQA S 0841 */     /* MD_MSR_19.6 */
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#if defined(SECOC_STOP_SEC_CONST_UNSPECIFIED)
+# undef SECOC_STOP_SEC_CONST_UNSPECIFIED /* PRQA S 0841 */      /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+
+/* Postbuild CFG CONST sections */
+
+#if defined(SECOC_START_SEC_PBCFG)
+# undef SECOC_START_SEC_PBCFG /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_PBCFG
+#endif
+#if defined(SECOC_STOP_SEC_PBCFG)
+# undef SECOC_STOP_SEC_PBCFG /* PRQA S 0841 */  /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR INIT sections */
+
+#if defined(SECOC_START_SEC_VAR_INIT_8BIT)
+# undef SECOC_START_SEC_VAR_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_8BIT        /* mapped to default var init 8bit section */
+#endif
+#if defined(SECOC_STOP_SEC_VAR_INIT_8BIT)
+# undef SECOC_STOP_SEC_VAR_INIT_8BIT /* PRQA S 0841 */  /* MD_MSR_19.6 */
+# define STOP_SEC_VAR   /* default var stop section */
+#endif
+
+#if defined(SECOC_START_SEC_VAR_INIT_16BIT)
+# undef SECOC_START_SEC_VAR_INIT_16BIT /* PRQA S 0841 */        /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_16BIT
+#endif
+#if defined(SECOC_STOP_SEC_VAR_INIT_16BIT)
+# undef SECOC_STOP_SEC_VAR_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(SECOC_START_SEC_VAR_INIT_32BIT)
+# undef SECOC_START_SEC_VAR_INIT_32BIT /* PRQA S 0841 */        /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_32BIT
+#endif
+#if defined(SECOC_STOP_SEC_VAR_INIT_32BIT)
+# undef SECOC_STOP_SEC_VAR_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(SECOC_START_SEC_VAR_INIT_UNSPECIFIED)
+# undef SECOC_START_SEC_VAR_INIT_UNSPECIFIED /* PRQA S 0841 */  /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+#if defined(SECOC_STOP_SEC_VAR_INIT_UNSPECIFIED)
+# undef SECOC_STOP_SEC_VAR_INIT_UNSPECIFIED /* PRQA S 0841 */   /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+
+/* VAR NOINIT sections */
+
+#if defined SECOC_START_SEC_VAR_NOINIT_BOOLEAN
+# undef SECOC_START_SEC_VAR_NOINIT_BOOLEAN /* PRQA S 0841 */    /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#if defined SECOC_STOP_SEC_VAR_NOINIT_BOOLEAN
+# undef SECOC_STOP_SEC_VAR_NOINIT_BOOLEAN /* PRQA S 0841 */     /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(SECOC_START_SEC_VAR_NOINIT_8BIT)
+# undef SECOC_START_SEC_VAR_NOINIT_8BIT /* PRQA S 0841 */       /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#if defined(SECOC_STOP_SEC_VAR_NOINIT_8BIT)
+# undef SECOC_STOP_SEC_VAR_NOINIT_8BIT /* PRQA S 0841 */        /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(SECOC_START_SEC_VAR_NOINIT_16BIT)
+# undef SECOC_START_SEC_VAR_NOINIT_16BIT /* PRQA S 0841 */      /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+#if defined(SECOC_STOP_SEC_VAR_NOINIT_16BIT)
+# undef SECOC_STOP_SEC_VAR_NOINIT_16BIT /* PRQA S 0841 */       /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(SECOC_START_SEC_VAR_NOINIT_32BIT)
+# undef SECOC_START_SEC_VAR_NOINIT_32BIT /* PRQA S 0841 */      /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_32BIT
+#endif
+#if defined(SECOC_STOP_SEC_VAR_NOINIT_32BIT)
+# undef SECOC_STOP_SEC_VAR_NOINIT_32BIT /* PRQA S 0841 */       /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(SECOC_START_SEC_VAR_NOINIT_UNSPECIFIED)
+# undef SECOC_START_SEC_VAR_NOINIT_UNSPECIFIED /* PRQA S 0841 */        /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#if defined(SECOC_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+# undef SECOC_STOP_SEC_VAR_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(SECOC_START_SEC_VAR_PBCFG)
+# undef SECOC_START_SEC_VAR_PBCFG /* PRQA S 0841 */     /* MD_MSR_19.6 */
+# define START_SEC_VAR_PBCFG
+#endif
+#if defined(SECOC_STOP_SEC_VAR_PBCFG)
+# undef SECOC_STOP_SEC_VAR_PBCFG /* PRQA S 0841 */      /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+
+/* VAR ZERO INIT sections */
+
+#if defined(SECOC_START_SEC_VAR_ZERO_INIT_8BIT)
+# undef SECOC_START_SEC_VAR_ZERO_INIT_8BIT /* PRQA S 0841 */    /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_8BIT
+#endif
+#if defined(SECOC_STOP_SEC_VAR_ZERO_INIT_8BIT)
+# undef SECOC_STOP_SEC_VAR_ZERO_INIT_8BIT /* PRQA S 0841 */     /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(SECOC_START_SEC_VAR_ZERO_INIT_16BIT)
+# undef SECOC_START_SEC_VAR_ZERO_INIT_16BIT /* PRQA S 0841 */   /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_16BIT
+#endif
+#if defined(SECOC_STOP_SEC_VAR_ZERO_INIT_16BIT)
+# undef SECOC_STOP_SEC_VAR_ZERO_INIT_16BIT /* PRQA S 0841 */    /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(SECOC_START_SEC_VAR_ZERO_INIT_32BIT)
+# undef SECOC_START_SEC_VAR_ZERO_INIT_32BIT /* PRQA S 0841 */   /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_32BIT
+#endif
+#if defined(SECOC_STOP_SEC_VAR_ZERO_INIT_32BIT)
+# undef SECOC_STOP_SEC_VAR_ZERO_INIT_32BIT /* PRQA S 0841 */    /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined(SECOC_START_SEC_VAR_ZERO_INIT_UNSPECIFIED)
+# undef SECOC_START_SEC_VAR_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */     /* MD_MSR_19.6 */
+# define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+#if defined(SECOC_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED)
+# undef SECOC_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */      /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+/* VAR FAST INIT sections */
+
+
+/* VAR FAST NOINIT sections */
+
+
+/* VAR FAST ZERO INIT sections */
+
+
+/**********************************************************************************************************************
+ *  SECOC END
+ *********************************************************************************************************************/
+
+#ifdef ADC_START_SEC_APPL_CODE
+  #undef ADC_START_SEC_APPL_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef ADC_STOP_SEC_APPL_CODE
+  #undef ADC_STOP_SEC_APPL_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef ADC_START_SEC_CODE_FAST
+  #undef ADC_START_SEC_CODE_FAST
+  #define START_SEC_CODE_FAST
+#endif
+
+#ifdef ADC_STOP_SEC_CODE_FAST
+  #undef ADC_STOP_SEC_CODE_FAST
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef ADC_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef ADC_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef ADC_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef ADC_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef ADC_START_SEC_CONFIG_VAR_NOINIT_UNSPECIFIED
+  #undef ADC_START_SEC_CONFIG_VAR_NOINIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef ADC_STOP_SEC_CONFIG_VAR_NOINIT_UNSPECIFIED
+  #undef ADC_STOP_SEC_CONFIG_VAR_NOINIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef ADC_START_SEC_CONST_UNSPECIFIED
+  #undef ADC_START_SEC_CONST_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef ADC_STOP_SEC_CONST_UNSPECIFIED
+  #undef ADC_STOP_SEC_CONST_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef ADC_START_SEC_PRIVATE_CODE
+  #undef ADC_START_SEC_PRIVATE_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef ADC_STOP_SEC_PRIVATE_CODE
+  #undef ADC_STOP_SEC_PRIVATE_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef ADC_START_SEC_PUBLIC_CODE
+  #undef ADC_START_SEC_PUBLIC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef ADC_STOP_SEC_PUBLIC_CODE
+  #undef ADC_STOP_SEC_PUBLIC_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef ADC_START_SEC_VAR_8BIT
+  #undef ADC_START_SEC_VAR_8BIT
+  #define START_SEC_VAR_INIT_8BIT
+#endif
+
+#ifdef ADC_STOP_SEC_VAR_8BIT
+  #undef ADC_STOP_SEC_VAR_8BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef ADC_START_SEC_VAR_INIT_8
+  #undef ADC_START_SEC_VAR_INIT_8
+  #define START_SEC_VAR_INIT_8BIT
+#endif
+
+#ifdef ADC_STOP_SEC_VAR_INIT_8
+  #undef ADC_STOP_SEC_VAR_INIT_8
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef ADC_START_SEC_VAR_NOINIT_8
+  #undef ADC_START_SEC_VAR_NOINIT_8
+  #define START_SEC_VAR_NOINIT_8BIT
+#endif
+
+#ifdef ADC_STOP_SEC_VAR_NOINIT_8
+  #undef ADC_STOP_SEC_VAR_NOINIT_8
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef ADC_START_SEC_VAR_NOINIT_8BIT
+  #undef ADC_START_SEC_VAR_NOINIT_8BIT
+  #define START_SEC_VAR_NOINIT_8BIT
+#endif
+
+#ifdef ADC_STOP_SEC_VAR_NOINIT_8BIT
+  #undef ADC_STOP_SEC_VAR_NOINIT_8BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef ADC_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef ADC_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef ADC_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef ADC_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef DIO_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef DIO_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef DIO_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef DIO_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef DIO_START_SEC_CONST_UNSPECIFIED
+  #undef DIO_START_SEC_CONST_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef DIO_STOP_SEC_CONST_UNSPECIFIED
+  #undef DIO_STOP_SEC_CONST_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef DIO_START_SEC_PUBLIC_CODE
+  #undef DIO_START_SEC_PUBLIC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef DIO_STOP_SEC_PUBLIC_CODE
+  #undef DIO_STOP_SEC_PUBLIC_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef DIO_START_SEC_VAR_1BIT
+  #undef DIO_START_SEC_VAR_1BIT
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef DIO_STOP_SEC_VAR_1BIT
+  #undef DIO_STOP_SEC_VAR_1BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef DIO_START_SEC_VAR_INIT_BOOLEAN
+  #undef DIO_START_SEC_VAR_INIT_BOOLEAN
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef DIO_STOP_SEC_VAR_INIT_BOOLEAN
+  #undef DIO_STOP_SEC_VAR_INIT_BOOLEAN
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef DIO_START_SEC_VAR_NOINIT_16
+  #undef DIO_START_SEC_VAR_NOINIT_16
+  #define START_SEC_VAR_NOINIT_16BIT
+#endif
+
+#ifdef DIO_STOP_SEC_VAR_NOINIT_16
+  #undef DIO_STOP_SEC_VAR_NOINIT_16
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef DIO_START_SEC_VAR_NOINIT_16BIT
+  #undef DIO_START_SEC_VAR_NOINIT_16BIT
+  #define START_SEC_VAR_NOINIT_16BIT
+#endif
+
+#ifdef DIO_STOP_SEC_VAR_NOINIT_16BIT
+  #undef DIO_STOP_SEC_VAR_NOINIT_16BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef DIO_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef DIO_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef DIO_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef DIO_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef DIO_START_SEC_VAR_NO_INIT_16
+  #undef DIO_START_SEC_VAR_NO_INIT_16
+  #define START_SEC_VAR_NOINIT_16BIT
+#endif
+
+#ifdef DIO_STOP_SEC_VAR_NO_INIT_16
+  #undef DIO_STOP_SEC_VAR_NO_INIT_16
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef DIO_START_SEC_VAR_NO_INIT_16BIT
+  #undef DIO_START_SEC_VAR_NO_INIT_16BIT
+  #define START_SEC_VAR_NOINIT_16BIT
+#endif
+
+#ifdef DIO_STOP_SEC_VAR_NO_INIT_16BIT
+  #undef DIO_STOP_SEC_VAR_NO_INIT_16BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef DIO_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef DIO_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef DIO_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef DIO_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef DIO_START_SEC_APPL_CODE
+  #undef DIO_START_SEC_APPL_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef DIO_STOP_SEC_APPL_CODE
+  #undef DIO_STOP_SEC_APPL_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef FLS_START_SEC_APPL_CODE
+  #undef FLS_START_SEC_APPL_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef FLS_STOP_SEC_APPL_CODE
+  #undef FLS_STOP_SEC_APPL_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef FLS_START_SEC_CODE
+  #undef FLS_START_SEC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef FLS_STOP_SEC_CODE
+  #undef FLS_STOP_SEC_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef FLS_START_SEC_PRIVATERAM_CODE
+  #undef FLS_START_SEC_PRIVATERAM_CODE
+  #define START_SEC_CODE
+  #pragma ghs section text=".FLS_PRIVATE_CODE_RAM"
+  #undef MEMMAP_ERROR
+#endif
+
+#ifdef FLS_STOP_SEC_PRIVATERAM_CODE
+  #undef FLS_STOP_SEC_PRIVATERAM_CODE
+  #define STOP_SEC_CODE
+  #pragma ghs section text=default
+  #undef MEMMAP_ERROR
+#endif
+
+#ifdef FLS_START_SEC_PRIVATE_CODE
+  #undef FLS_START_SEC_PRIVATE_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef FLS_STOP_SEC_PRIVATE_CODE
+  #undef FLS_STOP_SEC_PRIVATE_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef FLS_START_SEC_CODE_FAST
+  #undef FLS_START_SEC_CODE_FAST
+  #define START_SEC_CODE_FAST
+#endif
+
+#ifdef FLS_STOP_SEC_CODE_FAST
+  #undef FLS_STOP_SEC_CODE_FAST
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef FLS_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef FLS_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef FLS_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef FLS_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef FLS_START_SEC_PRIVATE_CODE
+  #undef FLS_START_SEC_PRIVATE_CODE
+  #define PRIVATE_CODE_SEC_STARTED
+  #pragma ghs section text=".FLS_PRIVATE_CODE_RAM"
+#undef MEMMAP_ERROR
+#endif
+
+#ifdef FLS_STOP_SEC_PRIVATE_CODE
+  #undef FLS_STOP_SEC_PRIVATE_CODE
+  #pragma ghs section text=default
+  #undef MEMMAP_ERROR
+#endif
+
+#ifdef FLS_START_SEC_PUBLIC_CODE
+  #undef FLS_START_SEC_PUBLIC_CODE
+#define PUBLIC_CODE_SEC_STARTED
+  #pragma ghs section text=".FLS_PUBLIC_CODE_RAM"
+#undef MEMMAP_ERROR
+#endif
+
+#ifdef FLS_STOP_SEC_PUBLIC_CODE
+  #undef FLS_STOP_SEC_PUBLIC_CODE
+#undef PUBLIC_CODE_SEC_STARTED
+	#pragma ghs section text=default
+#undef MEMMAP_ERROR
+#endif
+
+#ifdef FLS_START_SEC_VAR_1BIT
+  #undef FLS_START_SEC_VAR_1BIT
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef FLS_STOP_SEC_VAR_1BIT
+  #undef FLS_STOP_SEC_VAR_1BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLS_START_SEC_VAR_INIT_BOOLEAN
+  #undef FLS_START_SEC_VAR_INIT_BOOLEAN
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef FLS_STOP_SEC_VAR_INIT_BOOLEAN
+  #undef FLS_STOP_SEC_VAR_INIT_BOOLEAN
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLS_START_SEC_VAR_INIT_UNSPECIFIED
+  #undef FLS_START_SEC_VAR_INIT_UNSPECIFIED
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef FLS_STOP_SEC_VAR_INIT_UNSPECIFIED
+  #undef FLS_STOP_SEC_VAR_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLS_START_SEC_VAR_NOINIT_1BIT
+  #undef FLS_START_SEC_VAR_NOINIT_1BIT
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+
+#endif
+
+#ifdef FLS_STOP_SEC_VAR_NOINIT_1BIT
+  #undef FLS_STOP_SEC_VAR_NOINIT_1BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLS_START_SEC_VAR_NOINIT_32
+  #undef FLS_START_SEC_VAR_NOINIT_32
+  #define START_SEC_VAR_NOINIT_32BIT
+#endif
+
+#ifdef FLS_STOP_SEC_VAR_NOINIT_32
+  #undef FLS_STOP_SEC_VAR_NOINIT_32
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLS_START_SEC_VAR_NOINIT_32BIT
+  #undef FLS_START_SEC_VAR_NOINIT_32BIT
+  #define START_SEC_VAR_NOINIT_32BIT
+#endif
+
+#ifdef FLS_STOP_SEC_VAR_NOINIT_32BIT
+  #undef FLS_STOP_SEC_VAR_NOINIT_32BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLS_START_SEC_VAR_NOINIT_BOOLEAN
+  #undef FLS_START_SEC_VAR_NOINIT_BOOLEAN
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef FLS_STOP_SEC_VAR_NOINIT_BOOLEAN
+  #undef FLS_STOP_SEC_VAR_NOINIT_BOOLEAN
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLS_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef FLS_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef FLS_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef FLS_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLS_START_SEC_VAR_NO_INIT_32
+  #undef FLS_START_SEC_VAR_NO_INIT_32
+  #define START_SEC_VAR_NOINIT_32BIT
+#endif
+
+#ifdef FLS_STOP_SEC_VAR_NO_INIT_32
+  #undef FLS_STOP_SEC_VAR_NO_INIT_32
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLS_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef FLS_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef FLS_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef FLS_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLS_START_SEC_VAR_NO_INIT_BOOLEAN
+  #undef FLS_START_SEC_VAR_NO_INIT_BOOLEAN
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef FLS_STOP_SEC_VAR_NO_INIT_BOOLEAN
+  #undef FLS_STOP_SEC_VAR_NO_INIT_BOOLEAN
+  #define STOP_SEC_VAR
+#endif
+
+
+
+#ifdef FLSTST_START_SEC_CODE
+  #undef FLSTST_START_SEC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef FLSTST_STOP_SEC_CODE
+  #undef FLSTST_STOP_SEC_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef FLSTST_START_SEC_APPL_CODE
+  #undef FLSTST_START_SEC_APPL_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef FLSTST_STOP_SEC_APPL_CODE
+  #undef FLSTST_STOP_SEC_APPL_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef FLSTST_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef FLSTST_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef FLSTST_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef FLSTST_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef FLSTST_START_SEC_PRIVATE_CODE
+  #undef FLSTST_START_SEC_PRIVATE_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef FLSTST_STOP_SEC_PRIVATE_CODE
+  #undef FLSTST_STOP_SEC_PRIVATE_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef FLSTST_START_SEC_PUBLIC_CODE
+  #undef FLSTST_START_SEC_PUBLIC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef FLSTST_STOP_SEC_PUBLIC_CODE
+  #undef FLSTST_STOP_SEC_PUBLIC_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef FLSTST_START_SEC_VAR_INIT_UNSPECIFIED
+  #undef FLSTST_START_SEC_VAR_INIT_UNSPECIFIED
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef FLSTST_STOP_SEC_VAR_INIT_UNSPECIFIED
+  #undef FLSTST_STOP_SEC_VAR_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLSTST_START_SEC_VAR_NOINIT_32
+  #undef FLSTST_START_SEC_VAR_NOINIT_32
+  #define START_SEC_VAR_NOINIT_32BIT
+#endif
+
+#ifdef FLSTST_STOP_SEC_VAR_NOINIT_32
+  #undef FLSTST_STOP_SEC_VAR_NOINIT_32
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef FLSTST_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef FLSTST_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef FLSTST_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef FLSTST_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef GPT_START_SEC_APPL_CODE
+  #undef GPT_START_SEC_APPL_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef GPT_STOP_SEC_APPL_CODE
+  #undef GPT_STOP_SEC_APPL_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef GPT_START_SEC_CODE_FAST
+  #undef GPT_START_SEC_CODE_FAST
+  #define START_SEC_CODE_FAST
+#endif
+
+#ifdef GPT_STOP_SEC_CODE_FAST
+  #undef GPT_STOP_SEC_CODE_FAST
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef GPT_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef GPT_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef GPT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef GPT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef GPT_START_SEC_PRIVATE_CODE
+  #undef GPT_START_SEC_PRIVATE_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef GPT_STOP_SEC_PRIVATE_CODE
+  #undef GPT_STOP_SEC_PRIVATE_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef GPT_START_SEC_PUBLIC_CODE
+  #undef GPT_START_SEC_PUBLIC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef GPT_STOP_SEC_PUBLIC_CODE
+  #undef GPT_STOP_SEC_PUBLIC_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef GPT_START_SEC_VAR_1BIT
+  #undef GPT_START_SEC_VAR_1BIT
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef GPT_STOP_SEC_VAR_1BIT
+  #undef GPT_STOP_SEC_VAR_1BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef GPT_START_SEC_VAR_INIT_BOOLEAN
+  #undef GPT_START_SEC_VAR_INIT_BOOLEAN
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef GPT_STOP_SEC_VAR_INIT_BOOLEAN
+  #undef GPT_STOP_SEC_VAR_INIT_BOOLEAN
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef GPT_START_SEC_VAR_NO_INIT_8
+  #undef GPT_START_SEC_VAR_NO_INIT_8
+  #define START_SEC_VAR_NOINIT_8BIT
+#endif
+
+#ifdef GPT_STOP_SEC_VAR_NO_INIT_8
+  #undef GPT_STOP_SEC_VAR_NO_INIT_8
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef GPT_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef GPT_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef GPT_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef GPT_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef GPT_START_SEC_VAR_NOINIT_8BIT
+  #undef GPT_START_SEC_VAR_NOINIT_8BIT
+  #define START_SEC_VAR_NOINIT_8BIT
+#endif
+
+#ifdef GPT_STOP_SEC_VAR_NOINIT_8BIT
+  #undef GPT_STOP_SEC_VAR_NOINIT_8BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef ICU_START_SEC_APPL_CODE
+  #undef ICU_START_SEC_APPL_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef ICU_STOP_SEC_APPL_CODE
+  #undef ICU_STOP_SEC_APPL_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef ICU_START_SEC_CODE_FAST
+  #undef ICU_START_SEC_CODE_FAST
+  #define START_SEC_CODE_FAST
+#endif
+
+#ifdef ICU_STOP_SEC_CODE_FAST
+  #undef ICU_STOP_SEC_CODE_FAST
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef ICU_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef ICU_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef ICU_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef ICU_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef ICU_START_SEC_CONFIG_VAR_NOINIT_UNSPECIFIED
+  #undef ICU_START_SEC_CONFIG_VAR_NOINIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef ICU_STOP_SEC_CONFIG_VAR_NOINIT_UNSPECIFIED
+  #undef ICU_STOP_SEC_CONFIG_VAR_NOINIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef ICU_START_SEC_PRIVATE_CODE
+  #undef ICU_START_SEC_PRIVATE_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef ICU_STOP_SEC_PRIVATE_CODE
+  #undef ICU_STOP_SEC_PRIVATE_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef ICU_START_SEC_PUBLIC_CODE
+  #undef ICU_START_SEC_PUBLIC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef ICU_STOP_SEC_PUBLIC_CODE
+  #undef ICU_STOP_SEC_PUBLIC_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef ICU_START_SEC_VAR_1BIT
+  #undef ICU_START_SEC_VAR_1BIT
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef ICU_STOP_SEC_VAR_1BIT
+  #undef ICU_STOP_SEC_VAR_1BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef ICU_START_SEC_VAR_INIT_BOOLEAN
+  #undef ICU_START_SEC_VAR_INIT_BOOLEAN
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef ICU_STOP_SEC_VAR_INIT_BOOLEAN
+  #undef ICU_STOP_SEC_VAR_INIT_BOOLEAN
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef ICU_START_SEC_VAR_NOINIT_32
+  #undef ICU_START_SEC_VAR_NOINIT_32
+  #define START_SEC_VAR_NOINIT_32BIT
+#endif
+
+#ifdef ICU_STOP_SEC_VAR_NOINIT_32
+  #undef ICU_STOP_SEC_VAR_NOINIT_32
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef ICU_START_SEC_VAR_NOINIT_32BIT
+  #undef ICU_START_SEC_VAR_NOINIT_32BIT
+  #define START_SEC_VAR_NOINIT_32BIT
+#endif
+
+#ifdef ICU_STOP_SEC_VAR_NOINIT_32BIT
+  #undef ICU_STOP_SEC_VAR_NOINIT_32BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef ICU_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef ICU_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef ICU_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef ICU_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef MCU_START_SEC_APPL_CODE
+  #undef MCU_START_SEC_APPL_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef MCU_STOP_SEC_APPL_CODE
+  #undef MCU_STOP_SEC_APPL_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef MCU_START_SEC_CODE_FAST
+  #undef MCU_START_SEC_CODE_FAST
+  #define START_SEC_CODE_FAST
+#endif
+
+#ifdef MCU_STOP_SEC_CODE_FAST
+  #undef MCU_STOP_SEC_CODE_FAST
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef MCU_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef MCU_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef MCU_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef MCU_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef MCU_START_SEC_PRIVATE_CODE
+  #undef MCU_START_SEC_PRIVATE_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef MCU_STOP_SEC_PRIVATE_CODE
+  #undef MCU_STOP_SEC_PRIVATE_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef MCU_START_SEC_PUBLIC_CODE
+  #undef MCU_START_SEC_PUBLIC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef MCU_STOP_SEC_PUBLIC_CODE
+  #undef MCU_STOP_SEC_PUBLIC_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef MCU_START_SEC_VAR_INIT_32
+  #undef MCU_START_SEC_VAR_INIT_32
+  #define START_SEC_VAR_INIT_32BIT
+#endif
+
+#ifdef MCU_STOP_SEC_VAR_INIT_32
+  #undef MCU_STOP_SEC_VAR_INIT_32
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef MCU_START_SEC_VAR_INIT_BOOLEAN
+  #undef MCU_START_SEC_VAR_INIT_BOOLEAN
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef MCU_STOP_SEC_VAR_INIT_BOOLEAN
+  #undef MCU_STOP_SEC_VAR_INIT_BOOLEAN
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef MCU_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef MCU_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef MCU_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef MCU_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef MCU_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef MCU_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef MCU_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef MCU_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef PORT_START_SEC_APPL_CODE
+  #undef PORT_START_SEC_APPL_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef PORT_STOP_SEC_APPL_CODE
+  #undef PORT_STOP_SEC_APPL_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef PORT_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef PORT_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef PORT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef PORT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef PORT_START_SEC_PRIVATE_CODE
+  #undef PORT_START_SEC_PRIVATE_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef PORT_STOP_SEC_PRIVATE_CODE
+  #undef PORT_STOP_SEC_PRIVATE_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef PORT_START_SEC_PUBLIC_CODE
+  #undef PORT_START_SEC_PUBLIC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef PORT_STOP_SEC_PUBLIC_CODE
+  #undef PORT_STOP_SEC_PUBLIC_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef PORT_START_SEC_VAR_1BIT
+  #undef PORT_START_SEC_VAR_1BIT
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef PORT_STOP_SEC_VAR_1BIT
+  #undef PORT_STOP_SEC_VAR_1BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef PORT_START_SEC_VAR_INIT_BOOLEAN
+  #undef PORT_START_SEC_VAR_INIT_BOOLEAN
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef PORT_STOP_SEC_VAR_INIT_BOOLEAN
+  #undef PORT_STOP_SEC_VAR_INIT_BOOLEAN
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef PORT_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef PORT_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef PORT_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef PORT_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef PWM_START_SEC_APPL_CODE
+  #undef PWM_START_SEC_APPL_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef PWM_STOP_SEC_APPL_CODE
+  #undef PWM_STOP_SEC_APPL_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef PWM_START_SEC_CODE_FAST
+  #undef PWM_START_SEC_CODE_FAST
+  #define START_SEC_CODE_FAST
+#endif
+
+#ifdef PWM_STOP_SEC_CODE_FAST
+  #undef PWM_STOP_SEC_CODE_FAST
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef PWM_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef PWM_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef PWM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef PWM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef PWM_START_SEC_CONFIG_VAR_NOINIT_UNSPECIFIED
+  #undef PWM_START_SEC_CONFIG_VAR_NOINIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef PWM_STOP_SEC_CONFIG_VAR_NOINIT_UNSPECIFIED
+  #undef PWM_STOP_SEC_CONFIG_VAR_NOINIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef PWM_START_SEC_PRIVATE_CODE
+  #undef PWM_START_SEC_PRIVATE_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef PWM_STOP_SEC_PRIVATE_CODE
+  #undef PWM_STOP_SEC_PRIVATE_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef PWM_START_SEC_PUBLIC_CODE
+  #undef PWM_START_SEC_PUBLIC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef PWM_STOP_SEC_PUBLIC_CODE
+  #undef PWM_STOP_SEC_PUBLIC_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef PWM_START_SEC_VAR_1BIT
+  #undef PWM_START_SEC_VAR_1BIT
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef PWM_STOP_SEC_VAR_1BIT
+  #undef PWM_STOP_SEC_VAR_1BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef PWM_START_SEC_VAR_BOOLEAN
+  #undef PWM_START_SEC_VAR_BOOLEAN
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef PWM_STOP_SEC_VAR_BOOLEAN
+  #undef PWM_STOP_SEC_VAR_BOOLEAN
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef PWM_START_SEC_VAR_NOINIT_16
+  #undef PWM_START_SEC_VAR_NOINIT_16
+  #define START_SEC_VAR_NOINIT_16BIT
+#endif
+
+#ifdef PWM_STOP_SEC_VAR_NOINIT_16
+  #undef PWM_STOP_SEC_VAR_NOINIT_16
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef PWM_START_SEC_VAR_NOINIT_16BIT
+  #undef PWM_START_SEC_VAR_NOINIT_16BIT
+  #define START_SEC_VAR_NOINIT_16BIT
+#endif
+
+#ifdef PWM_STOP_SEC_VAR_NOINIT_16BIT
+  #undef PWM_STOP_SEC_VAR_NOINIT_16BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef PWM_START_SEC_VAR_NOINIT_8
+  #undef PWM_START_SEC_VAR_NOINIT_8
+  #define START_SEC_VAR_NOINIT_8BIT
+#endif
+
+#ifdef PWM_STOP_SEC_VAR_NOINIT_8
+  #undef PWM_STOP_SEC_VAR_NOINIT_8
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef PWM_START_SEC_VAR_NOINIT_8BIT
+  #undef PWM_START_SEC_VAR_NOINIT_8BIT
+  #define START_SEC_VAR_NOINIT_8BIT
+#endif
+
+#ifdef PWM_STOP_SEC_VAR_NOINIT_8BIT
+  #undef PWM_STOP_SEC_VAR_NOINIT_8BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef PWM_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef PWM_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef PWM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef PWM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef RAMTST_START_SEC_CODE
+  #undef RAMTST_START_SEC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef RAMTST_STOP_SEC_CODE
+  #undef RAMTST_STOP_SEC_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef RAMTST_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef RAMTST_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef RAMTST_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef RAMTST_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef RAMTST_START_SEC_CONST_16
+  #undef RAMTST_START_SEC_CONST_16
+  #define START_SEC_CONST_16BIT
+#endif
+
+#ifdef RAMTST_STOP_SEC_CONST_16
+  #undef RAMTST_STOP_SEC_CONST_16
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef RAMTST_START_SEC_VAR_NOINIT_16
+  #undef RAMTST_START_SEC_VAR_NOINIT_16
+  #define START_SEC_VAR_NOINIT_16BIT
+#endif
+
+#ifdef RAMTST_STOP_SEC_VAR_NOINIT_16
+  #undef RAMTST_STOP_SEC_VAR_NOINIT_16
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef RAMTST_START_SEC_VAR_NOINIT_32
+  #undef RAMTST_START_SEC_VAR_NOINIT_32
+  #define START_SEC_VAR_NOINIT_32BIT
+#endif
+
+#ifdef RAMTST_STOP_SEC_VAR_NOINIT_32
+  #undef RAMTST_STOP_SEC_VAR_NOINIT_32
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef RAMTST_START_SEC_VAR_NOINIT_8
+  #undef RAMTST_START_SEC_VAR_NOINIT_8
+  #define START_SEC_VAR_NOINIT_8BIT
+#endif
+
+#ifdef RAMTST_STOP_SEC_VAR_NOINIT_8
+  #undef RAMTST_STOP_SEC_VAR_NOINIT_8
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef RAMTST_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef RAMTST_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef RAMTST_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef RAMTST_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef RAMTST_START_SEC_VAR_POWER_ON_INIT_8
+  #undef RAMTST_START_SEC_VAR_POWER_ON_INIT_8
+  #define START_SEC_VAR_INIT_8BIT
+#endif
+
+#ifdef RAMTST_STOP_SEC_VAR_POWER_ON_INIT_8
+  #undef RAMTST_STOP_SEC_VAR_POWER_ON_INIT_8
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef SPI_START_SEC_CODE
+#undef SPI_START_SEC_CODE
+#define START_SEC_CODE
+#endif
+
+#ifdef SPI_STOP_SEC_CODE
+#undef SPI_STOP_SEC_CODE
+#define STOP_SEC_CODE
+#endif
+
+
+#ifdef SPI_START_SEC_APPL_CODE
+  #undef SPI_START_SEC_APPL_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef SPI_STOP_SEC_APPL_CODE
+  #undef SPI_STOP_SEC_APPL_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef SPI_START_SEC_CODE_FAST
+  #undef SPI_START_SEC_CODE_FAST
+  #define START_SEC_CODE_FAST
+#endif
+
+#ifdef SPI_STOP_SEC_CODE_FAST
+  #undef SPI_STOP_SEC_CODE_FAST
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef SPI_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef SPI_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef SPI_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef SPI_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef SPI_START_SEC_CONST_UNSPECIFIED
+  #undef SPI_START_SEC_CONST_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef SPI_STOP_SEC_CONST_UNSPECIFIED
+  #undef SPI_STOP_SEC_CONST_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef SPI_START_SEC_PRIVATE_CODE
+  #undef SPI_START_SEC_PRIVATE_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef SPI_STOP_SEC_PRIVATE_CODE
+  #undef SPI_STOP_SEC_PRIVATE_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef SPI_START_SEC_PUBLIC_CODE
+  #undef SPI_START_SEC_PUBLIC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef SPI_STOP_SEC_PUBLIC_CODE
+  #undef SPI_STOP_SEC_PUBLIC_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef SPI_START_SEC_VAR_INIT_16
+  #undef SPI_START_SEC_VAR_INIT_16
+  #define START_SEC_VAR_INIT_16BIT
+#endif
+
+#ifdef SPI_STOP_SEC_VAR_INIT_16
+  #undef SPI_STOP_SEC_VAR_INIT_16
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef SPI_START_SEC_VAR_INIT_UNSPECIFIED
+  #undef SPI_START_SEC_VAR_INIT_UNSPECIFIED
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef SPI_STOP_SEC_VAR_INIT_UNSPECIFIED
+  #undef SPI_STOP_SEC_VAR_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef SPI_START_SEC_VAR_NOINIT_16
+  #undef SPI_START_SEC_VAR_NOINIT_16
+  #define START_SEC_VAR_NOINIT_16BIT
+#endif
+
+#ifdef SPI_STOP_SEC_VAR_NOINIT_16
+  #undef SPI_STOP_SEC_VAR_NOINIT_16
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef SPI_START_SEC_VAR_NOINIT_16BIT
+  #undef SPI_START_SEC_VAR_NOINIT_16BIT
+  #define START_SEC_VAR_NOINIT_16BIT
+#endif
+
+#ifdef SPI_STOP_SEC_VAR_NOINIT_16BIT
+  #undef SPI_STOP_SEC_VAR_NOINIT_16BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef SPI_START_SEC_VAR_NOINIT_1BIT
+  #undef SPI_START_SEC_VAR_NOINIT_1BIT
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef SPI_STOP_SEC_VAR_NOINIT_1BIT
+  #undef SPI_STOP_SEC_VAR_NOINIT_1BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef SPI_START_SEC_VAR_NOINIT_8
+  #undef SPI_START_SEC_VAR_NOINIT_8
+  #define START_SEC_VAR_NOINIT_8BIT
+#endif
+
+#ifdef SPI_STOP_SEC_VAR_NOINIT_8
+  #undef SPI_STOP_SEC_VAR_NOINIT_8
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef SPI_START_SEC_VAR_NOINIT_8BIT
+  #undef SPI_START_SEC_VAR_NOINIT_8BIT
+  #define START_SEC_VAR_NOINIT_8BIT
+#endif
+
+#ifdef SPI_STOP_SEC_VAR_NOINIT_8BIT
+  #undef SPI_STOP_SEC_VAR_NOINIT_8BIT
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef SPI_START_SEC_VAR_NOINIT_BOOLEAN
+  #undef SPI_START_SEC_VAR_NOINIT_BOOLEAN
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef SPI_STOP_SEC_VAR_NOINIT_BOOLEAN
+  #undef SPI_STOP_SEC_VAR_NOINIT_BOOLEAN
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef SPI_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef SPI_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef SPI_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef SPI_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef SPI_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef SPI_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef SPI_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef SPI_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef SPI_START_SEC_VAR_NO_INIT_BOOLEAN
+  #undef SPI_START_SEC_VAR_NO_INIT_BOOLEAN
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef SPI_STOP_SEC_VAR_NO_INIT_BOOLEAN
+  #undef SPI_STOP_SEC_VAR_NO_INIT_BOOLEAN
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef SPI_START_SEC_VAR_NO_INIT_8
+  #undef SPI_START_SEC_VAR_NO_INIT_8
+  #define START_SEC_VAR_NOINIT_8BIT
+#endif
+
+#ifdef SPI_STOP_SEC_VAR_NO_INIT_8
+  #undef SPI_STOP_SEC_VAR_NO_INIT_8
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef SPI_START_SEC_VAR_NO_INIT_16
+  #undef SPI_START_SEC_VAR_NO_INIT_16
+  #define START_SEC_VAR_NOINIT_16BIT
+#endif
+
+#ifdef SPI_STOP_SEC_VAR_NO_INIT_16
+  #undef SPI_STOP_SEC_VAR_NO_INIT_16
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef WDG_59_DRIVERA_START_SEC_CODE_FAST
+  #undef WDG_59_DRIVERA_START_SEC_CODE_FAST
+  #define START_SEC_CODE_FAST
+#endif
+
+#ifdef WDG_59_DRIVERA_STOP_SEC_CODE_FAST
+  #undef WDG_59_DRIVERA_STOP_SEC_CODE_FAST
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef WDG_59_DRIVERA_START_SEC_APPL_CODE
+  #undef WDG_59_DRIVERA_START_SEC_APPL_CODE
+  #define START_SEC_CODE_FAST
+#endif
+
+#ifdef WDG_59_DRIVERA_STOP_SEC_APPL_CODE
+  #undef WDG_59_DRIVERA_STOP_SEC_APPL_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef WDG_59_DRIVERA_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef WDG_59_DRIVERA_START_SEC_CONFIG_DATA_UNSPECIFIED
+  #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#ifdef WDG_59_DRIVERA_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #undef WDG_59_DRIVERA_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+  #define STOP_SEC_CONST
+#endif
+
+#ifdef WDG_59_DRIVERA_START_SEC_PRIVATE_CODE
+  #undef WDG_59_DRIVERA_START_SEC_PRIVATE_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef WDG_59_DRIVERA_STOP_SEC_PRIVATE_CODE
+  #undef WDG_59_DRIVERA_STOP_SEC_PRIVATE_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef WDG_59_DRIVERA_START_SEC_PUBLIC_CODE
+  #undef WDG_59_DRIVERA_START_SEC_PUBLIC_CODE
+  #define START_SEC_CODE
+#endif
+
+#ifdef WDG_59_DRIVERA_STOP_SEC_PUBLIC_CODE
+  #undef WDG_59_DRIVERA_STOP_SEC_PUBLIC_CODE
+  #define STOP_SEC_CODE
+#endif
+
+#ifdef WDG_59_DRIVERA_START_SEC_VAR_INIT_UNSPECIFIED
+  #undef WDG_59_DRIVERA_START_SEC_VAR_INIT_UNSPECIFIED
+  #define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+
+#ifdef WDG_59_DRIVERA_STOP_SEC_VAR_INIT_UNSPECIFIED
+  #undef WDG_59_DRIVERA_STOP_SEC_VAR_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef WDG_59_DRIVERA_START_SEC_VAR_NOINIT_16
+  #undef WDG_59_DRIVERA_START_SEC_VAR_NOINIT_16
+  #define START_SEC_VAR_NOINIT_16BIT
+#endif
+
+#ifdef WDG_59_DRIVERA_STOP_SEC_VAR_NOINIT_16
+  #undef WDG_59_DRIVERA_STOP_SEC_VAR_NOINIT_16
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef WDG_59_DRIVERA_START_SEC_VAR_NOINIT_32
+  #undef WDG_59_DRIVERA_START_SEC_VAR_NOINIT_32
+  #define START_SEC_VAR_NOINIT_32BIT
+#endif
+
+#ifdef WDG_59_DRIVERA_STOP_SEC_VAR_NOINIT_32
+  #undef WDG_59_DRIVERA_STOP_SEC_VAR_NOINIT_32
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef WDG_59_DRIVERA_START_SEC_VAR_NO_INIT_32
+  #undef WDG_59_DRIVERA_START_SEC_VAR_NO_INIT_32
+  #define START_SEC_VAR_NOINIT_32BIT
+#endif
+
+#ifdef WDG_59_DRIVERA_STOP_SEC_VAR_NO_INIT_32
+  #undef WDG_59_DRIVERA_STOP_SEC_VAR_NO_INIT_32
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef WDG_59_DRIVERA_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef WDG_59_DRIVERA_START_SEC_VAR_NOINIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef WDG_59_DRIVERA_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #undef WDG_59_DRIVERA_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+#ifdef WDG_59_DRIVERA_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef WDG_59_DRIVERA_START_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#ifdef WDG_59_DRIVERA_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #undef WDG_59_DRIVERA_STOP_SEC_VAR_NO_INIT_UNSPECIFIED
+  #define STOP_SEC_VAR
+#endif
+
+
+/**********************************************************************************************************************
+ *  NvM START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef NVM_START_SEC_CODE
+    #undef NVM_START_SEC_CODE
+    #define START_SEC_CODE                /* mapped to default code section */
+#endif
+#ifdef NVM_STOP_SEC_CODE
+    #undef NVM_STOP_SEC_CODE
+    #define STOP_SEC_CODE                /* default code stop section */
+#endif
+
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#ifdef NVM_START_SEC_CONST_8
+    #undef NVM_START_SEC_CONST_8
+    #define START_SEC_CONST_8BIT
+#endif
+#ifdef NVM_STOP_SEC_CONST_8
+    #undef NVM_STOP_SEC_CONST_8
+    #define STOP_SEC_CONST
+#endif
+
+#ifdef NVM_START_SEC_CONST_16
+    #undef NVM_START_SEC_CONST_16
+    #define START_SEC_CONST_16BIT
+#endif
+#ifdef NVM_STOP_SEC_CONST_16
+    #undef NVM_STOP_SEC_CONST_16
+    #define STOP_SEC_CONST
+#endif
+
+#ifdef NVM_START_SEC_CONST_UNSPECIFIED
+    #undef NVM_START_SEC_CONST_UNSPECIFIED
+    #define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef NVM_STOP_SEC_CONST_UNSPECIFIED
+    #undef NVM_STOP_SEC_CONST_UNSPECIFIED
+    #define STOP_SEC_CONST
+#endif
+
+#ifdef NVM_START_SEC_CONST_DESCRIPTOR_TABLE
+    #undef NVM_START_SEC_CONST_DESCRIPTOR_TABLE
+    #define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef NVM_STOP_SEC_CONST_DESCRIPTOR_TABLE
+    #undef NVM_STOP_SEC_CONST_DESCRIPTOR_TABLE
+    #define STOP_SEC_CONST
+#endif
+
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR NOINIT sections */
+
+#ifdef NVM_START_SEC_VAR_NOINIT_8
+    #undef NVM_START_SEC_VAR_NOINIT_8
+    #define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef NVM_STOP_SEC_VAR_NOINIT_8
+    #undef NVM_STOP_SEC_VAR_NOINIT_8
+    #define STOP_SEC_VAR
+#endif
+
+#ifdef NVM_START_SEC_VAR_NOINIT_UNSPECIFIED
+    #undef NVM_START_SEC_VAR_NOINIT_UNSPECIFIED
+    #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef NVM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+    #undef NVM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+    #define STOP_SEC_VAR
+#endif
+
+/* If Development Error Detection is ON (as well as INIT check),    *
+ *   it SHALL be mapped to an initialized section (zeor is ok)      *
+ * if Development Error Detection (or at least INIT check) is OFF,  *
+ *   it MAY also be mapped to a NOINIT section.                     */
+#ifdef NVM_START_SEC_VAR_UNSPECIFIED
+    #undef NVM_START_SEC_VAR_UNSPECIFIED
+    #define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+#ifdef NVM_STOP_SEC_VAR_UNSPECIFIED
+    #undef NVM_STOP_SEC_VAR_UNSPECIFIED
+    #define STOP_SEC_VAR
+#endif
+
+/* VAR FAST NOINIT sections */
+#ifdef NVM_START_SEC_VAR_FAST_8
+    #undef NVM_START_SEC_VAR_FAST_8
+    #define START_SEC_VAR_FAST_NOINIT_8BIT
+#endif
+#ifdef NVM_STOP_SEC_VAR_FAST_8
+    #undef NVM_STOP_SEC_VAR_FAST_8
+    #define STOP_SEC_VAR
+#endif
+
+/* VAR ZERO INIT sections */
+
+/* SHALL be mapped to a section that is guaranteed to be ZEROed out after Power-On Reset       *
+ * (therefore it MAY be a "normal" ZERO_INIT section, being ZEROed out after ANY reset         *
+ * Make shure this helds true for all kinds of variable data (esp. "uninitialized).            *
+ * If necessary, create a special section (don't map to a common one)                          */    
+#ifdef NVM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+    #undef NVM_START_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+    #define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+#ifdef NVM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+    #undef NVM_STOP_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+    #define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  NvM END
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *  CSM START
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef CSM_START_SEC_CODE
+# undef CSM_START_SEC_CODE
+# define START_SEC_CODE                            /* mapped to default code section */
+#endif
+#ifdef CSM_STOP_SEC_CODE
+# undef CSM_STOP_SEC_CODE
+# define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+#ifdef CSM_START_SEC_APPL_CODE
+# undef CSM_START_SEC_APPL_CODE                    /* mapped to default code section */
+# define START_SEC_CODE
+#endif
+#ifdef CSM_STOP_SEC_APPL_CODE
+# undef CSM_STOP_SEC_APPL_CODE
+# define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST sections */
+
+#ifdef CSM_START_SEC_CONST_UNSPECIFIED
+# undef CSM_START_SEC_CONST_UNSPECIFIED
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef CSM_STOP_SEC_CONST_UNSPECIFIED
+# undef CSM_STOP_SEC_CONST_UNSPECIFIED
+# define STOP_SEC_CONST
+#endif
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR NOINIT sections */
+
+#ifdef CSM_START_SEC_VAR_NOINIT_8BIT
+# undef CSM_START_SEC_VAR_NOINIT_8BIT
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef CSM_STOP_SEC_VAR_NOINIT_8BIT
+# undef CSM_STOP_SEC_VAR_NOINIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef CSM_START_SEC_VAR_NOINIT_16BIT
+# undef CSM_START_SEC_VAR_NOINIT_16BIT
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+#ifdef CSM_STOP_SEC_VAR_NOINIT_16BIT
+# undef CSM_STOP_SEC_VAR_NOINIT_16BIT
+# define STOP_SEC_VAR
+#endif
+
+/* VAR ZERO INIT sections */
+
+#ifdef CSM_START_SEC_VAR_ZERO_INIT_8BIT
+# undef CSM_START_SEC_VAR_ZERO_INIT_8BIT
+# define START_SEC_VAR_ZERO_INIT_8BIT
+#endif
+#ifdef CSM_STOP_SEC_VAR_ZERO_INIT_8BIT
+# undef CSM_STOP_SEC_VAR_ZERO_INIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef CSM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef CSM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef CSM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef CSM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  CSM END
+ *********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************
+ *  BSWM START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+#ifdef BSWM_START_SEC_CODE
+# undef BSWM_START_SEC_CODE
+# define START_SEC_CODE                                 /* mapped to default code section*/
+#endif
+
+#ifdef BSWM_STOP_SEC_CODE
+# undef BSWM_STOP_SEC_CODE
+# define STOP_SEC_CODE                                  /* default code stop section*/
+#endif
+
+/*******  CONST sections  ********************************************************************************************/
+
+#ifdef BSWM_START_SEC_CONST_8BIT
+# undef BSWM_START_SEC_CONST_8BIT
+# define START_SEC_CONST_8BIT                           /* mapped to default const section */
+#endif
+
+#ifdef BSWM_STOP_SEC_CONST_8BIT
+# undef BSWM_STOP_SEC_CONST_8BIT
+# define STOP_SEC_CONST                                 /* default const stop section */
+#endif
+
+#ifdef BSWM_START_SEC_CONST_16BIT
+# undef BSWM_START_SEC_CONST_16BIT
+# define START_SEC_CONST_16BIT                          /* mapped to default const section */
+#endif
+
+#ifdef BSWM_STOP_SEC_CONST_16BIT
+# undef BSWM_STOP_SEC_CONST_16BIT
+# define STOP_SEC_CONST                                 /* default const stop section */
+#endif
+
+#ifdef BSWM_START_SEC_CONST_32BIT
+# undef BSWM_START_SEC_CONST_32BIT
+# define START_SEC_CONST_32BIT                          /* mapped to default const section */
+#endif
+
+#ifdef BSWM_STOP_SEC_CONST_32BIT
+# undef BSWM_STOP_SEC_CONST_32BIT
+# define STOP_SEC_CONST                                 /* default const stop section */
+#endif
+
+#ifdef BSWM_START_SEC_CONST_UNSPECIFIED
+# undef BSWM_START_SEC_CONST_UNSPECIFIED
+# define START_SEC_CONST_UNSPECIFIED                    /* mapped to default const section */
+#endif
+
+#ifdef BSWM_STOP_SEC_CONST_UNSPECIFIED
+# undef BSWM_STOP_SEC_CONST_UNSPECIFIED
+# define STOP_SEC_CONST                                 /* default const stop section */
+#endif
+
+#ifdef BSWM_START_SEC_PBCFG
+# undef BSWM_START_SEC_PBCFG
+# define START_SEC_CONST_PBCFG                          /* mapped to default const section */
+#endif
+
+#ifdef BSWM_STOP_SEC_PBCFG
+# undef BSWM_STOP_SEC_PBCFG
+# define STOP_SEC_CONST                                 /* default const stop section */
+#endif
+
+/*******  VAR sections  **********************************************************************************************/
+
+#ifdef BSWM_START_SEC_VAR_NOINIT_8BIT
+# undef BSWM_START_SEC_VAR_NOINIT_8BIT
+# define START_SEC_VAR_NOINIT_8BIT                      /* mapped to default var section */
+#endif
+
+#ifdef BSWM_STOP_SEC_VAR_NOINIT_8BIT
+# undef BSWM_STOP_SEC_VAR_NOINIT_8BIT
+# define STOP_SEC_VAR                                   /* default var stop section*/
+#endif
+
+#ifdef BSWM_START_SEC_VAR_NOINIT_16BIT
+# undef  BSWM_START_SEC_VAR_NOINIT_16BIT                /* mapped to default var section */
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+
+#ifdef BSWM_STOP_SEC_VAR_NOINIT_16BIT
+# undef BSWM_STOP_SEC_VAR_NOINIT_16BIT
+# define STOP_SEC_VAR                                   /* default var stop section */
+#endif
+
+#ifdef BSWM_START_SEC_VAR_NOINIT_32BIT
+# undef  BSWM_START_SEC_VAR_NOINIT_32BIT
+# define START_SEC_VAR_NOINIT_32BIT                     /* mapped to default var section */
+#endif
+
+#ifdef BSWM_STOP_SEC_VAR_NOINIT_32BIT
+# undef BSWM_STOP_SEC_VAR_NOINIT_32BIT
+# define STOP_SEC_VAR                                   /* default var stop section*/
+#endif
+
+#ifdef BSWM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef BSWM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# define START_SEC_VAR_NOINIT_UNSPECIFIED               /* mapped to default var section */
+#endif
+
+#ifdef BSWM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef BSWM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# define STOP_SEC_VAR                                   /* default var stop section */
+#endif
+
+#ifdef BSWM_START_SEC_VAR_ZERO_INIT_8BIT
+# undef BSWM_START_SEC_VAR_ZERO_INIT_8BIT
+# define START_SEC_VAR_ZERO_INIT_8BIT                   /* mapped to default var section */
+#endif
+
+#ifdef BSWM_STOP_SEC_VAR_ZERO_INIT_8BIT
+# undef BSWM_STOP_SEC_VAR_ZERO_INIT_8BIT
+# define STOP_SEC_VAR                                   /* default var stop section */
+#endif
+
+#ifdef BSWM_START_SEC_VAR_PBCFG
+# undef BSWM_START_SEC_VAR_PBCFG
+# define START_SEC_VAR_PBCFG                            /* mapped to default var section */
+#endif
+
+#ifdef BSWM_STOP_SEC_VAR_PBCFG
+# undef BSWM_STOP_SEC_VAR_PBCFG
+# define STOP_SEC_VAR                                   /* default var stop section */
+#endif
+
+/**********************************************************************************************************************
+ *  BSWM END
+ *********************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************
+ *  SYSSERVICE_ASR4ECUM START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+#ifdef ECUM_START_SEC_CODE
+# undef ECUM_START_SEC_CODE
+# define START_SEC_CODE                            /* mapped to default code section */
+#endif
+#ifdef ECUM_STOP_SEC_CODE
+# undef ECUM_STOP_SEC_CODE
+# define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+/*******  CONST sections  ********************************************************************************************/
+
+#ifdef ECUM_START_SEC_CONST_UNSPECIFIED
+# undef ECUM_START_SEC_CONST_UNSPECIFIED
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef ECUM_STOP_SEC_CONST_UNSPECIFIED
+# undef ECUM_STOP_SEC_CONST_UNSPECIFIED
+# define STOP_SEC_CONST
+#endif
+
+#ifdef ECUM_START_SEC_CONST_8BIT
+# undef ECUM_START_SEC_CONST_8BIT
+# define START_SEC_CONST_8BIT
+#endif
+#ifdef ECUM_STOP_SEC_CONST_8BIT
+# undef ECUM_STOP_SEC_CONST_8BIT
+# define STOP_SEC_CONST
+#endif
+
+/* Postbuild CFG CONST sections */
+
+#ifdef ECUM_START_SEC_PBCFG
+# undef ECUM_START_SEC_PBCFG
+# define START_SEC_CONST_PBCFG
+#endif
+#ifdef ECUM_STOP_SEC_PBCFG
+# undef ECUM_STOP_SEC_PBCFG
+# define STOP_SEC_CONST
+#endif
+
+#ifdef ECUM_START_SEC_PBCFG_GLOBALROOT
+# undef ECUM_START_SEC_PBCFG_GLOBALROOT
+# define START_SEC_PBCFG_GLOBALROOT
+#endif
+#ifdef ECUM_STOP_SEC_PBCFG_GLOBALROOT
+# undef ECUM_STOP_SEC_PBCFG_GLOBALROOT
+# define STOP_SEC_CONST
+#endif
+
+
+
+/*******  VAR sections  **********************************************************************************************/
+
+
+/* VAR NOINIT sections */
+
+#ifdef ECUM_START_SEC_VAR_NOINIT_8BIT
+# undef ECUM_START_SEC_VAR_NOINIT_8BIT
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef ECUM_STOP_SEC_VAR_NOINIT_8BIT
+# undef ECUM_STOP_SEC_VAR_NOINIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef ECUM_START_SEC_VAR_NOINIT_16BIT
+# undef ECUM_START_SEC_VAR_NOINIT_16BIT
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+#ifdef ECUM_STOP_SEC_VAR_NOINIT_16BIT
+# undef ECUM_STOP_SEC_VAR_NOINIT_16BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef ECUM_START_SEC_VAR_NOINIT_32BIT
+# undef ECUM_START_SEC_VAR_NOINIT_32BIT
+# define START_SEC_VAR_NOINIT_32BIT
+#endif
+#ifdef ECUM_STOP_SEC_VAR_NOINIT_32BIT
+# undef ECUM_STOP_SEC_VAR_NOINIT_32BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef ECUM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef ECUM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef ECUM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef ECUM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+#ifdef ECUM_START_SEC_VAR_NOCACHE_NOINIT_32BIT
+# undef ECUM_START_SEC_VAR_NOCACHE_NOINIT_32BIT
+# define START_SEC_VAR_NOCACHE_NOINIT_32BIT
+#endif
+#ifdef ECUM_STOP_SEC_VAR_NOCACHE_NOINIT_32BIT
+# undef ECUM_STOP_SEC_VAR_NOCACHE_NOINIT_32BIT
+# define STOP_SEC_VAR
+#endif
+
+
+/**********************************************************************************************************************
+ *  SYSSERVICE_ASR4ECUM END
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *  WDGM START
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#if defined WDGM_START_SEC_CODE
+# undef WDGM_START_SEC_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CODE
+#endif
+#if defined WDGM_STOP_SEC_CODE
+# undef WDGM_STOP_SEC_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CODE
+#endif
+
+#if defined(WDGM_START_SEC_APPL_CODE)
+# undef WDGM_START_SEC_APPL_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CODE
+#endif
+#if defined(WDGM_STOP_SEC_APPL_CODE)
+# undef WDGM_STOP_SEC_APPL_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CODE
+#endif
+
+
+/*******  CONST sections  ********************************************************************************************/
+
+#if defined WDGM_START_SEC_CONST_8BIT
+# undef WDGM_START_SEC_CONST_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_8BIT
+#endif
+#if defined WDGM_STOP_SEC_CONST_8BIT
+# undef WDGM_STOP_SEC_CONST_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#if defined WDGM_START_SEC_CONST_16BIT
+# undef WDGM_START_SEC_CONST_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_16BIT
+#endif
+#if defined WDGM_STOP_SEC_CONST_16BIT
+# undef WDGM_STOP_SEC_CONST_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#if defined WDGM_START_SEC_CONST_32BIT
+# undef WDGM_START_SEC_CONST_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_32BIT
+#endif
+#if defined WDGM_STOP_SEC_CONST_32BIT
+# undef WDGM_STOP_SEC_CONST_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+#if defined WDGM_START_SEC_CONST_UNSPECIFIED
+# undef WDGM_START_SEC_CONST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#if defined WDGM_STOP_SEC_CONST_UNSPECIFIED
+# undef WDGM_STOP_SEC_CONST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CONST
+#endif
+
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR NOINIT sections */
+
+#if defined WDGM_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef WDGM_START_SEC_VAR_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#if defined WDGM_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef WDGM_STOP_SEC_VAR_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGM_START_SEC_VAR_NOINIT_8BIT
+# undef WDGM_START_SEC_VAR_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#if defined WDGM_STOP_SEC_VAR_NOINIT_8BIT
+# undef WDGM_STOP_SEC_VAR_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGM_START_SEC_VAR_NOINIT_16BIT
+# undef WDGM_START_SEC_VAR_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_16BIT
+#endif
+#if defined WDGM_STOP_SEC_VAR_NOINIT_16BIT
+# undef WDGM_STOP_SEC_VAR_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGM_START_SEC_VAR_NOINIT_32BIT
+# undef WDGM_START_SEC_VAR_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_NOINIT_32BIT
+#endif
+#if defined WDGM_STOP_SEC_VAR_NOINIT_32BIT
+# undef WDGM_STOP_SEC_VAR_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+
+/* VAR INIT sections */
+
+#if defined WDGM_START_SEC_VAR_8BIT
+# undef WDGM_START_SEC_VAR_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_8BIT
+#endif
+#if defined WDGM_STOP_SEC_VAR_8BIT
+# undef WDGM_STOP_SEC_VAR_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGM_START_SEC_VAR_16BIT
+# undef WDGM_START_SEC_VAR_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_16BIT  
+#endif
+#if defined WDGM_STOP_SEC_VAR_16BIT
+# undef WDGM_STOP_SEC_VAR_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGM_START_SEC_VAR_32BIT
+# undef WDGM_START_SEC_VAR_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_32BIT
+#endif
+#if defined WDGM_STOP_SEC_VAR_32BIT
+# undef WDGM_STOP_SEC_VAR_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+#if defined WDGM_START_SEC_VAR_BOOLEAN
+# undef WDGM_START_SEC_VAR_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+#if defined WDGM_STOP_SEC_VAR_BOOLEAN
+# undef WDGM_STOP_SEC_VAR_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_VAR
+#endif
+
+
+/* Global Shared Variables of the WdgM.
+ * If a SafeContext OS is used this section will be defined by the OS.
+ * If no SafeContext OS is used this section has to be mapped to a memory area where all SWCs has access
+ */
+/*#if defined GlobalShared_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef GlobalShared_START_SEC_VAR_NOINIT_UNSPECIFIED*/ /* PRQA S 0841 */ /* MD_MSR_19.6 */
+/*# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#if defined GlobalShared_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef GlobalShared_STOP_SEC_VAR_NOINIT_UNSPECIFIED*/ /* PRQA S 0841 */ /* MD_MSR_19.6 */
+/*# define STOP_SEC_VAR
+#endif*/
+/* or the following section (depending on which OS version is used) */
+/*#if defined OS_START_SEC_GLOBALSHARED_VAR_NOINIT_UNSPECIFIED
+# undef OS_START_SEC_GLOBALSHARED_VAR_NOINIT_UNSPECIFIED*/ /* PRQA S 0841 */ /* MD_MSR_19.6 */
+/*# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#if defined OS_STOP_SEC_GLOBALSHARED_VAR_NOINIT_UNSPECIFIED
+# undef OS_STOP_SEC_GLOBALSHARED_VAR_NOINIT_UNSPECIFIED*/ /* PRQA S 0841 */ /* MD_MSR_19.6 */
+/*# define STOP_SEC_VAR
+#endif*/
+ 
+/**********************************************************************************************************************
+ *  WDGM END
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *  SYSSERVICE_ASRCAL START
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef CAL_START_SEC_CODE
+  #undef CAL_START_SEC_CODE
+  #define START_SEC_CODE                            /* mapped to default code section */
+#endif
+#ifdef CAL_STOP_SEC_CODE
+  #undef CAL_STOP_SEC_CODE
+  #define STOP_SEC_CODE                             /* default code stop section */
+#endif
+
+/*******  CONST sections  ********************************************************************************************/
+
+/* CONST_UNSPECIFIED sections */
+
+#ifdef CAL_START_SEC_CONST_UNSPECIFIED
+# undef CAL_START_SEC_CONST_UNSPECIFIED
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef CAL_STOP_SEC_CONST_UNSPECIFIED
+# undef CAL_STOP_SEC_CONST_UNSPECIFIED
+# define STOP_SEC_CONST
+#endif
+
+/*******  VAR sections  **********************************************************************************************/
+
+/**********************************************************************************************************************
+ *  SYSSERVICE_ASRCAL END
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *  SYSSERVICE_ASRCRC START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+#ifdef CRC_START_SEC_CODE
+    #undef CRC_START_SEC_CODE
+    #define START_SEC_CODE
+#endif
+#ifdef CRC_STOP_SEC_CODE
+    #undef CRC_STOP_SEC_CODE
+    #define STOP_SEC_CODE
+#endif
+
+/*******  CONST sections  ********************************************************************************************/
+#ifdef CRC_START_SEC_CONST_8
+    #undef CRC_START_SEC_CONST_8
+    #define START_SEC_CONST_8
+#endif
+#ifdef CRC_STOP_SEC_CONST_8
+    #undef CRC_STOP_SEC_CONST_8
+    #define STOP_SEC_CONST
+#endif
+
+#ifdef CRC_START_SEC_CONST_16
+    #undef CRC_START_SEC_CONST_16
+    #define START_SEC_CONST_16
+#endif
+#ifdef CRC_STOP_SEC_CONST_16
+    #undef CRC_STOP_SEC_CONST_16
+    #define STOP_SEC_CONST
+#endif
+
+#ifdef CRC_START_SEC_CONST_32
+    #undef CRC_START_SEC_CONST_32
+    #define START_SEC_CONST_32
+#endif
+#ifdef CRC_STOP_SEC_CONST_32
+    #undef CRC_STOP_SEC_CONST_32
+    #define STOP_SEC_CONST
+#endif
+
+#ifdef CRC_START_SEC_CONST_64
+    #undef CRC_START_SEC_CONST_64
+    #define START_SEC_CONST_64
+#endif
+#ifdef CRC_STOP_SEC_CONST_64
+    #undef CRC_STOP_SEC_CONST_64
+    #define STOP_SEC_CONST
+#endif
+
+/**********************************************************************************************************************
+ *  SYSSERVICE_ASRCRC END
+ *********************************************************************************************************************/
+
+#ifdef DET_START_SEC_CODE
+# undef DET_START_SEC_CODE
+# define START_SEC_CODE
+#endif
+#ifdef DET_STOP_SEC_CODE
+# undef DET_STOP_SEC_CODE
+# define STOP_SEC_CODE
+#endif
+
+#ifdef DET_START_SEC_VAR_NOINIT_UNSPECIFIED
+# undef DET_START_SEC_VAR_NOINIT_UNSPECIFIED
+# define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+#ifdef DET_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# undef DET_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+#ifdef DET_START_SEC_VAR_NOINIT_8BIT
+# undef DET_START_SEC_VAR_NOINIT_8BIT
+# define START_SEC_VAR_NOINIT_8BIT
+#endif
+#ifdef DET_STOP_SEC_VAR_NOINIT_8BIT
+# undef DET_STOP_SEC_VAR_NOINIT_8BIT
+# define STOP_SEC_VAR
+#endif
+
+#ifdef DET_START_SEC_VAR_INIT_UNSPECIFIED
+# undef DET_START_SEC_VAR_INIT_UNSPECIFIED
+# define START_SEC_VAR_INIT_UNSPECIFIED
+#endif
+#ifdef DET_STOP_SEC_VAR_INIT_UNSPECIFIED
+# undef DET_STOP_SEC_VAR_INIT_UNSPECIFIED
+# define STOP_SEC_VAR
+#endif
+
+#ifdef DET_START_SEC_CONST_UNSPECIFIED
+# undef DET_START_SEC_CONST_UNSPECIFIED
+# define START_SEC_CONST_UNSPECIFIED
+#endif
+#ifdef DET_STOP_SEC_CONST_UNSPECIFIED
+# undef DET_STOP_SEC_CONST_UNSPECIFIED
+# define STOP_SEC_CONST
+#endif
+
+/**********************************************************************************************************************
+ *  SysService_E2eLib START
+ *********************************************************************************************************************/
+
+
+/*******  CODE sections **********************************************************************************************/
+
+#ifdef E2E_START_SEC_CODE
+    #undef E2E_START_SEC_CODE
+    #define START_SEC_CODE
+#endif
+#ifdef E2E_STOP_SEC_CODE
+    #undef E2E_STOP_SEC_CODE
+    #define STOP_SEC_CODE
+#endif
+
+/**********************************************************************************************************************
+ *  SysService_E2eLib END
+ *********************************************************************************************************************/
+
+/* E2EPW_MemMap.inc: End-To-End Protection Wrapper Memory Mapping: */
+
+
+/* Code */
+/* To be used for mapping code to application block, boot block, external flash etc. */
+#if defined   E2EPW_START_SEC_CODE
+#undef        E2EPW_START_SEC_CODE
+#define           START_SEC_CODE
+
+#elif defined E2EPW_STOP_SEC_CODE
+#undef        E2EPW_STOP_SEC_CODE
+#define             STOP_SEC_CODE
+
+
+/* Constants */
+/* To be used for global or static constants.  */
+#elif defined E2EPW_START_SEC_CONST_UNSPECIFIED
+#undef        E2EPW_START_SEC_CONST_UNSPECIFIED
+#define             START_SEC_CONST_UNSPECIFIED
+
+#elif defined E2EPW_STOP_SEC_CONST_UNSPECIFIED
+#undef        E2EPW_STOP_SEC_CONST_UNSPECIFIED
+#define             STOP_SEC_CONST
+
+
+/* Var init unspecified */
+#elif defined E2EPW_START_SEC_VAR_INIT_UNSPECIFIED
+#undef        E2EPW_START_SEC_VAR_INIT_UNSPECIFIED
+#define             START_SEC_VAR_INIT_UNSPECIFIED
+
+#elif defined E2EPW_STOP_SEC_VAR_INIT_UNSPECIFIED
+#undef        E2EPW_STOP_SEC_VAR_INIT_UNSPECIFIED
+#define             STOP_SEC_VAR
+
+
+/* Var uninitialized unspecified */
+/* To be used for all global or static variables that are never initialized */
+#elif defined E2EPW_START_SEC_VAR_NOINIT_UNSPECIFIED
+#undef        E2EPW_START_SEC_VAR_NOINIT_UNSPECIFIED
+#define             START_SEC_VAR_NOINIT_UNSPECIFIED
+
+#elif defined E2EPW_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+#undef        E2EPW_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+#define             STOP_SEC_VAR
+
+
+/* Var zero init unspecified */
+#elif defined E2EPW_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#undef        E2EPW_START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#define             START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+
+#elif defined E2EPW_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#undef        E2EPW_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#define             STOP_SEC_VAR
+
+
+/* Library code     */
+/* To be used for code that shall go into library segments for <MSN> module. */
+#elif defined E2EPW_START_SEC_CODE_LIB
+#undef        E2EPW_START_SEC_CODE_LIB
+#define             START_SEC_CODE
+
+#elif defined E2EPW_STOP_SEC_CODE_LIB
+#undef        E2EPW_STOP_SEC_CODE_LIB
+#define             STOP_SEC_CODE
+
+#endif
+
+/* End of file E2EPW_MemMap.inc */
+
+/**********************************************************************************************************************
+ *  TP_ISO10681 START 
+ *********************************************************************************************************************/
+
+/*******  CODE sections **********************************************************************************************/
+
+#if defined (FRTP_START_SEC_CODE)
+   #undef      FRTP_START_SEC_CODE                   /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_CODE
+#endif
+
+#if defined (FRTP_STOP_SEC_CODE)
+   #undef      FRTP_STOP_SEC_CODE                    /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_CODE
+#endif
+
+#if defined (FRTP_START_SEC_CODE)
+   #undef      FRTP_START_SEC_CODE                          /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_CODE
+#endif
+
+#if defined (FRTP_STOP_SEC_CODE)
+   #undef      FRTP_STOP_SEC_CODE                           /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_CODE
+#endif
+
+/*******  CONST sections  ********************************************************************************************/
+
+#if defined (FRTP_START_SEC_CONST_8BIT)
+   #undef      FRTP_START_SEC_CONST_8BIT             /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_CONST_8BIT
+#endif
+
+#if defined (FRTP_STOP_SEC_CONST_8BIT)
+   #undef      FRTP_STOP_SEC_CONST_8BIT              /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_CONST
+#endif
+
+#if defined (FRTP_START_SEC_CONST_16BIT)
+   #undef      FRTP_START_SEC_CONST_16BIT            /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_CONST_16BIT
+#endif
+
+#if defined (FRTP_STOP_SEC_CONST_16BIT)
+   #undef      FRTP_STOP_SEC_CONST_16BIT             /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_CONST
+#endif
+
+#if defined (FRTP_START_SEC_CONST_32BIT)
+   #undef      FRTP_START_SEC_CONST_32BIT            /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_CONST_32BIT
+#endif
+
+#if defined (FRTP_STOP_SEC_CONST_32BIT)
+   #undef      FRTP_STOP_SEC_CONST_32BIT             /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_CONST
+#endif
+
+#if defined (FRTP_START_SEC_CONST_UNSPECIFIED)
+   #undef      FRTP_START_SEC_CONST_UNSPECIFIED      /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_CONST_UNSPECIFIED
+#endif
+
+#if defined (FRTP_STOP_SEC_CONST_UNSPECIFIED)
+   #undef      FRTP_STOP_SEC_CONST_UNSPECIFIED       /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_CONST
+#endif
+
+/*******  Postbuild CFG CONST sections *******************************************************************************/
+
+#if defined (FRTP_START_SEC_PBCFG)
+   #undef      FRTP_START_SEC_PBCFG                  /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_CONST_PBCFG
+#endif
+
+#if defined (FRTP_STOP_SEC_PBCFG)
+   #undef      FRTP_STOP_SEC_PBCFG                   /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_CONST
+#endif
+
+#if defined (FRTP_START_SEC_PBCFG_ROOT)
+   #undef      FRTP_START_SEC_PBCFG_ROOT             /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_CONST_PBCFG
+#endif
+
+#if defined (FRTP_STOP_SEC_PBCFG_ROOT)
+   #undef      FRTP_STOP_SEC_PBCFG_ROOT              /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_CONST
+#endif
+
+/*******  Postbuild CFG VAR sections *********************************************************************************/
+
+#if defined (FRTP_START_SEC_VAR_PBCFG)
+   #undef      FRTP_START_SEC_VAR_PBCFG              /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_VAR_PBCFG
+#endif
+
+#if defined (FRTP_STOP_SEC_VAR_PBCFG)
+   #undef      FRTP_STOP_SEC_VAR_PBCFG                   /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_VAR
+#endif
+
+/*******  VAR sections  **********************************************************************************************/
+
+/* VAR NOINIT sections */
+
+#if defined (FRTP_START_SEC_VAR_NOINIT_8BIT)
+   #undef      FRTP_START_SEC_VAR_NOINIT_8BIT        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_VAR_NOINIT_8BIT
+#endif
+
+#if defined (FRTP_STOP_SEC_VAR_NOINIT_8BIT)
+   #undef      FRTP_STOP_SEC_VAR_NOINIT_8BIT         /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_VAR
+#endif
+
+#if defined (FRTP_START_SEC_VAR_NOINIT_16BIT)
+   #undef      FRTP_START_SEC_VAR_NOINIT_16BIT       /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_VAR_NOINIT_16BIT
+#endif
+
+#if defined (FRTP_STOP_SEC_VAR_NOINIT_16BIT)
+   #undef      FRTP_STOP_SEC_VAR_NOINIT_16BIT        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_VAR
+#endif
+
+#if defined (FRTP_START_SEC_VAR_NOINIT_32BIT)
+   #undef      FRTP_START_SEC_VAR_NOINIT_32BIT       /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_VAR_NOINIT_32BIT
+#endif
+
+#if defined (FRTP_STOP_SEC_VAR_NOINIT_32BIT)         /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #undef      FRTP_STOP_SEC_VAR_NOINIT_32BIT
+   #define STOP_SEC_VAR
+#endif
+
+#if defined (FRTP_START_SEC_VAR_NOINIT_UNSPECIFIED)
+   #undef      FRTP_START_SEC_VAR_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_VAR_NOINIT_UNSPECIFIED
+#endif
+
+#if defined (FRTP_STOP_SEC_VAR_NOINIT_UNSPECIFIED)
+   #undef      FRTP_STOP_SEC_VAR_NOINIT_UNSPECIFIED  /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_VAR
+#endif
+
+/*******  VAR ZERO INIT sections  *************************************************************************************/
+
+/* VAR ZERO_INIT sections */
+
+#if defined (FRTP_START_SEC_VAR_ZERO_INIT_8BIT)
+   #undef      FRTP_START_SEC_VAR_ZERO_INIT_8BIT        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_VAR_ZERO_INIT_8BIT
+#endif
+
+#if defined (FRTP_STOP_SEC_VAR_ZERO_INIT_8BIT)
+   #undef      FRTP_STOP_SEC_VAR_ZERO_INIT_8BIT         /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_VAR
+#endif
+
+#if defined (FRTP_START_SEC_VAR_ZERO_INIT_16BIT)
+   #undef      FRTP_START_SEC_VAR_ZERO_INIT_16BIT       /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_VAR_ZERO_INIT_16BIT
+#endif
+
+#if defined (FRTP_STOP_SEC_VAR_ZERO_INIT_16BIT)
+   #undef      FRTP_STOP_SEC_VAR_ZERO_INIT_16BIT        /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_VAR
+#endif
+
+#if defined (FRTP_START_SEC_VAR_ZERO_INIT_32BIT)
+   #undef      FRTP_START_SEC_VAR_ZERO_INIT_32BIT       /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_VAR_ZERO_INIT_32BIT
+#endif
+
+#if defined (FRTP_STOP_SEC_VAR_ZERO_INIT_32BIT)         /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #undef      FRTP_STOP_SEC_VAR_ZERO_INIT_32BIT
+   #define STOP_SEC_VAR
+#endif
+
+#if defined (FRTP_START_SEC_VAR_ZERO_INIT_UNSPECIFIED)
+   #undef      FRTP_START_SEC_VAR_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define START_SEC_VAR_ZERO_INIT_UNSPECIFIED
+#endif
+
+#if defined (FRTP_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED)
+   #undef      FRTP_STOP_SEC_VAR_ZERO_INIT_UNSPECIFIED  /* PRQA S 0841 */ /* MD_MSR_19.6 */
+   #define STOP_SEC_VAR
+#endif
+
+/**********************************************************************************************************************
+ *  TP_ISO10681 END
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *  VSTDLIB START
+ *********************************************************************************************************************/
+
+#if defined(VSTDLIB_START_SEC_CODE)
+# undef VSTDLIB_START_SEC_CODE                             /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define START_SEC_CODE                                    /* mapped to default code section */
+#endif
+#if defined(VSTDLIB_STOP_SEC_CODE)
+# undef VSTDLIB_STOP_SEC_CODE                              /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# define STOP_SEC_CODE
+#endif
+
+/**********************************************************************************************************************
+ *  VSTDLIB END
+ *********************************************************************************************************************/
+
+//#include "Os_MemMap.h" /*visbim*/
+/* special section for sync states shared data */
+
+#ifdef SYNC_START_SEC_CODE
+   #undef SYNC_START_SEC_CODE
+   #define START_SEC_CODE
+#endif
+
+#ifdef SYNC_STOP_SEC_CODE
+   #undef SYNC_STOP_SEC_CODE
+   #define STOP_SEC_CODE
+#endif
+
+
+ #ifdef TEST_STAMP_START_SEC_VAR_DATA
+ # undef TEST_STAMP_START_SEC_VAR_DATA
+ # undef MEMMAP_ERROR
+#endif
+
+
+ #ifdef TEST_STAMP_STOP_SEC_VAR_DATA
+ # undef TEST_STAMP_STOP_SEC_VAR_DATA
+ # undef MEMMAP_ERROR
+#endif
+
+
+#ifdef START_SEC_VAR_INIT_UNSPECIFIED_RESET_RAM
+ # undef START_SEC_VAR_INIT_UNSPECIFIED_RESET_RAM
+ #pragma ghs section bss="DLOG_NO_RESET_RAM"
+#undef MEMMAP_ERROR
+#endif
+
+
+ #ifdef STOP_SEC_VAR_RESET_RAM
+ # undef STOP_SEC_VAR_RESET_RAM
+ #pragma ghs section bss=default
+ # undef MEMMAP_ERROR
+#endif
+
+
+
+#include "MemMap_Common.h"
+#undef MEMMAP_DIRECT
+
+/**********************************************************************************************************************
+ *  END OF FILE: MemMap.h
+ *********************************************************************************************************************/
+

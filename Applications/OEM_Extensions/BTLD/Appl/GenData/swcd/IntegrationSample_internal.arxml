@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * \file
+ *
+ *  \brief       BMW SWC IntegrationSample
+ *
+ *  This file contains the implementation of the BMW Sample SWC IntegrationSample
+ *  for usage in the BMW AUTOSAR Core Example.
+ *
+ * \project     BMW Platform Software
+ *
+ * \copyright   BMW AG 2016 - 2017
+ *
+ * \version     5.0.3
+ *
+ */
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0_STRICT_COMPACT.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>IntegrationSample</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <SWC-IMPLEMENTATION>
+                      <SHORT-NAME>IMPL_IntegrationSample</SHORT-NAME>
+                      <CODE-DESCRIPTORS>
+                        <CODE>
+                          <SHORT-NAME>Code1</SHORT-NAME>
+                          <ARTIFACT-DESCRIPTORS>
+                            <AUTOSAR-ENGINEERING-OBJECT>
+                              <SHORT-LABEL>-</SHORT-LABEL>
+                              <CATEGORY>-</CATEGORY>
+                            </AUTOSAR-ENGINEERING-OBJECT>
+                          </ARTIFACT-DESCRIPTORS>
+                        </CODE>
+                      </CODE-DESCRIPTORS>
+                      <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+                      <RESOURCE-CONSUMPTION>
+                        <SHORT-NAME>ResConsumption1</SHORT-NAME>
+                      </RESOURCE-CONSUMPTION>
+                      <SW-VERSION>5.0.3</SW-VERSION>
+                      <VENDOR-ID>5</VENDOR-ID>
+                      <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample</BEHAVIOR-REF>
+                    </SWC-IMPLEMENTATION>
+                    <APPLICATION-SW-COMPONENT-TYPE>
+                      <SHORT-NAME>IntegrationSample</SHORT-NAME>
+                      <PORTS>
+
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>IntegrationSampleSimpleTimerPort_0</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <MODE-SWITCH-SENDER-COM-SPEC>
+                              <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/ISimpleTimer/SimpleTimerMode</MODE-GROUP-REF>
+                              <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                            </MODE-SWITCH-SENDER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/IntegrationSample/PortInterfaces/ISimpleTimer</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+
+               </PORTS>
+                      <INTERNAL-BEHAVIORS>
+                        <SWC-INTERNAL-BEHAVIOR>
+                          <SHORT-NAME>IB_IntegrationSample</SHORT-NAME>
+                          <DATA-TYPE-MAPPING-REFS>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BMW/Platform/IntegrationSample/DataTypeMappingSets/IntegrationSampleModemappingSimpleTimerMode</DATA-TYPE-MAPPING-REF>
+                          </DATA-TYPE-MAPPING-REFS>
+                          <EXCLUSIVE-AREAS>
+                            <EXCLUSIVE-AREA>
+                              <SHORT-NAME>EXA_IntegrationSample</SHORT-NAME>
+                            </EXCLUSIVE-AREA>
+                          </EXCLUSIVE-AREAS>
+                          <EVENTS>
+                            <TIMING-EVENT>
+                              <SHORT-NAME>IntegrationSample_SimpleTimer_TimingEvent</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IB_IntegrationSample/IntegrationSampleTimerFunction</START-ON-EVENT-REF>
+                              <PERIOD>0.1</PERIOD>
+                            </TIMING-EVENT>
+
+
+                          </EVENTS>
+                          <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+                          <INCLUDED-DATA-TYPE-SETS>
+                          </INCLUDED-DATA-TYPE-SETS>
+                          <RUNNABLES>
+
+
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>IntegrationSampleTimerFunction</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <MODE-SWITCH-POINTS>
+                                  <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>MSP_SampleTimer_Mode_0</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/IntegrationSample/SwComponentTypes/IntegrationSample/IntegrationSampleSimpleTimerPort_0</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/IntegrationSample/PortInterfaces/ISimpleTimer/SimpleTimerMode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                                </MODE-SWITCH-POINTS>
+                              <SYMBOL>R_IntegrationSample_TimerFunction</SYMBOL>
+                            </RUNNABLE-ENTITY>
+
+                          </RUNNABLES>
+                          <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                        </SWC-INTERNAL-BEHAVIOR>
+                      </INTERNAL-BEHAVIORS>
+                    </APPLICATION-SW-COMPONENT-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
+

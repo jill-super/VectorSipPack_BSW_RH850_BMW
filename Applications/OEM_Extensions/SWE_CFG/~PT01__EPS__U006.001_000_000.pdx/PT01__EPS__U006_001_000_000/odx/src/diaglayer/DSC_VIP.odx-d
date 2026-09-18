@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-11c97637-de76-4cbc-9e78-90f3c2ab0193" ID="id-11c97637-de76-4cbc-9e78-90f3c2ab0193">
+        <SHORT-NAME>DSC_VIP_DLC</SHORT-NAME>
+        <LONG-NAME>Dynamic Stability Control  Continental 03 (BMW Anteil)</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-c60e1fc5-75cf-4ec8-9a1e-4d3b18804934" ID="id-c60e1fc5-75cf-4ec8-9a1e-4d3b18804934">
+                <SHORT-NAME>DSC_VIP</SHORT-NAME>
+                <LONG-NAME>Dynamic Stability Control  Continental 03 (BMW Anteil)</LONG-NAME>
+                <DESC>
+                    <p>virtuelle Integrationsplattform (codierbar, SWT und IDR Light)</p>
+                </DESC>
+        				<DIAG-COMMS>
+        					<SINGLE-ECU-JOB ID="id-3d58a055-d221-43dc-aa1a-8c979b6f98d9" OID="id-3d58a055-d221-43dc-aa1a-8c979b6f98d9">
+        						<SHORT-NAME>FINALIZE_ECU_FLASH</SHORT-NAME>
+        						<LONG-NAME>MCD3_FinalizeECUFlash</LONG-NAME>
+        						<FUNCT-CLASS-REFS>
+        							<FUNCT-CLASS-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-4b283c80-4478-43fb-97d0-d7d42d15b749"/>
+        						</FUNCT-CLASS-REFS>
+        						<AUDIENCE/>
+        						<PROG-CODES>
+        							<PROG-CODE>
+        								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+        								<SYNTAX>JAR</SYNTAX>
+        								<REVISION>001.003.009</REVISION>
+        								<ENTRYPOINT>com.bmw.psdz.jobs.programming.dsc_brs.MCD3_FinalizeECUFlash</ENTRYPOINT>
+        							</PROG-CODE>
+        						</PROG-CODES>
+        						<INPUT-PARAMS>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>VIN</SHORT-NAME>
+        								<LONG-NAME>VIN</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>WAF</SHORT-NAME>
+        								<LONG-NAME>WroteAllFlag</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-f98f6d23-1d93-4858-8f23-01359785e918"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>RESET_GATEWAY</SHORT-NAME>
+        								<LONG-NAME>ResetGateway</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-f98f6d23-1d93-4858-8f23-01359785e918"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>FLAMODE</SHORT-NAME>
+        								<LONG-NAME>FlaMode</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-f98f6d23-1d93-4858-8f23-01359785e918"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>PDY</SHORT-NAME>
+        								<LONG-NAME>ProgDateYear</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-057522da-62d4-470e-be47-d42dc787994f"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>PDM</SHORT-NAME>
+        								<LONG-NAME>ProgDateMonth</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-057522da-62d4-470e-be47-d42dc787994f"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>PDD</SHORT-NAME>
+        								<LONG-NAME>ProgDateDay</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-057522da-62d4-470e-be47-d42dc787994f"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>ZBNR</SHORT-NAME>
+        								<LONG-NAME>ZBNR</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-2414eb10-330f-48aa-9ec1-056f52101941"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>SWNR</SHORT-NAME>
+        								<LONG-NAME>SWNR</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-2414eb10-330f-48aa-9ec1-056f52101941"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>TYPENUMBER</SHORT-NAME>
+        								<LONG-NAME>TypeNumber</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-2414eb10-330f-48aa-9ec1-056f52101941"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>PDOSID</SHORT-NAME>
+        								<LONG-NAME>PlantDealerOrSupplierID</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-057522da-62d4-470e-be47-d42dc787994f"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>PDT</SHORT-NAME>
+        								<LONG-NAME>ProgDeviceType</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>PDSN</SHORT-NAME>
+        								<LONG-NAME>ProgDeviceSerialNumber</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>KMSTAND</SHORT-NAME>
+        								<LONG-NAME>KMStand</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-057522da-62d4-470e-be47-d42dc787994f"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>PROGREF</SHORT-NAME>
+        								<LONG-NAME>ProgRef</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>ECU_RESET_ENABLED</SHORT-NAME>
+        								<LONG-NAME>ECUResetEnabled</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-057522da-62d4-470e-be47-d42dc787994f"/>
+        							</INPUT-PARAM>
+        						</INPUT-PARAMS>
+        						<OUTPUT-PARAMS>
+        							<OUTPUT-PARAM ID="id-06636bbf-fcba-410b-bb2a-f1b4161e8250" OID="id-06636bbf-fcba-410b-bb2a-f1b4161e8250">
+        								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+        								<LONG-NAME>PosRespMessage</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</OUTPUT-PARAM>
+        						</OUTPUT-PARAMS>
+        						<NEG-OUTPUT-PARAMS>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+        								<LONG-NAME>ErrorCode</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+        								<LONG-NAME>ErrorDescription</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+        								<LONG-NAME>ErrorSeverity</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</NEG-OUTPUT-PARAM>
+        						</NEG-OUTPUT-PARAMS>
+        					</SINGLE-ECU-JOB>
+        				</DIAG-COMMS>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+          					<COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-3a3511fd-c553-4dcf-893b-24a15656aac7">
+            						<VALUE>1</VALUE>
+            						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+          					</COMPARAM-REF>
+          					<COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-3a3511fd-c553-4dcf-893b-24a15656aac7">
+            						<VALUE>1</VALUE>
+            						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          					</COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="IDR_UDS_DLC" ID-REF="id-91e2ce4c-a274-4f02-a601-92f937695337"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

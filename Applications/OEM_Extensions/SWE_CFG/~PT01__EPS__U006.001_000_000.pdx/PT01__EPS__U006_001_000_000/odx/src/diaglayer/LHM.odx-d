@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DIAG-LAYER-CONTAINER ID="id-100796f4-1946-4ff2-bea1-b59a743cc918" OID="id-100796f4-1946-4ff2-bea1-b59a743cc918">
+    <SHORT-NAME>LHM_DLC</SHORT-NAME>
+    <LONG-NAME>Coach Door Modul</LONG-NAME>
+    <BASE-VARIANTS>
+      <BASE-VARIANT ID="id-24bba2f7-6b79-4957-aca5-f609e1706120" OID="id-24bba2f7-6b79-4957-aca5-f609e1706120">
+        <SHORT-NAME>LHM</SHORT-NAME>
+        <LONG-NAME>LED-Hauptlicht-Modul 2</LONG-NAME>
+        <COMPARAM-REFS>
+          <COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+            <VALUE>3455</VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          </COMPARAM-REF>
+        </COMPARAM-REFS> 
+        <PARENT-REFS>
+          <PARENT-REF DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" xsi:type="FUNCTIONAL-GROUP-REF"/>
+        </PARENT-REFS>
+      </BASE-VARIANT>
+    </BASE-VARIANTS>
+  </DIAG-LAYER-CONTAINER>
+</ODX>

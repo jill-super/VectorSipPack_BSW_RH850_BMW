@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER ID="id-95aaa10e-7f18-4546-bb69-25a7e5159924" OID="id-95aaa10e-7f18-4546-bb69-25a7e5159924">
+        <SHORT-NAME>CINV_DLC</SHORT-NAME>
+        <LONG-NAME>Compressor Inverter</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT ID="id-75aea8ab-796a-4ab2-9766-4290908b6826" OID="id-75aea8ab-796a-4ab2-9766-4290908b6826">
+                <SHORT-NAME>CINV</SHORT-NAME>
+                <LONG-NAME>Compressor Inverter</LONG-NAME>
+                <DESC>
+                    <p>BAC 4.3, nicht codierbar</p>
+                </DESC>
+				<COMPARAM-REFS>				
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-0e6aba7e-214d-428a-98e1-55aaf139a75e">
+          				<VALUE>1</VALUE>
+          				<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+          			</COMPARAM-REF>
+          			<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-0e6aba7e-214d-428a-98e1-55aaf139a75e">
+          				<VALUE>1</VALUE>
+          				<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          			</COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

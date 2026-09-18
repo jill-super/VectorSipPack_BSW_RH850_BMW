@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-1d72df70-f689-4c51-ac97-919b3837ce33" ID="id-1d72df70-f689-4c51-ac97-919b3837ce33">
+        <SHORT-NAME>VSW_DLC</SHORT-NAME>
+        <LONG-NAME>Video Switch</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-84ef7fec-a504-439b-9d9d-7ffce9fa55e5" ID="id-84ef7fec-a504-439b-9d9d-7ffce9fa55e5">
+                <SHORT-NAME>VSW</SHORT-NAME>
+                <LONG-NAME>Video Switch</LONG-NAME>
+                <DESC>
+                    <p>
+automatically generated BASE-VARIANT instance VSW</p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>2630</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_LS_UDS_DLC" ID-REF="id-4646c54a-1f42-4da6-a628-b66976713291"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

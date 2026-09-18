@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-8afd4cc9-3e0b-4537-addc-cb330795c378" ID="id-8afd4cc9-3e0b-4537-addc-cb330795c378">
+        <SHORT-NAME>SME_DLC</SHORT-NAME>
+        <LONG-NAME>SME</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-74357a68-9af8-44ed-8c06-7f0e13de2681" ID="id-74357a68-9af8-44ed-8c06-7f0e13de2681">
+                <SHORT-NAME>SME</SHORT-NAME>
+                <LONG-NAME>Speicher Management Elektronik</LONG-NAME>
+                <DESC>
+                    <p>Transferdata überschrieben. P2 Timeout auf 20 Sekunden erhöht.</p>
+                </DESC>
+                <DIAG-COMMS>
+                    <DIAG-SERVICE ADDRESSING="PHYSICAL" OID="id-01ef8b1e-b79f-4c9e-a61f-b30296dac8dd" ID="id-01ef8b1e-b79f-4c9e-a61f-b30296dac8dd">
+                        <SHORT-NAME>TD</SHORT-NAME>
+                        <LONG-NAME>TransferData</LONG-NAME>
+                        <DESC>
+                            <p>
+The TransferData service is used by the client to transfer data either from the client to the server (download) or from the server to the client (upload).The data transfer direction is defined by the preceding RequestDownload or RequestUpload service. If the client initiated a RequestDownload the data to be downloaded is included in the parameter(s) transferRequestParameter in the TransferData request message(s). If the client initiated a RequestUpload the data to be uploaded is included in the parameter(s) transferResponseParameter in the TransferData response message(s).The TransferData service request includes a blockSequenceCounter to allow for an improved error handling in case a TransferData service fails during a sequence of multiple TransferData requests. The blockSequenceCounter of the server shall be initialized to one (1) when receiving a RequestDownload (34 hex) or RequestUpload (35 hex) request message. This means that the first TransferData (36 hex) request message following the RequestDownload (34 hex) or RequestUpload (35 hex) request message starts with a blockSequenceCounter of one (1).IMPORTANT - The server and the client shall meet the request and response message behaviour as specified in section 6.5.3 Request message without sub-function parameter and server response behaviour in the event that those addressing methods are implemented for this service.
+              </p>
+                        </DESC>
+                        <SDGS>
+                            <SDG>
+<SDG-CAPTION OID="id-11f7a3d7-1d06-425e-9b45-26d7fb0d5a81" ID="id-11f7a3d7-1d06-425e-9b45-26d7fb0d5a81">
+    <SHORT-NAME>TIMEOUTS</SHORT-NAME>
+    <LONG-NAME>Timeouts</LONG-NAME>
+</SDG-CAPTION>
+<SD SI="P2_TIMEOUT">20000</SD>
+                            </SDG>
+                        </SDGS>
+                        <FUNCT-CLASS-REFS>
+                            <FUNCT-CLASS-REF DOCTYPE="CONTAINER" DOCREF="ISO_14229_SERVICES_BMW_DLC" ID-REF="id-d211b4bd-23f7-4b12-b096-00f3364a1e46"/>
+                        </FUNCT-CLASS-REFS>
+                        <AUDIENCE/>
+                        <REQUEST-REF DOCTYPE="CONTAINER" DOCREF="ISO_14229_SERVICES_BMW_DLC" ID-REF="id-ecd7acf2-21c1-403e-93bd-a9691b738b66"/>
+                        <POS-RESPONSE-REFS>
+                            <POS-RESPONSE-REF DOCTYPE="CONTAINER" DOCREF="ISO_14229_SERVICES_BMW_DLC" ID-REF="id-bce922d6-59a8-425f-9f07-9091a8fb0abf"/>
+                        </POS-RESPONSE-REFS>
+                    </DIAG-SERVICE>
+                </DIAG-COMMS>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>3455</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

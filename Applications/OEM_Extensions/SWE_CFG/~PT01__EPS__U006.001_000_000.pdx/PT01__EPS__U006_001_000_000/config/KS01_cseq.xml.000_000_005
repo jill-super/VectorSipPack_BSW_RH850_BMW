@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSEQ xmlns="http://bmw.com/2005/psdz.data.cseq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bmw.com/2005/psdz.data.cseq">
+<seqInfo seqType="CSEQ" brv="KS01" version="000.000.001" author="Patrice PICARD" comment="Update new XML-Structure, All-X_BCO" lastModified="20170801-000000"/>
+
+	<!-- Aenderungsdokumentation CSEQ KS01
+	  Datum        Version    Author    Aenderung
+    14.07.2014   0.0.0      P.Picard  Initiale Erstellung  auf basis K001_cseq.xml.005_000_010
+    03.08.2017   0.0.5      P.Picard  X_BCO reset after all
+	-->
+   <!--*****************************X_BMS zuerst codieren*******************************************-->
+
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="X_KOMBI3"/><diagnosticAddress physicalOffset="96"/></ECU>
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="X_AE"/><diagnosticAddress physicalOffset="18"/></ECU>
+    <ECU><baseVariantName name="X_BMS"/><diagnosticAddress physicalOffset="18"/></ECU>
+    <ECU><baseVariantName name="X_BMS2"/><diagnosticAddress physicalOffset="18"/></ECU>
+    <ECU><baseVariantName name="X_ASW"/><diagnosticAddress physicalOffset="34"/></ECU>
+    <ECU><baseVariantName name="X_AUDIO"/><diagnosticAddress physicalOffset="99"/></ECU>
+    <ECU><baseVariantName name="X_BCA"/><diagnosticAddress physicalOffset="92"/></ECU>
+    <ECU><baseVariantName name="X_BCO"/><diagnosticAddress physicalOffset="114"/></ECU>
+    <ECU><baseVariantName name="X_DWA"/><diagnosticAddress physicalOffset="65"/></ECU>
+    <ECU><baseVariantName name="X_DCDC"/><diagnosticAddress physicalOffset="21"/></ECU>
+    <ECU><baseVariantName name="X_ESA"/><diagnosticAddress physicalOffset="56"/></ECU>
+    <ECU><baseVariantName name="X_EWS"/><diagnosticAddress physicalOffset="64"/></ECU>
+    <ECU><baseVariantName name="X_FSA"/><diagnosticAddress physicalOffset="14"/></ECU>
+    <ECU><baseVariantName name="X_IABS"/><diagnosticAddress physicalOffset="41"/></ECU>
+    <ECU><baseVariantName name="X_KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU>
+    <ECU><baseVariantName name="X_KOMBI2"/><diagnosticAddress physicalOffset="96"/></ECU>
+    <ECU><baseVariantName name="X_RDC"/><diagnosticAddress physicalOffset="32"/></ECU>
+    <ECU><baseVariantName name="X_SAF"/><diagnosticAddress physicalOffset="57"/></ECU>
+    <ECU><baseVariantName name="X_SLZ"/><diagnosticAddress physicalOffset="64"/></ECU>
+    <ECU><baseVariantName name="X_SME"/><diagnosticAddress physicalOffset="7"/></ECU>
+   </dependors>
+  </dependency>
+
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="X_AE"/><diagnosticAddress physicalOffset="18"/></ECU>
+    <ECU><baseVariantName name="X_BMS"/><diagnosticAddress physicalOffset="18"/></ECU>
+    <ECU><baseVariantName name="X_BMS2"/><diagnosticAddress physicalOffset="18"/></ECU>
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="X_ASW"/><diagnosticAddress physicalOffset="34"/></ECU>
+    <ECU><baseVariantName name="X_AUDIO"/><diagnosticAddress physicalOffset="99"/></ECU>
+    <ECU><baseVariantName name="X_BCA"/><diagnosticAddress physicalOffset="92"/></ECU>
+    <ECU><baseVariantName name="X_BCO"/><diagnosticAddress physicalOffset="114"/></ECU>
+    <ECU><baseVariantName name="X_DWA"/><diagnosticAddress physicalOffset="65"/></ECU>
+    <ECU><baseVariantName name="X_DCDC"/><diagnosticAddress physicalOffset="21"/></ECU>
+    <ECU><baseVariantName name="X_ESA"/><diagnosticAddress physicalOffset="56"/></ECU>
+    <ECU><baseVariantName name="X_EWS"/><diagnosticAddress physicalOffset="64"/></ECU>
+    <ECU><baseVariantName name="X_FSA"/><diagnosticAddress physicalOffset="14"/></ECU>
+    <ECU><baseVariantName name="X_IABS"/><diagnosticAddress physicalOffset="41"/></ECU>
+    <ECU><baseVariantName name="X_KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU>
+    <ECU><baseVariantName name="X_KOMBI2"/><diagnosticAddress physicalOffset="96"/></ECU>
+    <ECU><baseVariantName name="X_RDC"/><diagnosticAddress physicalOffset="32"/></ECU>
+    <ECU><baseVariantName name="X_SAF"/><diagnosticAddress physicalOffset="57"/></ECU>
+    <ECU><baseVariantName name="X_SLZ"/><diagnosticAddress physicalOffset="64"/></ECU>
+    <ECU><baseVariantName name="X_SME"/><diagnosticAddress physicalOffset="7"/></ECU>
+  </dependors>
+ </dependency>
+ 
+   <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="X_ASW"/><diagnosticAddress physicalOffset="34"/></ECU>
+    <ECU><baseVariantName name="X_AUDIO"/><diagnosticAddress physicalOffset="99"/></ECU>
+    <ECU><baseVariantName name="X_BCA"/><diagnosticAddress physicalOffset="92"/></ECU>
+    <ECU><baseVariantName name="X_DWA"/><diagnosticAddress physicalOffset="65"/></ECU>
+    <ECU><baseVariantName name="X_DCDC"/><diagnosticAddress physicalOffset="21"/></ECU>
+    <ECU><baseVariantName name="X_ESA"/><diagnosticAddress physicalOffset="56"/></ECU>
+    <ECU><baseVariantName name="X_EWS"/><diagnosticAddress physicalOffset="64"/></ECU>
+    <ECU><baseVariantName name="X_FSA"/><diagnosticAddress physicalOffset="14"/></ECU>
+    <ECU><baseVariantName name="X_IABS"/><diagnosticAddress physicalOffset="41"/></ECU>
+    <ECU><baseVariantName name="X_KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU>
+    <ECU><baseVariantName name="X_KOMBI2"/><diagnosticAddress physicalOffset="96"/></ECU>
+    <ECU><baseVariantName name="X_RDC"/><diagnosticAddress physicalOffset="32"/></ECU>
+    <ECU><baseVariantName name="X_SAF"/><diagnosticAddress physicalOffset="57"/></ECU>
+    <ECU><baseVariantName name="X_SLZ"/><diagnosticAddress physicalOffset="64"/></ECU>
+    <ECU><baseVariantName name="X_SME"/><diagnosticAddress physicalOffset="7"/></ECU>
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="X_BCO"/><diagnosticAddress physicalOffset="114"/></ECU>
+  </dependors>
+ </dependency>
+
+</CSEQ>

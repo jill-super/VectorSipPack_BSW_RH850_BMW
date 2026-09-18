@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSEQ xmlns="http://bmw.com/2005/psdz.data.cseq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bmw.com/2005/psdz.data.cseq">
+	<!--CSEQ fuer BRV RR01 Series II
+	
+		Aenderungsdokumentation
+		Datum         	Version    	Author    			Aenderung
+		21.09.2009    6.0.0     	G.Buecherl    	Inital
+		01.02.2013    6.0.1         P.Picard        HU_NBT, HU_NBT2, _RSE_HIGH_NBT, RSE_HIGH_NBT2 insert
+		01.02.2013    6.0.2         S.Zerndl        HU_NBT, HU_NBT2, _RSE_HIGH_NBT, RSE_HIGH_NBT2 removed
+
+	-->
+	
+	<!--*******************************MOST-Codierreihenfolgen**************************************************************-->
+	<!--***********************HU_CIC zuerst codieren (MOST-Master)*********************************************************-->
+	<dependency>
+		<preconditions>
+			<ECU><baseVariantName name="HU_CIC"/><diagnosticAddress physicalOffset="99"/></ECU>
+		</preconditions>
+		<dependors>
+		  <ECU><baseVariantName name="AMP_TOPLR"/><diagnosticAddress physicalOffset="55"/></ECU>
+		  <ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/></ECU>
+		  <ECU><baseVariantName name="MMC_UDS"/><diagnosticAddress physicalOffset="49"/></ECU>
+		  <ECU><baseVariantName name="CMB_MEDIA"/><diagnosticAddress physicalOffset="54"/></ECU>
+		  <ECU><baseVariantName name="RSE_HIGH"/><diagnosticAddress physicalOffset="38"/></ECU>
+		  <ECU><baseVariantName name="TV_MODUL"/><diagnosticAddress physicalOffset="75"/></ECU>
+		</dependors>
+	</dependency>
+	
+	<!--*****************AMP_TOPLR seq ************************-->
+	<dependency>
+		<preconditions>
+		<ECU><baseVariantName name="MMC_UDS"/><diagnosticAddress physicalOffset="49"/></ECU>
+		<ECU><baseVariantName name="RSE_HIGH"/><diagnosticAddress physicalOffset="38"/></ECU>
+        <ECU><baseVariantName name="TV_MODUL"/><diagnosticAddress physicalOffset="75"/></ECU>
+		<ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/></ECU>
+		<ECU><baseVariantName name="CMB_MEDIA"/><diagnosticAddress physicalOffset="54"/></ECU>
+		<ECU><baseVariantName name="HU_CIC"/><diagnosticAddress physicalOffset="99"/></ECU>
+		</preconditions>
+		<dependors>
+		  <ECU><baseVariantName name="AMP_TOPLR"/><diagnosticAddress physicalOffset="55"/></ECU>		
+    </dependors>
+	</dependency>	
+</CSEQ>

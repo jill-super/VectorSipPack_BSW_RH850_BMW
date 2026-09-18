@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>SystemDescription</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>Systems</SHORT-NAME>
+              <ELEMENTS>
+                <SYSTEM UUID="F8FD9200-85D8-45E4-B3D7-57F798189537">
+                  <SHORT-NAME>Systems_SOLITAER_A_FlexRay_EPS</SHORT-NAME>
+                  <CATEGORY>SYSTEM_EXTRACT</CATEGORY>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DV_SDG:ECUProject">
+                        <SDG-CAPTION>
+                          <SHORT-NAME>ECUProject_DBMWDSystemDescriptionDSystemsDBTLD</SHORT-NAME>
+                        </SDG-CAPTION>
+                        <SD GID="ShortName">BTLD</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <MAPPINGS>
+                    <SYSTEM-MAPPING>
+                      <SHORT-NAME>Systems_SOLITAER_A_FlexRay_EPS_MPPNG</SHORT-NAME>
+                    </SYSTEM-MAPPING>
+                  </MAPPINGS>
+                  <ROOT-SOFTWARE-COMPOSITIONS>
+                    <ROOT-SW-COMPOSITION-PROTOTYPE UUID="EE87601A-EDB0-4850-BE72-C0799FB810B2">
+                      <SHORT-NAME>ECU_Composition</SHORT-NAME>
+                      <SOFTWARE-COMPOSITION-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/ECUCompositionTypes/ECU_Composition</SOFTWARE-COMPOSITION-TREF>
+                    </ROOT-SW-COMPOSITION-PROTOTYPE>
+                  </ROOT-SOFTWARE-COMPOSITIONS>
+                </SYSTEM>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>ECUCompositionTypes</SHORT-NAME>
+      <ELEMENTS>
+        <COMPOSITION-SW-COMPONENT-TYPE UUID="9FCDF5F1-6317-43B0-9BE8-246BE21FADE6">
+          <SHORT-NAME>ECU_Composition</SHORT-NAME>
+        </COMPOSITION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>EndToEndProtections</SHORT-NAME>
+      <ELEMENTS>
+        <END-TO-END-PROTECTION-SET>
+          <SHORT-NAME>EndToEndConnections</SHORT-NAME>
+        </END-TO-END-PROTECTION-SET>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

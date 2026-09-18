@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-d57b7108-015d-4b2c-a4a6-2da427fdde50" ID="id-d57b7108-015d-4b2c-a4a6-2da427fdde50">
+        <SHORT-NAME>ATM_DLC</SHORT-NAME>
+        <LONG-NAME>Advanced Telematic Module</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-3652379b-1ded-4ed9-9f1e-90046d17eac8" ID="id-3652379b-1ded-4ed9-9f1e-90046d17eac8">
+                <SHORT-NAME>ATM</SHORT-NAME>
+                <LONG-NAME>Advanced Telematic Module</LONG-NAME>
+                <DESC>
+                    <p>Telematic ECU</p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-4ff03dc8-e2cd-4f61-aab0-c0f639869771">
+                        <VALUE>3</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-464fe8db-1059-43e9-ad5f-a7984612aa2f">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-2adbb438-ec66-4350-a142-fc31f904d06c">
+                        <VALUE>99</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+					          <COMPARAM-REF ID-REF="id-e193b2d4-028b-4cf5-9677-b6bb0fd30856" DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC">
+					            <VALUE>6310</VALUE>
+					            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+					          </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-b2586d73-37bc-4f1e-aa27-df91cee29844">
+                        <VALUE>1</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>130000</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+          					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-836fb943-9237-4030-bb42-88ecbefe6df8">
+          						<VALUE>1</VALUE>
+          						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          					</COMPARAM-REF>
+          					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-47753228-e0cb-4ca3-82c9-4ba7b7dcdd8c">
+          						<VALUE>1</VALUE>
+          						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          					</COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78">
+                        <NOT-INHERITED-DIAG-COMMS>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="FINALIZE_ECU_BL_UPDATE"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="INSTALL_ECU_BL"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="FINALIZE_ECU_FLASH"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="PREPARE_ECU_FOR_BL_UPDATE"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="PREPARE_ECU_FOR_FLASH"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="GET_SVK_FROM_ECU"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                        </NOT-INHERITED-DIAG-COMMS>
+                    </PARENT-REF>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="GW_SERVICES_DLC" ID-REF="id-7860971b-9003-4aa3-9119-802a992f90d4"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

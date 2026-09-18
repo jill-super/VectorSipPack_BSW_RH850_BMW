@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FSEQ xmlns="http://bmw.com/2005/psdz.data.fseq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!--  FSEQ fuer Baureihenverbund F025
+	
+	Aenderungsdokumentation
+	Datum        Version    Author     		Aenderung
+	03.11.2009   3.0.2      S.Bichler   	AMP_TOPLR Software direkt nach dem MostFlashEntryPointTask und vor den MOST-SWEn 
+	03.11.2009   3.0.2      S.Bichler   	Kommentare eingefuegt und jede ECU auf eine Zeile fuer mehr Uebersichtlichkeit 
+	03.11.2009   3.0.2      S.Bichler   	CMB_ECALL aus den MOST-Abhängigkeiten entfernt, da es sich um ein CAN-SG handelt 
+	27.11.2009   3.0.3      P.Picard    	TCB eingefügt 
+	02.12.2009   3.0.3      P.Picard    	HKFM_LS(LowSpeed) inserted
+	23.03.2009   3.0.4      P.Picard      ZBE2 inserted
+	14.04.2010   3.0.5      P.Picard    	SCR inserted
+	02.06.2010   3.0.6      G.Buecherl  	RSE_HIGH_NBT,ZGW2,EKPM2,ASD inserted
+	29.07.2010   3.0.7      P.Picard      DSC2,FEM_GW,FEM_BODY,FRR,HKFM,KAFAS2,LHM,PMA,REM,SME,SVT,TMS,ZBE2 inserted
+	13.08.2010   3.0.8      G.Buecherl    ENTRYNAV, HU_NBT insterted
+	24.08.2010   3.0.9      G.Buecherl    LHM_0x44,HKFM_0x0D verbessert
+	24.08.2010   3.0.9      G.Buecherl    TMS_0x41, PMA2, PCU, KOMBI 0x86 , TEL_0x55 entfernt
+	24.08.2010   3.0.9      G.Buecherl    HU_CHAMP2 inserted
+	16.09.2010   3.0.10     P.Picard      QSG-15 inserted
+  22.10.2010   3.0.11     G.Buecherl    FLA3 inserted
+  30.11.2010   3.0.12     P.Picard      AAG inserted, F-Seq clean
+  21.01.2011   3.0.13     P.Picard      VSW2 inserted, MULF55/TEL36 deleted
+  26.01.2011   3.0.14     P.Picard      MULF54 deleted , fseq clean
+  28.02.2011   3.0.15     P.Picard      ICAM, ICAM2, EHC3, FKA2, ZBE3 inserted
+	14.03.2011   3.0.16     P.Picard      BDC GW&Body Insert
+	01.04.2011   3.0.17     P.Picard      corrected
+	22.05.2011   3.0.18     P.Picard      ASD insert
+	06.06.2011   3.0.19     P.Picard      GZA, SM2 insert
+	09.06.2011   3.0.20     P.Picard      EGS3 insert
+	01.07.2011   3.0.22     P.Picard      correct 3.0.20
+	01.07.2011   3.0.22     P.Picard      MOST-Suite modify
+	01.07.2011   3.0.22     P.Picard      TPL insert
+	01.07.2011   3.0.22     P.Picard      AMPT insert
+	01.07.2011   3.0.22     P.Picard      TBX insert
+	01.07.2011   3.0.22     P.Picard      DME2 insert
+	18.07.2011   3.0.23     P.Picard      AMP_TOPLR parallell to HU
+	28.07.2011   3.0.24     P.Picard      supportsParallelMostFlash deleted
+	01.08.2011   3.0.25     P.Picard      EKPM correted after DME 
+	21.09.2011   3.0.26     P.Picard      DME2 insert 
+	21.09.2011   3.0.26     P.Picard      DSC/DME/DME2 switch 
+	29.09.2011   3.0.27     P.Picard      ASD2 insert 
+	13.10.2011   3.0.28     P.Picard      BDC Parallel 
+	28.11.2011   3.0.29     P.Picard      TFM inserted
+  02.12.2011   3.0.29     G.Buecherl    AE2, DME2_OGW, DME_BAC_OGW
+	02.01.2012   3.0.30     P.Picard      VSG, SME2 inserted
+	10.01.2012   3.0.31     P.Picard      TFM, SME2 correted
+	30.01.2012   3.0.32     P.Picard      SLE inserted
+	01.07.2012   3.0.33     P.Picard      Evalboard2 inserted
+	01.08.2012   3.0.34     P.Picard      SLE adapted
+	28.09.2012   3.0.35     S.Zerndl      TFM2 insert
+	02.11.2012   3.0.36     S.Zerndl      CVM, HU_NBT2 and RSE_HIGH_NBT2 insert
+	01.12.2012   3.0.37     P.Picard      AE2_OGW insert
+  01.02.2013   3.0.38     P.Picard      ASA2 inserted
+  01.04.2013   3.0.39     P.Picard      Body sequentiel
+  14.07.2013   3.0.40     P.Picard      NiVi sequentiel
+  27.11.2013   3.0.41     P.Picard      QSGn inserted
+  25.03.2014   3.0.42     P.Picard      HU-EKPM-MOST modify
+  28.04.2014   3.0.43     P.Picard      FLE & ATM inserted
+  10.17.2014   3.0.44     P.Picard      TCB after HU_Boootloader bzw. vor GW und HU
+  07.01.2015   3.0.45     P.Picard      ZBE4's inserted
+  26.06.2015   3.0.46     P.Picard      HKFM2 inserted
+  29.06.2015   3.0.47     M.Fischer     Zyklus aufgehoben QSG vor ZSG vor QSG und TCB vor ZSG vor TCB
+  28.09.2015   3.0.48     P.Picard      TCB2 inserted
+  02.07.2016   3.0.49     P.Picard      FLA3 inserted
+  02.07.2016   3.0.49     P.Picard      FLA4 inserted
+	-->
+  <!-- 
+  QSGalt vor BDC in F15 !! 
+  -->
+  <dependency>
+    <preconditions>
+     <ECU><baseVariantName name="QSG"/><diagnosticAddress physicalOffset="15"/></ECU>
+     <ECU><baseVariantName name="TCB"/><diagnosticAddress physicalOffset="97"/></ECU><!-- BODY_CAN -->      
+    </preconditions>
+    <dependors>
+     <ECU><baseVariantName name="BDC_GW"/><diagnosticAddress physicalOffset="16"/></ECU><!-- ETHERNET_63 --><!-- MOST -->
+     <ECU><baseVariantName name="FEM_GW"/><diagnosticAddress physicalOffset="16"/></ECU><!-- ETHERNET_63 --><!-- MOST -->
+     <ECU><baseVariantName name="ZGW"/><diagnosticAddress physicalOffset="16"/></ECU><!-- ETHERNET_63 --><!-- MOST -->
+     <ECU><baseVariantName name="ZGW2"/><diagnosticAddress physicalOffset="16"/></ECU><!-- ETHERNET_63 --><!-- MOST -->
+     <ECU><baseVariantName name="HU_ENTRYNAV"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETH/MOST -->
+    </dependors>
+  </dependency>
+      
+  <!-- 
+  ZGW/BDC als Mastergateway vor allem anderen flashen
+  -->
+  <dependency>
+    <preconditions>
+     <ECU><baseVariantName name="BDC_GW"/><diagnosticAddress physicalOffset="16"/></ECU><!-- ETHERNET_63 --><!-- MOST -->
+     <ECU><baseVariantName name="FEM_GW"/><diagnosticAddress physicalOffset="16"/></ECU><!-- ETHERNET_63 --><!-- MOST -->
+     <ECU><baseVariantName name="ZGW"/><diagnosticAddress physicalOffset="16"/></ECU><!-- ETHERNET_63 --><!-- MOST -->
+     <ECU><baseVariantName name="ZGW2"/><diagnosticAddress physicalOffset="16"/></ECU><!-- ETHERNET_63 --><!-- MOST -->
+    </preconditions>
+    <dependors>
+     <ECU><baseVariantName name="AE2"/><diagnosticAddress physicalOffset="58"/></ECU>
+     <ECU><baseVariantName name="AE2_OGW"/><diagnosticAddress physicalOffset="58"/></ECU>
+     <ECU><baseVariantName name="AAG"/><diagnosticAddress physicalOffset="113"/></ECU><!-- replace AHM -->
+     <ECU><baseVariantName name="ACSM"/><diagnosticAddress physicalOffset="1"/></ECU>
+     <ECU><baseVariantName name="AHM"/><diagnosticAddress physicalOffset="113"/></ECU>
+     <ECU><baseVariantName name="AMP_HIFILR"/><diagnosticAddress physicalOffset="55"/></ECU>
+     <ECU><baseVariantName name="AMP_HIFIHB"/><diagnosticAddress physicalOffset="55"/></ECU>
+     <ECU><baseVariantName name="AMP_TOPLR"/><diagnosticAddress physicalOffset="55"/></ECU>
+     <ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/></ECU>
+     <ECU><baseVariantName name="AMPT"/><diagnosticAddress physicalOffset="55"/></ECU>
+     <ECU><baseVariantName name="ASA"/><diagnosticAddress physicalOffset="22"/></ECU>
+     <ECU><baseVariantName name="ASA2"/><diagnosticAddress physicalOffset="22"/></ECU>
+     <ECU><baseVariantName name="ASD"/><diagnosticAddress physicalOffset="63"/></ECU>
+     <ECU><baseVariantName name="ASD"/><diagnosticAddress physicalOffset="45"/></ECU>
+     <ECU><baseVariantName name="ASD2"/><diagnosticAddress physicalOffset="63"/></ECU>
+     <ECU><baseVariantName name="ATM"/><diagnosticAddress physicalOffset="97"/></ECU><!-- BODY_CAN -->
+	   <ECU><baseVariantName name="BDC_BODY"/><diagnosticAddress physicalOffset="64"/></ECU>      
+     <ECU><baseVariantName name="CAS"/><diagnosticAddress physicalOffset="64"/></ECU>
+     <ECU><baseVariantName name="CID"/><diagnosticAddress physicalOffset="115"/></ECU>
+     <ECU><baseVariantName name="CID"/><diagnosticAddress physicalOffset="116"/></ECU>
+     <ECU><baseVariantName name="CID"/><diagnosticAddress physicalOffset="117"/></ECU>
+     <ECU><baseVariantName name="CMB_MEDIA"/><diagnosticAddress physicalOffset="54"/></ECU>
+     <ECU><baseVariantName name="CMB_ECALL"/><diagnosticAddress physicalOffset="97"/></ECU>
+     <ECU><baseVariantName name="CVM"/><diagnosticAddress physicalOffset="36"/></ECU>
+     <ECU><baseVariantName name="DME"/><diagnosticAddress physicalOffset="18"/></ECU>
+     <ECU><baseVariantName name="DME"/><diagnosticAddress physicalOffset="19"/></ECU>
+     <ECU><baseVariantName name="DME2"/><diagnosticAddress physicalOffset="18"/></ECU>
+     <ECU><baseVariantName name="DME2"/><diagnosticAddress physicalOffset="19"/></ECU>
+     <ECU><baseVariantName name="DME2_OGW"/><diagnosticAddress physicalOffset="18"/></ECU>
+     <ECU><baseVariantName name="DME_BAC_OGW"/><diagnosticAddress physicalOffset="18"/></ECU>		
+     <ECU><baseVariantName name="DSC"/><diagnosticAddress physicalOffset="41"/></ECU>
+     <ECU><baseVariantName name="DSC2"/><diagnosticAddress physicalOffset="41"/></ECU>
+     <ECU><baseVariantName name="EGS"/><diagnosticAddress physicalOffset="24"/></ECU>
+     <ECU><baseVariantName name="EGS2"/><diagnosticAddress physicalOffset="24"/></ECU>
+     <ECU><baseVariantName name="EGS3"/><diagnosticAddress physicalOffset="24"/></ECU>
+     <ECU><baseVariantName name="EHC1"/><diagnosticAddress physicalOffset="56"/></ECU>
+     <ECU><baseVariantName name="EHC2"/><diagnosticAddress physicalOffset="56"/></ECU>
+     <ECU><baseVariantName name="EHC3"/><diagnosticAddress physicalOffset="56"/></ECU>
+     <ECU><baseVariantName name="EKPM"/><diagnosticAddress physicalOffset="23"/></ECU>
+     <ECU><baseVariantName name="EKPM2"/><diagnosticAddress physicalOffset="23"/></ECU>
+     <ECU><baseVariantName name="EMA"/><diagnosticAddress physicalOffset="77"/></ECU>
+     <ECU><baseVariantName name="EMA"/><diagnosticAddress physicalOffset="78"/></ECU>
+     <ECU><baseVariantName name="EMF"/><diagnosticAddress physicalOffset="42"/></ECU>
+     <ECU><baseVariantName name="EPS"/><diagnosticAddress physicalOffset="48"/></ECU>
+     <ECU><baseVariantName name="EVALBOARD"/><diagnosticAddress physicalOffset="126"/></ECU>
+     <ECU><baseVariantName name="EVALBOARD"/><diagnosticAddress physicalOffset="127"/></ECU>
+     <ECU><baseVariantName name="EVALBOARD2"/><diagnosticAddress physicalOffset="126"/></ECU>
+     <ECU><baseVariantName name="EVALBOARD2"/><diagnosticAddress physicalOffset="127"/></ECU>
+     <ECU><baseVariantName name="FEM_BODY"/><diagnosticAddress physicalOffset="64"/></ECU>
+     <ECU><baseVariantName name="FKA"/><diagnosticAddress physicalOffset="121"/></ECU>
+     <ECU><baseVariantName name="FKA2"/><diagnosticAddress physicalOffset="121"/></ECU>
+     <ECU><baseVariantName name="FLA"/><diagnosticAddress physicalOffset="95"/></ECU>
+     <ECU><baseVariantName name="FLA3"/><diagnosticAddress physicalOffset="95"/></ECU>
+     <ECU><baseVariantName name="FLA4"/><diagnosticAddress physicalOffset="95"/></ECU>
+     <ECU><baseVariantName name="FLE"/><diagnosticAddress physicalOffset="67"/></ECU><!-- Body2_CAN -->
+     <ECU><baseVariantName name="FLE"/><diagnosticAddress physicalOffset="68"/></ECU><!-- Body2_CAN -->
+     <ECU><baseVariantName name="FRM"/><diagnosticAddress physicalOffset="114"/></ECU>
+     <ECU><baseVariantName name="FRR"/><diagnosticAddress physicalOffset="33"/></ECU>
+     <ECU><baseVariantName name="RAD"/><diagnosticAddress physicalOffset="99"/></ECU>
+     <ECU><baseVariantName name="FZD"/><diagnosticAddress physicalOffset="86"/></ECU>
+     <ECU><baseVariantName name="GWS"/><diagnosticAddress physicalOffset="94"/></ECU>
+     <ECU><baseVariantName name="GZA"/><diagnosticAddress physicalOffset="70"/></ECU>
+     <ECU><baseVariantName name="GZA"/><diagnosticAddress physicalOffset="71"/></ECU>
+     <ECU><baseVariantName name="HC2"/><diagnosticAddress physicalOffset="8"/></ECU>
+     <ECU><baseVariantName name="HKA"/><diagnosticAddress physicalOffset="123"/></ECU>
+     <ECU><baseVariantName name="HKL"/><diagnosticAddress physicalOffset="107"/></ECU>
+     <ECU><baseVariantName name="HKFM"/><diagnosticAddress physicalOffset="13"/></ECU>      
+     <ECU><baseVariantName name="HKFM2"/><diagnosticAddress physicalOffset="13"/></ECU>      
+     <ECU><baseVariantName name="HKFM_LS"/><diagnosticAddress physicalOffset="107"/></ECU>      
+     <ECU><baseVariantName name="HSR"/><diagnosticAddress physicalOffset="43"/></ECU>
+     <ECU><baseVariantName name="HU_CHAMP"/><diagnosticAddress physicalOffset="99"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="HU_CHAMP2"/><diagnosticAddress physicalOffset="99"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="HU_CIC"/><diagnosticAddress physicalOffset="99"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="HU_CICMID"/><diagnosticAddress physicalOffset="99"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="HU_ENTRY"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="HU_ENTRYNAV"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="HU_NBT"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="HU_NBT2"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="HUD"/><diagnosticAddress physicalOffset="61"/></ECU>
+     <ECU><baseVariantName name="ICAM"/><diagnosticAddress physicalOffset="6"/></ECU>
+     <ECU><baseVariantName name="ICAM2"/><diagnosticAddress physicalOffset="6"/></ECU>
+     <ECU><baseVariantName name="ICM"/><diagnosticAddress physicalOffset="28"/></ECU>
+     <ECU><baseVariantName name="ICM_QL"/><diagnosticAddress physicalOffset="28"/></ECU>
+     <ECU><baseVariantName name="ICM_V"/><diagnosticAddress physicalOffset="57"/></ECU>
+     <ECU><baseVariantName name="IHKA"/><diagnosticAddress physicalOffset="120"/></ECU>
+     <ECU><baseVariantName name="IHKA2"/><diagnosticAddress physicalOffset="120"/></ECU>
+     <ECU><baseVariantName name="JBBF"/><diagnosticAddress physicalOffset="0"/></ECU>
+     <ECU><baseVariantName name="KAFAS"/><diagnosticAddress physicalOffset="93"/></ECU>
+     <ECU><baseVariantName name="KAFAS2"/><diagnosticAddress physicalOffset="93"/></ECU>
+     <ECU><baseVariantName name="BKOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- Body_CAN -->
+     <ECU><baseVariantName name="BKOMBI2"/><diagnosticAddress physicalOffset="96"/></ECU><!-- Body_CAN -->
+     <ECU><baseVariantName name="DKOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="KOMBI2"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="LHM"/><diagnosticAddress physicalOffset="67"/></ECU>
+     <ECU><baseVariantName name="LHM"/><diagnosticAddress physicalOffset="68"/></ECU>
+     <ECU><baseVariantName name="LMV_FR"/><diagnosticAddress physicalOffset="25"/></ECU>
+     <ECU><baseVariantName name="MMC_UDS"/><diagnosticAddress physicalOffset="49"/></ECU>
+     <ECU><baseVariantName name="NIVI"/><diagnosticAddress physicalOffset="87"/></ECU>
+     <ECU><baseVariantName name="PDC"/><diagnosticAddress physicalOffset="100"/></ECU>
+     <ECU><baseVariantName name="PMA"/><diagnosticAddress physicalOffset="44"/></ECU>
+     <ECU><baseVariantName name="PMA2"/><diagnosticAddress physicalOffset="44"/></ECU>
+     <ECU><baseVariantName name="PCU"/><diagnosticAddress physicalOffset="46"/></ECU>
+     <ECU><baseVariantName name="QSG2"/><diagnosticAddress physicalOffset="15"/></ECU>
+     <ECU><baseVariantName name="RDC"/><diagnosticAddress physicalOffset="32"/></ECU>
+     <ECU><baseVariantName name="REM"/><diagnosticAddress physicalOffset="114"/></ECU>
+     <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="165"/></ECU>
+     <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="166"/></ECU>
+     <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="167"/></ECU>
+     <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="168"/></ECU>
+     <ECU><baseVariantName name="RSE_HIGH"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="RSE_HIGH_NBT"/><diagnosticAddress physicalOffset="38"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="RSE_HIGH_NBT2"/><diagnosticAddress physicalOffset="38"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="RSE_MID"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="SCR"/><diagnosticAddress physicalOffset="11"/></ECU>
+     <ECU><baseVariantName name="SEC1"/><diagnosticAddress physicalOffset="73"/></ECU>
+     <ECU><baseVariantName name="SEC2"/><diagnosticAddress physicalOffset="74"/></ECU>
+     <ECU><baseVariantName name="SLE"/><diagnosticAddress physicalOffset="20"/></ECU>
+     <ECU><baseVariantName name="SM"/><diagnosticAddress physicalOffset="105"/></ECU>
+     <ECU><baseVariantName name="SM"/><diagnosticAddress physicalOffset="106"/></ECU>
+     <ECU><baseVariantName name="SM"/><diagnosticAddress physicalOffset="109"/></ECU>
+     <ECU><baseVariantName name="SM"/><diagnosticAddress physicalOffset="110"/></ECU>
+     <ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="105"/></ECU>
+     <ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="106"/></ECU>
+     <ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="109"/></ECU>
+     <ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="110"/></ECU>
+     <ECU><baseVariantName name="SME"/><diagnosticAddress physicalOffset="7"/></ECU>
+     <ECU><baseVariantName name="SME2"/><diagnosticAddress physicalOffset="7"/></ECU>
+     <ECU><baseVariantName name="SVT"/><diagnosticAddress physicalOffset="14"/></ECU>
+     <ECU><baseVariantName name="SZL_LWS"/><diagnosticAddress physicalOffset="2"/></ECU>
+     <ECU><baseVariantName name="TFM"/><diagnosticAddress physicalOffset="29"/></ECU><!-- BODY_CAN -->      
+     <ECU><baseVariantName name="TFM2"/><diagnosticAddress physicalOffset="29"/></ECU>
+     <ECU><baseVariantName name="TBX"/><diagnosticAddress physicalOffset="53"/></ECU><!-- BODY_CAN -->      
+     <ECU><baseVariantName name="TCB2"/><diagnosticAddress physicalOffset="97"/></ECU><!-- BODY_CAN -->      
+     <ECU><baseVariantName name="TPL"/><diagnosticAddress physicalOffset="97"/></ECU><!-- BODY_CAN -->      
+     <ECU><baseVariantName name="TMS"/><diagnosticAddress physicalOffset="65"/></ECU>
+     <ECU><baseVariantName name="TMS"/><diagnosticAddress physicalOffset="66"/></ECU>
+     <ECU><baseVariantName name="TRSVC"/><diagnosticAddress physicalOffset="6"/></ECU>
+     <ECU><baseVariantName name="TV_MODUL"/><diagnosticAddress physicalOffset="75"/></ECU>
+     <ECU><baseVariantName name="VDC"/><diagnosticAddress physicalOffset="57"/></ECU>
+     <ECU><baseVariantName name="VDC1"/><diagnosticAddress physicalOffset="118"/></ECU>
+     <ECU><baseVariantName name="VSG"/><diagnosticAddress physicalOffset="45"/></ECU>
+     <ECU><baseVariantName name="VSW"/><diagnosticAddress physicalOffset="72"/></ECU>
+     <ECU><baseVariantName name="VSW2"/><diagnosticAddress physicalOffset="72"/></ECU>
+     <ECU><baseVariantName name="ZBE"/><diagnosticAddress physicalOffset="103"/></ECU>
+     <ECU><baseVariantName name="ZBE"/><diagnosticAddress physicalOffset="104"/></ECU>
+     <ECU><baseVariantName name="ZBE2"/><diagnosticAddress physicalOffset="103"/></ECU>
+     <ECU><baseVariantName name="ZBE2"/><diagnosticAddress physicalOffset="104"/></ECU>
+     <ECU><baseVariantName name="ZBE3"/><diagnosticAddress physicalOffset="103"/></ECU>
+     <ECU><baseVariantName name="ZBE3"/><diagnosticAddress physicalOffset="104"/></ECU>
+     <ECU><baseVariantName name="ZBE4"/><diagnosticAddress physicalOffset="103"/></ECU>
+     <ECU><baseVariantName name="ZBE4"/><diagnosticAddress physicalOffset="104"/></ECU>
+    </dependors>
+  </dependency>
+  
+  <!--
+  CAS als Klemmenmaster nach allem anderen flashen
+  -->
+  <dependency>
+    <preconditions>
+     <ECU><baseVariantName name="AE2"/><diagnosticAddress physicalOffset="58"/></ECU>
+     <ECU><baseVariantName name="AE2_OGW"/><diagnosticAddress physicalOffset="58"/></ECU>
+		 <ECU><baseVariantName name="AAG"/><diagnosticAddress physicalOffset="113"/></ECU><!-- replace AHM -->
+     <ECU><baseVariantName name="ACSM"/><diagnosticAddress physicalOffset="1"/></ECU><!-- FA-CAN  -->
+     <ECU><baseVariantName name="AHM"/><diagnosticAddress physicalOffset="113"/></ECU>
+     <ECU><baseVariantName name="AMP_HIFILR"/><diagnosticAddress physicalOffset="55"/></ECU>
+     <ECU><baseVariantName name="AMP_TOPLR"/><diagnosticAddress physicalOffset="55"/></ECU>
+     <ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/></ECU>
+     <ECU><baseVariantName name="AMPT"/><diagnosticAddress physicalOffset="55"/></ECU>
+     <ECU><baseVariantName name="ASA"/><diagnosticAddress physicalOffset="22"/></ECU>
+     <ECU><baseVariantName name="ASA2"/><diagnosticAddress physicalOffset="22"/></ECU>
+     <ECU><baseVariantName name="ASD"/><diagnosticAddress physicalOffset="63"/></ECU>
+     <ECU><baseVariantName name="ASD"/><diagnosticAddress physicalOffset="45"/></ECU>
+     <ECU><baseVariantName name="ASD2"/><diagnosticAddress physicalOffset="63"/></ECU>
+     <ECU><baseVariantName name="ATM"/><diagnosticAddress physicalOffset="97"/></ECU><!-- BODY_CAN -->
+     <ECU><baseVariantName name="CID"/><diagnosticAddress physicalOffset="115"/></ECU>
+     <ECU><baseVariantName name="CID"/><diagnosticAddress physicalOffset="116"/></ECU>
+     <ECU><baseVariantName name="CID"/><diagnosticAddress physicalOffset="117"/></ECU>
+     <ECU><baseVariantName name="CMB_MEDIA"/><diagnosticAddress physicalOffset="54"/></ECU>
+     <ECU><baseVariantName name="CMB_ECALL"/><diagnosticAddress physicalOffset="97"/></ECU>
+     <ECU><baseVariantName name="CVM"/><diagnosticAddress physicalOffset="36"/></ECU>
+     <ECU><baseVariantName name="DME"/><diagnosticAddress physicalOffset="18"/></ECU>
+     <ECU><baseVariantName name="DME"/><diagnosticAddress physicalOffset="19"/></ECU>
+     <ECU><baseVariantName name="DME2"/><diagnosticAddress physicalOffset="18"/></ECU>
+     <ECU><baseVariantName name="DME2"/><diagnosticAddress physicalOffset="19"/></ECU>
+     <ECU><baseVariantName name="DME2_OGW"/><diagnosticAddress physicalOffset="18"/></ECU>
+     <ECU><baseVariantName name="DME_BAC_OGW"/><diagnosticAddress physicalOffset="18"/></ECU>		
+     <ECU><baseVariantName name="DSC"/><diagnosticAddress physicalOffset="41"/></ECU>
+     <ECU><baseVariantName name="DSC2"/><diagnosticAddress physicalOffset="41"/></ECU>
+     <ECU><baseVariantName name="EGS"/><diagnosticAddress physicalOffset="24"/></ECU>
+     <ECU><baseVariantName name="EGS2"/><diagnosticAddress physicalOffset="24"/></ECU>
+     <ECU><baseVariantName name="EGS3"/><diagnosticAddress physicalOffset="24"/></ECU>
+     <ECU><baseVariantName name="EHC1"/><diagnosticAddress physicalOffset="56"/></ECU>
+     <ECU><baseVariantName name="EHC2"/><diagnosticAddress physicalOffset="56"/></ECU>
+     <ECU><baseVariantName name="EHC3"/><diagnosticAddress physicalOffset="56"/></ECU>
+     <ECU><baseVariantName name="EKPM"/><diagnosticAddress physicalOffset="23"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="EKPM2"/><diagnosticAddress physicalOffset="23"/></ECU><!-- FA-CAN  -->
+     <ECU><baseVariantName name="EMA"/><diagnosticAddress physicalOffset="77"/></ECU><!-- FA-CAN  -->
+     <ECU><baseVariantName name="EMA"/><diagnosticAddress physicalOffset="78"/></ECU><!-- FA-CAN  -->
+     <ECU><baseVariantName name="EMF"/><diagnosticAddress physicalOffset="42"/></ECU><!-- FA-CAN  -->
+     <ECU><baseVariantName name="EPS"/><diagnosticAddress physicalOffset="48"/></ECU>
+     <ECU><baseVariantName name="EVALBOARD"/><diagnosticAddress physicalOffset="126"/></ECU>
+     <ECU><baseVariantName name="EVALBOARD"/><diagnosticAddress physicalOffset="127"/></ECU>
+     <ECU><baseVariantName name="EVALBOARD2"/><diagnosticAddress physicalOffset="126"/></ECU>
+     <ECU><baseVariantName name="EVALBOARD2"/><diagnosticAddress physicalOffset="127"/></ECU>
+     <ECU><baseVariantName name="AMP_HIFIHB"/><diagnosticAddress physicalOffset="55"/></ECU>
+     <ECU><baseVariantName name="FEM_GW"/><diagnosticAddress physicalOffset="16"/></ECU>
+     <ECU><baseVariantName name="FKA"/><diagnosticAddress physicalOffset="121"/></ECU>
+     <ECU><baseVariantName name="FKA2"/><diagnosticAddress physicalOffset="121"/></ECU>
+     <ECU><baseVariantName name="FLA"/><diagnosticAddress physicalOffset="95"/></ECU>
+     <ECU><baseVariantName name="FLA3"/><diagnosticAddress physicalOffset="95"/></ECU>
+     <ECU><baseVariantName name="FLA4"/><diagnosticAddress physicalOffset="95"/></ECU>
+     <ECU><baseVariantName name="FLE"/><diagnosticAddress physicalOffset="67"/></ECU><!-- Body2_CAN -->
+     <ECU><baseVariantName name="FLE"/><diagnosticAddress physicalOffset="68"/></ECU><!-- Body2_CAN -->
+     <ECU><baseVariantName name="FRM"/><diagnosticAddress physicalOffset="114"/></ECU>
+     <ECU><baseVariantName name="FRR"/><diagnosticAddress physicalOffset="33"/></ECU>
+     <ECU><baseVariantName name="RAD"/><diagnosticAddress physicalOffset="99"/></ECU>
+     <ECU><baseVariantName name="FZD"/><diagnosticAddress physicalOffset="86"/></ECU>
+     <ECU><baseVariantName name="GWS"/><diagnosticAddress physicalOffset="94"/></ECU>
+     <ECU><baseVariantName name="GZA"/><diagnosticAddress physicalOffset="70"/></ECU>
+     <ECU><baseVariantName name="GZA"/><diagnosticAddress physicalOffset="71"/></ECU>
+     <ECU><baseVariantName name="HC2"/><diagnosticAddress physicalOffset="8"/></ECU>
+     <ECU><baseVariantName name="HKA"/><diagnosticAddress physicalOffset="123"/></ECU>
+     <ECU><baseVariantName name="HKFM"/><diagnosticAddress physicalOffset="13"/></ECU>            
+     <ECU><baseVariantName name="HKFM2"/><diagnosticAddress physicalOffset="13"/></ECU>            
+     <ECU><baseVariantName name="HKFM_LS"/><diagnosticAddress physicalOffset="107"/></ECU>            
+     <ECU><baseVariantName name="HKL"/><diagnosticAddress physicalOffset="107"/></ECU>
+     <ECU><baseVariantName name="HSR"/><diagnosticAddress physicalOffset="43"/></ECU>
+     <ECU><baseVariantName name="HSR2"/><diagnosticAddress physicalOffset="43"/></ECU>
+     <ECU><baseVariantName name="HU_CHAMP"/><diagnosticAddress physicalOffset="99"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="HU_CHAMP2"/><diagnosticAddress physicalOffset="99"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="HU_CIC"/><diagnosticAddress physicalOffset="99"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="HU_CICMID"/><diagnosticAddress physicalOffset="99"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="HU_ENTRY"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="HU_ENTRYNAV"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="HU_NBT"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="HU_NBT2"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="HUD"/><diagnosticAddress physicalOffset="61"/></ECU>
+     <ECU><baseVariantName name="ICAM"/><diagnosticAddress physicalOffset="6"/></ECU>
+     <ECU><baseVariantName name="ICAM2"/><diagnosticAddress physicalOffset="6"/></ECU>
+     <ECU><baseVariantName name="ICM"/><diagnosticAddress physicalOffset="28"/></ECU>
+     <ECU><baseVariantName name="ICM_QL"/><diagnosticAddress physicalOffset="28"/></ECU>
+     <ECU><baseVariantName name="ICM_V"/><diagnosticAddress physicalOffset="57"/></ECU>
+     <ECU><baseVariantName name="IHKA"/><diagnosticAddress physicalOffset="120"/></ECU>
+     <ECU><baseVariantName name="IHKA2"/><diagnosticAddress physicalOffset="120"/></ECU>
+     <ECU><baseVariantName name="JBBF"/><diagnosticAddress physicalOffset="0"/></ECU>
+     <ECU><baseVariantName name="KAFAS"/><diagnosticAddress physicalOffset="93"/></ECU>
+     <ECU><baseVariantName name="KAFAS2"/><diagnosticAddress physicalOffset="93"/></ECU>
+     <ECU><baseVariantName name="BKOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- Body_CAN -->
+     <ECU><baseVariantName name="BKOMBI2"/><diagnosticAddress physicalOffset="96"/></ECU><!-- Body_CAN -->
+     <ECU><baseVariantName name="DKOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="KOMBI2"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="LHM"/><diagnosticAddress physicalOffset="67"/></ECU>
+     <ECU><baseVariantName name="LHM"/><diagnosticAddress physicalOffset="68"/></ECU>
+     <ECU><baseVariantName name="LMV_FR"/><diagnosticAddress physicalOffset="25"/></ECU>
+     <ECU><baseVariantName name="MMC_UDS"/><diagnosticAddress physicalOffset="49"/></ECU>
+     <ECU><baseVariantName name="NIVI"/><diagnosticAddress physicalOffset="87"/></ECU>
+     <ECU><baseVariantName name="PCU"/><diagnosticAddress physicalOffset="46"/></ECU>
+     <ECU><baseVariantName name="PDC"/><diagnosticAddress physicalOffset="100"/></ECU>
+     <ECU><baseVariantName name="PMA"/><diagnosticAddress physicalOffset="44"/></ECU>
+     <ECU><baseVariantName name="PMA2"/><diagnosticAddress physicalOffset="44"/></ECU>
+     <ECU><baseVariantName name="QSG"/><diagnosticAddress physicalOffset="15"/></ECU>
+     <ECU><baseVariantName name="QSG2"/><diagnosticAddress physicalOffset="15"/></ECU>
+     <ECU><baseVariantName name="RDC"/><diagnosticAddress physicalOffset="32"/></ECU>
+     <ECU><baseVariantName name="REM"/><diagnosticAddress physicalOffset="114"/></ECU>
+     <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="165"/></ECU>
+     <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="166"/></ECU>
+     <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="167"/></ECU>
+     <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="168"/></ECU>
+     <ECU><baseVariantName name="RSE_HIGH"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="RSE_HIGH_NBT"/><diagnosticAddress physicalOffset="38"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="RSE_HIGH_NBT2"/><diagnosticAddress physicalOffset="38"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="RSE_MID"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="SCR"/><diagnosticAddress physicalOffset="11"/></ECU>
+     <ECU><baseVariantName name="SEC1"/><diagnosticAddress physicalOffset="73"/></ECU>
+     <ECU><baseVariantName name="SEC2"/><diagnosticAddress physicalOffset="74"/></ECU>
+     <ECU><baseVariantName name="SLE"/><diagnosticAddress physicalOffset="20"/></ECU>
+     <ECU><baseVariantName name="SM"/><diagnosticAddress physicalOffset="105"/></ECU>
+     <ECU><baseVariantName name="SM"/><diagnosticAddress physicalOffset="106"/></ECU>
+     <ECU><baseVariantName name="SM"/><diagnosticAddress physicalOffset="109"/></ECU>
+     <ECU><baseVariantName name="SM"/><diagnosticAddress physicalOffset="110"/></ECU>
+     <ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="105"/></ECU>
+     <ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="106"/></ECU>
+     <ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="109"/></ECU>
+     <ECU><baseVariantName name="SM2"/><diagnosticAddress physicalOffset="110"/></ECU>
+     <ECU><baseVariantName name="SME"/><diagnosticAddress physicalOffset="7"/></ECU>
+     <ECU><baseVariantName name="SME2"/><diagnosticAddress physicalOffset="7"/></ECU>
+     <ECU><baseVariantName name="SVT"/><diagnosticAddress physicalOffset="14"/></ECU>
+     <ECU><baseVariantName name="SZL_LWS"/><diagnosticAddress physicalOffset="2"/></ECU>
+     <ECU><baseVariantName name="TFM"/><diagnosticAddress physicalOffset="29"/></ECU><!-- BODY_CAN -->      
+     <ECU><baseVariantName name="TFM2"/><diagnosticAddress physicalOffset="29"/></ECU>
+     <ECU><baseVariantName name="TBX"/><diagnosticAddress physicalOffset="53"/></ECU><!-- BODY_CAN -->      
+     <ECU><baseVariantName name="TCB"/><diagnosticAddress physicalOffset="97"/></ECU><!-- BODY_CAN -->      
+     <ECU><baseVariantName name="TCB2"/><diagnosticAddress physicalOffset="97"/></ECU><!-- BODY_CAN -->      
+     <ECU><baseVariantName name="TPL"/><diagnosticAddress physicalOffset="97"/></ECU><!-- BODY_CAN -->      
+     <ECU><baseVariantName name="TMS"/><diagnosticAddress physicalOffset="65"/></ECU>
+     <ECU><baseVariantName name="TMS"/><diagnosticAddress physicalOffset="66"/></ECU>
+     <ECU><baseVariantName name="TRSVC"/><diagnosticAddress physicalOffset="6"/></ECU>
+     <ECU><baseVariantName name="TV_MODUL"/><diagnosticAddress physicalOffset="75"/></ECU>
+     <ECU><baseVariantName name="VDC"/><diagnosticAddress physicalOffset="57"/></ECU>
+     <ECU><baseVariantName name="VDC1"/><diagnosticAddress physicalOffset="118"/></ECU>
+     <ECU><baseVariantName name="VSG"/><diagnosticAddress physicalOffset="45"/></ECU>
+     <ECU><baseVariantName name="VSW"/><diagnosticAddress physicalOffset="72"/></ECU>
+     <ECU><baseVariantName name="VSW2"/><diagnosticAddress physicalOffset="72"/></ECU>
+     <ECU><baseVariantName name="ZBE"/><diagnosticAddress physicalOffset="103"/></ECU>
+     <ECU><baseVariantName name="ZBE"/><diagnosticAddress physicalOffset="104"/></ECU>
+     <ECU><baseVariantName name="ZBE2"/><diagnosticAddress physicalOffset="103"/></ECU>
+     <ECU><baseVariantName name="ZBE2"/><diagnosticAddress physicalOffset="104"/></ECU>
+     <ECU><baseVariantName name="ZBE3"/><diagnosticAddress physicalOffset="103"/></ECU>
+     <ECU><baseVariantName name="ZBE3"/><diagnosticAddress physicalOffset="104"/></ECU>
+     <ECU><baseVariantName name="ZBE4"/><diagnosticAddress physicalOffset="103"/></ECU>
+     <ECU><baseVariantName name="ZBE4"/><diagnosticAddress physicalOffset="104"/></ECU>
+     <ECU><baseVariantName name="ZGW"/><diagnosticAddress physicalOffset="16"/></ECU>
+     <ECU><baseVariantName name="ZGW2"/><diagnosticAddress physicalOffset="16"/></ECU>
+    </preconditions>
+    <dependors>
+     <ECU><baseVariantName name="CAS"/><diagnosticAddress physicalOffset="64"/></ECU>
+	   <ECU><baseVariantName name="FEM_BODY"/><diagnosticAddress physicalOffset="64"/></ECU>      
+	   <ECU><baseVariantName name="BDC_BODY"/><diagnosticAddress physicalOffset="64"/></ECU>      
+    </dependors>
+  </dependency>
+  
+  <!--
+  DME als Flexray-Startupknoten vor allen Flexray- und A-CAN-Geraeten flashen
+  -->
+  <dependency>
+    <preconditions>
+     <ECU><baseVariantName name="DME"/><diagnosticAddress physicalOffset="18"/></ECU>
+     <ECU><baseVariantName name="DME2"/><diagnosticAddress physicalOffset="18"/></ECU>
+     <ECU><baseVariantName name="AE2"/><diagnosticAddress physicalOffset="58"/></ECU>
+    </preconditions>
+    <dependors>
+     <ECU><baseVariantName name="ASA"/><diagnosticAddress physicalOffset="22"/></ECU>
+     <ECU><baseVariantName name="ASA2"/><diagnosticAddress physicalOffset="22"/></ECU>
+     <ECU><baseVariantName name="DME2_OGW"/><diagnosticAddress physicalOffset="18"/></ECU>
+     <ECU><baseVariantName name="DME_BAC_OGW"/><diagnosticAddress physicalOffset="18"/></ECU>		
+     <ECU><baseVariantName name="DME"/><diagnosticAddress physicalOffset="19"/></ECU>
+     <ECU><baseVariantName name="DME2"/><diagnosticAddress physicalOffset="19"/></ECU>
+     <ECU><baseVariantName name="DSC"/><diagnosticAddress physicalOffset="41"/></ECU>
+     <ECU><baseVariantName name="DSC2"/><diagnosticAddress physicalOffset="41"/></ECU>
+     <ECU><baseVariantName name="EKPM"/><diagnosticAddress physicalOffset="23"/></ECU>
+     <ECU><baseVariantName name="EKPM2"/><diagnosticAddress physicalOffset="23"/></ECU>
+     <ECU><baseVariantName name="FRR"/><diagnosticAddress physicalOffset="33"/></ECU>
+     <ECU><baseVariantName name="HC2"/><diagnosticAddress physicalOffset="8"/></ECU>
+     <ECU><baseVariantName name="HSR"/><diagnosticAddress physicalOffset="43"/></ECU>
+     <ECU><baseVariantName name="ICM"/><diagnosticAddress physicalOffset="28"/></ECU>
+     <ECU><baseVariantName name="ICM_QL"/><diagnosticAddress physicalOffset="28"/></ECU>
+     <ECU><baseVariantName name="ICM_V"/><diagnosticAddress physicalOffset="57"/></ECU>
+     <ECU><baseVariantName name="LMV_FR"/><diagnosticAddress physicalOffset="25"/></ECU>
+     <ECU><baseVariantName name="QSG2"/><diagnosticAddress physicalOffset="15"/></ECU>
+     <ECU><baseVariantName name="VDC"/><diagnosticAddress physicalOffset="57"/></ECU>
+     <ECU><baseVariantName name="VDC1"/><diagnosticAddress physicalOffset="118"/></ECU>
+     <ECU><baseVariantName name="EPS"/><diagnosticAddress physicalOffset="48"/></ECU>
+     <ECU><baseVariantName name="PMA"/><diagnosticAddress physicalOffset="44"/></ECU>
+     <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="165"/></ECU>
+     <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="166"/></ECU>
+     <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="167"/></ECU>
+     <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="168"/></ECU>
+     <ECU><baseVariantName name="SME"/><diagnosticAddress physicalOffset="7"/></ECU>
+     <ECU><baseVariantName name="SME2"/><diagnosticAddress physicalOffset="7"/></ECU>
+     <ECU><baseVariantName name="SZL_LWS"/><diagnosticAddress physicalOffset="2"/></ECU>
+    </dependors>
+  </dependency>
+  
+  <!--
+  Wegen Fehler mit NiVi wird NiVi sequemtiel geflasht
+  -->
+  <dependency>
+    <preconditions>
+     <ECU><baseVariantName name="ACSM"/><diagnosticAddress physicalOffset="1"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="BKOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="BKOMBI2"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->     
+     <ECU><baseVariantName name="DKOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="KOMBI2"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->     
+     <ECU><baseVariantName name="EGS"/><diagnosticAddress physicalOffset="24"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="EGS2"/><diagnosticAddress physicalOffset="24"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="EGS3"/><diagnosticAddress physicalOffset="24"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="EKPM"/><diagnosticAddress physicalOffset="23"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="EKPM2"/><diagnosticAddress physicalOffset="23"/></ECU><!-- FA-CAN  -->
+     <ECU><baseVariantName name="EMA"/><diagnosticAddress physicalOffset="77"/></ECU><!-- FA-CAN  -->
+     <ECU><baseVariantName name="EMA"/><diagnosticAddress physicalOffset="78"/></ECU><!-- FA-CAN  -->
+     <ECU><baseVariantName name="EMF"/><diagnosticAddress physicalOffset="42"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="GWS"/><diagnosticAddress physicalOffset="94"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="KAFAS"/><diagnosticAddress physicalOffset="93"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="KAFAS2"/><diagnosticAddress physicalOffset="93"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="SCR"/><diagnosticAddress physicalOffset="11"/></ECU>
+     <ECU><baseVariantName name="PCU"/><diagnosticAddress physicalOffset="46"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="SVT"/><diagnosticAddress physicalOffset="14"/></ECU><!-- FA-CAN -->
+    </preconditions>
+    <dependors>
+     <ECU><baseVariantName name="NIVI"/><diagnosticAddress physicalOffset="87"/></ECU><!-- FA-CAN -->
+    </dependors>
+  </dependency>  
+  
+  <!--
+  ICM_QL bzw. ICM als S-CAN-Gateway vor allen S-CAN-Geraeten flashen
+  -->
+  <dependency>
+    <preconditions>
+      <ECU><baseVariantName name="ICM"/><diagnosticAddress physicalOffset="28"/></ECU>
+      <ECU><baseVariantName name="ICM_QL"/><diagnosticAddress physicalOffset="28"/></ECU>
+    </preconditions>
+    <dependors>
+      <ECU><baseVariantName name="FRR"/><diagnosticAddress physicalOffset="33"/></ECU>
+    </dependors>
+  </dependency>
+
+  <!--
+  ICM_V als Spannungsversorgungsmaster der Radknoten vor den Radknoten flashen
+  -->
+  <dependency>
+    <preconditions>
+      <ECU><baseVariantName name="ICM_V"/><diagnosticAddress physicalOffset="57"/></ECU>
+    </preconditions>
+    <dependors>
+      <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="165"/></ECU>
+      <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="166"/></ECU>
+      <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="167"/></ECU>
+      <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="168"/></ECU>
+    </dependors>
+  </dependency>
+  
+  <!--
+  JBBF vor PDC flashen, da die beiden im gleichen Gehaeuse sitzen, und 
+  die PDC beim JBBF-Reset auch spannungsresettet wird
+  -->
+  <dependency>
+    <preconditions>
+      <ECU><baseVariantName name="JBBF"/><diagnosticAddress physicalOffset="0"/></ECU>
+    </preconditions>
+    <dependors>
+      <ECU><baseVariantName name="PDC"/><diagnosticAddress physicalOffset="100"/></ECU>
+    </dependors>
+  </dependency>
+  
+  <!--
+  Bootloader der Headunit als MOST-Master vor allen anderen MOST-Geraeten flashen
+  -->
+  <dependency>
+    <preconditions>
+     <ECU><baseVariantName name="HU_CHAMP"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="HU_CHAMP2"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="HU_CIC"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="HU_CICMID"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="HU_ENTRY"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="HU_ENTRYNAV"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="HU_NBT"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="HU_NBT2"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- ETH/MOST -->
+    </preconditions>
+    <dependors>
+     <ECU><baseVariantName name="AMP_TOPLR"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="AMPT"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="CMB_MEDIA"/><diagnosticAddress physicalOffset="54"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="DKOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="KOMBI2"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="MMC_UDS"/><diagnosticAddress physicalOffset="49"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="RSE_HIGH"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="RSE_HIGH_NBT"/><diagnosticAddress physicalOffset="38"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="RSE_HIGH_NBT2"/><diagnosticAddress physicalOffset="38"/></ECU><!-- ETH/MOST -->
+     <ECU><baseVariantName name="RSE_MID"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+     <ECU><baseVariantName name="TV_MODUL"/><diagnosticAddress physicalOffset="75"/></ECU><!-- MOST -->
+    </dependors>
+  </dependency>
+  <!--
+  Software des AMP_TOPLR als L6-Geraet mit NIC-Baustein vor der Software aller L6-MOST-Geraeten. Fuer dieses Geraet wird naemlich
+  von PSdZ zur Laufzeit eine dynamische Abhaengigkeit erzeugt, die zu zyklischen Abhaengigkeiten und zu Deadlocks fuehren kann.
+  Gleichzeitig darf das AMP_TOPLR nicht parallel zu irgendeinem anderen MOST-Geraet geflasht werden, da der NIC-Baustein beim 
+  Wechsel in die ProgrammingSession (ausser, wenn auch der Bootloader geflasht wurde) und beim Reset nach der 
+  Programmierung (immer) einen Unlock auf MOST erzeugt, der zu Nachrichtenverlust fuehren kann.
+  -->
+  <dependency>
+    <preconditions>
+      <ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="AMPT"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="CMB_MEDIA"/><diagnosticAddress physicalOffset="54"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="DKOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="KOMBI2"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="MMC_UDS"/><diagnosticAddress physicalOffset="49"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="RSE_HIGH"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="RSE_MID"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="TV_MODUL"/><diagnosticAddress physicalOffset="75"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="HU_CHAMP"/><diagnosticAddress physicalOffset="99"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="HU_CIC"/><diagnosticAddress physicalOffset="99"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="HU_CICMID"/><diagnosticAddress physicalOffset="99"/></ECU><!-- MOST -->
+    </preconditions>
+    <dependors>
+      <ECU><baseVariantName name="AMP_TOPLR"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+    </dependors>
+  </dependency>
+  <dependency>
+    <preconditions>  
+      <ECU><baseVariantName name="HU_CHAMP"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="HU_CHAMP2"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="HU_CIC"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="HU_CICMID"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="HU_ENTRY"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- ETH/MOST -->
+      <ECU><baseVariantName name="HU_ENTRYNAV"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- ETH/MOST -->
+      <ECU><baseVariantName name="HU_NBT"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- ETH/MOST -->
+	    <ECU><baseVariantName name="HU_NBT2"/><diagnosticAddress physicalOffset="99"/><taCategory name="blFlash"/></ECU><!-- ETH/MOST -->
+    </preconditions>
+    <dependors>  
+     <ECU><baseVariantName name="EKPM"/><diagnosticAddress physicalOffset="23"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="EKPM2"/><diagnosticAddress physicalOffset="23"/></ECU><!-- FA-CAN  -->
+    </dependors>
+  </dependency>	
+  <dependency>
+    <preconditions>  
+     <ECU><baseVariantName name="EKPM"/><diagnosticAddress physicalOffset="23"/></ECU><!-- FA-CAN -->
+     <ECU><baseVariantName name="EKPM2"/><diagnosticAddress physicalOffset="23"/></ECU><!-- FA-CAN  -->
+    </preconditions>
+    <dependors>  
+      <ECU><baseVariantName name="AMP_TOPLR"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="AMPT"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="CMB_MEDIA"/><diagnosticAddress physicalOffset="54"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="DKOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="KOMBI2"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="MMC_UDS"/><diagnosticAddress physicalOffset="49"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="RSE_HIGH"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="RSE_HIGH_NBT"/><diagnosticAddress physicalOffset="38"/></ECU><!-- ETH/MOST -->
+      <ECU><baseVariantName name="RSE_HIGH_NBT2"/><diagnosticAddress physicalOffset="38"/></ECU><!-- ETH/MOST -->
+      <ECU><baseVariantName name="RSE_MID"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+      <ECU><baseVariantName name="TV_MODUL"/><diagnosticAddress physicalOffset="75"/></ECU><!-- MOST -->
+    </dependors>
+  </dependency>	
+
+</FSEQ>
+

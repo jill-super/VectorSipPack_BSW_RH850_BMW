@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-8bd9f103-4479-4913-8a06-0da309d92330" ID="id-8bd9f103-4479-4913-8a06-0da309d92330">
+        <SHORT-NAME>REME_DLC</SHORT-NAME>
+        <LONG-NAME>Range Extender EME (MCV)</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-bc7bfd54-3dff-4950-b771-2a6e5c3ac7f6" ID="id-bc7bfd54-3dff-4950-b771-2a6e5c3ac7f6">
+                <SHORT-NAME>REME</SHORT-NAME>
+                <LONG-NAME>Range Extender EME (MCV)</LONG-NAME>
+                <DESC>
+                    <p></p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>3500</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78">
+						<NOT-INHERITED-DIAG-COMMS>
+							<NOT-INHERITED-DIAG-COMM>
+								<DIAG-COMM-SNREF SHORT-NAME="RC_EM_IE"/>
+							</NOT-INHERITED-DIAG-COMM>
+							<NOT-INHERITED-DIAG-COMM>
+								<DIAG-COMM-SNREF SHORT-NAME="RC_EM_AE"/>
+							</NOT-INHERITED-DIAG-COMM>
+						</NOT-INHERITED-DIAG-COMMS>
+					</PARENT-REF>
+                    <PARENT-REF DOCREF="SC65_SERVICES_DLC" DOCTYPE="CONTAINER" ID-REF="id-995efd4e-1365-434b-bbcf-2a1c32bf2a09" xsi:type="ECU-SHARED-DATA-REF"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="IDR_UDS_DLC" ID-REF="id-91e2ce4c-a274-4f02-a601-92f937695337"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

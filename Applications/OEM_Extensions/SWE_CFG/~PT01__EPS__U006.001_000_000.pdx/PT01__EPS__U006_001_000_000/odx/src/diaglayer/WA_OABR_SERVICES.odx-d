@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<DIAG-LAYER-CONTAINER ID="id-791b6e6b-947c-4caf-9b79-de6628aa532b" OID="id-791b6e6b-947c-4caf-9b79-de6628aa532b">
+		<SHORT-NAME>WA_OABR_SERVICES_DLC</SHORT-NAME>
+		<LONG-NAME>Services and Jobs for the OABR work around</LONG-NAME>
+		<FUNCTIONAL-GROUPS>
+			<FUNCTIONAL-GROUP ID="id-70886157-bfa5-46b4-9a96-bb27efb6e521" OID="id-70886157-bfa5-46b4-9a96-bb27efb6e521">
+				<SHORT-NAME>WA_OABR_SERVICES</SHORT-NAME>
+				<LONG-NAME>Services and Jobs for the OABR work around</LONG-NAME>
+				<DIAG-DATA-DICTIONARY-SPEC>
+					<DATA-OBJECT-PROPS>
+						<DATA-OBJECT-PROP ID="id-b8134221-a7b5-4d4a-b207-b970a55b6e30" OID="id-b8134221-a7b5-4d4a-b207-b970a55b6e30">
+							<SHORT-NAME>OABR_CONFIG_DOP</SHORT-NAME>
+							<LONG-NAME>configuration of OABR port</LONG-NAME>
+							<DESC>
+								<p>Configuration of OABR port</p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>MASTER</SHORT-LABEL>
+											<LOWER-LIMIT>0</LOWER-LIMIT>
+											<UPPER-LIMIT>0</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>0</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>MASTER</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>SLAVE</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>1</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SLAVE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>UNDEFINED</SHORT-LABEL>
+											<LOWER-LIMIT>2</LOWER-LIMIT>
+											<UPPER-LIMIT>254</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>2</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>UNDEFINED</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>NOT_SET</SHORT-LABEL>
+											<LOWER-LIMIT>255</LOWER-LIMIT>
+											<UPPER-LIMIT>255</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>255</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>NOT_SET</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+					</DATA-OBJECT-PROPS>
+				</DIAG-DATA-DICTIONARY-SPEC>
+				<DIAG-COMMS>
+					<DIAG-SERVICE ID="id-6a154326-a262-4161-bd1a-d03e9e5d845f" OID="id-6a154326-a262-4161-bd1a-d03e9e5d845f" ADDRESSING="FUNCTIONAL-OR-PHYSICAL">
+						<SHORT-NAME>RDBI_STATE_PORT_CONFIG</SHORT-NAME>
+						<LONG-NAME>ReadDataByIdentifier StateOABRPortConfig</LONG-NAME>
+						<DESC>
+							<p>Read the State of the OABR Port (Master/Slave)
+              </p>
+						</DESC>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-1b25b982-6629-49b2-9e54-b8afe6b364f0"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-a74deb3e-9cef-485f-9b46-9d05005b8e21"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-cdf54cbb-b176-4997-b6a1-a0c80c1a4e59"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ID="id-9e2cf98e-9c4d-42c9-8a98-716b2e1425e3" OID="id-9e2cf98e-9c4d-42c9-8a98-716b2e1425e3" ADDRESSING="FUNCTIONAL-OR-PHYSICAL">
+						<SHORT-NAME>RC_CHANGE_PORT_CONFIG</SHORT-NAME>
+						<LONG-NAME>RoutineControl ChangeOABRPortConfig</LONG-NAME>
+						<DESC>
+							<p>Sets the OABR Port to Master or Slave
+              </p>
+						</DESC>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-1b25b982-6629-49b2-9e54-b8afe6b364f0"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-48b4aa2c-e110-4dec-b85e-cb5c1caffdaa"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-fdb0cea7-c4cc-4bf4-839c-3a4c9be88075"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+				</DIAG-COMMS>
+				<REQUESTS>
+					<REQUEST ID="id-a74deb3e-9cef-485f-9b46-9d05005b8e21" OID="id-a74deb3e-9cef-485f-9b46-9d05005b8e21">
+						<SHORT-NAME>RDBI_STATE_PORT_CONFIG_REQ</SHORT-NAME>
+						<LONG-NAME>ReadDataByIdentifier StateOABRPortConfig Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RDBI</SHORT-NAME>
+								<LONG-NAME>ReadDataByIdentifier Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>34</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>DID</SHORT-NAME>
+								<LONG-NAME>DataIdentifier</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>53882</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-943bb96c-da8d-4c09-9a4e-cf5aa5262821"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-48b4aa2c-e110-4dec-b85e-cb5c1caffdaa" OID="id-48b4aa2c-e110-4dec-b85e-cb5c1caffdaa">
+						<SHORT-NAME>RC_CHANGE_PORT_CONFIG_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl ChangeOABRPortConfig Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>false</PHYSICAL-DEFAULT-VALUE>
+								<DOP-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-40608c6e-d061-439a-a04a-e1fade58a1cb"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-22c67960-014f-43f0-8d9e-3a502300b0e9"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RID</SHORT-NAME>
+								<LONG-NAME>RoutineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>41163</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-943bb96c-da8d-4c09-9a4e-cf5aa5262821"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>OABR_CONFIG</SHORT-NAME>
+								<LONG-NAME>Config to set</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<DOP-REF ID-REF="id-b8134221-a7b5-4d4a-b207-b970a55b6e30"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+				</REQUESTS>
+				<POS-RESPONSES>
+					<POS-RESPONSE ID="id-cdf54cbb-b176-4997-b6a1-a0c80c1a4e59" OID="id-cdf54cbb-b176-4997-b6a1-a0c80c1a4e59">
+						<SHORT-NAME>RDBI_STATE_PORT_CONFIG_RESP</SHORT-NAME>
+						<LONG-NAME>ReadDataByIdentifier StateOABRPortConfig Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RDBIPR</SHORT-NAME>
+								<LONG-NAME>ReadDataByIdentifier Response Service ID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>98</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>DID</SHORT-NAME>
+								<LONG-NAME>dataIdentifier</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>STAT_PORT_CONFIG</SHORT-NAME>
+								<LONG-NAME>State of OABR Port</LONG-NAME>
+								<BYTE-POSITION>3</BYTE-POSITION>
+								<DOP-REF ID-REF="id-b8134221-a7b5-4d4a-b207-b970a55b6e30"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-fdb0cea7-c4cc-4bf4-839c-3a4c9be88075" OID="id-fdb0cea7-c4cc-4bf4-839c-3a4c9be88075">
+						<SHORT-NAME>RC_CHANGE_PORT_CONFIG_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl ChangeOABRPortConfig Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service ID</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>false</PHYSICAL-DEFAULT-VALUE>
+								<DOP-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-40608c6e-d061-439a-a04a-e1fade58a1cb"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-22c67960-014f-43f0-8d9e-3a502300b0e9"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RID</SHORT-NAME>
+								<LONG-NAME>RoutineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>41163</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-943bb96c-da8d-4c09-9a4e-cf5aa5262821"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+				</POS-RESPONSES>
+				<IMPORT-REFS>
+					<IMPORT-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-cce678a9-19ff-4e38-86ba-22ac18a6270c"/>
+					<IMPORT-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-0396d9da-824a-4ca3-aff2-435c93f0b206"/>
+				</IMPORT-REFS>
+				<PARENT-REFS>
+					<PARENT-REF DOCREF="ISO_14229_BMW_CAN" DOCTYPE="LAYER" ID-REF="id-9356813b-9d18-4a9d-b691-e8142ca51dce" xsi:type="PROTOCOL-REF">
+						<NOT-INHERITED-DIAG-COMMS>
+							<NOT-INHERITED-DIAG-COMM>
+								<DIAG-COMM-SNREF SHORT-NAME="TD"/>
+							</NOT-INHERITED-DIAG-COMM>
+						</NOT-INHERITED-DIAG-COMMS>
+					</PARENT-REF>
+					<PARENT-REF DOCREF="ISO_14229_BMW_TCP" DOCTYPE="LAYER" ID-REF="id-accd7022-28f2-4985-bd0f-de89220636ca" xsi:type="PROTOCOL-REF">
+						<NOT-INHERITED-DIAG-COMMS>
+							<NOT-INHERITED-DIAG-COMM>
+								<DIAG-COMM-SNREF SHORT-NAME="TD"/>
+							</NOT-INHERITED-DIAG-COMM>
+						</NOT-INHERITED-DIAG-COMMS>
+					</PARENT-REF>
+				</PARENT-REFS>
+			</FUNCTIONAL-GROUP>
+		</FUNCTIONAL-GROUPS>
+	</DIAG-LAYER-CONTAINER>
+</ODX>

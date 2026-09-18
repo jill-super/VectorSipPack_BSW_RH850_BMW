@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-c3a4d47a-34b4-4201-b16f-d3cf0df805f3" ID="id-c3a4d47a-34b4-4201-b16f-d3cf0df805f3">
+        <SHORT-NAME>DSC4_DLC</SHORT-NAME>
+        <LONG-NAME>Dyn. Stabilitätskontrolle</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-2bff725c-2d36-42ec-b735-6097c67af34d" ID="id-2bff725c-2d36-42ec-b735-6097c67af34d">
+                <SHORT-NAME>DSC4</SHORT-NAME>
+                <LONG-NAME>Dyn. Stabilitätskontrolle</LONG-NAME>
+                <DESC>
+                    <p>Dyn. Stabilitätskontrolle (BV ohne Reset nach Codierung), ohne SWT, BAC4</p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-3a3511fd-c553-4dcf-893b-24a15656aac7">
+                        <VALUE>1</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-3a3511fd-c553-4dcf-893b-24a15656aac7">
+                        <VALUE>1</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

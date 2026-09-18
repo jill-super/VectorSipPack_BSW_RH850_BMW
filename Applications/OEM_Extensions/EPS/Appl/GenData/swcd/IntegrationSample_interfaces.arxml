@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * \file
+ *
+ *  \brief       BMW SWC IntegrationSample
+ *
+ *  This file contains the implementation of the BMW Sample SWC IntegrationSample
+ *  for usage in the BMW AUTOSAR Core Example.
+ *
+ * \project     BMW Platform Software
+ *
+ * \copyright   BMW AG 2016 - 2017
+ *
+ * \version     5.0.3
+ *
+ */
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0_STRICT_COMPACT.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>IntegrationSample</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                   <ELEMENTS>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>CM_EcuRunStateRequest</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IntegrationSample_INVALID_STATE</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IntegrationSample_BSW_START</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IntegrationSample_STARTUP</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">3</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IntegrationSample_NORMAL_OPERATION</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">4</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">4</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IntegrationSample_SHUTDOWN</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>CM_ST_CON_VEH_Values</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>1</LOWER-LIMIT>
+                            <UPPER-LIMIT>1</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IS_VEHICLE_STATE__PARKING_BN_NOK</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>2</LOWER-LIMIT>
+                            <UPPER-LIMIT>2</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IS_VEHICLE_STATE__PARKING_BN_OK</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>3</LOWER-LIMIT>
+                            <UPPER-LIMIT>3</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IS_VEHICLE_STATE__CUSTOMER_ABSENT</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>5</LOWER-LIMIT>
+                            <UPPER-LIMIT>5</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IS_VEHICLE_STATE__LIVING</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>7</LOWER-LIMIT>
+                            <UPPER-LIMIT>7</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IS_VEHICLE_STATE__CHECK_ANALYS_DIAGNOSTICS</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>8</LOWER-LIMIT>
+                            <UPPER-LIMIT>8</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IS_VEHICLE_STATE__READINESS_TO_DRIVE_INIT</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>10</LOWER-LIMIT>
+                            <UPPER-LIMIT>10</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IS_VEHICLE_STATE__DRIVE</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>12</LOWER-LIMIT>
+                            <UPPER-LIMIT>12</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IS_VEHICLE_STATE__READINESS_TO_DRIVE_STOP</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>14</LOWER-LIMIT>
+                            <UPPER-LIMIT>14</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IS_VEHICLE_STATE__UNAVAILABLE</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>15</LOWER-LIMIT>
+                            <UPPER-LIMIT>15</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IS_VEHICLE_STATE__INVALID</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>CM_SimpleTimerState</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>0</LOWER-LIMIT>
+                            <UPPER-LIMIT>0</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IntegrationSample_Timer_FIRE</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>1</LOWER-LIMIT>
+                            <UPPER-LIMIT>1</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IntegrationSample_Timer_IDLE</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <LOWER-LIMIT>2</LOWER-LIMIT>
+                            <UPPER-LIMIT>2</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>IntegrationSample_Timer_RUNNING</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>CM_StatusEnergyFZM</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                     <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>ENSTATE_OK</SHORT-LABEL>
+                            <SYMBOL>StatusEnergyFZM_ENSTATE_OK</SYMBOL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>ENSTATE_OK</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>ENSTATE_GOOD</SHORT-LABEL>
+                            <SYMBOL>StatusEnergyFZM_ENSTATE_GOOD</SYMBOL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>ENSTATE_GOOD</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>ENSTATE_SHORTAGE</SHORT-LABEL>
+                            <SYMBOL>StatusEnergyFZM_ENSTATE_SHORTAGE</SYMBOL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>ENSTATE_SHORTAGE</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>signal_Unfilled</SHORT-LABEL>
+                            <SYMBOL>StatusEnergyFZM_signal_Unfilled</SYMBOL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">255</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">255</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>signal_Unfilled</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>ENSTATE_SEVERE_SHORTAGE</SHORT-LABEL>
+                            <SYMBOL>StatusEnergyFZM_ENSTATE_SEVERE_SHORTAGE</SYMBOL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">3</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>ENSTATE_SEVERE_SHORTAGE</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>CM_StatusInterlockErrorMemoryFZM</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>ErrorMemoryUnlock</SHORT-LABEL>
+                            <SYMBOL>StatusInterlockErrorMemoryFZM_ErrorMemoryUnlock</SYMBOL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>ErrorMemoryUnlock</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>ErrorMemoryLock</SHORT-LABEL>
+                            <SYMBOL>StatusInterlockErrorMemoryFZM_ErrorMemoryLock</SYMBOL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>ErrorMemoryLock</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>Reserved</SHORT-LABEL>
+                            <SYMBOL>StatusInterlockErrorMemoryFZM_Reserved</SYMBOL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>Reserved</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>Signal_Unfilled</SHORT-LABEL>
+                            <SYMBOL>StatusInterlockErrorMemoryFZM_Signal_Unfilled</SYMBOL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">255</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">255</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>Signal_Unfilled</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                  <ELEMENTS>
+                    <DATA-TYPE-MAPPING-SET>
+                      <SHORT-NAME>IntegrationSampleModemappingEcuRunState</SHORT-NAME>
+                      <MODE-REQUEST-TYPE-MAPS>
+                        <MODE-REQUEST-TYPE-MAP>
+                          <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/IntegrationSample/ImplementationDataTypes/IntegrationSample_EcuRunStateModeRequestType</IMPLEMENTATION-DATA-TYPE-REF>
+                          <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP">/BMW/Platform/IntegrationSample/ModeDeclarationGroups/IntegrationSample_EcuRunState</MODE-GROUP-REF>
+                        </MODE-REQUEST-TYPE-MAP>
+                      </MODE-REQUEST-TYPE-MAPS>
+                    </DATA-TYPE-MAPPING-SET>
+                    <DATA-TYPE-MAPPING-SET>
+                      <SHORT-NAME>IntegrationSampleModemappingSimpleTimerMode</SHORT-NAME>
+                      <MODE-REQUEST-TYPE-MAPS>
+                        <MODE-REQUEST-TYPE-MAP>
+                          <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/IntegrationSample/ImplementationDataTypes/IntegrationSample_SimpleTimerStateType</IMPLEMENTATION-DATA-TYPE-REF>
+                          <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP">/BMW/Platform/IntegrationSample/ModeDeclarationGroups/IntegrationSample_SimpleTimerState</MODE-GROUP-REF>
+                        </MODE-REQUEST-TYPE-MAP>
+                      </MODE-REQUEST-TYPE-MAPS>
+                    </DATA-TYPE-MAPPING-SET>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>IS_ST_CON_VEH_Type</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/BMW/Platform/IntegrationSample/CompuMethods/CM_ST_CON_VEH_Values</COMPU-METHOD-REF>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE>
+                      <IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>IntegrationSample_CON_VEH_Type</SHORT-NAME>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <SUB-ELEMENTS>
+                        <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>IntegrationSample_ST_CON_VEH</SHORT-NAME>
+                          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>IntegrationSample_CTR_FKTN_PRTNT</SHORT-NAME>
+                          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</IMPLEMENTATION-DATA-TYPE-REF>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>IntegrationSample_CTR_BS_PRTNT</SHORT-NAME>
+                          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                    </IMPLEMENTATION-DATA-TYPE>
+                    <IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>IntegrationSample_EcuRunStateModeRequestType</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/BMW/Platform/IntegrationSample/CompuMethods/CM_EcuRunStateRequest</COMPU-METHOD-REF>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE>
+                    <IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>IntegrationSample_SimpleTimerStateType</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/BMW/Platform/IntegrationSample/CompuMethods/CM_SimpleTimerState</COMPU-METHOD-REF>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE>
+                    <IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>MileageKilometreType</SHORT-NAME>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <SUB-ELEMENTS>
+                        <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>mileageKilometre</SHORT-NAME>
+                          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</IMPLEMENTATION-DATA-TYPE-REF>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                    </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE>
+                  <SHORT-NAME>VehicleState_Type</SHORT-NAME>
+                  <CATEGORY>STRUCTURE</CATEGORY>
+                 <SUB-ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      <SHORT-NAME>statusEnergyFZM</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/BMW/Platform/IntegrationSample/CompuMethods/CM_StatusEnergyFZM</COMPU-METHOD-REF>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/IntegrationSample/ImplementationDataTypes/StatusEnergyFZM_Type</IMPLEMENTATION-DATA-TYPE-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                    <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      <SHORT-NAME>statusInterlockErrorMemoryFZM</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/IntegrationSample/ImplementationDataTypes/StatusInterlockErrorMemoryFZM_Type</IMPLEMENTATION-DATA-TYPE-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                  </SUB-ELEMENTS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE>
+                  <SHORT-NAME>StatusEnergyFZM_Type</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/BMW/Platform/IntegrationSample/CompuMethods/CM_StatusEnergyFZM</COMPU-METHOD-REF>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                <IMPLEMENTATION-DATA-TYPE>
+                  <SHORT-NAME>StatusInterlockErrorMemoryFZM_Type</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/BMW/Platform/IntegrationSample/CompuMethods/CM_StatusInterlockErrorMemoryFZM</COMPU-METHOD-REF>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                  <ELEMENTS>
+                    <MODE-DECLARATION-GROUP>
+                      <SHORT-NAME>IntegrationSample_EcuRunState</SHORT-NAME>
+                      <CATEGORY>EXPLICIT_ORDER</CATEGORY>
+                      <INITIAL-MODE-REF DEST="MODE-DECLARATION">/BMW/Platform/IntegrationSample/ModeDeclarationGroups/IntegrationSample_EcuRunState/IntegrationSample_BSW_START</INITIAL-MODE-REF>
+                      <MODE-DECLARATIONS>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>IntegrationSample_INVALID_STATE</SHORT-NAME>
+                          <VALUE>0</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>IntegrationSample_BSW_START</SHORT-NAME>
+                          <VALUE>1</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>IntegrationSample_STARTUP</SHORT-NAME>
+                          <VALUE>2</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>IntegrationSample_NORMAL_OPERATION</SHORT-NAME>
+                          <VALUE>3</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>IntegrationSample_SHUTDOWN</SHORT-NAME>
+                          <VALUE>4</VALUE>
+                        </MODE-DECLARATION>
+                      </MODE-DECLARATIONS>
+                      <ON-TRANSITION-VALUE>5</ON-TRANSITION-VALUE>
+                    </MODE-DECLARATION-GROUP>
+                    <MODE-DECLARATION-GROUP>
+                      <SHORT-NAME>IntegrationSample_SimpleTimerState</SHORT-NAME>
+                      <CATEGORY>EXPLICIT_ORDER</CATEGORY>
+                      <INITIAL-MODE-REF DEST="MODE-DECLARATION">/BMW/Platform/IntegrationSample/ModeDeclarationGroups/IntegrationSample_SimpleTimerState/IntegrationSample_Timer_IDLE</INITIAL-MODE-REF>
+                      <MODE-DECLARATIONS>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>IntegrationSample_Timer_IDLE</SHORT-NAME>
+                          <VALUE>0</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>IntegrationSample_Timer_RUNNING</SHORT-NAME>
+                          <VALUE>1</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>IntegrationSample_Timer_FIRE</SHORT-NAME>
+                          <VALUE>2</VALUE>
+                        </MODE-DECLARATION>
+                      </MODE-DECLARATIONS>
+                      <ON-TRANSITION-VALUE>3</ON-TRANSITION-VALUE>
+                    </MODE-DECLARATION-GROUP>
+                 </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                  <ELEMENTS>
+                    <MODE-SWITCH-INTERFACE>
+                      <SHORT-NAME>IEcuRunState</SHORT-NAME>
+                      <IS-SERVICE>true</IS-SERVICE>
+                      <MODE-GROUP>
+                        <SHORT-NAME>EcuRunStateMode</SHORT-NAME>
+                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                        <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/BMW/Platform/IntegrationSample/ModeDeclarationGroups/IntegrationSample_EcuRunState</TYPE-TREF>
+                      </MODE-GROUP>
+                    </MODE-SWITCH-INTERFACE>
+
+                    <MODE-SWITCH-INTERFACE>
+                      <SHORT-NAME>ISimpleTimer</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <MODE-GROUP>
+                        <SHORT-NAME>SimpleTimerMode</SHORT-NAME>
+                        <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                        <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/BMW/Platform/IntegrationSample/ModeDeclarationGroups/IntegrationSample_SimpleTimerState</TYPE-TREF>
+                      </MODE-GROUP>
+                    </MODE-SWITCH-INTERFACE>
+
+                    <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>IEcuRunStateRequest</SHORT-NAME>
+                      <IS-SERVICE>true</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>IntegrationSample_EcuRunStateRequestMode</SHORT-NAME>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/IntegrationSample/ImplementationDataTypes/IntegrationSample_EcuRunStateModeRequestType</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>IntegrationSample_Signal_ST_CON_VEH</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>VehicleState</SHORT-NAME>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/IntegrationSample/ImplementationDataTypes/IS_ST_CON_VEH_Type</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>SRI_SA_Kilometer_R</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>Notifier</SHORT-NAME>
+                          <CATEGORY>STRUCTURE</CATEGORY>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/IntegrationSample/ImplementationDataTypes/MileageKilometreType</TYPE-TREF>
+                          <INIT-VALUE>
+                            <RECORD-VALUE-SPECIFICATION>
+                              <SHORT-LABEL>value_CrBrLeft1Dot6777215E7CrBrRight</SHORT-LABEL>
+                              <FIELDS>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <SHORT-LABEL>value_1Dot6777215E7</SHORT-LABEL>
+                                  <VALUE BINDING-TIME="PRE-COMPILE-TIME">16777215</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </FIELDS>
+                            </RECORD-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                      <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>SRI_SGG_CON_VEH_R</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>IntegrationSample_IDT_CON_VEH</SHORT-NAME>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/IntegrationSample/ImplementationDataTypes/IntegrationSample_CON_VEH_Type</TYPE-TREF>
+                          <INIT-VALUE>
+                            <RECORD-VALUE-SPECIFICATION>
+                              <SHORT-LABEL>IntegrationSample_InValues_SGG_Rx_CON_VEH</SHORT-LABEL>
+                              <FIELDS>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <SHORT-LABEL>InV_SGG_Rx_CON_VEH_ST_CON_VEH</SHORT-LABEL>
+                                  <VALUE BINDING-TIME="PRE-COMPILE-TIME">0xF</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <SHORT-LABEL>InV_SGG_Rx_CON_VEH_CTR_FKTN_PRTNT</SHORT-LABEL>
+                                  <VALUE BINDING-TIME="PRE-COMPILE-TIME">0xFFFFFFFF</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <SHORT-LABEL>InV_SGG_Rx_CON_VEH_CTR_BS_PRTNT</SHORT-LABEL>
+                                  <VALUE BINDING-TIME="PRE-COMPILE-TIME">0xF</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </FIELDS>
+                            </RECORD-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                      <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>SRI_FieldNotifierVehicleStatus</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>Notifier</SHORT-NAME>
+                          <CATEGORY>STRUCTURE</CATEGORY>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/IntegrationSample/ImplementationDataTypes/VehicleState_Type</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

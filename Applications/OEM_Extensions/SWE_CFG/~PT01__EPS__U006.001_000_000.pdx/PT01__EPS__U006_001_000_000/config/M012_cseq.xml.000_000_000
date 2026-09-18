@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSEQ xmlns="http://bmw.com/2005/psdz.data.cseq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bmw.com/2005/psdz.data.cseq">
+	<!--CSEQ fuer BRV I001-->
+	<!-- Aenderungsdokumentation
+	Datum        Version    Author    		Aenderung
+	19.01.2012   0.0.0      P.Picard      Initiale Erstellung >> Like I001_0.0.12
+	-->	
+	<dependency>
+		<preconditions>
+    <ECU><baseVariantName name="KLE"/><diagnosticAddress physicalOffset="21"/></ECU><!-- MCV -->
+		</preconditions>
+		<dependors>
+    <ECU><baseVariantName name="SME_MASTER"/><diagnosticAddress physicalOffset="7"/></ECU><!-- A_CAN --><!-- MCV -->
+		</dependors>
+	</dependency>
+	<dependency>
+		<preconditions>
+    <ECU><baseVariantName name="SME_MASTER"/><diagnosticAddress physicalOffset="7"/></ECU><!-- A_CAN --><!-- MCV -->
+		</preconditions>
+		<dependors>
+    <ECU><baseVariantName name="SME_SLAVE1"/><diagnosticAddress physicalOffset="27"/></ECU><!-- A_CAN --><!-- MCV -->
+		</dependors>
+	</dependency>
+	<dependency>
+		<preconditions>
+    <ECU><baseVariantName name="SME_SLAVE1"/><diagnosticAddress physicalOffset="27"/></ECU><!-- A_CAN --><!-- MCV -->
+		</preconditions>
+		<dependors>
+    <ECU><baseVariantName name="SME_SLAVE2"/><diagnosticAddress physicalOffset="30"/></ECU><!-- A_CAN --><!-- MCV -->
+		</dependors>
+	</dependency>
+	<dependency>
+		<preconditions>
+    <ECU><baseVariantName name="SME_SLAVE2"/><diagnosticAddress physicalOffset="30"/></ECU><!-- A_CAN --><!-- MCV -->
+		</preconditions>
+		<dependors>
+    <ECU><baseVariantName name="SME2"/><diagnosticAddress physicalOffset="7"/></ECU><!-- A_CAN --><!-- MCV -->
+		</dependors>
+	</dependency>
+</CSEQ>

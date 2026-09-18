@@ -1,0 +1,1822 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ActiveEcuC</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="63ce3d9b-8ad9-4a8e-8953-be23b7bae252">
+          <SHORT-NAME>FrTp</SHORT-NAME>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/FrTp</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/MICROSAR/FrTp_Impl</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="27a5c22c-e1c8-4e5a-ad9d-e86d9e618e01">
+              <SHORT-NAME>FrTpGeneral</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpGeneral</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpSafeBswChecks</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpAckRt</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpChanNum</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpChangeParamApi</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpDevErrorDetect</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpFullDuplexEnable</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpMainFuncCycle</DEFINITION-REF>
+                  <VALUE>0.005</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpTransmitCancellation</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpUnknownMsgLength</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpVersionInfoApi</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpRxIndEarlierThanTxConf</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpInstanceId</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpMultiPurposeTp</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpRxChanNum</DEFINITION-REF>
+                  <VALUE>28</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpTxChanNum</DEFINITION-REF>
+                  <VALUE>14</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpRuntimeMeasurementSupport</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpGeneral/FrTpReceiveCancellation</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="e81717ab-479e-455b-ba16-61c452a9fa0f">
+              <SHORT-NAME>FrTpMultipleConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="ef3331e7-9a87-4ffb-9682-c3782903d4ea">
+                  <SHORT-NAME>TL_BRC_FR_32_TxF8_0xDFTN_0x00F8_248_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>248</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="9887a938-8e47-4eed-b970-dde1b9b725bd">
+                      <SHORT-NAME>TL_BRC_FR_32_TxF8_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>8</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxF8_0xDF_PP_TL_BRC_FR_32_TxF8_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="a5553301-4e87-42fc-8399-ba8c0f30c768">
+                  <SHORT-NAME>TPCC</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpAckType</DEFINITION-REF>
+                      <VALUE>FRTP_ACK_WITH_RT</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpMaxAr</DEFINITION-REF>
+                      <VALUE>2</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpMaxAs</DEFINITION-REF>
+                      <VALUE>2</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpMaxBufferSize</DEFINITION-REF>
+                      <VALUE>4096</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpMaxFCWait</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpMaxFrIf</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpMaxNbrOfNPduPerCycle</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpMaxRn</DEFINITION-REF>
+                      <VALUE>2</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpSCexp</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpTimeBr</DEFINITION-REF>
+                      <VALUE>0.05</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpTimeBuffer</DEFINITION-REF>
+                      <VALUE>0.02</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpTimeFrIf</DEFINITION-REF>
+                      <VALUE>0.02</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpTimeoutAr</DEFINITION-REF>
+                      <VALUE>0.15</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpTimeoutAs</DEFINITION-REF>
+                      <VALUE>0.15</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpTimeoutBs</DEFINITION-REF>
+                      <VALUE>0.5</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpTimeoutCr</DEFINITION-REF>
+                      <VALUE>0.6</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnectionControl/FrTpTimeCs</DEFINITION-REF>
+                      <VALUE>0.05</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="f471fd19-26ec-482f-a77a-5ec142ff8383">
+                  <SHORT-NAME>RxPduPool_TL_BRC_FR_32_Tp</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpRxPduPool</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="9e8e35cc-28c3-49c0-8ac8-4f5d1314c552">
+                      <SHORT-NAME>FrTpRxPdu_TL_BRC_FR_32_Tp</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpRxPduPool/FrTpRxPdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpRxPduPool/FrTpRxPdu/FrTpRxPduId</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpRxPduPool/FrTpRxPdu/FrTpRxPduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/pduTr_TL_BRC_FR_32_A_FlexRay_pduPort_EPS_A_FlexRay_IN_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="4ee9906f-c952-4ede-961a-0f13148c7edf">
+                      <SHORT-NAME>RxPduPool_TL_GW_FR</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpRxPduPool/FrTpRxPdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpRxPduPool/FrTpRxPdu/FrTpRxPduId</DEFINITION-REF>
+                          <VALUE>2</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpRxPduPool/FrTpRxPdu/FrTpRxPduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/pduTr_TL_MST_GW_TRNSM_FR_254_A_FlexRay_pduPort_EPS_A_FlexRay_IN_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="f135533f-065b-4e53-b17a-900583e8f8e3">
+                  <SHORT-NAME>TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpTxPduPool</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="2207a133-2347-4302-b0c7-44628f4e1ed8">
+                      <SHORT-NAME>TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpTxPduPool/FrTpTxPdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpTxPduPool/FrTpTxPdu/FrTpTxConfirmationPduId</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpTxPduPool/FrTpTxPdu/FrTpTxPduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/pduTr_TL_ECU_TRNSM_FR_32_A_FlexRay_pduPort_EPS_A_FlexRay_OUT_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="318b292f-ea3b-43c9-b039-69aff05ee408">
+                  <SHORT-NAME>TL_BRC_FR_32_TxF2_0xDFTN_0x00F2_242_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>242</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="4a9b971d-de48-42f6-b811-e50364074f39">
+                      <SHORT-NAME>TL_BRC_FR_32_TxF2_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>2</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxF2_0xDF_PP_TL_BRC_FR_32_TxF2_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="d4ad2fbe-24ff-4e37-b5d1-4ccd4f8dd9a7">
+                  <SHORT-NAME>TL_BRC_FR_32_TxF3_0xDFTN_0x00F3_243_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>243</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="3be1b483-fdfb-4724-a8c6-578087f657c1">
+                      <SHORT-NAME>TL_BRC_FR_32_TxF3_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>3</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxF3_0xDF_PP_TL_BRC_FR_32_TxF3_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="48c95ecf-68fb-4d6a-9619-6435e992f3ca">
+                  <SHORT-NAME>TL_BRC_FR_32_TxF4_0xDFTN_0x00F4_244_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>244</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="21a5a11a-aba6-43df-8965-95fcdb09cb5b">
+                      <SHORT-NAME>TL_BRC_FR_32_TxF4_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>4</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxF4_0xDF_PP_TL_BRC_FR_32_TxF4_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="43c5f483-7bbc-4f84-bd7b-f5b729479a28">
+                  <SHORT-NAME>TL_BRC_FR_32_TxF5_0xDFTN_0x00F5_245_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>245</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="34692bb1-b21d-4b4b-9db3-319c58e289fd">
+                      <SHORT-NAME>TL_BRC_FR_32_TxF5_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>5</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxF5_0xDF_PP_TL_BRC_FR_32_TxF5_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="e3bec179-ff93-4711-846b-3d035e480f00">
+                  <SHORT-NAME>TL_BRC_FR_32_TxF6_0xDFTN_0x00F6_246_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>246</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="fb466781-91c0-4b1e-822f-06a5fdda25c2">
+                      <SHORT-NAME>TL_BRC_FR_32_TxF6_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>6</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxF6_0xDF_PP_TL_BRC_FR_32_TxF6_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="b5d5fb4f-596a-4730-8f4e-5c94d389a327">
+                  <SHORT-NAME>TL_BRC_FR_32_TxF7_0xDFTN_0x00F7_247_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>247</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="77f4f0ba-5d57-4638-a46d-1170bba6495a">
+                      <SHORT-NAME>TL_BRC_FR_32_TxF7_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>7</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxF7_0xDF_PP_TL_BRC_FR_32_TxF7_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="bee49a6e-c977-494f-99a1-fb69aaaa8a63">
+                  <SHORT-NAME>TL_BRC_FR_32_TxF1_0xDFTN_0x00F1_241_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>241</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="ebbb47e1-f650-4750-8df1-bdfe6c047506">
+                      <SHORT-NAME>TL_BRC_FR_32_TxF1_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxF1_0xDF_PP_TL_BRC_FR_32_TxF1_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="cded2892-b159-401f-883e-aaa8b58a86c7">
+                  <SHORT-NAME>TL_BRC_FR_32_TxF9_0xDFTN_0x00F9_249_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>249</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="b099e8ae-28aa-4a7e-83ed-26fd3f09e6d4">
+                      <SHORT-NAME>TL_BRC_FR_32_TxF9_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>9</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxF9_0xDF_PP_TL_BRC_FR_32_TxF9_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="a3572f5f-3b71-4ff5-aa98-8fb6b871fd00">
+                  <SHORT-NAME>TL_BRC_FR_32_TxFA_0xDFTN_0x00FA_250_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>250</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="b97f0275-6e04-41c6-a726-8c739a99c069">
+                      <SHORT-NAME>TL_BRC_FR_32_TxFA_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>10</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxFA_0xDF_PP_TL_BRC_FR_32_TxFA_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="42747f71-63f8-4003-93aa-dbc3d3e7c0ca">
+                  <SHORT-NAME>TL_BRC_FR_32_TxFB_0xDFTN_0x00FB_251_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>251</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="056a23f1-df6d-46ae-af2d-7f3f7d208ff9">
+                      <SHORT-NAME>TL_BRC_FR_32_TxFB_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>11</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxFB_0xDF_PP_TL_BRC_FR_32_TxFB_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="bb1cde4e-bbc7-4a29-9def-e1eb1b7e208d">
+                  <SHORT-NAME>TL_BRC_FR_32_TxFC_0xDFTN_0x00FC_252_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>252</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="2f1d3440-feb3-4189-9205-699aeb0fd5af">
+                      <SHORT-NAME>TL_BRC_FR_32_TxFC_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>12</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxFC_0xDF_PP_TL_BRC_FR_32_TxFC_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="17e7fed9-46d0-48a6-9abf-e3f9ecf9871e">
+                  <SHORT-NAME>TL_BRC_FR_32_TxFD_0xDFTN_0x00FD_253_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>253</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="0224acc1-fcd4-4818-9bf9-c17cc5596547">
+                      <SHORT-NAME>TL_BRC_FR_32_TxFD_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>13</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxFD_0xDF_PP_TL_BRC_FR_32_TxFD_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="d5446308-69a9-48a1-a1c1-da76c272385b">
+                  <SHORT-NAME>TL_BRC_FR_32_TxF0_0xDFTN_0x00F0_240_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>223</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>240</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_BRC_FR_32_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="4645709e-e6a4-49fa-a978-d5e1c5ea3c36">
+                      <SHORT-NAME>TL_BRC_FR_32_TxF0_0xDF</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_BRC_FR_32_TxF0_0xDF_PP_TL_BRC_FR_32_TxF0_0xDF_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="c2558c3d-1258-4839-8219-3a13081c96dd">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF0TN_0x00F0_240_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>240</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="880280e7-9668-41f2-9409-b1d5b3cc7c58">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF0</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>14</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxF0_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxF0_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="a3f786aa-71b4-4cff-bca7-633f2e3352cf">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxF0</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxF0_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxF0_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="87394963-e5b3-44e2-ac11-d43a7b877525">
+                  <SHORT-NAME>RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpRxPduPool</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="2eaa2c26-e750-46cf-b7b8-1783e7456035">
+                      <SHORT-NAME>RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpRxPduPool/FrTpRxPdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpRxPduPool/FrTpRxPdu/FrTpRxPduId</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpRxPduPool/FrTpRxPdu/FrTpRxPduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/pduTr_TL_MST_GW_TRNSM_FR_254_A_FlexRay_pduPort_EPS_A_FlexRay_IN_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="575938d9-bdf1-4eba-80fc-4665ea0549a0">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF1TN_0x00F1_241_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>241</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="212278a2-0194-4e45-a0d9-904a916990df">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF1</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>15</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxF1_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxF1_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="9aaf4cd6-ee0b-4e96-aa0e-b11898de6b55">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxF1</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>1</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxF1_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxF1_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="03d127bd-1446-481d-bf20-422f0503eaed">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF2TN_0x00F2_242_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>242</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="4765f584-5f17-4189-9dd8-cd9723791571">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF2</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>16</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxF2_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxF2_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="f6a5eafe-3fee-4e56-8694-47d2c6e9bb97">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxF2</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>2</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxF2_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxF2_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="8aedb8a1-7304-496a-aef0-696a1e658c45">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF3TN_0x00F3_243_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>243</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="efbbecd0-67f5-46d3-8253-dec036719985">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF3</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>17</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxF3_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxF3_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="11bf7720-fd9c-48cd-b8f6-a12c15ba0f5f">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxF3</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>3</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxF3_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxF3_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="715cbefc-bf20-4c30-b0ba-ddcaee1693e2">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF4TN_0x00F4_244_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>244</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="955d5ada-4b0c-4ef0-ae87-afc622a294ce">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF4</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>18</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxF4_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxF4_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="08890a02-ff40-4649-b892-784b68fb477d">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxF4</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>4</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxF4_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxF4_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="aaca9c24-1118-4cc6-b6ce-323cfd8dbaa4">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF5TN_0x00F5_245_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>245</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="dd79fb92-0d4e-489c-a624-982718ee5448">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF5</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>19</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxF5_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxF5_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="202818d8-e895-4129-b15d-0acb8c77032e">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxF5</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>5</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxF5_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxF5_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="029764d0-4815-4d88-bfbd-50a147e3f2bc">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF6TN_0x00F6_246_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>246</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="f2055cde-3c80-4e8f-be53-6422188f5136">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF6</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>20</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxF6_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxF6_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="0840a033-7f91-484b-a872-f8cfbe8f9d6d">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxF6</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>6</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxF6_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxF6_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="bb124d24-9461-4466-9150-32aeb05150e9">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF7TN_0x00F7_247_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>247</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="d87c2549-5c04-4078-adb5-90c6a6820612">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF7</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>21</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxF7_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxF7_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="bf0d9776-8da1-442a-854f-16c90c0472e6">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxF7</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>7</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxF7_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxF7_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="4075cfed-f2a5-4209-a155-d508ead7b4bc">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF8TN_0x00F8_248_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>248</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="a5a14e56-0c3a-4c0f-a04c-82fc30b81927">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF8</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>22</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxF8_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxF8_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="506f19bc-2615-4a7f-a4f9-6153ae509a9a">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxF8</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>8</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxF8_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxF8_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="5c1ca4e9-d62e-4780-9973-3f42378c0cbb">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF9TN_0x00F9_249_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>249</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="7c4916c7-c48e-4bbc-8ee9-91e37cdcbe15">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxF9</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>23</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxF9_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxF9_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="3c195d3b-5bb0-4cac-9e7e-0d8d98415818">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxF9</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>9</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxF9_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxF9_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="8d83aa20-1d5d-4cdd-9a69-1e70da98a740">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxFATN_0x00FA_250_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>250</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="477c0587-4057-454b-ab40-fe375e224cb9">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxFA</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>24</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxFA_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxFA_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="2b203f3c-f6ba-4396-8476-338c5b9df2d7">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxFA</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>10</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxFA_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxFA_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="e240ceaf-0459-42ab-a231-bf2759e6cd15">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxFBTN_0x00FB_251_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>251</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="6bdcd9b1-0a7a-45a3-be27-2323281e94e2">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxFB</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>25</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxFB_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxFB_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="c133e46f-53c0-4baf-835c-7928a5d174d7">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxFB</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>11</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxFB_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxFB_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="11b45e47-3837-4211-a1bb-41d93d6b4561">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxFCTN_0x00FC_252_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>252</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="b7b579e3-604c-481f-9ce3-cbaf1fd3a592">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxFC</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>26</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxFC_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxFC_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="e990a195-d343-4027-ada2-1200d79e4be3">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxFC</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>12</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxFC_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxFC_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="572ef8a6-64a2-4768-9458-d801e89ef5bb">
+                  <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxFDTN_0x00FD_253_TN_0x0030_48</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpLa</DEFINITION-REF>
+                      <VALUE>48</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpMultipleReceiverCon</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRa</DEFINITION-REF>
+                      <VALUE>253</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpConCtrlRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TPCC</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/RxPduPool_TL_MST_GW_TRNSM_FR_254_00980001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxPduPoolRef</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/FrTp/FrTpMultipleConfig/TxPduPool_TL_ECU_TRNSM_FR_32_00BC0001_Tp</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="4f2e5f0f-fb33-457a-9a61-27a71419798a">
+                      <SHORT-NAME>TL_MST_GW_TRNSM_FR_254_00980001_TxFD</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduId</DEFINITION-REF>
+                          <VALUE>27</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpRxSdu/FrTpRxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_MST_GW_TRNSM_FR_254_00980001_TxFD_PP_TL_MST_GW_TRNSM_FR_254_00980001_TxFD_Rx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="879bf751-6d6e-4a33-857d-7a69b8d6d1a1">
+                      <SHORT-NAME>TL_ECU_TRNSM_FR_32_00BC0001_RxFD</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduId</DEFINITION-REF>
+                          <VALUE>13</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/FrTp/FrTpMultipleConfig/FrTpConnection/FrTpTxSdu/FrTpTxSduRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/PT_TL_ECU_TRNSM_FR_32_00BC0001_RxFD_PP_TL_ECU_TRNSM_FR_32_00BC0001_RxFD_Tx_7d601c47_052bff33</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

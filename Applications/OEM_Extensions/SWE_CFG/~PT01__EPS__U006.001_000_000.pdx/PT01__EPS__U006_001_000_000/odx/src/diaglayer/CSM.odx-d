@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-a73e92d5-086d-475a-968c-8ee439ebd0c0" ID="id-a73e92d5-086d-475a-968c-8ee439ebd0c0">
+        <SHORT-NAME>CSM_DLC</SHORT-NAME>
+        <LONG-NAME>Car Sharing Module</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-8b1e19e4-f5f4-47eb-8cad-61d61f06597d" ID="id-8b1e19e4-f5f4-47eb-8cad-61d61f06597d">
+                <SHORT-NAME>CSM</SHORT-NAME>
+                <LONG-NAME>Car Sharing Module</LONG-NAME>
+                <DESC>
+                    <p>Car Sharing Module with BAC 3.1</p>
+                </DESC>
+				<DIAG-COMMS>
+					<DIAG-SERVICE ADDRESSING="PHYSICAL" OID="id-a8cdcbe2-24a5-4722-9266-629f712a95ff" ID="id-a8cdcbe2-24a5-4722-9266-629f712a95ff">
+						<SHORT-NAME>TD</SHORT-NAME>
+						<LONG-NAME>TransferData</LONG-NAME>
+						<SDGS>
+							<SDG>
+								<SDG-CAPTION OID="id-8A712739-58a8-4c3b-8a1a-f21d59c8daf9" ID="id-8A712739-58a8-4c3b-8a1a-f21d59c8daf9">
+									<SHORT-NAME>TIMEOUTS</SHORT-NAME>
+									<LONG-NAME>Timeouts</LONG-NAME>
+								</SDG-CAPTION>
+								<SD SI="P2_TIMEOUT">40000</SD>
+							</SDG>
+						</SDGS>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCTYPE="CONTAINER" DOCREF="ISO_14229_SERVICES_BMW_DLC" ID-REF="id-d211b4bd-23f7-4b12-b096-00f3364a1e46"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF DOCTYPE="CONTAINER" DOCREF="ISO_14229_SERVICES_BMW_DLC" ID-REF="id-ecd7acf2-21c1-403e-93bd-a9691b738b66"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF DOCTYPE="CONTAINER" DOCREF="ISO_14229_SERVICES_BMW_DLC" ID-REF="id-bce922d6-59a8-425f-9f07-9091a8fb0abf"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+				</DIAG-COMMS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

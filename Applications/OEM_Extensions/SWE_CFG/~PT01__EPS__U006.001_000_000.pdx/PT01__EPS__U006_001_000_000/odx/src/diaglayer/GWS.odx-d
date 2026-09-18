@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DIAG-LAYER-CONTAINER ID="id-18922af1-ed07-480e-8b65-3f80e275a8b3" OID="id-18922af1-ed07-480e-8b65-3f80e275a8b3">
+    <SHORT-NAME>GWS_DLC</SHORT-NAME>
+    <LONG-NAME>Getriebewählhebelschalter</LONG-NAME>
+    <BASE-VARIANTS>
+      <BASE-VARIANT ID="id-e7f4a195-81f4-4749-be24-1e13bfac447b" OID="id-e7f4a195-81f4-4749-be24-1e13bfac447b">
+        <SHORT-NAME>GWS</SHORT-NAME>
+        <LONG-NAME>Getriebewählhebelschalter</LONG-NAME>
+        <DESC>
+          <p>
+automatically generated BASE-VARIANT instance GWS
+          </p>
+        </DESC>
+        <COMPARAM-REFS>
+		<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16"> 
+			<VALUE>4083</VALUE>
+			<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP" />
+		</COMPARAM-REF>
+        </COMPARAM-REFS>
+        <PARENT-REFS>
+          <PARENT-REF DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" xsi:type="FUNCTIONAL-GROUP-REF"/>
+        </PARENT-REFS>
+      </BASE-VARIANT>
+    </BASE-VARIANTS>
+  </DIAG-LAYER-CONTAINER>
+</ODX>

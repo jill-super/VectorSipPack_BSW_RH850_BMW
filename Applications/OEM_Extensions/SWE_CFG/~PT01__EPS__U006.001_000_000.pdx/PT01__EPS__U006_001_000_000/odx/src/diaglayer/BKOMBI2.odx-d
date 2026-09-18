@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER ID="id-c88ef634-89b5-4494-9273-a2035102d3ac" OID="id-c88ef634-89b5-4494-9273-a2035102d3ac">
+        <SHORT-NAME>BKOMBI2_DLC</SHORT-NAME>
+        <LONG-NAME>Basiskombi mit BAC4 – codierbar</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT ID="id-6e22a7f7-dc3a-49ab-9b92-6debabe2a140" OID="id-6e22a7f7-dc3a-49ab-9b92-6debabe2a140">
+                <SHORT-NAME>BKOMBI2</SHORT-NAME>
+                <LONG-NAME>Basiskombi mit BAC4 – codierbar</LONG-NAME>
+                <DESC>
+                    <p>Kombiinstrument zur  Anzeige von Fahrerinformationen</p>
+                </DESC>
+        				<COMPARAM-REFS>
+        					<COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+        						<VALUE>6000</VALUE>
+        						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+        					</COMPARAM-REF>
+        					<COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+        						<VALUE>2</VALUE>
+        						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+        					</COMPARAM-REF>
+        					<COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+        						<VALUE>2</VALUE>
+        						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+        					</COMPARAM-REF>
+        				</COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-d5d78338-2b70-40e1-a238-d4eefec8bd45" DOCREF="GWSZ_DLC" DOCTYPE="CONTAINER" />
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-b3dccc52-bb76-4354-802f-e03e7ac08575" DOCREF="VCM_UDS_DLC" DOCTYPE="CONTAINER">
+                        <NOT-INHERITED-DIAG-COMMS>
+                            <NOT-INHERITED-DIAG-COMM>
+                                <DIAG-COMM-SNREF SHORT-NAME="READ_DATA_BY_IDENTIFIER_PLAIN"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+                                <DIAG-COMM-SNREF SHORT-NAME="WRITE_DATA_BY_IDENTIFIER_PLAIN"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                        </NOT-INHERITED-DIAG-COMMS>
+                    </PARENT-REF>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

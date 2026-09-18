@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER ID="id-22b362de-5d44-439c-91e3-905a9b1abbfe" OID="id-22b362de-5d44-439c-91e3-905a9b1abbfe">
+        <SHORT-NAME>TEE_DLC</SHORT-NAME>
+        <LONG-NAME>Traktions-E-Maschinenelektronik</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT ID="id-e8d5ca7a-33b6-4a9e-b807-3f4aeaf0e1dc" OID="id-e8d5ca7a-33b6-4a9e-b807-3f4aeaf0e1dc">
+                <SHORT-NAME>TEE</SHORT-NAME>
+                <LONG-NAME>Traktions-E-Maschinenelektronik</LONG-NAME>
+                <DESC>
+                    <p>Traktions-E-Maschinenelektronik. codierbar, SWT, IDRLight</p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a" DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a" DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-8cb94aae-551f-41e4-bddd-2ba1232564d5" DOCREF="SWT_UDS_DLC" DOCTYPE="CONTAINER"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-91e2ce4c-a274-4f02-a601-92f937695337" DOCREF="IDR_UDS_DLC" DOCTYPE="CONTAINER"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

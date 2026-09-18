@@ -1,0 +1,1201 @@
+[PT01_template.003_000_231]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files:
+	- Version:	005_000_182
+	- Erzeugungsdatum / creation date:	24.01.2018 07:28:43
+Neue Bootloader-Schluessel fuer / new bootloader keys for
+<E/E Name>          	<PC>	<SGBM-NR>
+HSR-03ZF            	BTLD	00006961
+FCVM-01             	BTLD	000068F3
+C_INV-01            	BTLD	00006907
+FC_DCDC-01          	BTLD	00006909
+ACSM-06             	BTLD	000067A7
+
+--------------------------------------------------------------
+[PT01_template.003_000_230]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files:
+	- Version:	005_000_181
+	- Erzeugungsdatum / creation date:	09.01.2018 09:00:56
+Neue Bootloader-Schluessel fuer / new bootloader keys for
+<E/E Name>          	<PC>	<SGBM-NR>
+EPS-NEX02           	BTLD	000064BD
+
+PSDZ_JOBS.jar.005_015_000:
+KA3492 - Änderungen von P2Star mit Log-Level [INFO] loggen
+Defects:
+13308 - NullPointerExeption bei Modusumschaltung mit Whiteliste wenn MasterGW nicht an letzter Stelle
+14099 - Ignore_Errors_Flag steht noch in ParamKey.java sowie AbstractPrepareVehicleForFlash.java
+13980 - Fehler beim Auslesen von CSRs aus dem ATM2 führt dazu, dass API-Methodenaufruf readCertMemoryObjects nicht mehr zurückkehrt
+14128 - Fehlende Fehlerbehandlung im AbstractPrepareAndFinalizeVehicleFlash
+
+Gelöschte Komponenten:
+- HPAD_IP.odx: entfernt
+
+Hinzugefuegte Komponenten:
+- AAG2.odx-d: neu angelegt
+- BAT2.odx-d: neu angelegt
+- USS2.odx-d: neu angelegt
+- DME7.odx-d: neu angelegt
+- DME8.odx-d: neu angelegt
+- FRR3.odx-d: neu angelegt
+- FZD_ETH.odx-d: neu angelegt
+- FZD_CAN.odx-d: neu angelegt
+- HKFM3.odx-d: neu angelegt
+- MRR2.odx-d: neu angelegt
+- PCU3.odx-d: neu angelegt
+- PCU4.odx-d: neu angelegt
+- RLM2.odx-d: neu angelegt
+- WAVE.odx-d: neu angelegt
+- CINV.odx-d: neu angelegt
+- FCCU.odx-d: neu angelegt
+- FCDCDC.odx-d: neu angelegt 
+- FCVM.odx-d: neu angelegt
+- HPAD_FIP.odx-d: neu angelegt
+- HPAD_SIP.odx-d: neu angelegt
+- HSSCU.odx-d: neu angelegt
+- UPAD_FIP.odx-d: neu angelegt
+- UPAD_PP.odx-d: neu angelegt
+- UPAD_SC.odx-d: neu angelegt
+- UPAD_SIP.odx-d: neu angelegt
+- UPAD_TIP.odx-d: neu angelegt
+
+
+RAM.odx-d:
+- Reset nach Codierung [11 42] eingefügt.
+
+KWP_BMW_CPS.odx-c:
+- DIFF_PROGRAMMING COM-Parameter ausgebaut
+
+UDS_BMW_CPS.odx-c:
+- BUS_CHANNELS_APPMODE_USS_CAN_FD und BUS_CHANNELS_USS_CAN_FD hinzugefuegt
+- DIFF_PROGRAMMING COM-Parameter ausgebaut
+
+X_AP.odx-d:
+- Reset nach Coding eingetragen
+
+UDS_BMW_CPS.odx-c 
+- FAS-CAN-FD ergänzt
+
+EPS5.odx-d:
+- IS_FLEXRAY_ISOTP ergänzt (Wert: 1)
+
+Geänderte Komponenten:
+- BCP: neu angelegt
+- CCU2: COM-Parameter "CODING" aus Basisvariante entfernt
+- EGS8: COM-Parameter "CODING" aus Basisvariante entfernt
+- EPS5: COM-Parameter "CODING" aus Basisvariante entfernt
+- EVALBOARD4: COM-Parameter "CODING" aus Basisvariante entfernt
+- FLM2: Single-Ecu-Job "INSTALL_ECU_BL" und "FINALIZE_ECU_FLASH" in BV hinzugefuegt
+- HVS2: COM-Parameter "CODING" aus Basisvariante entfernt
+- TEE2: COM-Parameter "CODING" aus Basisvariante entfernt
+- TSG: COM-Parameter "CODING" aus Basisvariante entfernt
+
+--------------------------------------------------------------
+[PT01_template.003_000_229]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files:
+	- Version:	005_000_180
+	- Erzeugungsdatum / creation date:	11.12.2017 14:11:27
+Neue Bootloader-Schluessel fuer / new bootloader keys for
+<E/E Name>          	<PC>	<SGBM-NR>
+SM-04               	BTLD	000068AC
+
+--------------------------------------------------------------
+[PT01_template.003_000_228]
+
+DKOMBI4.odx-d, DKOMBI5.odx-d:
+- Anpassung von MODE_CHANGE_PARENT_ADRESS_LIST
+
+Neue PSdZ Schluesseldateien / New PSdZ key files:
+	- Version:	005_000_179
+	- Erzeugungsdatum / creation date:	04.12.2017 09:10:25
+Neue Bootloader-Schluessel fuer / new bootloader keys for
+<E/E Name>          	<PC>	<SGBM-NR>
+EVAL-BOARD_01       	BTLD	01020302
+
+PROG_UDS_MEJ.odx-m:
+Multiple-Ecu-Job ACTIVATE_PROG_MODE_SERIAL hinzugefuegt
+
+FLM2.odx-d:
+- neuen Entry-point definiert für PSDZ_JOBS
+
+PSDZ_JOBS.jar.005_014_002:
+- KÄ3487 - P2 (stern) (Timeout nach Empfang eines ResponsePending) für die Basisvariante FLM2 auf 15000ms setzen <-- Einbau
+- KA3324 - HDD Update: Stabilisierung der Statusabfragen durch "Eskalation" bei Fehler anzeigenden Response Codes
+- CR2429 - Ausbau des Parameters PARALLEL_FLASH_MODE_TYPE_4_ENABLED aus den Jobs
+
+
+--------------------------------------------------------------
+[PT01_template.003_000_227]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files:
+	- Version:	005_000_178
+	- Erzeugungsdatum / creation date:	20.11.2017 09:04:35
+Neue Bootloader-Schluessel fuer / new bootloader keys for
+<E/E Name>          	<PC>	<SGBM-NR>
+HSR-02ZF            	BTLD	000067A0
+HPAD-21             	BTLD	00006494
+MPAD-21             	BTLD	0000649C
+MPAD-21             	BTLD	0000649D
+
+--------------------------------------------------------------
+[PT01_template.003_000_226]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files:
+	- Version:	005_000_177
+	- Erzeugungsdatum / creation date:	06.11.2017 08:17:43
+
+Neue Bootloader-Schluessel fuer / new bootloader keys for
+<E/E Name>          	<PC>	<SGBM-NR>
+BAT-48              	BTLD	000066EC
+SCR-04              	BTLD	000066FC
+BZM-GWS01_ZS        	BTLD	000066A2
+EGS-GSAW02FP        	BTLD	000066AC
+EGS-GSAW02FH        	BTLD	00006638
+VSG-H               	BTLD	000066EE
+
+
+Bearbeitete Punkte:
+CR/KA: 
+- CR2429 - Ausbau des Parameters PARALLEL_FLASH_MODE_TYPE_4_ENABLED aus den Jobs
+- CR2336 - Ausbau des Parameters ParamKey.IGNORE_ERRORS_FLAG aus den Jobs
+Defect: 
+- 9272: logical link wird mehrfach entfernt
+- 13308: CR2860 & CR2966 - CheckProgrammingPreConditions funktional senden für SP2021 und davor (SP18, SP15, Mischverbau) unterschiedlich behandeln.
+- 13458: NullPointerExeption bei Modusumschaltung mit Whiteliste wenn MasterGW nicht an letzter Stelle
+- 12656: Template-Änderung TPmin=0 (+ DNMT) -  [ATM-2] Zeit zum Zertifikate schreiben < 15 sek
+- 12330: DSC2: Job MCD3_PerformECUFlashBL wirft eine NullPointerException
+
+
+Neuen BRV U006 initial angelegt
+
+TEE2.odx-d:
+- Coding 2.0 befähigt 
+HVS2.odx-d:
+- Coding 2.0 befähigt
+CCU2.odx-d:
+- Coding 2.0 befähigt
+EPS5.odx-d:
+- Coding 2.0 befähigt
+EGS8.odx-d:
+- Coding 2.0 befähigt
+
+
+TSG.odx-d:
+- Coding 2.0 befähigt
+
+codingJobList.xml.002_000_001:
+ - Berechnungs-Funktion OneByteBuildLevel für CAF BN2021 deaktiviert
+
+- Basisvariante TEE2 und CCU2 angelegt
+
+- Basisvariante HVS2 angelegt
+
+- map2basename aktualisiert mit SRR und GWS mapping
+
+- Basisvariante X_KOMBI4 angelegt
+
+UDS_BMW_CPS.odx-c:
+COM-Parameter SP2021_WRITE_VIN ergänzt. Über diesen Parameter kann man steuern ob 
+bei einem 2021 Steuergerät nach dem Flash die VIN geschrieben werden muss.
+
+--------------------------------------------------------------
+[PT01_template.003_000_225]
+
+PSDZ_JOBS.jar.005_013_002:
+ - Zurückschalten in die defaultSession nach Ausführung des Read-/WriteCertificateObject-Jobs
+
+--------------------------------------------------------------
+[PT01_template.003_000_223]
+
+Unterstützung SP2021 Schlüssel in PSdZ Schlüsseldatei
+
+Neue PSdZ Schluesseldateien / New PSdZ key files:
+	- Version:	005_000_176
+	- Erzeugungsdatum / creation date:	25.09.2017 07:26:17
+Neue Bootloader-Schluessel fuer / new bootloader keys for
+<E/E Name>          	<PC>	<SGBM-NR>
+DME-DDE945          	BTLD	000065AC
+DME-DDE945          	BTLD	000065B1
+EVAL-BOARD_01       	BTLD	01020302
+EVAL-BOARD_01       	BTLD	01020314
+EVAL-BOARD_01       	BTLD	01020309
+EVAL-BOARD_01       	BTLD	01020318
+X_KOMBI-BKTFT10     	BTLD	000065A2
+EGS-GSAW02FH        	BTLD	00006638
+IC_MID-G3_5         	BTLD	0000668A
+INGA-21             	                             BTLD	00006681
+INGA-21             	                             BTLD	00006680
+
+
+PSDZ_JOBS.jar.005_013_001:
+- ALM-Defect 13608: WRITE_CERTIFICATE_OBJECT_COMMUNICATION_CONTROL_OFF wird mit Template 221 
+beim ATM2 nicht ausgefüht. Bugfix for resetting into default session, after writing of certificate object.
+
+--------------------------------------------------------------
+[PT01_template.003_000_222]
+
+CERT_BINDING_UDS.odx-d:
+ATM2.odx-d: ATM2 Parametrierung für CR3348 angepasst und den SingleECUJob aus 
+dem CERT_BINDING_UDS.odx-d in die Datei ATM2.odx-d verschoben und den 
+Shortname angepasst.
+
+--------------------------------------------------------------
+[PT01_template.003_000_221]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files:
+	- Version:	005_000_174
+	- Erzeugungsdatum / creation date:	04.09.2017 10:24:00
+Neue Bootloader-Schluessel fuer / new bootloader keys for
+<E/E Name>          	<PC>	<SGBM-NR>
+FZD-40              	BTLD	0000635F
+BZM-GWS01_ZS        	BTLD	000053E3
+DME83T1-IK_TIC      	BTLD	000064D9
+DME83T1-IK_TIC      	BTLD	000065BD
+
+Geänderte Komponenten:
+
+- TAS_SERVICES.odx-d: zusätzliche Positve-Response mit negativem Inhalt(NRC) definiert.
+- HU_MGU: AUTH_UDS Parent-Ref (SSV) aus Basisvariante entfernt, sowie CSM-Comparameter entfernt.
+- CERT_BINDING_UDS: Bedatungserweiterung für PSDZ-Jobs
+
+- UDS_BMW_CPS.odx-c: COM-PARAM POLL_INTERVAL und BOOTLOADER_INSTALLATION_TIME eingefügt.
+- HU_MGU.odx-d: POLL_INTERVAL auf 250 msec gesetzt - BOOTLOADER_INSTALLATION_TIME auf 900 sec gesetzt.
+- EVALBOARD3.odx-d: Anpassungen damit das Evalboard3 als SP2021 SG geflasht werden kann.
+
+- ATM.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- ATM2.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- DCS.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- DKOMBI2.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- DKOMBI3.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- DKOMBI4.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- DKOMBI5.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- EVALBOARD3.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- EVALBOARD4.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- FRR2.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- HU_CHAMP.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- HU_CHAMP2.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- HU_CIC.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- HU_ENTRY.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- HU_ENTRYNAV.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- HU_ENTRYNAV2.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- HU_MGU: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- HU_NBT.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- HU_NBT2.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- ICAM3.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- ICAM4.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- KAFAS3.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- KAFAS4.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- RAM.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- RSE_HIGH_NBT.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- RSE_HIGH_NBT2.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- RSE_MGU.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+- SAS2.odx-d: COM PARAM MODE_CHANGE_PARENT_ADRESS_LIST mit der Liste der Parents eingefügt
+
+
+PSDZ_JOBS.jar.005_013_000:
+- CR3348: Deaktivierung der applikativen Kommunikation vor dem schreiben von Bindings (siehe ATM)
+- CR2336: Ausbau des Parameters ParamKey.IGNORE_ERRORS_FLAG aus den Jobs
+- CR2864: [RSU] Aktivierung Flashmode für Steuergeräte mit aktiven Nachläufen
+- Defekt 13506: Template Fehler bei READ Bindings
+- Defekt 13446: MCD3_PrepareVehicleForFlash - ControlDTCSetting wird im Fehlerfall/Timeoutfall nicht wiederholt
+- Defekt 7974: MCD3_PrepareVehicleForFlash: Sinnloses CheckProgrammingPreCondition nach SetExtendedMode
+- EthernetTopology Berechnung:  Es wird nun statt einem Parent eine Liste von Parents vom SG geliefert, 
+  wobei immer das zentrale Gateway das letzte SG in der Liste ist. Der Prozess geht nun durch die Liste 
+  der Parents durch und nimmt das erste SG das er in derListe findet als Parent an. Jeder Parent wird 
+  durch seine Diagnoseadresse beschrieben und jede Diagnose-Adresse muss als 2 Byte Wert (XX) eingetragen 
+  werden, d.h. bei Werten kleiner 10 muss der Wert mit einer führenden 0 eingetragen werden.
+- Im Fall von einem SP2021 Steuergerät wird ein kurzer Fingerprint geschickt.
+- In der Codierung ist es nun möglich über den COM-Parameter POLL_INTERVAL die Dauer die zwischen zwei
+  Poll Versuchen vergeht steuern. Defaultwert sind dabei 1000 msec.
+- Defect: ActivateProgMode bei einem SG, dass bei fehlgeschlagener Umschaltung über den DEF-Bus geflasht wird: 
+  Im Anschluss an die fehlgeschlagene Aktivierung ist das SG immer noch in der ExtendedSession. Damit im 
+  der folgenden Ablauf auf einem sauberen Stand aufbaut, muss das SG auch in die Default Session geschickt 
+  werden.
+- Mit dem COM-PARAM BOOTLOADER_INSTALLATION_TIME is möglich von außen die Bootloader Installation Zeit in
+  den FTP zu überschreiben.
+
+--------------------------------------------------------------
+[PT01_template.003_000_220]
+
+Geänderte Dateien:
+- HU_NBT2: Cert-Fähigkeit entfernt
+- RSE_HIGH_NBT2: Cert-Fähigkeit entfernt
+
+--------------------------------------------------------------
+[PT01_template.003_000_218]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files:
+	- Version:	005_000_173
+	- Erzeugungsdatum / creation date:	22.08.2017 08:02:10
+
+Neue Bootloader-Schluessel fuer / new bootloader keys for
+<E/E Name>          	<PC>	<SGBM-NR>
+X_AP-20             	BTLD	000064DF
+RAM-01              	BTLD	00006565
+SPNM-01             	BTLD	0000652B
+
+--------------------------------------------------------------
+[PT01_template.003_000_217]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files:
+	- Version:	005_000_172
+	- Erzeugungsdatum / creation date:	01.08.2017 09:22:55
+Neue Bootloader-Schluessel fuer / new bootloader keys for
+<E/E Name>          	<PC>	<SGBM-NR>
+PCU-48              	BTLD	000064F9
+BDC-CT02            	BTLD	000064F8
+
+CCU.odx-d:
+- IDR-Strategie geändert von PIA in IDR-Light.
+
+Hinzugefügte Komponenten:
+- DME_IK.odx-d (neue BV für Industriekunden)
+- X_AP.odx-d 
+- SPM_S.odx-d (wird benötigt für fseq für schnelleres Flashen bei RSU)
+- HPAD_FPP.odx-d
+- HPAD_IP.odx-d
+- HPAD_SC.odx-d
+- HPAD_SPP.odx-d
+- MPAD_FSC.odx-d
+- MPAD_PP.odx-d
+- MPAD_SSC.odx-d
+
+Geänderte Komponenten:
+- X_KOMBI3: Reset mit Ping nach der Codierung hinzugefügt.
+- taskextensions: EVALBOARD3 für 7E und 7F und INGA21_GW eingefügt.
+- SM2.odx-d: WriteSpeed angepasst.
+
+--------------------------------------------------------------
+[PT01_template.003_000_214]
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+!!HINWEIS: AB DIESER VERSION DES PDX-TEMPLATES IST ZWINGEND CAF-EDITOR VERSION 4.2.0 ERFORDERLICH!! 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+ 
+Migration der Industriekunden-BRVs V002, V008, V009 und V010 vom PT03-Template in das PT01-Template 
+ 
+ 
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_170 
+	- Erzeugungsdatum / creation date:	03.07.2017 10:04:01 
+ 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+SCR-04              	BTLD	00006182 
+CHC-01              	BTLD	0000620B 
+FLM-02              	BTLD	00005CFA 
+Hinzugefügte Komponenten:
+- SCR3.odx-d 
+- EPS5.odx-d 
+- EGS8.odx-d 
+ 
+Geänderte Komponenten: 
+COD2_UDS.odx-d: 
+- SingleECUJob READ_CPS_FROM_ECU eingefügt 
+ 
+PSDZ_JOBS.jar.005_012_000: 
+- Beim Wechsel in die ProgrammingSession wurde bei Steuergeräten mit Modusumschaltung nicht gepollt  
+(sondern die volle Resetzeit gewartet), wenn die Steuergerät vorher NICHT umgeschaltet wurden. Dieses  
+Verhalten wurde nun so geändert, dass auf jeden Fall bei allen 35UP Steuergeräten auch dann gepollt wird,  
+wenn vorher keine Modusumschaltung stattgefunden hat. 
+- Anpassung für Programmierung SP2021 wurden einegfügt. 
+ 
+PROG_SERVICES_UDS.odx-d: 
+- Anpassungen für die 2021 Umsetzung der Dienste RC_CheckMemIndicated und RC_EraseSWPackage. 
+ 
+codingJobList.xml.002_000_000: 
+- Einführung CAF-Typen zur Unterstützung BN2021-Codierung
+
+--------------------------------------------------------------
+[PT01_template.003_000_211]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_169 
+	- Erzeugungsdatum / creation date:	06.06.2017 08:19:34 
+ 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+DME-86T0H           	BTLD	00006197 
+DME-84T0H           	BTLD	00005D53 
+CVM-10              	BTLD	00005F55 
+ECVM-03             	BTLD	00005F57 
+DME-86T0H           	BTLD	00006198 
+X_BMS-ME            	BTLD	0000616E 
+DWA-CANSINE3        	BTLD	00006167 
+DME-840             	BTLD	00006172 
+DME-840H            	BTLD	00006173 
+DCS-01              	BTLD	00006183 
+  
+Geänderte Objekte: 
+UDS_BMW_CPS.odx-c: 
+- Neue Busse für I020 angefügt. 
+- Neuer COMPARAM MODE_CHANGE_PARENT_ADRESS_LIST eingefügt 
+ 
+BDC_BODY.odx-d: 
+- Der Workaround für die direkte Umschaltung wird im BDC_BODY durch den COM-Parameter  
+  NEEDS_EM_DIRECT = 1 aktiviert. In Abstimmung mit den betroffenen Werken. 
+ 
+EVALBOARD3.odx-d: 
+- Reset nach Codierung eingefügt 
+ 
+EVALBOARD4.odx-d: 
+- Reset nach Codierung eingefügt 
+ 
+COD2_UDS.odx-d: 
+- Umbenamung readBuffsize zu readProtocolData. 
+ 
+PIA_MASTER_SERVICES.odx-d: 
+- Fehler im Dienst RC_GET_PIA_CONFIG behoben - die Antwort war um ein Byte zu lang. 
+ 
+SWT_UDS.odx-d: 
+- Neuer SingleECUJobs für RSU angelegt. 
+ 
+PSDZ_JOBS.jar.003_011_004: 
+- Update der PIA Config Daten für die MGU wurde aus FinalizeVehicleCoding in den Job FinalizeTALExecution verschoben.  
+  Der Workaround muss nach dem Rollout von PSDZ 5.05.xx wieder entfernt werden. 
+- Neue Klasse MCD3_SWTRequestStatusForSWT2 für RSU eingecheckt.
+
+--------------------------------------------------------------
+[PT01_template.003_000_210]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_167 
+	- Erzeugungsdatum / creation date:	15.05.2017 08:23:44 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+EGS-ZFB_CE          	BTLD	00005F6E 
+BDC-03              	BTLD	00005F9E 
+EPS-TK03            	BTLD	00005EE9 
+EGS-ZFB_CE          	BTLD	00005F6D 
+DCS-01              	BTLD	00005FEE 
+BDC-CT02            	BTLD	00005FA7 
+ 
+ 
+Geänderte Objekte: 
+ 
+PSDZ_JOBS.jar.005_011_002: 
+- In der Klasse MCD3_PrepareTALExecution wurde ein Workaround für ein DKOMBI2 (IC_MID-JCI) eingebaut.  
+  Bei dieser E/E-Komponente wurde in der Produktion eine defekte SVK Aktuell im Bootloader eingespielt,  
+  die dazu führt das SG mit diesem Fehler nicht geflasht werden können. Für diese Reparatur wird eine
+  zusätzliche Folge von Befehlen aufgerufen, die das SG repariert. Es ist sichergestellt, dass der WA  
+  nur bei den SGen aaufgerufen wird, die diese defekte SVK Aktuell enthalten. 
+- In der Klasse MCD3_FinalizeVehicleFlash wurde ein Workaroung für den FEM_BODY eingebaut. Durch neue 
+  Wischerschalter (Wischer rasten ein) kann es durch die Rückschaltung aus dem Flash-Mode dazu kommen,  
+  dass bei eingerastetem Wischer die Scheibenwischer starten und die Werker am Band gefährden. Daher darf 
+  der FEM_BODY nicht aus dem EnergyMode=Flash in den EnergyMode=Normal wechseln sondern muss direkt in den 
+  EnergyMode = Fertigung geschaltet werden. Dazu wird im Ablauf erst der FlashMode durch SetExtendedMode= 
+  FlashModeDisabled (0x00) entfernt, durch den Wechsel in die DefaultSession wird der Fehlerspeicher  
+  und die applikative Kommunikation wieder angeschaltet und schließlich wird dann im Nachgang der 
+  EnergyMode von Flash direkt auf Fertigung gesetzt. WICHTIG: Durch diese Änderung kann der EnergyMode= 
+  Normal nicht mehr funktional gesetzt werden, sondern muss physikalisch gesetzt werden, was den Ablauf  
+  um 6-8 sec verlängert. 
+ 
+DKOMBI2.odx-d: 
+- Für den Workaround im IC_MID-JCI müssen zwei neue UDS-Dienste definiert werden.
+ 
+DSC_BRS_IB.odx-d: 
+- Reset nach der Codierung eingefügt. 
+ 
+FEM_BODY.odx-d: 
+- Der Workaround für die direkte Umschaltung wird im FEM_BODY durch den COM-Parameter NEEDS_EM_DIRECT = 1  
+  aktiviert. 
+   
+RLM.odx-d: 
+- SWT und FsCSM aus der Basisvariante entfernt. 
+ 
+ISO_14229_SERVICES_BMW.odx-d: 
+- Für den Workaround im IC_MID-JCI muss die Session 0x70 (jciSession) in der Bedatung bekannt gemacht 
+  werden. 
+ 
+PROG_SERVICES_UDS.odx-d: 
+- Für Programmierung 2021 müssen die beiden Dienste Erase_Memory_Address und Erasem_Memory_Indicated 
+  ohne Activation-Code angelegt werden. 
+- Für den Wischer-Workaround muss der Dienst SetExtendedMode=FlashModeDisabled angelegt werden.
+
+
+--------------------------------------------------------------
+[PT01_template.003_000_209]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_166 
+	- Erzeugungsdatum / creation date:	28.04.2017 11:58:30 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+SRR-01              	BTLD	00005ECF 
+TEE1-01             	BTLD	00005CC0 
+RAM-01              	BTLD	00005ED8 
+RAM-01              	BTLD	00005ED9 
+RAM-01              	BTLD	00005ED7 
+RAM-01              	BTLD	00005EDA 
+EDME-04             	BTLD	00005D2C 
+EDME-04             	BTLD	00005D2D 
+ 
+Neue Objekte: 
+PIA_MASTER_SERVICES.odx-d:  
+- CR2975 - neuer PSDZ_JOBS für den PIA Portierungsmaster Update eingefügt. 
+ 
+Geänderte Objekte: 
+HU_CHAMP.odx-d: 
+- Markierung als PIA-Master wird für den Update der PIA Meta Daten benötigt 
+ 
+HU_CHAMP2.odx-d: 
+- Markierung als PIA-Master wird für den Update der PIA Meta Daten benötigt 
+ 
+HU_CIC.odx-d: 
+- Markierung als PIA-Master wird für den Update der PIA Meta Daten benötigt 
+ 
+HU_CICMID.odx-d: 
+- Markierung als PIA-Master wird für den Update der PIA Meta Daten benötigt 
+ 
+HU_ENTRY.odx-d: 
+- Markierung als PIA-Master wird für den Update der PIA Meta Daten benötigt 
+ 
+HU_ENTRYNAV.odx-d: 
+- Markierung als PIA-Master wird für den Update der PIA Meta Daten benötigt 
+ 
+HU_ENTRYNAV2.odx-d: 
+- Markierung als PIA-Master wird für den Update der PIA Meta Daten benötigt 
+ 
+HU_NBT.odx-d: 
+- Markierung als PIA-Master wird für den Update der PIA Meta Daten benötigt 
+ 
+HU_NBT2.odx-d: 
+- Markierung als PIA-Master wird für den Update der PIA Meta Daten benötigt 
+ 
+HU_MGU.odx-d: 
+- Markierung als PIA-Master wird für den Update der PIA Meta Daten benötigt.  
+  Zusätzlich muss die MGU die neue API zum Update der PIA Meta Data unterstützen. 
+ 
+UDS_BMW_CPS.odx-c: 
+- Neue COM-Parameter für Timing SP2021 (IS_PROG_SP2021),  
+- Unterstützung das im Finalizer der EnergyMode direkt auf Fertigungsmode gesetzt wird (NEEDS_EM_DIRECT) 
+- Flag zur Erkennung eines PIA Masters (PIA_PORT_MASTER). 
+ 
+CERT_BINDING.odx-d: 
+- Neuer Job fürs Certifkate-Handling (RequestByListEntry) eingeführt 
+ 
+PROG_UDS_SERVICES.odx-d: 
+- SetEnergyMode robuster gegen Fehleingaben gemacht (Werte 0x04-0xFF haben zu einer Exception und zu einem Abbruch geführt). 
+ 
+PSDZ_JOBS.jar.005_011_000: 
+- Job für den Update des PIA Portierungsmasters eingefügt (CR 2975) 
+- Für SP2021 Steuergeräte wird kein ResponsePending mehr bei den UDS EraseMemory, CheckMemory, 
+  TransferData und CheckProgrammingDependencies erwartet. 
+- Für SP2021 Steuergeräte muss der ActivationCode nicht mehr mitgeschickt werden.
+- Die Funktion "getDAsLogicalLinksFromODX" kann nun auch in anderen Klassen verwendet werden.
+- Verwendung von den COM-Parametern für SP2021 eingefügt. 
+- Fehler im PerformDelete behoben und ausgebaut, dass der Rückgabewert 0x03 auf 0x00 gemappt wird. 
+  Der Wert 0x03 kann nun von PSDZ verarbeitet werden. 
+ 
+  PSDZ_JOBS.jar.005_011_001: 
+- NullpointerException bei MCD3_PerformDeleteSwe behoben. 
+- Workaround im PerformDelete wieder eingebaut, in dem der Rückgabewert 0x03 auf 0x00 gemappt wird.  
+  Der Wert 0x03 kann erst ab PSDZ 5.04.xx in PSDZ korrekt verarbeitet werden und der Rückbau kann  
+  erst erfolgen, wenn 5.04. unternehmensweit ausgerollt ist.
+
+--------------------------------------------------------------
+[PT01_template.003_000_207]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_165 
+	- Erzeugungsdatum / creation date:	29.03.2017 15:31:48 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+RLM-01              	BTLD	0000473F 
+ZBE-07              	BTLD	000058A1 
+USS-04              	BTLD	00005D57 
+USS-04              	BTLD	00005D59 
+IC_HIGH-BO_G4_1     	BTLD	00005EA5 
+DME-MEVD172G        	BTLD	00005BA5 
+DME-MEVD172G        	BTLD	00005BA6 
+ 
+ 
+DSC_BRS_IB.odx-d: 
+- Reset nach der Codierung wurde entfernt.
+
+--------------------------------------------------------------
+[PT01_template.003_000_206]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_164 
+	- Erzeugungsdatum / creation date:	27.02.2017 08:14:36 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+TFM-02              	BTLD	000058A7 
+DSC-CT04            	BTLD	00005D2E 
+DSC-CT04            	BTLD	00005D2F 
+IC_B-G4_5           	BTLD	00005D40 
+ 
+Geänderte Komponenten: 
+- Zertifikat-Management bei den BV ATM2, DKOMBI4, DKOMBI5, HU_MGU und RSE_MGU eingefügt. 
+- DKOMBI5.odx.d : Security Flag für FsCSM auf true gesetzt. 
+ 
+Hinzugefügte Komponenten:
+- EVALBOARD4.odx-d 
+- EDME2.odx-d 
+- COD2_UDS.odx-d 
+ 
+- PSDZ_JOBS.jar.005_010_000: 
+  - Defect#10799-Job SWT_REQUEST_STATUS_FOR_ECU/MCD3_SWTRequestStatusForECU versucht, FSCs mit dem Status 
+    "not available" aus dem Steuergerät auszulesen behoben 
+ 
+fcfnlist.xml.001_001_003: 
+Folgende ANs wurden ergänzt: 
+0x0194, 0x0195, 0x0196, 0x0197, 0x0198, 0x0199, 0x019A 
+0x019B, 0x019C, 0x019D, 0x019E, 0x019F, 0x01A0, 0x01A1	
+
+--------------------------------------------------------------
+[PT01_template.003_000_205]
+
+- PSDZ_JOBS.jar.005_009_002: 
+In requestDownloadIDR wurde fälschlich RD_CERT statt RD_IDR aufgerufen. 
+Fehler wurde behoben. 
+
+
+--------------------------------------------------------------
+[PT01_template.003_000_204]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_163 
+	- Erzeugungsdatum / creation date:	08.02.2017 13:12:58 
+ 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+CVM-10              	BTLD	00005C54
+
+--------------------------------------------------------------
+[PT01_template.003_000_203]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_162 
+	- Erzeugungsdatum / creation date:	06.02.2017 11:02:50 
+ 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+CCU-01              	BTLD	000058A8 
+EVAL-BOARD_01       	BTLD	01020314 
+IC_MID-G3_5         	BTLD	00005AF9 
+DME-88T0            	BTLD	00005C11 
+ECVM-02             	BTLD	00005B9D 
+ECVM-02             	BTLD	00005B9E 
+SAS-18              	BTLD	00005942 
+DME83T1-IK_KIC      	BTLD	0000565C 
+IC_MID-BO_G4        	BTLD	00005AB0 
+RS-01               	BTLD	00005BF8 
+ 
+Geänderte Komponenten: 
+- GSD.odx-d: Die Komponente unterstützt IDR Light. Bedatung ergänzt. 
+- KAFAS4.odx-d: Nach dem Codieren benötigt das KAFAS-04xxx weitere 30 sec um die  
+  Codierdaten in seinen Subprozessor zu schreiben. Damit die Daten nicht  
+  verloren gehen wurde ein Wait von 35 sec eingebaut. Da aber auch das  
+  KAFAS-CT03 die BV KAFAS4 hat wurden die 35 sec wait auf 0 reduziert und 
+  im LogicalLink des BRVs S18A wieder mit 35 sec überschrieben. Dadurch wird 
+  die Zusatzzeit nur noch im S18A gewartet und nicht mehr bei im Feld  
+  befindlichen BRVen. 
+ - PSDZ_JOBS.jar.005_009_001: 
+Fehlerbehebung in den Jobs für Coding/Programming 2021 und Certifikaiton Management  
+ (nur SP2021 relevant und alles nur in neuen Jobs, die noch nicht aufgerufen werden) 
+Fehlerbehebung beim Löschen von SWFK Dateien: Beim DeleteSWPackge wird die Fehlermeldung  
+"File not found" erst dann als Fehler interpretiert, wenn die zu löschende Datei 
+auch in der SVK aktuell zu finden ist.
+
+--------------------------------------------------------------
+[PT01_template.003_000_200]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_161 
+	- Erzeugungsdatum / creation date:	16.01.2017 09:41:57 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+HVS-01              	BTLD	00005BA1 
+IB-CT01             	BTLD	00005B81 
+BZM-GWS01           	BTLD	00005897 
+IB-CT01             	BTLD	00005B80 
+DSC-CT03            	BTLD	00005B7E 
+DSC-CT03            	BTLD	00005B7F 
+ 
+Geänderte Komponenten: 
+- PSDZ_JOBS.jar.005_009_000: 
+	- CR 2870 - Tester führt bei allen BDC_GW-Steuergeräten keine Modusumschaltung mehr durch. 
+	- Hier wird nun geprüft, ob der Parent eine Umschaltung benötigt. Diese Information wird nun  
+	  beim Parent gepflegt (neuer COM Param ACTIVATE_ETH_SWITCH) und nicht mehr bei Kind-Knoten.  
+	- Neuer functionaler Java Job für die Abfrage der PreCondtions im Fahrzeug. 
+	- Nun kann beim Finalize IDR Light eine Reset nach dem Schreiben per Bedatung (FINALIZE_IDR) vermieden werden. 
+	- CR2880-Zertifikatsmanagement 
+	- MGU läuft in einen Fehler wenn die Adresse/Längen Größenangaben im Dienst RC_START_HTTP_UPDATE kleiner als 4 Byte sind. 
+ 
+- UDS_BMW_CPS.odx-c: Com-Parameter IS_CERT_ENABLED eingefügt 
+- PROG_UDS_MEJ.odx-m: Datenstrukturen/Parameter fuer MCD3_CheckVehiclePreConditions in die Datei eingefügt. 
+ 
+Hinzugefügte Komponenten:
+- CCU.odx-d 
+- HVS.odx-d 
+- CERT_BINDING_UDS.odx-d 
+
+
+--------------------------------------------------------------
+[PT01_template.003_000_199]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_160 
+	- Erzeugungsdatum / creation date:	12.12.2016 13:47:57 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+RAM-01              	BTLD	000059FA 
+CSM-04R             	BTLD	0000598E
+
+--------------------------------------------------------------
+[PT01_template.003_000_198]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_159 
+	- Erzeugungsdatum / creation date:	05.12.2016 09:27:23 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+MRR-02              	BTLD	00004B59 
+ 
+FZD3.odx-d: 
+-	COM-Parameter FINALIZE_CODING = 3 eingefügt. Reset nach Codierung  
+ 
+DCS.odx-d: 
+- Hardreset nach der Coderiung eingefügt. 
+ 
+DSC_BRS2.odx-d: 
+- Neue Basisvariante angelegt. 
+ 
+DSC_VIP2.odx-d: 
+- Neue Basisvariante angelegt.
+
+--------------------------------------------------------------
+[PT01_template.003_000_197]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_158 
+	- Erzeugungsdatum / creation date:	07.11.2016 17:02:29 
+ 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+DME-944             	BTLD	0000555A
+
+--------------------------------------------------------------
+[PT01_template.003_000_196]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_156 
+	- Erzeugungsdatum / creation date:	27.10.2016 08:05:49 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+HKFM_HKL-CT01       	BTLD	00004F6B 
+ICAM2SVS-BO01       	BTLD	00008C15 
+SGE48V-01           	BTLD	00004FA6 
+DSC-EBC_SP18        	BTLD	00005799 
+ 
+ 
+UDS_BMW_CPS.odx-c: 
+- RSU Flag eingeführt (Info nach welcher Methode das Steuergerät im RSU Fall geflasht wird - Defaultwert ist über PSDZ) 
+- Neuer Parameter um die Maximum-T2-Zeit im EraseMemory zu überschreiben (FTP) 
+ 
+ATM2.odx-d: 
+- RSU Flag auf "RSU" gesetzt.
+ 
+DKOMBI4: 
+- RSU Flag auf "RSU" gesetzt.
+ 
+HU_MGU.odx-d: 
+- RSU Flag auf "MGU" gesetzt.
+ 
+RSE_MGU.odx-d: 
+- RSU Flag auf "RSU" gesetzt.
+ 
+taskextensions.xml.001_000_021: 
+- Bedingungen wann ein Pre- oder Post-Processor ausgeführt wird eingefügt. 
+ 
+ICM.odx-d: 
+- EraseMemTime im Steuergerät mit 70 sec überschrieben (alter Wert war in den FTP ist 50). 
+ 
+EVALBOARD3.odx-d: 
+- SetDefBus wird noch auch im EVALBORAD nach jedem Reset aufgerufen 
+ 
+AUTH.odx-d: 
+- Client Fehlercodes haben in der Bedatung gefehlt, was im Ablauf zu einer Exception geführt hat. Fehlercodes wurden nachgetragen. 
+ 
+PROG_SERVICES_UDS.odx-d: 
+- Neuer SessionState "SafetyErrorState" eingeführt - der State zeigt an, dass das Steuergerät zwar in der Applikation ist, aber der Safety-Prozessor nicht korrekt aktualisiert werden konnte.
+ 
+KAFAS4.odx-d: 
+- Workaround - 35 sec warten bevor das Codieren beendet wird, da es sonst sein kann, dass das SG seine Codierung durch einen Reset wieder verliert. Muss später wieder ausgebaut werden. 
+ 
+PSDZ_JOBS.jar.005_008_000: 
+- Fehler in der Behandlung von Sonder-Links (z.B. ZSG_ETHERNET) behoben, die in bestimmten Konstellationen zu Exceptions geführt hat. 
+- TransferDataExit wird nun mit dem selben Timing Verhalten durch geführt, wie TransferData. Daher musste der Dienst in die Funktion transferDataExecution verschoben werden. 
+- Neuer COM-Parameter eingeführt um die EraseMemory-Zeit aus den FTP zu überschreiben 
+- Neuer SessionState "SafetyErrorState" in der ApplikationDefault und ApplikationExtendedSession eingeführt. Der Status wird von der ELV geliefert, wenn diese ihren Safety-Prozessor nicht updaten konnte.
+- Workaround - 35 sec warten bevor das Codieren beendet wird, da es sonst sein kann, dass das SG seine Codierung durch einen Reset wieder verliert. Muss später wieder ausgebaut werden. 
+- Fehler in Klammersetzung in if-Clause hat dazu geführt, dass nur nach dem FinalizeCoding gepollt wird - Vor 35UP wurde nur gepollt, wenn an der fachlichen Stellen das Pollen unterstützt wird. Das war vor 35UP nur beim FinalizeCoding der Fall. Und nur in diesem Fall sollte auch im D_CAN Fall das Pollen unterlassen werden. Bei 35UP Steuergeräten kann nach einem Reset aber IMMER gepollt werden, egal an welcher Stelle im Ablauf. Klammersetzung wurde entsprechend angepasst. 
+
+
+--------------------------------------------------------------
+[PT01_template.003_000_193]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_154 
+	- Erzeugungsdatum / creation date:	16.09.2016 09:50:11 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+DME83T1-IK_MIC      	BTLD	00005722 
+DME83T1-IK_MIC      	BTLD	0000571F 
+DME84T1-IK_MIC      	BTLD	00005760 
+DME84T1-IK_MIC      	BTLD	00005763 
+DME84T1-IK_RIC      	BTLD	00005768 
+DME84T1-IK_RIC      	BTLD	0000576B 
+DME86T1-IK_RIC      	BTLD	00005770 
+DME86T1-IK_RIC      	BTLD	00005773 
+DME83T1-IK_RIC      	BTLD	00005725 
+DME83T1-IK_RIC      	BTLD	00005728 
+IC_HIGH-BO_M        	BTLD	000057B0 
+CPM-01           	   	BTLD	00004C8A
+
+--------------------------------------------------------------
+[PT01_template.003_000_192]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_153 
+	- Erzeugungsdatum / creation date:	05.09.2016 08:19:35 
+ 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+X_IABS-CTMIBEVO     	BTLD	00004AF9 
+DME-IK_B48          	BTLD	000055F7 
+DME-IK_B58          	BTLD	000055FC 
+DME-IK_B38          	BTLD	000055F2 
+ 
+PSDZ_JOBS.jar.005_007_000: 
+-	Fehler bei der Service-Wiederholung gegen Timeout im TransferData behoben. 
+-	UDS Services doppelte ID-Belegung aufgelöst  
+-	KA2755 - Logmeldung bei negativer Antwort auf "RC_GSIGS - RoutineControl SWT_STATUS_LESEN_SWSIG" im Job MCD3_SWTRequestStatusForECU ändern
+-	Wordaround für Codierproblem im ACSM-41 - vor der Umschaltung in die Coding-Session wird ein Reset gemacht. 
+ 
+ACSM2.odx-d: 
+-	Wordaround für Codierproblem im ACSM-41 - vor der Umschaltung in die Coding-Session wird ein Reset gemacht. 
+ 
+X_IABS.odx-d: 
+-	Eigenschaft "codierbar" aufgenommen.
+ 
+fcfnlist.xml.001_001_002 
+Folgende ANS wurden entfernt: 
+(Nicht produktiv genutzte SWIDs, Änderung SWID von FCFN auf FCFA) 
+ 
+0x0048, 0x0049, 0x004A, 0x004B, 0x004C, 0x004F, 0x0050, 
+0x0051, 0x0052, 0x0053, 0x0055, 0x0056, 0x0057, 0x0058, 
+0x0059, 0x005A, 0x005B, 0x005C, 0x005D, 0x005E, 0x005F, 
+0x0060, 0x0061, 0x0062, 0x0063, 0x0064, 0x0065, 0x0066, 
+0x0067, 0x0068, 0x0069,	0x006B, 0x006C, 0x006D, 0x00CB, 
+0x00CF, 0x00D0, 0x00D1, 0x00D2, 0x00D3, 0x00D4, 0x00D5, 
+0x00D7, 0x00D8, 0x00D9, 0x00DA, 0x00DB, 0x00DC, 0x00E6, 
+0x00E7, 0x0101, 0x0102 
+	 
+Folgende ANs wurden ergänzt: 
+0x0131, 0x0155, 0x0156, 0x0157, 0x0158, 0x0159, 0x015A, 
+0x015B, 0x015C, 0x015D, 0x015E, 0x015F, 0x0160, 0x0161, 
+0x0162, 0x0169, 0x016C, 0x0175, 0x0176, 0x0177, 0x0178, 
+0x0179, 0x017F, 0x0181, 0x0183
+
+--------------------------------------------------------------
+[PT01_template.003_000_187]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_152 
+	- Erzeugungsdatum / creation date:	01.08.2016 11:50:52 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+IHKA-PR02           	BTLD	00005550 
+SME-03              	BTLD	0000506A 
+ 
+PSDZ_JOBS.jar.005_006_001: 
+- Workaround für PSdZ Fehler. Das RAM liefert einen Fehler, wenn der Service RC(DeleteSwPackage) im falschen Zustand aufgerufen wird (wie gefordert). Da das RAM alle SWE aber auch im RC(EraseMemory) löscht, kann der Fehler ignoriert werden - das ignorieren des Fehlers im Fall vom RAM wurde in diesem WA umgesetzt. Der WA wird überflüssig sobald PSDZ den Fehler in der Reihenfolge behoben hat. 
+- Fehler im Stringvergleich in der Entscheidung ob beim ZGW nach einem Reset gepollt werden soll behoben 
+- Kommentar als Hinweis auf potentiellen Fehler in der StateMachine bei NBT/NBTEVO/RSENBT/RSENBTEVO in der Codiervorbereitung eingefügt 
+- Fehler in der Codiervorbereitung behoben, der immer zu einer Exception geführt hat, da der selbe Link zweimal geschlossen wurde. 
+ 
+taskextensions.xml.001_000_020: 
+- DKOMBI5 in die taskextensions eingefügt 
+ 
+HU_ENTRY.odx-d: 
+- IDR aus der Basisvariante entfernt. Funktioniert nicht und hat nie funktioniert, soll daher auf Wunsch von UA nicht mehr aufgerufen werden. 
+ 
+USS.odx-d: 
+- Reset nach der Codierung eingefügt. 
+ 
+DKOMBI4.odx-d: 
+- FsCSM für das DKOMBI4 aktiviert. War bisher ausgeschaltet. 
+ 
+MRR.odx-d: 
+- IDR, SWT und FsCSM eingefügt
+
+--------------------------------------------------------------
+[PT01_template.003_000_186]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_150 
+	- Erzeugungsdatum / creation date:	06.07.2016 09:43:34 
+ 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+IC_B-G4_5           	BTLD	00005017 
+ 
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_149 
+	- Erzeugungsdatum / creation date:	04.07.2016 09:15:20 
+ 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+EPS-NEX01           	BTLD	0000511C 
+CSM-04              	BTLD	00004CBD 
+BAT-48              	BTLD	00004EE6 
+GSD-01              	BTLD	00004F6D 
+ 
+Geänderte Komponenten: 
+UDS_BMW_CPS.odx-c: 
+-	neuen COM-Parameter MOTORRAD eingeführt, um Motorradbaureihen identifizieren zu können 
+ 
+HU_ENTRYNAV2.odx-d: 
+-	IDR Workaround - Individualdaten der EntryEVO werden nun auch immer gerettet, wenn es programmiert wird. 
+ 
+BKOMBI2.odx-d: 
+-	Reset nach der Codierung eingebaut 
+ 
+KOMBI2.odx-d: 
+-	Reset nach der Codierung eingebaut 
+ 
+HU_ENTRYNAV.odx-d: 
+-	Flash-Speed angepasst 
+ 
+Hinzugefügte Komponenten:
+-	Basisvarianten DKOMBI5, BAT, SGE angelegt
+
+--------------------------------------------------------------
+[PT01_template.003_000_184]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_148 
+	- Erzeugungsdatum / creation date:	30.05.2016 08:40:25 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+IC_HIGH-BO_M        	BTLD	00004CE9 
+EPS-JT01            	BTLD	00004E96 
+PCU-48              	BTLD	00004E9C 
+ 
+Geänderte Komponenten: 
+UDS_BMW_CPS.odx-c: 
+-	Com-Parameter BUS_CHANNELS_APPMODE_LE2_CAN und BUS_CHANNELS_LE2_CAN eingefügt  
+- HU_ENTRYNAV2.odx-d: FsCSM aus der Basisvariante entfernt. 
+ 
+Neue Komponenten: 
+PCU2.odx-d: 
+-	neue Basisvariante erstellt 
+CSM2.odx-d: 
+-	neue Basisvariante erstellt
+
+--------------------------------------------------------------
+[PT01_template.003_000_181]
+
+PSDZ_JOBS.jar.005_005_001: 
+- IDR Fehler behoben - in der Funktion routineControlRequestListEntryByMemObjectId in der  
+Klasse MCD3_RequestListEntryByObjectID wird nun RC_RLE_IDR statt RC_RLE aufgerufen und  
+damit ist auch wieder der RID richtig gesetzt.
+
+--------------------------------------------------------------
+[PT01_template.003_000_180]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_147 
+	- Erzeugungsdatum / creation date:	18.05.2016 09:08:18 
+ 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+X_BMS-AE01          	BTLD	00004DAB 
+CDM-02OM            	BTLD	00004C6F 
+CDM-02OM            	BTLD	00004C73 
+CDM-02OM            	BTLD	00004C71
+
+--------------------------------------------------------------
+[PT01_template.003_000_179]
+
+KEINE Freigabe: F-/C-SEQ Dateien KE01 NL notwendig.
+
+--------------------------------------------------------------
+[PT01_template.003_000_178]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_146 
+	- Erzeugungsdatum / creation date:	02.05.2016 11:54:28 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+EGS-GSGE01QW        	BTLD	00004CAE 
+EGS-GSGE01QW        	BTLD	00004CAF 
+EGS-GSAW02FP        	BTLD	00004406 
+EGS-GSAW02FP        	BTLD	00004CA2 
+EGS-GSGE01QW        	BTLD	00004CA1 
+ATM-02              	BTLD	00004A51 
+EGS-GSGE01QW        	BTLD	000044D0 
+SME-03              	BTLD	00004C6A 
+ECVM-02             	BTLD	00004CB1 
+ECVM-02             	BTLD	00004CB0 
+X_BMS-O             	BTLD	00004CA0 
+EGS-GSGE01QT        	BTLD	00004CBB 
+ 
+UDS_BMW_CPS.odx-c: 
+-	COM-Parameter P2maxISO und P2StarISO aufgenommen 
+- 	COM-Parameter COLLECT_PIA_DATA aufgenommen 
+IDR_UDS_odx-d: 
+- Überschneidung zwischen VCM und IDR aufgelöst 
+VCM_UDS.odx-d: 
+- Überschneidung zwischen VCM und IDR aufgelöst 
+X_BMS2.odx-d: 
+- DIAG-Service hinzugefügt wegen Überschneidung VCM und IDR 
+HU_MGU.odx-d: 
+- Neuer Parameter COLLECT_PIA_DATA um nach der Codierung bei einem PIA Master das Einsammeln der PIA Daten  
+  anzustoßen - bisher hat das der PIA Master selbst berechnet, in dem er beim VCM das letzte Änderungsdatum  
+  abgerufen und hat und mit dem verglichen hat, was er sich gemerkt hatte - diese Prüfung kann durch die  
+  Änderung im PIA-Master entfallen. 
+- Fehler bei der SWT Parent-REF UUID behoben - nun wird die korrekt ID genommen  
+PSDZ_JOBS.jar.005_005_000: 
+-	Defect 10776 "MCD3_ActivateProgModeNew: removal of logical link ... failed" - behoben
+- 	Defect 10895 - Request Seed wird geschickt obwohl DSC_CodingSession negativ beantwortet wurde - behoben  
+-	Defect 11725 MCD3_PrepareTALExecution: removal of logical link <ECU-ID> failed - behoben 
+-	KA2255 - Überschneidung zwischen VCM und IDR ausbauen - die SHORTNAMEs waren identisch definiert  
+	wodurch es zu Fehlern in den ODX-Prüfung gekommen ist. Aber die Funktionen waren tatsächlich unterschiedlich  
+	(RID ist unterschiedlich) daher müssen bei Steuergeräten, die sowohl VCM als auch IDR unterstützen die  
+	UDS-Dienste anhand der SHORTNAME-Objekte unterschieden werden. Diese Änderung wurde nun vorgenommen. 
+- 	CR2299 - Nach Reset von Ethernet-Steuergeräten Aufbau der TCP-Verbindung erzwingen 
+-	Defect 11774 SGe in der SWTSession werden vor der TAL-Ausführung nicht in die DefaultSession versetzt - behoben 
+- 	Defect 11832 Bei der Prüfung, ob ein Steuergerät ein Steuergerät mit Modusumschaltung ist, muss der Wert 4  
+	"SG mit Switch, aber nicht umschaltbar" auch das Ergebnis "Nicht umschaltbar" liefern.
+-	Änderung für die MGU - Hier muss nach der Codierung der PIA Portierungsmaster angewiesen werden die PIA Daten  
+	einzusammeln. Wenn das nicht gemacht wird, funktioniert die Portierung von PIA Daten nicht. 
+-	Fehler in diesem Job behoben - der SetDefBus nach dem Wechsel in die ProgrammingSession darf nur bei HUs  
+	aufgerufen werden.
+
+--------------------------------------------------------------
+[PT01_template.003_000_173]
+
+DSC_VIP.odx-d: 
+-	Kein Reset nach der Codierung. Reset ausgebaut. 
+ 
+DSC_VIP_IB.odx-d: 
+-	Kein Reset nach der Codierung. Reset ausgebaut. 
+ 
+DCS.odx-d: 
+-	Es wird kein SetDefBus mehr nach einem Reset gemacht. Dies ist allerdings ein Fehler im PSDZ_JOBS.jar.  
+    Der Fehler wird erst im 174er Template behoben. Das entfernen des SetDefBus ist nur ein Workaround bis der Fehler behoben ist. 
+ 
+ATM2.odx-d: 
+-	Es wird kein SetDefBus mehr nach einem Reset gemacht. Dies ist allerdings ein Fehler im PSDZ_JOBS.jar. Der Fehler wird erst im 174er Template behoben.  
+    Das entfernen des SetDefBus ist nur ein Workaround bis der Fehler behoben ist.
+
+--------------------------------------------------------------
+[PT01_template.003_000_172]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_144 
+	- Erzeugungsdatum / creation date:	05.04.2016 09:58:11 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+DME-84T0            	BTLD	00004295 
+DME-86T0            	BTLD	000048DC 
+DME-84T1            	BTLD	00003E4B 
+IHKA-RRNM           	BTLD	00004985 
+FZD-40              	BTLD	00004ABA 
+IC_MID-BO_G4        	BTLD	00004770 
+MRR-02              	BTLD	00003F19 
+LMV-02_M            	BTLD	0000474C 
+ 
+Geänderte Komponenten: 
+RSE_MGU.odx-d: 
+-	SWT Unterstützung zur Basisvariante hinzugefügt 
+ 
+DSC_BRS.odx-d: 
+-	Reset nach der Codierung hinzugefügt 
+ 
+DSC_VIP.odx-d: 
+-	Reset nach der Codierung hinzugefügt 
+ 
+DSC_BRS_IB.odx-d: 
+-	Reset nach der Codierung hinzugefügt 
+ 
+DSC_VIP_IB.odx-d: 
+-	Reset nach der Codierung hinzugefügt 
+ 
+DKOMBI3.odx-d: 
+-	Reset nach der Codierung ausgebaut 
+ 
+fcfnlist.xml.001_001_001 
+-	Folgende Applikationsnummern ergänzt: 
+o	0x011C 
+o	0x0152 
+o	0x0170 
+ 
+map2basename.xml.001_000_003: 
+-	TCB2 IKCAN Link-Mapping eingefügt 
+ 
+Neue Komponenten: 
+FZD3.odx-d: 
+-	neue Basisvariante angelegt
+
+--------------------------------------------------------------
+[PT01_template.003_000_171]
+
+Neue PSdZ Schluesseldateien / New PSdZ key files: 
+	- Version:	005_000_143 
+	- Erzeugungsdatum / creation date:	16.03.2016 14:17:16 
+Neue Bootloader-Schluessel fuer / new bootloader keys for 
+<E/E Name>          	<PC>	<SGBM-NR> 
+EGS-ZFB_CE          	BTLD	0000499D 
+EGS-ZFB_CE          	BTLD	0000499E
+
+
+
+
+
+#######################################################################################################################################################
+Series mapping to logistic main series and coding main series
+
+Logistic main series | Coding main series | Series
+F001                 | F001               | F01, F02, F03, F04, F07, RR4, RR5, RR6
+F010                 | F010               | F05, F06, F10, F11, F12, F13, F18
+F020                 | F020               | F20, F21, F22, F23, F87, F88
+F020                 | F030               | F30, F31, F32, F33, F34, F35, F36, F80, F82, F83
+F025                 | F015               | F15, F16, F85, F86
+F025                 | F025               | F25, F26
+F056                 | F045               | F39, F45, F46, F47, F48, F49, F52
+F056                 | F056               | F54, F55, F56, F57, F60
+G070                 | G070               | G70, G71
+I001                 | I001               | I01, I12, I15
+I020                 | I020               | I20
+KE01                 | KE01               | K17
+KS01                 | KS01               | K02, K03, K08, K09, K60
+K001                 | K001               | K10, K18, K19, K21, K22, K23, K32, K33, K34, K35, K45, K46, K47, K48, K49, K50, K51, K52, K53, K54, K61, K67, K69, K80, K81, K82, K83, K84
+M012                 | M012               | M12
+M013                 | M013               | M13
+RR01                 | RR01               | RR1, RR2, RR3
+S15A                 | G001               | F97, F98, G01, G02
+S15A                 | G011               | G11, G12, G13
+S15A                 | G030               | F90, G30, G31, G32
+S15A                 | RR11               | RR11, RR12, RR21, RR22, RR31
+S15C                 | G008               | G08
+S15C                 | G038               | G38
+S18A                 | F040               | F40, F42, F44
+S18A                 | G005               | F95, F96, G05, G06
+S18A                 | G007               | G07
+S18A                 | G015               | F91, F92, F93, G14, G15, G16
+S18A                 | G020               | G20, G21, G22, G23, G24, G26, G28, G80, G82, G83
+S18A                 | G029               | G29
+S18T                 | J029               | J29
+U006                 | U006               | U06
+V002                 | V002               | V02
+V008                 | V008               | V08
+V009                 | V009               | V09
+V010                 | V010               | V10
+V099                 | V099               | V99

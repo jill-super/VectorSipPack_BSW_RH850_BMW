@@ -1,0 +1,290 @@
+#######################################################################################################################
+# File Name  : Makefile.RH850.GHS.GHS.LinkerScriptOsGen7                                                              #
+# Description: Os CoreGen7 Linker/Symbol Preprocessor command file generation                                         #
+# Project    : Vector Basic Runtime System                                                                            #
+# Module     : BrsHw for Platform Renesas RH850                                                                       #
+#              and Compiler GreenHills                                                                                #
+#                                                                                                                     #
+#---------------------------------------------------------------------------------------------------------------------#
+# COPYRIGHT                                                                                                           #
+#---------------------------------------------------------------------------------------------------------------------#
+# Copyright (c) 2017 by Vector Informatik GmbH.                                                  All rights reserved. #
+#                                                                                                                     #
+#---------------------------------------------------------------------------------------------------------------------#
+# AUTHOR IDENTITY                                                                                                     #
+#---------------------------------------------------------------------------------------------------------------------#
+# Name                          Initials      Company                                                                 #
+# ----------------------------  ------------  ------------------------------------------------------------------------#
+# Benjamin Walter               visbwa        Vector Informatik GmbH                                                  #
+# Andreas Hahn                  vishan        Vector Informatik GmbH                                                  #
+# Michael Kock                  vismkk        Vector Informatik GmbH                                                  #
+#---------------------------------------------------------------------------------------------------------------------#
+# REVISION HISTORY                                                                                                    #
+#---------------------------------------------------------------------------------------------------------------------#
+# Version   Date        Author  Description                                                                           #
+# --------  ----------  ------  --------------------------------------------------------------------------------------#
+# 01.00.00  2016-06-20  visbwa  Initial version for new Gen7-OS                                                       #
+# 01.00.01  2016-11-24  visbwa  Added 2nd define of OS_LINK_CONST (Os-ld-scripts perform undef now)                   #
+# 01.00.02  2016-12-21  vishan  Introduced iROM_0A / iRAM_CORE0 defines                                               #
+#                               added OsGen7 linker command defines                                                   #
+# 01.00.03  2017-04-28  visbwa  Renamed LD_FILE_SAFE_CTX by LD_FILE directly                                          #
+# 01.01.00  2017-04-28  vismkk  Added multicore support for F1H and adjusted single core support                      #
+# 01.01.01  2017-05-05  vishan  Minor fix                                                                             #
+#######################################################################################################################
+
+ifeq ($(DERIVATIVE_GROUP_$(DERIVATIVE)),F1H)
+  define CORE_1_SUPPORTED
+    $(ECHO) "#define CORE1_SUPPORTED" >> $@;
+  endef
+  define GLOBAL_RAM_SUPPORTED
+    $(ECHO) "#define GLOBAL_RAM_SUPPORTED" >> $@;
+  endef
+else
+  define CORE_1_SUPPORTED
+    $(ECHO) "" >> $@;
+  endef
+  define GLOBAL_RAM_SUPPORTED
+    $(ECHO) "" >> $@;
+  endef
+endif
+
+######################################################################################################################################################
+# MAIN LINKER SCRIPT CODE
+######################################################################################################################################################
+define LD_FILE
+  $(ECHO) "MEMORY"                                                                                                                         > $@; \
+  $(ECHO) " {"                                                                                                                            >> $@; \
+  $(ECHO) "  /* internal ROM area (iROM) sections */                                                                                    " >> $@; \
+  $(ECHO) "  iROM_BM   	: ORIGIN = 0x00000000, LENGTH =   32k                                                                           " >> $@; \
+  $(ECHO) "  iROM_BL   	: ORIGIN = 0x00008000, LENGTH =  320k                                                                           " >> $@; \
+  $(ECHO) "  iROM_SWE1 	: ORIGIN = 0x00058000, LENGTH = 1184k                                                                           " >> $@; \
+  $(ECHO) "  iRAM       : ORIGIN = 0xFEDE0000, LENGTH =  128k                                                                           " >> $@; \
+  $(ECHO) "  rRAM      : ORIGIN = 0xFEE00000, LENGTH = 32k                                                                              " >> $@; \
+  $(ECHO) " }"                                                                                                                            >> $@; \
+  $(ECHO) ""                                                                                                                              >> $@; \
+  $(CORE_1_SUPPORTED)                                                                                                                            \
+  $(GLOBAL_RAM_SUPPORTED)                                                                                                                        \
+  $(ECHO) "SECTIONS"                                                                                                                      >> $@; \
+  $(ECHO) " {                                                                                                                           " >> $@; \
+  $(ECHO) "  /*************************************************************************************************************************/" >> $@; \
+  $(ECHO) "  /* BM AREA */                                                                                                              " >> $@; \
+  $(ECHO) "  /*************************************************************************************************************************/" >> $@; \
+  $(ECHO) "  HWEDESC           NOLOAD  0x00007900     :>iROM_BM                                                                        " >> $@; \
+  $(ECHO) "  COMMONBM       NOLOAD  0x00007B00     :>.                                                                               " >> $@; \
+  $(ECHO) "  SHAREDSWEDATA     NOLOAD  0x00007D00     :>.                                                                               " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /*************************************************************************************************************************/" >> $@; \
+  $(ECHO) "  /* BTLD AREA */                                                                                                            " >> $@; \
+  $(ECHO) "  /*************************************************************************************************************************/" >> $@; \
+  $(ECHO) "  CCRYPJUMPT        NOLOAD  0x00057700     :>iROM_BL                                                                         " >> $@; \
+  $(ECHO) "  BOOTSWEDESC       NOLOAD  0x00057900     :>.                                                                               " >> $@; \
+  $(ECHO) "  BOOTSWESIGNATURE  NOLOAD  0x0005791C     :>.                                                                               " >> $@; \
+  $(ECHO) "  BOOTSWESTAT       NOLOAD  0x00057B00     :>.                                                                               " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /*************************************************************************************************************************/" >> $@; \
+  $(ECHO) "  /* ROM AREA (iROM_SWE1)*/                                                                                                    " >> $@; \
+  $(ECHO) "  /*************************************************************************************************************************/" >> $@; \
+  $(ECHO) "  .rom_start                                         :>iROM_SWE1  /* Start of code area */                                   " >> $@; \
+  $(ECHO) "  __ROM_Core0_Section_StartAddr = .;                                                                                         " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  #define OS_LINK_EXCVEC_CODE                                                                                                " >> $@; \
+  $(ECHO) "  #include \"./GenData/Os_Link_Core0.ld\"                                                                                    " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  #define OS_LINK_INTVEC_CODE                                                                                                " >> $@; \
+  $(ECHO) "  #include \"./GenData/Os_Link_Core0.ld\"                                                                                    " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /*********************************/                                                                                        " >> $@; \
+  $(ECHO) "  /* START OF CODE AREA */                                                                                                   " >> $@; \
+  $(ECHO) "  /********************************/                                                                                         " >> $@; \
+  $(ECHO) "  .Startup        0x00059000 :>.  /* Startup */                                                                              " >> $@; \
+  $(ECHO) "  .code_start                                        :>.  /* Start of code area */                                           " >> $@; \
+  $(ECHO) "  .text                     align(4)                 :>.  /* program code area */                                            " >> $@; \
+  $(ECHO) "  .ROM.FLS_PUBLIC_CODE_RAM         ROM(.FLS_PUBLIC_CODE_RAM)          :>.                                                " >> $@; \
+  $(ECHO) "  .ROM.FLS_PRIVATE_CODE_RAM        ROM(.FLS_PRIVATE_CODE_RAM)         :>.                                                 " >> $@; \
+  $(ECHO) "  .R_FDL_Text               align(4)                 :>.  /* FDL code in ROM (used by MCAL)*/                                " >> $@; \
+  $(ECHO) "  .MCU_CODE_RRAM_INTVEC     align(4)                 :>.                                                                     " >> $@; \
+  $(ECHO) "  .MCU_CR_CODE_RRAM         align(4)                 :>.                                                                     " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  #define OS_LINK_CODE                                                                                                       " >> $@; \
+  $(ECHO) "  #define OS_LINK_CALLOUT_CODE                                                                                               " >> $@; \
+  $(ECHO) "  #include \"./GenData/Os_Link.ld\"                                                                                          " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  #define OS_LINK_CALLOUT_CODE                                                                                               " >> $@; \
+  $(ECHO) "  #include \"./GenData/Os_Link_Core0.ld\"                                                                                    " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /*********************************/                                                                                        " >> $@; \
+  $(ECHO) "  /* START OF CONST AREA */                                                                                                  " >> $@; \
+  $(ECHO) "  /********************************/                                                                                         " >> $@; \
+  $(ECHO) "  .const_start                                       :>.  /* start of const area */                                          " >> $@; \
+  $(ECHO) "  .rozdata                                           :>.  /* constant datas in ZDA area */                                   " >> $@; \
+  $(ECHO) "  .rosda_start                                       :>.  /* start of SDA data area */                                       " >> $@; \
+  $(ECHO) "  .robase                   align(4)                 :>.  /* initialize textpointer TP for SDA addressing */                 " >> $@; \
+  $(ECHO) "  .rosdata                  align(4)                 :>.  /* constant datas in SDA area */                                   " >> $@; \
+  $(ECHO) "  .rosda_end                                         :>.  /* end of SDA data area */                                         " >> $@; \
+  $(ECHO) "  .rodata                   align(4)                 :>.  /* constant datas in normal area */                                " >> $@; \
+  $(ECHO) "  .R_FDL_Const              align(4)                 :>.  /* FDL const data in ROM (used by MCAL) */                         " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  .intvect_CoreExceptions   align(512)               :>.  /* BRS default core exception table */                             " >> $@; \
+  $(ECHO) "  __BRS_Default_CoreExceptionTable_StartAddr = ADDR(.intvect_CoreExceptions);                                                " >> $@; \
+  $(ECHO) "  .intvect_ExtExceptions   align(512)                :>.  /* BRS default interrupt table */                                  " >> $@; \
+  $(ECHO) "  __BRS_Default_ExceptionTable_StartAddr = ADDR(.intvect_ExtExceptions);                                                     " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  #define OS_LINK_CONST                                                                                                      " >> $@; \
+  $(ECHO) "  #include \"./GenData/Os_Link.ld\"                                                                                          " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  #define OS_LINK_CONST                                                                                                      " >> $@; \
+  $(ECHO) "  #include \"./GenData/Os_Link_Core0.ld\"                                                                                    " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  .fixaddr                  align(4)                 :>.  /* ghs internal (compiler) */                                      " >> $@; \
+  $(ECHO) "  .fixtype                  align(4)                 :>.  /* ghs internal (compiler) */                                      " >> $@; \
+  $(ECHO) "  .secinfo                  align(4)                 :>.  /* ghs internal (runtime library) */                               " >> $@; \
+  $(ECHO) "  .syscall                  align(4)                 :>.  /* ghs internal (linker) */                                        " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /*********************************/                                                                                        " >> $@; \
+  $(ECHO) "  /* START OF INIT DATA AREA */                                                                                              " >> $@; \
+  $(ECHO) "  /********************************/                                                                                         " >> $@; \
+  $(ECHO) "  .const_init_data_start                             :>.  /* start of const init data area */                                " >> $@; \
+  $(ECHO) "  .romdata                  ROM(.data)               :>.  /* init values for .data (copied to RAM at startup)*/              " >> $@; \
+  $(ECHO) "  .romzdata                 ROM(.zdata)              :>.  /* init values for .zdata (copied to RAM at startup)*/             " >> $@; \
+  $(ECHO) "  .romsdata                 ROM(.sdata)              :>.  /* init values for .sdata (copied to RAM at startup)*/             " >> $@; \
+  $(ECHO) "  .romtdata                 ROM(.tdata)              :>.  /* init values for .tdata (copied to RAM at startup)*/             " >> $@; \
+  $(ECHO) "  .const_init_data_end                               :>.  /* end of const init data area */                                  " >> $@; \
+  $(ECHO) "  __ROM_Core0_Section_EndAddr = .-1;                                                                                         " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  SWE1DESC            0x000FF900     :>.                                                                                     " >> $@; \
+  $(ECHO) "  SWE1SIGNATURE       0x000FF91c     :>.                                                                                     " >> $@; \
+  $(ECHO) "  SWE1STAT            0x000FFB00     :>.                                                                                     " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /*************************************************************************************************************************/" >> $@; \
+  $(ECHO) "  /* Local RAM Core0*/                                                                                                       " >> $@; \
+  $(ECHO) "  /*************************************************************************************************************************/" >> $@; \
+  $(ECHO) "  .local_ram_core0_start                      :>iRAM        /* Start of ram area */                                          " >> $@; \
+  $(ECHO) "  _ram_start = addr(.local_ram_core0_start);                                                                                 " >> $@; \
+  $(ECHO) "  __Local_RAM_Core0_Section_StartAddr = .;                                                                                   " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  .FLS_PUBLIC_CODE_RAM                   :>.                                                                                 " >> $@; \
+  $(ECHO) "  .FLS_PRIVATE_CODE_RAM                  :>.                                                                                 " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /*********************************/                                                                                        " >> $@; \
+  $(ECHO) "  /* START OF LOCAL STACK AREA */                                                                                            " >> $@; \
+  $(ECHO) "  /********************************/                                                                                         " >> $@; \
+  $(ECHO) "  __Local_RAM_STACK_Core0_Section_StartAddr = .;                                                                             " >> $@; \
+  $(ECHO) "  /* 1k startup stack core 0 (only used by startup code) */                                                                  " >> $@; \
+  $(ECHO) "  .stack                   align(4) pad(0x400)       :>.      /* GHS internal stack required by crt0.o */                    " >> $@; \
+  $(ECHO) "  __StartupStack_Core0 = endaddr(.stack);                                                                                    " >> $@; \
+  $(ECHO) "  #define OS_LINK_KERNEL_STACKS                                                                                              " >> $@; \
+  $(ECHO) "  #include \"./GenData/Os_Link_Core0_Stacks.ld\"                                                                             " >> $@; \
+  $(ECHO) "  __Local_RAM_STACK_Core0_Section_EndAddr = .-1;                                                                             " >> $@; \
+  $(ECHO) "  /* END OF STACK AREA */                                                                                                    " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /********************************/                                                                                         " >> $@; \
+  $(ECHO) "  /* START OF LOCAL DATA RAM AREA */                                                                                         " >> $@; \
+  $(ECHO) "  /********************************/                                                                                         " >> $@; \
+  $(ECHO) "  __Local_RAM_DATA_Core0_Section_StartAddr = .;                                                                              " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /****** OS DATA ******/                                                                                                    " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_KERNEL                                                                                                 " >> $@; \
+  $(ECHO) "  #define OS_LINK_KERNEL_BARRIERS                                                                                            " >> $@; \
+  $(ECHO) "  #define OS_LINK_KERNEL_CORESTATUS                                                                                          " >> $@; \
+  $(ECHO) "  #define OS_LINK_KERNEL_TRACE                                                                                               " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_APP_SYSTEMAPPLICATION_OSCORE_CORE0                                                                     " >> $@; \
+  $(ECHO) "  #include \"./GenData/Os_Link_Core0.ld\"                                                                                    " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /****** Application DATA ******/                                                                                           " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_APP_OSAPPLICATION_ASIL                                                                                 " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_APP_OSAPPLICATION_QM                                                                                   " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_APP_OSAPPLICATION_CORE0                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_BACKGROUNDTASK                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_CPL_TASK                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_DEFAULT_BSW_ASYNC_TASK                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_INITTASK                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_SHUTDOWNTASK                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_ISR_COUNTERISR_TPCOUNTER_OSCORE_CORE0                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_ISR_FR_IRQLINE0                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_ISR_FR_IRQTIMER0                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_ISR_OS_TIMERPITISR                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_DEFAULT_APPL_INIT_TASK                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_DEFAULT_APPL_TASK                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_DEFAULT_BAC_APPL_BMW_TASK                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_DEFAULT_BSW_SYNC_TASK                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_DEFAULT_BACKGROUND_TASK                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_DEFAULT_INIT_TASK                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_DEFAULT_RTE_MODE_SWITCH_TASK                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_IDLETASK_OSCORE_CORE0                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_OSTASK_BSW_ASIL                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_TASK_OSTASK_LOWPRIONVM                                                                     " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_ISR_WDG_59_DRIVERA_TRIGGERFUNCTION_CAT2_ISR                                                                     " >> $@; \
+  $(ECHO) "  #include \"./GenData/Os_Link_Core0.ld\"                                                                                    " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  __Local_RAM_DATA_Core0_Section_EndAddr = .-1;                                                                              " >> $@; \
+  $(ECHO) "  __Local_RAM_Core0_Section_EndAddr = .-1;                                                                                   " >> $@; \
+  $(ECHO) "  /* END OF DATA AREA */                                                                                                     " >> $@; \
+  $(ECHO) "  /*************************************************************************************************************************/" >> $@; \
+  $(ECHO) "  /* START OF Global DATA RAM                              */                                                                " >> $@; \
+  $(ECHO) "  /* The local RAM is used if no global RAM exists.        */                                                                " >> $@; \
+  $(ECHO) "  /*************************************************************************************************************************/" >> $@; \
+  $(ECHO) "#if defined(GLOBAL_RAM_SUPPORTED)                                                                                            " >> $@; \
+  $(ECHO) "  .global_ram_start                                  :>gRAM_A  /* Start of ram area */                                       " >> $@; \
+  $(ECHO) "#endif                                                                                                                       " >> $@; \
+  $(ECHO) "  __Global_RAM_1_Section_StartAddr = .;                                                                                      " >> $@; \
+  $(ECHO) "  .zdata                   align(4)                  :>.  /* initialized data in ZDA area */                                 " >> $@; \
+  $(ECHO) "  .zbss                    align(4) CLEAR            :>.  /* zero initialized data in ZDA area */                            " >> $@; \
+  $(ECHO) "  .tdata                   align(4) MAX_SIZE(256)    :>.  /* initialized and zero-initialized data in TDA area */            " >> $@; \
+  $(ECHO) "  .sda_start                                         :>.  /* start of SDA RAM area */                                        " >> $@; \
+  $(ECHO) "  .sdabase                    align(4)               :>.  /* initialize globalpointer GP for SDA addressing */               " >> $@; \
+  $(ECHO) "  /****** GLOBAL SHARED SMALL DATA ******/                                                                                   " >> $@; \
+  $(ECHO) "  . = (. + 15) & (~15);                                                                                                      " >> $@; \
+  $(ECHO) "  .EthDesc_Tx_sbss            align(16)              :>.                                                                     " >> $@; \
+  $(ECHO) "  .EthBuffers_Tx_sbss         align(16)              :>.                                                                     " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /****** OTHER SMALL DATA ******/                                                                                           " >> $@; \
+  $(ECHO) "  .sdata                      align(4)               :>.  /* initialized data in SDA area */                                 " >> $@; \
+  $(ECHO) "  .sbss                       align(4) CLEAR         :>.  /* zero initialized data in SDA area */                            " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  .sda_end                                           :>.  /* end of SDA RAM area */                                          " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /****** OS DATA ******/                                                                                                    " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_KERNEL                                                                                                 " >> $@; \
+  $(ECHO) "  #define OS_LINK_SPINLOCKS                                                                                                  " >> $@; \
+  $(ECHO) "  #include \"./GenData/Os_Link.ld\"                                                                                          " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /****** OTHER DATA ******/                                                                                                 " >> $@; \
+  $(ECHO) "  .data                      align(4)                :>.  /* initialized data */                                             " >> $@; \
+  $(ECHO) "  .R_FDL_Data                align(4)                :>.  /* data for DrvFls */                                              " >> $@; \
+  $(ECHO) "  .bss                       align(4) CLEAR          :>.  /* zero initialized data */                                        " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /****** GLOBAL SHARED DATA ******/                                                                                         " >> $@; \
+  $(ECHO) "  __GlobalShared_DataSection_StartAddr = .;                                                                                  " >> $@; \
+  $(ECHO) "  #define OS_LINK_VAR_GLOBALSHARED                                                                                           " >> $@; \
+  $(ECHO) "  #include \"./GenData/Os_Link.ld\"                                                                                          " >> $@; \
+  $(ECHO) "  __GlobalShared_DataSection_EndAddr   = .-1;                                                                                " >> $@; \
+  $(ECHO) "  __Global_RAM_1_Section_EndAddr = .-1;                                                                                      " >> $@; \
+  $(ECHO) "/* This is the end of the local ram if no global ram is avaiable. */                                                         " >> $@; \
+  $(ECHO) "#if !defined(GLOBAL_RAM_SUPPORTED)                                                                                           " >> $@; \
+  $(ECHO) "  __Local_RAM_DATA_Core0_Section_EndAddr = .-1;                                                                              " >> $@; \
+  $(ECHO) "  __Local_RAM_Core0_Section_EndAddr = .-1;                                                                                   " >> $@; \
+  $(ECHO) "#endif    															                                                        " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  DLOG_SWEDATA                       0xFEDF0900              :>.                                                             " >> $@; \
+  $(ECHO) "  DLOG_SWESTATUS                     0xFEDF0A00              :>.                                                             " >> $@; \
+  $(ECHO) "  DLOG_SWEINFOS                      0xFEDF0B00              :>.                                                             " >> $@; \
+  $(ECHO) "  BOOTSTATUS                         0xFEDF0C00              :>.                                                             " >> $@; \
+  $(ECHO) "  BOOTSTATUSNOINIT                   0xFEDF0C10              :>.                                                             " >> $@; \
+ $(ECHO) "  PROG_LASTREQUESTDOWNLOADADDRESS    0xFEDF0D00              :>rRAM                                                          " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  .ram_end                    align(16)              :>.                                                                     " >> $@; \
+  $(ECHO) "  _ram_end = addr(.ram_end);                                                                                                 " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "                                                                                                                             " >> $@; \
+  $(ECHO) "  /*************************************************************************************************************************/" >> $@; \
+  $(ECHO) "  /* LABELS*/                                                                                                                " >> $@; \
+  $(ECHO) "  /*************************************************************************************************************************/" >> $@; \
+  $(ECHO) "  /* Always jump to usr_init_c0 at addr 0x0. */                                                                              " >> $@; \
+  $(ECHO) "  _RESET_CORE0 = __usr_init;                                                                                                 " >> $@; \
+  $(ECHO) "  _RESET_CORE1 = __usr_init;                                                                                                 " >> $@; \
+  $(ECHO) "  __Peripheral_I_O_Section_StartAddr = 0xFF000000;                                                                           " >> $@; \
+  $(ECHO) "  __Peripheral_I_O_Section_EndAddr = 0xFFFFFFFF;                                                                             " >> $@; \
+  $(ECHO) " }                                                                                                                           " >> $@;
+endef

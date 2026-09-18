@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DIAG-LAYER-CONTAINER ID="id-4a9e3d16-68ef-40e8-8ef9-3e1cc8cdf6a6" OID="id-4a9e3d16-68ef-40e8-8ef9-3e1cc8cdf6a6">
+    <SHORT-NAME>SEC2_DLC</SHORT-NAME>
+    <LONG-NAME>Security 2, Sicherheitsfahrzeug</LONG-NAME>
+    <BASE-VARIANTS>
+      <BASE-VARIANT ID="id-bf289864-f543-4487-8e87-84c9c351a860" OID="id-bf289864-f543-4487-8e87-84c9c351a860">
+        <SHORT-NAME>SEC2</SHORT-NAME>
+        <LONG-NAME>Security 2, Sicherheitsfahrzeug</LONG-NAME>
+        <DESC>
+          <p>
+automatically generated BASE-VARIANT instance SEC2
+          </p>
+        </DESC>
+        <COMPARAM-REFS>
+          <COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+            <VALUE>1500</VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          </COMPARAM-REF>
+        </COMPARAM-REFS>        
+        <PARENT-REFS>
+          <PARENT-REF DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="PROG_LS_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-4646c54a-1f42-4da6-a628-b66976713291" xsi:type="FUNCTIONAL-GROUP-REF"/>
+        </PARENT-REFS>
+      </BASE-VARIANT>
+    </BASE-VARIANTS>
+  </DIAG-LAYER-CONTAINER>
+</ODX>

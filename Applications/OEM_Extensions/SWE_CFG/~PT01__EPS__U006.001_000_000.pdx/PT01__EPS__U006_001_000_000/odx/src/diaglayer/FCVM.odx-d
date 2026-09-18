@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER ID="id-bdaca133-507d-4b95-9dcd-6c34ec643675" OID="id-bdaca133-507d-4b95-9dcd-6c34ec643675">
+        <SHORT-NAME>FCVM_DLC</SHORT-NAME>
+        <LONG-NAME>Fuel Cell Voltage Monitoring</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT ID="id-76c8c9f5-e1dc-4d0b-b765-944525e44a71" OID="id-76c8c9f5-e1dc-4d0b-b765-944525e44a71">
+                <SHORT-NAME>FCVM</SHORT-NAME>
+                <LONG-NAME>Fuel Cell Voltage Monitoring</LONG-NAME>
+                <DESC>
+                    <p>SP2021, nicht BAC 4.3, nicht codierbar</p>
+                </DESC>
+				<COMPARAM-REFS>				
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-0e6aba7e-214d-428a-98e1-55aaf139a75e">
+          				<VALUE>1</VALUE>
+          				<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+          			</COMPARAM-REF>
+          			<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-0e6aba7e-214d-428a-98e1-55aaf139a75e">
+          				<VALUE>1</VALUE>
+          				<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          			</COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

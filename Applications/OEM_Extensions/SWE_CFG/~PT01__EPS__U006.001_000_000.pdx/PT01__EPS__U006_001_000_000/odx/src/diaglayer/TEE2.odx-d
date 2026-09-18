@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER ID="id-c02c5f6c-e346-4f6b-9e42-9ce547fdd841" OID="id-c02c5f6c-e346-4f6b-9e42-9ce547fdd841">
+        <SHORT-NAME>TEE2_DLC</SHORT-NAME>
+        <LONG-NAME>Traktions-E-Maschinenelektronik</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT ID="id-4670eeb5-d122-4ebc-8338-2c51cc4fc8f4" OID="id-4670eeb5-d122-4ebc-8338-2c51cc4fc8f4">
+                <SHORT-NAME>TEE2</SHORT-NAME>
+                <LONG-NAME>Traktions-E-Maschinenelektronik</LONG-NAME>
+                <DESC>
+                    <p>Traktions-E-Maschinenelektronik codierbar, SWT, IDR-Light, BAC 4.3</p>
+                </DESC>
+				<COMPARAM-REFS>
+                    <COMPARAM-REF ID-REF="id-03234824-af82-469e-97f1-295751864447" DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF ID-REF="id-03234824-af82-469e-97f1-295751864447" DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-0e6aba7e-214d-428a-98e1-55aaf139a75e">
+          				<VALUE>1</VALUE>
+          				<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+          			</COMPARAM-REF>
+          			<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-0e6aba7e-214d-428a-98e1-55aaf139a75e">
+          				<VALUE>1</VALUE>
+          				<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          			</COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-8cb94aae-551f-41e4-bddd-2ba1232564d5" DOCREF="SWT_UDS_DLC" DOCTYPE="CONTAINER"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-950206a6-d0ba-44a4-b250-3ae9ab110e49" DOCREF="COD2_UDS_DLC" DOCTYPE="CONTAINER"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-91e2ce4c-a274-4f02-a601-92f937695337" DOCREF="IDR_UDS_DLC" DOCTYPE="CONTAINER"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FSEQ xmlns="http://bmw.com/2005/psdz.data.fseq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- 
+  FSEQ fuer Baureihenverbund V010
+  
+  Aenderungsdokumentation
+	Datum         Version    Author    		Aenderung
+	01.03.2017   	1.0.0      M.Fischer   	Initiale Erstellung
+	-->
+
+  <dependency>
+    <preconditions>
+      <ECU><baseVariantName name="BDC_GW"/><diagnosticAddress physicalOffset="16"/></ECU>
+      <ECU><baseVariantName name="BDC_GW2"/><diagnosticAddress physicalOffset="16"/></ECU>
+      <ECU><baseVariantName name="FEM_GW"/><diagnosticAddress physicalOffset="16"/></ECU>
+      <ECU><baseVariantName name="INGA18_GW"/><diagnosticAddress physicalOffset="16"/></ECU>
+      <ECU><baseVariantName name="ZGW2"/><diagnosticAddress physicalOffset="16"/></ECU>
+      <ECU><baseVariantName name="ZGW"/><diagnosticAddress physicalOffset="16"/></ECU>
+    </preconditions>
+    <dependors>
+			<ECU><baseVariantName name="RDME"/><diagnosticAddress physicalOffset="9"/></ECU>
+    </dependors>
+  </dependency>
+</FSEQ>

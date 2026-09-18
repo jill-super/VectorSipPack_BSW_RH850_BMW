@@ -1,0 +1,83 @@
+[Avanti]  INFO Avanti 0.9.1.2
+[Avanti]  INFO Copyright ©  2017
+[Avanti]  INFO Avanti comes with ABSOLUTELY NO WARRANTY
+
+
+[project]  INFO Starting target "prepare"
+
+
+[project]  INFO Starting target "pre_cc"
+
+
+[project]  INFO Starting target "cc"
+
+  [echo]  INFO Udating obj/BswM_Lcfg.o
+  [echo]  INFO Udating obj/Cpl_AESEncrypt.o
+  [echo]  INFO Udating obj/Cpl_AESEncrypt_Cfg.o
+  [echo]  INFO Udating obj/Cpl_CBCMacGenerate_Cfg.o
+  [echo]  INFO Udating obj/Cpl_CBCMacGenerate.o
+  [echo]  INFO Udating obj/Cpl_CBCMacVerify.o
+  [echo]  INFO Udating obj/Cpl_CBCMacVerify_Cfg.o
+  [echo]  INFO Udating obj/Cpl_CbcPkcs5Decrypt.o
+  [echo]  INFO Udating obj/Cpl_CbcPkcs5Decrypt_Cfg.o
+  [echo]  INFO Udating obj/Cpl_CbcPkcs5Decrypt_Common.o
+  [echo]  INFO Udating obj/Cpl_Common.o
+  [echo]  INFO Udating obj/Cpl_DESCommon.o
+  [echo]  INFO Udating obj/Cpl_DESDecrypt.o
+  [echo]  INFO Udating obj/Cpl_DESDecrypt_Cfg.o
+  [echo]  INFO Udating obj/Cpl_DESEncrypt.o
+  [echo]  INFO Udating obj/Cpl_DESEncrypt_Cfg.o
+  [echo]  INFO Udating obj/Cpl_DifHellmanCalcSecret.o
+  [echo]  INFO Udating obj/Cpl_DifHellmanCalcSecret_Cfg.o
+  [echo]  INFO Udating obj/Cpl_JmpTable.o
+  [echo]  INFO Udating obj/Cpl_Keys.o
+  [echo]  INFO Udating obj/Cpl_LN.o
+  [echo]  INFO Udating obj/Cpl_MD5.o
+  [echo]  INFO Udating obj/Cpl_MD5_Cfg.o
+  [echo]  INFO Udating obj/Cpl_PBKDF1.o
+  [echo]  INFO Udating obj/Cpl_PBKDF1_Cfg.o
+  [echo]  INFO Udating obj/Cpl_PKCS1Vrfy.o
+  [echo]  INFO Udating obj/Cpl_PKCS1Vrfy_Cfg.o
+  [echo]  INFO Udating obj/Cpl_SHA_Cfg.o
+  [echo]  INFO Udating obj/Cpl_SigBMWVrfy.o
+  [echo]  INFO Udating obj/Cpl_SSG.o
+  [echo]  INFO Udating obj/Cpl_SigBMWVrfy_Cfg.o
+  [echo]  INFO Udating obj/Cpl_SSG_Cfg.o
+  [echo]  INFO Udating obj/Cpl_SymKeyExtract.o
+  [echo]  INFO Udating obj/Cpl_SymKeyExtract_Cfg.o
+  [echo]  INFO Udating obj/Crc.o
+  [echo]  INFO Udating obj/Cry_30_Rh850Icus.o
+  [echo]  INFO Udating obj/Cry_30_Rh850Icus_AesDecrypt128.o
+  [echo]  INFO Udating obj/Cry_30_Rh850Icus_AesEncrypt128.o
+  [echo]  INFO Udating obj/Cry_30_Rh850Icus_Cfg.o
+  [echo]  INFO Udating obj/Cry_30_Rh850Icus_CmacAes128Gen.o
+  [echo]  INFO Udating obj/Cry_30_Rh850Icus_CmacAes128Ver.o
+  [echo]  INFO Udating obj/Cry_30_Rh850Icus_CommonUtil.o
+  [echo]  INFO Udating obj/Cry_30_Rh850Icus_Hw.o
+  [echo]  INFO Udating obj/Cry_30_Rh850Icus_KeyExtract.o
+  [echo]  INFO Udating obj/Cry_30_Rh850Icus_KeyWrapSym.o
+  [echo]  INFO Udating obj/Cry_30_Rh850Icus_Rng.o
+  [echo]  INFO Udating obj/CryIf.o
+  [echo]  INFO Udating obj/CryIf_Cfg.o
+  [echo]  INFO Udating obj/Crypto_30_CryWrapper.o
+  [ccrh850]  WARN "../../../../BSW/Cry_30_Rh850Icus/Cry_30_Rh850Icus_Hw.c", line 1255: warning #177-D: 
+  [ccrh850]  WARN           function "Cry_30_Rh850Icus_SwapWord" was declared but never
+  [ccrh850]  WARN           referenced
+  [ccrh850]  WARN   CRY_30_RH850ICUS_LOCAL FUNC(uint32, CRY_30_RH850ICUS_CODE) Cry_30_Rh850Icus_SwapWord(uint32 source)
+  [ccrh850]  WARN                                                              ^
+  [ccrh850]  WARN 
+  [echo]  INFO Udating obj/Crypto_30_CryWrapper_Cfg.o
+  [echo]  INFO Udating obj/Crypto_30_CryWrapper_Cipher.o
+  [ccrh850] ERROR "GenData/BswM_Lcfg.c", line 1719: error #223-D: function EcuM_AL_Reset
+  [ccrh850] ERROR           declared implicitly
+  [ccrh850] ERROR     EcuM_AL_Reset();
+  [ccrh850] ERROR     ^
+  [ccrh850] ERROR 
+  [foreach] ERROR External program terminated with code 1 
+At file:///D:/uti/NAntSupport/02.13.02/Scripts/NAnt/NAnt.Global.Targets.xml: line 214, column 14
+[Avanti] ERROR Error during project execution: Error during execution of task <foreach>: One or more errors occurred. 
+At file:///D:/uti/NAntSupport/02.13.02/Scripts/NAnt/NAnt.Global.Targets.xml: line 178, column 6
+
+[Avanti] ERROR Build FAILED with 7 Error(s) and 6 Warning(s)
+
+[Avanti]  INFO Total time: 0 minuntes and 16 seconds

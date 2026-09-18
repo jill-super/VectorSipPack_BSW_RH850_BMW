@@ -1,0 +1,1577 @@
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *
+ *                This software is copyright protected and proprietary to Vector Informatik GmbH.
+ *                Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+ *                All other rights remain with Vector Informatik GmbH.
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *          File:  Rte.a2l
+ *        Config:  EPS.dpa
+ *   ECU-Project:  EPS
+ *
+ *     Generator:  MICROSAR RTE Generator Version 4.16.0
+ *                 RTE Core Version 1.16.0
+ *       License:  Unlimited license CBD1700369 for Nexteer Automotive Corporation
+ *
+ *   Description:  MICROSAR RTE A2L file
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ * MEASUREMENT
+ *********************************************************************************************************************/
+
+
+    /begin MEASUREMENT BMW_Application_Main.DcmModeRapidPowerShutDown.DcmModeRapidPowerShutDown "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Dcm_ModeRapidPowerShutDownType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Dcm_DcmModeRapidPowerShutDown_DcmModeRapidPowerShutDown" 0
+      DISPLAY_IDENTIFIER BMW_Application_Main.ModeRequirePorts.DcmModeRapidPowerShutDown.DcmModeRapidPowerShutDown
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BMW_Application_Main.PerInstanceMemory_Xcp "MICROSAR RTE"
+      ULONG NO_COMPU_METHOD 0 0 0 4294967295
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_BMW_Application_Main_PerInstanceMemory_Xcp" 0
+      DISPLAY_IDENTIFIER BMW_Application_Main.PerInstanceMemories.PerInstanceMemory_Xcp
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Bs.LifeCycle.Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Bs_LifeCycleRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Bs_LifeCycle_Mode" 0
+      DISPLAY_IDENTIFIER Bs.ModeProvidePorts.LifeCycle.Mode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Notification_BSWModeSwitch_DcmDiagnosticSessionControl.DcmDiagnosticSessionControl "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Dcm_DiagnosticSessionControlType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Dcm_DcmDiagnosticSessionControl_DcmDiagnosticSessionControl" 0
+      DISPLAY_IDENTIFIER BswM.ModeRequirePorts.Notification_BSWModeSwitch_DcmDiagnosticSessionControl.DcmDiagnosticSessionControl
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Notification_BSWModeSwitch_DcmEcuReset.DcmEcuReset "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Dcm_EcuResetType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Dcm_DcmEcuReset_DcmEcuReset" 0
+      DISPLAY_IDENTIFIER BswM.ModeRequirePorts.Notification_BSWModeSwitch_DcmEcuReset.DcmEcuReset
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Notification_ESH_ModeNotification.BswM_MDGP_ESH_Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_BswM_ESH_Mode 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_BswM_Switch_ESH_ModeSwitch_BswM_MDGP_ESH_Mode" 0
+      DISPLAY_IDENTIFIER BswM.ModeRequirePorts.Notification_ESH_ModeNotification.BswM_MDGP_ESH_Mode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Notification_SWCModeSwitch_DcmCommunicationControl_ComMConf_ComMChannel_BAC4_FlexRay_8e151c3c.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2 "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Dcm_CommunicationModeType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Dcm_DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2_DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2" 0
+      DISPLAY_IDENTIFIER BswM.ModeRequirePorts.Notification_SWCModeSwitch_DcmCommunicationControl_ComMConf_ComMChannel_BAC4_FlexRay_8e151c3c.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Notification_SWCModeSwitch_IS_EcuRunState.EcuRunStateMode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_IntegrationSample_EcuRunStateModeRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_IntegrationSample_EcuRunState_EcuRunStateMode" 0
+      DISPLAY_IDENTIFIER BswM.ModeRequirePorts.Notification_SWCModeSwitch_IS_EcuRunState.EcuRunStateMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Notification_SWCModeSwitch_Lifecycle_Darh.Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Darh_LifeCycleRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Darh_LifeCycle_Mode" 0
+      DISPLAY_IDENTIFIER BswM.ModeRequirePorts.Notification_SWCModeSwitch_Lifecycle_Darh.Mode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Notification_SWCModeSwitch_Lifecycle_Dlog.Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Dlog_LifeCycleRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Dlog_LifeCycle_Mode" 0
+      DISPLAY_IDENTIFIER BswM.ModeRequirePorts.Notification_SWCModeSwitch_Lifecycle_Dlog.Mode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Notification_SWCModeSwitch_Lifecycle_Omc.Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Omc_LifeCycleRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Omc_LifeCycle_Mode" 0
+      DISPLAY_IDENTIFIER BswM.ModeRequirePorts.Notification_SWCModeSwitch_Lifecycle_Omc.Mode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Notification_SWCModeSwitch_Lifecycle_StdDiag.Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_StdDiag_LifeCycleRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_StdDiag_LifeCycle_Mode" 0
+      DISPLAY_IDENTIFIER BswM.ModeRequirePorts.Notification_SWCModeSwitch_Lifecycle_StdDiag.Mode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Notification_SWCModeSwitch_Lifecycle_Systime.Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_SysTime_LifeCycleRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_SysTime_LifeCycle_Mode" 0
+      DISPLAY_IDENTIFIER BswM.ModeRequirePorts.Notification_SWCModeSwitch_Lifecycle_Systime.Mode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Notification_SWCModeSwitch_currentCentralErrorLockMode.currentCentralErrorLockMode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Stm_CentralErrorLockType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Stm_CentralErrorLockModeSwitchPort_currentCentralErrorLockMode" 0
+      DISPLAY_IDENTIFIER BswM.ModeRequirePorts.Notification_SWCModeSwitch_currentCentralErrorLockMode.currentCentralErrorLockMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Notification_SWC_ModeNotification_Lifecycle_Bs.Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Bs_LifeCycleRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Bs_LifeCycle_Mode" 0
+      DISPLAY_IDENTIFIER BswM.ModeRequirePorts.Notification_SWC_ModeNotification_Lifecycle_Bs.Mode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Notification_SWC_Mode_Notification_SimpleTimerMode.SimpleTimerMode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_IntegrationSample_SimpleTimerStateType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_IntegrationSample_IntegrationSampleSimpleTimerPort_0_SimpleTimerMode" 0
+      DISPLAY_IDENTIFIER BswM.ModeRequirePorts.Notification_SWC_Mode_Notification_SimpleTimerMode.SimpleTimerMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Switch_ESH_ModeSwitch.BswM_MDGP_ESH_Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_BswM_ESH_Mode 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_BswM_Switch_ESH_ModeSwitch_BswM_MDGP_ESH_Mode" 0
+      DISPLAY_IDENTIFIER BswM.ModeProvidePorts.Switch_ESH_ModeSwitch.BswM_MDGP_ESH_Mode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Switch_SwitchPort_Darh_ReportErrorMode.DarhReportErrorMode "MICROSAR RTE"
+      UBYTE NO_COMPU_METHOD 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_BswM_Switch_SwitchPort_Darh_ReportErrorMode_DarhReportErrorMode" 0
+      DISPLAY_IDENTIFIER BswM.ModeProvidePorts.Switch_SwitchPort_Darh_ReportErrorMode.DarhReportErrorMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Switch_SwitchPort_StdDiagComControlNormalNotificationPort.CommunicationModeDeclarationGroup "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_NormalCommunicationModeType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_BswM_Switch_SwitchPort_StdDiagComControlNormalNotificationPort_CommunicationModeDeclarationGroup" 0
+      DISPLAY_IDENTIFIER BswM.ModeProvidePorts.Switch_SwitchPort_StdDiagComControlNormalNotificationPort.CommunicationModeDeclarationGroup
+    /end MEASUREMENT
+
+    /begin MEASUREMENT BswM.Switch_SwitchPort_StdDiag_SessionChangeIndication.SessionModeDeclarationGroup "MICROSAR RTE"
+      UBYTE NO_COMPU_METHOD 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_BswM_Switch_SwitchPort_StdDiag_SessionChangeIndication_SessionModeDeclarationGroup" 0
+      DISPLAY_IDENTIFIER BswM.ModeProvidePorts.Switch_SwitchPort_StdDiag_SessionChangeIndication.SessionModeDeclarationGroup
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Darh.LifeCycle.Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Darh_LifeCycleRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Darh_LifeCycle_Mode" 0
+      DISPLAY_IDENTIFIER Darh.ModeProvidePorts.LifeCycle.Mode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Dcm.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2 "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Dcm_CommunicationModeType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Dcm_DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2_DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2" 0
+      DISPLAY_IDENTIFIER Dcm.ModeProvidePorts.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Dcm.DcmDiagnosticSessionControl.DcmDiagnosticSessionControl "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Dcm_DiagnosticSessionControlType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Dcm_DcmDiagnosticSessionControl_DcmDiagnosticSessionControl" 0
+      DISPLAY_IDENTIFIER Dcm.ModeProvidePorts.DcmDiagnosticSessionControl.DcmDiagnosticSessionControl
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Dcm.DcmEcuReset.DcmEcuReset "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Dcm_EcuResetType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Dcm_DcmEcuReset_DcmEcuReset" 0
+      DISPLAY_IDENTIFIER Dcm.ModeProvidePorts.DcmEcuReset.DcmEcuReset
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Dcm.DcmModeRapidPowerShutDown.DcmModeRapidPowerShutDown "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Dcm_ModeRapidPowerShutDownType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Dcm_DcmModeRapidPowerShutDown_DcmModeRapidPowerShutDown" 0
+      DISPLAY_IDENTIFIER Dcm.ModeProvidePorts.DcmModeRapidPowerShutDown.DcmModeRapidPowerShutDown
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Dlog.LifeCycle.Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Dlog_LifeCycleRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Dlog_LifeCycle_Mode" 0
+      DISPLAY_IDENTIFIER Dlog.ModeProvidePorts.LifeCycle.Mode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT IntegrationSample.EcuRunState.EcuRunStateMode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_IntegrationSample_EcuRunStateModeRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_IntegrationSample_EcuRunState_EcuRunStateMode" 0
+      DISPLAY_IDENTIFIER IntegrationSample.ModeProvidePorts.EcuRunState.EcuRunStateMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT IntegrationSample.IntegrationSampleSimpleTimerPort_0.SimpleTimerMode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_IntegrationSample_SimpleTimerStateType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_IntegrationSample_IntegrationSampleSimpleTimerPort_0_SimpleTimerMode" 0
+      DISPLAY_IDENTIFIER IntegrationSample.ModeProvidePorts.IntegrationSampleSimpleTimerPort_0.SimpleTimerMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Omc.LifeCycle.Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Omc_LifeCycleRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Omc_LifeCycle_Mode" 0
+      DISPLAY_IDENTIFIER Omc.ModeProvidePorts.LifeCycle.Mode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Omc.extendedOperatingModeSwitchPort.currentExtendedOperatingMode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Omc_ExtendedOperatingModeType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Omc_extendedOperatingModeSwitchPort_currentExtendedOperatingMode" 0
+      DISPLAY_IDENTIFIER Omc.ModeProvidePorts.extendedOperatingModeSwitchPort.currentExtendedOperatingMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Omc.operatingModeSwitchPort.currentOperatingMode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Omc_OperatingModeType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Omc_operatingModeSwitchPort_currentOperatingMode" 0
+      DISPLAY_IDENTIFIER Omc.ModeProvidePorts.operatingModeSwitchPort.currentOperatingMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT StdDiag.ComControlNormalModeAccessPort.CommunicationModeDeclarationGroup "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_NormalCommunicationModeType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_BswM_Switch_SwitchPort_StdDiagComControlNormalNotificationPort_CommunicationModeDeclarationGroup" 0
+      DISPLAY_IDENTIFIER StdDiag.ModeRequirePorts.ComControlNormalModeAccessPort.CommunicationModeDeclarationGroup
+    /end MEASUREMENT
+
+    /begin MEASUREMENT StdDiag.ExtendedOperatingModeControlPort.currentExtendedOperatingMode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Omc_ExtendedOperatingModeType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Omc_extendedOperatingModeSwitchPort_currentExtendedOperatingMode" 0
+      DISPLAY_IDENTIFIER StdDiag.ModeRequirePorts.ExtendedOperatingModeControlPort.currentExtendedOperatingMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT StdDiag.LifeCycle.Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_StdDiag_LifeCycleRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_StdDiag_LifeCycle_Mode" 0
+      DISPLAY_IDENTIFIER StdDiag.ModeProvidePorts.LifeCycle.Mode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT StdDiag.OperatingModeControlPort.currentOperatingMode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Omc_OperatingModeType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Omc_operatingModeSwitchPort_currentOperatingMode" 0
+      DISPLAY_IDENTIFIER StdDiag.ModeRequirePorts.OperatingModeControlPort.currentOperatingMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT StdDiag.VehicleStatePort.currentVehicleStateMode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Stm_VehicleStateType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Stm_VehicleStateModeSwitchPort_currentVehicleStateMode" 0
+      DISPLAY_IDENTIFIER StdDiag.ModeRequirePorts.VehicleStatePort.currentVehicleStateMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Stm.CentralErrorLockModeSwitchPort.currentCentralErrorLockMode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Stm_CentralErrorLockType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Stm_CentralErrorLockModeSwitchPort_currentCentralErrorLockMode" 0
+      DISPLAY_IDENTIFIER Stm.ModeProvidePorts.CentralErrorLockModeSwitchPort.currentCentralErrorLockMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Stm.EnergyModeSwitchPort.currentEnergyMode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Stm_EnergyStateType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Stm_EnergyModeSwitchPort_currentEnergyMode" 0
+      DISPLAY_IDENTIFIER Stm.ModeProvidePorts.EnergyModeSwitchPort.currentEnergyMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Stm.VehicleStateModeSwitchPort.currentVehicleStateMode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_Stm_VehicleStateType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_Stm_VehicleStateModeSwitchPort_currentVehicleStateMode" 0
+      DISPLAY_IDENTIFIER Stm.ModeProvidePorts.VehicleStateModeSwitchPort.currentVehicleStateMode
+    /end MEASUREMENT
+
+    /begin MEASUREMENT SysTime.LifeCycle.Mode "MICROSAR RTE"
+      UBYTE RTE_CM_ENUM_SysTime_LifeCycleRequestType 0 0 0 255
+      ECU_ADDRESS 0
+      SYMBOL_LINK "Rte_ModeMachine_SysTime_LifeCycle_Mode" 0
+      DISPLAY_IDENTIFIER SysTime.ModeProvidePorts.LifeCycle.Mode
+    /end MEASUREMENT
+
+
+/**********************************************************************************************************************
+ * GROUP
+ *********************************************************************************************************************/
+
+
+    /begin GROUP BMW_Application_Main "MICROSAR RTE"
+      /begin SUB_GROUP
+        BMW_Application_Main.ModeRequirePorts
+        BMW_Application_Main.PerInstanceMemories
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BMW_Application_Main.DcmModeRapidPowerShutDown.DcmModeRapidPowerShutDown "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BMW_Application_Main.DcmModeRapidPowerShutDown.DcmModeRapidPowerShutDown
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BMW_Application_Main.ModeRequirePorts "MICROSAR RTE"
+      /begin SUB_GROUP
+        BMW_Application_Main.DcmModeRapidPowerShutDown.DcmModeRapidPowerShutDown
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BMW_Application_Main.PerInstanceMemories "MICROSAR RTE"
+      /begin SUB_GROUP
+        BMW_Application_Main.PerInstanceMemory_Xcp
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BMW_Application_Main.PerInstanceMemory_Xcp "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BMW_Application_Main.PerInstanceMemory_Xcp
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Bs "MICROSAR RTE"
+      /begin SUB_GROUP
+        Bs.ModeProvidePorts
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Bs.LifeCycle.Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Bs.LifeCycle.Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Bs.ModeProvidePorts "MICROSAR RTE"
+      /begin SUB_GROUP
+        Bs.LifeCycle.Mode
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM "MICROSAR RTE"
+      /begin SUB_GROUP
+        BswM.ModeProvidePorts
+        BswM.ModeRequirePorts
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.ModeProvidePorts "MICROSAR RTE"
+      /begin SUB_GROUP
+        BswM.Switch_ESH_ModeSwitch.BswM_MDGP_ESH_Mode
+        BswM.Switch_SwitchPort_Darh_ReportErrorMode.DarhReportErrorMode
+        BswM.Switch_SwitchPort_StdDiagComControlNormalNotificationPort.CommunicationModeDeclarationGroup
+        BswM.Switch_SwitchPort_StdDiag_SessionChangeIndication.SessionModeDeclarationGroup
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.ModeRequirePorts "MICROSAR RTE"
+      /begin SUB_GROUP
+        BswM.Notification_BSWModeSwitch_DcmDiagnosticSessionControl.DcmDiagnosticSessionControl
+        BswM.Notification_BSWModeSwitch_DcmEcuReset.DcmEcuReset
+        BswM.Notification_ESH_ModeNotification.BswM_MDGP_ESH_Mode
+        BswM.Notification_SWCModeSwitch_DcmCommunicationControl_ComMConf_ComMChannel_BAC4_FlexRay_8e151c3c.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2
+        BswM.Notification_SWCModeSwitch_IS_EcuRunState.EcuRunStateMode
+        BswM.Notification_SWCModeSwitch_Lifecycle_Darh.Mode
+        BswM.Notification_SWCModeSwitch_Lifecycle_Dlog.Mode
+        BswM.Notification_SWCModeSwitch_Lifecycle_Omc.Mode
+        BswM.Notification_SWCModeSwitch_Lifecycle_StdDiag.Mode
+        BswM.Notification_SWCModeSwitch_Lifecycle_Systime.Mode
+        BswM.Notification_SWCModeSwitch_currentCentralErrorLockMode.currentCentralErrorLockMode
+        BswM.Notification_SWC_ModeNotification_Lifecycle_Bs.Mode
+        BswM.Notification_SWC_Mode_Notification_SimpleTimerMode.SimpleTimerMode
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Notification_BSWModeSwitch_DcmDiagnosticSessionControl.DcmDiagnosticSessionControl "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Notification_BSWModeSwitch_DcmDiagnosticSessionControl.DcmDiagnosticSessionControl
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Notification_BSWModeSwitch_DcmEcuReset.DcmEcuReset "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Notification_BSWModeSwitch_DcmEcuReset.DcmEcuReset
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Notification_ESH_ModeNotification.BswM_MDGP_ESH_Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Notification_ESH_ModeNotification.BswM_MDGP_ESH_Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Notification_SWCModeSwitch_DcmCommunicationControl_ComMConf_ComMChannel_BAC4_FlexRay_8e151c3c.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2 "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Notification_SWCModeSwitch_DcmCommunicationControl_ComMConf_ComMChannel_BAC4_FlexRay_8e151c3c.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Notification_SWCModeSwitch_IS_EcuRunState.EcuRunStateMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Notification_SWCModeSwitch_IS_EcuRunState.EcuRunStateMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Notification_SWCModeSwitch_Lifecycle_Darh.Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Notification_SWCModeSwitch_Lifecycle_Darh.Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Notification_SWCModeSwitch_Lifecycle_Dlog.Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Notification_SWCModeSwitch_Lifecycle_Dlog.Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Notification_SWCModeSwitch_Lifecycle_Omc.Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Notification_SWCModeSwitch_Lifecycle_Omc.Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Notification_SWCModeSwitch_Lifecycle_StdDiag.Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Notification_SWCModeSwitch_Lifecycle_StdDiag.Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Notification_SWCModeSwitch_Lifecycle_Systime.Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Notification_SWCModeSwitch_Lifecycle_Systime.Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Notification_SWCModeSwitch_currentCentralErrorLockMode.currentCentralErrorLockMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Notification_SWCModeSwitch_currentCentralErrorLockMode.currentCentralErrorLockMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Notification_SWC_ModeNotification_Lifecycle_Bs.Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Notification_SWC_ModeNotification_Lifecycle_Bs.Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Notification_SWC_Mode_Notification_SimpleTimerMode.SimpleTimerMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Notification_SWC_Mode_Notification_SimpleTimerMode.SimpleTimerMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Switch_ESH_ModeSwitch.BswM_MDGP_ESH_Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Switch_ESH_ModeSwitch.BswM_MDGP_ESH_Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Switch_SwitchPort_Darh_ReportErrorMode.DarhReportErrorMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Switch_SwitchPort_Darh_ReportErrorMode.DarhReportErrorMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Switch_SwitchPort_StdDiagComControlNormalNotificationPort.CommunicationModeDeclarationGroup "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Switch_SwitchPort_StdDiagComControlNormalNotificationPort.CommunicationModeDeclarationGroup
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP BswM.Switch_SwitchPort_StdDiag_SessionChangeIndication.SessionModeDeclarationGroup "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        BswM.Switch_SwitchPort_StdDiag_SessionChangeIndication.SessionModeDeclarationGroup
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Darh "MICROSAR RTE"
+      /begin SUB_GROUP
+        Darh.ModeProvidePorts
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Darh.LifeCycle.Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Darh.LifeCycle.Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Darh.ModeProvidePorts "MICROSAR RTE"
+      /begin SUB_GROUP
+        Darh.LifeCycle.Mode
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Dcm "MICROSAR RTE"
+      /begin SUB_GROUP
+        Dcm.ModeProvidePorts
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Dcm.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2 "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Dcm.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Dcm.DcmDiagnosticSessionControl.DcmDiagnosticSessionControl "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Dcm.DcmDiagnosticSessionControl.DcmDiagnosticSessionControl
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Dcm.DcmEcuReset.DcmEcuReset "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Dcm.DcmEcuReset.DcmEcuReset
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Dcm.DcmModeRapidPowerShutDown.DcmModeRapidPowerShutDown "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Dcm.DcmModeRapidPowerShutDown.DcmModeRapidPowerShutDown
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Dcm.ModeProvidePorts "MICROSAR RTE"
+      /begin SUB_GROUP
+        Dcm.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2.DcmCommunicationControl_ComMConf_ComMChannel_A_FlexRay_5b5a9ac2
+        Dcm.DcmDiagnosticSessionControl.DcmDiagnosticSessionControl
+        Dcm.DcmEcuReset.DcmEcuReset
+        Dcm.DcmModeRapidPowerShutDown.DcmModeRapidPowerShutDown
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Dlog "MICROSAR RTE"
+      /begin SUB_GROUP
+        Dlog.ModeProvidePorts
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Dlog.LifeCycle.Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Dlog.LifeCycle.Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Dlog.ModeProvidePorts "MICROSAR RTE"
+      /begin SUB_GROUP
+        Dlog.LifeCycle.Mode
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP IntegrationSample "MICROSAR RTE"
+      /begin SUB_GROUP
+        IntegrationSample.ModeProvidePorts
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP IntegrationSample.EcuRunState.EcuRunStateMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        IntegrationSample.EcuRunState.EcuRunStateMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP IntegrationSample.IntegrationSampleSimpleTimerPort_0.SimpleTimerMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        IntegrationSample.IntegrationSampleSimpleTimerPort_0.SimpleTimerMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP IntegrationSample.ModeProvidePorts "MICROSAR RTE"
+      /begin SUB_GROUP
+        IntegrationSample.EcuRunState.EcuRunStateMode
+        IntegrationSample.IntegrationSampleSimpleTimerPort_0.SimpleTimerMode
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Omc "MICROSAR RTE"
+      /begin SUB_GROUP
+        Omc.ModeProvidePorts
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Omc.LifeCycle.Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Omc.LifeCycle.Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Omc.ModeProvidePorts "MICROSAR RTE"
+      /begin SUB_GROUP
+        Omc.LifeCycle.Mode
+        Omc.extendedOperatingModeSwitchPort.currentExtendedOperatingMode
+        Omc.operatingModeSwitchPort.currentOperatingMode
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Omc.extendedOperatingModeSwitchPort.currentExtendedOperatingMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Omc.extendedOperatingModeSwitchPort.currentExtendedOperatingMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Omc.operatingModeSwitchPort.currentOperatingMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Omc.operatingModeSwitchPort.currentOperatingMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP RTE "MICROSAR RTE"
+      /begin SUB_GROUP
+        SWCs
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP SWCs "MICROSAR RTE"
+      /begin SUB_GROUP
+        BMW_Application_Main
+        Bs
+        BswM
+        Darh
+        Dcm
+        Dlog
+        IntegrationSample
+        Omc
+        StdDiag
+        Stm
+        SysTime
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP StdDiag "MICROSAR RTE"
+      /begin SUB_GROUP
+        StdDiag.ModeProvidePorts
+        StdDiag.ModeRequirePorts
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP StdDiag.ComControlNormalModeAccessPort.CommunicationModeDeclarationGroup "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        StdDiag.ComControlNormalModeAccessPort.CommunicationModeDeclarationGroup
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP StdDiag.ExtendedOperatingModeControlPort.currentExtendedOperatingMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        StdDiag.ExtendedOperatingModeControlPort.currentExtendedOperatingMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP StdDiag.LifeCycle.Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        StdDiag.LifeCycle.Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP StdDiag.ModeProvidePorts "MICROSAR RTE"
+      /begin SUB_GROUP
+        StdDiag.LifeCycle.Mode
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP StdDiag.ModeRequirePorts "MICROSAR RTE"
+      /begin SUB_GROUP
+        StdDiag.ComControlNormalModeAccessPort.CommunicationModeDeclarationGroup
+        StdDiag.ExtendedOperatingModeControlPort.currentExtendedOperatingMode
+        StdDiag.OperatingModeControlPort.currentOperatingMode
+        StdDiag.VehicleStatePort.currentVehicleStateMode
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP StdDiag.OperatingModeControlPort.currentOperatingMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        StdDiag.OperatingModeControlPort.currentOperatingMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP StdDiag.VehicleStatePort.currentVehicleStateMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        StdDiag.VehicleStatePort.currentVehicleStateMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Stm "MICROSAR RTE"
+      /begin SUB_GROUP
+        Stm.ModeProvidePorts
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Stm.CentralErrorLockModeSwitchPort.currentCentralErrorLockMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Stm.CentralErrorLockModeSwitchPort.currentCentralErrorLockMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Stm.EnergyModeSwitchPort.currentEnergyMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Stm.EnergyModeSwitchPort.currentEnergyMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Stm.ModeProvidePorts "MICROSAR RTE"
+      /begin SUB_GROUP
+        Stm.CentralErrorLockModeSwitchPort.currentCentralErrorLockMode
+        Stm.EnergyModeSwitchPort.currentEnergyMode
+        Stm.VehicleStateModeSwitchPort.currentVehicleStateMode
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP Stm.VehicleStateModeSwitchPort.currentVehicleStateMode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        Stm.VehicleStateModeSwitchPort.currentVehicleStateMode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP SysTime "MICROSAR RTE"
+      /begin SUB_GROUP
+        SysTime.ModeProvidePorts
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP SysTime.LifeCycle.Mode "MICROSAR RTE"
+      /begin SUB_GROUP
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        SysTime.LifeCycle.Mode
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP SysTime.ModeProvidePorts "MICROSAR RTE"
+      /begin SUB_GROUP
+        SysTime.LifeCycle.Mode
+      /end SUB_GROUP
+      /begin FUNCTION_LIST
+      /end FUNCTION_LIST
+      /begin REF_CHARACTERISTIC
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+      /end REF_MEASUREMENT
+    /end GROUP
+
+
+/**********************************************************************************************************************
+ * RECORD_LAYOUT
+ *********************************************************************************************************************/
+    /begin RECORD_LAYOUT RTE_RL_UBYTE
+      FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT RTE_RL_UWORD
+      FNC_VALUES 1 UWORD ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT RTE_RL_ULONG
+      FNC_VALUES 1 ULONG ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT RTE_RL_SBYTE
+      FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT RTE_RL_SWORD
+      FNC_VALUES 1 SWORD ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT RTE_RL_SLONG
+      FNC_VALUES 1 SLONG ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT RTE_RL_FLOAT32_IEEE
+      FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT RTE_RL_FLOAT64_IEEE
+      FNC_VALUES 1 FLOAT64_IEEE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT RTE_RL_BOOLEAN
+      FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT RTE_RL_A_UINT64
+      FNC_VALUES 1 A_UINT64 ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT RTE_RL_A_INT64
+      FNC_VALUES 1 A_INT64 ROW_DIR DIRECT
+    /end RECORD_LAYOUT
+
+
+/**********************************************************************************************************************
+ * COMPU_METHOD / COMPU_VTAB_RANGE
+ *********************************************************************************************************************/
+
+   /begin COMPU_METHOD RTE_CM_BOOLEAN ""
+      TAB_VERB "%3.1" ""
+      COMPU_TAB_REF RTE_CM_BOOLEAN
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_BOOLEAN "" 2
+      0 0 "false"
+      1 1 "true"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_STRING ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_STRING
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_STRING "" 97
+       0 31 "UNDEFINED"
+       32 32 " "
+       33 33 "!"
+       34 34 "\""
+       35 35 "#"
+       36 36 "$"
+       37 37 "%"
+       38 38 "&"
+       39 39 "'"
+       40 40 "("
+       41 41 ")"
+       42 42 "*"
+       43 43 "+"
+       44 44 ","
+       45 45 "-"
+       46 46 "."
+       47 47 "/"
+       48 48 "0"
+       49 49 "1"
+       50 50 "2"
+       51 51 "3"
+       52 52 "4"
+       53 53 "5"
+       54 54 "6"
+       55 55 "7"
+       56 56 "8"
+       57 57 "9"
+       58 58 ":"
+       59 59 ";"
+       60 60 "<"
+       61 61 "="
+       62 62 ">"
+       63 63 "?"
+       64 64 "@"
+       65 65 "A"
+       66 66 "B"
+       67 67 "C"
+       68 68 "D"
+       69 69 "E"
+       70 70 "F"
+       71 71 "G"
+       72 72 "H"
+       73 73 "I"
+       74 74 "J"
+       75 75 "K"
+       76 76 "L"
+       77 77 "M"
+       78 78 "N"
+       79 79 "O"
+       80 80 "P"
+       81 81 "Q"
+       82 82 "R"
+       83 83 "S"
+       84 84 "T"
+       85 85 "U"
+       86 86 "V"
+       87 87 "W"
+       88 88 "X"
+       89 89 "Y"
+       90 90 "Z"
+       91 91 "["
+       92 92 "\\"
+       93 93 "]"
+       94 94 "^"
+       95 95 "_"
+       96 96 "`"
+       97 97 "a"
+       98 98 "b"
+       99 99 "c"
+       100 100 "d"
+       101 101 "e"
+       102 102 "f"
+       103 103 "g"
+       104 104 "h"
+       105 105 "i"
+       106 106 "j"
+       107 107 "k"
+       108 108 "l"
+       109 109 "m"
+       110 110 "n"
+       111 111 "o"
+       112 112 "p"
+       113 113 "q"
+       114 114 "r"
+       115 115 "s"
+       116 116 "t"
+       117 117 "u"
+       118 118 "v"
+       119 119 "w"
+       120 120 "x"
+       121 121 "y"
+       122 122 "z"
+       123 123 "{"
+       124 124 "|"
+       125 125 "}"
+       126 126 "~"
+       127 255 "UNDEFINED"
+    /end COMPU_VTAB_RANGE
+
+
+   /begin COMPU_METHOD RTE_CM_ENUM_Dcm_ModeRapidPowerShutDownType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_Dcm_ModeRapidPowerShutDownType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_Dcm_ModeRapidPowerShutDownType "" 2
+      0 0 "DCM_ENUM_ENABLE_RAPIDPOWERSHUTDOWN"
+      1 1 "DCM_ENUM_DISABLE_RAPIDPOWERSHUTDOWN"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_Bs_LifeCycleRequestType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_Bs_LifeCycleRequestType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_Bs_LifeCycleRequestType "" 3
+      0 0 "BS_INITIALIZED"
+      1 1 "BS_RUNNING"
+      2 2 "BS_STOPPED"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_Dcm_DiagnosticSessionControlType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_Dcm_DiagnosticSessionControlType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_Dcm_DiagnosticSessionControlType "" 6
+      1 1 "DCM_ENUM_DEFAULT_SESSION"
+      2 2 "DCM_ENUM_PROGRAMMING_SESSION"
+      3 3 "DCM_ENUM_EXTENDED_SESSION"
+      65 65 "DCM_ENUM_DcmDspSessionRow_CODING_SESSION"
+      66 66 "DCM_ENUM_DcmDspSessionRow_SWT_SESSION"
+      67 67 "DCM_ENUM_DcmDspSessionRow_HDD_DOWNLOAD_SESSION"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_Dcm_EcuResetType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_Dcm_EcuResetType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_Dcm_EcuResetType "" 7
+      0 0 "DCM_ENUM_NONE"
+      1 1 "DCM_ENUM_HARD"
+      2 2 "DCM_ENUM_KEYONOFF"
+      3 3 "DCM_ENUM_SOFT"
+      4 4 "DCM_ENUM_JUMPTOBOOTLOADER"
+      5 5 "DCM_ENUM_JUMPTOSYSSUPPLIERBOOTLOADER"
+      6 6 "DCM_ENUM_EXECUTE"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_BswM_ESH_Mode ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_BswM_ESH_Mode
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_BswM_ESH_Mode "" 5
+      0 0 "STARTUP"
+      1 1 "RUN"
+      2 2 "POSTRUN"
+      3 3 "WAKEUP"
+      4 4 "SHUTDOWN"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_Dcm_CommunicationModeType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_Dcm_CommunicationModeType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_Dcm_CommunicationModeType "" 12
+      0 0 "DCM_ENABLE_RX_TX_NORM"
+      1 1 "DCM_ENABLE_RX_DISABLE_TX_NORM"
+      2 2 "DCM_DISABLE_RX_ENABLE_TX_NORM"
+      3 3 "DCM_DISABLE_RX_TX_NORMAL"
+      4 4 "DCM_ENABLE_RX_TX_NM"
+      5 5 "DCM_ENABLE_RX_DISABLE_TX_NM"
+      6 6 "DCM_DISABLE_RX_ENABLE_TX_NM"
+      7 7 "DCM_DISABLE_RX_TX_NM"
+      8 8 "DCM_ENABLE_RX_TX_NORM_NM"
+      9 9 "DCM_ENABLE_RX_DISABLE_TX_NORM_NM"
+      10 10 "DCM_DISABLE_RX_ENABLE_TX_NORM_NM"
+      11 11 "DCM_DISABLE_RX_TX_NORM_NM"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_IntegrationSample_EcuRunStateModeRequestType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_IntegrationSample_EcuRunStateModeRequestType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_IntegrationSample_EcuRunStateModeRequestType "" 5
+      0 0 "IntegrationSample_INVALID_STATE"
+      1 1 "IntegrationSample_BSW_START"
+      2 2 "IntegrationSample_STARTUP"
+      3 3 "IntegrationSample_NORMAL_OPERATION"
+      4 4 "IntegrationSample_SHUTDOWN"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_Darh_LifeCycleRequestType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_Darh_LifeCycleRequestType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_Darh_LifeCycleRequestType "" 3
+      0 0 "DARH_INITIALIZED"
+      1 1 "DARH_RUNNING"
+      2 2 "DARH_STOPPED"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_Dlog_LifeCycleRequestType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_Dlog_LifeCycleRequestType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_Dlog_LifeCycleRequestType "" 3
+      0 0 "DLOG_INITIALIZED"
+      1 1 "DLOG_RUNNING"
+      2 2 "DLOG_STOPPED"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_Omc_LifeCycleRequestType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_Omc_LifeCycleRequestType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_Omc_LifeCycleRequestType "" 3
+      0 0 "OMC_INITIALIZED"
+      1 1 "OMC_RUNNING"
+      2 2 "OMC_STOPPED"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_StdDiag_LifeCycleRequestType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_StdDiag_LifeCycleRequestType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_StdDiag_LifeCycleRequestType "" 3
+      0 0 "STDDIAG_INITIALIZED"
+      1 1 "STDDIAG_RUNNING"
+      2 2 "STDDIAG_STOPPED"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_SysTime_LifeCycleRequestType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_SysTime_LifeCycleRequestType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_SysTime_LifeCycleRequestType "" 3
+      0 0 "SYSTIME_INITIALIZED"
+      1 1 "SYSTIME_RUNNING"
+      2 2 "SYSTIME_STOPPED"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_Stm_CentralErrorLockType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_Stm_CentralErrorLockType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_Stm_CentralErrorLockType "" 3
+      0 0 "STM_CEL_UNLOCKED"
+      1 1 "STM_CEL_LOCKED"
+      3 3 "STM_CEL_INVALID"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_IntegrationSample_SimpleTimerStateType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_IntegrationSample_SimpleTimerStateType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_IntegrationSample_SimpleTimerStateType "" 3
+      0 0 "IntegrationSample_Timer_FIRE"
+      1 1 "IntegrationSample_Timer_IDLE"
+      2 2 "IntegrationSample_Timer_RUNNING"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_NormalCommunicationModeType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_NormalCommunicationModeType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_NormalCommunicationModeType "" 4
+      0 0 "DISABLE_RX_AND_TX_NORMAL"
+      1 1 "DISABLE_RX_ENABLE_TX_NORMAL"
+      2 2 "ENABLE_RX_AND_TX_NORMAL"
+      3 3 "ENABLE_RX_DISABLE_TX_NORMAL"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_Omc_ExtendedOperatingModeType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_Omc_ExtendedOperatingModeType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_Omc_ExtendedOperatingModeType "" 17
+      0 0 "OMC_MODE_EXTENSION_NORMAL"
+      1 1 "OMC_MODE_EXTENSION_1"
+      2 2 "OMC_MODE_EXTENSION_2"
+      3 3 "OMC_MODE_EXTENSION_3"
+      4 4 "OMC_MODE_EXTENSION_4"
+      5 5 "OMC_MODE_EXTENSION_5"
+      6 6 "OMC_MODE_EXTENSION_6"
+      7 7 "OMC_MODE_EXTENSION_7"
+      8 8 "OMC_MODE_EXTENSION_8"
+      9 9 "OMC_MODE_EXTENSION_9"
+      10 10 "OMC_MODE_EXTENSION_10"
+      11 11 "OMC_MODE_EXTENSION_11"
+      12 12 "OMC_MODE_EXTENSION_12"
+      13 13 "OMC_MODE_EXTENSION_13"
+      14 14 "OMC_MODE_EXTENSION_14"
+      15 15 "OMC_MODE_EXTENSION_SAVE_ENERGY"
+      255 255 "OMC_MODE_EXTENSION_INVALID"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_Omc_OperatingModeType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_Omc_OperatingModeType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_Omc_OperatingModeType "" 4
+      0 0 "OMC_MODE_NORMAL"
+      1 1 "OMC_MODE_ASSEMBLY"
+      2 2 "OMC_MODE_TRANSPORT"
+      3 3 "OMC_MODE_BMW_FLASH"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_Stm_VehicleStateType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_Stm_VehicleStateType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_Stm_VehicleStateType "" 10
+      1 1 "STM_VEHICLE_STATE_PARKING_BN_NOK"
+      2 2 "STM_VEHICLE_STATE_PARKING_BN_OK"
+      3 3 "STM_VEHICLE_STATE_CUSTOMER_ABSENT"
+      5 5 "STM_VEHICLE_STATE_LIVING"
+      7 7 "STM_VEHICLE_STATE_CHECK_ANALYS_DIAGNOSTICS"
+      8 8 "STM_VEHICLE_STATE_READINESS_TO_DRIVE_INIT"
+      10 10 "STM_VEHICLE_STATE_DRIVE"
+      12 12 "STM_VEHICLE_STATE_READINESS_TO_DRIVE_STOP"
+      14 14 "STM_VEHICLE_STATE_UNAVAILABLE"
+      15 15 "STM_VEHICLE_STATE_INVALID"
+    /end COMPU_VTAB_RANGE
+
+   /begin COMPU_METHOD RTE_CM_ENUM_Stm_EnergyStateType ""
+      TAB_VERB "%.1" ""
+      COMPU_TAB_REF RTE_CM_ENUM_Stm_EnergyStateType
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB_RANGE RTE_CM_ENUM_Stm_EnergyStateType "" 5
+      0 0 "STM_ENERGY_GOOD"
+      1 1 "STM_ENERGY_OK"
+      2 2 "STM_ENERGY_SHORTAGE"
+      3 3 "STM_ENERGY_SEVERE_SHORTAGE"
+      15 15 "STM_ENERGY_INVALID"
+    /end COMPU_VTAB_RANGE

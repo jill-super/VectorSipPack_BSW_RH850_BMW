@@ -1,0 +1,4040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2011 (http://www.altova.com) von Stefan Zerndl (BMW AG) bearbeitet -->
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<DIAG-LAYER-CONTAINER ID="id-58865356-8435-4c1f-914e-27ec0ec00358" OID="id-58865356-8435-4c1f-914e-27ec0ec00358">
+		<SHORT-NAME>SWT_UDS_DLC</SHORT-NAME>
+		<LONG-NAME>Sweeping Technology Services and Jobs for UDS</LONG-NAME>
+		<ADMIN-DATA/>
+		<FUNCTIONAL-GROUPS>
+			<FUNCTIONAL-GROUP ID="id-8cb94aae-551f-41e4-bddd-2ba1232564d5" OID="id-8cb94aae-551f-41e4-bddd-2ba1232564d5">
+				<SHORT-NAME>SWT_UDS</SHORT-NAME>
+				<LONG-NAME>Sweeping Technology Services and Jobs for UDS</LONG-NAME>
+				<FUNCT-CLASSS>
+					<FUNCT-CLASS ID="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd" OID="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd">
+						<SHORT-NAME>SWT</SHORT-NAME>
+						<LONG-NAME>Sweeping Technology</LONG-NAME>
+					</FUNCT-CLASS>
+				</FUNCT-CLASSS>
+				<DIAG-DATA-DICTIONARY-SPEC>
+					<ADMIN-DATA/>
+					<DATA-OBJECT-PROPS>
+						<DATA-OBJECT-PROP ID="id-2563af23-8239-4825-9aac-b2d9412b621a" OID="id-2563af23-8239-4825-9aac-b2d9412b621a">
+							<SHORT-NAME>SWT_RC_RI_DOP</SHORT-NAME>
+							<LONG-NAME>routineIdentifier</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_GSIGID_0F1F</SHORT-LABEL>
+											<LOWER-LIMIT>3871</LOWER-LIMIT>
+											<UPPER-LIMIT>3871</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>3871</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SwtRoutine</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>16</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81" OID="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81">
+							<SHORT-NAME>SWT_RC_RCO_DOP</SHORT-NAME>
+							<LONG-NAME>RoutineControlOption</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_GSWIDF_01</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>1</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SWID_FUNKTIONAL_LESEN</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_GSIGID_03</SHORT-LABEL>
+											<LOWER-LIMIT>3</LOWER-LIMIT>
+											<UPPER-LIMIT>3</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>3</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SOFTWARE_SIGNATURE_LESEN</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_SL_04</SHORT-LABEL>
+											<LOWER-LIMIT>4</LOWER-LIMIT>
+											<UPPER-LIMIT>4</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>4</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>STATUS_LESEN</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_ZP_05</SHORT-LABEL>
+											<LOWER-LIMIT>5</LOWER-LIMIT>
+											<UPPER-LIMIT>5</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>5</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>ZERTIFIKAT_PRUEFEN</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_ZL_06</SHORT-LABEL>
+											<LOWER-LIMIT>6</LOWER-LIMIT>
+											<UPPER-LIMIT>6</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>6</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>ZERTIFIKAT_LESEN</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_FS_07</SHORT-LABEL>
+											<LOWER-LIMIT>7</LOWER-LIMIT>
+											<UPPER-LIMIT>7</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>7</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FREISCHALTCODE_SCHREIBEN</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_ZS_08</SHORT-LABEL>
+											<LOWER-LIMIT>8</LOWER-LIMIT>
+											<UPPER-LIMIT>8</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>8</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>ZERTIFIKAT_SCHREIBEN</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_FP_09</SHORT-LABEL>
+											<LOWER-LIMIT>9</LOWER-LIMIT>
+											<UPPER-LIMIT>9</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>9</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FREISCHALTCODE_PRUEFEN</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_FST_0A</SHORT-LABEL>
+											<LOWER-LIMIT>10</LOWER-LIMIT>
+											<UPPER-LIMIT>10</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>10</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FREISCHALTCODE_STORNIEREN</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_FL_0B</SHORT-LABEL>
+											<LOWER-LIMIT>11</LOWER-LIMIT>
+											<UPPER-LIMIT>11</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>11</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FREISCHALTCODE_LESEN</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_PP_0C</SHORT-LABEL>
+											<LOWER-LIMIT>12</LOWER-LIMIT>
+											<UPPER-LIMIT>12</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>12</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>PERIODISCHE_PRUEFUNG</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_RECUD_0D</SHORT-LABEL>
+											<LOWER-LIMIT>13</LOWER-LIMIT>
+											<UPPER-LIMIT>13</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>13</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SG_DATEN_LESEN</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_GVER_0E</SHORT-LABEL>
+											<LOWER-LIMIT>14</LOWER-LIMIT>
+											<UPPER-LIMIT>14</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>14</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SWT_VERSION_LESEN</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCO_GSIGS_0F</SHORT-LABEL>
+											<LOWER-LIMIT>15</LOWER-LIMIT>
+											<UPPER-LIMIT>15</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>15</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>STATUS_LESEN_SWSIG</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-45ae85e4-153f-401c-b595-ac093aa6051d" OID="id-45ae85e4-153f-401c-b595-ac093aa6051d">
+							<SHORT-NAME>SWT_RC_RS_DOP</SHORT-NAME>
+							<LONG-NAME>RoutineStatus</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_OK_00</SHORT-LABEL>
+											<LOWER-LIMIT>0</LOWER-LIMIT>
+											<UPPER-LIMIT>0</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>0</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>OK</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_INVALID_RESPONSE_01_CB</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>203</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>INVALID_RESPONSE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_KEY_DERIVATION_NOT_ACTIVATED_CC</SHORT-LABEL>
+											<LOWER-LIMIT>204</LOWER-LIMIT>
+											<UPPER-LIMIT>204</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>204</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>KEY_DERIVATION_NOT_ACTIVATED</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_KEY_FACTOR_NOT_EXISTENT_CD</SHORT-LABEL>
+											<LOWER-LIMIT>205</LOWER-LIMIT>
+											<UPPER-LIMIT>205</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>205</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>KEY_FACTOR_NOT_EXISTENT</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_EXTENSION_CHECK_FAILURE_D0</SHORT-LABEL>
+											<LOWER-LIMIT>208</LOWER-LIMIT>
+											<UPPER-LIMIT>208</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>208</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>EXTENSION_CHECK_FAILURE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_INVALID_FSC_D1</SHORT-LABEL>
+											<LOWER-LIMIT>209</LOWER-LIMIT>
+											<UPPER-LIMIT>209</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>209</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>INVALID_FSC</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FGN_ACCESS_FAILURE_D2</SHORT-LABEL>
+											<LOWER-LIMIT>210</LOWER-LIMIT>
+											<UPPER-LIMIT>210</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>210</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FGN_ACCESS_FAILURE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_NO_FREE_SPACE_D3</SHORT-LABEL>
+											<LOWER-LIMIT>211</LOWER-LIMIT>
+											<UPPER-LIMIT>211</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>211</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>NO_FREE_SPACE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_WRONG_CERT_CONTENT_CRIT_ELEM_D4</SHORT-LABEL>
+											<LOWER-LIMIT>212</LOWER-LIMIT>
+											<UPPER-LIMIT>212</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>212</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>WRONG_CERT_CONTENT_CRIT_ELEM</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_WRONG_FSC_CONTENT_D5</SHORT-LABEL>
+											<LOWER-LIMIT>213</LOWER-LIMIT>
+											<UPPER-LIMIT>213</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>213</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>WRONG_FSC_CONTENT</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_BAD_PARAM_D6</SHORT-LABEL>
+											<LOWER-LIMIT>214</LOWER-LIMIT>
+											<UPPER-LIMIT>214</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>214</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>BAD_PARAM</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FSCS_CERT_REJECTED_D7</SHORT-LABEL>
+											<LOWER-LIMIT>215</LOWER-LIMIT>
+											<UPPER-LIMIT>215</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>215</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FSCS_CERT_REJECTED</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_MISSING_SG_DATA_D8</SHORT-LABEL>
+											<LOWER-LIMIT>216</LOWER-LIMIT>
+											<UPPER-LIMIT>216</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>216</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>MISSING_SG_DATA</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_NOT_AUTHENTICATED_D9</SHORT-LABEL>
+											<LOWER-LIMIT>217</LOWER-LIMIT>
+											<UPPER-LIMIT>217</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>217</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>NOT_AUTHENTICATED</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FP_MECHANISM_NOT_OK_DA</SHORT-LABEL>
+											<LOWER-LIMIT>218</LOWER-LIMIT>
+											<UPPER-LIMIT>218</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>218</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FP_MECHANISM_NOT_OK</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_SIGS_ID_AND_CERT_NOT_MATCHING_DB</SHORT-LABEL>
+											<LOWER-LIMIT>219</LOWER-LIMIT>
+											<UPPER-LIMIT>219</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>219</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SIGS_ID_AND_CERT_NOT_MATCHING</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_VALIDITY_CHECK_FAILURE_DC</SHORT-LABEL>
+											<LOWER-LIMIT>220</LOWER-LIMIT>
+											<UPPER-LIMIT>220</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>220</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>VALIDITY_CHECK_FAILURE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FGN_INVALID_DD</SHORT-LABEL>
+											<LOWER-LIMIT>221</LOWER-LIMIT>
+											<UPPER-LIMIT>221</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>221</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FGN_INVALID</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FGN_CHECK_FAILURE_DE</SHORT-LABEL>
+											<LOWER-LIMIT>222</LOWER-LIMIT>
+											<UPPER-LIMIT>222</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>222</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FGN_CHECK_FAILURE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FLASH_READ_ERROR_DF</SHORT-LABEL>
+											<LOWER-LIMIT>223</LOWER-LIMIT>
+											<UPPER-LIMIT>223</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>223</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FLASH_READ_ERROR</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FLASH_WRITE_ERROR_E0</SHORT-LABEL>
+											<LOWER-LIMIT>224</LOWER-LIMIT>
+											<UPPER-LIMIT>224</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>224</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FLASH_WRITE_ERROR</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_WRONG_CERT_CONTENT_KEYUSAGE_E1</SHORT-LABEL>
+											<LOWER-LIMIT>225</LOWER-LIMIT>
+											<UPPER-LIMIT>225</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>225</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>WRONG_CERT_CONTENT_KEYUSAGE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_WRONG_CERT_CONTENT_ISSUER_E2</SHORT-LABEL>
+											<LOWER-LIMIT>226</LOWER-LIMIT>
+											<UPPER-LIMIT>226</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>226</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>WRONG_CERT_CONTENT_ISSUER</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_WRONG_CERT_CONTENT_VALIDITY_E3</SHORT-LABEL>
+											<LOWER-LIMIT>227</LOWER-LIMIT>
+											<UPPER-LIMIT>227</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>227</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>WRONG_CERT_CONTENT_VALIDITY</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FSCS_CERT_CHECK_FAILURE_E4</SHORT-LABEL>
+											<LOWER-LIMIT>228</LOWER-LIMIT>
+											<UPPER-LIMIT>228</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>228</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FSCS_CERT_CHECK_FAILURE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FSCS_CERT_INVALID_E5</SHORT-LABEL>
+											<LOWER-LIMIT>229</LOWER-LIMIT>
+											<UPPER-LIMIT>229</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>229</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FSCS_CERT_INVALID</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FSCS_CERT_NOT_CHECKED_E6</SHORT-LABEL>
+											<LOWER-LIMIT>230</LOWER-LIMIT>
+											<UPPER-LIMIT>230</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>230</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FSCS_CERT_NOT_CHECKED</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FSCS_CERT_NOT_EXISTENT_E7</SHORT-LABEL>
+											<LOWER-LIMIT>231</LOWER-LIMIT>
+											<UPPER-LIMIT>231</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>231</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FSCS_CERT_NOT_EXISTENT</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_SIGS_CERT_CHECK_FAILURE_E8</SHORT-LABEL>
+											<LOWER-LIMIT>232</LOWER-LIMIT>
+											<UPPER-LIMIT>232</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>232</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SIGS_CERT_CHECK_FAILURE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_SIGS_CERT_INVALID_E9</SHORT-LABEL>
+											<LOWER-LIMIT>233</LOWER-LIMIT>
+											<UPPER-LIMIT>233</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>233</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SIGS_CERT_INVALID</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_SIGS_CERT_NOT_CHECKED_EA</SHORT-LABEL>
+											<LOWER-LIMIT>234</LOWER-LIMIT>
+											<UPPER-LIMIT>234</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>234</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SIGS_CERT_NOT_CHECKED</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_SIGS_CERT_NOT_EXISTENT_EB</SHORT-LABEL>
+											<LOWER-LIMIT>235</LOWER-LIMIT>
+											<UPPER-LIMIT>235</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>235</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SIGS_CERT_NOT_EXISTENT</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_ROOT_CERT_INVALID_EC</SHORT-LABEL>
+											<LOWER-LIMIT>236</LOWER-LIMIT>
+											<UPPER-LIMIT>236</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>236</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>ROOT_CERT_INVALID</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_ROOT_CERT_REJECTED_ED</SHORT-LABEL>
+											<LOWER-LIMIT>237</LOWER-LIMIT>
+											<UPPER-LIMIT>237</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>237</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>ROOT_CERT_REJECTED</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_ROOT_CERT_CORRUPT_EE</SHORT-LABEL>
+											<LOWER-LIMIT>238</LOWER-LIMIT>
+											<UPPER-LIMIT>238</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>238</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>ROOT_CERT_CORRUPT</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_ROOT_CERT_NOT_READABLE_EF</SHORT-LABEL>
+											<LOWER-LIMIT>239</LOWER-LIMIT>
+											<UPPER-LIMIT>239</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>239</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>ROOT_CERT_NOT_READABLE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_ROOT_CERT_NOT_EXISTENT_F0</SHORT-LABEL>
+											<LOWER-LIMIT>240</LOWER-LIMIT>
+											<UPPER-LIMIT>240</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>240</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>ROOT_CERT_NOT_EXISTENT</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_CERT_REJECTED_F1</SHORT-LABEL>
+											<LOWER-LIMIT>241</LOWER-LIMIT>
+											<UPPER-LIMIT>241</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>241</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>CERT_REJECTED</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_CERT_NOT_EXISTENT_F2</SHORT-LABEL>
+											<LOWER-LIMIT>242</LOWER-LIMIT>
+											<UPPER-LIMIT>242</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>242</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>CERT_NOT_EXISTENT</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FSC_CHECK_FAILURE_F3</SHORT-LABEL>
+											<LOWER-LIMIT>243</LOWER-LIMIT>
+											<UPPER-LIMIT>243</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>243</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FSC_CHECK_FAILURE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FSC_CANCELLED_F4</SHORT-LABEL>
+											<LOWER-LIMIT>244</LOWER-LIMIT>
+											<UPPER-LIMIT>244</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>244</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FSC_CANCELLED</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_FSC_REJECTED_F5</SHORT-LABEL>
+											<LOWER-LIMIT>245</LOWER-LIMIT>
+											<UPPER-LIMIT>245</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>245</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FSC_REJECTED</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_FSC_NOT_EXISTENT_F6</SHORT-LABEL>
+											<LOWER-LIMIT>246</LOWER-LIMIT>
+											<UPPER-LIMIT>246</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>246</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FSC_NOT_EXISTENT</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_WRONG_FSCS_ID_IN_FSC_F7</SHORT-LABEL>
+											<LOWER-LIMIT>247</LOWER-LIMIT>
+											<UPPER-LIMIT>247</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>247</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>WRONG_FSCS_ID_IN_FSC</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_INVALID_FSC_CREATION_DATE_F8</SHORT-LABEL>
+											<LOWER-LIMIT>248</LOWER-LIMIT>
+											<UPPER-LIMIT>248</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>248</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>INVALID_FSC_CREATION_DATE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_SIG_CHECK_FAILURE_F9</SHORT-LABEL>
+											<LOWER-LIMIT>249</LOWER-LIMIT>
+											<UPPER-LIMIT>249</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>249</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SIG_CHECK_FAILURE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_SWSIG_CHECK_FAILURE_FA</SHORT-LABEL>
+											<LOWER-LIMIT>250</LOWER-LIMIT>
+											<UPPER-LIMIT>250</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>250</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SWSIG_CHECK_FAILURE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_SWSIG_STATE_REJECTED_FB</SHORT-LABEL>
+											<LOWER-LIMIT>251</LOWER-LIMIT>
+											<UPPER-LIMIT>251</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>251</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SWSIG_STATE_REJECTED</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_SWID_CHECK_FAILURE_FC</SHORT-LABEL>
+											<LOWER-LIMIT>252</LOWER-LIMIT>
+											<UPPER-LIMIT>252</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>252</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SWID_CHECK_FAILURE</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_SW_NOT_ACTIVATED_FD</SHORT-LABEL>
+											<LOWER-LIMIT>253</LOWER-LIMIT>
+											<UPPER-LIMIT>253</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>253</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SW_NOT_ACTIVATED</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_SW_NOT_EXISTENT_FE</SHORT-LABEL>
+											<LOWER-LIMIT>254</LOWER-LIMIT>
+											<UPPER-LIMIT>254</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>254</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SW_NOT_EXISTENT</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RS_UNKNOWN_ERROR_FF</SHORT-LABEL>
+											<LOWER-LIMIT>255</LOWER-LIMIT>
+											<UPPER-LIMIT>255</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>255</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>UNKNOWN_ERROR</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-06f2e683-ad8a-480f-a676-d6f99bc14d62" OID="id-06f2e683-ad8a-480f-a676-d6f99bc14d62">
+							<SHORT-NAME>SCID_DOP</SHORT-NAME>
+							<LONG-NAME>SigningCertificateID</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MAX-LENGTH>96</MAX-LENGTH>
+								<MIN-LENGTH>0</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-8d51bc5d-3cbf-4473-bf5e-c33d96bdb526" OID="id-8d51bc5d-3cbf-4473-bf5e-c33d96bdb526">
+							<SHORT-NAME>SWT_RC_RCS_DOP</SHORT-NAME>
+							<LONG-NAME>RootCertStatus</LONG-NAME>
+							<DESC>
+								<p>
+The RootCertStatus values (in English) match the following German values:
+                </p>
+								<p>
+									<ul>
+										<li>not available = nicht vorhanden</li>
+										<li>accepted = akzeptiert</li>
+										<li>rejected = abgelehnt</li>
+									</ul>
+								</p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCS_NICHT_VORHANDEN_00</SHORT-LABEL>
+											<LOWER-LIMIT>0</LOWER-LIMIT>
+											<UPPER-LIMIT>0</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>0</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>not available</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCS_AKZEPTIERT_02</SHORT-LABEL>
+											<LOWER-LIMIT>2</LOWER-LIMIT>
+											<UPPER-LIMIT>2</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>2</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>accepted</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RCS_ABGELEHNT_03</SHORT-LABEL>
+											<LOWER-LIMIT>3</LOWER-LIMIT>
+											<UPPER-LIMIT>3</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>3</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>rejected</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>3</UPPER-LIMIT>
+								<SCALE-CONSTRS>
+									<SCALE-CONSTR VALIDITY="NOT-VALID">
+										<SHORT-LABEL>SWT_RC_RCS_1_1</SHORT-LABEL>
+										<LOWER-LIMIT>1</LOWER-LIMIT>
+										<UPPER-LIMIT>1</UPPER-LIMIT>
+									</SCALE-CONSTR>
+								</SCALE-CONSTRS>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-88459153-8bc2-4101-8310-898382b7b7ba" OID="id-88459153-8bc2-4101-8310-898382b7b7ba">
+							<SHORT-NAME>SWT_RC_SWS_DOP</SHORT-NAME>
+							<LONG-NAME>SWStatus</LONG-NAME>
+							<DESC>
+								<p>
+The SWStatus values (in English) match the following German values:
+                </p>
+								<p>
+									<ul>
+										<li>not available = nicht vorhanden</li>
+										<li>loaded = eingespielt</li>
+										<li>accepted = akzeptiert</li>
+										<li>rejected = abgelehnt</li>
+									</ul>
+								</p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_SWS_NICHT_VORHANDEN_00</SHORT-LABEL>
+											<LOWER-LIMIT>0</LOWER-LIMIT>
+											<UPPER-LIMIT>0</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>0</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>not available</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_SWS_EINGESPIELT_01</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>1</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>loaded</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_SWS_AKZEPTIERT_02</SHORT-LABEL>
+											<LOWER-LIMIT>2</LOWER-LIMIT>
+											<UPPER-LIMIT>2</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>2</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>accepted</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_SWS_ABGELEHNT_03</SHORT-LABEL>
+											<LOWER-LIMIT>3</LOWER-LIMIT>
+											<UPPER-LIMIT>3</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>3</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>rejected</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>3</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-ee195e8b-267e-4238-af40-bcf225293b96" OID="id-ee195e8b-267e-4238-af40-bcf225293b96">
+							<SHORT-NAME>SWT_RC_FSCS_DOP</SHORT-NAME>
+							<LONG-NAME>FSCStatus</LONG-NAME>
+							<DESC>
+								<p>
+The FSCStatus values (in English) match the following German values:
+                </p>
+								<p>
+									<ul>
+										<li>not available = nicht vorhanden</li>
+										<li>loaded = eingespielt</li>
+										<li>accepted = akzeptiert</li>
+										<li>rejected = abgelehnt</li>
+										<li>cancelled = storniert</li>
+									</ul>
+								</p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_FSCS_NICHT_VORHANDEN_00</SHORT-LABEL>
+											<LOWER-LIMIT>0</LOWER-LIMIT>
+											<UPPER-LIMIT>0</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>0</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>not available</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_FSCS_EINGESPIELT_01</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>1</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>loaded</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_FSCS_AKZEPTIERT_02</SHORT-LABEL>
+											<LOWER-LIMIT>2</LOWER-LIMIT>
+											<UPPER-LIMIT>2</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>2</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>accepted</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_FSCS_ABGELEHNT_03</SHORT-LABEL>
+											<LOWER-LIMIT>3</LOWER-LIMIT>
+											<UPPER-LIMIT>3</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>3</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>rejected</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_FSCS_STORNIERT_04</SHORT-LABEL>
+											<LOWER-LIMIT>4</LOWER-LIMIT>
+											<UPPER-LIMIT>4</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>4</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>cancelled</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>4</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-c01f3a3e-827f-42b0-bfc4-60a36fde2890" OID="id-c01f3a3e-827f-42b0-bfc4-60a36fde2890">
+							<SHORT-NAME>SWT_RC_FSCT_DOP</SHORT-NAME>
+							<LONG-NAME>FSC-Typ</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_FSCST_SWT_CLASSIC_LIGHT_01</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>1</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SWTclassic light</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_FSCST_SWT_CLASSIC_FULL_81</SHORT-LABEL>
+											<LOWER-LIMIT>2</LOWER-LIMIT>
+											<UPPER-LIMIT>2</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>2</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SWTclassic full</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_FSCST_SWT_PREENABLE_LIGHT_02</SHORT-LABEL>
+											<LOWER-LIMIT>3</LOWER-LIMIT>
+											<UPPER-LIMIT>3</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>3</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SWTpre-enabled light</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_FSCST_SWT_PREENABLE_FULL_82</SHORT-LABEL>
+											<LOWER-LIMIT>4</LOWER-LIMIT>
+											<UPPER-LIMIT>4</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>4</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SWTpre-enabled full</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_FSCST_SWT_SHORT_03</SHORT-LABEL>
+											<LOWER-LIMIT>5</LOWER-LIMIT>
+											<UPPER-LIMIT>5</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>5</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SWTshort</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>7</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>5</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-65df6cb6-48ab-42cf-8ffc-ff33513f5344" OID="id-65df6cb6-48ab-42cf-8ffc-ff33513f5344">
+							<SHORT-NAME>SWT_RC_CT_DOP</SHORT-NAME>
+							<LONG-NAME>CertificateType</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_CT_SIGS_ZERTIFIKAT_01</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>1</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>SigS-Zertifikat</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_CT_FSCS_ZERTIFIKAT_02</SHORT-LABEL>
+											<LOWER-LIMIT>2</LOWER-LIMIT>
+											<UPPER-LIMIT>2</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>2</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>FSCS-Zertifikat</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_CT_ROOT_ZERTIFIKAT_03</SHORT-LABEL>
+											<LOWER-LIMIT>3</LOWER-LIMIT>
+											<UPPER-LIMIT>3</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>3</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>Root-Zertifikat</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>3</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-deabe383-9f85-4ba4-b604-86d36aeb3ffd" OID="id-deabe383-9f85-4ba4-b604-86d36aeb3ffd">
+							<SHORT-NAME>LH_SAP_DOC_NUM_DOP</SHORT-NAME>
+							<LONG-NAME>LH SAP document number</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>64</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+						</DATA-OBJECT-PROP>
+					</DATA-OBJECT-PROPS>
+					<STRUCTURES>
+						<STRUCTURE IS-VISIBLE="false" ID="id-9e0516c3-4fc0-4a23-985e-466b0cb09cbc" OID="id-9e0516c3-4fc0-4a23-985e-466b0cb09cbc">
+							<SHORT-NAME>SWSIGS_STRUCT</SHORT-NAME>
+							<LONG-NAME>SW SigStatus Structure</LONG-NAME>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>SWID_AN</SHORT-NAME>
+									<LONG-NAME>SoftwareID ApplicationNumber (BigEndian)</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF DOCTYPE="LAYER" DOCREF="ISO_14229_SERVICES_BMW" ID-REF="id-eaef3e81-2b80-4621-83b0-1e8865bdf7d0"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>SWID_UI</SHORT-NAME>
+									<LONG-NAME>SoftwareID UpgradeIndex (BigEndian)</LONG-NAME>
+									<BYTE-POSITION>2</BYTE-POSITION>
+									<DOP-REF DOCTYPE="LAYER" DOCREF="ISO_14229_SERVICES_BMW" ID-REF="id-eaef3e81-2b80-4621-83b0-1e8865bdf7d0"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>SW_SIG_STATUS</SHORT-NAME>
+									<LONG-NAME>SW Signatur Status</LONG-NAME>
+									<BYTE-POSITION>4</BYTE-POSITION>
+									<DOP-REF ID-REF="id-ee195e8b-267e-4238-af40-bcf225293b96"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE IS-VISIBLE="false" ID="id-1147a4f2-2ab5-4ed1-894e-db45053ef48f" OID="id-1147a4f2-2ab5-4ed1-894e-db45053ef48f">
+							<SHORT-NAME>SWID_STRUCT</SHORT-NAME>
+							<LONG-NAME>SoftwareID Structure</LONG-NAME>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>SWID_AN</SHORT-NAME>
+									<LONG-NAME>SoftwareID ApplicationNumber (BigEndian)</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF DOCTYPE="LAYER" DOCREF="ISO_14229_SERVICES_BMW" ID-REF="id-eaef3e81-2b80-4621-83b0-1e8865bdf7d0"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>SWID_UI</SHORT-NAME>
+									<LONG-NAME>SoftwareID UpgradeIndex (BigEndian)</LONG-NAME>
+									<BYTE-POSITION>2</BYTE-POSITION>
+									<DOP-REF DOCTYPE="LAYER" DOCREF="ISO_14229_SERVICES_BMW" ID-REF="id-eaef3e81-2b80-4621-83b0-1e8865bdf7d0"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE IS-VISIBLE="false" ID="id-f469264b-0cbb-47f5-836a-88c6e2ce669d" OID="id-f469264b-0cbb-47f5-836a-88c6e2ce669d">
+							<SHORT-NAME>FSC_STRUCT</SHORT-NAME>
+							<LONG-NAME>FSCStructure</LONG-NAME>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>FSC_SWID</SHORT-NAME>
+									<LONG-NAME>FSC SoftwareID</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-1147a4f2-2ab5-4ed1-894e-db45053ef48f"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>FSC_SCS</SHORT-NAME>
+									<LONG-NAME>FSCSCertStatus</LONG-NAME>
+									<BYTE-POSITION>4</BYTE-POSITION>
+									<DOP-REF ID-REF="id-88459153-8bc2-4101-8310-898382b7b7ba"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>FSC_S</SHORT-NAME>
+									<LONG-NAME>FSCStatus</LONG-NAME>
+									<BYTE-POSITION>5</BYTE-POSITION>
+									<DOP-REF ID-REF="id-ee195e8b-267e-4238-af40-bcf225293b96"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>FSC_ST</SHORT-NAME>
+									<LONG-NAME>FSC-Typ</LONG-NAME>
+									<BYTE-POSITION>6</BYTE-POSITION>
+									<BIT-POSITION>0</BIT-POSITION>
+									<DOP-REF ID-REF="id-c01f3a3e-827f-42b0-bfc4-60a36fde2890"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>FSC_R</SHORT-NAME>
+									<LONG-NAME>retainFSC</LONG-NAME>
+									<BYTE-POSITION>6</BYTE-POSITION>
+									<BIT-POSITION>7</BIT-POSITION>
+									<DOP-REF DOCREF="DOPS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-6f94256e-dd3f-4441-b2f6-608f1e03dd86"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE IS-VISIBLE="false" ID="id-8dfb4123-2bdd-4a4c-aff5-eeceb9baa175" OID="id-8dfb4123-2bdd-4a4c-aff5-eeceb9baa175">
+							<SHORT-NAME>LH_NUMBER_STRUCT</SHORT-NAME>
+							<LONG-NAME>LH Number Structure</LONG-NAME>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>LH_DOC_NUMBER</SHORT-NAME>
+									<LONG-NAME>LH Documentnumber</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-deabe383-9f85-4ba4-b604-86d36aeb3ffd"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>LH_SUBDOC_NUMBER</SHORT-NAME>
+									<LONG-NAME>LH Subdocumentnumber</LONG-NAME>
+									<BYTE-POSITION>8</BYTE-POSITION>
+									<DOP-REF DOCREF="DOPS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-b529da6b-f7f6-47ec-bff2-74ecd191c080"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>LH_DOC_VERSION</SHORT-NAME>
+									<LONG-NAME>LH Documentversionnumber</LONG-NAME>
+									<BYTE-POSITION>11</BYTE-POSITION>
+									<DOP-REF DOCREF="DOPS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-943bb96c-da8d-4c09-9a4e-cf5aa5262821"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE IS-VISIBLE="false" ID="id-5fda307e-7f0f-43eb-a0ba-bd7e57f97ee5" OID="id-5fda307e-7f0f-43eb-a0ba-bd7e57f97ee5">
+							<SHORT-NAME>SWT_LIB_STRUCT</SHORT-NAME>
+							<LONG-NAME>SWT-Lib Structure</LONG-NAME>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>MAJOR_VERSION</SHORT-NAME>
+									<LONG-NAME>Major Version</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF DOCREF="DOPS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-759d5d2a-50b3-4232-9dbd-0d21e59b72e6"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>MINOR_VERSION</SHORT-NAME>
+									<LONG-NAME>Minor Version</LONG-NAME>
+									<BYTE-POSITION>1</BYTE-POSITION>
+									<DOP-REF DOCREF="DOPS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-759d5d2a-50b3-4232-9dbd-0d21e59b72e6"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>PATCH_NUMBER</SHORT-NAME>
+									<LONG-NAME>Patch Number</LONG-NAME>
+									<BYTE-POSITION>2</BYTE-POSITION>
+									<DOP-REF DOCREF="DOPS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-759d5d2a-50b3-4232-9dbd-0d21e59b72e6"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>INDEX</SHORT-NAME>
+									<LONG-NAME>Index</LONG-NAME>
+									<BYTE-POSITION>3</BYTE-POSITION>
+									<DOP-REF DOCREF="DOPS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-759d5d2a-50b3-4232-9dbd-0d21e59b72e6"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+					</STRUCTURES>
+					<END-OF-PDU-FIELDS>
+						<END-OF-PDU-FIELD ID="id-4e93e1e4-6197-4805-8219-16aa525b3b81" OID="id-4e93e1e4-6197-4805-8219-16aa525b3b81">
+							<SHORT-NAME>FSC_EOPFLD</SHORT-NAME>
+							<LONG-NAME>FSC FIELD</LONG-NAME>
+							<BASIC-STRUCTURE-REF ID-REF="id-f469264b-0cbb-47f5-836a-88c6e2ce669d"/>
+						</END-OF-PDU-FIELD>
+						<END-OF-PDU-FIELD ID="id-af5fc14d-50f4-4ce4-bc2c-f12df07790e4" OID="id-af5fc14d-50f4-4ce4-bc2c-f12df07790e4">
+							<SHORT-NAME>SWID_EOPFLD</SHORT-NAME>
+							<LONG-NAME>SWID FIELD</LONG-NAME>
+							<BASIC-STRUCTURE-REF ID-REF="id-1147a4f2-2ab5-4ed1-894e-db45053ef48f"/>
+						</END-OF-PDU-FIELD>
+						<END-OF-PDU-FIELD ID="id-72561954-23c6-4653-b38d-5e0818de18f3" OID="id-72561954-23c6-4653-b38d-5e0818de18f3">
+							<SHORT-NAME>SWSIGS_EOPFLD</SHORT-NAME>
+							<LONG-NAME>SWSigStatus FIELD</LONG-NAME>
+							<BASIC-STRUCTURE-REF ID-REF="id-9e0516c3-4fc0-4a23-985e-466b0cb09cbc"/>
+						</END-OF-PDU-FIELD>
+						<END-OF-PDU-FIELD ID="id-54240fd2-1095-40db-a9de-5f3b347cf442" OID="id-54240fd2-1095-40db-a9de-5f3b347cf442" IS-VISIBLE="true">
+							<SHORT-NAME>SWT_APP_SIG_STATUS_EOPFLD</SHORT-NAME>
+							<LONG-NAME>SWTAppSigStatusListEOPFLD</LONG-NAME>
+							<BASIC-STRUCTURE-REF ID-REF="id-9e0516c3-4fc0-4a23-985e-466b0cb09cbc"/>
+						</END-OF-PDU-FIELD>
+					</END-OF-PDU-FIELDS>
+				</DIAG-DATA-DICTIONARY-SPEC>
+				<DIAG-COMMS>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-b659ed5a-653f-4017-bcf2-31f1121d10eb" IS-MANDATORY="true" OID="id-b659ed5a-653f-4017-bcf2-31f1121d10eb">
+						<SHORT-NAME>RC_GSIGID</SHORT-NAME>
+						<LONG-NAME>RoutineControl SOFTWARE_SIGNATURE_LESEN</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-3a13b2cd-8aac-43db-8988-7a669c5e0955"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-d68a460b-0450-4b84-aa74-d411ef7bb323"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-e87c2d7e-9125-4a58-9f7a-1611a96d57fc" IS-MANDATORY="true" OID="id-e87c2d7e-9125-4a58-9f7a-1611a96d57fc">
+						<SHORT-NAME>RC_GFSS</SHORT-NAME>
+						<LONG-NAME>RoutineControl STATUS_LESEN</LONG-NAME>
+						<ADMIN-DATA>
+							<LANGUAGE>eng</LANGUAGE>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF DOCREF="ISO_14229_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-582251e8-a9b9-4e5a-bd33-29fc7d8fb101"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<STATE>Release</STATE>
+									<DATE>2006-02-28T16:00:00</DATE>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>added</CHANGE>
+											<REASON>Initial Release</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF DOCREF="ISO_14229_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-582251e8-a9b9-4e5a-bd33-29fc7d8fb101"/>
+									<REVISION-LABEL>001.000.001</REVISION-LABEL>
+									<STATE>Release</STATE>
+									<DATE>2006-03-06T12:00:00</DATE>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>changed</CHANGE>
+											<REASON>changed status values from German to English according to PSdZ naming conventions</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-58948b37-2ba5-4678-bf12-c6770347c71d"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-989af929-3ad2-4fc0-81e1-ff7cff3cce77"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-503680b2-cffd-4871-baf0-338b3dded8e0" IS-MANDATORY="true" OID="id-503680b2-cffd-4871-baf0-338b3dded8e0">
+						<SHORT-NAME>RC_CCERT</SHORT-NAME>
+						<LONG-NAME>RoutineControl ZERTIFIKAT_PRUEFEN</LONG-NAME>
+						<ADMIN-DATA>
+							<LANGUAGE>eng</LANGUAGE>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF DOCREF="ISO_14229_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-582251e8-a9b9-4e5a-bd33-29fc7d8fb101"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<STATE>Release</STATE>
+									<DATE>2006-02-28T16:00:00</DATE>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>added</CHANGE>
+											<REASON>Initial Release</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF DOCREF="ISO_14229_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-582251e8-a9b9-4e5a-bd33-29fc7d8fb101"/>
+									<REVISION-LABEL>001.000.001</REVISION-LABEL>
+									<STATE>Release</STATE>
+									<DATE>2006-03-06T12:00:00</DATE>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>bug fix</CHANGE>
+											<REASON>added missing return codes "WRONG_CERT_CONTENT_CRIT_ELEM" (0xD4) and "WRONG_CERT_CONTENT_KEYUSAGE" (0xE1) to SWT_RC_RS_DOP</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-7ae5fff5-e3e0-438a-b8f8-db88342b0c92"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-a733e1ff-543a-4ccf-ba03-ed0f416c6ffd"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-2f54f4ae-6de0-4caf-817a-d3f8a5f2775a" IS-MANDATORY="true" OID="id-2f54f4ae-6de0-4caf-817a-d3f8a5f2775a">
+						<SHORT-NAME>RC_GCERT</SHORT-NAME>
+						<LONG-NAME>RoutineControl ZERTIFIKAT_LESEN</LONG-NAME>
+						<ADMIN-DATA>
+							<LANGUAGE>eng</LANGUAGE>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF DOCREF="ISO_14229_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-582251e8-a9b9-4e5a-bd33-29fc7d8fb101"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<STATE>Release</STATE>
+									<DATE>2006-02-28T16:00:00</DATE>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>added</CHANGE>
+											<REASON>Initial Release</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF DOCREF="ISO_14229_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-582251e8-a9b9-4e5a-bd33-29fc7d8fb101"/>
+									<REVISION-LABEL>001.000.001</REVISION-LABEL>
+									<STATE>Release</STATE>
+									<DATE>2006-04-06T16:00:00</DATE>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>bug fix</CHANGE>
+											<REASON>added missing return codes "SIGS_CERT_INVALID" (0xE9) and "SIGS_CERT_NOT_CHECKED" (0xEA) to SWT_RC_RS_DOP</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-c8af3045-139d-4023-a31b-ea863f6fbcee"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-9cb3238a-0d5f-46aa-91e4-55e57646806d"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-9198e2df-3b69-44e0-950e-13fb2f565a82" IS-MANDATORY="true" OID="id-9198e2df-3b69-44e0-950e-13fb2f565a82">
+						<SHORT-NAME>RC_SFSC</SHORT-NAME>
+						<LONG-NAME>RoutineControl FREISCHALTCODE_SCHREIBEN</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-e5bcec3c-c446-4e76-bbe2-2177bd173bee"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-0de2aa8f-18c9-4c1b-a597-a8f1b7e8cc75"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-b26e6295-2fd2-4bcf-ae9d-91abc609c651" IS-MANDATORY="true" OID="id-b26e6295-2fd2-4bcf-ae9d-91abc609c651">
+						<SHORT-NAME>RC_SCERT</SHORT-NAME>
+						<LONG-NAME>RoutineControl ZERTIFIKAT_SCHREIBEN</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-edc9730a-0348-4ea2-8805-0bd069a116ed"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-bdbb56b1-c2de-4ed8-a963-f26702246855"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-30617505-c20f-4198-9933-aa8b5da6c3a8" IS-MANDATORY="true" OID="id-30617505-c20f-4198-9933-aa8b5da6c3a8">
+						<SHORT-NAME>RC_CFSC</SHORT-NAME>
+						<LONG-NAME>RoutineControl FREISCHALTCODE_PRUEFEN</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-36c0352b-50af-43b2-aa52-4108456c8885"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-1b6d5f5d-e30f-4d5c-8145-c45059d30100"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-2ced37ea-64ae-4a61-ae45-80089f31ab9a" IS-MANDATORY="true" OID="id-2ced37ea-64ae-4a61-ae45-80089f31ab9a">
+						<SHORT-NAME>RC_DFSC</SHORT-NAME>
+						<LONG-NAME>RoutineControl FREISCHALTCODE_STORNIEREN</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-d0461783-aac5-4cf0-9c8c-6176f8afdecd"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-9840e374-dc01-4196-8d43-5b9b7b8c4487"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-ecc4c59f-a0af-450a-80b8-067c8e110889" IS-MANDATORY="true" OID="id-ecc4c59f-a0af-450a-80b8-067c8e110889">
+						<SHORT-NAME>RC_GFSC</SHORT-NAME>
+						<LONG-NAME>RoutineControl FREISCHALTCODE_LESEN</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-245edde7-50c6-4678-b1b3-99171b685f86"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-2cb41d4e-08b0-45b0-8eb2-2206f42ec9e7"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-c0a4649a-8de9-4cda-b0d9-55f2a9ee0fb2" IS-MANDATORY="true" OID="id-c0a4649a-8de9-4cda-b0d9-55f2a9ee0fb2">
+						<SHORT-NAME>RC_PCHECK</SHORT-NAME>
+						<LONG-NAME>RoutineControl PERIODISCHE_PRUEFUNG</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-486a407b-33b9-44b5-9cf8-e7cd36561c68"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-c9a40940-11dd-461a-86e9-cce0e57cd8fc"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-e45a0229-dda6-4a31-bcde-8035d512d5f0" IS-MANDATORY="true" OID="id-e45a0229-dda6-4a31-bcde-8035d512d5f0">
+						<SHORT-NAME>RC_GSGD</SHORT-NAME>
+						<LONG-NAME>RoutineControl SG_DATEN_LESEN</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-2d7aa840-776e-4727-b022-151bef663515"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-53d6cd3e-fdfd-4dbe-970c-4af166cc5a96"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-4362176d-6d7a-4e78-ab52-91167f4f003b" IS-MANDATORY="true" OID="id-4362176d-6d7a-4e78-ab52-91167f4f003b">
+						<SHORT-NAME>RC_GSWIDF</SHORT-NAME>
+						<LONG-NAME>RoutineControl SWID_FUNKTIONAL_LESEN</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-ebbe1e99-118b-4215-8481-8e79c3be00b2"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-95888110-f2ad-4f96-8590-4c622740f0ba"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-501e5b7a-065a-4485-b3bc-76772a6909db" IS-MANDATORY="true" OID="id-501e5b7a-065a-4485-b3bc-76772a6909db">
+						<SHORT-NAME>RC_GVER</SHORT-NAME>
+						<LONG-NAME>RoutineControl SWT_VERSION_LESEN</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-de8ccefc-7809-46f5-b2dd-73da9e66f32d"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-af6c546c-0e83-4bb6-8641-f3a115b5a3a5"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-1d700182-26ea-4a6d-a275-a631dcde9e8e" IS-MANDATORY="true" OID="id-1d700182-26ea-4a6d-a275-a631dcde9e8e">
+						<SHORT-NAME>RC_GSIGS</SHORT-NAME>
+						<LONG-NAME>RoutineControl SWT_STATUS_LESEN_SWSIG</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-b1dfa217-434b-411e-8e83-7429b325227c"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-31c31d54-d2ba-4a9b-aa92-bbb3cb94e362"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-97f2f387-b039-4b90-b491-070db24c8600"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<SINGLE-ECU-JOB ID="id-002e298f-5bff-4a1f-8e98-48ac618f0611" OID="id-002e298f-5bff-4a1f-8e98-48ac618f0611">
+						<SHORT-NAME>AUTH_ECU_FOR_FSC_DEPLOY</SHORT-NAME>
+						<LONG-NAME>MCD3_AuthenticateECUforFSCDeploy</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_AuthenticateECUforFSCDeploy</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>KEY</SHORT-NAME>
+								<LONG-NAME>Key</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-2fcb71b8-8438-441e-b05d-fa53f9de646a" OID="id-2fcb71b8-8438-441e-b05d-fa53f9de646a">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-138aac67-7e55-4013-aa21-1d9b53a3b9fa" OID="id-138aac67-7e55-4013-aa21-1d9b53a3b9fa">
+						<SHORT-NAME>FINALIZE_ECU_FSC_DEPLOY</SHORT-NAME>
+						<LONG-NAME>MCD3_FinalizeECUFSCDeploy</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_FinalizeECUFSCDeploy</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-0d6f1959-c33a-4b2b-9c26-8aa9abb2719a" OID="id-0d6f1959-c33a-4b2b-9c26-8aa9abb2719a">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-74071dad-a92f-4a29-942e-91c86713fd09" OID="id-74071dad-a92f-4a29-942e-91c86713fd09">
+						<SHORT-NAME>REQUEST_SWT_STATUS</SHORT-NAME>
+						<LONG-NAME>MCD3_RequestSWTStatus</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_RequestSWTStatus</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-47734a4b-09cc-41e1-8e0a-6e9d82c7cb23" OID="id-47734a4b-09cc-41e1-8e0a-6e9d82c7cb23">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-8bfc5e46-1b5b-4274-a4ab-587a61daf142" OID="id-8bfc5e46-1b5b-4274-a4ab-587a61daf142">
+								<SHORT-NAME>SLR</SHORT-NAME>
+								<LONG-NAME>StatusLesenResult</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-48ee1553-8d9f-426d-aac3-9ea4df47700a" OID="id-48ee1553-8d9f-426d-aac3-9ea4df47700a">
+						<SHORT-NAME>SWT_FULL_ACTIVATE</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTFullActivate</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTFullActivate</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>VIN</SHORT-NAME>
+								<LONG-NAME>VIN</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>APN</SHORT-NAME>
+								<LONG-NAME>ApplicationNumber</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>UI</SHORT-NAME>
+								<LONG-NAME>UpgradeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-c721b2df-a000-46fd-a35e-fc0673845f9e" OID="id-c721b2df-a000-46fd-a35e-fc0673845f9e">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-200cb97e-0e3c-4bf2-8eac-4b3a2a4b52cb" OID="id-200cb97e-0e3c-4bf2-8eac-4b3a2a4b52cb">
+						<SHORT-NAME>SWT_FULL_DISABLE_FSC</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTFullDisableFSC</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTFullDisableFSC</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>APN</SHORT-NAME>
+								<LONG-NAME>ApplicationNumber</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>UI</SHORT-NAME>
+								<LONG-NAME>UpgradeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-70a52562-9f99-4f2d-b642-5e36494a9982" OID="id-70a52562-9f99-4f2d-b642-5e36494a9982">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-994604e2-2899-4b56-90b8-4a75776a4291" OID="id-994604e2-2899-4b56-90b8-4a75776a4291">
+						<SHORT-NAME>SWT_FULL_GET_FSC_CERT</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTFullGetFSCCert</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTFullGetFSCCert</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>APN</SHORT-NAME>
+								<LONG-NAME>ApplicationNumber</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>UI</SHORT-NAME>
+								<LONG-NAME>UpgradeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-f0fa4b1f-b55a-4bc6-8fe2-7c0a915736b1" OID="id-f0fa4b1f-b55a-4bc6-8fe2-7c0a915736b1">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-036f4785-9659-43bd-938d-9b5150f326a5" OID="id-036f4785-9659-43bd-938d-9b5150f326a5">
+								<SHORT-NAME>FSCC</SHORT-NAME>
+								<LONG-NAME>FSCCertificate</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-c70a3004-6790-4948-83ce-4a6af68849d9" OID="id-c70a3004-6790-4948-83ce-4a6af68849d9">
+						<SHORT-NAME>SWT_FULL_STORE_CERT</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTFullStoreCert</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTFullStoreCert</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>APN</SHORT-NAME>
+								<LONG-NAME>ApplicationNumber</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>UI</SHORT-NAME>
+								<LONG-NAME>UpgradeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>SWTC</SHORT-NAME>
+								<LONG-NAME>SWTCertification</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-b508bc81-66d9-4b33-9737-c401628e1e8d" OID="id-b508bc81-66d9-4b33-9737-c401628e1e8d">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-21403726-0f32-418d-b940-844bfcbe4e5e" OID="id-21403726-0f32-418d-b940-844bfcbe4e5e">
+						<SHORT-NAME>SWT_FULL_STORE_FSC</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTFullStoreFSC</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTFullStoreFSC</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>APN</SHORT-NAME>
+								<LONG-NAME>ApplicationNumber</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>UI</SHORT-NAME>
+								<LONG-NAME>UpgradeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>F</SHORT-NAME>
+								<LONG-NAME>Freischaltcode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-ec353857-73b0-41a3-aec1-f0dc157c1c98" OID="id-ec353857-73b0-41a3-aec1-f0dc157c1c98">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-3bd30dd6-1376-4933-b3c7-4ea4e9aa1c30" OID="id-3bd30dd6-1376-4933-b3c7-4ea4e9aa1c30">
+						<SHORT-NAME>SWT_LIGHT_ACTIVATE</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTLightActivate</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTLightActivate</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>VIN</SHORT-NAME>
+								<LONG-NAME>VIN</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>APN</SHORT-NAME>
+								<LONG-NAME>ApplicationNumber</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>UI</SHORT-NAME>
+								<LONG-NAME>UpgradeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-b8167ffe-2173-4aeb-9223-8bc8ecc936a6" OID="id-b8167ffe-2173-4aeb-9223-8bc8ecc936a6">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-1dc78b32-70ed-48d5-ab25-1d5f788255d4" OID="id-1dc78b32-70ed-48d5-ab25-1d5f788255d4">
+						<SHORT-NAME>SWT_LIGHT_DISABLE_FSC</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTLightDisableFSC</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTLightDisableFSC</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>APN</SHORT-NAME>
+								<LONG-NAME>ApplicationNumber</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>UI</SHORT-NAME>
+								<LONG-NAME>UpgradeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-46b97de2-a9c4-4c54-90ed-d77a20612a43" OID="id-46b97de2-a9c4-4c54-90ed-d77a20612a43">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-bccd3d3e-0f6f-44da-9f90-e13a9a83c569" OID="id-bccd3d3e-0f6f-44da-9f90-e13a9a83c569">
+						<SHORT-NAME>SWT_LIGHT_STORE_FSC</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTLightStoreFSC</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTLightStoreFSC</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>APN</SHORT-NAME>
+								<LONG-NAME>ApplicationNumber</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>UI</SHORT-NAME>
+								<LONG-NAME>UpgradeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>F</SHORT-NAME>
+								<LONG-NAME>Freischaltcode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-f679250c-3410-40cb-8eee-bef06f113508" OID="id-f679250c-3410-40cb-8eee-bef06f113508">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-d494fd20-47e0-4a84-9c9d-4df3d8897e4e" OID="id-d494fd20-47e0-4a84-9c9d-4df3d8897e4e">
+						<SHORT-NAME>SWT_PREPARE_ECU</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTPrepareECU</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTPrepareECU</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>TESTERID</SHORT-NAME>
+								<LONG-NAME>TesterID</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-06330fc1-b3d6-43c9-bc4c-64b7b521c4a4" OID="id-06330fc1-b3d6-43c9-bc4c-64b7b521c4a4">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-68070d17-0cac-4d7f-9a67-c668c4cf6a4c" OID="id-68070d17-0cac-4d7f-9a67-c668c4cf6a4c">
+								<SHORT-NAME>SEED</SHORT-NAME>
+								<LONG-NAME>Seed</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-e82e4a94-89ad-42c2-8d92-185f95764531" OID="id-e82e4a94-89ad-42c2-8d92-185f95764531">
+						<SHORT-NAME>SWT_REQUEST_STATUS_FOR_ECU</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTRequestStatusForECU</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTRequestStatusForECU</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>APN</SHORT-NAME>
+								<LONG-NAME>ApplicationNumber</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>UI</SHORT-NAME>
+								<LONG-NAME>UpgradeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>PERIODC</SHORT-NAME>
+								<LONG-NAME>PeriodicalCheck</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>IS_GET_FSC_ENABLED</SHORT-NAME>
+								<LONG-NAME>IsGetFscEnabled</LONG-NAME>
+								<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-ae67d2c3-037d-4261-9758-cf6d944315f0" OID="id-ae67d2c3-037d-4261-9758-cf6d944315f0">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-8982176b-9731-4fbb-abd4-262657e7dd4a" OID="id-8982176b-9731-4fbb-abd4-262657e7dd4a">
+								<SHORT-NAME>VIN</SHORT-NAME>
+								<LONG-NAME>VIN</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-171b891a-d9db-4214-ae93-34c776f64edf" OID="id-171b891a-d9db-4214-ae93-34c776f64edf">
+								<SHORT-NAME>SLR</SHORT-NAME>
+								<LONG-NAME>StatusLesenResult</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-a3297237-64c1-40d9-a046-b99879d03aea" OID="id-a3297237-64c1-40d9-a046-b99879d03aea">
+								<SHORT-NAME>LH_NUMBER</SHORT-NAME>
+								<LONG-NAME>LastenheftNummer</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-d62325fa-2612-47df-bab2-3428d2159732" OID="id-d62325fa-2612-47df-bab2-3428d2159732">
+								<SHORT-NAME>SWT_LIB_VERSION</SHORT-NAME>
+								<LONG-NAME>SWTLibraryVersion</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-28bfe35d-1d68-405f-b567-3e0812ecf330" OID="id-28bfe35d-1d68-405f-b567-3e0812ecf330">
+								<SHORT-NAME>SWT_APP_SIG_STATUS_LIST</SHORT-NAME>
+								<LONG-NAME>SWTAppSignaturStatus</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-54240fd2-1095-40db-a9de-5f3b347cf442"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-1794e32d-81b9-4158-be26-e27270527601" OID="id-1794e32d-81b9-4158-be26-e27270527601">
+						<SHORT-NAME>SWT_REQUEST_STATUS_FOR_ECU_2</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTRequestStatusForECU2</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTRequestStatusForECU2</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>APN</SHORT-NAME>
+								<LONG-NAME>ApplicationNumber</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>UI</SHORT-NAME>
+								<LONG-NAME>UpgradeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>PERIODC</SHORT-NAME>
+								<LONG-NAME>PeriodicalCheck</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>IS_GET_FSC_ENABLED</SHORT-NAME>
+								<LONG-NAME>IsGetFscEnabled</LONG-NAME>
+								<PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-60a1e7b2-c0f0-4503-b4ff-c5d405460bcf" OID="id-60a1e7b2-c0f0-4503-b4ff-c5d405460bcf">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-dd4cfc8c-d8bf-4597-86b3-1a57367d8937" OID="id-dd4cfc8c-d8bf-4597-86b3-1a57367d8937">
+								<SHORT-NAME>VIN</SHORT-NAME>
+								<LONG-NAME>VIN</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-1152779f-bef5-49db-afc8-c313525d4693" OID="id-1152779f-bef5-49db-afc8-c313525d4693">
+								<SHORT-NAME>SLR</SHORT-NAME>
+								<LONG-NAME>StatusLesenResult</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-5edf7ef1-8f02-47da-a034-9b415586ca74" OID="id-5edf7ef1-8f02-47da-a034-9b415586ca74">
+								<SHORT-NAME>LH_NUMBER</SHORT-NAME>
+								<LONG-NAME>LastenheftNummer</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-a65803c9-9940-416b-97da-386ae56a0c71" OID="id-a65803c9-9940-416b-97da-386ae56a0c71">
+								<SHORT-NAME>SWT_LIB_VERSION</SHORT-NAME>
+								<LONG-NAME>SWTLibraryVersion</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+							<OUTPUT-PARAM ID="id-84c33f73-81e7-4bdd-a740-8310af4e0a56" OID="id-84c33f73-81e7-4bdd-a740-8310af4e0a56">
+								<SHORT-NAME>SWT_APP_SIG_STATUS_LIST</SHORT-NAME>
+								<LONG-NAME>SWTAppSignaturStatus</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-54240fd2-1095-40db-a9de-5f3b347cf442"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-b4628385-ab94-4fdb-9764-2e409320d4f3" OID="id-b4628385-ab94-4fdb-9764-2e409320d4f3">
+						<SHORT-NAME>SWT_SHORT_ACTIVATE</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTShortActivate</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTShortActivate</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>VIN</SHORT-NAME>
+								<LONG-NAME>VIN</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>APN</SHORT-NAME>
+								<LONG-NAME>ApplicationNumber</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>UI</SHORT-NAME>
+								<LONG-NAME>UpgradeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-81466cfa-63eb-4733-9c38-25994530a9ba" OID="id-81466cfa-63eb-4733-9c38-25994530a9ba">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-b826e21e-c0e1-40bc-a1e8-fe7ae5e88de0" OID="id-b826e21e-c0e1-40bc-a1e8-fe7ae5e88de0">
+						<SHORT-NAME>SWT_SHORT_DISABLE_FSC</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTShortDisableFSC</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTShortDisableFSC</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>APN</SHORT-NAME>
+								<LONG-NAME>ApplicationNumber</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>UI</SHORT-NAME>
+								<LONG-NAME>UpgradeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-9980f039-d3a7-48ad-a077-1153f0c73f29" OID="id-9980f039-d3a7-48ad-a077-1153f0c73f29">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-44ecd27f-aa4c-4b0a-af70-43c3f761cecf" OID="id-44ecd27f-aa4c-4b0a-af70-43c3f761cecf">
+						<SHORT-NAME>SWT_SHORT_STORE_FSC</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTShortStoreFSC</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTShortStoreFSC</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>APN</SHORT-NAME>
+								<LONG-NAME>ApplicationNumber</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>UI</SHORT-NAME>
+								<LONG-NAME>UpgradeIndex</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-a9cb5bfa-a533-44e4-8fc7-15c0bf265ee0" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+							<INPUT-PARAM>
+								<SHORT-NAME>F</SHORT-NAME>
+								<LONG-NAME>Freischaltcode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-8cc353f8-7e60-4573-9acc-19510d6c0f9a" OID="id-8cc353f8-7e60-4573-9acc-19510d6c0f9a">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+					<SINGLE-ECU-JOB ID="id-8961e211-8749-47a4-9212-dcffa4677c54" OID="id-8961e211-8749-47a4-9212-dcffa4677c54">
+						<SHORT-NAME>SWT_WRITE_VIN</SHORT-NAME>
+						<LONG-NAME>MCD3_SWTWriteVin</LONG-NAME>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-0d4c5ef6-52ee-40e7-bf6c-fcc838f8babd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<PROG-CODES>
+							<PROG-CODE>
+								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+								<SYNTAX>JAR</SYNTAX>
+								<REVISION>001.003.009</REVISION>
+								<ENTRYPOINT>com.bmw.psdz.jobs.uds.MCD3_SWTWriteVin</ENTRYPOINT>
+							</PROG-CODE>
+						</PROG-CODES>
+						<INPUT-PARAMS>
+							<INPUT-PARAM>
+								<SHORT-NAME>VIN</SHORT-NAME>
+								<LONG-NAME>VIN</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</INPUT-PARAM>
+						</INPUT-PARAMS>
+						<OUTPUT-PARAMS>
+							<OUTPUT-PARAM ID="id-e89c9e6d-dae2-4656-8e32-0235ed00adb9" OID="id-e89c9e6d-dae2-4656-8e32-0235ed00adb9">
+								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+								<LONG-NAME>PosRespMessage</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</OUTPUT-PARAM>
+						</OUTPUT-PARAMS>
+						<NEG-OUTPUT-PARAMS>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+								<LONG-NAME>ErrorCode</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+								<LONG-NAME>ErrorDescription</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+							<NEG-OUTPUT-PARAM>
+								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+								<LONG-NAME>ErrorSeverity</LONG-NAME>
+								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+							</NEG-OUTPUT-PARAM>
+						</NEG-OUTPUT-PARAMS>
+					</SINGLE-ECU-JOB>
+				</DIAG-COMMS>
+				<REQUESTS>
+					<REQUEST ID="id-3a13b2cd-8aac-43db-8988-7a669c5e0955" OID="id-3a13b2cd-8aac-43db-8988-7a669c5e0955">
+						<SHORT-NAME>RC_GSIGID_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl SOFTWARE_SIGNATURE_LESEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSIGID_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSIGID_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSIGID_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSIGID_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SOFTWARE_SIGNATURE_LESEN</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GSIGID_SWID</SHORT-NAME>
+								<LONG-NAME>SoftwareID</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-1147a4f2-2ab5-4ed1-894e-db45053ef48f"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-58948b37-2ba5-4678-bf12-c6770347c71d" OID="id-58948b37-2ba5-4678-bf12-c6770347c71d">
+						<SHORT-NAME>RC_GFSS_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl STATUS_LESEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GFSS_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GFSS_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GFSS_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GFSS_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>STATUS_LESEN</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-7ae5fff5-e3e0-438a-b8f8-db88342b0c92" OID="id-7ae5fff5-e3e0-438a-b8f8-db88342b0c92">
+						<SHORT-NAME>RC_CCERT_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl ZERTIFIKAT_PRUEFEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_CCERT_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_CCERT_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_CCERT_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_CCERT_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>ZERTIFIKAT_PRUEFEN</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_CCERT_CT</SHORT-NAME>
+								<LONG-NAME>CertificateType</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-65df6cb6-48ab-42cf-8ffc-ff33513f5344"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_CCERT_SWID</SHORT-NAME>
+								<LONG-NAME>SoftwareID</LONG-NAME>
+								<BYTE-POSITION>6</BYTE-POSITION>
+								<DOP-REF ID-REF="id-1147a4f2-2ab5-4ed1-894e-db45053ef48f"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-c8af3045-139d-4023-a31b-ea863f6fbcee" OID="id-c8af3045-139d-4023-a31b-ea863f6fbcee">
+						<SHORT-NAME>RC_GCERT_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl ZERTIFIKAT_LESEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GCERT_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GCERT_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GCERT_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GCERT_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>ZERTIFIKAT_LESEN</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GCERT_CT</SHORT-NAME>
+								<LONG-NAME>CertificateType</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-65df6cb6-48ab-42cf-8ffc-ff33513f5344"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GCERT_SWID</SHORT-NAME>
+								<LONG-NAME>SoftwareID</LONG-NAME>
+								<BYTE-POSITION>6</BYTE-POSITION>
+								<DOP-REF ID-REF="id-1147a4f2-2ab5-4ed1-894e-db45053ef48f"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-e5bcec3c-c446-4e76-bbe2-2177bd173bee" OID="id-e5bcec3c-c446-4e76-bbe2-2177bd173bee">
+						<SHORT-NAME>RC_SFSC_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl FREISCHALTCODE_SCHREIBEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_SFSC_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_SFSC_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_SFSC_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_SFSC_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>FREISCHALTCODE_SCHREIBEN</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_SFSC_SWID</SHORT-NAME>
+								<LONG-NAME>SoftwareID</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-1147a4f2-2ab5-4ed1-894e-db45053ef48f"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_SFSC_FD</SHORT-NAME>
+								<LONG-NAME>FscData</LONG-NAME>
+								<BYTE-POSITION>9</BYTE-POSITION>
+								<DOP-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-edc9730a-0348-4ea2-8805-0bd069a116ed" OID="id-edc9730a-0348-4ea2-8805-0bd069a116ed">
+						<SHORT-NAME>RC_SCERT_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl ZERTIFIKAT_SCHREIBEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_SCERT_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_SCERT_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_SCERT_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_SCERT_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>ZERTIFIKAT_SCHREIBEN</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_SCERT_CT</SHORT-NAME>
+								<LONG-NAME>CertificateType</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-65df6cb6-48ab-42cf-8ffc-ff33513f5344"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_SCERT_SWID</SHORT-NAME>
+								<LONG-NAME>SoftwareID</LONG-NAME>
+								<BYTE-POSITION>6</BYTE-POSITION>
+								<DOP-REF ID-REF="id-1147a4f2-2ab5-4ed1-894e-db45053ef48f"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_SCERT_CD</SHORT-NAME>
+								<LONG-NAME>CertificateData</LONG-NAME>
+								<BYTE-POSITION>10</BYTE-POSITION>
+								<DOP-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-36c0352b-50af-43b2-aa52-4108456c8885" OID="id-36c0352b-50af-43b2-aa52-4108456c8885">
+						<SHORT-NAME>RC_CFSC_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl FREISCHALTCODE_PRUEFEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_CFSC_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_CFSC_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_CFSC_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_CFSC_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>FREISCHALTCODE_PRUEFEN</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_CFSC_SWID</SHORT-NAME>
+								<LONG-NAME>SoftwareID</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-1147a4f2-2ab5-4ed1-894e-db45053ef48f"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-d0461783-aac5-4cf0-9c8c-6176f8afdecd" OID="id-d0461783-aac5-4cf0-9c8c-6176f8afdecd">
+						<SHORT-NAME>RC_DFSC_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl FREISCHALTCODE_STORNIEREN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_DFSC_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_DFSC_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_DFSC_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_DFSC_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>FREISCHALTCODE_STORNIEREN</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_DFSC_SWID</SHORT-NAME>
+								<LONG-NAME>SoftwareID</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-1147a4f2-2ab5-4ed1-894e-db45053ef48f"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-245edde7-50c6-4678-b1b3-99171b685f86" OID="id-245edde7-50c6-4678-b1b3-99171b685f86">
+						<SHORT-NAME>RC_GFSC_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl FREISCHALTCODE_LESEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GFSC_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GFSC_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GFSC_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GFSC_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>FREISCHALTCODE_LESEN</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GFSC_SWID</SHORT-NAME>
+								<LONG-NAME>SoftwareID</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-1147a4f2-2ab5-4ed1-894e-db45053ef48f"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-486a407b-33b9-44b5-9cf8-e7cd36561c68" OID="id-486a407b-33b9-44b5-9cf8-e7cd36561c68">
+						<SHORT-NAME>RC_PCHECK_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl PERIODISCHE_PRUEFUNG Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_PCHECK_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_PCHECK_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_PCHECK_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_PCHECK_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>PERIODISCHE_PRUEFUNG</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_PCHECK_SWID</SHORT-NAME>
+								<LONG-NAME>SoftwareID</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-1147a4f2-2ab5-4ed1-894e-db45053ef48f"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-2d7aa840-776e-4727-b022-151bef663515" OID="id-2d7aa840-776e-4727-b022-151bef663515">
+						<SHORT-NAME>RC_GSGD_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl SG_DATEN_LESEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSGD_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSGD_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSGD_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSGD_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SG_DATEN_LESEN</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-ebbe1e99-118b-4215-8481-8e79c3be00b2" OID="id-ebbe1e99-118b-4215-8481-8e79c3be00b2">
+						<SHORT-NAME>RC_GSWIDF_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl SWID_FUNKTIONAL_LESEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSWIDF_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSWIDF_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSWIDF_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSWIDF_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SWID_FUNKTIONAL_LESEN</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-de8ccefc-7809-46f5-b2dd-73da9e66f32d" OID="id-de8ccefc-7809-46f5-b2dd-73da9e66f32d">
+						<SHORT-NAME>RC_GVER_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl SWT_VERSION_LESEN Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GVER_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GVER_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GVER_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GFSS_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SWT_VERSION_LESEN</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-31c31d54-d2ba-4a9b-aa92-bbb3cb94e362" OID="id-31c31d54-d2ba-4a9b-aa92-bbb3cb94e362">
+						<SHORT-NAME>RC_GSIGS_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl STATUS_LESEN_SWSIG Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSIGS_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-f8165071-a1c0-4f12-b9eb-3ae92f8ce9ca"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSIGS_SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-c4fe6e02-5d0f-4838-9e09-fc7a1bc615df"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSIGS_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>SwtRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-2563af23-8239-4825-9aac-b2d9412b621a"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_GSIGS_RCO</SHORT-NAME>
+								<LONG-NAME>routineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>STATUS_LESEN_SWSIG</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-c5fdb662-5ca8-4da4-916d-d526a4cebd81"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+				</REQUESTS>
+				<POS-RESPONSES>
+					<POS-RESPONSE ID="id-d68a460b-0450-4b84-aa74-d411ef7bb323" OID="id-d68a460b-0450-4b84-aa74-d411ef7bb323">
+						<SHORT-NAME>RC_GSIGID_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl SOFTWARE_SIGNATURE_LESEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GSIGID_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GSIGID_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GSIGID_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GSIGID_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GSIGID_SCID</SHORT-NAME>
+								<LONG-NAME>SigningCertificateID</LONG-NAME>
+								<BYTE-POSITION>6</BYTE-POSITION>
+								<DOP-REF ID-REF="id-06f2e683-ad8a-480f-a676-d6f99bc14d62"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-989af929-3ad2-4fc0-81e1-ff7cff3cce77" OID="id-989af929-3ad2-4fc0-81e1-ff7cff3cce77">
+						<SHORT-NAME>RC_GFSS_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl STATUS_LESEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GFSS_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GFSS_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GFSS_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GFSS_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GFSS_RCS</SHORT-NAME>
+								<LONG-NAME>RootCertStatus</LONG-NAME>
+								<BYTE-POSITION>6</BYTE-POSITION>
+								<DOP-REF ID-REF="id-8d51bc5d-3cbf-4473-bf5e-c33d96bdb526"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GFSS_SSCS</SHORT-NAME>
+								<LONG-NAME>SigSCertStatus</LONG-NAME>
+								<BYTE-POSITION>7</BYTE-POSITION>
+								<DOP-REF ID-REF="id-88459153-8bc2-4101-8310-898382b7b7ba"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GFSS_SWSS</SHORT-NAME>
+								<LONG-NAME>SWSigStatus</LONG-NAME>
+								<BYTE-POSITION>8</BYTE-POSITION>
+								<DOP-REF ID-REF="id-88459153-8bc2-4101-8310-898382b7b7ba"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GFSS_FSCS</SHORT-NAME>
+								<LONG-NAME>FSCSField</LONG-NAME>
+								<BYTE-POSITION>9</BYTE-POSITION>
+								<DOP-REF ID-REF="id-4e93e1e4-6197-4805-8219-16aa525b3b81"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-a733e1ff-543a-4ccf-ba03-ed0f416c6ffd" OID="id-a733e1ff-543a-4ccf-ba03-ed0f416c6ffd">
+						<SHORT-NAME>RC_CCERT_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl ZERTIFIKAT_PRUEFEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_CCERT_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_CCERT_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_CCERT_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_CCERT_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-9cb3238a-0d5f-46aa-91e4-55e57646806d" OID="id-9cb3238a-0d5f-46aa-91e4-55e57646806d">
+						<SHORT-NAME>RC_GCERT_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl ZERTIFIKAT_LESEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GCERT_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GCERT_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GCERT_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GCERT_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GCERT_CD</SHORT-NAME>
+								<LONG-NAME>CertificateData</LONG-NAME>
+								<BYTE-POSITION>6</BYTE-POSITION>
+								<DOP-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-0de2aa8f-18c9-4c1b-a597-a8f1b7e8cc75" OID="id-0de2aa8f-18c9-4c1b-a597-a8f1b7e8cc75">
+						<SHORT-NAME>RC_SFSC_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl FREISCHALTCODE_SCHREIBEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_SFSC_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_SFSC_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_SFSC_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_SFSC_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-bdbb56b1-c2de-4ed8-a963-f26702246855" OID="id-bdbb56b1-c2de-4ed8-a963-f26702246855">
+						<SHORT-NAME>RC_SCERT_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl ZERTIFIKAT_SCHREIBEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_SCERT_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_SCERT_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_SCERT_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_SCERT_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-1b6d5f5d-e30f-4d5c-8145-c45059d30100" OID="id-1b6d5f5d-e30f-4d5c-8145-c45059d30100">
+						<SHORT-NAME>RC_CFSC_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl FREISCHALTCODE_PRUEFEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_CFSC_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_CFSC_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_CFSC_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_CFSC_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-9840e374-dc01-4196-8d43-5b9b7b8c4487" OID="id-9840e374-dc01-4196-8d43-5b9b7b8c4487">
+						<SHORT-NAME>RC_DFSC_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl FREISCHALTCODE_STORNIEREN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_DFSC_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_DFSC_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_DFSC_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_DFSC_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-2cb41d4e-08b0-45b0-8eb2-2206f42ec9e7" OID="id-2cb41d4e-08b0-45b0-8eb2-2206f42ec9e7">
+						<SHORT-NAME>RC_GFSC_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl FREISCHALTCODE_LESEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GFSC_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GFSC_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GFSC_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GFSC_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GFSC_FD</SHORT-NAME>
+								<LONG-NAME>FSCData</LONG-NAME>
+								<BYTE-POSITION>6</BYTE-POSITION>
+								<DOP-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-c9a40940-11dd-461a-86e9-cce0e57cd8fc" OID="id-c9a40940-11dd-461a-86e9-cce0e57cd8fc">
+						<SHORT-NAME>RC_PCHECK_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl PERIODISCHE_PRUEFUNG Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_PCHECK_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_PCHECK_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_PCHECK_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_PCHECK_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-53d6cd3e-fdfd-4dbe-970c-4af166cc5a96" OID="id-53d6cd3e-fdfd-4dbe-970c-4af166cc5a96">
+						<SHORT-NAME>RC_GSGD_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl SG_DATEN_LESEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GSGD_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GSGD_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GSGD_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GSGD_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GSGD_ECUD</SHORT-NAME>
+								<LONG-NAME>ECU data</LONG-NAME>
+								<BYTE-POSITION>6</BYTE-POSITION>
+								<DOP-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-95888110-f2ad-4f96-8590-4c622740f0ba" OID="id-95888110-f2ad-4f96-8590-4c622740f0ba">
+						<SHORT-NAME>RC_GSWIDF_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl SG_DATEN_LESEN Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GSWIDF_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GSWIDF_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GSWIDF_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GSWIDF_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GSWIDF_SGID</SHORT-NAME>
+								<LONG-NAME>SGID</LONG-NAME>
+								<BYTE-POSITION>6</BYTE-POSITION>
+								<DOP-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-759d5d2a-50b3-4232-9dbd-0d21e59b72e6"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GSWIDF_LOSWID</SHORT-NAME>
+								<LONG-NAME>ListOfSWIDs</LONG-NAME>
+								<BYTE-POSITION>7</BYTE-POSITION>
+								<DOP-REF ID-REF="id-af5fc14d-50f4-4ce4-bc2c-f12df07790e4"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-af6c546c-0e83-4bb6-8641-f3a115b5a3a5" OID="id-af6c546c-0e83-4bb6-8641-f3a115b5a3a5">
+						<SHORT-NAME>RC_GVER_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl SWT_VERSION_LESENResponse</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GVER_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GVER_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GVER_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GVER_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GVER_LH_NUM</SHORT-NAME>
+								<LONG-NAME>LH_SAP_DocNumber</LONG-NAME>
+								<BYTE-POSITION>6</BYTE-POSITION>
+								<DOP-REF ID-REF="id-8dfb4123-2bdd-4a4c-aff5-eeceb9baa175"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GVER_SWTLIBVER</SHORT-NAME>
+								<LONG-NAME>SWTLibVersion</LONG-NAME>
+								<BYTE-POSITION>19</BYTE-POSITION>
+								<DOP-REF ID-REF="id-5fda307e-7f0f-43eb-a0ba-bd7e57f97ee5"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-97f2f387-b039-4b90-b491-070db24c8600" OID="id-97f2f387-b039-4b90-b491-070db24c8600">
+						<SHORT-NAME>RC_GSIGS_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl STATUS_LESEN_SWSIG Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GSIGS_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GSIGS_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RC_GSIGS_RCO</SHORT-NAME>
+								<LONG-NAME>RoutineControlOption</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GSIGS_RS</SHORT-NAME>
+								<LONG-NAME>RoutineStatus</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-45ae85e4-153f-401c-b595-ac093aa6051d"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_GSIGS_LOSIGS</SHORT-NAME>
+								<LONG-NAME>ListOfSWSigStatus</LONG-NAME>
+								<BYTE-POSITION>6</BYTE-POSITION>
+								<DOP-REF ID-REF="id-72561954-23c6-4653-b38d-5e0818de18f3"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+				</POS-RESPONSES>
+				<COMPARAM-REFS>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-489343b9-5b01-4f5e-8cf8-b9ce2d392812">
+						<VALUE>1</VALUE>
+						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+					</COMPARAM-REF>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-489343b9-5b01-4f5e-8cf8-b9ce2d392812">
+						<VALUE>1</VALUE>
+						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+					</COMPARAM-REF>
+				</COMPARAM-REFS>
+				<IMPORT-REFS>
+					<IMPORT-REF DOCREF="DOPS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-cce678a9-19ff-4e38-86ba-22ac18a6270c"/>
+					<IMPORT-REF DOCREF="UNITS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-b6315bcc-2c68-4976-aa1c-3dec7f94acd0"/>
+				</IMPORT-REFS>
+				<PARENT-REFS>
+					<PARENT-REF DOCREF="ISO_14229_BMW_CAN" DOCTYPE="LAYER" ID-REF="id-9356813b-9d18-4a9d-b691-e8142ca51dce" xsi:type="PROTOCOL-REF">
+						<NOT-INHERITED-DIAG-COMMS>
+							<NOT-INHERITED-DIAG-COMM>
+								<DIAG-COMM-SNREF SHORT-NAME="TD"/>
+							</NOT-INHERITED-DIAG-COMM>
+						</NOT-INHERITED-DIAG-COMMS>
+					</PARENT-REF>
+					<PARENT-REF DOCREF="ISO_14229_BMW_TCP" DOCTYPE="LAYER" ID-REF="id-accd7022-28f2-4985-bd0f-de89220636ca" xsi:type="PROTOCOL-REF">
+						<NOT-INHERITED-DIAG-COMMS>
+							<NOT-INHERITED-DIAG-COMM>
+								<DIAG-COMM-SNREF SHORT-NAME="TD"/>
+							</NOT-INHERITED-DIAG-COMM>
+						</NOT-INHERITED-DIAG-COMMS>
+					</PARENT-REF>
+				</PARENT-REFS>
+			</FUNCTIONAL-GROUP>
+		</FUNCTIONAL-GROUPS>
+	</DIAG-LAYER-CONTAINER>
+</ODX>

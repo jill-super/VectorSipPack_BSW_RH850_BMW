@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>SysTime</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                  <ELEMENTS>
+                    <SWC-IMPLEMENTATION UUID="54D7FE1B-585E-4C72-BD87-45EFCB7B6608">
+                      <SHORT-NAME>ImplementationSysTime</SHORT-NAME>
+                      <CODE-DESCRIPTORS>
+                        <CODE>
+                          <SHORT-NAME>Default</SHORT-NAME>
+                          <ARTIFACT-DESCRIPTORS>
+                            <AUTOSAR-ENGINEERING-OBJECT>
+                              <SHORT-LABEL>Default</SHORT-LABEL>
+                              <CATEGORY>SWSRC</CATEGORY>
+                            </AUTOSAR-ENGINEERING-OBJECT>
+                          </ARTIFACT-DESCRIPTORS>
+                        </CODE>
+                      </CODE-DESCRIPTORS>
+                      <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/BMW/Platform/SysTime/SwComponentTypes/SysTime/Internal_SysTime</BEHAVIOR-REF>
+                    </SWC-IMPLEMENTATION>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <APPLICATION-SW-COMPONENT-TYPE UUID="DB751778-9DB5-4B51-B4CB-8C463F67288E">
+                      <SHORT-NAME>SysTime</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="DV_ReadOnly">1</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <PORTS>
+                        <P-PORT-PROTOTYPE UUID="1DFDA6E6-5D05-4C1B-ADFB-73BDDF9FBCFC">
+                          <SHORT-NAME>SystemTime</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/SysTime/Dcm/PortInterfaces/DataServices_SystemTime/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/SysTime/Dcm/PortInterfaces/DataServices_SystemTime</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <PR-PORT-PROTOTYPE UUID="88BF94B0-B7F4-4C4F-90A3-B840420EF033">
+                          <SHORT-NAME>LifeCycle</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <MODE-SWITCH-SENDER-COM-SPEC>
+                              <ENHANCED-MODE-API>true</ENHANCED-MODE-API>
+                              <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/SysTime/PortInterfaces/ILifeCycle/Mode</MODE-GROUP-REF>
+                              <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                            </MODE-SWITCH-SENDER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <REQUIRED-COM-SPECS>
+                            <MODE-SWITCH-RECEIVER-COM-SPEC>
+                              <ENHANCED-MODE-API>true</ENHANCED-MODE-API>
+                              <SUPPORTS-ASYNCHRONOUS-MODE-SWITCH>false</SUPPORTS-ASYNCHRONOUS-MODE-SWITCH>
+                            </MODE-SWITCH-RECEIVER-COM-SPEC>
+                          </REQUIRED-COM-SPECS>
+                          <PROVIDED-REQUIRED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/SysTime/PortInterfaces/ILifeCycle</PROVIDED-REQUIRED-INTERFACE-TREF>
+                        </PR-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="702907C3-F3E6-4AD1-87DC-10AC76F01AEA">
+                          <SHORT-NAME>LifeCycleRequest</SHORT-NAME>
+                          <REQUIRED-COM-SPECS>
+                            <NONQUEUED-RECEIVER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/SysTime/PortInterfaces/ILifeCycleRequest/requestMode</DATA-ELEMENT-REF>
+                              <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                              <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                              <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                              <FILTER>
+                                <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                              </FILTER>
+                              <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                              <INIT-VALUE>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <SHORT-LABEL>SysTime_requestModeInitialValue</SHORT-LABEL>
+                                  <VALUE>2</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </INIT-VALUE>
+                            </NONQUEUED-RECEIVER-COM-SPEC>
+                          </REQUIRED-COM-SPECS>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/SysTime/PortInterfaces/ILifeCycleRequest</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="DCD6752D-18BC-4626-97BE-32487C253479">
+                          <SHORT-NAME>SysTimeReportError</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/SysTime/Det/PortInterfaces/DETService</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="82234BB3-2852-452A-9F95-380609E5BA55">
+                          <SHORT-NAME>SysTimeRx</SHORT-NAME>
+                          <REQUIRED-COM-SPECS>
+                            <NONQUEUED-RECEIVER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/SysTime/PortInterfaces/SysTimeRx/timeSignal</DATA-ELEMENT-REF>
+                              <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                              <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                              <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                              <FILTER>
+                                <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                              </FILTER>
+                              <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                              <INIT-VALUE>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>0</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </INIT-VALUE>
+                            </NONQUEUED-RECEIVER-COM-SPEC>
+                          </REQUIRED-COM-SPECS>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/SysTime/PortInterfaces/SysTimeRx</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                      </PORTS>
+                      <INTERNAL-BEHAVIORS>
+                        <SWC-INTERNAL-BEHAVIOR UUID="4716DCC3-5E7B-40AA-98A8-F760CCC9CE7E">
+                          <SHORT-NAME>Internal_SysTime</SHORT-NAME>
+                          <DATA-TYPE-MAPPING-REFS>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BMW/Platform/SysTime/DataTypeMappingSets/DataTMappingSet1</DATA-TYPE-MAPPING-REF>
+                          </DATA-TYPE-MAPPING-REFS>
+                          <EXCLUSIVE-AREAS>
+                            <EXCLUSIVE-AREA UUID="16B4FD7F-96CB-4550-8F5A-6B75AF094D6D">
+                              <SHORT-NAME>SysTimeGetTimeArea</SHORT-NAME>
+                            </EXCLUSIVE-AREA>
+                          </EXCLUSIVE-AREAS>
+                          <EVENTS>
+                            <DATA-RECEIVED-EVENT UUID="FDB8BF99-39A9-47C6-BD23-F17D48DFE46B">
+                              <SHORT-NAME>LifeCycleRequest</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/SysTime/SwComponentTypes/SysTime/Internal_SysTime/LifeCycleHandler</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/LifeCycleRequest</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/SysTime/PortInterfaces/ILifeCycleRequest/requestMode</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVED-EVENT>
+                            <TIMING-EVENT UUID="44E8C43C-3129-48A5-BB5D-2704222826E9">
+                              <SHORT-NAME>TimingEvent</SHORT-NAME>
+                              <DISABLED-MODE-IREFS>
+                                <DISABLED-MODE-IREF>
+                                  <CONTEXT-PORT-REF DEST="PR-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/LifeCycle</CONTEXT-PORT-REF>
+                                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/SysTime/PortInterfaces/ILifeCycle/Mode</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/BMW/Platform/SysTime/ModeDeclarationGroups/SysTime_LifeCycle/SYSTIME_INITIALIZED</TARGET-MODE-DECLARATION-REF>
+                                </DISABLED-MODE-IREF>
+                                <DISABLED-MODE-IREF>
+                                  <CONTEXT-PORT-REF DEST="PR-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/LifeCycle</CONTEXT-PORT-REF>
+                                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/SysTime/PortInterfaces/ILifeCycle/Mode</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/BMW/Platform/SysTime/ModeDeclarationGroups/SysTime_LifeCycle/SYSTIME_STOPPED</TARGET-MODE-DECLARATION-REF>
+                                </DISABLED-MODE-IREF>
+                              </DISABLED-MODE-IREFS>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/SysTime/SwComponentTypes/SysTime/Internal_SysTime/MainFunction</START-ON-EVENT-REF>
+                              <PERIOD>0.01</PERIOD>
+                            </TIMING-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="F9FB1830-30DE-45C2-8044-753A2D943BEB">
+                              <SHORT-NAME>OpInvokedEventReadDID</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/SysTime/SwComponentTypes/SysTime/Internal_SysTime/ReadDataSystemTime</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/SystemTime</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/SysTime/Dcm/PortInterfaces/DataServices_SystemTime/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <DATA-RECEIVED-EVENT UUID="2D9B5ED8-B3CA-4665-9CD6-905170011967">
+                              <SHORT-NAME>SysTimeRx</SHORT-NAME>
+                              <DISABLED-MODE-IREFS>
+                                <DISABLED-MODE-IREF>
+                                  <CONTEXT-PORT-REF DEST="PR-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/LifeCycle</CONTEXT-PORT-REF>
+                                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/SysTime/PortInterfaces/ILifeCycle/Mode</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/BMW/Platform/SysTime/ModeDeclarationGroups/SysTime_LifeCycle/SYSTIME_INITIALIZED</TARGET-MODE-DECLARATION-REF>
+                                </DISABLED-MODE-IREF>
+                                <DISABLED-MODE-IREF>
+                                  <CONTEXT-PORT-REF DEST="PR-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/LifeCycle</CONTEXT-PORT-REF>
+                                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/SysTime/PortInterfaces/ILifeCycle/Mode</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/BMW/Platform/SysTime/ModeDeclarationGroups/SysTime_LifeCycle/SYSTIME_STOPPED</TARGET-MODE-DECLARATION-REF>
+                                </DISABLED-MODE-IREF>
+                              </DISABLED-MODE-IREFS>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/SysTime/SwComponentTypes/SysTime/Internal_SysTime/ReceiveSignal</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/SysTimeRx</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/SysTime/PortInterfaces/SysTimeRx/timeSignal</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVED-EVENT>
+                          </EVENTS>
+                          <RUNNABLES>
+                            <RUNNABLE-ENTITY UUID="CBE0D047-11F6-4304-8D6B-41A4CDEB5F2A">
+                              <SHORT-NAME>LifeCycleHandler</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-READ-ACCESSS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>requestedMode</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/LifeCycleRequest</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/SysTime/PortInterfaces/ILifeCycleRequest/requestMode</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-READ-ACCESSS>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-P-PORT-REF DEST="PR-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/LifeCycle</CONTEXT-P-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/SysTime/PortInterfaces/ILifeCycle/Mode</TARGET-MODE-GROUP-REF>
+                                    </P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>LifeCycle</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="PR-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/LifeCycle</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/SysTime/PortInterfaces/ILifeCycle/Mode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_DetError</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/SysTimeReportError</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/SysTime/Det/PortInterfaces/DETService/ReportError</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>SysTime_LifeCycleHandler</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="D2B6FC1E-8F1D-4F3B-84EF-5BA128CCFC99">
+                              <SHORT-NAME>MainFunction</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/BMW/Platform/SysTime/SwComponentTypes/SysTime/Internal_SysTime/SysTimeGetTimeArea</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>SysTime_MainFunction</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="CA86A4C7-902A-4FA5-BEDC-064B3D581AB9">
+                              <SHORT-NAME>ReadDataSystemTime</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/BMW/Platform/SysTime/SwComponentTypes/SysTime/Internal_SysTime/SysTimeGetTimeArea</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>sscp_DetError</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/SysTimeReportError</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/SysTime/Det/PortInterfaces/DETService/ReportError</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>SysTime_GetSystemTime</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="2BE76392-3DD0-4F34-B705-CF45C39DEF79">
+                              <SHORT-NAME>ReceiveSignal</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/BMW/Platform/SysTime/SwComponentTypes/SysTime/Internal_SysTime/SysTimeGetTimeArea</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>VariableAccess_timeSignal</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/SysTimeRx</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/SysTime/PortInterfaces/SysTimeRx/timeSignal</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                              <SYMBOL>SysTime_ReceiveSignal</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                          </RUNNABLES>
+                          <SERVICE-DEPENDENCYS>
+                            <SWC-SERVICE-DEPENDENCY UUID="9309438E-4BAA-4269-8C20-7C2DD2DC8815">
+                              <SHORT-NAME>SysTimeDiagnosticEventManagerService</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/SystemTime</PORT-PROTOTYPE-REF>
+                                  <ROLE>CSDataServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-EVENT-MANAGER-NEEDS UUID="602B2B89-C62E-4DB6-BA36-3B41364384F5">
+                                  <SHORT-NAME>sn_SysTimeDiagnosticEventManagerService</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                </DIAGNOSTIC-EVENT-MANAGER-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="ACE3D701-F1B1-4239-A341-0DE975AEF6BB">
+                              <SHORT-NAME>SysTimeDiagnosticValueServiceNeeds</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime/SystemTime</PORT-PROTOTYPE-REF>
+                                  <ROLE>DataServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-VALUE-NEEDS UUID="BFF19E0E-7935-4E94-A8C0-396A8C5F32AD">
+                                  <SHORT-NAME>sn_DiagnosticValueServiceNeeds</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DID-NUMBER>5889</DID-NUMBER>
+                                </DIAGNOSTIC-VALUE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                          </SERVICE-DEPENDENCYS>
+                          <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                        </SWC-INTERNAL-BEHAVIOR>
+                      </INTERNAL-BEHAVIORS>
+                    </APPLICATION-SW-COMPONENT-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

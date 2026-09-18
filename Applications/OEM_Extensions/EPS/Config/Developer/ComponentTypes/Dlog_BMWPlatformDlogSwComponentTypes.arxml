@@ -1,0 +1,1432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>Dlog</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                  <ELEMENTS>
+                    <SWC-IMPLEMENTATION UUID="D4E5E3F5-47B3-44F9-B3D5-44123D828186">
+                      <SHORT-NAME>DlogImpl</SHORT-NAME>
+                      <CODE-DESCRIPTORS>
+                        <CODE>
+                          <SHORT-NAME>Code</SHORT-NAME>
+                          <ARTIFACT-DESCRIPTORS>
+                            <AUTOSAR-ENGINEERING-OBJECT>
+                              <SHORT-LABEL>Default</SHORT-LABEL>
+                              <CATEGORY>SWSRC</CATEGORY>
+                            </AUTOSAR-ENGINEERING-OBJECT>
+                          </ARTIFACT-DESCRIPTORS>
+                        </CODE>
+                      </CODE-DESCRIPTORS>
+                      <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog</BEHAVIOR-REF>
+                    </SWC-IMPLEMENTATION>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <APPLICATION-SW-COMPONENT-TYPE UUID="A9EC61A4-49A7-46B3-9333-96A55F19EFAF">
+                      <SHORT-NAME>Dlog</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DV_SDG">
+                            <SD GID="DV_ReadOnly">1</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <PORTS>
+                        <P-PORT-PROTOTYPE UUID="91D82837-CD22-4406-89F6-2050969E115A">
+                          <SHORT-NAME>DevelopmentInfoField</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/RoutineService_DevInfo/Start</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Dcm/PortInterfaces/RoutineService_DevInfo</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="C581E4EC-39F8-490E-A971-EA5243605410">
+                          <SHORT-NAME>EcuInfo</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/EcuInfo/GetEcuId</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/EcuInfo/GetVin</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/PortInterfaces/EcuInfo</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="020527B0-824D-4BC4-9771-FD22288EA628">
+                          <SHORT-NAME>EcuSerialNumber</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_EcuSerialNumber/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_EcuSerialNumber</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="162229D6-68B8-4EF3-A0CE-91D26CF46535">
+                          <SHORT-NAME>EcuUid</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_EcuUid/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_EcuUid</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="15795721-D9E6-42F3-8C22-2B85C5FF7FD2">
+                          <SHORT-NAME>FlashTimingParameter</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_FlashTimingParameter/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_FlashTimingParameter</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="03DD7BA7-112A-47B1-8178-691839B5F6E7">
+                          <SHORT-NAME>HWModificationIndex</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_HWModificationIndex/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_HWModificationIndex</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="89832481-1996-4361-AA61-5977EFD3CB6A">
+                          <SHORT-NAME>InitBlockProgData</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/Dlog_NvMNotifyInitBlock/InitBlock</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/NvM/PortInterfaces/Dlog_NvMNotifyInitBlock</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="4FCB1C43-DD79-4189-BC25-E01477F77D9E">
+                          <SHORT-NAME>LifeCycle</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <MODE-SWITCH-SENDER-COM-SPEC>
+                              <ENHANCED-MODE-API>true</ENHANCED-MODE-API>
+                              <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Dlog/PortInterfaces/ILifeCycle/Mode</MODE-GROUP-REF>
+                              <MODE-SWITCHED-ACK>
+                                <TIMEOUT>0</TIMEOUT>
+                              </MODE-SWITCHED-ACK>
+                              <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                            </MODE-SWITCH-SENDER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/Dlog/PortInterfaces/ILifeCycle</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="7BEA4223-D1DA-49CC-8357-98C3CDA2D975">
+                          <SHORT-NAME>ManufacturingDate</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_ManufacturingDate/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_ManufacturingDate</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="6C9E2945-22D0-4721-861D-B4CD9333A3B3">
+                          <SHORT-NAME>NvMNotifyJobFinished_DlogProgData</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/Dlog_NvMNotifyJobFinished/JobFinished</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/NvM/PortInterfaces/Dlog_NvMNotifyJobFinished</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="78EE5CAA-C466-4943-A5A7-C2105D8A3613">
+                          <SHORT-NAME>NvMNotifyJobFinished_SvkEntry</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/Dlog_NvMNotifyJobFinished/JobFinished</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/NvM/PortInterfaces/Dlog_NvMNotifyJobFinished</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="606E4EFA-F0EB-4990-BF26-61C174120DFB">
+                          <SHORT-NAME>ProgId</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <NONQUEUED-SENDER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Dlog/PortInterfaces/ProgId/progId</DATA-ELEMENT-REF>
+                              <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                              <INIT-VALUE>
+                                <ARRAY-VALUE-SPECIFICATION>
+                                  <SHORT-LABEL>init</SHORT-LABEL>
+                                  <ELEMENTS>
+                                    <NUMERICAL-VALUE-SPECIFICATION>
+                                      <VALUE>0</VALUE>
+                                    </NUMERICAL-VALUE-SPECIFICATION>
+                                    <NUMERICAL-VALUE-SPECIFICATION>
+                                      <VALUE>0</VALUE>
+                                    </NUMERICAL-VALUE-SPECIFICATION>
+                                    <NUMERICAL-VALUE-SPECIFICATION>
+                                      <VALUE>0</VALUE>
+                                    </NUMERICAL-VALUE-SPECIFICATION>
+                                    <NUMERICAL-VALUE-SPECIFICATION>
+                                      <VALUE>0</VALUE>
+                                    </NUMERICAL-VALUE-SPECIFICATION>
+                                    <NUMERICAL-VALUE-SPECIFICATION>
+                                      <VALUE>0</VALUE>
+                                    </NUMERICAL-VALUE-SPECIFICATION>
+                                    <NUMERICAL-VALUE-SPECIFICATION>
+                                      <VALUE>0</VALUE>
+                                    </NUMERICAL-VALUE-SPECIFICATION>
+                                    <NUMERICAL-VALUE-SPECIFICATION>
+                                      <VALUE>0</VALUE>
+                                    </NUMERICAL-VALUE-SPECIFICATION>
+                                    <NUMERICAL-VALUE-SPECIFICATION>
+                                      <VALUE>0</VALUE>
+                                    </NUMERICAL-VALUE-SPECIFICATION>
+                                  </ELEMENTS>
+                                </ARRAY-VALUE-SPECIFICATION>
+                              </INIT-VALUE>
+                            </NONQUEUED-SENDER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/Dlog/PortInterfaces/ProgId</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="62E8E0AC-A041-4877-B63F-C549958C5F48">
+                          <SHORT-NAME>SvkBackup01</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ConditionCheckRead</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="46BE9162-37F2-400B-B4EE-C3A147328E4D">
+                          <SHORT-NAME>SvkBackup02</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ConditionCheckRead</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="A525C8E3-BECB-4518-A8FE-FEF476508CAD">
+                          <SHORT-NAME>SvkBackup03</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ConditionCheckRead</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="04AB1D47-4671-4707-8B50-8300A10EAF31">
+                          <SHORT-NAME>SvkCurrent</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_Svk/ConditionCheckRead</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_Svk/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_Svk/ReadDataLength</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_Svk</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="90205474-2CAD-4625-A23D-0B59BBF8C92E">
+                          <SHORT-NAME>SvkPlant</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ConditionCheckRead</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="F9DA0B68-F3B9-475E-8B16-D1A364B483AB">
+                          <SHORT-NAME>SvkSysSupplier</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ConditionCheckRead</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="F4EF9F6D-B85A-4ABA-A888-6304257FE377">
+                          <SHORT-NAME>SweSignatureAccess</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/SweSignatureAccess/GetNumSig</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/SweSignatureAccess/GetNumSwe</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/SweSignatureAccess/GetSigLength</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/SweSignatureAccess/GetSignature</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/SweSignatureAccess/GetSigStart</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/PortInterfaces/SweSignatureAccess</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="72A27D4F-0EBD-440D-8330-7AFB5D338090">
+                          <SHORT-NAME>Vin</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_Vin/ConditionCheckRead</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                            <SERVER-COM-SPEC>
+                              <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_Vin/ReadData</OPERATION-REF>
+                              <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                            </SERVER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_Vin</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="FDCDAA9D-5755-48B5-A66C-C0CCE8D3F173">
+                          <SHORT-NAME>Coding_Svk</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/Coding/PortInterfaces/Coding_SVKInterface</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="8739F2B4-ED43-4DDD-80C5-52D2E43D0BF1">
+                          <SHORT-NAME>LifeCycleRequest</SHORT-NAME>
+                          <REQUIRED-COM-SPECS>
+                            <NONQUEUED-RECEIVER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Dlog/PortInterfaces/ILifeCycleRequest/requestMode</DATA-ELEMENT-REF>
+                              <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                              <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                              <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                              <FILTER>
+                                <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                              </FILTER>
+                              <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                              <INIT-VALUE>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>2</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </INIT-VALUE>
+                            </NONQUEUED-RECEIVER-COM-SPEC>
+                          </REQUIRED-COM-SPECS>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/Dlog/PortInterfaces/ILifeCycleRequest</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="C062D094-A348-4128-BA1F-B9C74AE6E818">
+                          <SHORT-NAME>NvMAdmin_DlogProgData</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/NvM/PortInterfaces/Dlog_NvMAdmin</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="9D1493C2-B324-4EE0-AA85-944DC9821B56">
+                          <SHORT-NAME>NvMService_DlogProgData</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMService</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="B59B8545-A963-4A9B-A2A6-5EA5B4FFC0A6">
+                          <SHORT-NAME>NvMService_DlogSvkEntry</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMServiceSvkEntry</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="E521A230-D82A-44B3-A241-F1493D177954">
+                          <SHORT-NAME>NvMService_DlogSvkHistory</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMService</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                      </PORTS>
+                      <INTERNAL-BEHAVIORS>
+                        <SWC-INTERNAL-BEHAVIOR UUID="4E94D3A7-60B3-4B5D-AE95-22902F7215E4">
+                          <SHORT-NAME>Internal_Dlog</SHORT-NAME>
+                          <DATA-TYPE-MAPPING-REFS>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BMW/Platform/Dlog/DataTypeMappingSets/DlogTypeMappings</DATA-TYPE-MAPPING-REF>
+                          </DATA-TYPE-MAPPING-REFS>
+                          <EVENTS>
+                            <OPERATION-INVOKED-EVENT UUID="8FBE6255-1ABF-4CCF-A7FE-D20D8092B2D8">
+                              <SHORT-NAME>OIEventCCSvkBackup01</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/CondCheckSvkBackup01</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkBackup01</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ConditionCheckRead</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="A9CB623D-6CDD-434B-9580-3912A81DFFEF">
+                              <SHORT-NAME>OIEventCCSvkBackup02</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/CondCheckSvkBackup02</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkBackup02</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ConditionCheckRead</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="427CBA4B-932D-4CD3-89C9-5C009B0D3A78">
+                              <SHORT-NAME>OIEventCCSvkBackup03</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/CondCheckSvkBackup03</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkBackup03</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ConditionCheckRead</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="42F84011-96DB-4C9C-9CDD-0D0FFD9F317A">
+                              <SHORT-NAME>OIEventCCSvkCurrent</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/CondCheckSvkCurrent</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkCurrent</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_Svk/ConditionCheckRead</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="9E11ECD7-56B6-4460-8E5A-0186378C6B5D">
+                              <SHORT-NAME>OIEventCCSvkPlant</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/CondCheckSvkPlant</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkPlant</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ConditionCheckRead</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="00CF63FD-ACFF-4E9B-AB50-A0BF073E9AA2">
+                              <SHORT-NAME>OIEventCCSvkSystemSupplier</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/CondCheckSvkSysSupplier</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkSysSupplier</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ConditionCheckRead</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="33030ECA-6B1E-4F61-94EB-9000E0984E1E">
+                              <SHORT-NAME>oie_Vin_ConditionCheckRead</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/CondCheckVin</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Vin</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_Vin/ConditionCheckRead</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="BDF1DCD4-C223-4389-B672-BC08DC80DAB4">
+                              <SHORT-NAME>OIEventDataLengthSvkCurrent</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/DataLengthSvkCurrent</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkCurrent</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_Svk/ReadDataLength</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="94B46ADC-AB73-4740-89B5-1D1CB02F973F">
+                              <SHORT-NAME>oie_EcuInfo_GetEcuId</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/Dlog_GetEcuId</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/EcuInfo</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/EcuInfo/GetEcuId</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="CF4DF409-CEB2-454F-B865-EC6E14F1D3AE">
+                              <SHORT-NAME>oie_EcuInfo_GetVin</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/Dlog_GetVin</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/EcuInfo</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/EcuInfo/GetVin</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <MODE-SWITCHED-ACK-EVENT UUID="1F540778-F15A-4ADC-A6E8-73970077282E">
+                              <SHORT-NAME>LifeCycleModeSwitchedAck</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/Dlog_ModeSwitchAckLifeCycle</START-ON-EVENT-REF>
+                              <EVENT-SOURCE-REF DEST="MODE-SWITCH-POINT">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/Dlog_ModeSwitchAckLifeCycle/mspDlogModeSwitch</EVENT-SOURCE-REF>
+                            </MODE-SWITCHED-ACK-EVENT>
+                            <DATA-RECEIVED-EVENT UUID="E5E560E2-D0FD-4F0F-9106-ABBB1B98AE9A">
+                              <SHORT-NAME>LifeCycleRequest</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/Dlog_ModeSwitchRequestLifeCycle</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/LifeCycleRequest</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Dlog/PortInterfaces/ILifeCycleRequest/requestMode</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="48129FC5-0689-44D4-A8CD-3840FC81B66F">
+                              <SHORT-NAME>oie_NvMNotifyJobFinished_DlogProgData_JobFinished</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/Dlog_NotifyJobFinishedProgData</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMNotifyJobFinished_DlogProgData</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/Dlog_NvMNotifyJobFinished/JobFinished</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="A9042DEC-8C63-4CF6-85E6-D32A663DC7D3">
+                              <SHORT-NAME>oie_NvMNotifyJobFinished_SvkEntry_JobFinished</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/Dlog_NotifyJobFinishedSvkEntry</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMNotifyJobFinished_SvkEntry</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/Dlog_NvMNotifyJobFinished/JobFinished</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="30AA047E-332B-47E4-BE8E-91DCD8332674">
+                              <SHORT-NAME>oie_EcuUid_ReadData</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/Dlog_ReadDataByIdentifierEcuUid</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/EcuUid</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_EcuUid/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="A8ED40C0-2DA0-4E5A-888D-99AF2FEA4F3E">
+                              <SHORT-NAME>oie_HWModificationIndex_ReadData</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/Dlog_ReadDataByIdentifierHWModificationIndex</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/HWModificationIndex</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_HWModificationIndex/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="55E88986-053A-4BE9-A509-F9555CA6BB77">
+                              <SHORT-NAME>oie_InitBlockProgData_InitBlock</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/InitBlockProgData</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/InitBlockProgData</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/Dlog_NvMNotifyInitBlock/InitBlock</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="B8C06BA3-B2D2-481B-8114-0C0DAF62A018">
+                              <SHORT-NAME>OIEventReadEcuSerialNumber</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/ReadEcuSerialNumber</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/EcuSerialNumber</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_EcuSerialNumber/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="7E34B67B-DD2F-4353-B7B9-6A4A187094AF">
+                              <SHORT-NAME>OIEventReadTimingParameters</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/ReadFlashTimingParameter</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/FlashTimingParameter</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_FlashTimingParameter/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="FA42E073-446D-4D4D-BA67-143CCE2E0931">
+                              <SHORT-NAME>OIEventReadManufacturingData</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/ReadManufacturingDate</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/ManufacturingDate</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_ManufacturingDate/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="B8800565-441D-43C5-9017-DDD00DF4AACC">
+                              <SHORT-NAME>OIEventReadSvkBackup01</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/ReadSvkBackup01</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkBackup01</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="C7E1917A-44FA-4DCC-9C6C-125A58DAB3D7">
+                              <SHORT-NAME>OIEventReadSvkBackup02</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/ReadSvkBackup02</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkBackup02</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="F785E932-50FD-4336-A817-3B9CF64CFA09">
+                              <SHORT-NAME>OIEventReadSvkBackup03</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/ReadSvkBackup03</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkBackup03</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="8F848B99-DDDB-4B3F-BA36-BCC85D262045">
+                              <SHORT-NAME>OIEventReadSvkCurrent</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/ReadSvkCurrent</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkCurrent</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_Svk/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="E57FB9A7-2AA6-459E-9FF0-54A8E4E7327C">
+                              <SHORT-NAME>OIEventReadSvkPlant</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/ReadSvkPlant</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkPlant</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="3215B233-DC90-467B-8151-4DBA97465963">
+                              <SHORT-NAME>OIEventReadSvkSystemSupplier</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/ReadSvkSysSupplier</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkSysSupplier</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_SvkHistory/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="9CA7EFE2-67C3-42AB-A0AB-0058B1192721">
+                              <SHORT-NAME>OIEventReadVin</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/ReadVin</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Vin</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/DataServices_Vin/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="0C70FF3E-32DD-44B6-955A-E179D86AAD11">
+                              <SHORT-NAME>OIEventStartReadDevInfoField</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/StartReadReadDevInfoField</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/DevelopmentInfoField</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Dcm/PortInterfaces/RoutineService_DevInfo/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="057A9D00-F11C-4D3D-B4F5-51C2285C0610">
+                              <SHORT-NAME>oie_SweSignatureAccess_GetNumSig</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/SweGetNumSig</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SweSignatureAccess</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/SweSignatureAccess/GetNumSig</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="FFED5EA7-16E2-4969-B07A-881E606ADF31">
+                              <SHORT-NAME>oie_SweSignatureAccess_GetNumSwe</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/SweGetNumSwe</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SweSignatureAccess</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/SweSignatureAccess/GetNumSwe</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="0643B8BD-ECC4-4371-90F9-4D8FB9790379">
+                              <SHORT-NAME>oie_SweSignatureAccess_SweGetSigLength</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/SweGetSigLength</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SweSignatureAccess</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/SweSignatureAccess/GetSigLength</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="76189163-10C1-4862-9EAB-3B7AE3ABC787">
+                              <SHORT-NAME>oie_SweSignatureAccess_SweGetSignature</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/SweGetSignature</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SweSignatureAccess</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/SweSignatureAccess/GetSignature</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT UUID="73B6B84E-DC5A-47E7-9C0D-F1CE361CFB2B">
+                              <SHORT-NAME>oie_SweSignatureAccess_GetSigStart</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Internal_Dlog/SweGetSigStart</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SweSignatureAccess</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/PortInterfaces/SweSignatureAccess/GetSigStart</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                          </EVENTS>
+                          <RUNNABLES>
+                            <RUNNABLE-ENTITY UUID="F9E50F6D-B3E9-48AA-8901-31AF12121A98">
+                              <SHORT-NAME>CondCheckSvkBackup01</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_ReadBlock</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkEntry</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMServiceSvkEntry/ReadBlock</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_SetDataIndex</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkEntry</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMServiceSvkEntry/SetDataIndex</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Dlog_ConditionCheckSvkBackup01</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="FF04DC34-AB7C-409D-8E1E-3C82F1B1F4EA">
+                              <SHORT-NAME>CondCheckSvkBackup02</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_ReadBlock</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkEntry</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMServiceSvkEntry/ReadBlock</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_SetDataIndex</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkEntry</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMServiceSvkEntry/SetDataIndex</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Dlog_ConditionCheckSvkBackup02</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="484C8181-3ADA-487C-AF75-0494A570489B">
+                              <SHORT-NAME>CondCheckSvkBackup03</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_ReadBlock</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkEntry</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMServiceSvkEntry/ReadBlock</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_SetDataIndex</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkEntry</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMServiceSvkEntry/SetDataIndex</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Dlog_ConditionCheckSvkBackup03</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="48AC0348-8D59-45DC-A711-D4B01BAFD410">
+                              <SHORT-NAME>CondCheckSvkCurrent</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_GetCafIds</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Coding_Svk</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/Coding/PortInterfaces/Coding_SVKInterface/GetCafIds</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Dlog_ConditionCheckSvkCurrent</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="FA984F0D-C42F-40F3-B9B2-F78EAE69CB75">
+                              <SHORT-NAME>CondCheckSvkPlant</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_ReadBlock</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkEntry</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMServiceSvkEntry/ReadBlock</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_SetDataIndex</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkEntry</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMServiceSvkEntry/SetDataIndex</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Dlog_ConditionCheckSvkPlant</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="C2170573-8A37-45AC-AEBC-ECDE6C106FE3">
+                              <SHORT-NAME>CondCheckSvkSysSupplier</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_ReadBlock</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkEntry</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMServiceSvkEntry/ReadBlock</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_SetDataIndex</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkEntry</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMServiceSvkEntry/SetDataIndex</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Dlog_ConditionCheckSvkSysSupplier</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="97FFF11E-E5FF-4B34-9BBC-E37417ECF05A">
+                              <SHORT-NAME>CondCheckVin</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ConditionCheckVin</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="626B2F1C-D299-4522-B528-38BA1E4C30AC">
+                              <SHORT-NAME>DataLengthSvkCurrent</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ReadDataLengthSvkCurrent</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="A4C31D85-487F-4B4E-B33C-395D0CC77D70">
+                              <SHORT-NAME>Dlog_GetEcuId</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_GetEcuId</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="8542ED5A-DAC5-4C93-9EED-481BDA9E40A6">
+                              <SHORT-NAME>Dlog_GetVin</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_GetVin</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="5C3228E7-F81D-4B65-918E-6238E877218F">
+                              <SHORT-NAME>Dlog_ModeSwitchAckLifeCycle</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-SEND-POINTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>dsp_progId</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/ProgId</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Dlog/PortInterfaces/ProgId/progId</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-SEND-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>mspDlogModeSwitch</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/LifeCycle</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Dlog/PortInterfaces/ILifeCycle/Mode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SYMBOL>Dlog_ModeSwitchAckLifeCycle</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="99268FE3-00F9-4839-89DF-1ABAA22DFD31">
+                              <SHORT-NAME>Dlog_ModeSwitchRequestLifeCycle</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-READ-ACCESSS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>dra_requestedMode</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/LifeCycleRequest</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Dlog/PortInterfaces/ILifeCycleRequest/requestMode</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-READ-ACCESSS>
+                              <DATA-SEND-POINTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>dsp_progId</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/ProgId</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Dlog/PortInterfaces/ProgId/progId</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-SEND-POINTS>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/LifeCycle</CONTEXT-P-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Dlog/PortInterfaces/ILifeCycle/Mode</TARGET-MODE-GROUP-REF>
+                                    </P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>mspDlogModeSwitch</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/LifeCycle</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Dlog/PortInterfaces/ILifeCycle/Mode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_GetErrorStatus</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkHistory</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMService/GetErrorStatus</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_WriteBlock</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkEntry</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMServiceSvkEntry/WriteBlock</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_WriteBlock1</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogProgData</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMService/WriteBlock</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_WriteBlock2</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkHistory</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/NvMService/WriteBlock</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Dlog_ModeSwitchRequestLifeCycle</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="0D1F4A68-605C-4FE5-A8DA-75BEADCA041F">
+                              <SHORT-NAME>Dlog_NotifyJobFinishedProgData</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_SetBlockProtection</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMAdmin_DlogProgData</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Dlog/NvM/PortInterfaces/Dlog_NvMAdmin/SetBlockProtection</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Dlog_NotifyJobFinishedProgData</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="2E762520-0395-4AD1-AD16-76D7B57C7663">
+                              <SHORT-NAME>Dlog_NotifyJobFinishedSvkEntry</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_NotifyJobFinishedSvkEntry</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="85AFC125-3256-4D18-A379-294FE7BA684D">
+                              <SHORT-NAME>Dlog_ReadDataByIdentifierEcuUid</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ReadDataByIdentifierEcuUid</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="EDA188E5-51A3-4FF0-AB3C-56F2493607D6">
+                              <SHORT-NAME>Dlog_ReadDataByIdentifierHWModificationIndex</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ReadDataByIdentifierHWModificationIndex</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="D90212C5-6E15-48F4-A334-A48C45E9E98E">
+                              <SHORT-NAME>InitBlockProgData</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_InitProgData</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="FC51679A-5D32-4F28-A3CF-0D531E778507">
+                              <SHORT-NAME>ReadEcuSerialNumber</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ReadDataByIdentifierEcuSerialNumber</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="B985FC34-C281-4CCB-8723-8ACAAE75C388">
+                              <SHORT-NAME>ReadFlashTimingParameter</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ReadDataByIdentifierFlashTimingParameter</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="C5BB5C86-6FAA-4581-B953-A3DA4F30DACA">
+                              <SHORT-NAME>ReadManufacturingDate</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ReadDataByIdentifierManufacturingDate</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="76E7EDEB-1ABE-4D49-BB8B-7C14E8385B02">
+                              <SHORT-NAME>ReadSvkBackup01</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ReadDataByIdentifierSvkBackup01</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="FBF8BC26-91C1-4F8C-9A26-F425C2112892">
+                              <SHORT-NAME>ReadSvkBackup02</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ReadDataByIdentifierSvkBackup02</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="86BF8BFF-3267-40C7-B248-A204776B61B7">
+                              <SHORT-NAME>ReadSvkBackup03</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ReadDataByIdentifierSvkBackup03</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="60307E9A-5EC5-4A58-BB74-AFF14FD5EE07">
+                              <SHORT-NAME>ReadSvkCurrent</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ReadDataByIdentifierSvkCurrent</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="2FA1C5ED-DFD6-4B07-B1B6-1654824DBA91">
+                              <SHORT-NAME>ReadSvkPlant</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ReadDataByIdentifierSvkPlant</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="4E72B349-CF56-4ED5-82B9-1A1249F2FC16">
+                              <SHORT-NAME>ReadSvkSysSupplier</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ReadDataByIdentifierSvkSysSupplier</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="67C763C8-0B3E-403E-98F8-368630AE86DF">
+                              <SHORT-NAME>ReadVin</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_ReadDataByIdentifierVin</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="18787F84-E516-4FE7-BF1D-DDA5CA12CB38">
+                              <SHORT-NAME>StartReadReadDevInfoField</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_RoutineControlStartReadDevelopmentInfoField</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="D6983496-D219-4AB4-ADE0-CD22FDF7CB00">
+                              <SHORT-NAME>SweGetNumSig</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_SweGetNumSig</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="B7E85BE2-3BD7-4A51-AE22-ED5D38C702A9">
+                              <SHORT-NAME>SweGetNumSwe</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_SweGetNumSwe</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="A4B67A7E-D050-4118-838C-AF6ADD7523FF">
+                              <SHORT-NAME>SweGetSigLength</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_SweGetSigLength</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="67E3EF96-6977-432A-9764-EADF94307137">
+                              <SHORT-NAME>SweGetSignature</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_SweGetSignatureRte</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY UUID="B9264579-1BD2-4CA9-9D39-BA8D4F622C8B">
+                              <SHORT-NAME>SweGetSigStart</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Dlog_SweGetSigStart</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                          </RUNNABLES>
+                          <SERVICE-DEPENDENCYS>
+                            <SWC-SERVICE-DEPENDENCY UUID="8E5F8896-761B-4A8B-B30E-285B780A6977">
+                              <SHORT-NAME>SD_NVB_ProgData</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/InitBlockProgData</PORT-PROTOTYPE-REF>
+                                  <ROLE>NvMNotifyInitBlock</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogProgData</PORT-PROTOTYPE-REF>
+                                  <ROLE>NvMService</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMAdmin_DlogProgData</PORT-PROTOTYPE-REF>
+                                  <ROLE>NvMAdmin</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <NV-BLOCK-NEEDS UUID="45CB89F7-C016-42BA-B17F-54DD6F4692DC">
+                                  <SHORT-NAME>sn_SD_NVB_ProgData</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                        <SD GID="BlockSize">0</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <RESISTANT-TO-CHANGED-SW>false</RESISTANT-TO-CHANGED-SW>
+                                  <RESTORE-AT-START>true</RESTORE-AT-START>
+                                  <STORE-AT-SHUTDOWN>true</STORE-AT-SHUTDOWN>
+                                </NV-BLOCK-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="FC3893EA-5C8D-4966-A9AC-A096CB95475D">
+                              <SHORT-NAME>SD_NVB_SvkEntry</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMNotifyJobFinished_SvkEntry</PORT-PROTOTYPE-REF>
+                                  <ROLE>NvMNotifyJobFinished</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/NvMService_DlogSvkEntry</PORT-PROTOTYPE-REF>
+                                  <ROLE>NvMService</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <NV-BLOCK-NEEDS UUID="7E55550E-BA44-4108-A4F4-624A5C05EE79">
+                                  <SHORT-NAME>sn_SD_NVB_SvkEntry</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                        <SD GID="BlockSize">0</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <N-DATA-SETS>5</N-DATA-SETS>
+                                  <READONLY>false</READONLY>
+                                  <RESISTANT-TO-CHANGED-SW>true</RESISTANT-TO-CHANGED-SW>
+                                  <RESTORE-AT-START>false</RESTORE-AT-START>
+                                </NV-BLOCK-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="64EBEBBC-25CF-49C7-ADBD-AD6C04FFA557">
+                              <SHORT-NAME>SD_NVB_SvkHistory</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <SERVICE-NEEDS>
+                                <NV-BLOCK-NEEDS UUID="5F003E61-758D-400E-B9FA-A26EB8966FCB">
+                                  <SHORT-NAME>sn_SD_NVB_SvkHistory</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                        <SD GID="BlockSize">0</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <READONLY>true</READONLY>
+                                  <RESISTANT-TO-CHANGED-SW>true</RESISTANT-TO-CHANGED-SW>
+                                  <RESTORE-AT-START>true</RESTORE-AT-START>
+                                </NV-BLOCK-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="27A134FD-803E-4266-A3CC-F03CE02FF54C">
+                              <SHORT-NAME>SD_Dcm_DS_EcuSerialNumber</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/EcuSerialNumber</PORT-PROTOTYPE-REF>
+                                  <ROLE>DataServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-VALUE-NEEDS UUID="C6081737-360F-48CC-A895-B091547E4B06">
+                                  <SHORT-NAME>sn_SD_Dcm_DS_EcuSerialNumber</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DID-NUMBER>61836</DID-NUMBER>
+                                </DIAGNOSTIC-VALUE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="D33DFD1E-34C1-474C-8FAF-3BD3D9E183C1">
+                              <SHORT-NAME>SD_Dcm_DS_ManufacturingData</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/ManufacturingDate</PORT-PROTOTYPE-REF>
+                                  <ROLE>DataServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-VALUE-NEEDS UUID="4F2DFE8C-18AF-401C-A681-F81B08705F39">
+                                  <SHORT-NAME>sn_SD_Dcm_DS_ManufacturingData</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DID-NUMBER>61835</DID-NUMBER>
+                                </DIAGNOSTIC-VALUE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="0DE855A7-8A8D-44F5-AA15-B93A69A7439F">
+                              <SHORT-NAME>SD_Dcm_DS_SvkBackup01</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkBackup01</PORT-PROTOTYPE-REF>
+                                  <ROLE>DataServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-VALUE-NEEDS UUID="F479FEE4-C5D4-4996-9E4E-0C04A69E422E">
+                                  <SHORT-NAME>sn_SD_Dcm_DS_SvkBackup01</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DID-NUMBER>61700</DID-NUMBER>
+                                </DIAGNOSTIC-VALUE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="AB8E4DC4-80FC-40A8-88F5-82F0D8AE1AC9">
+                              <SHORT-NAME>SD_Dcm_DS_SvkBackup02</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkBackup02</PORT-PROTOTYPE-REF>
+                                  <ROLE>DataServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-VALUE-NEEDS UUID="F6D36DB5-B017-45FD-9AC4-974405E4C9CF">
+                                  <SHORT-NAME>sn_SD_Dcm_DS_SvkBackup02</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DID-NUMBER>61701</DID-NUMBER>
+                                </DIAGNOSTIC-VALUE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="E714CEB1-4B40-4AD5-A6B9-D2C990ED3A58">
+                              <SHORT-NAME>SD_Dcm_DS_SvkBackup03</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkBackup03</PORT-PROTOTYPE-REF>
+                                  <ROLE>DataServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-VALUE-NEEDS UUID="A0615A80-3E58-4774-B4AA-779AB3B6EF52">
+                                  <SHORT-NAME>sn_SD_Dcm_DS_SvkBackup03</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DID-NUMBER>61702</DID-NUMBER>
+                                </DIAGNOSTIC-VALUE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="1A0724D6-5780-4F79-844A-D684619457BD">
+                              <SHORT-NAME>SD_Dcm_DS_SvkCurrent</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkCurrent</PORT-PROTOTYPE-REF>
+                                  <ROLE>DataServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-VALUE-NEEDS UUID="312FA254-451A-4FF2-814A-2EF3ADD05A68">
+                                  <SHORT-NAME>sn_SD_Rdbi_SvkCurrent</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DID-NUMBER>61697</DID-NUMBER>
+                                </DIAGNOSTIC-VALUE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="924C6F9D-87B3-46A4-8435-F98E456E3CC2">
+                              <SHORT-NAME>SD_Dcm_DS_SvkPlant</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkPlant</PORT-PROTOTYPE-REF>
+                                  <ROLE>DataServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-VALUE-NEEDS UUID="89CBCC0F-0090-42FA-8BAA-28FF48B93329">
+                                  <SHORT-NAME>sn_SD_Dcm_DS_SvkPlant</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DID-NUMBER>61699</DID-NUMBER>
+                                </DIAGNOSTIC-VALUE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="E741C529-60D9-4A35-A6A8-B4D5A9942662">
+                              <SHORT-NAME>SD_Dcm_DS_SvkSystemSupplier</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/SvkSysSupplier</PORT-PROTOTYPE-REF>
+                                  <ROLE>DataServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-VALUE-NEEDS UUID="F8FF59FF-D702-4EAA-B9C3-09BEE6F15E6E">
+                                  <SHORT-NAME>sn_SD_Dcm_DS_SvkSystemSupplier</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DID-NUMBER>61698</DID-NUMBER>
+                                </DIAGNOSTIC-VALUE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="C1DFF818-4838-4AC5-A5D6-4D0F516F07E1">
+                              <SHORT-NAME>SD_Dcm_DS_TimingParameters</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/FlashTimingParameter</PORT-PROTOTYPE-REF>
+                                  <ROLE>DataServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-VALUE-NEEDS UUID="09B45BF8-2DC3-484E-A55B-6C3AA8EEB2EA">
+                                  <SHORT-NAME>sn_SD_Dcm_DS_TimingParameters</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DID-NUMBER>9476</DID-NUMBER>
+                                </DIAGNOSTIC-VALUE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="94B66E87-9D78-4A11-9866-AB4FAFA1E9BA">
+                              <SHORT-NAME>SD_Dcm_DS_Vin</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/Vin</PORT-PROTOTYPE-REF>
+                                  <ROLE>DataServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-VALUE-NEEDS UUID="7B8874BA-FA44-4C4B-8BF4-D2A9E5E559F0">
+                                  <SHORT-NAME>sn_SD_Dcm_DS_Vin</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DID-NUMBER>61840</DID-NUMBER>
+                                </DIAGNOSTIC-VALUE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY UUID="B9EF1B67-3858-4180-A3AC-497BDAF2F401">
+                              <SHORT-NAME>SD_Dcm_RS_DevelopmentInfoField</SHORT-NAME>
+                              <DESC>
+                                <L-2 L="FOR-ALL" />
+                              </DESC>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/DevelopmentInfoField</PORT-PROTOTYPE-REF>
+                                  <ROLE>RoutineServices</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <DIAGNOSTIC-ROUTINE-NEEDS>
+                                  <SHORT-NAME>sn_SD_Dcm_RS_DevelopmentInfoField</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV_SDG">
+                                        <SD GID="AutoServiceNeedNameHdlg">1</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <DIAG-ROUTINE-TYPE>SYNCHRONOUS</DIAG-ROUTINE-TYPE>
+                                  <RID-NUMBER>517</RID-NUMBER>
+                                </DIAGNOSTIC-ROUTINE-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                          </SERVICE-DEPENDENCYS>
+                          <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                        </SWC-INTERNAL-BEHAVIOR>
+                      </INTERNAL-BEHAVIORS>
+                    </APPLICATION-SW-COMPONENT-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

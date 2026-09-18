@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codingJobList xmlns="http://bmw.com/2006/codingJobList" cjlVersion="002_000_001" version="02.00.00">
+	<codingJob retValClass="CALC" retValLength="4">
+		<name>TypeKey</name>
+		<xPath>sys:getTypeKey(fa/standardFA/@typeKey)</xPath>
+		<descDE>Liefert den Typschluessel aus dem FA als 4-Byte-ASCII-Wert</descDE>
+		<descEN>Returns vehicle type as 4 byte ascii </descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+			<cafType>4</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="CALC" retValLength="3">
+		<name>SystemDate</name>
+		<xPath>sys:getDate()</xPath>
+		<descDE>Liefert ein Bytefeld der Groesse 3 Byte mit dem Systemdatum (ttmmjj).</descDE>
+		<descEN>Returns one byte field in 3 byte size with system date (ddmmyy).</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="CALC" retValLength="7">
+		<name>ShortVIN</name>
+		<xPath>sys:getShortVIN(fa/header/@vinLong)</xPath>
+		<descDE>Liefert ein Bytefeld mit den letzten 7 Stellen der Fahrgestell-Nummer als 7 Byte ASCII-Wert.</descDE>
+		<descEN>Returns one byte field in 7 byte size with the last 7 digits of vehicle identification number as 7 Byte ASCII-value.</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="BOOL" retValLength="1">
+		<name>PlantCoding</name>
+		<xPath>sys:plantCodingOnly((//PlantID),(//DealerID))</xPath>
+		<descDE>Liefert logisch true, wenn im Werk codiert wird.</descDE>
+		<descEN>Returns logical true, if code by plant.</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="BOOL" retValLength="1">
+		<name>DealerCoding</name>
+		<xPath>sys:dealerCodingOnly((//PlantID),(//DealerID),(//Testereinsatzkennung))</xPath>
+		<descDE>Liefert logisch true, wenn beim Haendler codiert wird.</descDE>
+		<descEN>Returns logical true, if code by dealer.</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="CALC" retValLength="4">
+		<name>ColourCode</name>
+		<xPath>sys:getColourCode(fa/standardFA/@colourCode)</xPath>
+		<descDE>Liefert ein Bytefeld mit dem Lack-Code aus dem FA als 4 Byte ASCII-Wert.</descDE>
+		<descEN>Returns one byte field in 4 byte size with paint-code of the vehicle order as 4 Byte ASCII-value.</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+			<cafType>4</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="CALC" retValLength="4">
+		<name>FabricCode</name>
+		<xPath>sys:getFabricCode(fa/standardFA/@fabricCode)</xPath>
+		<descDE>Liefert ein Bytefeld mit dem Polster-Code aus dem FA als 4 Byte ASCII-Wert.</descDE>
+		<descEN>Returns one byte field in 4 byte size with cushion-code of the vehicle order as 4 Byte ASCII-value.</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+			<cafType>4</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="CALC" retValLength="3">
+		<name>DealerID</name>
+		<xPath>sys:getDealerID(//DealerID)</xPath>
+		<descDE>Job nicht mehr verwenden! Neuer Job zur Ermittlung der Haendlernummer: DealerID2</descDE>
+		<descEN>Do not use this job any more! New job for the determination of the dealer identification number: DealerID2</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="CALC" retValLength="2">
+		<name>PlantID</name>
+		<xPath>sys:getPlantID(//PlantID)</xPath>
+		<descDE>Liefert ein Bytefeld der Groesse 2 Byte mit der Werksnummer.</descDE>
+		<descEN>Returns one byte field in 2 byte size with plant identification number.</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="BOOL" retValLength="1">
+		<name>GWZlt255</name>
+		<xPath>boolean(odx:executeJob('CVIN_ACT_COND_JOB','ACT_COND','bool')&gt;0)</xPath>
+		<descDE>Job fuer KOMBI-Instrument. Liefert logisch true wenn GWZ_EEP kleiner 255 ODER wenn VIN ueber DID 300A (7 Bytes) gleich 0xFF ODER 0x00, ansonsten false.</descDE>
+		<descEN>Job is for the KOMBI-instrument. Returns logical true, if GWZ_EEP smaller than 255 or if VIN over DID 300 A (7 bytes) like 0 xFF or 0 x00, else false.</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="BOOL" retValLength="1">
+		<name>TestJob</name>
+		<xPath>boolean(odx:executeJob('RDBI_ACT_COND','ACT_COND','bool')&gt;0)</xPath>
+		<descDE>NICHT VERWENDEN! Testjob fuer EVALBOARD.</descDE>
+		<descEN>Test job for Standard Core tests. Do not use!</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="CALC" retValLength="5">
+		<name>ShortVIN_2</name>
+		<xPath>sys:getShortVIN_2(fa/header/@vinLong)</xPath>
+		<descDE>Liefert ein Bytefeld mit den letzten 5 Stellen der Fahrgestell-Nummer als 5 Byte ASCII-Wert.</descDE>
+		<descEN>Returns one byte field in 5 byte size with the last 5 digits of vehicle identification number as 5 Byte ASCII-value.</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="BOOL" retValLength="1">
+		<name>BSZlt10h</name>
+		<xPath>boolean(odx:executeJob('CBZ_ACT_COND_JOB','ACT_COND','bool')&gt;0)</xPath>
+		<descDE>Job fuer Motorsteuergeraete. Liefert logisch true, wenn der Betriebstundenzaehler einen Wert kleiner 10 Stunden aufweist.</descDE>
+		<descEN>Job is for engine control units. Returns logical true, if the operating hour counter smaller than 10 hours.</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="BOOL" retValLength="1">
+		<name>SCTESTJOB_WOP</name>
+		<xPath>boolean(odx:executeJob('SCWOP_ACT_COND','ACT_COND','bool')&gt;0)</xPath>
+		<descDE>Testjob für Standard-Core-Tests. Nicht verwenden!</descDE>
+		<descEN>Test job for Standard Core tests. Do not use!</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="CALC" retValLength="3">
+		<name>DealerID2</name>
+		<xPath>sys:getDealerID2((//DealerID),(//Testereinsatzkennung))</xPath>
+		<descDE>Liefert ein Bytefeld der Groesse 3 Bytes mit der Haendlernummer.</descDE>
+		<descEN>Returns one byte field in 3 byte size with dealer identification number.</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="CALC" retValLength="3">
+		<name>SystemDate2</name>
+		<xPath>sys:getDate2()</xPath>
+		<descDE>Liefert ein Bytefeld der Groesse 3 Byte mit dem Systemdatum (jjmmtt).</descDE>
+		<descEN>Returns one byte field in 3 byte size with system date (yymmdd).</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="CALC" retValLength="1">
+		<name>OneByteBuildLevel</name>
+		<xPath>sys:getOneByteBuildLevel(fa/standardFA/@timeCriteria)</xPath>
+		<descDE>Liefert 1 Byte mit dem Baustand als Monats-Offset. Beginnend mit Jan.2011 = 00, alle Baustaende vor Jan.2011 = FF und alle Baustaende nach Feb.2032 = FE. Wird im CAS und FEM/REM codiert und dann auf dem Bordnetz fuer das LMV versendet.</descDE>
+		<descEN>Returns 1 byte with build level as a monthly offset. Starting with Jan. 2011 = 00, all build level before Jan. 2011 = FF and all build level later than Feb.2032 = FE. Coded in the CAS and FEM/REM, which send on vehicle electrical system for LMV.</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="CALC" retValLength="1">
+		<name>Testereinsatzkennung</name>
+		<xPath>sys:getTEK(//Testereinsatzkennung)</xPath>
+		<descDE>Liefert die Testereinsatzkennung als 1 Byte Wert.</descDE>
+		<descEN>Returns Testereinsatzkennung as 1 byte value</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="CALC" retValLength="17">
+		<name>LongVin</name>
+		<xPath>sys:getLongVIN(fa/header/@vinLong)</xPath>
+		<descDE>Liefert ein Bytefeld mit den 17 Stellen der Fahrgestell-Nummer als 17 Byte ASCII-Wert.</descDE>
+		<descEN>Returns one byte field in 17 byte size with vehicle identification number as 17 Byte ASCII-value.</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+			<cafType>4</cafType>
+		</cafTypes>
+	</codingJob>
+	<codingJob retValClass="CALC" retValLength="3">
+		<name>TesterIdentifikationNumber</name>
+		<xPath>sys:getTesterId((//PlantID),(//DealerID),(//Testereinsatzkennung))</xPath>
+		<descDE>Liefert ein Bytefeld der Groesse 3 Byte mit der ID des zur Codierung verwendeten Testers (Testereinsatzkennung, 2 Byte Werks- oder Haendlernummer)</descDE>
+		<descEN>Returns byte field with 3 byte size tester ID of used tester machine(tester type ID, 2 bytes plant ID or dealer ID) .</descEN>
+		<cafTypes>
+			<cafType>0</cafType>
+			<cafType>1</cafType>
+			<cafType>2</cafType>
+		</cafTypes>
+	</codingJob>
+</codingJobList>

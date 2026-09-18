@@ -1,0 +1,1436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="628EB470-8FAC-41F5-8ED1-FCE33963876D">
+      <SHORT-NAME>AUTOSAR_Platform</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="23B2A16C-EF26-479C-B284-386868ADC188">
+          <SHORT-NAME>BaseTypes</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="ACE7949C-4A34-479B-8302-04370546C4E9">
+          <SHORT-NAME>CompuMethods</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="9A5F1C45-6B01-4D66-A0ED-81B3534E50DB">
+          <SHORT-NAME>DataConstrs</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="443D815D-3B9F-4389-AA2E-EDD3AA1AA0F8">
+          <SHORT-NAME>DataContr</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="D6AAD0BA-0844-4B2B-9F9F-EEF962920D5D">
+          <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="EE8940A6-8DCB-4EFB-ACEC-0C3B06C69F76">
+      <SHORT-NAME>Blueprints</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="95B4DDDC-59A1-469F-A554-5FC98FA16D67">
+          <SHORT-NAME>BlueprintMappingSets</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="B548DF99-1F22-4F52-BE8B-7ED244F4D19A">
+          <SHORT-NAME>PortPrototypeBlueprints</SHORT-NAME>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="0DD26BED-06DD-46AE-8918-233DC950D984">
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="A8B23DDA-FF71-4EE8-AD5F-2FA6A08BC2A3">
+          <SHORT-NAME>Boardnet</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="FD26C0FB-709B-4E55-8B49-34D8E80F09D9">
+              <SHORT-NAME>Clusters</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="AC56F5E9-EB2D-483F-AC12-6EC524EE2D5D">
+                  <SHORT-NAME>CommunicationClusters</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="5BA9B922-8F63-489E-B065-2DE21BE43B3C">
+              <SHORT-NAME>CodingDatatypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="1F96F371-AC3C-41DF-A729-B61A076AA00C">
+                  <SHORT-NAME>CompuMethodsForBoardnet</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="CE7412AE-5756-4585-9518-957F334F7C49">
+                  <SHORT-NAME>DataConstraints</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="FA02E7AB-C0A7-4701-B633-8B0DDF8ABABE">
+                  <SHORT-NAME>SwBaseTypes</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="68678D40-9CBC-4BB9-A74B-4C794530ECF3">
+              <SHORT-NAME>Ecus</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="1189C3E3-F33B-4A24-9FCA-B468FA16258F">
+                  <SHORT-NAME>EcuComposition</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="8FB0FD8D-BC1A-429A-8988-A7EF9E992361">
+                      <SHORT-NAME>EPSComposition</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="C94D33D7-D0F3-49F1-A713-3C4325CBEE33">
+              <SHORT-NAME>Frames</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="C40297A9-77DF-4F5C-B776-319F90F3E92C">
+                  <SHORT-NAME>Frames</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="3EDB41C4-734D-4BB1-A8BB-2CD2A579B0C9">
+                      <SHORT-NAME>A_FlexRay</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="36508DAF-0A52-40BD-A745-0624B52FFB97">
+              <SHORT-NAME>Pdus</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="7CB653A3-CE5D-4E0A-AAB7-53522A4848B9">
+                  <SHORT-NAME>ISignalGroups</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="1C0641E0-B89D-4F63-8985-4E35266564E2">
+                  <SHORT-NAME>ISignals</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="217CCEE1-D79E-4E37-A03D-578437AEEB31">
+                      <SHORT-NAME>A_TEMP</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="8741DF68-EF48-4B52-A914-375C30D13D3C">
+                      <SHORT-NAME>ACLNY_MASSCNTR</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="E5BA9C27-D001-4161-BB24-4E6744942A59">
+                      <SHORT-NAME>ANFRAGE</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="EC1A3075-397D-483B-A3BC-1AF1683B7F54">
+                      <SHORT-NAME>AVL_FORC_GRD</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="C71607BB-25AD-4065-957E-F56C2D362918">
+                      <SHORT-NAME>AVL_PO_EPS</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="B80B09B0-8563-4D27-AD29-B74355744329">
+                      <SHORT-NAME>AVL_RPM_WHL</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="FA408FA0-3DF3-4316-9F63-6CD12826AE16">
+                      <SHORT-NAME>AVL_STMOM_DV_ACT</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="C202F1E3-433A-43A4-910B-6FBC6D88E5DA">
+                      <SHORT-NAME>CON_VEH</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="6F607040-2B72-446C-A416-6E03F0D551DA">
+                      <SHORT-NAME>CTR_DIAG_OBD_DRDY</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="5FDAF4A4-1255-41C2-9C86-EF935DE51079">
+                      <SHORT-NAME>CTR_VIB_STW_DISP_EXMI_SP2015</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="1BA43BC4-C33D-4770-B3FE-C594F4BB844C">
+                      <SHORT-NAME>DBG_EPS_BS_MOD_58_BYTE</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="75FCD3D1-0FF1-467E-91BF-4C85842619C0">
+                      <SHORT-NAME>DBG_EPS_MOD_EXT_120_BYTE</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="3EF0248C-A82B-4EC8-B56B-9F40DF90521B">
+                      <SHORT-NAME>DIAG_OBD_ENG</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="50DC3C6E-6173-4033-88C2-AB8F37580BF5">
+                      <SHORT-NAME>DISP_CC_EPS</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="EDD0D41B-3772-4FB4-B11A-4F3F71FD7C36">
+                      <SHORT-NAME>DT_EST</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="D7C13705-E37E-4FB1-915B-1DA691054932">
+                      <SHORT-NAME>ENERG_DGR_DRDY</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="8DA10046-1199-42BF-8772-6AAB0AA919A6">
+                      <SHORT-NAME>ENGTORQ_EPS</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="5F1FB747-0F42-49E3-9936-0CD3B7C26172">
+                      <SHORT-NAME>ENSU_SFY</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="15A25E3C-DB75-49AF-B259-2FDFEA16F94E">
+                      <SHORT-NAME>ERRM_BN_U</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="72F7062E-6B1A-4A9E-A843-87C453E03A05">
+                      <SHORT-NAME>FAHRGESTELLNUMMER</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="B3181BAF-6963-41AD-8FD1-C19B8943637E">
+                      <SHORT-NAME>FZZSTD</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="671F7FEC-2967-4910-A4B6-E2C38D103AC3">
+                      <SHORT-NAME>KILOMETERSTAND</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="216730B3-6271-425B-8DAD-54ABDEDEA472">
+                      <SHORT-NAME>LIM_ENSU_DRDY_SFY</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="5AC29529-4D4B-4C7E-8FE3-97A8AE0FC84F">
+                      <SHORT-NAME>OFFS_QUAD_EPS</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="8764AC4F-079E-4A07-9C77-6E1E43C7CF9E">
+                      <SHORT-NAME>RELATIVZEIT</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="632D374B-4924-4BCA-9E19-FDC87D3462A9">
+                      <SHORT-NAME>RQ_STG_EFAN</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="E533F9AE-B480-48FA-BE70-AA12AB480D76">
+                      <SHORT-NAME>SECU_CHAL</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="241E0432-B650-49E5-96D0-242904F900F8">
+                      <SHORT-NAME>SECU_FAHRGESTELLNUMMER</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="5928FAC6-89F2-4C11-B6CF-36D6C95CA157">
+                      <SHORT-NAME>SECU_RESP</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="264FA5B6-ECCC-48AC-828E-5B4EE1FA3BFC">
+                      <SHORT-NAME>ST_CENG</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="39805BD5-FCE3-49F0-A5A8-D3E29A62749B">
+                      <SHORT-NAME>ST_DIAG_OBD_3_DRDY</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="E3CBFE0A-2894-4A75-A2AA-F983FD2D72D4">
+                      <SHORT-NAME>ST_ENERG_GEN</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="93490DB0-41C5-4D9E-9978-68C2C8A977E6">
+                      <SHORT-NAME>ST_EST</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="D9C1220D-5DFC-46EC-9603-C4FDCD459DAE">
+                      <SHORT-NAME>ST_STAB_DSC</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="7424A405-82E9-4056-B7FC-3DBB56BF2103">
+                      <SHORT-NAME>STEA_OFFS</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="85BC3F64-D14E-49ED-9FBD-13CA8225FC32">
+                      <SHORT-NAME>SU_CLE_DRDY_DXP</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="9D9E6318-8FF6-480F-9B4A-E1814786DE56">
+                      <SHORT-NAME>SU_EPS</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="686CC8FA-32A3-4E36-B6FE-966507D4E18C">
+                      <SHORT-NAME>TAR_ESTP_VIRT_FTAX</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="7A751CF3-40AF-4838-8894-A26E998090A5">
+                      <SHORT-NAME>TAR_QTA_STRMOM_DV</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="1F82EB14-1172-408F-9392-E4553C00B786">
+                      <SHORT-NAME>TAR_STMOM_DV_ACT</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="31895255-94FD-4C0F-B63D-E7FBC775065A">
+                      <SHORT-NAME>V_VEH</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="E062E1E6-707E-4D37-8592-395EADAD2932">
+                      <SHORT-NAME>VYAW_VEH</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="41BB050E-1263-4EC6-90D9-678815DA5AE0">
+                  <SHORT-NAME>PDUs</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="4D3ED630-69DD-4DE5-A945-8862A333DD63">
+                  <SHORT-NAME>SystemSignalGroups</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="FEF91513-3AA4-43D8-A9D0-B98D23FF6B87">
+                  <SHORT-NAME>SystemSignals</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="7374CAED-4035-4429-B904-2A23195B2BAF">
+                      <SHORT-NAME>ANFRAGE</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="99D9C781-4B92-4E08-BF8A-C1E4EE897BAB">
+                      <SHORT-NAME>DBG_EPS_BS_MOD_58_BYTE</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="EC16E6A4-9FD8-4D08-91AA-B3E61D306A83">
+                      <SHORT-NAME>DBG_EPS_MOD_EXT_120_BYTE</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="CCDEEA2C-C004-4C16-B8A4-C6D16CD90605">
+                      <SHORT-NAME>RQ_STG_EFAN</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="6AA05A47-D6A7-44C0-9597-9FD6EEAA4E22">
+                      <SHORT-NAME>SECU_CHAL</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="6C84FCE0-4FFF-4620-ADAD-01222F469E23">
+                      <SHORT-NAME>SECU_RESP</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="48D6A1AC-B248-4FEC-993C-EBCFD3F1905F">
+              <SHORT-NAME>Signals</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="AB7708AD-6C59-4250-AEFC-07CDB959699D">
+                  <SHORT-NAME>SystemSignals</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="A2DD6323-F475-4C11-8F2E-80EC2D138E3D">
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="8E21D025-FC5E-4196-918B-746B264A5202">
+              <SHORT-NAME>Auth</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="2449E1E4-691B-4778-8128-B9418E31D6BC">
+                  <SHORT-NAME>Dcm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="2293EC63-503F-4F3A-8DB6-BAABF5DB87D7">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="2FEEDA7B-A6C1-4CD8-BDE3-4844177D94CE">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="879FFC6B-5576-4A81-855B-7F9B7ED23424">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="B6FE8273-89E3-4400-89C5-F1F6E2D263E3">
+                  <SHORT-NAME>Dlog</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="CED66B64-19E1-498A-B34B-2A406AD54B77">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="2BDD8184-1EE1-4073-A3D0-4D5D869BBDF9">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="6E9C79A6-84FA-4DDA-83CA-8B83288DABEF">
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="E506E2CF-1AFF-422B-9D10-2AC8721E277B">
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="69A7F2FA-DA7D-4F70-8A30-71EF005F3107">
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="5A041870-B7EA-4B8F-9432-52F18C18A449">
+              <SHORT-NAME>Bs</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="05F5D5B8-CDBB-4824-8738-B20D9A485E9D">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="99A7A3F1-7473-4AFC-AF20-368CB1782AC0">
+                  <SHORT-NAME>Csm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="FA71DC41-EE69-48B0-947C-8F51F0EDE4D1">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="33FF1E39-79E9-48E1-A49D-B97778601702">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="B5807DC3-7AB8-4F04-A801-4B1A9E367C68">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="E00BEF05-7284-4914-94B9-7E9CC2EFD411">
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="E08A8153-FD46-40C6-AE32-FFE97D1AFDCA">
+                  <SHORT-NAME>Dcm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="0C50F9D2-E039-4A6B-B2D1-40D5737584A6">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="DCC54B05-AB71-4A29-87B5-FE13A77F6BCC">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="F1EEFE2A-3F32-455C-8F36-EA6361621D40">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="CDB5EFFB-FCA6-4FF1-9778-117499B3D7B3">
+                  <SHORT-NAME>Dem</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="09C7CE72-1859-4318-B159-BA0C919A8DBC">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="8A4D0BA5-B79D-4DF0-9F88-D8EA4798D5BF">
+                      <SHORT-NAME>DataConstrs</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="8BEA4863-B9EC-4699-A6A1-7BBDD9E414DE">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="28246462-1589-449C-8012-4878924C9FD8">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="61C9DFFF-201E-48B4-AEF7-BFEA5EA45516">
+                  <SHORT-NAME>Det</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="607EAB1C-6E6C-4E1B-B315-11FB1DCCAA84">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="BA3B9718-6027-433F-ACF3-EAC84C779E5D">
+                  <SHORT-NAME>Dlog</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="DB4FAE04-D361-49A0-B9F9-B26DAB8CF575">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="8393BC1E-634F-4B26-9731-9E8F633AA051">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="494D1692-E658-4305-9F6D-436A7CCCDD26">
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="483200BF-78E0-4914-89B2-9470357D6822">
+                  <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="597E8FCD-D5FD-432F-965F-03A050B3CE0C">
+                  <SHORT-NAME>NvM</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="1128F2DF-871E-4F65-B146-C41DEC3078E9">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="1208180D-2B1E-41CB-9358-8E4F11BB8D2D">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="C9B5365F-0550-4E7A-939F-153CDF1C2B46">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="C0AC407E-7CAD-454F-A3FC-CBC5631EC8D2">
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="9CCF0B70-AE41-43F4-827A-3D70B8D03179">
+                  <SHORT-NAME>SecOC</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="A6548FF6-28B1-4251-9B9F-231A4D9E9D6E">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="B984DA0E-CEB1-4762-BD81-DD6194E64E51">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="C56356AF-6788-46EC-AD46-944D982C2C30">
+                  <SHORT-NAME>StdDiag</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="1E062540-781B-46F5-A43A-8167852EC812">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="CF6A895A-FC00-4893-AA4F-7E935BC374AE">
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="553070A5-1A1E-4243-BCAB-A826F3D789F4">
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="67BA21C0-127B-4C1B-AB0B-0DEE8F1D306B">
+              <SHORT-NAME>Common</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="3C86B469-D80C-482E-BA1A-0480210B4FF8">
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="3E521D46-3AA0-4F08-925A-28359A6A0B6E">
+                  <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="9A7A49B2-1837-42F8-9233-C36B4C48084C">
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="D8BCE50D-5FA8-4639-9C67-F549DDC33B9C">
+              <SHORT-NAME>Darh</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="405922C6-4541-4722-8AD2-DA1082FFA18D">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="2B620C33-99D4-4D57-9C30-31D9FF3209F7">
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="C4592C74-36CE-4394-97F7-2035D2B7E659">
+                  <SHORT-NAME>Dcm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="D4406DE1-F132-4CE5-B1FC-C4C2792E9F1E">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="985F7763-61E6-4BC2-B5D6-BE1326AA49B2">
+                      <SHORT-NAME>DataConstrs</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="E72F5110-AC1C-4F6E-84E2-84A046E1B763">
+                      <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="673CB877-4FCF-456A-A1CC-66F64CCD0359">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="63557633-00CA-4C73-9706-46903144A249">
+                      <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="F4798E80-53DB-45E1-9F87-8AC378EB0FD8">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="C9B24E0F-13B2-4063-AC36-505FD13AFE4E">
+                  <SHORT-NAME>Dem</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="5880F18E-1DF6-4D8E-961D-F7C056F54D4A">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="71B06F75-25F5-416E-953F-D2A624E6B107">
+                      <SHORT-NAME>DataConstrs</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="33613ECF-822F-4643-9ABB-E4E3449425F4">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="2F2A10B4-252C-41FD-9C24-04AF33F5222A">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="64321455-339D-4418-BA5D-6979FF97E579">
+                  <SHORT-NAME>Det</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="86D52805-6CD6-4A6A-ACA1-4D52DC42C668">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="44935C72-791B-49C5-868B-285CBE8053BE">
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="17477336-48D7-4F31-AF6B-80E94DA82C6A">
+                  <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="41D155BD-5D90-4697-AE91-01243CDC89A3">
+                  <SHORT-NAME>NvM</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="E2D0920E-A55C-48BB-8860-B684C3F859B4">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="287410A9-E583-4884-85F7-6489CC0E97AE">
+                      <SHORT-NAME>DataConstrs</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="CE66B456-1316-49FD-A865-10FE8EF50367">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="F9F3071A-633E-45A3-8E90-F648E1E83E7A">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="0D9CC14D-1383-469E-8F22-CA49EDFAADD4">
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="79BFE459-5363-4C98-9E2F-4A04AC1DE883">
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="B3380D31-D388-417A-A77F-11D1EDCB4040">
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="A9D74E56-F185-47F2-8154-7C27EBDDBF25">
+                  <SHORT-NAME>Tp</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="C692A375-1972-4AEF-941F-1E9DE5798FB6">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="48FD1B7B-7BC3-4182-972E-1813E52507C8">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="420EE9A1-A9AF-4B4E-A770-E1CE17995537">
+              <SHORT-NAME>Dlog</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="2DE61FB6-9E34-4369-9B36-85AF7902CD6C">
+                  <SHORT-NAME>Coding</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="529346E8-2A6A-4F4E-979E-23B9F4E0750D">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="76D14EBB-F8A7-4585-A480-DAEC14A6CDFB">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="67053F1C-A8DB-45CD-BAD9-E0E57783DFFF">
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="8127BACE-CAF5-45D3-AA91-6E1D33712195">
+                  <SHORT-NAME>Dcm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="ED261D92-FDB7-47D0-B484-4B8E903EE979">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="C9C21DF9-A1A8-4206-BBA4-B38C7386F974">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="58358931-B5C3-4D12-A317-89E026AE1D07">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="A3D9A5B9-DAB8-43CA-BAA1-2283BFC178FF">
+                  <SHORT-NAME>Det</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="48643EA6-2BEB-4672-A48E-2AF8D9CF5057">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="4A605CBD-6F89-4790-BF20-0387892D6AD7">
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="C0CA9374-C987-4728-834A-90F55490FC1C">
+                  <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="876AACD6-5123-4C80-8AC4-74E08D16F17D">
+                  <SHORT-NAME>NvM</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="C36E65CA-1047-4CC0-A821-2D820310952C">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="2054F073-6260-4ACA-B217-4E7B6F63F017">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="10202406-D09D-4217-BC50-168217E55C39">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="1F25AECB-1C6A-4A15-955F-1396FDA7AC57">
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="2B244B23-94CA-460B-BC2B-9260782D3432">
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="BD9E73A2-64B3-4B37-B080-A7BC387990DE">
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="234D934F-BF76-4DF6-8E69-AE8F21E36633">
+              <SHORT-NAME>IntegrationSample</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="FDACC126-E24C-4C2E-AA4C-64BB738696AA">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="A0CFFBFB-BAA9-4380-8862-2229C37200B9">
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="73667778-2E44-442C-8848-C5FC78476DDD">
+                  <SHORT-NAME>Dcm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="B109A091-F989-4CEF-90A7-FD0DC7195C38">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="9B741407-2F06-460E-830C-5E1761E7FE80">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="35259551-2EB8-4A67-9AD8-764CF3C323F3">
+                  <SHORT-NAME>Dem</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="FEEFC390-AFD3-4894-AAF1-E7817F309966">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="38067459-59A0-4B8F-8D43-1451FC576117">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="7E8D8910-5761-4685-9EDD-FC2D04D0DF94">
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="B74A4FEB-0203-4C9C-B0A7-093456FC5F44">
+                  <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="F1D65C20-466F-4CA6-9EF0-395FE83B889D">
+                  <SHORT-NAME>ObdM</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="D59428A0-C2FF-4D27-893B-6FA029565609">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="1037B679-4439-419D-906E-B5F0C0E80A21">
+                  <SHORT-NAME>PnDm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="FD5EB786-A98E-4A81-A46B-2FD9A3B92146">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="D3F333E9-DE89-4885-B933-A9BF4453B2D1">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="C70B98D6-C859-49EB-B58C-713D06892F98">
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="330ECD33-5B5D-4887-B87D-5AE805D494EE">
+                  <SHORT-NAME>Stm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="6D971640-C0EC-4A95-9B4E-FD66D4067437">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="CC2E4479-3E91-4C2F-98BA-19C356F023E1">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="5A4FD50B-B8F4-4086-A517-A9E397A689D5">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="98B60338-C434-4673-94DF-25D22530BEEA">
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="C3E93DBA-A0D2-4CF7-9021-2C6B63752242">
+              <SHORT-NAME>Omc</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="20E4B7D2-7765-4DDF-A856-8DA81086CF8B">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="C8731169-3AA1-42E5-8A8D-70777A725856">
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="EAF14DFD-3C84-462E-B014-491C2604844B">
+                  <SHORT-NAME>Dcm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="359B9017-5197-4E61-9DFB-FD6BA415FFF8">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="BAE3E54B-BB99-4386-83BE-6BD64E69CF4E">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="2F45B99F-B25F-42BB-8F94-C33E38120DCB">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="74A4AD8C-E881-497D-80C9-0D6533ED924E">
+                  <SHORT-NAME>Dem</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="DC1F3C88-0BC7-4144-A061-3F9051AA3D67">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="EC0A2BD8-3500-4784-AA7F-FF9CA84B2FBE">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="8CCF8DD2-8A4A-4D2D-B399-BA8854723D3C">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="EB07BB77-79E9-4788-B4AE-BDFDFCD46813">
+                  <SHORT-NAME>Det</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="3374240C-7812-4FDD-9E76-1A2191A41AC3">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="381ECBE1-3305-4C29-8428-73BF8E8615B8">
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="34A99363-5976-4E1A-B167-F55E0A5941C3">
+                  <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="1361B684-F7DB-4C49-932F-508CDDA1CB6E">
+                  <SHORT-NAME>NvM</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="524A68C8-2129-44BC-82A0-D578AEC4B7B9">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="88E5C1E1-FA75-4402-9EBC-C7C24C651856">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="F607DCEE-E5AA-462B-8B82-2B6193FB9FFE">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="CB2874D8-8C57-431F-B892-32B21A1B803D">
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="2D61FDE0-EFA5-4D01-80A6-62A73EF370FB">
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="046F8E70-AA9B-4CF8-AC1B-0BF539D2051F">
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="DCC5F72B-F4F1-4814-80F3-1E6D67BA715E">
+              <SHORT-NAME>StdDiag</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="9630E9A0-47BE-4C3D-8E34-7F49E4613148">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="16E81F60-1044-47FA-A0E7-F838C11E438E">
+                  <SHORT-NAME>Darh</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="E8D42E1A-D083-4848-8C41-078032F735E3">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="CF734A8F-342E-4F71-BC36-03A1CCF7FC96">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="143F0CBD-82B9-46A2-9314-603B8AC111F6">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="10C641FD-516F-4ED2-AFBB-C6A29D076685">
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="53AC6793-1EC0-422B-92EA-AC7D9512B4CE">
+                  <SHORT-NAME>Dcm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="763484AF-3E97-42D2-BF85-C0284B146596">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="C3435902-E6BA-47B4-994E-8244A902D9A9">
+                      <SHORT-NAME>DataConstrs</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="AEE5A2CA-C4C1-4334-B7DD-03AB1E7C1751">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="D87626F2-85C2-4CD7-A836-43290A5FDD1A">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="452D821E-D276-49A5-A54A-3CBA0AE67A45">
+                  <SHORT-NAME>Dem</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="4B0BCE60-CB2F-4073-85B6-20656A005922">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="6C719201-917F-4513-AE8B-6FF2DF9F955F">
+                      <SHORT-NAME>DataConstrs</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="BC631CFC-0076-4B81-AF30-C7A6378BD682">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="70D7DB8F-DBC0-4E62-BDB6-C61287B01808">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="0AC6E18F-C499-45D7-9B9F-D3451380CC5A">
+                  <SHORT-NAME>Det</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="07DD6D0C-F4CD-40A5-9BE0-4B1B6EBF1421">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="62D5C217-76C5-4742-ACCF-8C2FB14FA12A">
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="7B934C6B-0AED-41C5-BF07-1DFE0CAEE19F">
+                  <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="68ADF100-D372-4907-BD19-EEC0D3197A7E">
+                  <SHORT-NAME>Omc</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="D48D19DC-E8F7-4299-B146-4F3FAF58CDD7">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="FD6F87F3-5A55-4587-B7CA-9696D03DDEEE">
+                      <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="F19071ED-05AC-4C62-B1EE-1A5BFD217451">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="7C736872-77DE-4F7F-B64F-B470FD18A9B1">
+                      <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="D2679825-6F8C-41DC-84BE-2EEA83915D0D">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="3A73CD34-B23C-4F9C-879D-1130B7E045EE">
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="B19D5B35-17EF-4B45-B327-9BA76F74FDB6">
+                  <SHORT-NAME>Stm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="18AB24BE-B1D1-490F-B586-F6DEDB226B78">
+                      <SHORT-NAME>CompuMethods</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="ADC34B09-883B-443A-8AD4-F5744DCBC499">
+                      <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="7CFD6B0C-8599-4A8B-A691-8F2AEDE8A7BF">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="68A7B0E8-D48F-472B-9C46-3D1C94A73C4B">
+                      <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="BCDFAEEA-2A86-4A51-8501-F7711C74734E">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="88BDB037-BCA5-4ADF-91CA-6BA6732EC1C4">
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="5A0E55E1-7AA5-43D2-9CBA-5F7DE40EA8FD">
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="D0D9E2E1-5C37-4B88-84D2-20CB87418F9A">
+              <SHORT-NAME>Stm</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="293596CC-1A7F-464A-A06A-AF266F427A9F">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="B417C390-7186-44A8-94E3-C205AD22577C">
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="C23C7159-20BB-4EDB-9818-8CDCAD2CA3A9">
+                  <SHORT-NAME>Dem</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="F83B120E-B0E8-4BFA-A311-297E6D6D3B0B">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="8892BAB2-00EE-427A-83FE-408E466719EE">
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="37D9BE65-6543-4FED-810C-AC2B5CA71B4A">
+                  <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="3068B6B7-1D25-4FFE-945F-F5322509AC3B">
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="C2F205F2-ACF4-40F3-BF67-4460D4CC04FF">
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="0F204B15-1E1D-44BA-8545-F5D37CDCBB5A">
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="E93EF961-4320-4D99-9104-D918CF7ECEA4">
+              <SHORT-NAME>SysTime</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="1003B379-54D2-49E7-862F-7A24CDAFFD54">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="FAE587EE-D24E-4B23-BE8B-9C773D950BCD">
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="51C0A40D-ECB6-4129-B0FB-BEEFF106681C">
+                  <SHORT-NAME>Dcm</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="9B0A94FE-D5F8-4A13-B0EE-6A88AB526BCC">
+                      <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                    </AR-PACKAGE>
+                    <AR-PACKAGE UUID="EEA8F654-BE79-4B6A-9214-9BDA45CFE733">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="18AC7246-0E8C-4CAE-A8A0-0BABC7FB6388">
+                  <SHORT-NAME>Det</SHORT-NAME>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE UUID="19805B9D-C3F6-422C-810C-365AC242DE9F">
+                      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="E28CC90C-C730-4C87-A9A8-2EEAFBC9AB0A">
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="79AF8A13-C89C-4A0C-A4D4-A67AD6E6DB6D">
+                  <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="73E24685-3DA3-4496-AC3C-A1DA0B1645CE">
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="A5AD8000-93B7-4AAE-B738-AB159FC2C74C">
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="54787C2A-1FEC-48E1-8B90-E0EBE05BCB9D">
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="A951B27F-DDCE-48CE-B67D-C5869F063AB9">
+              <SHORT-NAME>Vin</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="4FFBDFF6-96FB-467D-9874-EA5A7BF00407">
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="970F520B-ECA0-4BE5-9A83-700FA9CB68C9">
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="878EB76F-D78C-4CAE-B29D-F7EB015C05D6">
+          <SHORT-NAME>SystemComposition</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="1E3B3511-B1BE-4A76-906F-87EEE34B9B8E">
+          <SHORT-NAME>SystemDescription</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="A03DEFD8-B3EC-4DD9-8B7D-CD0F5D906FD6">
+              <SHORT-NAME>BaseTypes</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="52669E3D-F784-4E78-AE19-563608AAF862">
+              <SHORT-NAME>CommunicationClusters</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="FF8B0249-5ACE-4BDE-9104-3D379677A506">
+              <SHORT-NAME>CompuMethods</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="F93CE923-2063-4749-9D28-18D6550C18FE">
+              <SHORT-NAME>DataConstrs</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="D4369018-E6C4-42C3-9B5B-1E39D99A52EC">
+              <SHORT-NAME>EcuInstances</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="589EE6A8-FE99-48C0-ACF0-B57A6EFA4B60">
+              <SHORT-NAME>EndtoEndProtections</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="AB66D80E-899E-4E61-88E9-B754579F0928">
+              <SHORT-NAME>Frames</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="2730040E-C2B4-45AE-9C70-2CE1C42232BC">
+              <SHORT-NAME>ISignalGroups</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="B8BDE473-1E02-45F8-AA58-4BCFFDBA019F">
+              <SHORT-NAME>ISignalIPduGroups</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="D8ECE9AB-775E-4865-B15B-5863314C675A">
+              <SHORT-NAME>ISignals</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="CB3E4E59-74A4-4377-B89D-EEFB31E6091A">
+              <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="F80702A2-0207-4E42-B50B-ACD3C38E8A06">
+                  <SHORT-NAME>BasePartialNetworks</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="F779C38D-D948-49A8-A4CB-5FF2A00B2817">
+                  <SHORT-NAME>FunctionalPartialNetworks</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="BC73F550-C6B5-470D-AE82-0AD04FC8F473">
+              <SHORT-NAME>Pdus</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="A6274C34-6E65-47B5-9637-36049BE65135">
+              <SHORT-NAME>Systems</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="5B33EE5E-0055-40A5-8951-CC757E1E715B">
+              <SHORT-NAME>SystemSignalGroups</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="D4243E82-97B9-4C28-A5EF-4E93F9CFC627">
+              <SHORT-NAME>SystemSignals</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="B1BB3480-9EC4-4C94-AB4B-DBD71A33E2BE">
+              <SHORT-NAME>Units</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="F4966CEC-E4BA-49C9-973C-17AE31CA2245">
+          <SHORT-NAME>Units</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="6224B45C-ADA7-43B7-A901-5C4750C5FCE7">
+              <SHORT-NAME>PhysicalDimensions</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="7B634EE3-82D7-4D33-A837-54DB8A88C361">
+      <SHORT-NAME>ComponentTypes</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="DDA1F20F-4E97-4756-8D2C-36E77BE77E68">
+          <SHORT-NAME>ConstantMappingSets</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="D14FF74E-37D3-4CDB-A678-F04B7418E3B1">
+          <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="52DA2D83-FEFA-4C1F-A9DD-9CFCEAD08FEA">
+      <SHORT-NAME>Constants</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="32CD0CA2-DDF6-478D-99D5-ECCB31084279">
+      <SHORT-NAME>DataTypes</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="95D18445-5CA6-4D75-BB59-B0D8A8CB8846">
+          <SHORT-NAME>BaseTypes</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="8FFFE7A6-C5FA-47E3-9937-46509922DDB9">
+          <SHORT-NAME>CompuMethods</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="5FB112FE-7E79-453B-AB89-3479912CDF24">
+          <SHORT-NAME>DataConstrs</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="6D87EE12-3102-42E4-A924-41D8955F8D8B">
+          <SHORT-NAME>Units</SHORT-NAME>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="BFAA2A7F-FB16-4475-8E16-BF38457A816A">
+      <SHORT-NAME>ECUCompositions</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="28887444-B39A-4282-95AD-05E64B399B83">
+      <SHORT-NAME>ECUCompositionTypes</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="6E01E51D-2DED-4837-A89B-38FAE453C0C2">
+      <SHORT-NAME>EndToEndProtections</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="1fd18170-d612-44ba-8b8c-122100db02ae">
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="41c3e8cf-83c9-4558-b5d2-b2d33abbb0c2">
+          <SHORT-NAME>BswM_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="171eeffd-df7c-47df-a9e1-2b9db2c9d1f2">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="87a505d7-27d6-465a-9c16-6a4765357f18">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="7e6d2bc7-b814-4310-a227-c5736132ac80">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="9cc52489-b96e-4173-ad9a-0e705f40cfd3">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="39cfd809-b9e6-4ac9-9039-312614ae529c">
+          <SHORT-NAME>ComM_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="81e93595-ef8b-4f93-ab7a-95f9fee0d1ae">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="c2ead110-0996-41fc-8187-97832d9f02ec">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="47b7e82c-ed54-4b25-86a3-3a19ab7b94f9">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="dfb135ae-eebd-4507-8387-abaefa064a70">
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="fb8e073c-6325-46ad-894a-013a9ed35002">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="49672c9a-01b4-409f-8c3a-104ee57163fa">
+          <SHORT-NAME>Csm_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="c980f48e-f824-44f2-989d-3f876f7f498d">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="38690204-1f48-410c-9461-75ff08cbbe3e">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="902e3330-937c-47b6-a439-422d2a52b68d">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="6ef18ec8-6baf-4342-bdbe-e936ec3b44e9">
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="d0c954cd-0081-4f2a-b182-1b592c1fbba8">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="09405bc6-436c-497a-8aa2-72f1b9b80aa8">
+          <SHORT-NAME>Dcm_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="0d985dff-11ba-4efe-b17e-fc037e1cc675">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="6215b478-bab2-41b9-b5f1-a491e59e7a0d">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="45287BFE-AEAC-458E-A2E8-A5E52E938772">
+                  <SHORT-NAME>BaseTypes</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="cf66a8a6-d67d-4401-bc73-e544c5eda67e">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="453eebd7-1d86-4a15-96be-e0ee9507b2c1">
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="ab3657ef-b14d-420b-bfc0-e194ecd3de3e">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="3cf72876-85fd-4cf6-9133-67a2b65f0164">
+          <SHORT-NAME>Dem_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="dd1e6bf3-e9c8-4e45-9eb9-6adfee6c04e8">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="60cf6a79-e30a-47df-ab54-ea2f3c7edf17">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="6aa5baaa-602d-41ae-9328-12ebfe143a2f">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="9c7bed50-68b3-4562-a634-a9eb5e4b81b7">
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="a1ce6a04-4304-4cd3-aab4-a7476ad26218">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c29a7c01-5c0e-4182-bd25-46816a9f064b">
+          <SHORT-NAME>Det_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="0b1c0c81-2ca3-4af1-b981-b4e129d91ab3">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="d4038a2d-9125-47fd-abb2-d6f7d1b27da2">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="3685e631-18cc-4217-b6da-ad66ec4207cc">
+          <SHORT-NAME>EcuM_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="def083cf-2b99-45f2-b738-d8696f7a60ba">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="4648238a-a7a0-4736-9608-ef9bb89068f5">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="6b4c6fb8-b5f4-49f7-a7f4-29472b48e6c4">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="f0f31b69-e1b4-4ec0-aa09-42de58f37f88">
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="86783442-b182-4a76-8fdf-851d19a79b59">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="928c7cfb-27c7-4ec4-bfa0-baa06eb8af76">
+          <SHORT-NAME>NvM_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="74ee047c-5753-4eed-8fdf-df8db4d9ddbe">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="686df9dd-aec3-440e-accb-102120ff0bba">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="ce041b14-933c-4209-93f4-cb8ab5ebe467">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="84a5c564-7484-4412-a47a-1e87a09701f6">
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="ae1c66dc-da15-45f4-b733-d9ad442808f1">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="ec9ae7f6-d82a-4f7e-8296-1e4c25d92981">
+          <SHORT-NAME>Os_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="d623e3eb-d458-44b4-a873-8b012bc6a29c">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="88c41e24-8ba8-440f-92be-bd3d2e310ce6">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="4ecc8248-2cc7-4df0-bc3d-cb508d1bfc3d">
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="5f97ee3b-4e74-4c33-9039-fa269a1ba9dd">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="cda1cccb-3d4f-4aac-9f37-b566c04a6a5f">
+          <SHORT-NAME>WdgM_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="ec85f818-914d-47b4-95fb-fa4d6a1f9bb4">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="6afb52f6-f4b8-4cfe-90ee-758546410367">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="08b15ab8-9159-4332-94f3-24f990a3b2b2">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="66d0e739-f5c0-4730-95e7-3c2ddc8d1d2f">
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="aa58f730-360b-471c-8986-61d0680497c6">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="93F19B7F-BE07-429E-A6CD-1FEE9B65A3B7">
+      <SHORT-NAME>MICROSAR_SWCS_DEV</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="E31C64D2-17A5-464F-868D-C1B9C569AC20">
+          <SHORT-NAME>Dcm_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="B0132366-CDE7-4371-A0D7-7B605633B0E3">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="2DA0871A-D7CF-419E-8F9B-7855769AFD04">
+          <SHORT-NAME>Dem_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="075F3DC3-38BD-4B66-B59B-EA14FA66C951">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="6439BEA3-1D19-49BE-B368-9A56706EA96B">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="2629F2AF-2348-44F7-BD7A-DA04626C1558">
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="BD4BA9AB-B013-4E32-B009-8B81A0EDEC13">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="A2F0B9BE-5DD5-4A67-B98D-4E890AD7C1B2">
+          <SHORT-NAME>WdgM_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="E6EDE1B7-99CF-41DB-8F13-AA20DE063076">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="8341F45E-AD8C-4847-981F-FE0B78EC37D1">
+                  <SHORT-NAME>BaseTypes</SHORT-NAME>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="F801AF2E-715F-4A98-9FDB-726417E1E03B">
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="6D4075EA-9CA5-4EF3-8209-F5030518075F">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="3B6C5AA5-43D1-419B-8981-29A4A52D512C">
+      <SHORT-NAME>ModeDclrGroups</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="81C57AF7-269A-4528-93B4-C692268E016D">
+      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="D6A7420D-E22B-466A-B697-921FF89DA25F">
+      <SHORT-NAME>Predefined_DEV</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="ED2EF6F6-4C27-48AF-8501-964C5D118139">
+          <SHORT-NAME>CompuMethods</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="74EAAD4E-A543-4E8D-A452-2CC51A5C7564">
+          <SHORT-NAME>DataConstraints</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="2BB5E476-7321-4BB9-A6D0-9D3864E7446A">
+          <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="699B5FCC-F50B-4482-9C74-9BE458FD9915">
+          <SHORT-NAME>PortInterfaces</SHORT-NAME>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="F5DF9C3B-ADF2-4A0E-86A9-0A2EAE087E5D">
+      <SHORT-NAME>ProjectStandardConfiguration</SHORT-NAME>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="9c4e0c07-a235-4116-ac6c-cae548bd2630">
+      <SHORT-NAME>StartApplication</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="218c0f9f-ff5b-4b7c-9c6f-70e641223340">
+          <SHORT-NAME>StartApplication_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="b5d19b47-4031-419f-9d5d-3b46a4b6e15d">
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="b5f12c03-c235-4517-b9d8-47edaa0e8816">
+              <SHORT-NAME>Constants</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="81f29bc7-6d34-4ba7-81d7-085b04e1392f">
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="e9072377-1c88-4bbc-abb0-1ea59416f79f">
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="2e8e1421-05e9-4474-b37d-44680f62e9a1">
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="B942515E-5F23-4D2C-8093-BE3F46B5B26A">
+      <SHORT-NAME>Systems</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="F94A9AA5-F23F-4E92-93C6-6F392B98ED05">
+          <SHORT-NAME>EndToEndProtections</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="2523B77E-BDCD-4A27-BDBA-4F86000B6594">
+          <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="F94DEC47-D998-4822-AD94-2A6D3B4FCB3B">
+              <SHORT-NAME>BasePartialNetworks</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="31A98E18-ACF0-42E8-A9E9-2510561956AB">
+              <SHORT-NAME>FunctionalPartialNetworks</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

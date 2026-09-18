@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0_STRICT_COMPACT.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>Bs</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <APPLICATION-SW-COMPONENT-TYPE>
+                      <SHORT-NAME>Bs</SHORT-NAME>
+                      <PORTS>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>ActivationState_Features1</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/Bs/PortInterfaces/ActivationState</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>CertManAdue</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_InOut</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>CertManReadStatus</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_Out</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>CertManStartCheck</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_Out</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>DETService</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Det/PortInterfaces/Bs_DETService</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>DMNotInFieldMode</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dem/PortInterfaces/Bs_DiagnosticMonitor</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>DMSecOCKeyMissing</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dem/PortInterfaces/Bs_DiagnosticMonitor</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>DMType1CertsNotReady</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dem/PortInterfaces/Bs_DiagnosticMonitor</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>DataService_LCS</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_ReadWrite</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>Dlog_EcuUid</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dlog/PortInterfaces/DataServices_EcuUid</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>FieldMode</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_NoParam</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>LifeCycle</SHORT-NAME>
+                          <PROVIDED-COM-SPECS>
+                            <MODE-SWITCH-SENDER-COM-SPEC>
+                              <ENHANCED-MODE-API>true</ENHANCED-MODE-API>
+                              <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Bs/PortInterfaces/ILifeCycle/Mode</MODE-GROUP-REF>
+                              <QUEUE-LENGTH>2</QUEUE-LENGTH>
+                            </MODE-SWITCH-SENDER-COM-SPEC>
+                          </PROVIDED-COM-SPECS>
+                          <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/Bs/PortInterfaces/ILifeCycle</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>LifeCycleRequest</SHORT-NAME>
+                          <REQUIRED-COM-SPECS>
+                            <NONQUEUED-RECEIVER-COM-SPEC>
+                              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Bs/PortInterfaces/ILifeCycleRequest/requestMode</DATA-ELEMENT-REF>
+                              <HANDLE-OUT-OF-RANGE>NONE</HANDLE-OUT-OF-RANGE>
+                              <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                              <ALIVE-TIMEOUT>0.0</ALIVE-TIMEOUT>
+                              <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                              <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                              <HANDLE-TIMEOUT-TYPE>NONE</HANDLE-TIMEOUT-TYPE>
+                              <INIT-VALUE>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>2</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </INIT-VALUE>
+                            </NONQUEUED-RECEIVER-COM-SPEC>
+                          </REQUIRED-COM-SPECS>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/Bs/PortInterfaces/ILifeCycleRequest</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>LockingConfigurationSwitch_1</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/BMW/Platform/Bs/PortInterfaces/LCSState</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>NvMNotifyJobFinishedCertificates</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMNotifyJobFinished</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>NvMNotifyJobFinishedSecEcuMode</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMNotifyJobFinished</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>NvMNotifyJobFinishedSfaData</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMNotifyJobFinished</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>NvMServiceCertificates</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMService</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>NvMServiceSecEcuMode</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMService</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>NvMServiceSfaData</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMService</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>SecEcuMode</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/Bs/PortInterfaces/SecEcuMode</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>SecOC_FreshnessManagement</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/SecOC/PortInterfaces/FreshnessManagement</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>SecOcCheckForMissingKey</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_Out</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>SecOcKeyExchange</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_InOut</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>SecOcResetKeys</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_In</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>SfaClearFeature</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_In</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>SfaDiscoverFeatureIds</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_Out</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>SfaReadStatus</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_InOut</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>SfaReadVersion</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_Out</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>SfaWriteToken</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_In</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>StdDiag_AdueCertificates</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                      </PORTS>
+                      <INTERNAL-BEHAVIORS>
+                        <SWC-INTERNAL-BEHAVIOR>
+                          <SHORT-NAME>Bs_IB</SHORT-NAME>
+                          <DATA-TYPE-MAPPING-REFS>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/BMW/Platform/Bs/DataTypeMappingSets/BsTypeMappings</DATA-TYPE-MAPPING-REF>
+                          </DATA-TYPE-MAPPING-REFS>
+                          <EVENTS>
+                            <DATA-RECEIVED-EVENT>
+                              <SHORT-NAME>dre_LifeCycleRequest</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_LifeCycleModeRequest</START-ON-EVENT-REF>
+                              <DATA-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/LifeCycleRequest</CONTEXT-R-PORT-REF>
+                                <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Bs/PortInterfaces/ILifeCycleRequest/requestMode</TARGET-DATA-ELEMENT-REF>
+                              </DATA-IREF>
+                            </DATA-RECEIVED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_CertManAdue_Start</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSRoutineControlStartCertManAdue</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/CertManAdue</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_InOut/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_CertManReadStatus_Start</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSRoutineControlStartCertManReadStatus</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/CertManReadStatus</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_Out/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_CertManStartCheck_Start</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSRoutineControlStartCertManStartCheck</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/CertManStartCheck</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_Out/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_DataService_LCS_ConditionCheckRead</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSConditionCheckReadLCS</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/DataService_LCS</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_ReadWrite/ConditionCheckRead</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_DataService_LCS_ReadData</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSReadDataByIdentifierLCS</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/DataService_LCS</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_ReadWrite/ReadData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_DataService_LCS_ReadDataLength</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSReadDataLengthLCS</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/DataService_LCS</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_ReadWrite/ReadDataLength</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_DataService_LCS_WriteData</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSWriteDataByIdentifierLCS</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/DataService_LCS</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/DataServices_ReadWrite/WriteData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_FieldMode_Start</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSRoutineControlStartFieldMode</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/FieldMode</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_NoParam/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_NvMNotifyJobFinishedCertificates_JobFinished</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_NvMNotifyJobFinishedCertificates</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMNotifyJobFinishedCertificates</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMNotifyJobFinished/JobFinished</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_NvMNotifyJobFinishedSecEcuMode_JobFinished</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_NvMNotifyJobFinishedSecEcuMode</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMNotifyJobFinishedSecEcuMode</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMNotifyJobFinished/JobFinished</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_NvMNotifyJobFinishedSfaData_JobFinished</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_NvMNotifyJobFinishedSfaData</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMNotifyJobFinishedSfaData</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMNotifyJobFinished/JobFinished</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_SecOC_FreshnessManagement_GetRxFreshnessAuthData</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_SecOCFMGetRxFreshnessAuthData</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SecOC_FreshnessManagement</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/SecOC/PortInterfaces/FreshnessManagement/GetRxFreshnessAuthData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_SecOC_FreshnessManagement_GetTxFreshnessTruncData</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_SecOCFMGetTxFreshnessTruncData</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SecOC_FreshnessManagement</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/SecOC/PortInterfaces/FreshnessManagement/GetTxFreshnessTruncData</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_SecOC_FreshnessManagement_SPduTxConfirmation</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_SecOCFMSPduTxConfirmation</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SecOC_FreshnessManagement</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/SecOC/PortInterfaces/FreshnessManagement/SPduTxConfirmation</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_SecOcCheckForMissingKey_Start</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSRoutineControlStartSecOcCheckForMissingKey</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SecOcCheckForMissingKey</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_Out/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_SecOcKeyExchange_Start</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSRoutineControlStartSecOcKeyExchange</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SecOcKeyExchange</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_InOut/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_SecOcResetKeys_Start</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSRoutineControlStartSecOcResetKeys</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SecOcResetKeys</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_In/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_SfaClearFeature_Start</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSRoutineControlStartSfaClearFeature</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SfaClearFeature</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_In/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_SfaDiscoverFeatureIds_Start</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSRoutineControlStartSfaDiscoverFeatureIds</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SfaDiscoverFeatureIds</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_Out/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_SfaReadStatus_Start</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSRoutineControlStartSfaReadStatus</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SfaReadStatus</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_InOut/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_SfaReadVersion_Start</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSRoutineControlStartSfaReadVersion</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SfaReadVersion</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_Out/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_SfaWriteToken_Start</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_UDSRoutineControlStartSfaWriteToken</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SfaWriteToken</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dcm/PortInterfaces/RoutineServices_In/Start</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_StdDiag_AdueCertificates_CancelOperation</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_AdueCertificatesCancel</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/StdDiag_AdueCertificates</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/CancelOperation</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_StdDiag_AdueCertificates_Download</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_AdueCertificatesDownload</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/StdDiag_AdueCertificates</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/Download</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_StdDiag_AdueCertificates_DownloadPostprocess</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_AdueCertificatesDownloadPostprocess</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/StdDiag_AdueCertificates</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/DownloadPostprocess</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_StdDiag_AdueCertificates_DownloadPreprocess</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_AdueCertificatesDownloadPreprocess</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/StdDiag_AdueCertificates</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/DownloadPreprocess</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_StdDiag_AdueCertificates_ReqeuestDownload</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_AdueCertificatesReqeuestDownload</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/StdDiag_AdueCertificates</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/RequestDownload</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_StdDiag_AdueCertificates_RequestDownloadExit</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_AdueCertificatesRequestDownloadExit</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/StdDiag_AdueCertificates</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/RequestDownloadExit</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_StdDiag_AdueCertificates_RequestUpload</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_AdueCertificatesRequestUpload</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/StdDiag_AdueCertificates</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/RequestUpload</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_StdDiag_AdueCertificates_RequestUploadExit</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_AdueCertificatesRequestUploadExit</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/StdDiag_AdueCertificates</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/RequestUploadExit</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_StdDiag_AdueCertificates_Upload</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_AdueCertificatesUpload</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/StdDiag_AdueCertificates</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/Upload</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_StdDiag_AdueCertificates_UploadPostprocess</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_AdueCertificatesUploadPostprocess</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/StdDiag_AdueCertificates</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/UploadPostprocess</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                            <OPERATION-INVOKED-EVENT>
+                              <SHORT-NAME>oie_StdDiag_AdueCertificates_UploadPreprocess</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB/Bs_AdueCertificatesUploadPreprocess</START-ON-EVENT-REF>
+                              <OPERATION-IREF>
+                                <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/StdDiag_AdueCertificates</CONTEXT-P-PORT-REF>
+                                <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/StdDiag/PortInterfaces/StdDiag_Adue/UploadPreprocess</TARGET-PROVIDED-OPERATION-REF>
+                              </OPERATION-IREF>
+                            </OPERATION-INVOKED-EVENT>
+                          </EVENTS>
+                          <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+                          <PORT-API-OPTIONS>
+                            <PORT-API-OPTION>
+                              <ENABLE-TAKE-ADDRESS>true</ENABLE-TAKE-ADDRESS>
+                              <ERROR-HANDLING>NO-TRANSFORMER-ERROR-HANDLING</ERROR-HANDLING>
+                              <INDIRECT-API>false</INDIRECT-API>
+                              <PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/ActivationState_Features1</PORT-REF>
+                            </PORT-API-OPTION>
+                          </PORT-API-OPTIONS>
+                          <RUNNABLES>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_AdueCertificatesCancel</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_AdueCertificatesCancel</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_AdueCertificatesDownload</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_AdueCertificatesDownload</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_AdueCertificatesDownloadPostprocess</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_AdueCertificatesDownloadPostprocess</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_AdueCertificatesDownloadPreprocess</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_AdueCertificatesDownloadPreprocess</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_AdueCertificatesReqeuestDownload</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_AdueCertificates_ReqeuestDownload</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_AdueCertificatesRequestDownloadExit</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_AdueCertificatesRequestDownloadExit</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_AdueCertificatesRequestUpload</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_AdueCertificatesRequestUpload</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_AdueCertificatesRequestUploadExit</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_AdueCertificatesRequestUploadExit</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_AdueCertificatesUpload</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_AdueCertificatesUpload</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_AdueCertificatesUploadPostprocess</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_AdueCertificatesUploadPostprocess</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_AdueCertificatesUploadPreprocess</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_ReportError</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/DETService</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Det/PortInterfaces/Bs_DETService/ReportError</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0.0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Bs_AdueCertificatesUploadPreprocess</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_LifeCycleModeRequest</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-READ-ACCESSS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>dra_requestMode</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/LifeCycleRequest</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Bs/PortInterfaces/ILifeCycleRequest/requestMode</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-READ-ACCESSS>
+                              <MODE-ACCESS-POINTS>
+                                <MODE-ACCESS-POINT>
+                                  <MODE-GROUP-IREF>
+                                    <P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                      <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/LifeCycle</CONTEXT-P-PORT-REF>
+                                      <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Bs/PortInterfaces/ILifeCycle/Mode</TARGET-MODE-GROUP-REF>
+                                    </P-MODE-GROUP-IN-ATOMIC-SWC-INSTANCE-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-ACCESS-POINT>
+                              </MODE-ACCESS-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>msp_proto_Bs_LifeCycle_0</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/LifeCycle</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Bs/PortInterfaces/ILifeCycle/Mode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>msp_proto_SecEcuModeGroup_0</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SecEcuMode</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Bs/PortInterfaces/SecEcuMode/Mode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_GetErrorStatus</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMServiceSecEcuMode</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMService/GetErrorStatus</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0.0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_SetEventStatus</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/DMNotInFieldMode</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dem/PortInterfaces/Bs_DiagnosticMonitor/SetEventStatus</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0.0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Bs_LifeCycleModeRequest</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_NvMNotifyJobFinishedCertificates</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_NvMNotifyJobFinishedCertificates</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_NvMNotifyJobFinishedSecEcuMode</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_NvMNotifyJobFinishedSecEcuMode</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_NvMNotifyJobFinishedSfaData</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <DATA-SEND-POINTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>dsp_IsActivated</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/ActivationState_Features1</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/BMW/Platform/Bs/PortInterfaces/ActivationState/IsActivated</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-SEND-POINTS>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>msp_Mode_0</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SecEcuMode</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Bs/PortInterfaces/SecEcuMode/Mode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_SetRamBlockStatus</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMServiceSecEcuMode</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMService/SetRamBlockStatus</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0.0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Bs_NvMNotifyJobFinishedSfaData</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_SecOCFMGetRxFreshnessAuthData</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_SecOCFMGetRxFreshnessAuthData</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_SecOCFMGetTxFreshnessTruncData</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_SecOCFMGetTxFreshnessTruncData</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_SecOCFMSPduTxConfirmation</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_SecOCFMSPduTxConfirmation</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSConditionCheckReadLCS</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSConditionCheckReadLCS</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSReadDataByIdentifierLCS</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSReadDataByIdentifierLCS</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSReadDataLengthLCS</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSReadDataLengthLCS</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSRoutineControlStartCertManAdue</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSRoutineControlStartCertManAdue</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSRoutineControlStartCertManReadStatus</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSRoutineControlStartCertManReadStatus</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSRoutineControlStartCertManStartCheck</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSRoutineControlStartCertManStartCheck</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSRoutineControlStartFieldMode</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <MODE-SWITCH-POINTS>
+                                <MODE-SWITCH-POINT>
+                                  <SHORT-NAME>msp_proto_SecEcuModeGroup_1</SHORT-NAME>
+                                  <MODE-GROUP-IREF>
+                                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/SecEcuMode</CONTEXT-P-PORT-REF>
+                                    <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Bs/PortInterfaces/SecEcuMode/Mode</TARGET-MODE-GROUP-REF>
+                                  </MODE-GROUP-IREF>
+                                </MODE-SWITCH-POINT>
+                              </MODE-SWITCH-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_WriteBlock</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMServiceSecEcuMode</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMService/WriteBlock</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0.0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Bs_UDSRoutineControlStartFieldMode</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSRoutineControlStartSecOcCheckForMissingKey</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSRoutineControlStartSecOcCheckForMissingKey</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSRoutineControlStartSecOcKeyExchange</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSRoutineControlStartSecOcKeyExchange</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSRoutineControlStartSecOcResetKeys</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSRoutineControlStartSecOcResetKeys</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSRoutineControlStartSfaClearFeature</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSRoutineControlStartSfaClearFeature</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSRoutineControlStartSfaDiscoverFeatureIds</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSRoutineControlStartSfaDiscoverFeatureIds</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSRoutineControlStartSfaReadStatus</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSRoutineControlStartSfaReadStatus</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSRoutineControlStartSfaReadVersion</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSRoutineControlStartSfaReadVersion</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSRoutineControlStartSfaWriteToken</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_WriteBlock</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMServiceSecEcuMode</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMService/WriteBlock</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0.0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_WriteBlock1</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMServiceSfaData</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/NvM/PortInterfaces/Bs_NvMService/WriteBlock</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0.0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                                <SYNCHRONOUS-SERVER-CALL-POINT>
+                                  <SHORT-NAME>scp_ReadData</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/Dlog_EcuUid</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/BMW/Platform/Bs/Dlog/PortInterfaces/DataServices_EcuUid/ReadData</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                  <TIMEOUT>0.0</TIMEOUT>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>Bs_UDSRoutineControlStartSfaWriteToken</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>Bs_UDSWriteDataByIdentifierLCS</SHORT-NAME>
+                              <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                              <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                              <SYMBOL>Bs_UDSWriteDataByIdentifierLCS</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                          </RUNNABLES>
+                          <SERVICE-DEPENDENCYS>
+                            <SWC-SERVICE-DEPENDENCY>
+                              <SHORT-NAME>NvMCertificates</SHORT-NAME>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMServiceCertificates</PORT-PROTOTYPE-REF>
+                                  <ROLE>NvMService</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMNotifyJobFinishedCertificates</PORT-PROTOTYPE-REF>
+                                  <ROLE>NvMNotifyJobFinished</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <NV-BLOCK-NEEDS>
+                                  <SHORT-NAME>NvMCertificates</SHORT-NAME>
+                                  <RESTORE-AT-START>false</RESTORE-AT-START>
+                                  <STORE-AT-SHUTDOWN>false</STORE-AT-SHUTDOWN>
+                                </NV-BLOCK-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY>
+                              <SHORT-NAME>NvMSecEcuMode</SHORT-NAME>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMServiceSecEcuMode</PORT-PROTOTYPE-REF>
+                                  <ROLE>NvMService</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMNotifyJobFinishedSecEcuMode</PORT-PROTOTYPE-REF>
+                                  <ROLE>NvMNotifyJobFinished</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <NV-BLOCK-NEEDS>
+                                  <SHORT-NAME>NvMSecEcuMode</SHORT-NAME>
+                                  <RESTORE-AT-START>true</RESTORE-AT-START>
+                                  <STORE-AT-SHUTDOWN>false</STORE-AT-SHUTDOWN>
+                                </NV-BLOCK-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                            <SWC-SERVICE-DEPENDENCY>
+                              <SHORT-NAME>NvMSfaData</SHORT-NAME>
+                              <ASSIGNED-PORTS>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMServiceSfaData</PORT-PROTOTYPE-REF>
+                                  <ROLE>NvMService</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                                <ROLE-BASED-PORT-ASSIGNMENT>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Bs/SwComponentTypes/Bs/NvMNotifyJobFinishedSfaData</PORT-PROTOTYPE-REF>
+                                  <ROLE>NvMNotifyJobFinished</ROLE>
+                                </ROLE-BASED-PORT-ASSIGNMENT>
+                              </ASSIGNED-PORTS>
+                              <SERVICE-NEEDS>
+                                <NV-BLOCK-NEEDS>
+                                  <SHORT-NAME>NvMSfaData</SHORT-NAME>
+                                  <RESTORE-AT-START>false</RESTORE-AT-START>
+                                  <STORE-AT-SHUTDOWN>false</STORE-AT-SHUTDOWN>
+                                </NV-BLOCK-NEEDS>
+                              </SERVICE-NEEDS>
+                            </SWC-SERVICE-DEPENDENCY>
+                          </SERVICE-DEPENDENCYS>
+                          <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                        </SWC-INTERNAL-BEHAVIOR>
+                      </INTERNAL-BEHAVIORS>
+                    </APPLICATION-SW-COMPONENT-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwcImplementations</SHORT-NAME>
+                  <ELEMENTS>
+                    <SWC-IMPLEMENTATION>
+                      <SHORT-NAME>Bs_Impl</SHORT-NAME>
+                      <CODE-DESCRIPTORS>
+                        <CODE>
+                          <SHORT-NAME>Bs_Impl_Code</SHORT-NAME>
+                          <ARTIFACT-DESCRIPTORS>
+                            <AUTOSAR-ENGINEERING-OBJECT>
+                              <SHORT-LABEL>Bs_Impl_Code_CodeDesc</SHORT-LABEL>
+                              <CATEGORY>SWSRC</CATEGORY>
+                            </AUTOSAR-ENGINEERING-OBJECT>
+                          </ARTIFACT-DESCRIPTORS>
+                        </CODE>
+                      </CODE-DESCRIPTORS>
+                      <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+                      <RESOURCE-CONSUMPTION>
+                        <SHORT-NAME>Bs</SHORT-NAME>
+                      </RESOURCE-CONSUMPTION>
+                      <SW-VERSION>5.3.0</SW-VERSION>
+                      <VENDOR-ID>5</VENDOR-ID>
+                      <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/BMW/Platform/Bs/SwComponentTypes/Bs/Bs_IB</BEHAVIOR-REF>
+                    </SWC-IMPLEMENTATION>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

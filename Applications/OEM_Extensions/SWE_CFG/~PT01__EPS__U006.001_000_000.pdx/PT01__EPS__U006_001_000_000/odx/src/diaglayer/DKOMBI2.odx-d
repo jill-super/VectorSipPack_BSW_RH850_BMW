@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-4fcf5ece-9606-49c5-8e08-9baa002c3374" ID="id-4fcf5ece-9606-49c5-8e08-9baa002c3374">
+        <SHORT-NAME>DKOMBI2_DLC</SHORT-NAME>
+        <LONG-NAME>Display Kombi Instrument </LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-15aa1b05-234e-4613-b442-89a13648bda0" ID="id-15aa1b05-234e-4613-b442-89a13648bda0">
+                <SHORT-NAME>DKOMBI2</SHORT-NAME>
+                <LONG-NAME>Display Kombi Instrument </LONG-NAME>
+                <DESC>
+                    <p>IC HIGH und IC MID Evo</p>
+                </DESC>
+								<DIAG-DATA-DICTIONARY-SPEC>
+									<DATA-OBJECT-PROPS>
+										<DATA-OBJECT-PROP ID="id-1e431305-cedf-4a73-8f35-84466e1a71fb" OID="id-1e431305-cedf-4a73-8f35-84466e1a71fb">
+											<SHORT-NAME>JCI_RC_RI_DOP</SHORT-NAME>
+											<LONG-NAME>routineIdentifier</LONG-NAME>
+											<COMPU-METHOD>
+												<CATEGORY>TEXTTABLE</CATEGORY>
+												<COMPU-INTERNAL-TO-PHYS>
+													<COMPU-SCALES>
+														<COMPU-SCALE>
+															<SHORT-LABEL>RC_EEPROM_F10F</SHORT-LABEL>
+															<LOWER-LIMIT>61711</LOWER-LIMIT>
+															<UPPER-LIMIT>61711</UPPER-LIMIT>
+															<COMPU-INVERSE-VALUE>
+																<V>61711</V>
+															</COMPU-INVERSE-VALUE>
+															<COMPU-CONST>
+																<VT>RequestFlashEEPROM</VT>
+															</COMPU-CONST>
+														</COMPU-SCALE>
+													</COMPU-SCALES>
+												</COMPU-INTERNAL-TO-PHYS>
+											</COMPU-METHOD>
+											<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+												<BIT-LENGTH>16</BIT-LENGTH>
+											</DIAG-CODED-TYPE>
+											<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+										</DATA-OBJECT-PROP>
+										<DATA-OBJECT-PROP ID="id-8c390606-aba7-42e5-943c-a3c9abde87f3" OID="id-8c390606-aba7-42e5-943c-a3c9abde87f3">
+											<SHORT-NAME>ALFID_JCI_DOP</SHORT-NAME>
+											<LONG-NAME>addressAndLengthFormatIdentifier</LONG-NAME>
+											<ADMIN-DATA/>
+											<COMPU-METHOD>
+												<CATEGORY>TEXTTABLE</CATEGORY>
+												<COMPU-INTERNAL-TO-PHYS>
+													<COMPU-SCALES>
+														<COMPU-SCALE>
+															<SHORT-LABEL>ALFID_24</SHORT-LABEL>
+															<LOWER-LIMIT>36</LOWER-LIMIT>
+															<UPPER-LIMIT>36</UPPER-LIMIT>
+															<COMPU-INVERSE-VALUE>
+																<V>36</V>
+															</COMPU-INVERSE-VALUE>
+															<COMPU-CONST>
+																<VT TI="0">2ByteMemorySize and 4ByteMemoryAddress</VT>
+															</COMPU-CONST>
+														</COMPU-SCALE>
+													</COMPU-SCALES>
+												</COMPU-INTERNAL-TO-PHYS>
+											</COMPU-METHOD>
+											<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+												<BIT-LENGTH>8</BIT-LENGTH>
+											</DIAG-CODED-TYPE>
+											<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+										</DATA-OBJECT-PROP>
+										<DATA-OBJECT-PROP ID="id-9ff66d05-356f-4271-ae69-eca7119d5300" OID="id-9ff66d05-356f-4271-ae69-eca7119d5300">
+											<SHORT-NAME>MS_JCI_DOP</SHORT-NAME>
+											<LONG-NAME>memorySize</LONG-NAME>
+											<COMPU-METHOD>
+												<CATEGORY>IDENTICAL</CATEGORY>
+											</COMPU-METHOD>
+											<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" xsi:type="STANDARD-LENGTH-TYPE">
+												<BIT-LENGTH>16</BIT-LENGTH>
+											</DIAG-CODED-TYPE>
+											<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+										</DATA-OBJECT-PROP>
+										<DATA-OBJECT-PROP ID="id-51585193-39f0-4a49-850e-5e089abeda6e" OID="id-51585193-39f0-4a49-850e-5e089abeda6e">
+											<SHORT-NAME>MA_JCI_DOP</SHORT-NAME>
+											<LONG-NAME>memoryAddress</LONG-NAME>
+											<COMPU-METHOD>
+												<CATEGORY>IDENTICAL</CATEGORY>
+											</COMPU-METHOD>
+											<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" xsi:type="STANDARD-LENGTH-TYPE">
+												<BIT-LENGTH>32</BIT-LENGTH>
+											</DIAG-CODED-TYPE>
+											<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+										</DATA-OBJECT-PROP>
+										<DATA-OBJECT-PROP ID="id-780296f4-f516-4a32-96da-f6afc94ac2f6" OID="id-780296f4-f516-4a32-96da-f6afc94ac2f6">
+											<SHORT-NAME>VBF_MIN1_JCI_DOP</SHORT-NAME>
+											<LONG-NAME>variable ByteField (min. 1 Byte)</LONG-NAME>
+											<COMPU-METHOD>
+												<CATEGORY>IDENTICAL</CATEGORY>
+											</COMPU-METHOD>
+											<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+												<MIN-LENGTH>1</MIN-LENGTH>
+											</DIAG-CODED-TYPE>
+											<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+										</DATA-OBJECT-PROP>
+									</DATA-OBJECT-PROPS>
+								</DIAG-DATA-DICTIONARY-SPEC>
+								<DIAG-COMMS>
+									<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-d8b664c2-0744-4067-a0f4-4b086ef0431a" IS-MANDATORY="false" OID="id-d8b664c2-0744-4067-a0f4-4b086ef0431a">
+										<SHORT-NAME>RC_FL_EEPROM</SHORT-NAME>
+										<LONG-NAME>RoutineControl Flash EEPROM</LONG-NAME>
+										<DESC>
+											<p>Flash das EEPROM im Bootloader um SVK sauber zu befuellen</p>
+										</DESC>
+										<FUNCT-CLASS-REFS>
+											<FUNCT-CLASS-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-403652d8-6b86-42d6-b230-087f2e2a03a6"/>
+										</FUNCT-CLASS-REFS>
+										<AUDIENCE/>
+										<REQUEST-REF ID-REF="id-345c8c58-1fa9-4adc-be81-1f24fa8c40e1"/>
+										<POS-RESPONSE-REFS>
+											<POS-RESPONSE-REF ID-REF="id-9529189a-3847-4571-8bff-7300f2effeb6"/>
+										</POS-RESPONSE-REFS>
+									</DIAG-SERVICE>
+									<DIAG-SERVICE ADDRESSING="PHYSICAL" ID="id-a0ae3c80-689c-4b9f-aca8-ebd730cedf58" OID="id-a0ae3c80-689c-4b9f-aca8-ebd730cedf58">
+										<SHORT-NAME>RMBA_BTLDEEPROM</SHORT-NAME>
+										<LONG-NAME>ReadMemoryByAddress BTLD Flag in Bootloader</LONG-NAME>
+										<FUNCT-CLASS-REFS>
+											<FUNCT-CLASS-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-403652d8-6b86-42d6-b230-087f2e2a03a6"/>
+										</FUNCT-CLASS-REFS>
+										<AUDIENCE/>
+										<REQUEST-REF ID-REF="id-ef0de0e0-392b-462b-91df-682ceb52ea78"/>
+										<POS-RESPONSE-REFS>
+											<POS-RESPONSE-REF ID-REF="id-06d995f7-fb5e-49a9-8024-eb008f8e925a"/>
+										</POS-RESPONSE-REFS>
+									</DIAG-SERVICE>
+								</DIAG-COMMS>
+								<REQUESTS>
+									<REQUEST ID="id-345c8c58-1fa9-4adc-be81-1f24fa8c40e1" OID="id-345c8c58-1fa9-4adc-be81-1f24fa8c40e1">
+										<SHORT-NAME>RC_FL_EEPROM_REQ</SHORT-NAME>
+										<LONG-NAME>RoutineControl Flash EEPROM Request</LONG-NAME>
+										<PARAMS>
+											<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+												<SHORT-NAME>RC</SHORT-NAME>
+												<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+												<BYTE-POSITION>0</BYTE-POSITION>
+												<CODED-VALUE>49</CODED-VALUE>
+												<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+													<BIT-LENGTH>8</BIT-LENGTH>
+												</DIAG-CODED-TYPE>
+											</PARAM>
+											<PARAM xsi:type="PHYS-CONST">
+												<SHORT-NAME>SPRMIB</SHORT-NAME>
+												<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+												<BYTE-POSITION>1</BYTE-POSITION>
+												<BIT-POSITION>7</BIT-POSITION>
+												<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+												<DOP-REF DOCREF="PROG_SERVICES_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-40608c6e-d061-439a-a04a-e1fade58a1cb"/>
+											</PARAM>
+											<PARAM xsi:type="PHYS-CONST">
+												<SHORT-NAME>RCTP</SHORT-NAME>
+												<LONG-NAME>routineControlType</LONG-NAME>
+												<BYTE-POSITION>1</BYTE-POSITION>
+												<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+												<DOP-REF DOCREF="PROG_SERVICES_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-22c67960-014f-43f0-8d9e-3a502300b0e9"/>
+											</PARAM>
+											<PARAM xsi:type="PHYS-CONST">
+												<SHORT-NAME>RCID</SHORT-NAME>
+												<LONG-NAME>RoutineControlIdentifier</LONG-NAME>
+												<BYTE-POSITION>2</BYTE-POSITION>
+												<PHYS-CONSTANT-VALUE>RequestFlashEEPROM</PHYS-CONSTANT-VALUE>
+												<DOP-REF ID-REF="id-1e431305-cedf-4a73-8f35-84466e1a71fb"/>
+											</PARAM>
+										</PARAMS>
+									</REQUEST>
+									<REQUEST ID="id-ef0de0e0-392b-462b-91df-682ceb52ea78" OID="id-ef0de0e0-392b-462b-91df-682ceb52ea78">
+										<SHORT-NAME>RMBA_BTLDEEPROM_REQ</SHORT-NAME>
+										<LONG-NAME>ReadMemoryByAddress BTLD Flag in Bootloader Request</LONG-NAME>
+										<PARAMS>
+											<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+												<SHORT-NAME>RMBA</SHORT-NAME>
+												<LONG-NAME>ReadMemoryByAddress</LONG-NAME>
+												<BYTE-POSITION>0</BYTE-POSITION>
+												<CODED-VALUE>35</CODED-VALUE>
+												<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+													<BIT-LENGTH>8</BIT-LENGTH>
+												</DIAG-CODED-TYPE>
+											</PARAM>
+											<PARAM xsi:type="VALUE">
+												<SHORT-NAME>RMBA_ALFID</SHORT-NAME>
+												<LONG-NAME>addressAndLengthFormatIdentifier</LONG-NAME>
+												<BYTE-POSITION>1</BYTE-POSITION>
+												<BIT-POSITION>0</BIT-POSITION>
+												<PHYSICAL-DEFAULT-VALUE>2ByteMemorySize and 4ByteMemoryAddress</PHYSICAL-DEFAULT-VALUE>
+												<DOP-REF ID-REF="id-8c390606-aba7-42e5-943c-a3c9abde87f3"/>
+											</PARAM>
+											<PARAM xsi:type="VALUE">
+												<SHORT-NAME>RMBA_MA</SHORT-NAME>
+												<LONG-NAME>memoryAddress</LONG-NAME>
+												<BYTE-POSITION>2</BYTE-POSITION>
+												<PHYSICAL-DEFAULT-VALUE>000000B9</PHYSICAL-DEFAULT-VALUE>
+												<DOP-REF ID-REF="id-51585193-39f0-4a49-850e-5e089abeda6e"/>
+											</PARAM>
+											<PARAM xsi:type="VALUE">
+												<SHORT-NAME>RMBA_MS</SHORT-NAME>
+												<LONG-NAME>memorySize</LONG-NAME>
+												<BYTE-POSITION>6</BYTE-POSITION>
+												<PHYSICAL-DEFAULT-VALUE>0001</PHYSICAL-DEFAULT-VALUE>
+												<DOP-REF ID-REF="id-9ff66d05-356f-4271-ae69-eca7119d5300"/>
+											</PARAM>
+										</PARAMS>
+									</REQUEST>
+								</REQUESTS>
+								<POS-RESPONSES>
+									<POS-RESPONSE ID="id-9529189a-3847-4571-8bff-7300f2effeb6" OID="id-9529189a-3847-4571-8bff-7300f2effeb6">
+										<SHORT-NAME>RC_FL_EEPROM_RESP</SHORT-NAME>
+										<LONG-NAME>RoutineControl Flash EEPROM Response</LONG-NAME>
+										<PARAMS>
+											<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+												<SHORT-NAME>RCPR</SHORT-NAME>
+												<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+												<BYTE-POSITION>0</BYTE-POSITION>
+												<CODED-VALUE>113</CODED-VALUE>
+												<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+													<BIT-LENGTH>8</BIT-LENGTH>
+												</DIAG-CODED-TYPE>
+											</PARAM>
+											<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+												<SHORT-NAME>RC_RCTP</SHORT-NAME>
+												<LONG-NAME>routineControlType</LONG-NAME>
+												<BYTE-POSITION>1</BYTE-POSITION>
+												<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+												<BYTE-LENGTH>1</BYTE-LENGTH>
+											</PARAM>
+											<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+												<SHORT-NAME>RC_RI</SHORT-NAME>
+												<LONG-NAME>routineIdentifier</LONG-NAME>
+												<BYTE-POSITION>2</BYTE-POSITION>
+												<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+												<BYTE-LENGTH>2</BYTE-LENGTH>
+											</PARAM>
+										</PARAMS>
+									</POS-RESPONSE>
+									<POS-RESPONSE ID="id-06d995f7-fb5e-49a9-8024-eb008f8e925a" OID="id-06d995f7-fb5e-49a9-8024-eb008f8e925a">
+										<SHORT-NAME>RMBA_BTLDEEPROM_RESP</SHORT-NAME>
+										<LONG-NAME>ReadMemoryByAddress BTLD Flag in Bootloader Response</LONG-NAME>
+										<PARAMS>
+											<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+												<SHORT-NAME>RMBAPR</SHORT-NAME>
+												<LONG-NAME>ReadMemoryByAddress Response Service Id</LONG-NAME>
+												<BYTE-POSITION>0</BYTE-POSITION>
+												<CODED-VALUE>99</CODED-VALUE>
+												<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+													<BIT-LENGTH>8</BIT-LENGTH>
+												</DIAG-CODED-TYPE>
+											</PARAM>
+											<PARAM xsi:type="VALUE">
+												<SHORT-NAME>RMBA_DREC</SHORT-NAME>
+												<LONG-NAME>dataRecord</LONG-NAME>
+												<BYTE-POSITION>1</BYTE-POSITION>
+												<DOP-REF ID-REF="id-780296f4-f516-4a32-96da-f6afc94ac2f6"/>
+											</PARAM>
+										</PARAMS>
+									</POS-RESPONSE>
+								</POS-RESPONSES>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-4ff03dc8-e2cd-4f61-aab0-c0f639869771">
+                        <VALUE>3</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-464fe8db-1059-43e9-ad5f-a7984612aa2f">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-2adbb438-ec66-4350-a142-fc31f904d06c">
+                        <VALUE>99</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+					          <COMPARAM-REF ID-REF="id-e193b2d4-028b-4cf5-9677-b6bb0fd30856" DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC">
+					            <VALUE>6310</VALUE>
+					            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+					          </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-b2586d73-37bc-4f1e-aa27-df91cee29844">
+                        <VALUE>1</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>52500</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-836fb943-9237-4030-bb42-88ecbefe6df8">
+                        <VALUE>1</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+          					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-47753228-e0cb-4ca3-82c9-4ba7b7dcdd8c">
+          						<VALUE>1</VALUE>
+          						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          					</COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78">
+                        <NOT-INHERITED-DIAG-COMMS>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="FINALIZE_ECU_BL_UPDATE"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="INSTALL_ECU_BL"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="FINALIZE_ECU_FLASH"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="PREPARE_ECU_FOR_BL_UPDATE"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="PREPARE_ECU_FOR_FLASH"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="GET_SVK_FROM_ECU"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                        </NOT-INHERITED-DIAG-COMMS>
+                    </PARENT-REF>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="GW_SERVICES_DLC" ID-REF="id-7860971b-9003-4aa3-9119-802a992f90d4"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="GWSZ_DLC" ID-REF="id-d5d78338-2b70-40e1-a238-d4eefec8bd45"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="AUTH_UDS_DLC" ID-REF="id-33d5c47f-46b7-4f1e-9922-62b72b15eab0"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="VCM_UDS_DLC" ID-REF="id-b3dccc52-bb76-4354-802f-e03e7ac08575">
+                        <NOT-INHERITED-DIAG-COMMS>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="READ_DATA_BY_IDENTIFIER_PLAIN"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                            <NOT-INHERITED-DIAG-COMM>
+<DIAG-COMM-SNREF SHORT-NAME="WRITE_DATA_BY_IDENTIFIER_PLAIN"/>
+                            </NOT-INHERITED-DIAG-COMM>
+                        </NOT-INHERITED-DIAG-COMMS>
+                    </PARENT-REF>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

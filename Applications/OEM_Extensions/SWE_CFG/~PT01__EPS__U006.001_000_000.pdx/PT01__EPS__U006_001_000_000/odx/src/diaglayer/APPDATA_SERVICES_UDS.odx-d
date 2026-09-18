@@ -1,0 +1,1382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<DIAG-LAYER-CONTAINER ID="id-67ffddbc-749e-430f-bfa9-9888c39204c6" OID="id-67ffddbc-749e-430f-bfa9-9888c39204c6">
+		<SHORT-NAME>APPDATA_SERVICES_UDS_DLC</SHORT-NAME>
+		<LONG-NAME>Application data transfer protocol services for UDS</LONG-NAME>
+		<ECU-SHARED-DATAS>
+			<ECU-SHARED-DATA ID="id-7145233c-820a-4da3-89c1-de5371140ff0" OID="id-7145233c-820a-4da3-89c1-de5371140ff0">
+				<SHORT-NAME>APPDATA_SERVICES_UDS</SHORT-NAME>
+				<LONG-NAME>Application data transfer protocol services for UDS</LONG-NAME>
+				<ADMIN-DATA>
+					<LANGUAGE>eng</LANGUAGE>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-fcf9a90d-7e1f-4d3c-8f44-1e67edf77640"/>
+							<REVISION-LABEL>001.000.000</REVISION-LABEL>
+							<STATE>Release</STATE>
+							<DATE>2006-10-26T16:00:00</DATE>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>Added</CHANGE>
+									<REASON>Initial Release</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<COMPANY-DATAS>
+					<COMPANY-DATA ID="id-cf26e34d-7ade-4ba5-ada1-8faf8adda3ec" OID="id-cf26e34d-7ade-4ba5-ada1-8faf8adda3ec">
+						<SHORT-NAME>APPDATA_T_SYSTEMS</SHORT-NAME>
+						<LONG-NAME>T-Systems GEI GmbH</LONG-NAME>
+						<TEAM-MEMBERS>
+							<TEAM-MEMBER ID="id-fcf9a90d-7e1f-4d3c-8f44-1e67edf77640" OID="id-fcf9a90d-7e1f-4d3c-8f44-1e67edf77640">
+								<SHORT-NAME>HARLFINGER</SHORT-NAME>
+								<LONG-NAME>Harlfinger, Clemens</LONG-NAME>
+								<ROLES>
+									<ROLE>Development</ROLE>
+								</ROLES>
+								<DEPARTMENT>ES-732</DEPARTMENT>
+								<PHONE>+49 (89) 1011-4556</PHONE>
+								<EMAIL>Clemens.Harlfinger@t-systems.com</EMAIL>
+							</TEAM-MEMBER>
+						</TEAM-MEMBERS>
+					</COMPANY-DATA>
+				</COMPANY-DATAS>
+				<FUNCT-CLASSS>
+					<FUNCT-CLASS ID="id-807f2822-eb5c-4353-93e4-6c30375bcadd" OID="id-807f2822-eb5c-4353-93e4-6c30375bcadd">
+						<SHORT-NAME>APPDATA_RAOR</SHORT-NAME>
+						<LONG-NAME>remoteActivationOfRoutine</LONG-NAME>
+					</FUNCT-CLASS>
+				</FUNCT-CLASSS>
+				<DIAG-DATA-DICTIONARY-SPEC>
+					<DATA-OBJECT-PROPS>
+						<DATA-OBJECT-PROP ID="id-adf4e0fc-a2f4-486f-a275-b4ecd8d4cff7" OID="id-adf4e0fc-a2f4-486f-a275-b4ecd8d4cff7">
+							<SHORT-NAME>APPDATA_ARCI_DOP</SHORT-NAME>
+							<LONG-NAME>ApplicationRoutineControlIdentifier</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>16</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+								<UPPER-LIMIT INTERVAL-TYPE="CLOSED">65535</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-a4f582a3-db32-4d37-bfc3-c8d8bf6098a8" OID="id-a4f582a3-db32-4d37-bfc3-c8d8bf6098a8">
+							<SHORT-NAME>APPDATA_ASRCI_DOP</SHORT-NAME>
+							<LONG-NAME>ApplicationSubRoutineControlIdentifier</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>16</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+								<UPPER-LIMIT INTERVAL-TYPE="CLOSED">65535</UPPER-LIMIT>
+								<SCALE-CONSTRS>
+									<SCALE-CONSTR VALIDITY="VALID">
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+									</SCALE-CONSTR>
+									<SCALE-CONSTR VALIDITY="VALID">
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">65534</UPPER-LIMIT>
+									</SCALE-CONSTR>
+									<SCALE-CONSTR VALIDITY="NOT-DEFINED">
+										<LOWER-LIMIT INTERVAL-TYPE="CLOSED">65535</LOWER-LIMIT>
+										<UPPER-LIMIT INTERVAL-TYPE="CLOSED">65535</UPPER-LIMIT>
+									</SCALE-CONSTR>
+								</SCALE-CONSTRS>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-f6ae3f51-28f8-46e7-b445-3e947123899f" OID="id-f6ae3f51-28f8-46e7-b445-3e947123899f">
+							<SHORT-NAME>APPDATA_CI_DOP</SHORT-NAME>
+							<LONG-NAME>ControlId</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MAX-LENGTH>11</MAX-LENGTH>
+								<MIN-LENGTH>1</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-f1d2692c-cf00-4aa0-b6d8-b345fc9cd86d" OID="id-f1d2692c-cf00-4aa0-b6d8-b345fc9cd86d">
+							<SHORT-NAME>APPDATA_CI_RESP_DOP</SHORT-NAME>
+							<LONG-NAME>ControlId</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" xsi:type="PARAM-LENGTH-INFO-TYPE">
+								<LENGTH-KEY-REF ID-REF="id-e9801d8f-a521-4860-b2b6-96a452c00938"/>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-f01957cb-c19a-4511-aa4b-83b144b3f657" OID="id-f01957cb-c19a-4511-aa4b-83b144b3f657">
+							<SHORT-NAME>APPDATA_MS_DOP</SHORT-NAME>
+							<LONG-NAME>memorySize</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" xsi:type="PARAM-LENGTH-INFO-TYPE">
+								<LENGTH-KEY-REF ID-REF="id-1c579683-38c1-4e90-963b-e2dd3d21443a"/>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-d8a1ed65-1df4-4ca5-90ae-88e96bc725fb" OID="id-d8a1ed65-1df4-4ca5-90ae-88e96bc725fb">
+							<SHORT-NAME>APPDATA_RM_DOP</SHORT-NAME>
+							<LONG-NAME>readMethod</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>IDX_01</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>1</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>index</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>MOI_02</SHORT-LABEL>
+											<LOWER-LIMIT>2</LOWER-LIMIT>
+											<UPPER-LIMIT>2</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>2</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>memoryObjectIdentifier</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+								<UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-4b955244-9ba7-438a-a826-bbf247ab116b" OID="id-4b955244-9ba7-438a-a826-bbf247ab116b">
+							<SHORT-NAME>APPDATA_AFID_DOP</SHORT-NAME>
+							<LONG-NAME>AddressFormatIdentifier</LONG-NAME>
+							<DESC>
+								<p>
+Conversion:
+                </p>
+								<p>
+Internal value: Address length (Bytes)
+                </p>
+								<p>
+Physical Value: Address length (Bits)
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>LINEAR</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>AFID</SHORT-LABEL>
+											<COMPU-RATIONAL-COEFFS>
+												<COMPU-NUMERATOR>
+													<V>0</V>
+													<V>8</V>
+												</COMPU-NUMERATOR>
+												<COMPU-DENOMINATOR>
+													<V>1</V>
+												</COMPU-DENOMINATOR>
+											</COMPU-RATIONAL-COEFFS>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>4</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-55f3dbb0-40bb-4349-b096-0f4950612d4e" OID="id-55f3dbb0-40bb-4349-b096-0f4950612d4e">
+							<SHORT-NAME>APPDATA_AFID2_DOP</SHORT-NAME>
+							<LONG-NAME>AddressFormatIdentifier 2 (for ControlID)</LONG-NAME>
+							<DESC>
+								<p>
+Conversion:
+                </p>
+								<p>
+Internal value: Address length (Bytes)
+                </p>
+								<p>
+Physical Value: Address length (Bits)
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>LINEAR</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>AFID</SHORT-LABEL>
+											<COMPU-RATIONAL-COEFFS>
+												<COMPU-NUMERATOR>
+													<V>-32</V>
+													<V>8</V>
+												</COMPU-NUMERATOR>
+												<COMPU-DENOMINATOR>
+													<V>1</V>
+												</COMPU-DENOMINATOR>
+											</COMPU-RATIONAL-COEFFS>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_INT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>4</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-4435efcb-b964-4a60-89ca-141de0e27883" OID="id-4435efcb-b964-4a60-89ca-141de0e27883">
+							<SHORT-NAME>APPDATA_1BYTE_IDENTICAL_DOP</SHORT-NAME>
+							<LONG-NAME>1 Byte Identical</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>255</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-323d75c9-9bb8-443f-8282-e964b6e440f8" OID="id-323d75c9-9bb8-443f-8282-e964b6e440f8">
+							<SHORT-NAME>APPDATA_2BYTE_IDENTICAL_DOP</SHORT-NAME>
+							<LONG-NAME>2 Byte Identical</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>16</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>65535</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-1ac6125b-2752-4cd0-a48c-b988ef72e914" OID="id-1ac6125b-2752-4cd0-a48c-b988ef72e914">
+							<SHORT-NAME>APPDATA_BYTEFIELD_EOP_DOP</SHORT-NAME>
+							<LONG-NAME>Byte field (End of PDU)</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+								<MIN-LENGTH>0</MIN-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-5bd8af9b-e359-48b2-962c-d3ff198b1ace" OID="id-5bd8af9b-e359-48b2-962c-d3ff198b1ace">
+							<SHORT-NAME>APPDATA_TIME_DOP</SHORT-NAME>
+							<LONG-NAME>time</LONG-NAME>
+							<ADMIN-DATA/>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>16</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>65535</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-527f413b-6fcb-48f7-a429-438ac5658c76" OID="id-527f413b-6fcb-48f7-a429-438ac5658c76">
+							<SHORT-NAME>APPDATA_LFID_DOP</SHORT-NAME>
+							<LONG-NAME>LengthFormatIdentifier</LONG-NAME>
+							<DESC>
+								<p>
+Conversion:
+                </p>
+								<p>
+Internal value: Length (Bytes)
+                </p>
+								<p>
+Physical Value: Length (Bits)
+                </p>
+							</DESC>
+							<COMPU-METHOD>
+								<CATEGORY>LINEAR</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>LFID</SHORT-LABEL>
+											<COMPU-RATIONAL-COEFFS>
+												<COMPU-NUMERATOR>
+													<V>0</V>
+													<V>8</V>
+												</COMPU-NUMERATOR>
+												<COMPU-DENOMINATOR>
+													<V>1</V>
+												</COMPU-DENOMINATOR>
+											</COMPU-RATIONAL-COEFFS>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>4</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="DEC"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-c8f44004-3ebd-4449-b41f-40e1775ed868" OID="id-c8f44004-3ebd-4449-b41f-40e1775ed868">
+							<SHORT-NAME>APPDATA_SOE_DOP</SHORT-NAME>
+							<LONG-NAME>statusOfEntry</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RLE_SOE_VALID_NOT_FINAL</SHORT-LABEL>
+											<LOWER-LIMIT>0</LOWER-LIMIT>
+											<UPPER-LIMIT>0</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>0</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="RC_RLE_SOE_VALID_NOT_FINAL">valid not final list entry</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RLE_SOE_NOTVALID_NOTFINAL</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>1</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="RC_RLE_SOE_NOTVALID_NOTFINAL">not valid and not final</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RLE_SOE_VALID_FINAL</SHORT-LABEL>
+											<LOWER-LIMIT>2</LOWER-LIMIT>
+											<UPPER-LIMIT>2</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>255</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="RC_RLE_SOE_VALID_FINAL">final list entry</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RLE_SOE_NOTVALID_FINAL</SHORT-LABEL>
+											<LOWER-LIMIT>3</LOWER-LIMIT>
+											<UPPER-LIMIT>3</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>3</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="RC_RLE_SOE_NOTVALID_FINAL">not valid and final</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RLE_SOE_RESERVED</SHORT-LABEL>
+											<LOWER-LIMIT>4</LOWER-LIMIT>
+											<UPPER-LIMIT>252</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>4</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="RC_RLE_SOE_RESERVED">reserved</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RLE_SOE_INVALID</SHORT-LABEL>
+											<LOWER-LIMIT>254</LOWER-LIMIT>
+											<UPPER-LIMIT>254</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>254</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="RC_RLE_SOE_INVALID">invalid list entry</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RLE_SOE_FINAL</SHORT-LABEL>
+											<LOWER-LIMIT>255</LOWER-LIMIT>
+											<UPPER-LIMIT>255</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>255</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="RC_RLE_SOE_VALID_FINAL">final list entry</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>255</UPPER-LIMIT>
+								<SCALE-CONSTRS>
+									<SCALE-CONSTR VALIDITY="NOT-DEFINED">
+										<LOWER-LIMIT>253</LOWER-LIMIT>
+										<UPPER-LIMIT>253</UPPER-LIMIT>
+									</SCALE-CONSTR>
+								</SCALE-CONSTRS>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-473e6642-d350-4c62-873e-295f2f0b58a4" OID="id-473e6642-d350-4c62-873e-295f2f0b58a4">
+							<SHORT-NAME>APPDATA_DPT_DOP</SHORT-NAME>
+							<LONG-NAME>dataProcessingType</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>DPT_UPREP</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>1</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>uploadPreProcessing</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>DPT_UPOSTP</SHORT-LABEL>
+											<LOWER-LIMIT>2</LOWER-LIMIT>
+											<UPPER-LIMIT>2</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>2</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>uploadPostProcessing</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>DPT_DPREP</SHORT-LABEL>
+											<LOWER-LIMIT>3</LOWER-LIMIT>
+											<UPPER-LIMIT>3</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>3</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>downloadPreProcessing</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>DPT_DPOSTP</SHORT-LABEL>
+											<LOWER-LIMIT>4</LOWER-LIMIT>
+											<UPPER-LIMIT>4</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>4</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>downloadPostProcessing</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>4</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-d3fd8a7e-eef6-488c-888b-f2a8a029f23c" OID="id-d3fd8a7e-eef6-488c-888b-f2a8a029f23c">
+							<SHORT-NAME>APPDATA_PAD_RES_DOP</SHORT-NAME>
+							<LONG-NAME>processingApplicationData</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PAD_RES_OK</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>1</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>Ok</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>PAD_RES_NOK</SHORT-LABEL>
+											<LOWER-LIMIT>2</LOWER-LIMIT>
+											<UPPER-LIMIT>2</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>2</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>NOK</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>8</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>1</LOWER-LIMIT>
+								<UPPER-LIMIT>2</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-80c7b2ee-b9fb-47a3-a5d4-d5f6fd63cc58" OID="id-80c7b2ee-b9fb-47a3-a5d4-d5f6fd63cc58">
+							<SHORT-NAME>APPDATA_SPRMIB_DOP</SHORT-NAME>
+							<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>SPRMIB_0</SHORT-LABEL>
+											<LOWER-LIMIT>0</LOWER-LIMIT>
+											<UPPER-LIMIT>0</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>0</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="0">false</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>SPRMIB_1</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>1</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="1">true</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>1</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT>0</LOWER-LIMIT>
+								<UPPER-LIMIT>1</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-8a2f7014-c947-4249-8e30-64f1f6ffecdf" OID="id-8a2f7014-c947-4249-8e30-64f1f6ffecdf">
+							<SHORT-NAME>APPDATA_RCTP_DOP</SHORT-NAME>
+							<LONG-NAME>routineControlType</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_STR</SHORT-LABEL>
+											<LOWER-LIMIT>1</LOWER-LIMIT>
+											<UPPER-LIMIT>1</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>1</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="1">startRoutine</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_STPR</SHORT-LABEL>
+											<LOWER-LIMIT>2</LOWER-LIMIT>
+											<UPPER-LIMIT>2</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>2</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="2">stopRoutine</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_RRR</SHORT-LABEL>
+											<LOWER-LIMIT>3</LOWER-LIMIT>
+											<UPPER-LIMIT>3</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>3</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="3">requestRoutineResults</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_ISOSAERESRVD_00</SHORT-LABEL>
+											<LOWER-LIMIT>0</LOWER-LIMIT>
+											<UPPER-LIMIT>0</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>0</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="0">ISOSAEReserved_00</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_ISOSAERESRVD_04_7F</SHORT-LABEL>
+											<LOWER-LIMIT>4</LOWER-LIMIT>
+											<UPPER-LIMIT>127</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>4</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT TI="4">ISOSAEReserved_04_7F</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>7</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-4bf7aec7-f766-4be6-8ded-5a32d1e81ddc" OID="id-4bf7aec7-f766-4be6-8ded-5a32d1e81ddc">
+							<SHORT-NAME>APPDATA_RC_RI_DOP</SHORT-NAME>
+							<LONG-NAME>routineIdentifier</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>TEXTTABLE</CATEGORY>
+								<COMPU-INTERNAL-TO-PHYS>
+									<COMPU-SCALES>
+										<COMPU-SCALE>
+											<SHORT-LABEL>RC_PAD</SHORT-LABEL>
+											<LOWER-LIMIT>28672</LOWER-LIMIT>
+											<UPPER-LIMIT>28672</UPPER-LIMIT>
+											<COMPU-INVERSE-VALUE>
+												<V>28672</V>
+											</COMPU-INVERSE-VALUE>
+											<COMPU-CONST>
+												<VT>processingApplicationData</VT>
+											</COMPU-CONST>
+										</COMPU-SCALE>
+									</COMPU-SCALES>
+								</COMPU-INTERNAL-TO-PHYS>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>16</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+						</DATA-OBJECT-PROP>
+						<DATA-OBJECT-PROP ID="id-239f44ab-5e29-4ff3-8959-26125eae6bd0" OID="id-239f44ab-5e29-4ff3-8959-26125eae6bd0">
+							<SHORT-NAME>4BIT_0_F_IDENTICAL_DOP</SHORT-NAME>
+							<LONG-NAME>4 Bit (0x0-0xF)</LONG-NAME>
+							<COMPU-METHOD>
+								<CATEGORY>IDENTICAL</CATEGORY>
+							</COMPU-METHOD>
+							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+								<BIT-LENGTH>4</BIT-LENGTH>
+							</DIAG-CODED-TYPE>
+							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+							<INTERNAL-CONSTR>
+								<LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+								<UPPER-LIMIT INTERVAL-TYPE="CLOSED">15</UPPER-LIMIT>
+							</INTERNAL-CONSTR>
+						</DATA-OBJECT-PROP>
+					</DATA-OBJECT-PROPS>
+					<STRUCTURES>
+						<STRUCTURE ID="id-4decc817-6b4e-43be-a6d9-c8bfd168ecc8" IS-VISIBLE="false" OID="id-4decc817-6b4e-43be-a6d9-c8bfd168ecc8">
+							<SHORT-NAME>APPDATA_DFI_STRUCT</SHORT-NAME>
+							<LONG-NAME>DataFormatIdentifier</LONG-NAME>
+							<DESC>
+								<p>
+bit 7-4: compressingMethod, 0 = noCompressionMethod
+                </p>
+								<p>
+bit 3-0: encryptionMethod, 0 = noEncryptionMethod
+                </p>
+							</DESC>
+							<BYTE-SIZE>1</BYTE-SIZE>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>CM</SHORT-NAME>
+									<LONG-NAME>compressingMethod</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<BIT-POSITION>4</BIT-POSITION>
+									<DOP-REF ID-REF="id-239f44ab-5e29-4ff3-8959-26125eae6bd0"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>EM</SHORT-NAME>
+									<LONG-NAME>encryptionMethod</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<BIT-POSITION>0</BIT-POSITION>
+									<DOP-REF ID-REF="id-239f44ab-5e29-4ff3-8959-26125eae6bd0"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-0f95994d-e773-43a3-8d15-7750257428d5" IS-VISIBLE="false" OID="id-0f95994d-e773-43a3-8d15-7750257428d5">
+							<SHORT-NAME>APPDATA_MOI_EOP_STRUCT</SHORT-NAME>
+							<LONG-NAME>memoryObjectIdentifier</LONG-NAME>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>MOI_ARCI</SHORT-NAME>
+									<LONG-NAME>ApplicationRoutineControlIdentifier</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-SNREF SHORT-NAME="APPDATA_ARCI_DOP"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>ASRCI</SHORT-NAME>
+									<LONG-NAME>ApplicationSubRoutineControlIdentifier</LONG-NAME>
+									<BYTE-POSITION>2</BYTE-POSITION>
+									<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+									<DOP-SNREF SHORT-NAME="APPDATA_ASRCI_DOP"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>CI</SHORT-NAME>
+									<LONG-NAME>ControlId</LONG-NAME>
+									<BYTE-POSITION>4</BYTE-POSITION>
+									<DOP-SNREF SHORT-NAME="APPDATA_CI_DOP"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-6aec5a19-9352-4d82-b2cc-bb794d225927" IS-VISIBLE="false" OID="id-6aec5a19-9352-4d82-b2cc-bb794d225927">
+							<SHORT-NAME>RC_RLE_MOI_STRUCT</SHORT-NAME>
+							<LONG-NAME>memoryObjectIdentifier</LONG-NAME>
+							<PARAMS>
+								<PARAM xsi:type="LENGTH-KEY" ID="id-e9801d8f-a521-4860-b2b6-96a452c00938" OID="id-e9801d8f-a521-4860-b2b6-96a452c00938">
+									<SHORT-NAME>MOI_AFID</SHORT-NAME>
+									<LONG-NAME>addressFormatIdentifier</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<BIT-POSITION>0</BIT-POSITION>
+									<DOP-SNREF SHORT-NAME="APPDATA_AFID2_DOP"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>MOI_ARCI</SHORT-NAME>
+									<LONG-NAME>ApplicationRoutineControlIdentifier</LONG-NAME>
+									<BYTE-POSITION>1</BYTE-POSITION>
+									<DOP-SNREF SHORT-NAME="APPDATA_ARCI_DOP"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>ASRCI</SHORT-NAME>
+									<LONG-NAME>ApplicationSubRoutineControlIdentifier</LONG-NAME>
+									<BYTE-POSITION>3</BYTE-POSITION>
+									<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+									<DOP-SNREF SHORT-NAME="APPDATA_ASRCI_DOP"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>CI</SHORT-NAME>
+									<LONG-NAME>ControlId</LONG-NAME>
+									<BYTE-POSITION>5</BYTE-POSITION>
+									<DOP-SNREF SHORT-NAME="APPDATA_CI_RESP_DOP"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-88d00756-155b-4b43-9741-759e4859b008" IS-VISIBLE="false" OID="id-88d00756-155b-4b43-9741-759e4859b008">
+							<SHORT-NAME>RC_PAD_MOI_STRUCT</SHORT-NAME>
+							<LONG-NAME>memoryObjectIdentifier</LONG-NAME>
+							<PARAMS>
+								<PARAM xsi:type="LENGTH-KEY" ID="id-c918c591-04fa-465e-919b-54b95814c4ce" OID="id-c918c591-04fa-465e-919b-54b95814c4ce">
+									<SHORT-NAME>MOI_AFID</SHORT-NAME>
+									<LONG-NAME>addressFormatIdentifier</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<BIT-POSITION>0</BIT-POSITION>
+									<DOP-SNREF SHORT-NAME="APPDATA_AFID_DOP"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>MOI_ARCI</SHORT-NAME>
+									<LONG-NAME>ApplicationRoutineControlIdentifier</LONG-NAME>
+									<BYTE-POSITION>1</BYTE-POSITION>
+									<DOP-SNREF SHORT-NAME="APPDATA_ARCI_DOP"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>ASRCI</SHORT-NAME>
+									<LONG-NAME>ApplicationSubRoutineControlIdentifier</LONG-NAME>
+									<BYTE-POSITION>3</BYTE-POSITION>
+									<PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+									<DOP-SNREF SHORT-NAME="APPDATA_ASRCI_DOP"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>CI</SHORT-NAME>
+									<LONG-NAME>ControlId</LONG-NAME>
+									<BYTE-POSITION>5</BYTE-POSITION>
+									<DOP-SNREF SHORT-NAME="APPDATA_CI_DOP"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+						<STRUCTURE ID="id-43f47b8f-0197-48ca-b0c6-e949fb1b526a" IS-VISIBLE="false" OID="id-43f47b8f-0197-48ca-b0c6-e949fb1b526a">
+							<SHORT-NAME>APPDATA_ASP_STRUCT</SHORT-NAME>
+							<LONG-NAME>applicationSpecificParameter STRUCT</LONG-NAME>
+							<PARAMS>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>AFI</SHORT-NAME>
+									<LONG-NAME>applicationFormatIdentifier</LONG-NAME>
+									<BYTE-POSITION>0</BYTE-POSITION>
+									<DOP-REF ID-REF="id-4435efcb-b964-4a60-89ca-141de0e27883"/>
+								</PARAM>
+								<PARAM xsi:type="VALUE">
+									<SHORT-NAME>ASP</SHORT-NAME>
+									<LONG-NAME>applicationSpecificParameter</LONG-NAME>
+									<BYTE-POSITION>1</BYTE-POSITION>
+									<DOP-REF ID-REF="id-1ac6125b-2752-4cd0-a48c-b988ef72e914"/>
+								</PARAM>
+							</PARAMS>
+						</STRUCTURE>
+					</STRUCTURES>
+				</DIAG-DATA-DICTIONARY-SPEC>
+				<DIAG-COMMS>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-27a5c6b4-9298-4cf9-8d26-94dcb011662f" OID="id-27a5c6b4-9298-4cf9-8d26-94dcb011662f">
+						<SHORT-NAME>RC_RLE</SHORT-NAME>
+						<LONG-NAME>RoutineControl RequestListEntry</LONG-NAME>
+						<DESC>
+							<p>
+local routine to request information about a list entry from the ECU
+              </p>
+						</DESC>
+						<ADMIN-DATA>
+							<LANGUAGE>eng</LANGUAGE>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-fcf9a90d-7e1f-4d3c-8f44-1e67edf77640"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-10-26T16:00:00</DATE>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>added</CHANGE>
+											<REASON>Initial Release</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-807f2822-eb5c-4353-93e4-6c30375bcadd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-bc0c7d3a-f091-4e3a-b91a-6fc2574cf4b7"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-5ca062af-c7a0-4086-ac32-8a3cd4d5757f"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-785e7325-976e-4652-bdcb-195b7425f801" OID="id-785e7325-976e-4652-bdcb-195b7425f801">
+						<SHORT-NAME>RC_RLEBI</SHORT-NAME>
+						<LONG-NAME>RoutineControl RequestListEntryByIndex</LONG-NAME>
+						<DESC>
+							<p>
+local routine to request information about a list entry from the ECU
+              </p>
+						</DESC>
+						<ADMIN-DATA>
+							<LANGUAGE>eng</LANGUAGE>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-fcf9a90d-7e1f-4d3c-8f44-1e67edf77640"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-10-26T16:00:00</DATE>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>added</CHANGE>
+											<REASON>Initial Release</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-807f2822-eb5c-4353-93e4-6c30375bcadd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-808b9a60-2951-4358-84a4-597064b2e7b5"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-5ca062af-c7a0-4086-ac32-8a3cd4d5757f"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-2c98e7b2-6c22-457b-a9f5-105f0d833c66" OID="id-2c98e7b2-6c22-457b-a9f5-105f0d833c66">
+						<SHORT-NAME>RC_PAD</SHORT-NAME>
+						<LONG-NAME>RoutineControl processingApplicationData</LONG-NAME>
+						<ADMIN-DATA>
+							<LANGUAGE>eng</LANGUAGE>
+							<DOC-REVISIONS>
+								<DOC-REVISION>
+									<TEAM-MEMBER-REF ID-REF="id-fcf9a90d-7e1f-4d3c-8f44-1e67edf77640"/>
+									<REVISION-LABEL>001.000.000</REVISION-LABEL>
+									<DATE>2006-10-26T16:00:00</DATE>
+									<MODIFICATIONS>
+										<MODIFICATION>
+											<CHANGE>added</CHANGE>
+											<REASON>Initial Release</REASON>
+										</MODIFICATION>
+									</MODIFICATIONS>
+								</DOC-REVISION>
+							</DOC-REVISIONS>
+						</ADMIN-DATA>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-807f2822-eb5c-4353-93e4-6c30375bcadd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-f8968cbe-dd63-4407-8175-e9af99357ce1"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-8a245eac-0af7-40d3-be3a-f7222e34d8f6"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+					<DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="id-7cb49fd8-4572-46ca-9acd-97ff2e28225b" OID="id-7cb49fd8-4572-46ca-9acd-97ff2e28225b">
+						<SHORT-NAME>RC_PADIDR_RRR</SHORT-NAME>
+						<LONG-NAME>RoutineControl ProcessingApplicationDataIDR RequestRoutineResult</LONG-NAME>
+						<SDGS>
+							<SDG>
+								<SDG-CAPTION ID="id-86a4ab74-0d1b-4ddb-ae1d-b4aa6362e23a" OID="id-86a4ab74-0d1b-4ddb-ae1d-b4aa6362e23a">
+									<SHORT-NAME>POLL_TIMING</SHORT-NAME>
+									<LONG-NAME>POLL_TIMING</LONG-NAME>
+								</SDG-CAPTION>
+								<SD SI="TIMEOUT">120000</SD>
+								<SD SI="INTERVAL">1000</SD>
+							</SDG>
+						</SDGS>
+						<FUNCT-CLASS-REFS>
+							<FUNCT-CLASS-REF ID-REF="id-807f2822-eb5c-4353-93e4-6c30375bcadd"/>
+						</FUNCT-CLASS-REFS>
+						<AUDIENCE/>
+						<REQUEST-REF ID-REF="id-2a62f232-0012-471c-89c2-c15311c44db8"/>
+						<POS-RESPONSE-REFS>
+							<POS-RESPONSE-REF ID-REF="id-bfae7b71-9391-4fb2-acde-e6aff2f837fe"/>
+						</POS-RESPONSE-REFS>
+					</DIAG-SERVICE>
+				</DIAG-COMMS>
+				<REQUESTS>
+					<REQUEST ID="id-bc0c7d3a-f091-4e3a-b91a-6fc2574cf4b7" OID="id-bc0c7d3a-f091-4e3a-b91a-6fc2574cf4b7">
+						<SHORT-NAME>RC_RLE_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl RequestListEntry Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-80c7b2ee-b9fb-47a3-a5d4-d5f6fd63cc58"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-8a2f7014-c947-4249-8e30-64f1f6ffecdf"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>ARCI</SHORT-NAME>
+								<LONG-NAME>ApplicationRoutineControlIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="APPDATA_ARCI_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RM</SHORT-NAME>
+								<LONG-NAME>readMethod</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<DOP-REF ID-REF="id-d8a1ed65-1df4-4ca5-90ae-88e96bc725fb"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>AFID</SHORT-NAME>
+								<LONG-NAME>addressFormatIdentifier</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<DOP-SNREF SHORT-NAME="APPDATA_AFID_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="CODED-CONST">
+								<SHORT-NAME>RSVD</SHORT-NAME>
+								<LONG-NAME>reserved</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<BIT-POSITION>4</BIT-POSITION>
+								<CODED-VALUE>0</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>4</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>MOI</SHORT-NAME>
+								<LONG-NAME>memoryObjectIdentifier</LONG-NAME>
+								<BYTE-POSITION>6</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="APPDATA_MOI_EOP_STRUCT"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-808b9a60-2951-4358-84a4-597064b2e7b5" OID="id-808b9a60-2951-4358-84a4-597064b2e7b5">
+						<SHORT-NAME>RC_RLEBI_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl RequestListEntryByIndex Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-80c7b2ee-b9fb-47a3-a5d4-d5f6fd63cc58"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-8a2f7014-c947-4249-8e30-64f1f6ffecdf"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>ARCI</SHORT-NAME>
+								<LONG-NAME>ApplicationRoutineControlIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="APPDATA_ARCI_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RM</SHORT-NAME>
+								<LONG-NAME>readMethod</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>index</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-d8a1ed65-1df4-4ca5-90ae-88e96bc725fb"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>ASRCI</SHORT-NAME>
+								<LONG-NAME>ApplicationSubRoutineControlIdentifier</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="APPDATA_ASRCI_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>IOE</SHORT-NAME>
+								<LONG-NAME>indexOfEntry</LONG-NAME>
+								<BYTE-POSITION>7</BYTE-POSITION>
+								<DOP-REF ID-REF="id-323d75c9-9bb8-443f-8282-e964b6e440f8"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-f8968cbe-dd63-4407-8175-e9af99357ce1" OID="id-f8968cbe-dd63-4407-8175-e9af99357ce1">
+						<SHORT-NAME>RC_PAD_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl processingApplicationData Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-80c7b2ee-b9fb-47a3-a5d4-d5f6fd63cc58"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>startRoutine</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-8a2f7014-c947-4249-8e30-64f1f6ffecdf"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>processingApplicationData</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-4bf7aec7-f766-4be6-8ded-5a32d1e81ddc"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>DPT</SHORT-NAME>
+								<LONG-NAME>dataProcessingType</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<PHYSICAL-DEFAULT-VALUE>uploadPreProcessing</PHYSICAL-DEFAULT-VALUE>
+								<DOP-REF ID-REF="id-473e6642-d350-4c62-873e-295f2f0b58a4"/>
+							</PARAM>
+							<PARAM xsi:type="CODED-CONST">
+								<SHORT-NAME>RSVD</SHORT-NAME>
+								<LONG-NAME>reserved</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<BIT-POSITION>4</BIT-POSITION>
+								<CODED-VALUE>0</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>4</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>MOID</SHORT-NAME>
+								<LONG-NAME>memoryObjectIdentifier</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="RC_PAD_MOI_STRUCT"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>ASPS</SHORT-NAME>
+								<LONG-NAME>applicationSpecificParameters</LONG-NAME>
+								<DOP-SNREF SHORT-NAME="APPDATA_ASP_STRUCT"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+					<REQUEST ID="id-2a62f232-0012-471c-89c2-c15311c44db8" OID="id-2a62f232-0012-471c-89c2-c15311c44db8">
+						<SHORT-NAME>RC_PADIDR_RRR_REQ</SHORT-NAME>
+						<LONG-NAME>RoutineControl ProcessingApplicationDataIDR RequestRoutineResult Request</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RC</SHORT-NAME>
+								<LONG-NAME>RoutineControl Request Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>49</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>SPRMIB</SHORT-NAME>
+								<LONG-NAME>suppressPosRspMsgIndicationBit</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>7</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>false</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-80c7b2ee-b9fb-47a3-a5d4-d5f6fd63cc58"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<PHYS-CONSTANT-VALUE>requestRoutineResults</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-8a2f7014-c947-4249-8e30-64f1f6ffecdf"/>
+							</PARAM>
+							<PARAM xsi:type="PHYS-CONST">
+								<SHORT-NAME>RC_RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<PHYS-CONSTANT-VALUE>processingApplicationData</PHYS-CONSTANT-VALUE>
+								<DOP-REF ID-REF="id-4bf7aec7-f766-4be6-8ded-5a32d1e81ddc"/>
+							</PARAM>
+						</PARAMS>
+					</REQUEST>
+				</REQUESTS>
+				<POS-RESPONSES>
+					<POS-RESPONSE ID="id-5ca062af-c7a0-4086-ac32-8a3cd4d5757f" OID="id-5ca062af-c7a0-4086-ac32-8a3cd4d5757f">
+						<SHORT-NAME>RC_RLE_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl RequestListEntry Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RM</SHORT-NAME>
+								<LONG-NAME>readMethod</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<REQUEST-BYTE-POS>4</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>SOE</SHORT-NAME>
+								<LONG-NAME>StatusOfEntry</LONG-NAME>
+								<BYTE-POSITION>5</BYTE-POSITION>
+								<DOP-REF ID-REF="id-c8f44004-3ebd-4449-b41f-40e1775ed868"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>DPREPT</SHORT-NAME>
+								<LONG-NAME>downloadPreProcessingTime</LONG-NAME>
+								<BYTE-POSITION>6</BYTE-POSITION>
+								<DOP-REF ID-REF="id-5bd8af9b-e359-48b2-962c-d3ff198b1ace"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>DPOSTPT</SHORT-NAME>
+								<LONG-NAME>downloadPostProcessingTime</LONG-NAME>
+								<BYTE-POSITION>8</BYTE-POSITION>
+								<DOP-REF ID-REF="id-5bd8af9b-e359-48b2-962c-d3ff198b1ace"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>UPREPT</SHORT-NAME>
+								<LONG-NAME>uploadPreProcessingTime</LONG-NAME>
+								<BYTE-POSITION>10</BYTE-POSITION>
+								<DOP-REF ID-REF="id-5bd8af9b-e359-48b2-962c-d3ff198b1ace"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>UPOSTPT</SHORT-NAME>
+								<LONG-NAME>uploadPostProcessingTime</LONG-NAME>
+								<BYTE-POSITION>12</BYTE-POSITION>
+								<DOP-REF ID-REF="id-5bd8af9b-e359-48b2-962c-d3ff198b1ace"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>DFI</SHORT-NAME>
+								<LONG-NAME>DataFormatIdentifier</LONG-NAME>
+								<DESC>
+									<p>
+bit 7-4: compressingMethod, 0 = noCompressionMethod
+                  </p>
+									<p>
+bit 3-0: encryptionMethod, 0 = noEncryptionMethod
+                  </p>
+								</DESC>
+								<BYTE-POSITION>14</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="APPDATA_DFI_STRUCT"/>
+							</PARAM>
+							<PARAM xsi:type="LENGTH-KEY" ID="id-1c579683-38c1-4e90-963b-e2dd3d21443a" OID="id-1c579683-38c1-4e90-963b-e2dd3d21443a">
+								<SHORT-NAME>MSL</SHORT-NAME>
+								<LONG-NAME>memorySize length</LONG-NAME>
+								<DESC>
+									<p>
+Length (number of bits) of the memorySize parameter
+                  </p>
+								</DESC>
+								<BYTE-POSITION>15</BYTE-POSITION>
+								<BIT-POSITION>4</BIT-POSITION>
+								<DOP-SNREF SHORT-NAME="APPDATA_AFID_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>MOIL</SHORT-NAME>
+								<LONG-NAME>memoryObjectIdentifier length</LONG-NAME>
+								<DESC>
+									<p>
+Length (number of bits) of the logicalControlIdentifier parameter
+                  </p>
+								</DESC>
+								<BYTE-POSITION>15</BYTE-POSITION>
+								<BIT-POSITION>0</BIT-POSITION>
+								<DOP-SNREF SHORT-NAME="APPDATA_LFID_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>MOI</SHORT-NAME>
+								<LONG-NAME>memoryObjectIdentifier</LONG-NAME>
+								<BYTE-POSITION>15</BYTE-POSITION>
+								<DOP-SNREF SHORT-NAME="RC_RLE_MOI_STRUCT"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>MS</SHORT-NAME>
+								<LONG-NAME>memorySize</LONG-NAME>
+								<DOP-SNREF SHORT-NAME="APPDATA_MS_DOP"/>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>ASPS</SHORT-NAME>
+								<LONG-NAME>applicationSpecificParameters</LONG-NAME>
+								<DOP-SNREF SHORT-NAME="APPDATA_ASP_STRUCT"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-8a245eac-0af7-40d3-be3a-f7222e34d8f6" OID="id-8a245eac-0af7-40d3-be3a-f7222e34d8f6">
+						<SHORT-NAME>RC_PAD_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl processingApplicationData Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RS</SHORT-NAME>
+								<LONG-NAME>routineStatus</LONG-NAME>
+								<BYTE-POSITION>4</BYTE-POSITION>
+								<DOP-REF ID-REF="id-d3fd8a7e-eef6-488c-888b-f2a8a029f23c"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+					<POS-RESPONSE ID="id-bfae7b71-9391-4fb2-acde-e6aff2f837fe" OID="id-bfae7b71-9391-4fb2-acde-e6aff2f837fe">
+						<SHORT-NAME>RC_PADIDR_RRR_RESP</SHORT-NAME>
+						<LONG-NAME>RoutineControl ProcessingApplicationDataIDR RequestRoutineResults Response</LONG-NAME>
+						<PARAMS>
+							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+								<SHORT-NAME>RCPR</SHORT-NAME>
+								<LONG-NAME>RoutineControl Response Service Id</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<CODED-VALUE>113</CODED-VALUE>
+								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+									<BIT-LENGTH>8</BIT-LENGTH>
+								</DIAG-CODED-TYPE>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RCTP</SHORT-NAME>
+								<LONG-NAME>routineControlType</LONG-NAME>
+								<BYTE-POSITION>1</BYTE-POSITION>
+								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>1</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+								<SHORT-NAME>RI</SHORT-NAME>
+								<LONG-NAME>routineIdentifier</LONG-NAME>
+								<BYTE-POSITION>2</BYTE-POSITION>
+								<REQUEST-BYTE-POS>2</REQUEST-BYTE-POS>
+								<BYTE-LENGTH>2</BYTE-LENGTH>
+							</PARAM>
+							<PARAM xsi:type="VALUE">
+								<SHORT-NAME>RC_RR</SHORT-NAME>
+								<LONG-NAME>routineResult</LONG-NAME>
+								<BYTE-POSITION>0</BYTE-POSITION>
+								<DOP-REF ID-REF="id-1ac6125b-2752-4cd0-a48c-b988ef72e914"/>
+							</PARAM>
+						</PARAMS>
+					</POS-RESPONSE>
+				</POS-RESPONSES>
+			</ECU-SHARED-DATA>
+		</ECU-SHARED-DATAS>
+	</DIAG-LAYER-CONTAINER>
+</ODX>

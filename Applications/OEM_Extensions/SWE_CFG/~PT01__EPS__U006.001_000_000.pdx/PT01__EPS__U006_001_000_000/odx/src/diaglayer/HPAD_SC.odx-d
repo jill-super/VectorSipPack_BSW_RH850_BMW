@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER ID="id-7f746830-271d-4f68-93f4-26e31795ecff" OID="id-7f746830-271d-4f68-93f4-26e31795ecff">
+        <SHORT-NAME>HPAD_SC_DLC</SHORT-NAME>
+        <LONG-NAME>High Plattform Automated Driving Safety Controller</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT ID="id-1d829864-e3ee-4fd8-8f12-2a26a18b8ca7" OID="id-1d829864-e3ee-4fd8-8f12-2a26a18b8ca7">
+                <SHORT-NAME>HPAD_SC</SHORT-NAME>
+                <LONG-NAME>High Plattform Automated Driving Safety Controller</LONG-NAME>
+                <DESC>
+                    <p>SWT, Coding, PIA Client</p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a" DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC">
+                        <VALUE>3</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a" DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC">
+                        <VALUE>3</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+						<VALUE>2</VALUE>
+						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+					</COMPARAM-REF>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+						<VALUE>2</VALUE>
+						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+					</COMPARAM-REF>
+					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-0e6aba7e-214d-428a-98e1-55aaf139a75e">
+          				<VALUE>1</VALUE>
+          				<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+          			</COMPARAM-REF>
+          			<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-0e6aba7e-214d-428a-98e1-55aaf139a75e">
+          				<VALUE>1</VALUE>
+          				<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          			</COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER"/>
+                     <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-950206a6-d0ba-44a4-b250-3ae9ab110e49" DOCREF="COD2_UDS_DLC" DOCTYPE="CONTAINER"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-91e2ce4c-a274-4f02-a601-92f937695337" DOCREF="IDR_UDS_DLC" DOCTYPE="CONTAINER"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

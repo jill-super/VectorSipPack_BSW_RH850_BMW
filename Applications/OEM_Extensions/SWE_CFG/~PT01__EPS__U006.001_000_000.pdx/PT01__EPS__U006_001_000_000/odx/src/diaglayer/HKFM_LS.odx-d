@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DIAG-LAYER-CONTAINER ID="id-49afe217-82e2-4311-8a2e-b0dec89cda74" OID="id-49afe217-82e2-4311-8a2e-b0dec89cda74">
+    <SHORT-NAME>HKFM_LS_DLC</SHORT-NAME>
+    <LONG-NAME>Heckklappenfunktionsmodul LowSpeed</LONG-NAME>
+    <BASE-VARIANTS>
+      <BASE-VARIANT ID="id-ec76e018-5146-472b-8fcd-d1a65d2bb987" OID="id-ec76e018-5146-472b-8fcd-d1a65d2bb987">
+        <SHORT-NAME>HKFM_LS</SHORT-NAME>
+        <LONG-NAME>Heckklappenfunktionsmodul LowSpeed</LONG-NAME>
+        <DESC>
+          <p>Heckklappenfunktionsmodul LowSpeed, abgeleitet von der BASIS-Variante HKL</p>
+        </DESC>
+        <COMPARAM-REFS>
+		<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16"> 
+			<VALUE>1946</VALUE>
+			<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP" />
+		</COMPARAM-REF>
+        </COMPARAM-REFS>
+        <PARENT-REFS>
+          <PARENT-REF DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="PROG_LS_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-4646c54a-1f42-4da6-a628-b66976713291" xsi:type="FUNCTIONAL-GROUP-REF"/>
+        </PARENT-REFS>
+      </BASE-VARIANT>
+    </BASE-VARIANTS>
+  </DIAG-LAYER-CONTAINER>
+</ODX>

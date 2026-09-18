@@ -1,0 +1,481 @@
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *
+ *                This software is copyright protected and proprietary to Vector Informatik GmbH.
+ *                Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+ *                All other rights remain with Vector Informatik GmbH.
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *          File:  Rte.oil
+ *        Config:  EPS.dpa
+ *   ECU-Project:  EPS
+ *
+ *     Generator:  MICROSAR RTE Generator Version 4.16.0
+ *                 RTE Core Version 1.16.0
+ *       License:  Unlimited license CBD1700369 for Nexteer Automotive Corporation
+ *
+ *   Description:  OIL-File containing project specific OS definitions for the MICROSAR RTE
+ *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ *                                              P L E A S E   N O T E
+ *
+ * The attributes in this file must not be changed. Missing mandatory attributes must be set in the including file.
+ * They are presented as a comment in the corresponding object definition containing a list of all legal values.
+ *********************************************************************************************************************/
+
+   TASK Default_BAC_Appl_BMW_Task {
+      ACTIVATION = 1:"@RO@";
+      PRIORITY = 58:"@RO@";
+      SCHEDULE = FULL:"@RO@";
+// TIMING_PROTECTION = FALSE|TRUE; (AUTOSAR OS only)
+      AUTOSTART = FALSE:"@RO@";
+      EVENT = Rte_Ev_MS_Default_BAC_Appl_BMW_Task:"@RO@";
+      EVENT = Rte_Ev_Run1_Darh_QueueHandler:"@RO@";
+      EVENT = Rte_Ev_Run1_SysTime_MainFunction:"@RO@";
+      EVENT = Rte_Ev_Run_Darh_LifeCycleHandler:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_ASIL;
+      ACCESSING_APPLICATION = SystemApplication_OsCore_CORE0;
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE_Darh_QueueHandler {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = Default_BAC_Appl_BMW_Task;
+         EVENT = Rte_Ev_Run1_Darh_QueueHandler;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_ASIL;
+      ACCESSING_APPLICATION = SystemApplication_OsCore_CORE0;
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE_SysTime_MainFunction {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = Default_BAC_Appl_BMW_Task;
+         EVENT = Rte_Ev_Run1_SysTime_MainFunction;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_ASIL;
+      ACCESSING_APPLICATION = SystemApplication_OsCore_CORE0;
+   }:"@RO@@NR@";
+
+   TASK Default_BSW_Sync_Task {
+      ACTIVATION = 1:"@RO@";
+      PRIORITY = 65:"@RO@";
+      SCHEDULE = FULL:"@RO@";
+// TIMING_PROTECTION = FALSE|TRUE; (AUTOSAR OS only)
+      AUTOSTART = FALSE:"@RO@";
+      EVENT = Rte_Ev_Cyclic2_Default_BSW_Sync_Task_0_5ms:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_QM;
+      ACCESSING_APPLICATION = SystemApplication_OsCore_CORE0;
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE2_Default_BSW_Sync_Task_0_5ms {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = Default_BSW_Sync_Task;
+         EVENT = Rte_Ev_Cyclic2_Default_BSW_Sync_Task_0_5ms;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_QM;
+      ACCESSING_APPLICATION = SystemApplication_OsCore_CORE0;
+   }:"@RO@@NR@";
+
+   TASK Default_RTE_Mode_switch_Task {
+      ACTIVATION = 1:"@RO@";
+      PRIORITY = 10:"@RO@";
+      SCHEDULE = FULL:"@RO@";
+// TIMING_PROTECTION = FALSE|TRUE; (AUTOSAR OS only)
+      AUTOSTART = FALSE:"@RO@";
+      EVENT = Rte_Ev_MS_Default_RTE_Mode_switch_Task:"@RO@";
+      EVENT = Rte_Ev_Run1_StdDiag_SessionChange_DefaultSession:"@RO@";
+      EVENT = Rte_Ev_Run1_StdDiag_SessionChange_OtherSession:"@RO@";
+      EVENT = Rte_Ev_Run1_Stm_Runnable_InitialCELSupervision:"@RO@";
+      EVENT = Rte_Ev_Run1_Stm_Runnable_StopCentralErrorLockSupervision:"@RO@";
+      EVENT = Rte_Ev_Run1_SysTime_ReceiveSignal:"@RO@";
+      EVENT = Rte_Ev_Run_BMW_Application_Connector_Dummy_BMW_Vin_Rx_Wrapper:"@RO@";
+      EVENT = Rte_Ev_Run_BMW_Application_Connector_Dummy_Dlog_FirstStart_Dummy:"@RO@";
+      EVENT = Rte_Ev_Run_BMW_Application_Main_Dcm_BAC4_EcuReset_Execute:"@RO@";
+      EVENT = Rte_Ev_Run_BMW_Application_Main_Dcm_BAC4_EcuReset_Hard:"@RO@";
+      EVENT = Rte_Ev_Run_BMW_Application_Main_Dcm_BAC4_Jump2Boot:"@RO@";
+      EVENT = Rte_Ev_Run_BMW_Application_Main_Dcm_BAC4_RapidShutdownDisable:"@RO@";
+      EVENT = Rte_Ev_Run_BMW_Application_Main_Dcm_BAC4_RapidShutdownEnable:"@RO@";
+      EVENT = Rte_Ev_Run_BMW_Application_Main_Xcp_Event_Runnable:"@RO@";
+      EVENT = Rte_Ev_Run_Bs_Bs_LifeCycleModeRequest:"@RO@";
+      EVENT = Rte_Ev_Run_Dlog_Dlog_ModeSwitchAckLifeCycle:"@RO@";
+      EVENT = Rte_Ev_Run_Dlog_Dlog_ModeSwitchRequestLifeCycle:"@RO@";
+      EVENT = Rte_Ev_Run_IntegrationSample_IntegrationSampleTimerFunction:"@RO@";
+      EVENT = Rte_Ev_Run_IntegrationSample_R_IntegrationSample_EcuRunStateHandler:"@RO@";
+      EVENT = Rte_Ev_Run_IntegrationSample_R_Receive_SGG_Rx_CON_VEH:"@RO@";
+      EVENT = Rte_Ev_Run_IntegrationSample_R_Receive_SIG_MILE_KM_816_R:"@RO@";
+      EVENT = Rte_Ev_Run_IntegrationSample_R_Receive_VehicleStatus:"@RO@";
+      EVENT = Rte_Ev_Run_IntegrationSample_R_Timeout_SGG_Rx_CON_VEH:"@RO@";
+      EVENT = Rte_Ev_Run_IntegrationSample_R_Timeout_VehicleStatus:"@RO@";
+      EVENT = Rte_Ev_Run_Omc_LifeCycleHandler:"@RO@";
+      EVENT = Rte_Ev_Run_StdDiag_LifeCycleHandler:"@RO@";
+      EVENT = Rte_Ev_Run_Stm_Runnable_ErrorCentralErrorLock:"@RO@";
+      EVENT = Rte_Ev_Run_Stm_Runnable_ErrorEnergyMode:"@RO@";
+      EVENT = Rte_Ev_Run_Stm_Runnable_ErrorVehicleState:"@RO@";
+      EVENT = Rte_Ev_Run_Stm_Runnable_ReceiveCentralErrorLock:"@RO@";
+      EVENT = Rte_Ev_Run_Stm_Runnable_ReceiveEnergyMode:"@RO@";
+      EVENT = Rte_Ev_Run_Stm_Runnable_ReceiveVehicleState:"@RO@";
+      EVENT = Rte_Ev_Run_SysTime_LifeCycleHandler:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_ASIL;
+      ACCESSING_APPLICATION = SystemApplication_OsCore_CORE0;
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE_BMW_Application_Main_Xcp_Event_Runnable {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = Default_RTE_Mode_switch_Task;
+         EVENT = Rte_Ev_Run_BMW_Application_Main_Xcp_Event_Runnable;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_ASIL;
+      ACCESSING_APPLICATION = SystemApplication_OsCore_CORE0;
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE_IntegrationSample_IntegrationSampleTimerFunction {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = Default_RTE_Mode_switch_Task;
+         EVENT = Rte_Ev_Run_IntegrationSample_IntegrationSampleTimerFunction;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_ASIL;
+      ACCESSING_APPLICATION = SystemApplication_OsCore_CORE0;
+   }:"@RO@@NR@";
+
+   TASK OsTask_BSW_ASIL {
+      ACTIVATION = 1:"@RO@";
+      PRIORITY = 60:"@RO@";
+      SCHEDULE = FULL:"@RO@";
+// TIMING_PROTECTION = FALSE|TRUE; (AUTOSAR OS only)
+      AUTOSTART = FALSE:"@RO@";
+      EVENT = Rte_Ev_Cyclic2_OsTask_BSW_ASIL_0_10ms:"@RO@";
+      EVENT = Rte_Ev_Cyclic2_OsTask_BSW_ASIL_0_20ms:"@RO@";
+      EVENT = Rte_Ev_Cyclic2_OsTask_BSW_ASIL_0_2ms:"@RO@";
+      EVENT = Rte_Ev_Cyclic2_OsTask_BSW_ASIL_0_5ms:"@RO@";
+      EVENT = Rte_Ev_Run_BswM_BswM_Read_SWCModeReq_StdDiag_CommunicationModeDeclarationGroup:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_QM;
+      ACCESSING_APPLICATION = SystemApplication_OsCore_CORE0;
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE2_OsTask_BSW_ASIL_0_10ms {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsTask_BSW_ASIL;
+         EVENT = Rte_Ev_Cyclic2_OsTask_BSW_ASIL_0_10ms;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_QM;
+      ACCESSING_APPLICATION = SystemApplication_OsCore_CORE0;
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE2_OsTask_BSW_ASIL_0_20ms {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsTask_BSW_ASIL;
+         EVENT = Rte_Ev_Cyclic2_OsTask_BSW_ASIL_0_20ms;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_QM;
+      ACCESSING_APPLICATION = SystemApplication_OsCore_CORE0;
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE2_OsTask_BSW_ASIL_0_2ms {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsTask_BSW_ASIL;
+         EVENT = Rte_Ev_Cyclic2_OsTask_BSW_ASIL_0_2ms;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_QM;
+      ACCESSING_APPLICATION = SystemApplication_OsCore_CORE0;
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE2_OsTask_BSW_ASIL_0_5ms {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsTask_BSW_ASIL;
+         EVENT = Rte_Ev_Cyclic2_OsTask_BSW_ASIL_0_5ms;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_QM;
+      ACCESSING_APPLICATION = SystemApplication_OsCore_CORE0;
+   }:"@RO@@NR@";
+
+   TASK OsTask_LowPrioNvm {
+      ACTIVATION = 1:"@RO@";
+      PRIORITY = 20:"@RO@";
+      SCHEDULE = FULL:"@RO@";
+// TIMING_PROTECTION = FALSE|TRUE; (AUTOSAR OS only)
+      AUTOSTART = FALSE:"@RO@";
+      EVENT = Rte_Ev_Cyclic2_OsTask_LowPrioNvm_0_10ms:"@RO@";
+      EVENT = Rte_Ev_Run_Fee_30_SmallSector_Fee_30_SmallSector_MainFunction:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_ASIL;
+      ACCESSING_APPLICATION = OsApplication_QM;
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE2_OsTask_LowPrioNvm_0_10ms {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsTask_LowPrioNvm;
+         EVENT = Rte_Ev_Cyclic2_OsTask_LowPrioNvm_0_10ms;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_ASIL;
+      ACCESSING_APPLICATION = OsApplication_QM;
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE_Fee_30_SmallSector_Fee_30_SmallSector_MainFunction {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsTask_LowPrioNvm;
+         EVENT = Rte_Ev_Run_Fee_30_SmallSector_Fee_30_SmallSector_MainFunction;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+      ACCESSING_APPLICATION = OsApplication_ASIL;
+      ACCESSING_APPLICATION = OsApplication_QM;
+   }:"@RO@@NR@";
+
+   EVENT Rte_Ev_Cyclic2_Default_BSW_Sync_Task_0_5ms {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Cyclic2_OsTask_BSW_ASIL_0_10ms {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Cyclic2_OsTask_BSW_ASIL_0_20ms {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Cyclic2_OsTask_BSW_ASIL_0_2ms {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Cyclic2_OsTask_BSW_ASIL_0_5ms {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Cyclic2_OsTask_LowPrioNvm_0_10ms {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_MS_Default_BAC_Appl_BMW_Task {
+      MASK = 0x04;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_MS_Default_RTE_Mode_switch_Task {
+      MASK = 0x04;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run1_Darh_QueueHandler {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run1_StdDiag_SessionChange_DefaultSession {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run1_StdDiag_SessionChange_OtherSession {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run1_Stm_Runnable_InitialCELSupervision {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run1_Stm_Runnable_StopCentralErrorLockSupervision {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run1_SysTime_MainFunction {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run1_SysTime_ReceiveSignal {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_BMW_Application_Connector_Dummy_BMW_Vin_Rx_Wrapper {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_BMW_Application_Connector_Dummy_Dlog_FirstStart_Dummy {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_BMW_Application_Main_Dcm_BAC4_EcuReset_Execute {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_BMW_Application_Main_Dcm_BAC4_EcuReset_Hard {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_BMW_Application_Main_Dcm_BAC4_Jump2Boot {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_BMW_Application_Main_Dcm_BAC4_RapidShutdownDisable {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_BMW_Application_Main_Dcm_BAC4_RapidShutdownEnable {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_BMW_Application_Main_Xcp_Event_Runnable {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_Bs_Bs_LifeCycleModeRequest {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_BswM_BswM_Read_SWCModeReq_StdDiag_CommunicationModeDeclarationGroup {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_Darh_LifeCycleHandler {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_Dlog_Dlog_ModeSwitchAckLifeCycle {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_Dlog_Dlog_ModeSwitchRequestLifeCycle {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_Fee_30_SmallSector_Fee_30_SmallSector_MainFunction {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_IntegrationSample_IntegrationSampleTimerFunction {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_IntegrationSample_R_IntegrationSample_EcuRunStateHandler {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_IntegrationSample_R_Receive_SGG_Rx_CON_VEH {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_IntegrationSample_R_Receive_SIG_MILE_KM_816_R {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_IntegrationSample_R_Receive_VehicleStatus {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_IntegrationSample_R_Timeout_SGG_Rx_CON_VEH {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_IntegrationSample_R_Timeout_VehicleStatus {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_Omc_LifeCycleHandler {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_StdDiag_LifeCycleHandler {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_Stm_Runnable_ErrorCentralErrorLock {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_Stm_Runnable_ErrorEnergyMode {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_Stm_Runnable_ErrorVehicleState {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_Stm_Runnable_ReceiveCentralErrorLock {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_Stm_Runnable_ReceiveEnergyMode {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_Stm_Runnable_ReceiveVehicleState {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_SysTime_LifeCycleHandler {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+
+   APPLICATION OsApplication_ASIL {
+      TRUSTED = TRUE;
+// Add the following four attributes according to your needs.
+// Note: They do not have a default value and are therefore necessary in the configuration.
+//      STARTUPHOOK = FALSE;
+//      SHUTDOWNHOOK = FALSE;
+//      ERRORHOOK = FALSE;
+//      HAS_RESTARTTASK = FALSE;
+      TASK = Default_BSW_Sync_Task;
+      ALARM = Rte_Al_TE2_Default_BSW_Sync_Task_0_5ms;
+      TASK = OsTask_BSW_ASIL;
+      ALARM = Rte_Al_TE2_OsTask_BSW_ASIL_0_10ms;
+      ALARM = Rte_Al_TE2_OsTask_BSW_ASIL_0_20ms;
+      ALARM = Rte_Al_TE2_OsTask_BSW_ASIL_0_2ms;
+      ALARM = Rte_Al_TE2_OsTask_BSW_ASIL_0_5ms;
+  };
+
+   APPLICATION OsApplication_QM {
+      TRUSTED = FALSE;
+// Add the following four attributes according to your needs.
+// Note: They do not have a default value and are therefore necessary in the configuration.
+//      STARTUPHOOK = FALSE;
+//      SHUTDOWNHOOK = FALSE;
+//      ERRORHOOK = FALSE;
+//      HAS_RESTARTTASK = FALSE;
+      TASK = Default_BAC_Appl_BMW_Task;
+      ALARM = Rte_Al_TE_Darh_QueueHandler;
+      ALARM = Rte_Al_TE_SysTime_MainFunction;
+      TASK = Default_RTE_Mode_switch_Task;
+      ALARM = Rte_Al_TE_BMW_Application_Main_Xcp_Event_Runnable;
+      ALARM = Rte_Al_TE_IntegrationSample_IntegrationSampleTimerFunction;
+  };
+
+   APPLICATION SystemApplication_OsCore_CORE0 {
+      TRUSTED = TRUE;
+// Add the following four attributes according to your needs.
+// Note: They do not have a default value and are therefore necessary in the configuration.
+//      STARTUPHOOK = FALSE;
+//      SHUTDOWNHOOK = FALSE;
+//      ERRORHOOK = FALSE;
+//      HAS_RESTARTTASK = FALSE;
+      TASK = OsTask_LowPrioNvm;
+      ALARM = Rte_Al_TE2_OsTask_LowPrioNvm_0_10ms;
+      ALARM = Rte_Al_TE_Fee_30_SmallSector_Fee_30_SmallSector_MainFunction;
+  };

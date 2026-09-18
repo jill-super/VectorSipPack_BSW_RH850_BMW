@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FSEQ xmlns="http://bmw.com/2005/psdz.data.fseq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- 
+  FSEQ fuer Baureihenverbund V002
+  
+  Aenderungsdokumentation
+	Datum         Version    Author    		Aenderung
+	20.07.2016   	1.0.0      M.Fischer   	Initiale Erstellung
+	-->
+
+  <dependency>
+    <preconditions>
+      <ECU><baseVariantName name="ZGW"/><diagnosticAddress physicalOffset="16"/></ECU>
+    </preconditions>
+    <dependors>
+			<ECU><baseVariantName name="LIM"/><diagnosticAddress physicalOffset="20"/></ECU>
+    </dependors>
+  </dependency>
+</FSEQ>

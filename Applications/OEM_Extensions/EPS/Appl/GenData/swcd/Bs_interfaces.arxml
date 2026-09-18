@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0_STRICT_COMPACT.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>BMW</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Platform</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>Bs</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                  <ELEMENTS>
+                    <COMPU-METHOD>
+                      <SHORT-NAME>CM_LifeCycleRequest</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>BS_INITIALIZED</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>BS_INITIALIZED</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>BS_RUNNING</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>BS_RUNNING</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>BS_STOPPED</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>BS_STOPPED</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                  <ELEMENTS>
+                    <DATA-TYPE-MAPPING-SET>
+                      <SHORT-NAME>BsTypeMappings</SHORT-NAME>
+                      <MODE-REQUEST-TYPE-MAPS>
+                        <MODE-REQUEST-TYPE-MAP>
+                          <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                          <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP">/BMW/Platform/Bs/ModeDeclarationGroups/SecEcuMode</MODE-GROUP-REF>
+                        </MODE-REQUEST-TYPE-MAP>
+                        <MODE-REQUEST-TYPE-MAP>
+                          <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/ImplementationDataTypes/Bs_LifeCycleRequestType</IMPLEMENTATION-DATA-TYPE-REF>
+                          <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP">/BMW/Platform/Bs/ModeDeclarationGroups/Bs_LifeCycle</MODE-GROUP-REF>
+                        </MODE-REQUEST-TYPE-MAP>
+                      </MODE-REQUEST-TYPE-MAPS>
+                    </DATA-TYPE-MAPPING-SET>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE T="2014-06-05T10:27:02+02:00">
+                      <SHORT-NAME>Bs_LifeCycleRequestType</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/BMW/Platform/Bs/CompuMethods/CM_LifeCycleRequest</COMPU-METHOD-REF>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE>
+                    <IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>Bs_SfaFeatureSpecificFieldValueType</SHORT-NAME>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL></SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <DYNAMIC-ARRAY-SIZE-PROFILE>VSA_LINEAR</DYNAMIC-ARRAY-SIZE-PROFILE>
+                      <SUB-ELEMENTS>
+                        <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>size</SHORT-NAME>
+                          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</IMPLEMENTATION-DATA-TYPE-REF>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>payload</SHORT-NAME>
+                          <CATEGORY>ARRAY</CATEGORY>
+                          <SUB-ELEMENTS>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                              <SHORT-NAME>PayloadType</SHORT-NAME>
+                              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                              <ARRAY-SIZE>256</ARRAY-SIZE>
+                              <ARRAY-SIZE-HANDLING>ALL-INDICES-SAME-ARRAY-SIZE</ARRAY-SIZE-HANDLING>
+                              <ARRAY-SIZE-SEMANTICS>VARIABLE-SIZE</ARRAY-SIZE-SEMANTICS>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          </SUB-ELEMENTS>
+                        </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                    </IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>ModeDeclarationGroups</SHORT-NAME>
+                  <ELEMENTS>
+                    <MODE-DECLARATION-GROUP>
+                      <SHORT-NAME>Bs_LifeCycle</SHORT-NAME>
+                      <CATEGORY>EXPLICIT_ORDER</CATEGORY>
+                      <INITIAL-MODE-REF DEST="MODE-DECLARATION">/BMW/Platform/Bs/ModeDeclarationGroups/Bs_LifeCycle/BS_STOPPED</INITIAL-MODE-REF>
+                      <MODE-DECLARATIONS>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>BS_INITIALIZED</SHORT-NAME>
+                          <VALUE>0</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>BS_RUNNING</SHORT-NAME>
+                          <VALUE>1</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>BS_STOPPED</SHORT-NAME>
+                          <VALUE>2</VALUE>
+                        </MODE-DECLARATION>
+                      </MODE-DECLARATIONS>
+                      <ON-TRANSITION-VALUE>3</ON-TRANSITION-VALUE>
+                    </MODE-DECLARATION-GROUP>
+                    <MODE-DECLARATION-GROUP>
+                      <SHORT-NAME>SecEcuMode</SHORT-NAME>
+                      <CATEGORY>EXPLICIT_ORDER</CATEGORY>
+                      <INITIAL-MODE-REF DEST="MODE-DECLARATION">/BMW/Platform/Bs/ModeDeclarationGroups/SecEcuMode/FIELD</INITIAL-MODE-REF>
+                      <MODE-DECLARATIONS>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>FIELD</SHORT-NAME>
+                          <VALUE>0</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>ENGINEERING</SHORT-NAME>
+                          <VALUE>1</VALUE>
+                        </MODE-DECLARATION>
+                        <MODE-DECLARATION>
+                          <SHORT-NAME>PLANT</SHORT-NAME>
+                          <VALUE>2</VALUE>
+                        </MODE-DECLARATION>
+                      </MODE-DECLARATIONS>
+                      <ON-TRANSITION-VALUE>3</ON-TRANSITION-VALUE>
+                    </MODE-DECLARATION-GROUP>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                  <ELEMENTS>
+                    <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>ActivationState</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>IsActivated</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL></SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                    <MODE-SWITCH-INTERFACE>
+                      <SHORT-NAME>ILifeCycle</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <MODE-GROUP>
+                        <SHORT-NAME>Mode</SHORT-NAME>
+                        <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/BMW/Platform/Bs/ModeDeclarationGroups/Bs_LifeCycle</TYPE-TREF>
+                      </MODE-GROUP>
+                    </MODE-SWITCH-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>ILifeCycleRequest</SHORT-NAME>
+                      <IS-SERVICE>true</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>requestMode</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL></SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/ImplementationDataTypes/Bs_LifeCycleRequestType</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>LCSState</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>value</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL></SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                    <MODE-SWITCH-INTERFACE>
+                      <SHORT-NAME>SecEcuMode</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <MODE-GROUP>
+                        <SHORT-NAME>Mode</SHORT-NAME>
+                        <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/BMW/Platform/Bs/ModeDeclarationGroups/SecEcuMode</TYPE-TREF>
+                      </MODE-GROUP>
+                    </MODE-SWITCH-INTERFACE>
+                    <CLIENT-SERVER-INTERFACE>
+                      <SHORT-NAME>SecureFeature</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <OPERATIONS>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>GetFeatureSpecificField</SHORT-NAME>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>featureId</SHORT-NAME>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>fieldIndex</SHORT-NAME>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>tag</SHORT-NAME>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>value</SHORT-NAME>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/BMW/Platform/Bs/ImplementationDataTypes/Bs_SfaFeatureSpecificFieldValueType</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <POSSIBLE-ERROR-REFS>
+                            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/PortInterfaces/SecureFeature/E_NOT_OK</POSSIBLE-ERROR-REF>
+                          </POSSIBLE-ERROR-REFS>
+                        </CLIENT-SERVER-OPERATION>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>GetNumberOfFeatureSpecificFields</SHORT-NAME>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>featureId</SHORT-NAME>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>numberOfFields</SHORT-NAME>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <POSSIBLE-ERROR-REFS>
+                            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/BMW/Platform/Bs/PortInterfaces/SecureFeature/E_NOT_OK</POSSIBLE-ERROR-REF>
+                          </POSSIBLE-ERROR-REFS>
+                        </CLIENT-SERVER-OPERATION>
+                      </OPERATIONS>
+                      <POSSIBLE-ERRORS>
+                        <APPLICATION-ERROR>
+                          <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                          <ERROR-CODE>1</ERROR-CODE>
+                        </APPLICATION-ERROR>
+                      </POSSIBLE-ERRORS>
+                    </CLIENT-SERVER-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

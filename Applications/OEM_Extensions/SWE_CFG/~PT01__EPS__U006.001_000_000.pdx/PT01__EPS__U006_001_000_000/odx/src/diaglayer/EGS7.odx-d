@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-441c685d-6be5-4391-a4c5-8aa29c653766" ID="id-441c685d-6be5-4391-a4c5-8aa29c653766">
+        <SHORT-NAME>EGS7_DLC</SHORT-NAME>
+        <LONG-NAME>Elektronische Getriebesteuerung</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-1151557c-b979-4d9f-a643-a847fa38ca0d" ID="id-1151557c-b979-4d9f-a643-a847fa38ca0d">
+                <SHORT-NAME>EGS7</SHORT-NAME>
+                <LONG-NAME>Elektronische Getriebesteuerung</LONG-NAME>
+                <DESC>
+                    <p>EGS ohne SWT, ohne IDR, codierbar</p>
+                </DESC>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

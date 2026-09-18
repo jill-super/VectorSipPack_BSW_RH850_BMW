@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-3-0.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ComponentTypes</SHORT-NAME>
+      <ELEMENTS>
+        <COMPOSITION-SW-COMPONENT-TYPE UUID="4FFC23F5-E72E-4C91-BC96-71FE6CC48249">
+          <SHORT-NAME>BMW_Core_Modules</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="11CFE496-01C3-4C7B-B522-BB5C9D6F978C">
+              <SHORT-NAME>FirstStartMode</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                <MODE-SWITCH-SENDER-COM-SPEC>
+                  <ENHANCED-MODE-API>false</ENHANCED-MODE-API>
+                  <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/BMW/Platform/Dlog/PortInterfaces/DlogFirstStartMode/DlogFirstStartMode</MODE-GROUP-REF>
+                  <MODE-SWITCHED-ACK>
+                    <TIMEOUT>0</TIMEOUT>
+                  </MODE-SWITCHED-ACK>
+                  <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                </MODE-SWITCH-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BMW/Platform/Dlog/PortInterfaces/DlogFirstStartMode</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+          </PORTS>
+          <COMPONENTS>
+            <SW-COMPONENT-PROTOTYPE UUID="76E3EEF3-3B50-48FA-8005-F5BC94B94A08">
+              <SHORT-NAME>Darh</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/BMW/Platform/Darh/SwComponentTypes/Darh</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="DFFD7BC3-D57F-41EC-B80C-74135351B5D0">
+              <SHORT-NAME>Dlog</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="BD9E7FF9-E64B-4F5B-8A2F-A7E66031F997">
+              <SHORT-NAME>Omc</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/BMW/Platform/Omc/SwComponentTypes/Omc</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="ED82E4E6-B284-44A8-80D2-0487068E9C91">
+              <SHORT-NAME>StdDiag</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="E6AEB281-D32B-490A-BFF6-3965F42C8E7A">
+              <SHORT-NAME>Stm</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/BMW/Platform/Stm/SwComponentTypes/Stm</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="FBA7D193-F45C-46EA-80A2-E7EE32435E74">
+              <SHORT-NAME>SysTime</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/BMW/Platform/SysTime/SwComponentTypes/SysTime</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+          </COMPONENTS>
+          <CONNECTORS>
+            <ASSEMBLY-SW-CONNECTOR UUID="0946D201-F802-400B-A49B-D4D7325A7826">
+              <SHORT-NAME>DarhDControlPortDStdDiagDDarhControlPort</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/BMW_Core_Modules/Darh</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Darh/SwComponentTypes/Darh/ControlPort</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/BMW_Core_Modules/StdDiag</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/DarhControlPort</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="5C48B967-DC0C-4BA5-873F-DC9E445DA59B">
+              <SHORT-NAME>OmcDLifeCycleDOmcDLifeCycleLoopback</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/BMW_Core_Modules/Omc</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Omc/SwComponentTypes/Omc/LifeCycle</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/BMW_Core_Modules/Omc</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/Omc/SwComponentTypes/Omc/LifeCycleLoopback</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="9ECBF36F-5583-439C-AF8E-D974E5BF455C">
+              <SHORT-NAME>OmcDextendedOperatingModeSwitchPortDStdDiagDExtendedOperatingModeControlModeAccessPort</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/BMW_Core_Modules/Omc</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Omc/SwComponentTypes/Omc/extendedOperatingModeSwitchPort</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/BMW_Core_Modules/StdDiag</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/ExtendedOperatingModeControlModeAccessPort</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR UUID="44FBD1B0-A721-4AF9-9BB1-29DC1D2CD1F4">
+              <SHORT-NAME>OmcDoperatingModeSwitchPortDStdDiagDOperatingModeControlModeAccessPort</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/BMW_Core_Modules/Omc</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Omc/SwComponentTypes/Omc/operatingModeSwitchPort</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/BMW_Core_Modules/StdDiag</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/BMW/Platform/StdDiag/SwComponentTypes/StdDiag/OperatingModeControlModeAccessPort</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="5E2AACBD-0DCC-46A0-B675-0FF8198AB446">
+              <SHORT-NAME>FirstStartModeDDDlogDFirstStartMode</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <P-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ComponentTypes/BMW_Core_Modules/Dlog</CONTEXT-COMPONENT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/BMW/Platform/Dlog/SwComponentTypes/Dlog/FirstStartMode</TARGET-P-PORT-REF>
+                </P-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/BMW_Core_Modules/FirstStartMode</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+          </CONNECTORS>
+        </COMPOSITION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSEQ xmlns="http://bmw.com/2005/psdz.data.cseq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bmw.com/2005/psdz.data.cseq">
+<!--CSEQ fuer BRV F010-->
+<!--Aenderungsdokumentation
+   Datum    Version    Author    Aenderung
+   21.01.2009    2.0.0    M.Wolf    Initiale Erstellung
+   12.02.2009    2.0.1    M.Wolf    temporär ICMQL vor EPS codieren
+   17.03.2009    2.1.0    M.Wolf    AMP_TOP entfernt, CMB_MEDIA zur BN2020-MOST verschoben
+   12.11.2009    2.1.2    P.Picard    JBBF vor PDC codieren
+   01.12.2009    2.1.3    P.Picard    NBT inserted
+   12.01.2010    2.1.4    P.Picard    SVT inserted
+   30.04.2010    2.1.4    P.Picard    DME2 inserted
+   30.04.2010    2.1.6    G.Buecherl    HU_ENTRYNAV inserted
+   06.09.2010    2.1.7    G.Buecherl    HU_CHAMP2 inserted
+   06.09.2010    2.1.8    P.Picard    KAFAS2 inserted
+   20.09.2010    2.1.9    P.Picard    MMC_UDS inserted in MOST
+   15.10.2010    2.1.10    P.Picard    FLA3, PMA2 inserted
+   19.10.2010    2.1.11    M.Wolf    Bugfix comment within comment
+   29.11.2010    2.1.12    P.Picard    cseq clean
+   11.01.2011    2.1.13    P.Picard    cseq clean
+   01.04.2011    2.1.14    P.Picard    ICM_QL/EPS inverted/switch
+   21.04.2011    2.1.15    P.Picard    MMC-Comment deleted
+   02.05.2011    2.1.16    P.Picard    LIN inserted
+   13.05.2011    2.1.17    P.Picard    SME3 inserted
+   22.05.2011    2.1.18    P.Picard    AMP's Correted
+   09.06.2011    2.1.19    P.Picard    EGS3 Correted
+   01.07.2011    2.1.20    P.Picard    TPL insert
+   18.07.2011    2.1.21    P.Picard    CMB_MEDIA compense
+   15.08.2011    2.1.22    P.Picard    EGS2 inserted
+   28.09.2011    2.1.23    P.Picard    LHM inserted
+   28.11.2011    2.1.24    P.Picard    VSG, GZA inserted
+   02.12.2011    2.1.24    G.Buecherl    AE2, DME2_OGW, DME_BAC_OGW
+   01.06.2012    2.1.25    P.Picard    TEL_55, FEM_BODY inserted
+   01.09.2012    2.1.26    P.Picard    NBT2, RSE2 inserted
+   01.02.2013    2.1.27    P.Picard    AE2_OGW insert
+   31.01.2014    2.1.28    P.Picard    ICM modify sequence
+   28.02.2014    2.1.29    P.Picard    ENTRYNAV2 inserted
+   28.02.2014    2.1.29    P.Picard    ATM inserted
+   26.06.2015    2.1.30    P.Picard    correction
+   02.07.2016    2.1.31    P.Picard    FLA3 inserted
+   02.07.2016    2.1.31    P.Picard    FLA4 inserted
+   -->
+   <!--*******************************MOST-Codierreihenfolgen*************************************************-->
+   <!--***********************L6 SGs nach HUs codieren********************************************************-->
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="HU_CHAMP"/><diagnosticAddress physicalOffset="99"/></ECU>
+    <ECU><baseVariantName name="HU_CHAMP2"/><diagnosticAddress physicalOffset="99"/></ECU>
+    <ECU><baseVariantName name="HU_CIC"/><diagnosticAddress physicalOffset="99"/></ECU>
+    <ECU><baseVariantName name="HU_CICMID"/><diagnosticAddress physicalOffset="99"/></ECU>
+    <ECU><baseVariantName name="HU_ENTRY"/><diagnosticAddress physicalOffset="99"/></ECU>
+    <ECU><baseVariantName name="HU_ENTRYNAV"/><diagnosticAddress physicalOffset="99"/></ECU>
+    <ECU><baseVariantName name="HU_ENTRYNAV2"/><diagnosticAddress physicalOffset="99"/></ECU>
+    <ECU><baseVariantName name="HU_NBT"/><diagnosticAddress physicalOffset="99"/></ECU>
+    <ECU><baseVariantName name="HU_NBT2"/><diagnosticAddress physicalOffset="99"/></ECU>
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="AMP_HIFIHB"/><diagnosticAddress physicalOffset="55"/></ECU>
+    <ECU><baseVariantName name="AMP_HIFILR"/><diagnosticAddress physicalOffset="55"/></ECU>
+    <ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/></ECU>
+    <ECU><baseVariantName name="AMP_TOPLR"/><diagnosticAddress physicalOffset="55"/></ECU>
+    <ECU><baseVariantName name="AMPT"/><diagnosticAddress physicalOffset="55"/></ECU>
+    <ECU><baseVariantName name="ATM"/><diagnosticAddress physicalOffset="97"/></ECU><!-- BODY_CAN -->
+    <ECU><baseVariantName name="CMB_MEDIA"/><diagnosticAddress physicalOffset="54"/></ECU>
+    <ECU><baseVariantName name="DKOMBI"/><diagnosticAddress physicalOffset="96"/></ECU>
+    <ECU><baseVariantName name="KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU>
+    <ECU><baseVariantName name="MMC_UDS"/><diagnosticAddress physicalOffset="49"/></ECU>
+    <ECU><baseVariantName name="RSE_HIGH"/><diagnosticAddress physicalOffset="38"/></ECU>
+    <ECU><baseVariantName name="RSE_HIGH_NBT"/><diagnosticAddress physicalOffset="38"/></ECU>
+    <ECU><baseVariantName name="RSE_HIGH_NBT2"/><diagnosticAddress physicalOffset="38"/></ECU>
+    <ECU><baseVariantName name="RSE_MID"/><diagnosticAddress physicalOffset="38"/></ECU>
+    <ECU><baseVariantName name="TV_MODUL"/><diagnosticAddress physicalOffset="75"/></ECU>
+  </dependors>
+ </dependency>
+ <!--*******************************MOST-Codierreihenfolgen*************************************************-->
+ <!--*********************** CMB_MEDIA (reset) vor MOST codieren*******************************************-->
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="CMB_MEDIA"/><diagnosticAddress physicalOffset="54"/></ECU>
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="AMP_HIFIHB"/><diagnosticAddress physicalOffset="55"/></ECU>
+    <ECU><baseVariantName name="AMP_HIFILR"/><diagnosticAddress physicalOffset="55"/></ECU>
+    <ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/></ECU>
+    <ECU><baseVariantName name="AMP_TOPLR"/><diagnosticAddress physicalOffset="55"/></ECU>
+    <ECU><baseVariantName name="AMPT"/><diagnosticAddress physicalOffset="55"/></ECU>
+    <ECU><baseVariantName name="ATM"/><diagnosticAddress physicalOffset="97"/></ECU><!-- BODY_CAN -->
+    <ECU><baseVariantName name="DKOMBI"/><diagnosticAddress physicalOffset="96"/></ECU>
+    <ECU><baseVariantName name="KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU>
+    <ECU><baseVariantName name="MMC_UDS"/><diagnosticAddress physicalOffset="49"/></ECU>
+    <ECU><baseVariantName name="RSE_HIGH"/><diagnosticAddress physicalOffset="38"/></ECU>
+    <ECU><baseVariantName name="RSE_HIGH_NBT"/><diagnosticAddress physicalOffset="38"/></ECU>
+    <ECU><baseVariantName name="RSE_HIGH_NBT2"/><diagnosticAddress physicalOffset="38"/></ECU>
+    <ECU><baseVariantName name="RSE_MID"/><diagnosticAddress physicalOffset="38"/></ECU>
+    <ECU><baseVariantName name="TV_MODUL"/><diagnosticAddress physicalOffset="75"/></ECU>
+  </dependors>
+ </dependency>
+ <!--***********************HUs vor L4 SGs codieren*********************************************************-->
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="HU_CHAMP"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETHERNET_63 -->
+    <ECU><baseVariantName name="HU_CHAMP2"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETHERNET_63 -->
+    <ECU><baseVariantName name="HU_CIC"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETHERNET_63 -->
+    <ECU><baseVariantName name="HU_CICMID"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETHERNET_63 -->
+    <ECU><baseVariantName name="HU_ENTRY"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETHERNET_63 -->
+    <ECU><baseVariantName name="HU_ENTRYNAV"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETHERNET_63 -->
+    <ECU><baseVariantName name="HU_ENTRYNAV2"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETHERNET_63 -->
+    <ECU><baseVariantName name="HU_NBT"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETHERNET_63 -->
+    <ECU><baseVariantName name="HU_NBT2"/><diagnosticAddress physicalOffset="99"/></ECU><!-- ETHERNET_63 -->
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="MMC"/><diagnosticAddress physicalOffset="49"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="MULF"/><diagnosticAddress physicalOffset="54"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="MULF"/><diagnosticAddress physicalOffset="85"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="TEL"/><diagnosticAddress physicalOffset="54"/></ECU><!-- MOST -->
+  </dependors>
+ </dependency>
+ <!--*****************************BN2000-MOST-Teilnehmer sequentiell codieren*************************************-->
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="MMC"/><diagnosticAddress physicalOffset="49"/></ECU><!-- MOST -->
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="MULF"/><diagnosticAddress physicalOffset="85"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="MULF"/><diagnosticAddress physicalOffset="54"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="TEL"/><diagnosticAddress physicalOffset="54"/></ECU><!-- MOST -->
+  </dependors>
+ </dependency>
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="MULF"/><diagnosticAddress physicalOffset="85"/></ECU><!-- MOST -->
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="TEL"/><diagnosticAddress physicalOffset="54"/></ECU><!-- MOST -->
+  </dependors>
+ </dependency>
+ <!--*****************BN2000 MOST-Teilnehmer nicht paralell zu BN2020-Teilnehmern, BN2020 zuerst ******************-->
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="AMP_HIFIHB"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="AMP_HIFILR"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="AMP_TOPHB"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="AMP_TOPLR"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="AMPT"/><diagnosticAddress physicalOffset="55"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="ATM"/><diagnosticAddress physicalOffset="97"/></ECU><!-- BODY_CAN -->
+    <ECU><baseVariantName name="CMB_MEDIA"/><diagnosticAddress physicalOffset="54"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="DKOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="KOMBI"/><diagnosticAddress physicalOffset="96"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="MMC_UDS"/><diagnosticAddress physicalOffset="49"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="RSE_HIGH"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="RSE_HIGH_NBT"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="RSE_HIGH_NBT2"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="RSE_MID"/><diagnosticAddress physicalOffset="38"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="TV_MODUL"/><diagnosticAddress physicalOffset="75"/></ECU><!-- MOST -->
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="MMC"/><diagnosticAddress physicalOffset="49"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="MULF"/><diagnosticAddress physicalOffset="54"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="MULF"/><diagnosticAddress physicalOffset="85"/></ECU><!-- MOST -->
+    <ECU><baseVariantName name="TEL"/><diagnosticAddress physicalOffset="54"/></ECU><!-- MOST -->
+  </dependors>
+ </dependency>
+ <!--************************Sonstige Abhaengigkeiten*************************************************************-->
+ <!--************************LRR/FRR vor ICMQL (Gateway)**********************************************************-->
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="FRR"/><diagnosticAddress physicalOffset="33"/></ECU>
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="ICM_QL"/><diagnosticAddress physicalOffset="28"/></ECU>
+    <ECU><baseVariantName name="ICM"/><diagnosticAddress physicalOffset="28"/></ECU>
+  </dependors>
+ </dependency>
+ <!--************************ICMQL (Geschwindigkeitssignal-Master) vor EPS****************************************-->
+ <!--*************Nur temporär, da EPS entgegen LH Codierung V-Signal zur Codierung benötigt. Behoben zur I400****-->
+ <!--*************am 1. April 2011 EPS und ICM_QL getausch wegen sporadische fehlende V-Signal am BUS ****-->
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="EPS"/><diagnosticAddress physicalOffset="48"/></ECU>
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="ICM_QL"/><diagnosticAddress physicalOffset="28"/></ECU>
+    <ECU><baseVariantName name="ICM"/><diagnosticAddress physicalOffset="28"/></ECU>
+  </dependors>
+ </dependency>
+ <!--************************EKPM vor DME (Gateway)***************************************************************-->
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="EKPM"/><diagnosticAddress physicalOffset="23"/></ECU>
+    <ECU><baseVariantName name="SME"/><diagnosticAddress physicalOffset="7"/></ECU>
+    <ECU><baseVariantName name="SME2"/><diagnosticAddress physicalOffset="7"/></ECU>
+    <ECU><baseVariantName name="SME3"/><diagnosticAddress physicalOffset="7"/></ECU>
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="DME"/><diagnosticAddress physicalOffset="18"/></ECU>
+    <ECU><baseVariantName name="DME2"/><diagnosticAddress physicalOffset="18"/></ECU>
+    <ECU><baseVariantName name="AE2"/><diagnosticAddress physicalOffset="58"/></ECU>
+    <ECU><baseVariantName name="AE2_OGW"/><diagnosticAddress physicalOffset="58"/></ECU>
+  </dependors>
+ </dependency>
+ <!--************************RK vor ICM-V (wegen Reset des ICM-V)**************************************************-->
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="165"/></ECU>
+    <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="166"/></ECU>
+    <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="167"/></ECU>
+    <ECU><baseVariantName name="RK"/><diagnosticAddress physicalOffset="168"/></ECU>
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="ICM_V"/><diagnosticAddress physicalOffset="57"/></ECU>
+  </dependors>
+ </dependency>
+ <!--***********************JBBF vor PDC codieren, da die beiden im gleichen Gehaeuse sitzen, und die PDC beim JBBF-Reset auch spannungsresettet wird****************-->
+  <dependency>
+   <preconditions>
+    <ECU><baseVariantName name="JBBF"/><diagnosticAddress physicalOffset="0"/></ECU>
+  </preconditions>
+   <dependors>
+    <ECU><baseVariantName name="PDC"/><diagnosticAddress physicalOffset="100"/></ECU>
+  </dependors>
+ </dependency>
+</CSEQ>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER ID="id-52753e8a-33db-4d41-802a-36ed0f4dc6f5" OID="id-52753e8a-33db-4d41-802a-36ed0f4dc6f5">
+        <SHORT-NAME>X_KOMBI3_DLC</SHORT-NAME>
+        <LONG-NAME>Motorrad Instrumentenkombi Ethernet</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT ID="id-dbf2e27c-54db-4196-bce5-9217f2471858" OID="id-dbf2e27c-54db-4196-bce5-9217f2471858">
+                <SHORT-NAME>X_KOMBI3</SHORT-NAME>
+                <LONG-NAME>Motorrad Instrumentenkombi Ethernet</LONG-NAME>
+                <DESC>
+                    <p>Ethernet Zugangssteuergerät</p>
+                </DESC>
+        				<DIAG-DATA-DICTIONARY-SPEC>
+        					<DATA-OBJECT-PROPS>
+        						<DATA-OBJECT-PROP ID="id-98710b40-a4c5-452d-b18f-e9e0db956ade" OID="id-98710b40-a4c5-452d-b18f-e9e0db956ade">
+        							<SHORT-NAME>GWSZ_DID_DOP</SHORT-NAME>
+        							<LONG-NAME>DataIdentifier</LONG-NAME>
+        							<COMPU-METHOD>
+        								<CATEGORY>TEXTTABLE</CATEGORY>
+        								<COMPU-INTERNAL-TO-PHYS>
+        									<COMPU-SCALES>
+        										<COMPU-SCALE>
+        											<SHORT-LABEL>GWZ_D10D</SHORT-LABEL>
+        											<LOWER-LIMIT>53517</LOWER-LIMIT>
+        											<UPPER-LIMIT>57625</UPPER-LIMIT>
+        											<COMPU-INVERSE-VALUE>
+        												<V>57625</V>
+        											</COMPU-INVERSE-VALUE>
+        											<COMPU-CONST>
+        												<VT>Gesamtweg-Streckenzähler</VT>
+        											</COMPU-CONST>
+        										</COMPU-SCALE>
+        									</COMPU-SCALES>
+        								</COMPU-INTERNAL-TO-PHYS>
+        							</COMPU-METHOD>
+        							<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+        								<BIT-LENGTH>16</BIT-LENGTH>
+        							</DIAG-CODED-TYPE>
+        							<PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+        						</DATA-OBJECT-PROP>
+        					</DATA-OBJECT-PROPS>
+        				</DIAG-DATA-DICTIONARY-SPEC>
+        				<DIAG-COMMS>
+        					<DIAG-SERVICE ID="id-bf8dc1b6-0982-4261-aa30-cf65b8883d12" OID="id-bf8dc1b6-0982-4261-aa30-cf65b8883d12" ADDRESSING="FUNCTIONAL-OR-PHYSICAL">
+        						<SHORT-NAME>RDBI_GWZ</SHORT-NAME>
+        						<LONG-NAME>ReadDataByIdentifier Gesamtweg-Streckenzähler</LONG-NAME>
+        						<FUNCT-CLASS-REFS>
+        							<FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-1b25b982-6629-49b2-9e54-b8afe6b364f0"/>
+        						</FUNCT-CLASS-REFS>
+        						<AUDIENCE/>
+        						<REQUEST-REF ID-REF="id-b71a14aa-c043-4f0d-ae32-29bd10e1c094"/>
+        						<POS-RESPONSE-REFS>
+        							<POS-RESPONSE-REF ID-REF="id-a4cb39bd-49e3-436c-96ca-84bd81297436"/>
+        						</POS-RESPONSE-REFS>
+        					</DIAG-SERVICE>
+        					<SINGLE-ECU-JOB ID="id-d272c642-990d-4489-bba8-a7ac9ba133f3" OID="id-d272c642-990d-4489-bba8-a7ac9ba133f3">
+        						<SHORT-NAME>READ_ISTUFE_FROM_VCM</SHORT-NAME>
+        						<LONG-NAME>MCD3_ReadIStufeFromVCM</LONG-NAME>
+        						<FUNCT-CLASS-REFS>
+        							<FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="VCM_UDS" ID-REF="id-0df35c03-919f-4b2f-a7c2-234ee46d4ac2"/>
+        						</FUNCT-CLASS-REFS>
+        						<AUDIENCE/>
+        						<PROG-CODES>
+        							<PROG-CODE>
+        								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+        								<SYNTAX>JAR</SYNTAX>
+        								<REVISION>001.005.005</REVISION>
+        								<ENTRYPOINT>com.bmw.psdz.jobs.uds.vcm.motorbike.MCD3_ReadIStufeFromVCM</ENTRYPOINT>
+        							</PROG-CODE>
+        						</PROG-CODES>
+        						<OUTPUT-PARAMS>
+        							<OUTPUT-PARAM ID="id-7c63c6da-e649-448d-b28f-c3914caa0889" OID="id-7c63c6da-e649-448d-b28f-c3914caa0889">
+        								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+        								<LONG-NAME>PosRespMessage</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-20e68116-3c24-4ba8-af24-739c8acecbd9" OID="id-20e68116-3c24-4ba8-af24-739c8acecbd9">
+        								<SHORT-NAME>ISTUFE</SHORT-NAME>
+        								<LONG-NAME>Data</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-b1052a25-fb75-415b-85f3-e57e8e91b951" OID="id-b1052a25-fb75-415b-85f3-e57e8e91b951">
+        								<SHORT-NAME>SIGNATURE</SHORT-NAME>
+        								<LONG-NAME>signature</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+        							</OUTPUT-PARAM>
+        						</OUTPUT-PARAMS>
+        						<NEG-OUTPUT-PARAMS>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+        								<LONG-NAME>ErrorCode</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+        								<LONG-NAME>ErrorDescription</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+        								<LONG-NAME>ErrorSeverity</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</NEG-OUTPUT-PARAM>
+        						</NEG-OUTPUT-PARAMS>
+        					</SINGLE-ECU-JOB>
+        					<SINGLE-ECU-JOB ID="id-969b5592-c9de-40c4-9f48-e4742fe158a8" OID="id-969b5592-c9de-40c4-9f48-e4742fe158a8">
+        						<SHORT-NAME>WRITE_ISTUFE_TO_VCM</SHORT-NAME>
+        						<LONG-NAME>MCD3_WriteIStufetoVCM</LONG-NAME>
+        						<FUNCT-CLASS-REFS>
+        							<FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="VCM_UDS" ID-REF="id-0df35c03-919f-4b2f-a7c2-234ee46d4ac2"/>
+        						</FUNCT-CLASS-REFS>
+        						<AUDIENCE/>
+        						<PROG-CODES>
+        							<PROG-CODE>
+        								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+        								<SYNTAX>JAR</SYNTAX>
+        								<REVISION>001.005.005</REVISION>
+        								<ENTRYPOINT>com.bmw.psdz.jobs.uds.vcm.motorbike.MCD3_WriteIStufetoVCM</ENTRYPOINT>
+        							</PROG-CODE>
+        						</PROG-CODES>
+        						<INPUT-PARAMS>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>ISTUFE</SHORT-NAME>
+        								<LONG-NAME>IStufe,VIN,Version</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>SIGNATURE</SHORT-NAME>
+        								<LONG-NAME>signature</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+        							</INPUT-PARAM>
+        						</INPUT-PARAMS>
+        						<OUTPUT-PARAMS>
+        							<OUTPUT-PARAM ID="id-777c8bcb-890f-4d65-9c18-01e561fef687" OID="id-777c8bcb-890f-4d65-9c18-01e561fef687">
+        								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+        								<LONG-NAME>PosRespMessage</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</OUTPUT-PARAM>
+        						</OUTPUT-PARAMS>
+        						<NEG-OUTPUT-PARAMS>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+        								<LONG-NAME>ErrorCode</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+        								<LONG-NAME>ErrorDescription</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+        								<LONG-NAME>ErrorSeverity</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</NEG-OUTPUT-PARAM>
+        						</NEG-OUTPUT-PARAMS>
+        					</SINGLE-ECU-JOB>
+        					<SINGLE-ECU-JOB ID="id-23f30cf6-89fb-4b4c-a874-20820389d9ab" OID="id-23f30cf6-89fb-4b4c-a874-20820389d9ab">
+        						<SHORT-NAME>READ_FA_FROM_VCMBACKUP</SHORT-NAME>
+        						<LONG-NAME>MCD3_ReadFAFromVCMBackup</LONG-NAME>
+        						<FUNCT-CLASS-REFS>
+        							<FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="VCM_UDS" ID-REF="id-0df35c03-919f-4b2f-a7c2-234ee46d4ac2"/>
+        						</FUNCT-CLASS-REFS>
+        						<AUDIENCE/>
+        						<PROG-CODES>
+        							<PROG-CODE>
+        								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+        								<SYNTAX>JAR</SYNTAX>
+        								<REVISION>001.005.005</REVISION>
+        								<ENTRYPOINT>com.bmw.psdz.jobs.uds.vcm.motorbike.MCD3_ReadFAFromVCMBackup</ENTRYPOINT>
+        							</PROG-CODE>
+        						</PROG-CODES>
+        						<OUTPUT-PARAMS>
+        							<OUTPUT-PARAM ID="id-98c640ea-46f2-4725-b9a0-e7e3af4553c9" OID="id-98c640ea-46f2-4725-b9a0-e7e3af4553c9">
+        								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+        								<LONG-NAME>PosRespMessage</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-d21e4bae-b207-4096-85d8-7dcb2ef0d84d" OID="id-d21e4bae-b207-4096-85d8-7dcb2ef0d84d">
+        								<SHORT-NAME>FA1</SHORT-NAME>
+        								<LONG-NAME>Data</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-a5e2d249-8002-437e-b2f4-ff043b823474" OID="id-a5e2d249-8002-437e-b2f4-ff043b823474">
+        								<SHORT-NAME>FA2</SHORT-NAME>
+        								<LONG-NAME>Data</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-e00b77ea-2154-4e3c-9504-4b80f1d0a08c" OID="id-e00b77ea-2154-4e3c-9504-4b80f1d0a08c">
+        								<SHORT-NAME>SIGNATURE</SHORT-NAME>
+        								<LONG-NAME>signature</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+        							</OUTPUT-PARAM>
+        						</OUTPUT-PARAMS>
+        						<NEG-OUTPUT-PARAMS>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+        								<LONG-NAME>ErrorCode</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+        								<LONG-NAME>ErrorDescription</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+        								<LONG-NAME>ErrorSeverity</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</NEG-OUTPUT-PARAM>
+        						</NEG-OUTPUT-PARAMS>
+        					</SINGLE-ECU-JOB>
+        					<SINGLE-ECU-JOB ID="id-92fbd87f-3238-44c8-9e95-c03af2d362f9" OID="id-92fbd87f-3238-44c8-9e95-c03af2d362f9">
+        						<SHORT-NAME>WRITE_FA_TO_VCMBACKUP</SHORT-NAME>
+        						<LONG-NAME>MCD3_WriteFAtoVCMBackup</LONG-NAME>
+        						<FUNCT-CLASS-REFS>
+        							<FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="VCM_UDS" ID-REF="id-0df35c03-919f-4b2f-a7c2-234ee46d4ac2"/>
+        						</FUNCT-CLASS-REFS>
+        						<AUDIENCE/>
+        						<PROG-CODES>
+        							<PROG-CODE>
+        								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+        								<SYNTAX>JAR</SYNTAX>
+        								<REVISION>001.005.005</REVISION>
+        								<ENTRYPOINT>com.bmw.psdz.jobs.uds.vcm.motorbike.MCD3_WriteFAtoVCMBackup</ENTRYPOINT>
+        							</PROG-CODE>
+        						</PROG-CODES>
+        						<INPUT-PARAMS>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>FA1</SHORT-NAME>
+        								<LONG-NAME>fahrzeugauftrag</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>FA2</SHORT-NAME>
+        								<LONG-NAME>fahrzeugauftrag</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>SIGNATURE</SHORT-NAME>
+        								<LONG-NAME>signature</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b"/>
+        							</INPUT-PARAM>
+        						</INPUT-PARAMS>
+        						<OUTPUT-PARAMS>
+        							<OUTPUT-PARAM ID="id-06dd9371-4ecc-4727-81a3-064b5fda1dd7" OID="id-06dd9371-4ecc-4727-81a3-064b5fda1dd7">
+        								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+        								<LONG-NAME>PosRespMessage</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</OUTPUT-PARAM>
+        						</OUTPUT-PARAMS>
+        						<NEG-OUTPUT-PARAMS>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+        								<LONG-NAME>ErrorCode</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+        								<LONG-NAME>ErrorDescription</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+        								<LONG-NAME>ErrorSeverity</LONG-NAME>
+        								<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+        							</NEG-OUTPUT-PARAM>
+        						</NEG-OUTPUT-PARAMS>
+        					</SINGLE-ECU-JOB>
+        					<SINGLE-ECU-JOB ID="id-420d93c5-dfe9-427f-9809-034df2835d13" OID="id-420d93c5-dfe9-427f-9809-034df2835d13">
+        						<SHORT-NAME>REQUEST_GWSZ</SHORT-NAME>
+        						<LONG-NAME>MCD3_RequestGWSZ</LONG-NAME>
+        						<FUNCT-CLASS-REFS>
+        							<FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="GWSZ" ID-REF="id-7303a8fb-8644-46b8-be93-847de4283c4c"/>
+        						</FUNCT-CLASS-REFS>
+        						<AUDIENCE/>
+        						<PROG-CODES>
+        							<PROG-CODE>
+        								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+        								<SYNTAX>JAR</SYNTAX>
+        								<REVISION>004.002.003</REVISION>
+        								<ENTRYPOINT>com.bmw.psdz.jobs.uds.motorbike.MCD3_RequestGWSZ</ENTRYPOINT>
+        							</PROG-CODE>
+        						</PROG-CODES>
+        						<OUTPUT-PARAMS>
+        							<OUTPUT-PARAM ID="id-42c55da5-0c05-41af-8976-172e62b2ae7c" OID="id-42c55da5-0c05-41af-8976-172e62b2ae7c">
+        								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+        								<LONG-NAME>PosRespMessage</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-87ccf3fa-47b4-4a45-bb2e-b3c9e513d3ee" OID="id-87ccf3fa-47b4-4a45-bb2e-b3c9e513d3ee">
+        								<SHORT-NAME>GWZ_ABS_RAM</SHORT-NAME>
+        								<LONG-NAME>GWSZ (RAM)</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-fb16ce42-7053-4060-a420-e5e9d261a0a1"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-d3eac95a-841f-40b2-8a4f-d8718c7d5c38" OID="id-d3eac95a-841f-40b2-8a4f-d8718c7d5c38">
+        								<SHORT-NAME>GWZ_ABS_EEPROM</SHORT-NAME>
+        								<LONG-NAME>GWSZ (EEPROM)</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-fb16ce42-7053-4060-a420-e5e9d261a0a1"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-fd9b80a7-5215-4048-a936-deb01b26e611" OID="id-fd9b80a7-5215-4048-a936-deb01b26e611">
+        								<SHORT-NAME>GWZ_OFFSET</SHORT-NAME>
+        								<LONG-NAME>GWSZ (Offset)</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-fb16ce42-7053-4060-a420-e5e9d261a0a1"/>
+        							</OUTPUT-PARAM>
+        						</OUTPUT-PARAMS>
+        						<NEG-OUTPUT-PARAMS>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+        								<LONG-NAME>ErrorCode</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+        								<LONG-NAME>ErrorDescription</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+        								<LONG-NAME>ErrorSeverity</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+        							</NEG-OUTPUT-PARAM>
+        						</NEG-OUTPUT-PARAMS>
+        					</SINGLE-ECU-JOB>
+        				</DIAG-COMMS>
+        				<REQUESTS>
+        					<REQUEST ID="id-b71a14aa-c043-4f0d-ae32-29bd10e1c094" OID="id-b71a14aa-c043-4f0d-ae32-29bd10e1c094">
+        						<SHORT-NAME>RDBI_GWZ_REQ</SHORT-NAME>
+        						<LONG-NAME>ReadDataByIdentifier Gesamtweg-Streckenzähler Request</LONG-NAME>
+        						<PARAMS>
+        							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+        								<SHORT-NAME>RDBI</SHORT-NAME>
+        								<LONG-NAME>Service Id</LONG-NAME>
+        								<BYTE-POSITION>0</BYTE-POSITION>
+        								<CODED-VALUE>34</CODED-VALUE>
+        								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+        									<BIT-LENGTH>8</BIT-LENGTH>
+        								</DIAG-CODED-TYPE>
+        							</PARAM>
+        							<PARAM xsi:type="PHYS-CONST">
+        								<SHORT-NAME>DID</SHORT-NAME>
+        								<LONG-NAME>dataIdentifier</LONG-NAME>
+        								<BYTE-POSITION>1</BYTE-POSITION>
+        								<PHYS-CONSTANT-VALUE>Gesamtweg-Streckenzähler</PHYS-CONSTANT-VALUE>
+        								<DOP-REF ID-REF="id-98710b40-a4c5-452d-b18f-e9e0db956ade"/>
+        							</PARAM>
+        						</PARAMS>
+        					</REQUEST>
+        				</REQUESTS>
+        				<POS-RESPONSES>
+        					<POS-RESPONSE ID="id-a4cb39bd-49e3-436c-96ca-84bd81297436" OID="id-a4cb39bd-49e3-436c-96ca-84bd81297436">
+        						<SHORT-NAME>RDBI_GWZ_RESP</SHORT-NAME>
+        						<LONG-NAME>ReadDataByIdentifier Gesamtweg-Streckenzähler Response</LONG-NAME>
+        						<PARAMS>
+        							<PARAM SEMANTIC="SERVICE-ID" xsi:type="CODED-CONST">
+        								<SHORT-NAME>RDBIPR</SHORT-NAME>
+        								<LONG-NAME>Response Service Id</LONG-NAME>
+        								<BYTE-POSITION>0</BYTE-POSITION>
+        								<CODED-VALUE>98</CODED-VALUE>
+        								<DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+        									<BIT-LENGTH>8</BIT-LENGTH>
+        								</DIAG-CODED-TYPE>
+        							</PARAM>
+        							<PARAM xsi:type="MATCHING-REQUEST-PARAM">
+        								<SHORT-NAME>DID</SHORT-NAME>
+        								<LONG-NAME>dataIdentifier</LONG-NAME>
+        								<BYTE-POSITION>1</BYTE-POSITION>
+        								<REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+        								<BYTE-LENGTH>2</BYTE-LENGTH>
+        							</PARAM>
+        							<PARAM xsi:type="VALUE">
+        								<SHORT-NAME>GWZ_EEPROM</SHORT-NAME>
+        								<LONG-NAME>Gesamtweg-Streckenzähler EEPROM</LONG-NAME>
+        								<BYTE-POSITION>3</BYTE-POSITION>
+        								<DOP-REF DOCREF="DOPS_BMW" DOCTYPE="LAYER" ID-REF="id-fb16ce42-7053-4060-a420-e5e9d261a0a1"/>
+        							</PARAM>
+        						</PARAMS>
+        					</POS-RESPONSE>
+        				</POS-RESPONSES>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+        				<IMPORT-REFS>
+        					<IMPORT-REF DOCREF="DOPS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-cce678a9-19ff-4e38-86ba-22ac18a6270c"/>
+        				</IMPORT-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER"/>
+          					<PARENT-REF DOCREF="VCM_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-b3dccc52-bb76-4354-802f-e03e7ac08575" xsi:type="FUNCTIONAL-GROUP-REF">
+          						<NOT-INHERITED-DIAG-COMMS>
+          							<NOT-INHERITED-DIAG-COMM>
+          								<DIAG-COMM-SNREF SHORT-NAME="READ_DATA_BY_IDENTIFIER_PLAIN"/>
+          							</NOT-INHERITED-DIAG-COMM>
+          							<NOT-INHERITED-DIAG-COMM>
+          								<DIAG-COMM-SNREF SHORT-NAME="WRITE_DATA_BY_IDENTIFIER_PLAIN"/>
+          							</NOT-INHERITED-DIAG-COMM>
+          						</NOT-INHERITED-DIAG-COMMS>
+          					</PARENT-REF>
+          					<PARENT-REF DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          					<PARENT-REF DOCREF="GWSZ_DLC" DOCTYPE="CONTAINER" ID-REF="id-d5d78338-2b70-40e1-a238-d4eefec8bd45" xsi:type="FUNCTIONAL-GROUP-REF"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

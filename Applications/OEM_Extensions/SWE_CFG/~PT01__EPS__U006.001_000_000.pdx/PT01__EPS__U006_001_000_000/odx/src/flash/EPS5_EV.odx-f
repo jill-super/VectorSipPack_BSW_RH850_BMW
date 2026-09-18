@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <FLASH ID="id-1ff68a78-04db-11e8-8088-a7655b0ee88f" OID="id-1ff68a78-04db-11e8-8088-a7655b0ee88f">
+        <SHORT-NAME>EPS5_EV</SHORT-NAME>
+        <LONG-NAME>FLASH-EPS5_EVFlashbeschreibung</LONG-NAME>
+        <ECU-MEMS>
+            <ECU-MEM ID="id-1ff6d89b-04db-11e8-8088-33a7a094baa6" OID="id-1ff6d89b-04db-11e8-8088-33a7a094baa6">
+                <SHORT-NAME>EPS5_EV</SHORT-NAME>
+                <LONG-NAME>EPS5_EV</LONG-NAME>
+                <MEM>
+                    <SESSIONS>
+                        <SESSION ID="id-1ffa8220-04db-11e8-8088-7307b509618c" OID="id-1ffa8220-04db-11e8-8088-7307b509618c">
+                            <SHORT-NAME>swfl_7f000101</SHORT-NAME>
+                            <LONG-NAME>swfl_7f000101</LONG-NAME>
+                            <DATABLOCK-REFS>
+                                <DATABLOCK-REF ID-REF="id-1ffa5b0e-04db-11e8-8088-0f8c68a1b25a"/>
+                            </DATABLOCK-REFS>
+                        </SESSION>
+                        <SESSION ID="id-1ffc56e4-04db-11e8-8088-e1fd8816e5e4" OID="id-1ffc56e4-04db-11e8-8088-e1fd8816e5e4">
+                            <SHORT-NAME>btld_000064bd</SHORT-NAME>
+                            <LONG-NAME>btld_000064bd</LONG-NAME>
+                            <DATABLOCK-REFS>
+                                <DATABLOCK-REF ID-REF="id-1ffc56e2-04db-11e8-8088-85fb2c8d1ef7"/>
+                            </DATABLOCK-REFS>
+                        </SESSION>
+                    </SESSIONS>
+                    <DATABLOCKS>
+                        <DATABLOCK ID="id-1ffa5b0e-04db-11e8-8088-0f8c68a1b25a" OID="id-1ffa5b0e-04db-11e8-8088-0f8c68a1b25a" TYPE="CODE">
+                            <SHORT-NAME>swfl_7f000101</SHORT-NAME>
+                            <LONG-NAME>swfl_7f000101</LONG-NAME>
+                            <FLASHDATA-REF ID-REF="id-1ffa33fd-04db-11e8-8088-25b6468af1e0"/>
+                            <SDGS>
+                                <SDG>
+                                    <SDG-CAPTION ID="id-1ffa5b0f-04db-11e8-8088-9d8eb1a6820e" OID="id-1ffa5b0f-04db-11e8-8088-9d8eb1a6820e">
+                                        <SHORT-NAME>SWE_DESC_TABLE</SHORT-NAME>
+                                        <LONG-NAME/>
+                                    </SDG-CAPTION>
+                                    <SD SI="START_ADDRESS">FF900</SD>
+                                </SDG>
+                            </SDGS>
+                        </DATABLOCK>
+                        <DATABLOCK ID="id-1ffc56e2-04db-11e8-8088-85fb2c8d1ef7" OID="id-1ffc56e2-04db-11e8-8088-85fb2c8d1ef7" TYPE="BOOT">
+                            <SHORT-NAME>btld_000064bd</SHORT-NAME>
+                            <LONG-NAME>btld_000064bd</LONG-NAME>
+                            <FLASHDATA-REF ID-REF="id-1ffc56e1-04db-11e8-8088-dfdac08ef2d0"/>
+                            <SDGS>
+                                <SDG>
+                                    <SDG-CAPTION ID="id-1ffc56e3-04db-11e8-8088-abc3821b4929" OID="id-1ffc56e3-04db-11e8-8088-abc3821b4929">
+                                        <SHORT-NAME>SWE_DESC_TABLE</SHORT-NAME>
+                                        <LONG-NAME/>
+                                    </SDG-CAPTION>
+                                    <SD SI="START_ADDRESS">FF900</SD>
+                                </SDG>
+                            </SDGS>
+                        </DATABLOCK>
+                    </DATABLOCKS>
+                    <FLASHDATAS>
+                        <FLASHDATA xsi:type="EXTERN-FLASHDATA" ID="id-1ffa33fd-04db-11e8-8088-25b6468af1e0" OID="id-1ffa33fd-04db-11e8-8088-25b6468af1e0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <SHORT-NAME>swfl_7f000101</SHORT-NAME>
+                            <LONG-NAME>swfl_7f000101</LONG-NAME>
+                            <DATAFORMAT SELECTION="BINARY"/>
+                            <DATAFILE LATEBOUND-DATAFILE="true">*/swfl_7f000101.bin.*</DATAFILE>
+                        </FLASHDATA>
+                        <FLASHDATA xsi:type="EXTERN-FLASHDATA" ID="id-1ffc56e1-04db-11e8-8088-dfdac08ef2d0" OID="id-1ffc56e1-04db-11e8-8088-dfdac08ef2d0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <SHORT-NAME>btld_000064bd</SHORT-NAME>
+                            <LONG-NAME>btld_000064bd</LONG-NAME>
+                            <DATAFORMAT SELECTION="BINARY"/>
+                            <DATAFILE LATEBOUND-DATAFILE="true">*/btld_000064bd.bin.*</DATAFILE>
+                        </FLASHDATA>
+                    </FLASHDATAS>
+                </MEM>
+            </ECU-MEM>
+        </ECU-MEMS>
+        <ECU-MEM-CONNECTORS>
+            <ECU-MEM-CONNECTOR ID="id-1ff6d89c-04db-11e8-8088-6bd9c7ba1ad4" OID="id-1ff6d89c-04db-11e8-8088-6bd9c7ba1ad4">
+                <SHORT-NAME>EPS5_EV</SHORT-NAME>
+                <LONG-NAME>EPS5_EV</LONG-NAME>
+                <SESSION-DESCS>
+                    <SESSION-DESC DIRECTION="DOWNLOAD">
+                        <SHORT-NAME>swfl_7f000101</SHORT-NAME>
+                        <LONG-NAME>swfl_7f000101</LONG-NAME>
+                        <SESSION-SNREF SHORT-NAME="swfl_7f000101"/>
+                        <DIAG-COMM-SNREF SHORT-NAME="RD"/>
+                    </SESSION-DESC>
+                    <SESSION-DESC DIRECTION="DOWNLOAD">
+                        <SHORT-NAME>btld_000064bd</SHORT-NAME>
+                        <LONG-NAME>btld_000064bd</LONG-NAME>
+                        <SESSION-SNREF SHORT-NAME="btld_000064bd"/>
+                        <DIAG-COMM-SNREF SHORT-NAME="RD"/>
+                    </SESSION-DESC>
+                </SESSION-DESCS>
+                <ECU-MEM-REF ID-REF="id-1ff6d89b-04db-11e8-8088-33a7a094baa6"/>
+                <LAYER-REFS>
+                    <LAYER-REF DOCREF="EPS5_EV_DLC" DOCTYPE="CONTAINER" ID-REF="id-1ff6b18a-04db-11e8-8088-e14c2f1624df"/>
+                    <LAYER-REF DOCREF="EPS5" DOCTYPE="LAYER" ID-REF="id-dfea57e7-7fb0-4d55-8b77-677e6c561c48"/>
+                </LAYER-REFS>
+            </ECU-MEM-CONNECTOR>
+        </ECU-MEM-CONNECTORS>
+    </FLASH>
+</ODX>

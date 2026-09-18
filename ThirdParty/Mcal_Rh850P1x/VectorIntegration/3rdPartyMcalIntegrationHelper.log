@@ -1,0 +1,115 @@
+Timestamp                          |  2018-01-30 11:02:44
+==========================================================================================
+Starting...
+==========================================================================================
+  Tool version                     |  2.2.1
+  Command line args                |  -mode:Remove 
+  Execution path                   |  X:\ISS_delivery\CBD1700369_D04\external\ThirdParty\McalIntegrationHelper\3rdPartyMcalIntegrationHelper.exe
+  Calling path                     |  X:\ISS_delivery\CBD1700369_D04\external\ThirdParty\Mcal_Rh850P1x\VectorIntegration
+  Config file                      |  X:\ISS_delivery\CBD1700369_D04\external\ThirdParty\Mcal_Rh850P1x\VectorIntegration\MIPconfig.xml
+==========================================================================================
+Parsing config...
+==========================================================================================
+  Schema version                   |  2.0.7
+  SipBase absolute path            |  X:\ISS_delivery\CBD1700369_D04\external
+  McalSupply absolute path         |  X:\ISS_delivery\CBD1700369_D04\external\ThirdParty\Mcal_Rh850P1x\Supply
+------------------------------------------------------------------------------------------
+Configured packages                
+------------------------------------------------------------------------------------------
+  Summary                          |  
+  Summary                          |  MCAL/Base package
+  NameExpected                     |  AUTOSAR_RH850_P1x_MCAL_Ver4.02.01.D
+  NameDescription                  |  
+  Description                      |  MCAL package including all needed files (incl. Spi fix P001)
+  Mandatory                        |  True
+  Id                               |  1
+  UsesRegex                        |  False
+  ----------------------------------------------------------------------------------------
+  Summary                          |  AddOn package
+  NameExpected                     |  AUTOSAR_RH850_P1x_MCAL_Ver4.02.02.D
+  NameDescription                  |  
+  Description                      |  Additional modules Adc and Gpt
+  Mandatory                        |  False
+  Id                               |  2
+  UsesRegex                        |  False
+  ----------------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------------------
+==========================================================================================
+Packages found in SIP
+==========================================================================================
+  Name                             |  AUTOSAR_RH850_P1x_MCAL_Ver4.02.01.D
+  Path_Abs                         |  X:\ISS_delivery\CBD1700369_D04\external\ThirdParty\Mcal_Rh850P1x\Supply\AUTOSAR_RH850_P1x_MCAL_Ver4.02.01.D
+  PackageIdentified                |  False
+  ----------------------------------------------------------------------------------------
+  Name                             |  AUTOSAR_RH850_P1x_MCAL_Ver4.02.02.D
+  Path_Abs                         |  X:\ISS_delivery\CBD1700369_D04\external\ThirdParty\Mcal_Rh850P1x\Supply\AUTOSAR_RH850_P1x_MCAL_Ver4.02.02.D
+  PackageIdentified                |  False
+  ----------------------------------------------------------------------------------------
+==========================================================================================
+Result after matching/merging config and SIP
+==========================================================================================
+  Abstract                         |  MCAL/Base package
+  Description                      |  MCAL package including all needed files (incl. Spi fix P001)
+  NameExpected                     |  AUTOSAR_RH850_P1x_MCAL_Ver4.02.01.D
+  NameDescription                  |  
+  NameAvailableInSip               |  AUTOSAR_RH850_P1x_MCAL_Ver4.02.01.D
+  NameDistance                     |  0
+  IsMandatory                      |  True
+  State                            |  AVAILABLE_EXPECTED
+  CopyFrom_Abs                     |  
+  PathInSip_Rel                    |  ThirdParty\Mcal_Rh850P1x\Supply\AUTOSAR_RH850_P1x_MCAL_Ver4.02.01.D
+  ActionSelected                   |  NOTHING
+  ----------------------------------------------------------------------------------------
+  Abstract                         |  AddOn package
+  Description                      |  Additional modules Adc and Gpt
+  NameExpected                     |  AUTOSAR_RH850_P1x_MCAL_Ver4.02.02.D
+  NameDescription                  |  
+  NameAvailableInSip               |  AUTOSAR_RH850_P1x_MCAL_Ver4.02.02.D
+  NameDistance                     |  0
+  IsMandatory                      |  False
+  State                            |  AVAILABLE_EXPECTED
+  CopyFrom_Abs                     |  
+  PathInSip_Rel                    |  ThirdParty\Mcal_Rh850P1x\Supply\AUTOSAR_RH850_P1x_MCAL_Ver4.02.02.D
+  ActionSelected                   |  NOTHING
+  ----------------------------------------------------------------------------------------
+==========================================================================================
+Package status according to user settings
+==========================================================================================
+  Abstract                         |  MCAL/Base package
+  Description                      |  MCAL package including all needed files (incl. Spi fix P001)
+  NameExpected                     |  AUTOSAR_RH850_P1x_MCAL_Ver4.02.01.D
+  NameDescription                  |  
+  NameAvailableInSip               |  AUTOSAR_RH850_P1x_MCAL_Ver4.02.01.D
+  NameDistance                     |  0
+  IsMandatory                      |  True
+  State                            |  AVAILABLE_EXPECTED
+  CopyFrom_Abs                     |  
+  PathInSip_Rel                    |  ThirdParty\Mcal_Rh850P1x\Supply\AUTOSAR_RH850_P1x_MCAL_Ver4.02.01.D
+  ActionSelected                   |  KEEP
+  ----------------------------------------------------------------------------------------
+  Abstract                         |  AddOn package
+  Description                      |  Additional modules Adc and Gpt
+  NameExpected                     |  AUTOSAR_RH850_P1x_MCAL_Ver4.02.02.D
+  NameDescription                  |  
+  NameAvailableInSip               |  AUTOSAR_RH850_P1x_MCAL_Ver4.02.02.D
+  NameDistance                     |  0
+  IsMandatory                      |  False
+  State                            |  AVAILABLE_EXPECTED
+  CopyFrom_Abs                     |  
+  PathInSip_Rel                    |  ThirdParty\Mcal_Rh850P1x\Supply\AUTOSAR_RH850_P1x_MCAL_Ver4.02.02.D
+  ActionSelected                   |  KEEP
+  ----------------------------------------------------------------------------------------
+==========================================================================================
+Evaluate configured actions of packages...
+==========================================================================================
+    ActionRemove                   |  Remove 3rd party packages:  |   path: ?CONST.Supply_PathRel?
+==========================================================================================
+Start execution of actions...
+==========================================================================================
+Start action                       |  Remove 3rd party packages:  |   path: ?CONST.Supply_PathRel?
+  Path pattern                     |  ?CONST.Supply_PathRel?
+    deleting                       |  X:\ISS_delivery\CBD1700369_D04\external\ThirdParty\Mcal_Rh850P1x\Supply
+Result                             |  Finished
+All actions completed
+==========================================================================================
+Exit with code                     |  OK

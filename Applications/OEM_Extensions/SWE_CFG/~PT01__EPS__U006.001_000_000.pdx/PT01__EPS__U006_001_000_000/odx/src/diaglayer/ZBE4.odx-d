@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-33667391-8fcd-457d-afb0-4592160a4e57" ID="id-33667391-8fcd-457d-afb0-4592160a4e57">
+        <SHORT-NAME>ZBE4_DLC</SHORT-NAME>
+        <LONG-NAME>Zentrale Bedieneinheit BAC 4</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-af5ed846-3238-470d-bbbd-4a0553a1ce08" ID="id-af5ed846-3238-470d-bbbd-4a0553a1ce08">
+                <SHORT-NAME>ZBE4</SHORT-NAME>
+                <LONG-NAME>Zentrale Bedieneinheit BAC 4</LONG-NAME>
+                <DESC>
+                    <p>Zentrale Bedieneinheit fuer IDrive mit BAC 4.0x</p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>3455</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER ID="id-7542bbc0-3b19-445f-9bc0-1840e6a1976d" OID="id-7542bbc0-3b19-445f-9bc0-1840e6a1976d">
+        <SHORT-NAME>DME_IK_DLC</SHORT-NAME>
+        <LONG-NAME>Digitale Motorelektronik Industriekunden</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT ID="id-066d72f9-68fa-4c16-bf82-4783c60e881d" OID="id-066d72f9-68fa-4c16-bf82-4783c60e881d">
+                <SHORT-NAME>DME_IK</SHORT-NAME>
+                <LONG-NAME>Digitale Motorelektronik Industriekunden</LONG-NAME>
+                <DESC>
+                    <p>Digitale Motorelektronik für Industriekunden (programmierbar)</p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a" DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a" DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-91e2ce4c-a274-4f02-a601-92f937695337" DOCREF="IDR_UDS_DLC" DOCTYPE="CONTAINER"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

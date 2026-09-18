@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Settings>
+	<Settings Name="com.vector.cfg.gen.GenericCmd_proxy.settings">
+		<Settings Name="ModuleList">
+			<Settings Name="PAGe_PiaClient">
+				<Setting Name="Package" Value="/BMW_DEF"/>
+				<Setting Name="ModuleName" Value="PiaClient"/>
+				<Setting Name="GeneratorName" Value="Bmw PAGe generator for PiaClient"/>
+				<Setting Name="GeneratorType" Value="BMW_ARTT"/>
+				<Setting Name="EcucFileAutosarSchemaVersion" Value="4.3.0"/>
+				<Settings Name="CommandLine">
+					<Setting Name="GeneratorPath" Value="$(SipRootPath)\Generators\PAGe\Bat\GenPAGe_PiaClient.bat"/>
+					<Setting Name="GenerationParameters" Value="PiaClient $(ProcessingEcuCFile) $(GenDataFolder) $(SipRootPath)\ThirdParty\BAC4_3\Supply\core"/>
+					<Setting Name="SupportsStandAloneValidation" Value="false"/>
+					<Setting Name="ValidationParameters" Value="PiaClient $(ProcessingEcuCFile) $(GenDataFolder) $(SipRootPath)\ThirdParty\BAC4_3\Supply\core validate"/>
+					<Setting Name="WorkingDir" Value="$(SipRootPath)\ThirdParty\BAC4_3\Supply\tools\page"/>
+				</Settings>
+			</Settings>
+		</Settings>
+	</Settings>
+</Settings>

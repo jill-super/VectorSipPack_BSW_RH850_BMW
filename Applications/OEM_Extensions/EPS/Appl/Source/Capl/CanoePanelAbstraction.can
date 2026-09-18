@@ -1,0 +1,2752 @@
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  \verbatim
+ *  Copyright (c) 2017 by Vector Informatik GmbH.                                                  All rights reserved.
+ *
+ *                 This software is copyright protected and proprietary to Vector Informatik GmbH.
+ *                 Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+ *                 All other rights remain with Vector Informatik GmbH.
+ *  \endverbatim
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *              File: CanoePanelAbstraction.can 
+ *       Description: Provides database abstraction for the user panels
+ *********************************************************************************************************************/
+variables
+{
+
+  // Invalid Values
+  const byte  GLOBAL_MAX_INVALID_BYTE_VALUE  = 255;
+  const word  GLOBAL_MAX_INVALID_WORD_VALUE  = 65535;
+  const dword GLOBAL_MAX_INVALID_DWORD_VALUE = 4294967295;
+  const byte true = 1;
+  const byte false = 0;
+
+
+
+  const dword MAX_PAYLOAD_SIZE = 256;
+  const dword MAX_SIGNAL_IDS_COUNT = 4;
+  const dword PDU_ID_EPS_FR0_AVL_PO_EPS = 1;
+  const dword PDU_ID_EPS_FR0_KILOMETERSTAND = 0;
+  const dword PDU_ID_EPS_FR0_RELATIVZEIT = 2;
+  const dword PDU_ID_EPS_FR0_ST_EST = 3;
+  const dword SIGNAL_ID_EPS_FR0_AVL_PO_EPS_CRC_AVL_PO_EPS = 2;
+  const dword SIGNAL_ID_EPS_FR0_KILOMETERSTAND_MILE_KM = 0;
+  const dword SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL = 1;
+  const dword SIGNAL_ID_EPS_FR0_ST_EST_CRC_ST_EST_FTAX = 3;
+  byte pduPayload [MAX_PAYLOAD_SIZE];
+  float signalTransmissionTimeStamp [MAX_SIGNAL_IDS_COUNT];
+  frPdu   EPS_FR0::KILOMETERSTAND        EPS_FR0_KILOMETERSTAND;
+  frPdu   EPS_FR0::RELATIVZEIT           EPS_FR0_RELATIVZEIT;
+
+  const dword GLOBAL_MAX_CAN_CHANNELS = 0;
+  const dword GLOBAL_MAX_CHANNELS = 1;
+  const dword GLOBAL_MAX_ETHERNET_CHANNELS = 0;
+  const dword GLOBAL_MAX_FLEXRAY_CHANNELS = 1;
+  const dword GLOBAL_MAX_J1939_CHANNELS = 0;
+  const dword GLOBAL_MAX_LIN_CHANNELS = 0;
+
+  const dword CANOE_MAX_FLEXRAY_CHANNELS = 32;
+  const dword MAX_BUS_TYPES = 5;
+  dword channelToCanoeChannel[GLOBAL_MAX_CHANNELS];
+  dword canoeFrChannelsToChannels[CANOE_MAX_FLEXRAY_CHANNELS];
+  byte channelOnlineState[GLOBAL_MAX_CHANNELS];
+  byte busActivityNotificationStatus [GLOBAL_MAX_CHANNELS];
+  frConfiguration gFRParams;
+
+  struct FrWUPStatistic
+  {
+    float timestamp;
+    word symbol; // 0 unknown, 1  CAS, 2 MTS, 3 Wakeup, 4 Undefined
+    byte frChannel; // 1 - A, 2 - B
+  };
+  struct FrWUPStatistic  FrWUPStatistics[GLOBAL_MAX_FLEXRAY_CHANNELS];
+  /*********************************************************
+  * CONFIG DATA TYPES
+  **********************************************************/
+
+  enum EBusType
+  {
+    E_CAN = 0,
+    E_FLEXRAY = 1,
+    E_LIN = 2,
+    E_ETHERNET = 3,
+    E_J1939 = 4
+  };
+  struct CAL_ConfigData
+  {
+    char  canoeChannelName [200];
+  };
+  struct CAL_Data
+  {
+    dword busContext;
+  };
+  struct GlobalConfigData
+  {
+    dword busSpecificIndex;
+    enum  EBusType busType;
+  };
+
+  dword msgCounter[GLOBAL_MAX_CHANNELS];
+  float msgCounterStartTime[GLOBAL_MAX_CHANNELS];
+  struct CAL_ConfigData CAL_ConfigurationData [GLOBAL_MAX_CHANNELS] =
+  {
+    {
+      canoeChannelName = "EPS_FR0"
+    }
+  };
+  struct CAL_Data CAL_Data [GLOBAL_MAX_CHANNELS] =
+  {
+    {
+      busContext = GLOBAL_MAX_INVALID_DWORD_VALUE
+    }
+  };
+  struct GlobalConfigData globalConfigData [GLOBAL_MAX_CHANNELS] =
+  {
+    {
+      busSpecificIndex = 0,
+      busType = E_FLEXRAY
+    }
+  };
+
+
+
+  /*********************************************************
+   * COM PANEL
+   *********************************************************/
+
+  const dword CHAR_10 = 10;
+  const dword CHAR_100 = 100;
+  const dword CHAR_200 = 200;
+
+  enum ComGridColumnIndex
+  {
+    COM_COL_NAME = 0,
+    COM_COL_RX = 1,
+    COM_COL_TX = 2,
+    COM_COL_MAX
+  };
+
+  enum ComGridRowIndex
+  {
+    COM_ROW_CHANNEL = 0,
+    COM_ROW_SIGNAL = 1,
+    COM_ROW_VALUE = 2,
+    COM_ROW_TRANSMITTED = 3,
+    COM_ROW_J1939_REQUESTED = 4,
+    COM_ROW_J1939_TP_TYPE = 5,
+    COM_ROW_MAX
+  };
+
+  enum ComUiElementIndex
+  {
+    COM_UI_SCALE_RX = 0,
+    COM_UI_CALCULATE = 1,
+    COM_UI_SCALE_TX = 2,
+    COM_UI_PLAY_BTN = 3,
+    COM_UI_PAUSE_BTN = 4,
+    COM_UI_PATH_SELECTOR = 5,
+    COM_UI_TRACKBAR = 6,
+    COM_UI_MAX
+  };
+
+  enum ComGrid
+  {
+    COM_DATA_GRID_VIEW = 0,
+    COM_PANEL_GRID_MAX
+  };
+
+  // Representation of a single cell and the related properties.
+  struct GridCell
+  {
+    char backgroundColor[CHAR_10];
+    byte columnSpacing;
+    char hint[CHAR_200];
+    char text[CHAR_200];
+    char textAlignment[CHAR_10];
+    char textColor[CHAR_10];
+  };
+
+  // A single row is represented by the GridCell properties and a visibility flag.
+  struct SingleRow
+  {
+    struct GridCell cell[COM_COL_MAX];
+    byte isVisible;
+  };
+
+  // A Grid contains a header row and the content rows.
+  struct ComGrid
+  {
+    char name[CHAR_100];
+    struct GridCell header[COM_COL_MAX];
+    struct SingleRow row[COM_ROW_MAX];
+  };
+
+  // Properties of user interface elements like buttons, labels, trackbars etc.
+  struct UiElement
+  {
+    char name[CHAR_100];
+    char text[CHAR_100];
+    char hint[CHAR_200];
+    byte enabled;
+    byte visible;
+  };
+
+  struct UiElement comUiElement[COM_UI_MAX];
+  struct ComGrid comGrid[COM_PANEL_GRID_MAX];
+
+
+  msTimer Wdg_AutoPlayTimer;
+  byte wdg_AutoPlayStatus = 0;
+
+  mstimer timerForSensorValueChange;
+  byte autoSensorValueChange;
+  int comIdOfRxSignalUnderTest = -1;
+  int comIdOfTxSignalUnderTest = -1;
+
+  int activeUsecase = 0;
+  int memValue = 0;
+
+  const byte MEM_STATE_UNKNOWN        = 0x00;
+  const byte MEM_STATE_WRITE_PENDING  = 0x01;
+  const byte MEM_STATE_WRITE_FINISHED = 0x02;
+  const byte MEM_STATE_READ_PENDING   = 0x03;
+  const byte MEM_STATE_READ_FINISHED  = 0x04;
+  const byte MEM_STATE_WRITE_FAILED   = 0x05;
+  const byte MEM_STATE_READ_FAILED    = 0x06;
+
+  dword buscontext_EPS_FR0 = 0;
+  // DcmDslConnection 'DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4' on channel 'EPS_FR0'
+  // rx and tx is from the point of view of the ecu
+  const dword dcmFrTpRxMinimalPduLength_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 254;
+  const dword dcmFrTpRxLocalAddress_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 0x30;
+  const dword dcmFrTpRxRemoteAddress_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 0xF4;
+  const dword dcmFrTpRxTimeoutAr_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 150;
+  const dword dcmFrTpRxTimeoutAs_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 150;
+  const dword dcmFrTpRxTimeoutBs_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 500;
+  const dword dcmFrTpRxTimeoutCr_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 600;
+  const dword dcmFrTpRxTimeCs_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 50;
+  const dword dcmFrTpRxTimeBr_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 50;
+  const dword dcmFrTpTxMinimalPduLength_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 32;
+  const dword dcmFrTpTxLocalAddress_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 0x30;
+  const dword dcmFrTpTxRemoteAddress_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 0xF4;
+  const dword dcmFrTpTxTimeoutAr_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 150;
+  const dword dcmFrTpTxTimeoutAs_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 150;
+  const dword dcmFrTpTxTimeoutBs_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 500;
+  const dword dcmFrTpTxTimeoutCr_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 600;
+  const dword dcmFrTpTxTimeCs_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 50;
+  const dword dcmFrTpTxTimeBr_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 50;
+  long dcmFrTpRxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4;
+  long dcmFrTpTxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4;
+  byte dcmFrTpConnectionOpen_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 0;
+
+  FrPdu TL_ECU_TRNSM_FR_32 frTpPdu_TL_ECU_TRNSM_FR_32;
+  FrPdu TL_MST_GW_TRNSM_FR_254 frTpPdu_TL_MST_GW_TRNSM_FR_254;
+
+  const long MAX_BUFFER_LENGTH = 1000;
+  struct dcmBuffer
+  {
+    byte buffer[MAX_BUFFER_LENGTH];
+    long bufferSize;
+  };
+  struct dcmBuffer doIpUdsBuffer;
+  struct dcmBuffer doIPRxBuffer;
+  struct dcmBuffer doIPTxBuffer;
+
+  int diagRxDataCounter;
+
+  const byte dcmDidIdHigh                  = 0x00;
+  const byte dcmDidIdLow                   = 0x55;
+  const byte dcmDTCHighByte                = 0x48;
+  const byte dcmDTCMiddleByte              = 0x2B;
+  const byte dcmDTCLowByte                 = 0xFF;
+  const byte dcmDTCSnapshotRecordNumber    = 0x01;
+  const byte dcmServiceIdDSC               = 0x10;
+  const byte dcmServiceIdWDBI              = 0x2e;
+  const byte dcmServiceIdRDBI              = 0x22;
+  const byte dcmServiceIdCDTCI             = 0x14;
+  const byte dcmServiceIdRDTCI             = 0x19;
+  const byte dcmRDTCIsubFunctionRDTCSSBDTC = 0x04;
+
+  const byte DIAG_UDS_RESPONSE_INDEX_SID               = 0;
+  const byte DIAG_UDS_RESPONSE_INDEX_RDBI_DATA         = 3;
+  const byte DIAG_UDS_RESPONSE_INDEX_RDTCSSBDTC_STATUS = 5;
+  const byte DIAG_UDS_RESPONSE_INDEX_RDTCSSBDTC_DATA   = 10;
+
+  const int DIAG_UDS_MAX_CHANNELS = 1;
+  const int DIAG_UDS_REQUEST_QUEUE_LENGTH = 5;
+  const int DIAG_UDS_REQUEST_TIMEOUT = 5000;
+
+  enum DiagRequestState
+  {
+    DIAG_QUEUE_EMPTY_REQUEST_NOT_ACTIVE = 0,
+    DIAG_QUEUE_EMPTY_REQUEST_ACTIVE = 1,
+    DIAG_QUEUE_NOT_EMPTY_REQUEST_NOT_ACTIVE = 2,
+    DIAG_QUEUE_NOT_EMPTY_REQUEST_ACTIVE = 3
+  };
+
+  struct DiagUdsRequestQueueEntry
+  {
+    struct dcmBuffer request;
+    int connectionId;
+  };
+
+  struct DiagUdsRequestQueue
+  {
+    struct DiagUdsRequestQueueEntry queue[DIAG_UDS_REQUEST_QUEUE_LENGTH];
+    int head;
+    int size;
+    int requestInProgress;
+  };
+
+  struct DiagUdsRequestQueue diagUdsRequestQueue;
+
+  struct DiagUdsServiceConfigData
+  {
+    byte rdbiSessionLevel;
+    byte wdbiSessionLevel;
+    byte cdtciSessionLevel;
+    byte rdtcssbdtcSessionLevel;
+  };
+
+  struct DiagUdsServiceConfigData diagUdsServiceConfigData [DIAG_UDS_MAX_CHANNELS] =
+  {
+    { /* EPS_FR0 */
+      rdbiSessionLevel = 65,
+      wdbiSessionLevel = 65,
+      cdtciSessionLevel = 1,
+      rdtcssbdtcSessionLevel = 0
+    }
+  };
+
+  msTimer diagUdsRequestTimeoutTimer;
+
+  struct DiagUcBusLogDataText
+  {
+    char time[50];
+    char type[50];
+    char service[50];
+    char status[50];
+  };
+  struct DiagUcBusLogDataText diagUcBusLogDataText;
+
+  struct DiagUcInfoDisplayDataType
+  {
+    float time;
+    char type[20];
+    char service[20];
+    char status[20];
+  };
+  struct DiagUcInfoDisplayDataType diagDataGridRequest;
+  struct DiagUcInfoDisplayDataType diagDataGridResponse;
+
+  dword   RxCtrlConfCounter;
+  dword   RxDataConfCounter;
+  msTimer RxCmdSignalConfTimer;
+  dword   RxCmdSignalConfTimeout = 200;
+  byte    RXCMD_CONF_COUNTER_INIT_VALUE = 5;
+  int     LastRxCtrlSignalValue = -1;
+  int     LastRxDataSignalValue = -1;
+
+  //write window
+  dword startApplWriteWindow;
+
+}
+
+/**
+ * Before CANoe measurement starts
+ */
+on preStart
+{
+  //Com Usecase
+  comUc_Initialize();
+  comUc_UpdatePanelGridHeaderContent();
+  comUc_UpdateUiContent();
+
+  //General
+  _resetvars();
+
+  //IL
+  frSetSendPDU(EPS_FR0_KILOMETERSTAND);
+  frSetSendPDU(EPS_FR0_RELATIVZEIT);
+  initSignalTransmissionTimeStamps();
+
+  //AL
+  CAL_OnPreStart();
+
+  //Wdg Usecase
+  @sysvar::StartApplication::WdgPlayStatus = 0;
+  wdg_AutoPlayStatus = 0;
+
+  //Diag Usecase
+  diagRxDataCounter = 0;
+  diagUdsRequestQueueReset();
+}
+
+/**
+ * CANoe measurement started
+ */
+on start
+{
+  dword channel;
+  startApplWriteWindow = writeCreate("StartApplication");
+  deactivatePanel(0);
+  CAL_OnStart();
+  deactivatePanel(1);
+  deactivatePanel(2);
+  diagInitializeBuscontext();
+
+  @sysvar::StartApplication::UseCaseActivator = 4;
+}
+
+/**
+ * CANoe measurement stopped
+ */
+on preStop
+{
+  CAL_OnPreStop();
+  diagOnPrestop();
+}
+
+/**
+ * CANoe measurement stopped
+ */
+on stopMeasurement
+{
+  writeDestroy(startApplWriteWindow);
+}
+
+/**
+ * Check whether the transmission of RxCtrl or RxData needs to be repeated
+ */
+on timer RxCmdSignalConfTimer
+{
+  if (RxCtrlConfCounter > 0 && LastRxCtrlSignalValue > -1)
+  {
+    writeRxCtrlSig(LastRxCtrlSignalValue);
+    setTimer(RxCmdSignalConfTimer, RxCmdSignalConfTimeout);
+  }
+  else
+  {
+    if (RxDataConfCounter > 0 && LastRxDataSignalValue > -1)
+    {
+      writeRxDataSig(LastRxDataSignalValue);
+      setTimer(RxCmdSignalConfTimer, RxCmdSignalConfTimeout);
+    }
+  }
+}
+
+
+
+
+
+/*********************************************************
+ * BusLoadInfo API
+ *********************************************************/
+
+/**
+ * Initialize the bus load statistics
+ **/
+void CAL_ResetBusLoadInfo()
+{
+  int i;
+  float timestampNow;
+  timestampNow = getCurrentTimeInSeconds();
+  for (i=0;i<elcount(msgCounterStartTime);i++)
+  {
+    msgCounterStartTime[i] = timestampNow;
+    msgCounter[i] = 0;
+  }
+}
+
+/*********************************************************
+ * FrWUPStatistics access API
+ *********************************************************/
+
+/**
+ * Initialize the FlexRay Wakeup Symbol statistics
+ **/
+void CAL_ResetFrWUPStatistics()
+{
+  word i;
+  for (i = 0; i < GLOBAL_MAX_FLEXRAY_CHANNELS; ++i)
+  {
+    FrWUPStatistics[i].timestamp = 0;
+  }
+}
+/**
+ * Get the point in time when the wakeup symbol was detected
+ **/
+float CAL_GetFrWUPTimestamp(dword channel)
+{
+  return FrWUPStatistics[cfg_GetBusSpecificIndex(channel)].timestamp;
+}
+
+/**
+ * Store the point in time when the wakeup symbol was detected
+ **/
+void CAL_SetFrWUPTimestamp(dword channel, float value)
+{
+  FrWUPStatistics[cfg_GetBusSpecificIndex(channel)].timestamp = value;
+}
+
+/**
+ * Get which wakeup symbol was detected
+ **/
+word CAL_GetFrWUPSymbol(dword channel)
+{
+  return FrWUPStatistics[cfg_GetBusSpecificIndex(channel)].symbol;
+}
+
+/**
+ * Store which wakeup symbol was detected
+ **/
+void CAL_SetFrWUPSymbol(dword channel, word value)
+{
+  FrWUPStatistics[cfg_GetBusSpecificIndex(channel)].symbol = value;
+}
+
+/**
+ * Get on which channel the wakeup symbol was detected
+ **/
+byte CAL_GetFrWUPFrChannel(dword channel)
+{
+  return FrWUPStatistics[cfg_GetBusSpecificIndex(channel)].frChannel;
+}
+
+/**
+ * Store on which channel the wakeup symbol was detected
+ **/
+void CAL_SetFrWUPFrChannel(dword channel, byte value)
+{
+  FrWUPStatistics[cfg_GetBusSpecificIndex(channel)].frChannel = value;
+}
+
+/*********************************************************
+ * CAL_DataConfig access API
+ *********************************************************/
+
+/**
+ * Get the bus type (e.g. CAN, FlexRay, etc.) for the channel
+ **/
+enum EBusType cfg_GetBusType(dword channel)
+{
+  return globalConfigData[channel].busType;
+}
+
+/**
+ * Get the CANoe channel index for the channel
+ **/
+dword cfg_GetBusSpecificIndex(dword channel)
+{
+  return globalConfigData[channel].busSpecificIndex;
+}
+
+/**
+ * Get the name of the channel in the CANoe configuration
+ **/
+void cfg_GetCanoeChannelName(dword channel, char channelName[])
+{
+  strncpy(channelName, CAL_ConfigurationData[ channel ].canoeChannelName, 200);
+}
+/**
+ * Determine the channel ID based on the channel index of CANoe
+ * @return GLOBAL_MAX_INVALID_DWORD_VALUE if channel is unknown for the given canoe channel
+ **/
+dword CAL_GetChannelFromCanoeFlexRayChannel(dword frChannel)
+{
+  if (frChannel >= CANOE_MAX_FLEXRAY_CHANNELS)
+  {
+    return GLOBAL_MAX_INVALID_DWORD_VALUE;
+  }
+  return canoeFrChannelsToChannels[frChannel];
+}
+
+/**
+ * Determine the CANoe channel index based on the channel ID
+ * @return 0 if CANoe Fr channel is unknown for the given 'channel'
+ **/
+dword CAL_GetCanoeFlexRayChannelFromChannel(dword channel)
+{
+  if (channel >= GLOBAL_MAX_CHANNELS)
+  {
+    return 0;
+  }
+  if ( channelToCanoeChannel[channel] != GLOBAL_MAX_INVALID_DWORD_VALUE )
+  {
+    return channelToCanoeChannel[channel];
+  }
+  else
+  {
+    return 0; // canoe invalid channel
+  }
+}
+/*********************************************************
+ * CAL_Data access API
+ *********************************************************/
+dword CAL_GetDataBusContext(dword channel)
+{
+  return CAL_Data[ channel ].busContext;
+}
+
+void CAL_SetDataBusContext(dword channel, dword value)
+{
+  CAL_Data[ channel ].busContext = value;
+}
+
+/*********************************************************
+ * CAL_Data internal functions
+ *********************************************************/
+
+/**
+ * Determine whether bus activity detection is enabled for the channel.
+ **/
+byte CAL_GetBusActivityDetectionEnabled(dword channel)
+{
+  return busActivityNotificationStatus[channel];
+}
+
+/**
+ * Enable or disable bus activity detection for the channel.
+ **/
+void CAL_SetBusActivityDetectionEnabled(dword channel, byte value)
+{
+   busActivityNotificationStatus[channel] = value;
+}
+
+/*********************************************************
+ * CAL API
+ *********************************************************/
+
+/**
+ * Notify about the "on preStart" procedure.
+ **/
+void CAL_OnPreStart()
+{
+  char channelName[200];
+  dword busContext;
+  dword channel;
+  byte value;
+  for (channel=0; channel< CANOE_MAX_FLEXRAY_CHANNELS; ++channel)
+  {
+    canoeFrChannelsToChannels[channel] = GLOBAL_MAX_INVALID_DWORD_VALUE;
+  }
+  for (channel=0; channel<GLOBAL_MAX_CHANNELS; channel++)
+  {
+    cfg_GetCanoeChannelName(channel, channelName);
+    busContext = GetBusNameContext(channelName);
+    channelToCanoeChannel[channel] = GLOBAL_MAX_INVALID_DWORD_VALUE;
+    CAL_SetChannelOnlineState(channel, true);
+    if (0 != busContext)
+    {
+      value = busContext;
+      CAL_SetDataBusContext(channel, busContext);
+      if ( E_FLEXRAY == cfg_GetBusType(channel) )
+      {
+        canoeFrChannelsToChannels[value] = channel;
+        channelToCanoeChannel[channel] = value;
+      }
+    }
+  }
+}
+
+/**
+ * Notify about the "on start" procedure.
+ **/
+void CAL_OnStart()
+{
+}
+
+/**
+ * Notify about the "on preStop" procedure.
+ **/
+void CAL_OnPreStop()
+{
+}
+
+/**
+ * Set the channel online status.
+ * @param channel: channel ID
+ * @param state: channel state to be set. 1 if the channel is online else 0.
+ **/
+void CAL_SetChannelOnlineState(dword channel, byte state)
+{
+  if (channel >= GLOBAL_MAX_CHANNELS)
+  {
+    return;
+  }
+  channelOnlineState[channel] = state;
+}
+
+/**
+ * Get the channel online status.
+ * @param channel: channel ID
+ * @return 1 if the channel is online else 0.
+ **/
+byte CAL_GetChannelOnlineState(dword channel)
+{
+  if (channel >= GLOBAL_MAX_CHANNELS)
+  {
+    return false;
+  }
+  return channelOnlineState[channel];
+}
+
+/**
+ * Disable the detection of bus activity like a wakeup.
+ * It should be called before full communication is requested from the BUSSM to prevent detection of own wakeup on the bus
+ * so that in this case ComM_BusActivityIndication() is not called.
+ * @param channel: Identification of the channel.
+ **/
+void CAL_DisableBusActivityDetection(dword channel) {
+  CAL_SetBusActivityDetectionEnabled(channel, false);
+}
+
+/**
+ * Enable the detection of bus activity like a wakeup.
+ * It should be called after the BUSSM reports bus sleep so that a further bus activity of the currently sleeping bus can be detected again.
+ * @param channel: Identification of the channel.
+ **/
+void CAL_EnableBusActivityDetection(dword channel) {
+  CAL_SetBusActivityDetectionEnabled(channel, true);
+}
+
+
+
+/**
+ * Handle the detection of a FLEXRAY wakeup symbol
+ **/
+on frSymbol
+{
+  dword channel;
+  if ( (dword)this.msgChannel > GLOBAL_MAX_FLEXRAY_CHANNELS )
+  {
+    return;
+  }
+  channel = CAL_GetChannelFromCanoeFlexRayChannel((dword)this.msgChannel);
+  if (GLOBAL_MAX_INVALID_DWORD_VALUE == channel)
+  {
+    return; // unsupported
+  }
+  /* store statistic for symbols != CAS */
+  if (this.fr_symbol != 1)
+  {
+    CAL_SetFrWUPTimestamp(channel, getCurrentTimeInSeconds());
+    CAL_SetFrWUPSymbol(channel, this.fr_symbol);
+    CAL_SetFrWUPFrChannel(channel, this.fr_channelMask);
+  }
+  CAL_OnFrSymbol(channel);
+}
+/**
+ * Handle the start of a FlexRay cycle
+ **/
+on frStartCycle *
+{
+  dword channel;
+  if ( (dword)this.msgChannel > GLOBAL_MAX_FLEXRAY_CHANNELS )
+  {
+    return;
+  }
+  channel = CAL_GetChannelFromCanoeFlexRayChannel((dword)this.msgChannel);
+  if (GLOBAL_MAX_INVALID_DWORD_VALUE == channel)
+  {
+    return;
+  }
+  CAL_OnFrStartCycle(channel, this.fr_cycle);
+}
+
+/**
+ * Handle the change of the FlexRay POC state
+ **/
+on frPocState
+{
+  dword channel;
+  if ( (dword)this.msgChannel > GLOBAL_MAX_FLEXRAY_CHANNELS )
+  {
+    return;
+  }
+  channel = CAL_GetChannelFromCanoeFlexRayChannel((dword)this.msgChannel);
+  if ( GLOBAL_MAX_INVALID_DWORD_VALUE == channel)
+  {
+    return;
+  }
+  CAL_OnFrPocState(channel, this.fr_POCState);
+}
+
+
+/**
+ * Initialize system variables and CAPL variables.
+ **/
+_resetvars()
+{
+  @sysvar::StartApplication::ComActualOutput = 0;
+  @sysvar::StartApplication::ComExpectedOutput = 0;
+  @sysvar::StartApplication::ComInput = 0;
+  @sysvar::StartApplication::UseCaseActivator = 255;
+  @sysvar::StartApplication::ComSendCtrl = 1;
+  autoSensorValueChange = 1;
+}
+
+/**
+ * Deactivate all controls of the panel for the given use case
+ **/
+void deactivatePanel(int useCaseId)
+{
+  switch(useCaseId)
+  {
+    case 0:
+    case 3:
+      setComPanelStatus(0);
+      break;
+    case 1:
+      setMemPanelStatus(0);
+      break;
+    case 2:
+      setDiagPanelStatus(0);
+      break;
+    case 4:
+      Wdg_AutoPlayTimer.cancel();
+      setWdgPanelStatus(0);
+      break;
+  }
+}
+
+
+/**
+ * Enable/disable the controls of the panel for the MEM use case
+ **/
+void setMemPanelStatus(byte isEnabled)
+{
+  enableControl("StartApplication MEM", "memInputBox", isEnabled);
+  enableControl("StartApplication MEM", "memWriteButton", isEnabled);
+  enableControl("StartApplication MEM", "memOperationPendingLED", isEnabled);
+}
+
+/**
+ * Activate all controls of the panel for the given use case
+ **/
+void activatePanel(int useCaseId)
+{
+  switch (useCaseId)
+  {
+    case 0:
+    case 3:
+      writeLineEx(startApplWriteWindow,4,"Activate Com Uscase");
+      setComPanelStatus(1);
+      break;
+    case 1:
+      writeLineEx(startApplWriteWindow,4,"Activate Mem Uscase");
+      setMemPanelStatus(1);
+      break;
+    case 2:
+      writeLineEx(startApplWriteWindow,4,"Activate Diag Uscase");
+      setDiagPanelStatus(1);
+      break;
+    case 4:
+      writeLineEx(startApplWriteWindow,4,"Activate Wdg Uscase");
+      Wdg_AutoPlayTimer.setCyclic(1000);
+      setWdgPanelStatus(1);
+      break;
+  }
+}
+
+/**
+ * Enable/disable the controls of the panel for the COM use case
+ **/
+void setComPanelStatus (byte isEnabled)
+{
+  if (isEnabled)
+  {
+    comUiElement[COM_UI_PLAY_BTN].enabled = !autoSensorValueChange;
+    comUiElement[COM_UI_PAUSE_BTN].enabled = autoSensorValueChange;
+  }
+  else
+  {
+    comUiElement[COM_UI_PLAY_BTN].enabled = 0;
+    comUiElement[COM_UI_PAUSE_BTN].enabled = 0;
+  }
+  comUiElement[COM_UI_PATH_SELECTOR].enabled = isEnabled;
+  comUiElement[COM_UI_TRACKBAR].enabled = isEnabled;
+  comUc_UpdateUiContent();
+}
+
+/**
+ * Initiate the transmission of RxCtrl with the given value
+ **/
+void writeRxCtrlSig(int data)
+{
+  updateSignal(SIGNAL_ID_EPS_FR0_KILOMETERSTAND_MILE_KM, data);
+  writeLineEx(startApplWriteWindow,4," - CtrlSignal: Send KILOMETERSTAND on EPS_FR0");
+  outputPdu(PDU_ID_EPS_FR0_KILOMETERSTAND);
+  LastRxCtrlSignalValue = data;
+  setRxCtrlConfCounter();
+}
+
+/**
+ * Initiate the transmission of RxData with the given value
+ **/
+void writeRxDataSig(int data)
+{
+  updateSignal(SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL, data);
+  writeLineEx(startApplWriteWindow,4," - DataSignal: Send RELATIVZEIT on EPS_FR0");
+  outputPdu(PDU_ID_EPS_FR0_RELATIVZEIT);
+  LastRxDataSignalValue = data;
+  setRxDataConfCounter();
+}
+
+
+/**
+ * In the COM usecase, calculate the new signal values by scaling the current sensor value
+ * and trigger the transmission of the corresponding messages to the ECU.
+ **/
+void sendComRxSignals(byte sensorValue)
+{
+  int64 scaledValue;
+  dword signalLength;
+  scaledValue = sensorValue*0x1000000;                            /* Scale uint8 [0 ... 0xff] to uint32 [0 ... 0xffffffff] */
+  updateSignal(SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL, scaledValue);
+  outputPdu(PDU_ID_EPS_FR0_RELATIVZEIT );
+}
+
+/**
+ * The selected communication path in the COM usecase has changed
+ **/
+on sysvar_update StartApplication::ComSignalPairSelector
+{
+  byte value;
+  switch(sysGetVariableInt(this))
+  {
+    case 0:
+      comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_J1939_TP_TYPE].isVisible = false;
+      comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_J1939_REQUESTED].isVisible = false;
+      comIdOfRxSignalUnderTest = SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL;
+      comIdOfTxSignalUnderTest = SIGNAL_ID_EPS_FR0_ST_EST_CRC_ST_EST_FTAX;
+      snprintf(comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_CHANNEL].cell[COM_COL_RX].text, CHAR_200, "EPS_FR0");
+      snprintf(comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_SIGNAL].cell[COM_COL_RX].text, CHAR_200, "T_SEC_COU_REL");
+      snprintf(comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_CHANNEL].cell[COM_COL_TX].text, CHAR_200, "EPS_FR0");
+      snprintf(comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_SIGNAL].cell[COM_COL_TX].text, CHAR_200, "CRC_ST_EST_FTAX");
+      snprintf(comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_TRANSMITTED].cell[COM_COL_RX].text, CHAR_200, "%.3f [s]", getSignalTransmissionTimeStamp(SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL));
+      snprintf(comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_TRANSMITTED].cell[COM_COL_TX].text, CHAR_200, "%.3f [s]", getSignalTransmissionTimeStamp(SIGNAL_ID_EPS_FR0_ST_EST_CRC_ST_EST_FTAX));
+      snprintf(comUiElement[COM_UI_SCALE_RX].text, CHAR_100, "y(x) = x*0x1000000");
+      snprintf(comUiElement[COM_UI_SCALE_RX].hint, CHAR_200, "");
+      snprintf(comUiElement[COM_UI_CALCULATE].text, CHAR_100, "u(y) = y/0x1000000");
+      snprintf(comUiElement[COM_UI_CALCULATE].hint, CHAR_200, "");
+      snprintf(comUiElement[COM_UI_SCALE_TX].text, CHAR_100, "v(u) = u");
+      snprintf(comUiElement[COM_UI_SCALE_TX].hint, CHAR_200, "");
+      comUc_UpdateUiContent();
+    break;
+  }
+  // Update the Rx Signal to show the new scaled value.
+  if (activeUsecase == 0 || activeUsecase == 3)
+  {
+    // Set the value entries to '---', in case tx/rx direction does not work the value will not be updated
+    // otherwise the new value will overwrite the '---'.
+    snprintf(comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_VALUE].cell[COM_COL_TX].text, CHAR_200, "---");
+    snprintf(comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_VALUE].cell[COM_COL_RX].text, CHAR_200, "---");
+    comUc_UpdatePanelGridRowContent();
+    value = @sysvar::StartApplication::ComInput;
+    sendComRxSignals(value);
+  }
+  // Set the rx signal under test to the Control RxData signal in case of COM Usecase TxOnly to get data grid information updates.
+  if (activeUsecase == 3)
+  {
+    comIdOfRxSignalUnderTest = SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL;
+  }
+}
+
+/**
+ * This function is called when a signal transmitted by the ECU changes.
+ * @param signalId: unique identifier of signal
+ * @param value: new signal value
+ **/
+void StartApplication_OnTxSignalUpdate(dword signalId, int64 value)
+{
+  int64 actualValue;
+  switch(signalId)
+  {
+    case SIGNAL_ID_EPS_FR0_ST_EST_CRC_ST_EST_FTAX:
+      StartApplication_OnTxData(value);
+      break;
+    case SIGNAL_ID_EPS_FR0_AVL_PO_EPS_CRC_AVL_PO_EPS:
+      StartApplication_OnTxCtrl(value);
+      break;
+  }
+  if (activeUsecase != 0 && activeUsecase != 3)
+  {
+    return;
+  }
+  if (signalId == comIdOfTxSignalUnderTest && value != 0xFF)  /* Is the signal the Tx signal of the currently selected Rx-Tx signal pair and value is valid ?*/
+  {
+    snprintf(comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_VALUE].cell[COM_COL_TX].text, CHAR_200, "%d", value);
+    /* Calculate the speed value by scaling the Tx signal to the value range [0..254]  */
+    switch(signalId)
+    {
+      case SIGNAL_ID_EPS_FR0_ST_EST_CRC_ST_EST_FTAX:
+        snprintf(comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_TRANSMITTED].cell[COM_COL_TX].text, CHAR_200, "%.3f [s]", getSignalTransmissionTimeStamp(SIGNAL_ID_EPS_FR0_ST_EST_CRC_ST_EST_FTAX));
+        actualValue = value;                                            /* Scale uint8 [0 ... 0xff] to uint8 [0 ... 0xff] */
+        break;
+    }
+    comUc_UpdatePanelGridRowContent();
+    @sysvar::StartApplication::ComActualOutput = actualValue;
+  }
+}
+
+/**
+ * This function is called when a signal transmitted by the Tester changes.
+ * @param signalId: unique identifier of signal
+ * @param value: new signal value
+ **/
+void StartApplication_OnRxSignalUpdate(dword signalId, int64 value)
+{
+  int64 expectedValue = 0;
+  switch(signalId)
+  {
+    case SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL:
+      StartApplication_OnRxData(value);
+      break;
+    case SIGNAL_ID_EPS_FR0_KILOMETERSTAND_MILE_KM:
+      StartApplication_OnRxCtrl(value);
+      break;
+  }
+  if (activeUsecase != 0 && activeUsecase != 3)
+  {
+    return;
+  }
+  if (signalId == comIdOfRxSignalUnderTest && value != 0xFF) /* Is the signal the Rx signal of the currently selected Rx-Tx signal pair and has a valid value?*/
+  {
+    snprintf(comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_VALUE].cell[COM_COL_RX].text, CHAR_200, "%d", value);
+    switch(signalId)
+    {
+      case SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL:
+        snprintf(comGrid[COM_DATA_GRID_VIEW].row[COM_ROW_TRANSMITTED].cell[COM_COL_RX].text, CHAR_200, "%.3f [s]", getSignalTransmissionTimeStamp(SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL));
+        expectedValue = value/0x1000000;                                  /* Scale uint32 [0 ... 0xffffffff] to uint8 [0 ... 0xff] */
+        break;
+    }
+    comUc_UpdatePanelGridRowContent();
+    @sysvar::StartApplication::ComExpectedOutput = expectedValue;
+  }
+}
+
+/**
+ * This function is called when a signal with array data type transmitted by the ECU changes.
+ * @param length: signal length
+ * @param signalId: unique identifier of signal
+ * @param signalPayload: new signal payload
+ **/
+void StartApplication_OnTxSignalUpdate(dword signalId, byte signalPayload[], dword length)
+{
+  int64 actualValue = 0;
+  word index;
+  dword i;
+  if (activeUsecase != 0 && activeUsecase != 3)
+  {
+    return;
+  }
+  if (signalId == comIdOfTxSignalUnderTest)
+  {
+    actualValue = 0;
+    switch(signalId)
+    {
+    }
+    comUc_UpdatePanelGridRowContent();
+    @sysvar::StartApplication::ComActualOutput = actualValue;
+  }
+}
+
+/**
+ * This function is called when a signal with array data type transmitted by the Tester changes.
+ * @param length: signal length
+ * @param signalId: unique identifier of signal
+ * @param signalPayload: new signal payload
+ **/
+void StartApplication_OnRxSignalUpdate(dword signalId, byte signalPayload[], dword length)
+{
+  byte expectedValue;
+  word index;
+  dword i;
+  if (activeUsecase != 0 && activeUsecase != 3)
+  {
+    return;
+  }
+  if (signalId == comIdOfRxSignalUnderTest)
+  {
+    expectedValue = 0;
+    switch(signalId)
+    {
+    }
+    comUc_UpdatePanelGridRowContent();
+    @sysvar::StartApplication::ComExpectedOutput = expectedValue;
+  }
+}
+
+
+/**
+ * Determine whether the signal has an update bit
+ **/
+byte hasUpdateBit(dword signalId)
+{
+  byte hasUpdateBit;
+  hasUpdateBit = 0;
+  switch ( signalId )
+  {
+    case SIGNAL_ID_EPS_FR0_KILOMETERSTAND_MILE_KM :
+      hasUpdateBit = 0;
+      break;
+    case SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL :
+      hasUpdateBit = 0;
+      break;
+  }
+  return hasUpdateBit;
+}
+
+/**
+ * Get the ID of the PDU which contains the signal
+ **/
+dword getPduIdFromSignalId(dword signalId)
+{
+  switch ( signalId )
+  {
+    case SIGNAL_ID_EPS_FR0_KILOMETERSTAND_MILE_KM : return PDU_ID_EPS_FR0_KILOMETERSTAND;
+    case SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL : return PDU_ID_EPS_FR0_RELATIVZEIT;
+  }
+  writeLineEx(startApplWriteWindow, 3, "Unknown signal id is used, id: %d", signalId);
+  return GLOBAL_MAX_INVALID_DWORD_VALUE;
+}
+
+/**
+ * Output the PDU with the current PDU buffer content as payload
+ **/
+void outputPdu(dword pduId)
+{
+  dword channel;
+  channel = getChannelIdFromPduId(pduId);
+  if (channel != GLOBAL_MAX_INVALID_DWORD_VALUE)
+  {
+    if (CAL_GetChannelOnlineState(channel) != true)
+    {
+      return;
+    }
+  }
+  switch ( pduId )
+  {
+    case PDU_ID_EPS_FR0_KILOMETERSTAND :      frUpdatePdu(EPS_FR0_KILOMETERSTAND, 1, /* Update bit is set on transmission */ 1 /* The PDU is transmitted one time. */);
+      break;
+    case PDU_ID_EPS_FR0_RELATIVZEIT :      frUpdatePdu(EPS_FR0_RELATIVZEIT, 1, /* Update bit is set on transmission */ 1 /* The PDU is transmitted one time. */);
+      break;
+    default:
+      writeLineEx(startApplWriteWindow, 3, "Unknown pdu id is used, id: %d", pduId);
+  }
+}
+/**
+ * Update the PDU buffer with the given payload and output the PDU
+ **/
+void outputPdu(dword pduId, byte payload[], dword pduLength)
+{
+  updatePdu(pduId, payload, pduLength);
+  outputPdu(pduId);
+}
+
+/**
+ * Return the ID of the PDU which corresponds to the given canId on the given channel.
+ * Return GLOBAL_MAX_INVALID_DWORD_VALUE if the given canId is unknown.
+ **/
+dword getPduIdFromCanId(dword canId, dword channel)
+{
+  switch ( channel )
+  {
+    default: return GLOBAL_MAX_INVALID_DWORD_VALUE;
+  }
+}
+
+/**
+ * Return the id of the channel on which the pdu is transmitted.
+ * @param pduId: id of the pdu which channel id is requested
+ * @return channel id of the given pduId
+ **/
+dword getChannelIdFromPduId(dword pduId)
+{
+  switch ( pduId )
+  {
+    case PDU_ID_EPS_FR0_AVL_PO_EPS:
+    case PDU_ID_EPS_FR0_KILOMETERSTAND:
+    case PDU_ID_EPS_FR0_RELATIVZEIT:
+    case PDU_ID_EPS_FR0_ST_EST:
+      return 0;
+    default: return GLOBAL_MAX_INVALID_DWORD_VALUE;
+  }
+}
+
+/**
+ * Return true if the given pduId is Rx Pdu, false otherwise.
+ **/
+dword getIsRxPdu(dword pduId)
+{
+  switch ( pduId )
+  {
+    case PDU_ID_EPS_FR0_KILOMETERSTAND:
+    case PDU_ID_EPS_FR0_RELATIVZEIT:
+      return true;
+    default:
+      return false;
+  }
+}
+
+/**
+ * Update the PDU buffer with the given payload without outputting the PDU
+ **/
+void updatePdu(dword pduId, byte payload[], dword pduLength)
+{
+  dword i;
+  switch ( pduId )
+  {
+    case PDU_ID_EPS_FR0_KILOMETERSTAND:
+    {
+      for ( i = 0; i < pduLength && i < EPS_FR0_KILOMETERSTAND.FR_PDULength; ++i)
+      {
+        EPS_FR0_KILOMETERSTAND.byte(i) = payload[i];
+      }
+      break;
+    }
+    case PDU_ID_EPS_FR0_RELATIVZEIT:
+    {
+      for ( i = 0; i < pduLength && i < EPS_FR0_RELATIVZEIT.FR_PDULength; ++i)
+      {
+        EPS_FR0_RELATIVZEIT.byte(i) = payload[i];
+      }
+      break;
+    }
+    default:
+      writeLineEx(startApplWriteWindow, 3, "Unknown pdu id is used by updatePdu, id: %d", pduId);
+  }
+}
+
+/**
+ * Update the signal in the PDU buffer and output the corresponding PDU
+ **/
+void sendSignal(dword signalId, int64 value)
+{
+  switch ( signalId )
+  {
+    case SIGNAL_ID_EPS_FR0_KILOMETERSTAND_MILE_KM :
+      updateSignal(signalId, value);
+      outputPdu( getPduIdFromSignalId(signalId) );
+      break;
+    case SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL :
+      updateSignal(signalId, value);
+      outputPdu( getPduIdFromSignalId(signalId) );
+      break;
+    default:
+      writeLineEx(startApplWriteWindow, 3, "Unknown signal id is used, id: %d", signalId);
+  }
+}
+
+/**
+ * Update the signal in the PDU buffer without transmission triggering
+ **/
+void updateSignal(dword signalId, int64 value)
+{
+  switch ( signalId )
+  {
+    case SIGNAL_ID_EPS_FR0_KILOMETERSTAND_MILE_KM :
+      EPS_FR0_KILOMETERSTAND.MILE_KM = value;
+      break;
+    case SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL :
+      EPS_FR0_RELATIVZEIT.T_SEC_COU_REL = value;
+      break;
+    default:
+      writeLineEx(startApplWriteWindow, 3, "Unknown signal id is used, id: %d", signalId);
+  }
+}
+
+/**
+ * Update the signal with type array in the PDU buffer without transmission triggering
+ **/
+void updateSignal(dword signalId, byte signalPayLoad[], dword length)
+{
+  dword i;
+  switch ( signalId )
+  {
+    default:
+      writeLineEx(startApplWriteWindow, 3, "Unknown signal id is used, id: %d", signalId);
+  }
+}
+
+/**
+ * Update the update bit signal corresponding to the given by signalId signal with the given value
+ **/
+void updateSignalUpdateBit(dword signalId, byte value)
+{
+  switch ( signalId )
+  {
+    case SIGNAL_ID_EPS_FR0_KILOMETERSTAND_MILE_KM :  /* no update bit signal */ break;
+    case SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL :  /* no update bit signal */ break;
+    default:
+      writeLineEx(startApplWriteWindow, 3, "Unknown signal id is used, id: %d", signalId);
+  }
+}
+
+float getSignalTransmissionTimeStamp(dword signalId)
+{
+  return signalTransmissionTimeStamp[signalId];
+}
+void setSignalTransmissionTimeStamp(dword signalId, float value)
+{
+  signalTransmissionTimeStamp[signalId] = value;
+}
+void initSignalTransmissionTimeStamps()
+{
+  dword i;
+  for (i = 0; i < MAX_SIGNAL_IDS_COUNT; ++i)
+  {
+    setSignalTransmissionTimeStamp(i,  0.0);
+  }
+}
+
+
+on frPDU EPS_FR0.*
+{
+  CAL_OnFrameIndication(0);
+  CAL_OnFrPduIndication(0);
+}
+
+on frPDU EPS_FR0::AVL_PO_EPS
+{
+  CAL_OnFrameIndication( 0 );
+  CAL_OnFrPduIndication( 0 );
+  onTxPduUpdate( PDU_ID_EPS_FR0_AVL_PO_EPS, this.fr_Payload, this.fr_PayloadLength );
+}
+
+on frPDU EPS_FR0::KILOMETERSTAND
+{
+  CAL_OnFrameIndication( 0 );
+  onRxPduUpdate( PDU_ID_EPS_FR0_KILOMETERSTAND );
+}
+
+on frPDU EPS_FR0::RELATIVZEIT
+{
+  CAL_OnFrameIndication( 0 );
+  onRxPduUpdate( PDU_ID_EPS_FR0_RELATIVZEIT );
+}
+
+on frPDU EPS_FR0::ST_EST
+{
+  CAL_OnFrameIndication( 0 );
+  CAL_OnFrPduIndication( 0 );
+  onTxPduUpdate( PDU_ID_EPS_FR0_ST_EST, this.fr_Payload, this.fr_PayloadLength );
+}
+
+on signal_update EPS_FR0::AVL_PO_EPS::CRC_AVL_PO_EPS
+{
+  onTxSignalUpdate( SIGNAL_ID_EPS_FR0_AVL_PO_EPS_CRC_AVL_PO_EPS, this.raw );
+}
+
+on signal_update EPS_FR0::KILOMETERSTAND::MILE_KM
+{
+  onRxSignalUpdate( SIGNAL_ID_EPS_FR0_KILOMETERSTAND_MILE_KM, this.raw );
+}
+
+on signal_update EPS_FR0::RELATIVZEIT::T_SEC_COU_REL
+{
+  onRxSignalUpdate( SIGNAL_ID_EPS_FR0_RELATIVZEIT_T_SEC_COU_REL, this.raw );
+}
+
+on signal_update EPS_FR0::ST_EST::CRC_ST_EST_FTAX
+{
+  onTxSignalUpdate( SIGNAL_ID_EPS_FR0_ST_EST_CRC_ST_EST_FTAX, this.raw );
+}
+
+
+/**
+ * This function is called when a pdu transmitted by the ECU changes
+ **/
+void onTxPduUpdate(dword pduId, byte payload[], dword length)
+{
+  onTxPayloadUpdate(pduId, payload, length);
+}
+
+/**
+ * This function is called when a pdu transmitted by the Tester changes
+ **/
+void onRxPduUpdate(dword pduId)
+{
+  onRxPayloadUpdate(pduId);
+}
+
+/**
+ * This function is called when a signal of type array transmitted by the ECU changes
+ **/
+void onTxSignalUpdate(dword signalId, byte signalPayload[], dword length)
+{
+  setSignalTransmissionTimeStamp(signalId, getCurrentTimeInSeconds());
+  StartApplication_OnTxSignalUpdate(signalId, signalPayload, length);
+}
+
+/**
+ * This function is called when a signal of type array transmitted by the Tester changes
+ **/
+void onRxSignalUpdate(dword signalId, byte signalPayload[], dword length)
+{
+  setSignalTransmissionTimeStamp(signalId, getCurrentTimeInSeconds());
+  StartApplication_OnRxSignalUpdate(signalId, signalPayload, length);
+}
+
+/**
+ * This function is called when a signal transmitted by the ECU changes
+ **/
+void onTxSignalUpdate(dword signalId, int64 value)
+{
+  setSignalTransmissionTimeStamp(signalId, getCurrentTimeInSeconds());
+  StartApplication_OnTxSignalUpdate(signalId, value);
+}
+
+/**
+ * This function is called when a signal transmitted by the Tester changes
+ **/
+void onRxSignalUpdate(dword signalId, int64 value)
+{
+  setSignalTransmissionTimeStamp(signalId, getCurrentTimeInSeconds());
+  StartApplication_OnRxSignalUpdate(signalId, value);
+}
+
+/**
+ * This function is called when the payload of a pdu transmitted by the ECU changes
+ **/
+void onTxPayloadUpdate(dword pduId, byte payload[], dword length)
+{
+}
+
+/**
+ * This function is called when the payload of a pdu transmitted by the Tester changes
+ **/
+void onRxPayloadUpdate(dword pduId)
+{
+}
+
+
+
+
+/**
+ * Notify about the FR symbol occurrence on the given FR channel
+ * @param channel: FlexRay channel ID
+ **/
+void CAL_OnFrSymbol(dword channel)
+{
+}
+
+/**
+ * Notify about the FlexRay pdu occurrence on the channel
+ * @param channel: channel ID
+ **/
+void CAL_OnFrPduIndication(dword channel)
+{
+  switch( channel )
+  {
+    case 0 :
+      break;
+    default: break;
+  }
+}
+
+/**
+ * Notify about the frame occurrence on the channel
+ * @param channel: channel ID
+ **/
+void CAL_OnFrameIndication(dword channel)
+{
+  msgCounter[channel]++;
+}
+
+/**
+ * Notify about the poc state event on the given FR channel
+ * @param channel: FlexRay channel ID
+ * @param pocState: new poc state value
+ **/
+void CAL_OnFrPocState(dword channel, long pocState)
+{
+  if (isSimulated())
+  {
+    if (2 /*NORMAL ACTIVE*/ == pocState)
+    {
+      CAL_SetChannelOnlineState(channel, true);
+    }
+    else
+    {
+      CAL_SetChannelOnlineState(channel, false);
+    }
+  }
+}
+
+/**
+ * Notify about the start cycle on the given FR channel
+ * @param channel: FlexRay channel ID
+ * @param cycle: new cycle value
+ **/
+void CAL_OnFrStartCycle(dword channel, word cycle)
+{
+}
+
+
+
+/**
+ * A different use case was selected.
+ **/
+on sysvar StartApplication::UseCaseActivator
+{
+  int newUseCase;
+  newUseCase = @sysvar::StartApplication::UseCaseActivator;
+
+  if(newUseCase != 255)
+  {
+
+    deactivatePanel(activeUsecase);
+    activatePanel(newUseCase);
+
+    if (newUseCase == 0 || newUseCase == 3)
+    {
+      timerForSensorValueChange.setCyclic(150);
+      if (@sysvar::StartApplication::ComSendCtrl < 2 )
+      {
+        autoSensorValueChange = 1;
+      }
+      if (@sysvar::StartApplication::ComInput > 254 || @sysvar::StartApplication::ComInput < 0)
+      {
+        @sysvar::StartApplication::ComInput = 0;
+      }
+      @StartApplication::ComSignalPairSelector = @StartApplication::ComSignalPairSelector;
+    }
+    startRxCmdSignalConfTimer(1);
+    activeUsecase = newUseCase;
+    writeRxDataSig(0xFF);
+    writeRxCtrlSig(activeUsecase);
+  }
+}
+
+/**
+ * The sensor value has changed, calculate the new signal values and send the corresponding messages to the ECU
+ **/
+on sysvar StartApplication::ComInput
+{
+    byte value;
+    if (activeUsecase == 0 || activeUsecase == 3)
+    {
+      value =  @sysvar::StartApplication::ComInput;
+      sendComRxSignals(value);
+    }
+}
+
+/**
+ * Increase or Decrease Value if Play is active
+ **/
+on timer timerForSensorValueChange
+{
+  int i;
+  if (activeUsecase == 0 || activeUsecase == 3)
+  {
+    if ( autoSensorValueChange == 1 )
+    {
+      /* Play button is pressed --> Change sensor value */
+      if ( @sysvar::StartApplication::ComValueShapeKind == 0 )
+      {
+        /* The sensor value is incremented periodically */
+        if ( @sysvar::StartApplication::ComInput < 254 )
+        {
+           @sysvar::StartApplication::ComInput = @sysvar::StartApplication::ComInput + 1;
+        }
+        if ( @sysvar::StartApplication::ComInput >= 254 )
+        {
+          /* sensor value has reached upper boundary --> switch to decrement */
+          @sysvar::StartApplication::ComValueShapeKind = 1;
+        }
+      }
+      else
+      {
+        /* The sensor value is decremented periodically */
+        if ( @sysvar::StartApplication::ComInput > 0 )
+        {
+           @sysvar::StartApplication::ComInput = @sysvar::StartApplication::ComInput - 1;
+        }
+        if ( @sysvar::StartApplication::ComInput <= 0 )
+        {
+          /* sensor value has reached lower boundary --> switch to increment */
+          @sysvar::StartApplication::ComValueShapeKind = 0;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Handle Play and Pause button
+ **/
+on sysvar StartApplication::ComSendCtrl
+{
+  int value;
+  value = @sysvar::StartApplication::ComSendCtrl;
+  if (@sysvar::StartApplication::ComSendCtrl > 1)
+  {
+    autoSensorValueChange = 0; //deactivate automatic change of sensor value
+  }
+  else
+  {
+    autoSensorValueChange = 1;
+  }
+  comUiElement[COM_UI_PLAY_BTN].enabled = !autoSensorValueChange;
+  comUiElement[COM_UI_PAUSE_BTN].enabled = autoSensorValueChange;
+  comUc_UpdateUiContent();
+}
+
+on sysvar StartApplication::ComExpectedOutput
+{
+  @sysvar::StartApplication::ComCmpOutputs = @sysvar::StartApplication::ComActualOutput - @sysvar::StartApplication::ComExpectedOutput;
+}
+
+on sysvar StartApplication::ComActualOutput
+{
+  @sysvar::StartApplication::ComCmpOutputs = @sysvar::StartApplication::ComActualOutput - @sysvar::StartApplication::ComExpectedOutput;
+}
+
+/**
+ * The RxCtrl signal was transmitted on the bus, update the retransmission counter
+ **/
+void StartApplication_OnRxCtrl (int data)
+{
+  if (data != 0xFF && RxCtrlConfCounter > 0)
+  {
+    RxCtrlConfCounter--;
+  }
+}
+
+/**
+ * The RxData signal was transmitted on the bus, update the retransmission counter
+ **/
+void StartApplication_OnRxData (int data)
+{
+  if (data != 0xFF && RxCtrlConfCounter == 0 && RxDataConfCounter > 0)
+  {
+    RxDataConfCounter--;
+  }
+}
+
+/**
+ * The TxData signal was transmitted by the ECU, update the system variable of the active use case
+ **/
+void StartApplication_OnTxData (int data)
+{
+  switch(activeUsecase)
+  {
+    case 1:
+      sysSetVariableInt(sysvar::StartApplication::MemNvReadCurrValue,data);
+      break;
+    case 2:
+      @sysvar::StartApplication::DiagCounterValueFromTxData = data;
+      break;
+    case 4:
+      @sysvar::StartApplication::WdgUptimeCounter = data;
+      break;
+  }
+}
+
+/**
+ * The TxCtrl signal was transmitted by the ECU, update the system variable of the active use case
+ **/
+void StartApplication_OnTxCtrl(int data)
+{
+  switch(activeUsecase)
+  {
+    case 1:
+      if (data <= 6)
+      {
+        @sysvar::StartApplication::MemNvPendingExtended = data;
+      }
+      break;
+  }
+}
+
+void setRxCtrlConfCounter()
+{
+  if (LastRxCtrlSignalValue != 0xFF && isTimerActive(RxCmdSignalConfTimer) == 1)
+  {
+    RxCtrlConfCounter += RXCMD_CONF_COUNTER_INIT_VALUE;
+  }
+}
+
+void setRxDataConfCounter()
+{
+  if (LastRxDataSignalValue != 0xFF && isTimerActive(RxCmdSignalConfTimer) == 1)
+  {
+    RxDataConfCounter += RXCMD_CONF_COUNTER_INIT_VALUE;
+  }
+}
+
+void startRxCmdSignalConfTimer(byte isRxCtrlSignal)
+{
+  if (isRxCtrlSignal)
+  {
+    RxCtrlConfCounter = 0;
+  }
+  RxDataConfCounter = 0;
+  if (isTimerActive(RxCmdSignalConfTimer) == 0)
+  {
+    setTimer(RxCmdSignalConfTimer, RxCmdSignalConfTimeout);
+  }
+}
+on sysvar StartApplication::MemNvStoreValue
+{
+  memValue = sysGetVariableInt(this);
+}
+
+on sysvar StartApplication::MemNvStore
+{
+  if (sysGetVariableInt(this) == 1)
+  {
+    writeLineEx(startApplWriteWindow,4,"MemUsecase: Write value %d to Mem Block", memValue);
+    writeRxDataSig(memValue);
+  }
+}
+
+on sysvar StartApplication::MemActivator
+{
+  if (sysGetVariableInt(this) == 1)
+  {
+    @sysvar::StartApplication::UseCaseActivator = 1;
+  }
+}
+
+on sysvar StartApplication::MemNvPendingExtended
+{
+    if(@this == MEM_STATE_WRITE_PENDING || @this == MEM_STATE_READ_PENDING)
+    {
+      @sysvar::StartApplication::MemNvPending = 1;
+      writeRxDataSig(0xFF);
+    }
+    else
+    {
+      @sysvar::StartApplication::MemNvPending = 0;
+    }
+}
+
+/**
+ * Enable/disable the controls of the panel for the DIAG use case
+ **/
+void setDiagPanelStatus(byte isEnabled)
+{
+  enableControl("StartApplication DIAG", "diagSetEventFailedButton", isEnabled);
+  enableControl("StartApplication DIAG", "diagSetEventPassedButton", isEnabled);
+  enableControl("StartApplication DIAG", "diagWDBIButton", isEnabled);
+  enableControl("StartApplication DIAG", "diagRDBIButton", isEnabled);
+  enableControl("StartApplication DIAG", "diagCDTCIButton", isEnabled);
+  enableControl("StartApplication DIAG", "diagRDTCSSBDTCButton", isEnabled);
+  enableControl("StartApplication DIAG", "diagChannelSelector", isEnabled);
+  if(!isEnabled)
+  {
+    putValueToControl("StartApplication DIAG","BusLog_Time", "");
+    putValueToControl("StartApplication DIAG","BusLog_Type", "");
+    putValueToControl("StartApplication DIAG","BusLog_Service", "");
+    putValueToControl("StartApplication DIAG","BusLog_Status", "");
+  }
+}
+
+on sysvar StartApplication::DiagActivator
+{
+  if (sysGetVariableInt(this) == 1)
+  {
+    @sysvar::StartApplication::UseCaseActivator = 2;
+  }
+}
+
+on sysvar StartApplication::DiagSetEventStatusFailed
+{
+  if (sysGetVariableInt(this) == 1)
+  {
+    writeLineEx(startApplWriteWindow, 4, "DiagUsecase: Set DemEvent to Failed and increment event counter");
+    if(diagRxDataCounter > 63)
+    {
+      diagRxDataCounter = 0; //reset counter when reaching its max value (6 bits)
+    }
+    //send out rxData counter (bit 2-7) and event status failed command (0x1 in bit 0 and 1) in RxData signal
+    writeRxDataSig( (diagRxDataCounter << 2) | 1);
+    diagRxDataCounter++;
+  }
+}
+
+on sysvar StartApplication::DiagSetEventStatusPassed
+{
+  if (sysGetVariableInt(this) == 1)
+  {
+    writeLineEx(startApplWriteWindow, 4, "DiagUsecase: Set DemEvent to Passed and increment event counter");
+    if(diagRxDataCounter > 63)
+    {
+      diagRxDataCounter = 0; //reset counter when reaching its max value (6 bits)
+    }
+    //send out rxData counter (bit 2-7) and event status passed command (0x0 in bit 0 and 1) in RxData signal
+    writeRxDataSig(diagRxDataCounter << 2);
+    diagRxDataCounter++;
+  }
+}
+
+on sysvar StartApplication::DiagResetCounterWithRxData
+{
+  if (sysGetVariableInt(this) == 1)
+  {
+    writeLineEx(startApplWriteWindow, 4, "DiagUsecase: Send RxData to reset event counter to 0");
+    if(diagRxDataCounter > 63)
+    {
+      diagRxDataCounter = 0; //reset counter when reaching its max value (6 bits)
+    }
+    //send out event counter (bit 2-7) and reset counter command (0x2 in bit 0 and 1) in RxData signal
+    writeRxDataSig(diagRxDataCounter << 2 | 2);
+    diagRxDataCounter++;
+  }
+}
+
+on sysvar StartApplication::DiagGetDTCSnapshot
+{
+  BYTE data[6] = {dcmServiceIdRDTCI, dcmRDTCIsubFunctionRDTCSSBDTC, dcmDTCHighByte, dcmDTCMiddleByte, dcmDTCLowByte, dcmDTCSnapshotRecordNumber};
+  if (@this == 1)
+  {
+    if (diagUdsServiceConfigData[@sysvar::StartApplication::DiagChannel].rdtcssbdtcSessionLevel != 0) {
+      diagUdsSendDscRequest(@sysvar::StartApplication::DiagChannel, diagUdsServiceConfigData[@sysvar::StartApplication::DiagChannel].rdtcssbdtcSessionLevel);
+    }
+    writeLineEx(startApplWriteWindow,4,"DiagUsecase: Send RDTCSSBDTC to get DTC Snapshot");
+    sendUDSRequest(@sysvar::StartApplication::DiagChannel, data, elCount(data));
+  }
+}
+
+on sysvar StartApplication::DiagClearDTC
+{
+  BYTE data[4] = {dcmServiceIdCDTCI, dcmDTCHighByte, dcmDTCMiddleByte, dcmDTCLowByte};
+  if (@this == 1)
+  {
+    if (diagUdsServiceConfigData[@sysvar::StartApplication::DiagChannel].cdtciSessionLevel != 0) {
+      diagUdsSendDscRequest(@sysvar::StartApplication::DiagChannel, diagUdsServiceConfigData[@sysvar::StartApplication::DiagChannel].cdtciSessionLevel);
+    }
+    writeLineEx(startApplWriteWindow,4,"DiagUsecase: Send CDTCI to clear DTC");
+    sendUDSRequest(@sysvar::StartApplication::DiagChannel, data, elCount(data));
+  }
+}
+
+on sysvar StartApplication::DiagActivateDefaultSession
+{
+  if (@this == 1)
+  {
+    writeLineEx(startApplWriteWindow,4,"DiagUsecase: Request Default Session");
+    diagUdsSendDscRequest(@sysvar::StartApplication::DiagChannel, 0x01);
+  }
+}
+
+on sysvar StartApplication::DiagGetCounter
+{
+  BYTE data[3] = {dcmServiceIdRDBI, dcmDidIdHigh, dcmDidIdLow};
+  if (@this == 1)
+  {
+    if (diagUdsServiceConfigData[@sysvar::StartApplication::DiagChannel].rdbiSessionLevel != 0) {
+      diagUdsSendDscRequest(@sysvar::StartApplication::DiagChannel, diagUdsServiceConfigData[@sysvar::StartApplication::DiagChannel].rdbiSessionLevel);
+    }
+    writeLineEx(startApplWriteWindow,4,"DiagUsecase: Send RDBI to query current value of event counter");
+    sendUDSRequest(@sysvar::StartApplication::DiagChannel, data, elCount(data));
+  }
+}
+
+on sysvar StartApplication::DiagResetCounter
+{
+  if (@this == 1)
+  {
+    writeLineEx(startApplWriteWindow,4,"DiagUsecase: Send WDBI to reset event counter to 0");
+    @sysvar::StartApplication::DiagSetCounter = 0;
+  }
+}
+
+on sysvar_update StartApplication::DiagSetCounter
+{
+  BYTE data[5] = {dcmServiceIdWDBI, dcmDidIdHigh, dcmDidIdLow, 0x00, 0x00};
+  data[3] = @sysvar::StartApplication::DiagSetCounter >> 8;
+  data[4] = @sysvar::StartApplication::DiagSetCounter & 0xFF;
+
+  if (diagUdsServiceConfigData[@sysvar::StartApplication::DiagChannel].wdbiSessionLevel != 0) {
+    diagUdsSendDscRequest(@sysvar::StartApplication::DiagChannel, diagUdsServiceConfigData[@sysvar::StartApplication::DiagChannel].wdbiSessionLevel);
+  }
+  sendUDSRequest(@sysvar::StartApplication::DiagChannel, data, elCount(data));
+}
+
+/**
+ * Called if the currently active channel of the DIAG use case is changed.
+ * Sends a UDS session request for the default channel on the previously active channel.
+ */
+on sysvar StartApplication::DiagChannel
+{
+  int oldChannel = 0;
+  diagUdsRequestQueueClear();
+  writeLineEx(startApplWriteWindow,4,"DiagUsecase: Channel was changed");
+  diagUdsSendDscRequest(oldChannel, 0x01);
+  oldChannel = @this;
+}
+
+/**
+ * Send a DiagnosticSessionControl UDS request.
+ * @param diagChannel: The channel over which the request should be sent
+ * @param sessionLevel: The session to request
+ */
+void diagUdsSendDscRequest(int diagChannel, byte sessionLevel)
+{
+  BYTE data[2] = {dcmServiceIdDSC, 0x00};
+  data[1] = sessionLevel;
+  writeLineEx(startApplWriteWindow,4,"DiagUsecase: Send DSC Request");
+  sendUDSRequest(diagChannel, data, elCount(data));
+}
+
+/**
+ * Check if a diagnostic request is currently in progress, i.e. the request was sent but the response was not received yet.
+ */
+int diagUdsRequestQueueIsRequestInProgress()
+{
+  return diagUdsRequestQueue.requestInProgress != 0;
+}
+
+/**
+ * Set that a diagnostic request is now in progress, i.e. the request was sent.
+ */
+void diagUdsRequestQueueSetInProgress()
+{
+  diagUdsRequestQueue.requestInProgress = 1;
+  if (diagUdsRequestQueueIsEmpty())
+  {
+    @StartApplication::DiagRequestState = DIAG_QUEUE_EMPTY_REQUEST_ACTIVE;
+  }
+  else
+  {
+    @StartApplication::DiagRequestState = DIAG_QUEUE_NOT_EMPTY_REQUEST_ACTIVE;
+  }
+}
+
+/**
+ * Set that a diagnostic request is currently not in progress, i.e. the response for the previously active request was received.
+ */
+void  diagUdsRequestQueueSetNotInProgress()
+{
+  diagUdsRequestQueue.requestInProgress = 0;
+  if (diagUdsRequestQueueIsEmpty())
+  {
+    @StartApplication::DiagRequestState = DIAG_QUEUE_EMPTY_REQUEST_NOT_ACTIVE;
+  }
+  else
+  {
+    @StartApplication::DiagRequestState = DIAG_QUEUE_NOT_EMPTY_REQUEST_NOT_ACTIVE;
+  }
+}
+
+/**
+ * Reset the diagnostic request queue. This clears all entries and the current request state.
+ */
+void diagUdsRequestQueueReset()
+{
+  diagUdsRequestQueue.head = 0;
+  diagUdsRequestQueue.size = 0;
+  diagUdsRequestQueue.requestInProgress = 0;
+  @StartApplication::DiagRequestState = DIAG_QUEUE_EMPTY_REQUEST_NOT_ACTIVE;
+}
+
+/**
+ * Clear the diagnostic request queue. This clears all entries and keeps current request state.
+ */
+void diagUdsRequestQueueClear()
+{
+  diagUdsRequestQueue.head = 0;
+  diagUdsRequestQueue.size = 0;
+  if (diagUdsRequestQueueIsRequestInProgress())
+  {
+    @StartApplication::DiagRequestState = DIAG_QUEUE_EMPTY_REQUEST_ACTIVE;
+  }
+  else
+  {
+    @StartApplication::DiagRequestState = DIAG_QUEUE_EMPTY_REQUEST_NOT_ACTIVE;
+  }
+}
+
+/**
+ * Check if the diagnostic request queue is empty.
+ */
+int diagUdsRequestQueueIsEmpty()
+{
+  return diagUdsRequestQueue.size == 0;
+}
+
+/**
+ * Check if the diagnostic request queue is full.
+ */
+int diagUdsRequestQueueIsFull()
+{
+  return diagUdsRequestQueue.size == DIAG_UDS_REQUEST_QUEUE_LENGTH;
+}
+
+/**
+ * Add an entry to the diagnostic request queue (FIFO). In case the queue is full the entry is ignored.
+ * @param entry: The UDS request to add to the queue
+ */
+void diagUdsRequestEnqueue(struct DiagUdsRequestQueueEntry entry)
+{
+  if (!diagUdsRequestQueueIsFull())
+  {
+    diagUdsRequestQueue.head++;
+    if(diagUdsRequestQueue.head >= DIAG_UDS_REQUEST_QUEUE_LENGTH)
+    {
+      diagUdsRequestQueue.head = 0;
+    }
+    diagUdsRequestQueue.size++;
+    memcpy(diagUdsRequestQueue.queue[diagUdsRequestQueue.head], entry);
+    if (diagUdsRequestQueueIsRequestInProgress())
+    {
+      @StartApplication::DiagRequestState = DIAG_QUEUE_NOT_EMPTY_REQUEST_ACTIVE;
+    }
+    else
+    {
+      @StartApplication::DiagRequestState = DIAG_QUEUE_NOT_EMPTY_REQUEST_NOT_ACTIVE;
+    }
+  }
+  else
+  {
+    logError("DiagUseCase: DiagUdsRequestQueue is full, UDS request is lost");
+  }
+}
+
+/**
+ * Get the next entry of the diagnostic request queue (FIFO). In case the queue is empty the out parameter is not changed.
+ * @param entry: Output parameter which contains the next entry
+ */
+void diagUdsRequestDequeue(struct DiagUdsRequestQueueEntry entry)
+{
+  int tailPosition;
+  if (!diagUdsRequestQueueIsEmpty())
+  {
+    tailPosition = (diagUdsRequestQueue.head + DIAG_UDS_REQUEST_QUEUE_LENGTH - diagUdsRequestQueue.size + 1) % DIAG_UDS_REQUEST_QUEUE_LENGTH;
+    memcpy(entry, diagUdsRequestQueue.queue[tailPosition]);
+    diagUdsRequestQueue.size--;
+    if (diagUdsRequestQueueIsEmpty())
+    {
+      if (diagUdsRequestQueueIsRequestInProgress())
+      {
+        @StartApplication::DiagRequestState = DIAG_QUEUE_EMPTY_REQUEST_ACTIVE;
+      }
+      else
+      {
+        @StartApplication::DiagRequestState = DIAG_QUEUE_EMPTY_REQUEST_NOT_ACTIVE;
+      }
+    }
+    else
+    {
+      if (diagUdsRequestQueueIsRequestInProgress())
+      {
+        @StartApplication::DiagRequestState = DIAG_QUEUE_NOT_EMPTY_REQUEST_ACTIVE;
+      }
+      else
+      {
+        @StartApplication::DiagRequestState = DIAG_QUEUE_NOT_EMPTY_REQUEST_NOT_ACTIVE;
+      }
+    }
+  }
+}
+
+/**
+ * Called in case there is no response for a request after a given timeout.
+ * Clears the inProgress flag of the queue and continues with diagnostic request queue execution.
+ */
+on timer diagUdsRequestTimeoutTimer
+{
+  logError("DiagUseCase: UdsResponse Timeout after 5 seconds");
+  diagUdsRequestQueueSetNotInProgress();
+  diagHandleUdsRequest();
+}
+
+/**
+ * Send a UDS request on the given connection.
+ * The request is added the diagnostic request queue and the queue execution is triggered.
+ * @param connId: The diag channel id over which the request should be sent
+ * @param request: The request as byte array
+ * @param requestLength: The length of the request in bytes
+ */
+void sendUDSRequest(int connId, byte request[], long requestLength)
+{
+  long payloadLength;
+  int msgLength;
+  struct DiagUdsRequestQueueEntry queueEntry;
+  queueEntry.connectionId = connId;
+  queueEntry.request.bufferSize = requestLength;
+  memcpy(queueEntry.request.buffer, request, requestLength);
+  diagUdsRequestEnqueue(queueEntry);
+  diagHandleUdsRequest();
+}
+
+void diagOnPrestop()
+{
+}
+
+void diagInitializeBuscontext()
+{
+  buscontext_EPS_FR0 = GetBusNameContext("EPS_FR0");
+}
+
+/**
+ * Handle the diagnostic request queue execution.
+ * This includes the creation of the connections and sending of the request.
+ */
+void diagHandleUdsRequest()
+{
+  struct dcmBuffer dcmUdsBuffer;
+  struct DiagUdsRequestQueueEntry queueEntry;
+  int connId;
+
+  if (diagUdsRequestQueueIsEmpty())
+  {
+    return;
+  }
+  if (diagUdsRequestQueueIsRequestInProgress())
+  {
+    return;
+  }
+  diagUdsRequestDequeue(queueEntry);
+  connId = queueEntry.connectionId;
+  memcpy(dcmUdsBuffer, queueEntry.request);
+  diagUdsRequestQueueSetInProgress();
+
+  switch(connId)
+  {
+    // DcmDslConnection 'DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4' on channel 'EPS_FR0'
+    case(0):
+      SetBusContext(buscontext_EPS_FR0);
+      if(!dcmFrTpConnectionOpen_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4)
+      {
+        createDcmTxConnection_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4();
+        createDcmRxConnection_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4();
+        dcmFrTpConnectionOpen_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = 1;
+      }
+      FrTP_DataRequest(dcmFrTpRxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmUdsBuffer.buffer, dcmUdsBuffer.bufferSize);
+      break;
+    default:
+      writeLineEx(startApplWriteWindow,4,"DiagUsecase: Unknown bus system: %d", connId);
+  }
+  setTimer(diagUdsRequestTimeoutTimer, DIAG_UDS_REQUEST_TIMEOUT);
+  updateDiagDataGridRequestInfo(dcmUdsBuffer.buffer);
+}
+
+
+void FrTP_ReceptionInd(long connHandle, byte data[])
+{
+  // DcmDslConnection 'DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4' on channel 'EPS_FR0'
+  if (connHandle == dcmFrTpTxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4)
+  {
+    writeLineEx(startApplWriteWindow,4,"DiagUsecase: Received data on FrTp connection %d", connHandle);
+    handleUDSResponse(data, elcount(data));
+  }
+}
+
+void FrTP_ErrorInd( long connHandle, dword error)
+{
+  logError("DiagUsecase ERROR: FrTP_ErrorInd was called for the connection", connHandle);
+  logError("DiagUsecase ERROR: FrTP_ErrorInd was called with the error code", error);
+}
+
+/**
+ * Create Rx TpConnection for DcmDslConnection 'DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4' on channel 'EPS_FR0'
+ **/
+void createDcmRxConnection_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4()
+{
+  writeLineEx(startApplWriteWindow,4,"DiagUsecase: Create dcmFrTpRxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4");
+
+  dcmFrTpRxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = FrTP_CreateConnUnicast( 0x0000, frTpPdu_TL_MST_GW_TRNSM_FR_254.name, frTpPdu_TL_ECU_TRNSM_FR_32.name);
+  FrTP_SetAddresses(dcmFrTpRxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpRxRemoteAddress_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpRxLocalAddress_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4);
+  FrTP_SetTimingParams(dcmFrTpRxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpRxTimeoutAs_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpRxTimeoutAr_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpRxTimeoutBs_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpRxTimeBr_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpRxTimeCs_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpRxTimeoutCr_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4);
+  FrTP_SetMaxPDULength(dcmFrTpRxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpRxMinimalPduLength_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4);
+}
+/**
+ * Create Tx TpConnection for DcmDslConnection 'DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4' on channel 'EPS_FR0'
+ **/
+void createDcmTxConnection_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4()
+{
+  writeLineEx(startApplWriteWindow,4,"DiagUsecase: Create dcmFrTpTxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4");
+
+  dcmFrTpTxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4 = FrTP_CreateConnUnicast( 0x0000, frTpPdu_TL_MST_GW_TRNSM_FR_254.name, frTpPdu_TL_ECU_TRNSM_FR_32.name);
+  FrTP_SetAddresses(dcmFrTpTxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpTxRemoteAddress_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpTxLocalAddress_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4);
+  FrTP_SetTimingParams(dcmFrTpTxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpTxTimeoutAs_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpTxTimeoutAr_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpTxTimeoutBs_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpTxTimeBr_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpTxTimeCs_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpTxTimeoutCr_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4);
+  FrTP_SetMaxPDULength(dcmFrTpTxConnectionhandle_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4, dcmFrTpTxMinimalPduLength_DcmDslProtocolRow_DCM_UDS_ON_FLEXRAY_DcmDslConnection_0xF4);
+}
+/**
+ * Clear buffer
+ **/
+void clearBuffer(byte buffer[])
+{
+  long empty;
+  clearBuffer(buffer, empty);
+}
+/**
+ * Clear buffer
+ **/
+void clearBuffer(byte buffer[], long& bufferSize)
+{
+  int i;
+  for(i=0;i<elCount(buffer);i++)
+  {
+    buffer[i] = 0x00;
+  }
+  bufferSize = 0;
+}
+
+void clearBuffer(struct dcmBuffer bufferStruct)
+{
+  clearBuffer(bufferStruct.buffer, bufferStruct.bufferSize);
+}
+
+
+
+/**
+ * Called if a response for a UDS request was received.
+ * Triggers the further execution of the diagnostic request queue.
+ * @param data: The response as byte array
+ * @param dataLength: The length of the response in bytes
+ **/
+void handleUDSResponse(byte data[], int dataLength )
+{
+  writeLineEx(startApplWriteWindow,4,"DiagUsecase: Received %d bytes [%02x] ..." , dataLength, data[0]);
+  sysSetVariableInt(sysvar::StartApplication::DiagResponseCode,data[0]);
+  if (dataLength == DIAG_UDS_RESPONSE_INDEX_RDBI_DATA + 2 && data[DIAG_UDS_RESPONSE_INDEX_SID] == (dcmServiceIdRDBI + 0x40))
+  {
+    writeLineEx(startApplWriteWindow,4," - Positive Response to RDBI");
+    writeLineEx(startApplWriteWindow,4,"   - byte[DIAG_UDS_RESPONSE_INDEX_RDBI_DATA] = %d", data[DIAG_UDS_RESPONSE_INDEX_RDBI_DATA]);
+    writeLineEx(startApplWriteWindow,4,"   - byte[DIAG_UDS_RESPONSE_INDEX_RDBI_DATA + 1] = %d", data[DIAG_UDS_RESPONSE_INDEX_RDBI_DATA + 1]);
+    sysSetVariableInt(sysvar::StartApplication::DiagCounterValue,(data[DIAG_UDS_RESPONSE_INDEX_RDBI_DATA] << 8) | data[DIAG_UDS_RESPONSE_INDEX_RDBI_DATA + 1]);
+  }
+  if (dataLength == 3 && data[DIAG_UDS_RESPONSE_INDEX_SID] == (dcmServiceIdWDBI + 0x40))
+  {
+    writeLineEx(startApplWriteWindow,4," - Positive Response to WDBI");
+  }
+  if (dataLength == 3 && data[DIAG_UDS_RESPONSE_INDEX_SID] == (dcmServiceIdDSC + 0x40))
+  {
+    writeLineEx(startApplWriteWindow,4," - Positive Response to DSC");
+  }
+  if(dataLength > DIAG_UDS_RESPONSE_INDEX_RDTCSSBDTC_STATUS && data[DIAG_UDS_RESPONSE_INDEX_SID] == (dcmServiceIdRDTCI + 0x40))
+  {
+    sysSetVariableInt(sysvar::StartApplication::DiagDTCStatusByteValue, data[DIAG_UDS_RESPONSE_INDEX_RDTCSSBDTC_STATUS]);
+    if(dataLength > DIAG_UDS_RESPONSE_INDEX_RDTCSSBDTC_DATA + 1)
+    {
+      sysSetVariableInt(sysvar::StartApplication::DiagSnapshotDataValue, (data[DIAG_UDS_RESPONSE_INDEX_RDTCSSBDTC_DATA] << 8) | data[DIAG_UDS_RESPONSE_INDEX_RDTCSSBDTC_DATA + 1]);
+    }
+    else
+    {
+      sysSetVariableInt(sysvar::StartApplication::DiagSnapshotDataValue, -1);
+    }
+    writeLineEx(startApplWriteWindow,4," - Positive Response to RDTCI");
+  }
+  if(dataLength == 1 && data[DIAG_UDS_RESPONSE_INDEX_SID] == (dcmServiceIdCDTCI + 0x40))
+  {
+    writeLineEx(startApplWriteWindow,4," - Positive Response to CDTCI");
+  }
+  updateDiagDataGridResponseInfo(data);
+  cancelTimer(diagUdsRequestTimeoutTimer);
+  diagUdsRequestQueueSetNotInProgress();
+  diagHandleUdsRequest();
+}
+
+/**
+ * Write diagnostic response info to DIAG panel
+ **/
+void updateDiagDataGridResponseInfo(byte buffer[])
+{
+  char formatter[50];
+  diagDataGridResponse.time = getCurrentTimeInSeconds();
+  snprintf(diagDataGridResponse.type, elcount(diagDataGridResponse.type), "Response");
+  switch(buffer[0])
+  {
+    case dcmServiceIdDSC + 0x40:
+      snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service),"DSC");
+      snprintf(diagDataGridResponse.status,elcount(diagDataGridResponse.service),"positive");
+      break;
+    case dcmServiceIdRDBI + 0x40:
+      snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service),"RDBI");
+      snprintf(diagDataGridResponse.status,elcount(diagDataGridResponse.service),"positive");
+      break;
+    case dcmServiceIdWDBI + 0x40:
+      snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service),"WDBI");
+      snprintf(diagDataGridResponse.status,elcount(diagDataGridResponse.service),"positive");
+      break;
+    case dcmServiceIdCDTCI + 0x40:
+      snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service),"CDTCI");
+      snprintf(diagDataGridResponse.status,elcount(diagDataGridResponse.service),"positive");
+      break;
+    case dcmServiceIdRDTCI + 0x40:
+      snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service),"RDTCI");
+      snprintf(diagDataGridResponse.status,elcount(diagDataGridResponse.service),"positive");
+      break;
+    case dcmRDTCIsubFunctionRDTCSSBDTC + 0x40:
+      snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service),"RDTCSSBDTC");
+      snprintf(diagDataGridResponse.status,elcount(diagDataGridResponse.service),"positive");
+      break;
+    case 0x7F:
+      snprintf(diagDataGridResponse.status,elcount(diagDataGridResponse.service),"negative");
+      switch(buffer[1])
+      {
+        case dcmServiceIdDSC: snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service),"DSC"); break;
+        case dcmServiceIdRDBI: snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service),"RDBI"); break;
+        case dcmServiceIdWDBI: snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service),"WDBI"); break;
+        case dcmServiceIdCDTCI: snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service),"CDTCI"); break;
+        case dcmServiceIdRDTCI: snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service),"RDTCI"); break;
+        case dcmRDTCIsubFunctionRDTCSSBDTC: snprintf(diagDataGridRequest.service,elcount(diagDataGridRequest.service),"RDTCSSBDTC"); break;
+        default: snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service), ""); break;
+      }
+      break;
+    default:
+      snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service), "");
+      snprintf(diagDataGridResponse.service,elcount(diagDataGridResponse.service), "");
+      break;
+  }
+  snprintf(formatter, 10, "%.3f", diagDataGridResponse.time);
+  strncat(diagUcBusLogDataText.time, formatter, 50);
+  strncat(diagUcBusLogDataText.type, diagDataGridResponse.type, 50);
+  strncat(diagUcBusLogDataText.service, diagDataGridResponse.service, 50);
+  strncat(diagUcBusLogDataText.status, diagDataGridResponse.status, 50);
+  putValueToControl("StartApplication DIAG", "BusLog_Time", diagUcBusLogDataText.time);
+  putValueToControl("StartApplication DIAG", "BusLog_Type", diagUcBusLogDataText.type);
+  putValueToControl("StartApplication DIAG", "BusLog_Service", diagUcBusLogDataText.service);
+  putValueToControl("StartApplication DIAG", "BusLog_Status", diagUcBusLogDataText.status);
+}
+
+/**
+ * Write diagnostic request info to DIAG panel
+ **/
+void updateDiagDataGridRequestInfo(byte buffer[])
+{
+  char formatter[50];
+  diagDataGridRequest.time = getCurrentTimeInSeconds();
+  snprintf(diagDataGridRequest.type, elcount(diagDataGridRequest.type), "Request");
+  snprintf(diagDataGridRequest.status,elcount(diagDataGridRequest.service),"---");
+  switch(buffer[0])
+  {
+    case dcmServiceIdDSC: snprintf(diagDataGridRequest.service,elcount(diagDataGridRequest.service),"DSC"); break;
+    case dcmServiceIdRDBI: snprintf(diagDataGridRequest.service,elcount(diagDataGridRequest.service),"RDBI"); break;
+    case dcmServiceIdWDBI: snprintf(diagDataGridRequest.service,elcount(diagDataGridRequest.service),"WDBI"); break;
+    case dcmServiceIdCDTCI: snprintf(diagDataGridRequest.service,elcount(diagDataGridRequest.service),"CDTCI"); break;
+    case dcmServiceIdRDTCI: snprintf(diagDataGridRequest.service,elcount(diagDataGridRequest.service),"RDTCI"); break;
+    case dcmRDTCIsubFunctionRDTCSSBDTC: snprintf(diagDataGridRequest.service,elcount(diagDataGridRequest.service),"RDTCSSBDTC"); break;
+    default: snprintf(diagDataGridRequest.service,elcount(diagDataGridRequest.service),""); break;
+  }
+  strncpy(diagUcBusLogDataText.time, "", 1);
+  strncpy(diagUcBusLogDataText.type, "", 1);
+  strncpy(diagUcBusLogDataText.service, "", 1);
+  strncpy(diagUcBusLogDataText.status, "", 1);
+  snprintf(formatter, 10, "%.3f\n", diagDataGridRequest.time);
+  strncat(diagUcBusLogDataText.time, formatter, 50);
+  snprintf(formatter, elcount(diagDataGridRequest.type), "%s\n", diagDataGridRequest.type);
+  strncat(diagUcBusLogDataText.type, formatter, 50);
+  snprintf(formatter, elcount(diagDataGridRequest.service), "%s\n", diagDataGridRequest.service);
+  strncat(diagUcBusLogDataText.service, formatter, 50);
+  snprintf(formatter, elcount(diagDataGridRequest.status), "%s\n", diagDataGridRequest.status);
+  strncat(diagUcBusLogDataText.status, formatter, 50);
+  putValueToControl("StartApplication DIAG", "BusLog_Time", diagUcBusLogDataText.time);
+  putValueToControl("StartApplication DIAG", "BusLog_Type", diagUcBusLogDataText.type);
+  putValueToControl("StartApplication DIAG", "BusLog_Service", diagUcBusLogDataText.service);
+  putValueToControl("StartApplication DIAG", "BusLog_Status", diagUcBusLogDataText.status);
+}
+
+
+
+/**
+ * Initialize COM Panel data.
+ */
+void comUc_Initialize()
+{
+  byte h, i, j;
+  snprintf(comGrid[COM_DATA_GRID_VIEW].name, CHAR_100, "comDataGridView");
+  for (h = 0; h < COM_PANEL_GRID_MAX; h++)
+  {
+    for(i = 0; i < COM_COL_MAX; i++)
+    {
+      snprintf(comGrid[h].header[i].backgroundColor, CHAR_10, "");
+      snprintf(comGrid[h].header[i].textColor, CHAR_10, "");
+    }
+
+    snprintf(comGrid[h].header[COM_COL_NAME].text, CHAR_200, "Name");
+    snprintf(comGrid[h].header[COM_COL_NAME].hint, CHAR_200, "Content Description");
+    snprintf(comGrid[h].header[COM_COL_NAME].textAlignment, CHAR_10, "right");
+    comGrid[h].header[COM_COL_NAME].columnSpacing = 12;
+
+    snprintf(comGrid[h].header[COM_COL_RX].text, CHAR_200, "Rx");
+    snprintf(comGrid[h].header[COM_COL_RX].hint, CHAR_200, "Rx message(s)");
+    snprintf(comGrid[h].header[COM_COL_RX].textAlignment, CHAR_10, "center");
+    comGrid[h].header[COM_COL_RX].columnSpacing = 44;
+
+    snprintf(comGrid[h].header[COM_COL_TX].text, CHAR_200, "Tx");
+    snprintf(comGrid[h].header[COM_COL_TX].hint, CHAR_200, "Tx message(s)");
+    snprintf(comGrid[h].header[COM_COL_TX].textAlignment, CHAR_10, "center");
+    comGrid[h].header[COM_COL_TX].columnSpacing = 44;
+
+    for(i = 0; i < COM_ROW_MAX; i++)
+    {
+      for(j = 0; j < COM_COL_MAX; j++)
+      {
+        snprintf(comGrid[h].row[i].cell[j].backgroundColor, CHAR_10, "");
+        snprintf(comGrid[h].row[i].cell[j].hint, CHAR_200, "");
+        snprintf(comGrid[h].row[i].cell[j].textColor, CHAR_10, "");
+        comGrid[h].row[i].cell[j].columnSpacing = 0;
+      }
+    }
+
+    // first row
+    comGrid[h].row[COM_ROW_CHANNEL].isVisible = true;
+    snprintf(comGrid[h].row[COM_ROW_CHANNEL].cell[COM_COL_NAME].text, CHAR_200, "Channel");
+    snprintf(comGrid[h].row[COM_ROW_CHANNEL].cell[COM_COL_NAME].textAlignment, CHAR_10, "right");   // 1. col
+    snprintf(comGrid[h].row[COM_ROW_CHANNEL].cell[COM_COL_NAME].hint, CHAR_200, "This row shows the selected communication path");
+    snprintf(comGrid[h].row[COM_ROW_CHANNEL].cell[COM_COL_RX].textAlignment, CHAR_10, "center");    // 2. col
+    snprintf(comGrid[h].row[COM_ROW_CHANNEL].cell[COM_COL_TX].textAlignment, CHAR_10, "center");    // 3. col
+    // second row
+    comGrid[h].row[COM_ROW_SIGNAL].isVisible = true;
+    snprintf(comGrid[h].row[COM_ROW_SIGNAL].cell[COM_COL_NAME].text, CHAR_200, "Sig. Name");
+    snprintf(comGrid[h].row[COM_ROW_SIGNAL].cell[COM_COL_NAME].textAlignment, CHAR_10, "right");    // 1. col
+    snprintf(comGrid[h].row[COM_ROW_SIGNAL].cell[COM_COL_NAME].hint, CHAR_200, "This row shows the used signal names");
+    snprintf(comGrid[h].row[COM_ROW_SIGNAL].cell[COM_COL_RX].textAlignment, CHAR_10, "center");     // 2. col
+    snprintf(comGrid[h].row[COM_ROW_SIGNAL].cell[COM_COL_TX].textAlignment, CHAR_10, "center");     // 3. col
+    // third row
+    comGrid[h].row[COM_ROW_VALUE].isVisible = true;
+    snprintf(comGrid[h].row[COM_ROW_VALUE].cell[COM_COL_NAME].text, CHAR_200, "Sig. Value");
+    snprintf(comGrid[h].row[COM_ROW_VALUE].cell[COM_COL_NAME].textAlignment, CHAR_10, "right");     // 1. col
+    snprintf(comGrid[h].row[COM_ROW_VALUE].cell[COM_COL_NAME].hint, CHAR_200, "This row shows the scaled signal values");
+    snprintf(comGrid[h].row[COM_ROW_VALUE].cell[COM_COL_RX].textAlignment, CHAR_10, "center");      // 2. col
+    snprintf(comGrid[h].row[COM_ROW_VALUE].cell[COM_COL_TX].textAlignment, CHAR_10, "center");      // 3. col
+    // fourth row
+    comGrid[h].row[COM_ROW_TRANSMITTED].isVisible = true;
+    snprintf(comGrid[h].row[COM_ROW_TRANSMITTED].cell[COM_COL_NAME].text, CHAR_200, "Transmitted");
+    snprintf(comGrid[h].row[COM_ROW_TRANSMITTED].cell[COM_COL_NAME].textAlignment, CHAR_10, "right");     // 1. col
+    snprintf(comGrid[h].row[COM_ROW_TRANSMITTED].cell[COM_COL_NAME].hint, CHAR_200, "This row shows the timestamp of the signal transmission");
+    snprintf(comGrid[h].row[COM_ROW_TRANSMITTED].cell[COM_COL_RX].textAlignment, CHAR_10, "center");      // 2. col
+    snprintf(comGrid[h].row[COM_ROW_TRANSMITTED].cell[COM_COL_TX].textAlignment, CHAR_10, "center");      // 3. col
+    // fifth row
+    comGrid[h].row[COM_ROW_J1939_TP_TYPE].isVisible = false;
+    snprintf(comGrid[h].row[COM_ROW_J1939_REQUESTED].cell[COM_COL_NAME].text, CHAR_200, "Requested");
+    snprintf(comGrid[h].row[COM_ROW_J1939_REQUESTED].cell[COM_COL_NAME].textAlignment, CHAR_10, "right");  // 1. col
+    snprintf(comGrid[h].row[COM_ROW_J1939_REQUESTED].cell[COM_COL_NAME].hint, CHAR_200, "This row shows the timestamp of the PGN EA00p request");
+    snprintf(comGrid[h].row[COM_ROW_J1939_REQUESTED].cell[COM_COL_RX].textAlignment, CHAR_10, "center");   // 2. col
+    snprintf(comGrid[h].row[COM_ROW_J1939_REQUESTED].cell[COM_COL_TX].textAlignment, CHAR_10, "center");   // 3. col
+    // sixth row
+    comGrid[h].row[COM_ROW_J1939_TP_TYPE].isVisible = false;
+    snprintf(comGrid[h].row[COM_ROW_J1939_TP_TYPE].cell[COM_COL_NAME].text, CHAR_200, "TP Type");
+    snprintf(comGrid[h].row[COM_ROW_J1939_TP_TYPE].cell[COM_COL_NAME].textAlignment, CHAR_10, "right");  // 1. col
+    snprintf(comGrid[h].row[COM_ROW_J1939_TP_TYPE].cell[COM_COL_NAME].hint, CHAR_200, "This row shows the transport message type of J1939");
+    snprintf(comGrid[h].row[COM_ROW_J1939_TP_TYPE].cell[COM_COL_RX].textAlignment, CHAR_10, "center");   // 2. col
+    snprintf(comGrid[h].row[COM_ROW_J1939_TP_TYPE].cell[COM_COL_TX].textAlignment, CHAR_10, "center");   // 3. col
+  }
+
+  for(i = 0; i < COM_UI_MAX; i++)
+  {
+    snprintf(comUiElement[i].text, CHAR_100, "");
+    comUiElement[i].enabled = true;
+    comUiElement[i].visible = true;
+  }
+  snprintf(comUiElement[COM_UI_SCALE_RX].name, CHAR_100, "comScaleRx");
+  snprintf(comUiElement[COM_UI_CALCULATE].name, CHAR_100, "comCalculate");
+  snprintf(comUiElement[COM_UI_SCALE_TX].name, CHAR_100, "comScaleTx");
+  snprintf(comUiElement[COM_UI_PLAY_BTN].name, CHAR_100, "comPlayBtn");
+  snprintf(comUiElement[COM_UI_PLAY_BTN].text, CHAR_100, "4"); // play sign
+  snprintf(comUiElement[COM_UI_PAUSE_BTN].name, CHAR_100, "comPauseBtn");
+  snprintf(comUiElement[COM_UI_PAUSE_BTN].text, CHAR_100, ";"); // pause sign
+  snprintf(comUiElement[COM_UI_PATH_SELECTOR].name, CHAR_100, "comPathComboBox");
+  snprintf(comUiElement[COM_UI_TRACKBAR].name, CHAR_100, "comTrackBar");
+}
+
+/**
+ * Send Com Panel Grid header data.
+ */
+void comUc_UpdatePanelGridHeaderContent()
+{
+  char formatter[__size_of(struct ComGrid) * COM_PANEL_GRID_MAX];
+  snprintf(formatter, elcount(formatter),
+    "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+    "<PanelContentData xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"http://vector.com/StartApplication/1.0\">"
+      "<mGrid>"
+        "<PanelGrid>"
+          "<name>%s</name>"
+          "<header>"
+            "<GridCell>"
+              "<text>%s</text><columnSpacing>%d</columnSpacing><hint>%s</hint><textAlignment>%s</textAlignment><textColor>%s</textColor><backgroundColor>%s</backgroundColor>"
+            "</GridCell>"
+            "<GridCell>"
+              "<text>%s</text><columnSpacing>%d</columnSpacing><hint>%s</hint><textAlignment>%s</textAlignment><textColor>%s</textColor><backgroundColor>%s</backgroundColor>"
+            "</GridCell>"
+            "<GridCell>"
+              "<text>%s</text><columnSpacing>%d</columnSpacing><hint>%s</hint><textAlignment>%s</textAlignment><textColor>%s</textColor><backgroundColor>%s</backgroundColor>"
+            "</GridCell>"
+          "</header>"
+        "</PanelGrid>"
+      "</mGrid>"
+    "</PanelContentData>",
+    comGrid[COM_DATA_GRID_VIEW].name,
+    comGrid[COM_DATA_GRID_VIEW].header[COM_COL_NAME].text, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_NAME].columnSpacing, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_NAME].hint, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_NAME].textAlignment, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_NAME].textColor, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_NAME].backgroundColor,
+    comGrid[COM_DATA_GRID_VIEW].header[COM_COL_RX].text, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_RX].columnSpacing, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_RX].hint, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_RX].textAlignment, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_RX].textColor, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_RX].backgroundColor,
+    comGrid[COM_DATA_GRID_VIEW].header[COM_COL_TX].text, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_TX].columnSpacing, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_TX].hint, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_TX].textAlignment, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_TX].textColor, comGrid[COM_DATA_GRID_VIEW].header[COM_COL_TX].backgroundColor);
+
+    sysSetVariableString(sysvar::StartApplication::ComPanelGridHeaderContent, formatter);
+}
+
+/**
+ * Send Com Panel Grid row data.
+ */
+void comUc_UpdatePanelGridRowContent()
+{
+  char formatter[__size_of(struct ComGrid) * COM_PANEL_GRID_MAX];
+  char subFormatter[(__size_of(struct GridCell) * COM_COL_MAX) + 580];
+  byte i;
+
+  if ((0 == @sysvar::StartApplication::UseCaseActivator) || (3 == @sysvar::StartApplication::UseCaseActivator))
+  {
+    // Add the header of the XML message incl. target grid name.
+    snprintf(formatter, elcount(formatter),
+      "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+      "<PanelContentData xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"http://vector.com/StartApplication/1.0\">"
+        "<mGrid>"
+          "<PanelGrid>"
+            "<name>%s</name>"
+            "<row>",
+      comGrid[COM_DATA_GRID_VIEW].name);
+
+    // Add the single rows to the formatter string.
+    for (i = 0; i < COM_ROW_MAX; i++)
+    {
+      if (1 == comGrid[COM_DATA_GRID_VIEW].row[i].isVisible)
+      {
+        snprintf(subFormatter, elcount(subFormatter),
+          "<ArrayOfGridCell>"
+            "<GridCell>"
+              "<text>%s</text><columnSpacing>%d</columnSpacing><hint>%s</hint><textAlignment>%s</textAlignment><textColor>%s</textColor><backgroundColor>%s</backgroundColor>"
+            "</GridCell>"
+            "<GridCell>"
+              "<text>%s</text><columnSpacing>%d</columnSpacing><hint>%s</hint><textAlignment>%s</textAlignment><textColor>%s</textColor><backgroundColor>%s</backgroundColor>"
+            "</GridCell>"
+            "<GridCell>"
+              "<text>%s</text><columnSpacing>%d</columnSpacing><hint>%s</hint><textAlignment>%s</textAlignment><textColor>%s</textColor><backgroundColor>%s</backgroundColor>"
+            "</GridCell>"
+          "</ArrayOfGridCell>",
+          // One single row.
+          comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_NAME].text, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_NAME].columnSpacing, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_NAME].hint, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_NAME].textAlignment, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_NAME].textColor, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_NAME].backgroundColor,
+          comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_RX].text, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_RX].columnSpacing, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_RX].hint, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_RX].textAlignment, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_RX].textColor, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_RX].backgroundColor,
+          comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_TX].text, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_TX].columnSpacing, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_TX].hint, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_TX].textAlignment, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_TX].textColor, comGrid[COM_DATA_GRID_VIEW].row[i].cell[COM_COL_TX].backgroundColor);
+
+        strncat(formatter, subFormatter, elcount(formatter));
+      }
+    }
+
+    // Add the footer to the formatter string.
+    snprintf(subFormatter, elcount(subFormatter),
+      "</row>"
+          "</PanelGrid>"
+        "</mGrid>"
+      "</PanelContentData>");
+    strncat(formatter, subFormatter, elcount(formatter));
+
+    sysSetVariableString(sysvar::StartApplication::ComPanelGridRowContent, formatter);
+  }
+}
+
+/**
+ * Send Com Panel user interface data.
+ */
+void comUc_UpdateUiContent()
+{
+  char formatter[__size_of(struct UiElement) * COM_UI_MAX];
+  snprintf(formatter, elcount(formatter),
+      "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+      "<PanelContentData xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"http://vector.com/StartApplication/1.0\">"
+        "<mControl>"
+          "<UiElement><name>%s</name><text>%s</text><hint>%s</hint><enabled>%d</enabled><visible>%d</visible></UiElement>"
+          "<UiElement><name>%s</name><text>%s</text><hint>%s</hint><enabled>%d</enabled><visible>%d</visible></UiElement>"
+          "<UiElement><name>%s</name><text>%s</text><hint>%s</hint><enabled>%d</enabled><visible>%d</visible></UiElement>"
+          "<UiElement><name>%s</name><text>%s</text><hint>%s</hint><enabled>%d</enabled><visible>%d</visible></UiElement>"
+          "<UiElement><name>%s</name><text>%s</text><hint>%s</hint><enabled>%d</enabled><visible>%d</visible></UiElement>"
+          "<UiElement><name>%s</name><text>%s</text><hint>%s</hint><enabled>%d</enabled><visible>%d</visible></UiElement>"
+          "<UiElement><name>%s</name><text>%s</text><hint>%s</hint><enabled>%d</enabled><visible>%d</visible></UiElement>"
+        "</mControl>"
+      "</PanelContentData>",
+      comUiElement[COM_UI_SCALE_RX].name, comUiElement[COM_UI_SCALE_RX].text, comUiElement[COM_UI_SCALE_RX].hint, comUiElement[COM_UI_SCALE_RX].enabled, comUiElement[COM_UI_SCALE_RX].visible,
+      comUiElement[COM_UI_CALCULATE].name, comUiElement[COM_UI_CALCULATE].text, comUiElement[COM_UI_CALCULATE].hint, comUiElement[COM_UI_CALCULATE].enabled, comUiElement[COM_UI_CALCULATE].visible,
+      comUiElement[COM_UI_SCALE_TX].name, comUiElement[COM_UI_SCALE_TX].text, comUiElement[COM_UI_SCALE_TX].hint, comUiElement[COM_UI_SCALE_TX].enabled, comUiElement[COM_UI_SCALE_TX].visible,
+      comUiElement[COM_UI_PLAY_BTN].name, comUiElement[COM_UI_PLAY_BTN].text, comUiElement[COM_UI_PLAY_BTN].hint, comUiElement[COM_UI_PLAY_BTN].enabled, comUiElement[COM_UI_PLAY_BTN].visible,
+      comUiElement[COM_UI_PAUSE_BTN].name, comUiElement[COM_UI_PAUSE_BTN].text, comUiElement[COM_UI_PAUSE_BTN].hint, comUiElement[COM_UI_PAUSE_BTN].enabled, comUiElement[COM_UI_PAUSE_BTN].visible,
+      comUiElement[COM_UI_PATH_SELECTOR].name, comUiElement[COM_UI_PATH_SELECTOR].text, comUiElement[COM_UI_PATH_SELECTOR].hint, comUiElement[COM_UI_PATH_SELECTOR].enabled, comUiElement[COM_UI_PATH_SELECTOR].visible,
+      comUiElement[COM_UI_TRACKBAR].name, comUiElement[COM_UI_TRACKBAR].text, comUiElement[COM_UI_TRACKBAR].hint, comUiElement[COM_UI_TRACKBAR].enabled, comUiElement[COM_UI_TRACKBAR].visible);
+
+  sysSetVariableString(sysvar::StartApplication::ComPanelUiContent, formatter);
+}
+
+/**
+ * Fill byte array signal with sensor value.
+ */
+void comUc_FillByteArray(byte sensorValue, byte signalData[], dword length)
+{
+  dword i;
+  for (i = 0; i < elCount(signalData); i++)
+  {
+    signalData[i] = 0;
+  }
+
+  signalData[sensorValue % length] = sensorValue;
+}
+
+
+
+/**
+ * Handle Play and Pause button
+ **/
+on sysvar StartApplication::WdgPlayStatus
+{
+  if(@this == 0)
+  {
+    wdg_AutoPlayStatus = 1;
+  }
+  else if(@this == 2)
+  {
+    wdg_AutoPlayStatus = 0;
+  }
+  enableControl("StartApplication Wdg", "PlayBtn", !wdg_AutoPlayStatus);
+  enableControl("StartApplication Wdg", "PauseBtn", wdg_AutoPlayStatus);
+}
+
+/**
+ * Increase the cycle time if Play is active
+ **/
+on timer Wdg_AutoPlayTimer
+{
+  if (activeUsecase == 4)
+  {
+    if(wdg_AutoPlayStatus == 1)
+    {
+      if(@sysvar::StartApplication::WdgAliveIndicationCycleTime < 200)
+      {
+        @sysvar::StartApplication::WdgAliveIndicationCycleTime += 10;
+      }
+    }
+  }
+}
+
+/**
+ * The cycle time has changed
+ **/
+on sysvar StartApplication::WdgAliveIndicationCycleTime
+{
+  if (activeUsecase == 4)
+  {
+    writeRxDataSig(@this);
+  }
+}
+
+/**
+ * The uptime counter value of the ECU was updated.
+ */
+on sysvar_update StartApplication::WdgUptimeCounter
+{
+  int oldCounter = 0;
+  if(@this < oldCounter)
+  {
+     @sysvar::StartApplication::WdgAliveIndicationCycleTime = 10;
+  }
+  @sysvar::StartApplication::WdgUptimeGreaterThan255s = (@this == 255);
+  oldCounter = @this;
+}
+
+/**
+ * Enable/disable the controls of the panel for the WDG use case
+ **/
+void setWdgPanelStatus (byte isEnabled)
+{
+  enableControl("StartApplication Wdg", "PlayBtn", isEnabled && !wdg_AutoPlayStatus);
+  enableControl("StartApplication Wdg", "PauseBtn", isEnabled && wdg_AutoPlayStatus);
+  enableControl("StartApplication Wdg","CycleTimeTrackBar",isEnabled);
+  enableControl("StartApplication Wdg","CycleTimeOutputBox",isEnabled);
+  @sysvar::StartApplication::WdgUptimeGreaterThan255s = (@sysvar::StartApplication::WdgUptimeCounter == 255);
+}
+
+
+/**
+ * Add an entry with the current time stamp to the error log and print the same message to the write window.
+ * @param errorMessage: the error message
+ **/
+void logError(char errorMessage[])
+{
+  char buffer[11000];
+  char bufferOld[10000];
+  if (0 == sysGetVariableString(sysvar::StartApplication::ErrorLog, bufferOld, elCount(bufferOld)))
+  {
+    snprintf(buffer, elcount(buffer), "%s\n%10.6f: %s", bufferOld, getCurrentTimeInSeconds(), errorMessage);
+    sysSetVariableString(sysvar::StartApplication::ErrorLog, buffer);
+  }
+  writeLineEx(startApplWriteWindow, 3, "%10.6f: %s", getCurrentTimeInSeconds(), errorMessage);
+}
+
+/**
+ * Add an entry with the current time stamp to the error log and print the same message to the write window.
+ * @param errorMessage: the error message
+ * @param value: the value to add to the end of the error message
+ **/
+void logError(char errorMessage[], long value)
+{
+  char buffer[11000];
+  char bufferOld[10000];
+  if (0 == sysGetVariableString(sysvar::StartApplication::ErrorLog, bufferOld, elCount(bufferOld)))
+  {
+    snprintf(buffer, elcount(buffer), "%s\n%10.6f: %s: %d", bufferOld, getCurrentTimeInSeconds(), errorMessage, value);
+    sysSetVariableString(sysvar::StartApplication::ErrorLog, buffer);
+  }
+  writeLineEx(startApplWriteWindow, 3, "%10.6f: %s: %d", getCurrentTimeInSeconds(), errorMessage, value);
+}
+
+/**
+ * Add an entry with the current time stamp to the error log and print the same message to the write window.
+ * @param errorMessage: the error message
+ * @param value: the value to add to the end of the error message
+ **/
+void logError(char errorMessage[], byte value)
+{
+  char buffer[11000];
+  char bufferOld[10000];
+  if (0 == sysGetVariableString(sysvar::StartApplication::ErrorLog, bufferOld, elCount(bufferOld)))
+  {
+    snprintf(buffer, elcount(buffer), "%s\n%10.6f: %s: %d", bufferOld, getCurrentTimeInSeconds(), errorMessage, value);
+    sysSetVariableString(sysvar::StartApplication::ErrorLog, buffer);
+  }
+  writeLineEx(startApplWriteWindow, 3, "%10.6f: %s: %d", getCurrentTimeInSeconds(), errorMessage, value);
+}
+
+/**
+ * Add an entry with the current time stamp to the error log and print the same message to the write window.
+ * @param errorMessage: the error message
+ * @param value: the value to add to the end of the error message
+ **/
+void logError(char errorMessage[], dword value)
+{
+  char buffer[11000];
+  char bufferOld[10000];
+  if (0 == sysGetVariableString(sysvar::StartApplication::ErrorLog, bufferOld, elCount(bufferOld)))
+  {
+    snprintf(buffer, elcount(buffer), "%s\n%10.6f: %s: %d", bufferOld, getCurrentTimeInSeconds(), errorMessage, value);
+    sysSetVariableString(sysvar::StartApplication::ErrorLog, buffer);
+  }
+  writeLineEx(startApplWriteWindow, 3, "%10.6f: %s: %d", getCurrentTimeInSeconds(), errorMessage, value);
+}
+
+/**
+ * Add an entry with the current time stamp to the error log and print the same message to the write window.
+ * @param errorMessage: the error message
+ * @param value: the value to add to the end of the error message
+ **/
+void logError(char errorMessage[], char value[])
+{
+  char buffer[11000];
+  char bufferOld[10000];
+  if (0 == sysGetVariableString(sysvar::StartApplication::ErrorLog, bufferOld, elCount(bufferOld)))
+  {
+    snprintf(buffer, elcount(buffer), "%s\n%10.6f: %s: %s", bufferOld, getCurrentTimeInSeconds(), errorMessage, value);
+    sysSetVariableString(sysvar::StartApplication::ErrorLog, buffer);
+  }
+  writeLineEx(startApplWriteWindow, 3, "%10.6f: %s: %s", getCurrentTimeInSeconds(), errorMessage, value);
+}
+
+float getCurrentTimeInSeconds()
+{
+  return timeNowFloat()/100000.0;
+}
+

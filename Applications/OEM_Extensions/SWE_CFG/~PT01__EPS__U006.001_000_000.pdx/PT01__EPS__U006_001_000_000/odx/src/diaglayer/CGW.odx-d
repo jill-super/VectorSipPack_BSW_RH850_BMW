@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-91fef433-8a22-40f9-a659-d96d805a967d" ID="id-91fef433-8a22-40f9-a659-d96d805a967d">
+        <SHORT-NAME>CGW_DLC</SHORT-NAME>
+        <LONG-NAME>CAN Gateway</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-08213243-7343-4d94-825d-635caaa99a30" ID="id-08213243-7343-4d94-825d-635caaa99a30">
+                <SHORT-NAME>CGW</SHORT-NAME>
+                <LONG-NAME>CAN Gateway</LONG-NAME>
+                <DESC>
+                    <p>Is used as Gateway to the BN2000 boardnet. In this template all of these coponents are not managed. Therefor it is not a gateway for BN2020 ECUs.</p>
+                </DESC>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>114558</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

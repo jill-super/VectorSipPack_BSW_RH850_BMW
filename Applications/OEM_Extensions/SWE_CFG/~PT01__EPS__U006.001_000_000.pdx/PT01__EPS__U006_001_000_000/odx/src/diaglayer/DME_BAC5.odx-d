@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-319a1cc8-6106-44cc-9cb9-45abd9b10ffa" ID="id-319a1cc8-6106-44cc-9cb9-45abd9b10ffa">
+        <SHORT-NAME>DME_BAC5_DLC</SHORT-NAME>
+        <LONG-NAME>Digitale Diesel Elektronik</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-e735b497-e1f9-47d1-aaae-f19a5dbd844c" ID="id-e735b497-e1f9-47d1-aaae-f19a5dbd844c">
+                <SHORT-NAME>DME_BAC5</SHORT-NAME>
+                <LONG-NAME>Digitale Diesel Elektronik</LONG-NAME>
+                <DESC>
+                    <p>„Digitale Motorelektronik auf Basis AUTOSAR 4.0 und ISO-FlexRay TP – ohne GW“ (G0x)</p>
+                </DESC>
+                <DIAG-DATA-DICTIONARY-SPEC>
+                    <DATA-OBJECT-PROPS>
+                        <DATA-OBJECT-PROP OID="id-199b5afe-0c82-420e-9f86-67cf7228d79f" ID="id-199b5afe-0c82-420e-9f86-67cf7228d79f">
+                            <SHORT-NAME>COD_DID_DOP</SHORT-NAME>
+                            <LONG-NAME>DataIdentifier</LONG-NAME>
+                            <COMPU-METHOD>
+                              <CATEGORY>TEXTTABLE</CATEGORY>
+                              <COMPU-INTERNAL-TO-PHYS>
+                                  <COMPU-SCALES>
+                                      <COMPU-SCALE>
+                                          <SHORT-LABEL>BZ_4AB4</SHORT-LABEL>
+                                          <LOWER-LIMIT>19124</LOWER-LIMIT>
+                                          <UPPER-LIMIT>19124</UPPER-LIMIT>
+                                          <COMPU-INVERSE-VALUE>
+                                              <V>19124.0</V>
+                                          </COMPU-INVERSE-VALUE>
+                                          <COMPU-CONST>
+                                              <VT>Betriebsstundenzaehler</VT>
+                                          </COMPU-CONST>
+                                      </COMPU-SCALE>
+                                  </COMPU-SCALES>
+                              </COMPU-INTERNAL-TO-PHYS>
+                            </COMPU-METHOD>
+                            <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+                                <BIT-LENGTH>16</BIT-LENGTH>
+                            </DIAG-CODED-TYPE>
+                            <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+                        </DATA-OBJECT-PROP>
+                    </DATA-OBJECT-PROPS>
+                </DIAG-DATA-DICTIONARY-SPEC>
+                <DIAG-COMMS>
+                    <DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" OID="id-a5adc1c4-47b4-4d24-8e2e-291e3870ed2a" ID="id-a5adc1c4-47b4-4d24-8e2e-291e3870ed2a">
+                        <SHORT-NAME>RDBI_TRT</SHORT-NAME>
+                        <LONG-NAME>ReadDataByIdentifier Betriebsstundenzaehler</LONG-NAME>
+                        <FUNCT-CLASS-REFS>
+                            <FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="ISO_14229_SERVICES_BMW" ID-REF="id-1b25b982-6629-49b2-9e54-b8afe6b364f0"/>
+                        </FUNCT-CLASS-REFS>
+                        <AUDIENCE/>
+                        <REQUEST-REF ID-REF="id-eb39807e-a2c0-4ee1-85a5-cffdcea27792"/>
+                        <POS-RESPONSE-REFS>
+                            <POS-RESPONSE-REF ID-REF="id-748f62ee-0eab-47a7-b7f1-f6297f509250"/>
+                        </POS-RESPONSE-REFS>
+                    </DIAG-SERVICE>
+                    <SINGLE-ECU-JOB OID="id-bd6dd54b-44ee-4a58-8d90-f47235ad078e" ID="id-bd6dd54b-44ee-4a58-8d90-f47235ad078e">
+                        <SHORT-NAME>CBZ_ACT_COND_JOB</SHORT-NAME>
+                        <LONG-NAME>MCD3_CBZActivationCondition</LONG-NAME>
+                        <FUNCT-CLASS-REFS>
+                            <FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="COD_UDS" ID-REF="id-bdcbf3bd-aa21-42c7-90e9-c356ba8e954c"/>
+                        </FUNCT-CLASS-REFS>
+                        <AUDIENCE/>
+                        <PROG-CODES>
+                            <PROG-CODE>
+                              <CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+                              <SYNTAX>JAR</SYNTAX>
+                              <REVISION>001.001.000</REVISION>
+                              <ENTRYPOINT>com.bmw.psdz.jobs.coding.dme.MCD3_CBZActivationCondition</ENTRYPOINT>
+                            </PROG-CODE>
+                        </PROG-CODES>
+                        <OUTPUT-PARAMS>
+                            <OUTPUT-PARAM OID="id-0c18f80d-53b1-4069-aade-a6fe6ad0939b" ID="id-0c18f80d-53b1-4069-aade-a6fe6ad0939b">
+                              <SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+                              <LONG-NAME>PosRespMessage</LONG-NAME>
+                              <DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+                            </OUTPUT-PARAM>
+                            <OUTPUT-PARAM OID="id-09ecc6da-a814-47ed-9abf-b1a91e855e35" ID="id-09ecc6da-a814-47ed-9abf-b1a91e855e35">
+                              <SHORT-NAME>ACT_COND</SHORT-NAME>
+                              <LONG-NAME>Aktivierungsbedingung</LONG-NAME>
+                              <DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-6f94256e-dd3f-4441-b2f6-608f1e03dd86"/>
+                            </OUTPUT-PARAM>
+                        </OUTPUT-PARAMS>
+                        <NEG-OUTPUT-PARAMS>
+                            <NEG-OUTPUT-PARAM>
+                              <SHORT-NAME>ERROR_CODE</SHORT-NAME>
+                              <LONG-NAME>ErrorCode</LONG-NAME>
+                              <DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+                            </NEG-OUTPUT-PARAM>
+                            <NEG-OUTPUT-PARAM>
+                              <SHORT-NAME>ERROR_DESC</SHORT-NAME>
+                              <LONG-NAME>ErrorDescription</LONG-NAME>
+                              <DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+                            </NEG-OUTPUT-PARAM>
+                            <NEG-OUTPUT-PARAM>
+                              <SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+                              <LONG-NAME>ErrorSeverity</LONG-NAME>
+                              <DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+                            </NEG-OUTPUT-PARAM>
+                        </NEG-OUTPUT-PARAMS>
+                    </SINGLE-ECU-JOB>
+                </DIAG-COMMS>
+                <REQUESTS>
+                    <REQUEST OID="id-eb39807e-a2c0-4ee1-85a5-cffdcea27792" ID="id-eb39807e-a2c0-4ee1-85a5-cffdcea27792">
+                        <SHORT-NAME>RDBI_TRT_REQ</SHORT-NAME>
+                        <LONG-NAME>ReadDataByIdentifier Betriebsstundenzaehler Request</LONG-NAME>
+                        <PARAMS>
+                            <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+                              <SHORT-NAME>RDBI</SHORT-NAME>
+                              <LONG-NAME>Service Id</LONG-NAME>
+                              <BYTE-POSITION>0</BYTE-POSITION>
+                              <CODED-VALUE>34</CODED-VALUE>
+                              <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+                                  <BIT-LENGTH>8</BIT-LENGTH>
+                              </DIAG-CODED-TYPE>
+                            </PARAM>
+                            <PARAM xsi:type="PHYS-CONST">
+                              <SHORT-NAME>DID</SHORT-NAME>
+                              <LONG-NAME>dataIdentifier</LONG-NAME>
+                              <BYTE-POSITION>1</BYTE-POSITION>
+                              <PHYS-CONSTANT-VALUE>Betriebsstundenzaehler</PHYS-CONSTANT-VALUE>
+                              <DOP-REF ID-REF="id-199b5afe-0c82-420e-9f86-67cf7228d79f"/>
+                            </PARAM>
+                        </PARAMS>
+                    </REQUEST>
+                </REQUESTS>
+                <POS-RESPONSES>
+                    <POS-RESPONSE OID="id-748f62ee-0eab-47a7-b7f1-f6297f509250" ID="id-748f62ee-0eab-47a7-b7f1-f6297f509250">
+                        <SHORT-NAME>RDBI_TRT_RESP</SHORT-NAME>
+                        <LONG-NAME>ReadDataByIdentifier Betriebsstundenzaehler Response</LONG-NAME>
+                        <PARAMS>
+                            <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+                              <SHORT-NAME>RDBIPR</SHORT-NAME>
+                              <LONG-NAME>Response Service Id</LONG-NAME>
+                              <BYTE-POSITION>0</BYTE-POSITION>
+                              <CODED-VALUE>98</CODED-VALUE>
+                              <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+                                  <BIT-LENGTH>8</BIT-LENGTH>
+                              </DIAG-CODED-TYPE>
+                            </PARAM>
+                            <PARAM xsi:type="MATCHING-REQUEST-PARAM">
+                              <SHORT-NAME>DID</SHORT-NAME>
+                              <LONG-NAME>dataIdentifier</LONG-NAME>
+                              <BYTE-POSITION>1</BYTE-POSITION>
+                              <REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+                              <BYTE-LENGTH>2</BYTE-LENGTH>
+                            </PARAM>
+                            <PARAM xsi:type="VALUE">
+                              <SHORT-NAME>BZ</SHORT-NAME>
+                              <LONG-NAME>Betriebsstundenzaehler</LONG-NAME>
+                              <BYTE-POSITION>3</BYTE-POSITION>
+                              <DOP-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-6e34050c-bb16-40ff-9e3d-e1409b35763a"/>
+                            </PARAM>
+                        </PARAMS>
+                    </POS-RESPONSE>
+                </POS-RESPONSES>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-06f8ebd7-4e0a-459c-8e78-79cb921b974a">
+                        <VALUE>2</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-3a3511fd-c553-4dcf-893b-24a15656aac7">
+                        <VALUE>1</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+                    </COMPARAM-REF>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-3a3511fd-c553-4dcf-893b-24a15656aac7">
+                        <VALUE>1</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="IDR_UDS_DLC" ID-REF="id-91e2ce4c-a274-4f02-a601-92f937695337"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+  <DIAG-LAYER-CONTAINER OID="id-2c5bc342-0fef-4b8e-aad2-12bc422a7dba" ID="id-2c5bc342-0fef-4b8e-aad2-12bc422a7dba">
+    <SHORT-NAME>ACSM2_DLC</SHORT-NAME>
+    <LONG-NAME>Advanced Crash and Safety Management at Flexray</LONG-NAME>
+    <BASE-VARIANTS>
+      <BASE-VARIANT OID="id-f54b6d37-39cf-4519-9d6f-335947e5da43" ID="id-f54b6d37-39cf-4519-9d6f-335947e5da43">
+        <SHORT-NAME>ACSM2</SHORT-NAME>
+        <LONG-NAME>Advanced Crash and Safety Management at Flexray</LONG-NAME>
+        <DESC>
+          <p></p>
+        </DESC>
+        <DIAG-DATA-DICTIONARY-SPEC>
+          <DATA-OBJECT-PROPS>
+            <DATA-OBJECT-PROP OID="id-baef4573-a6d1-4e81-af8f-313b2f7d1b47" ID="id-baef4573-a6d1-4e81-af8f-313b2f7d1b47">
+              <SHORT-NAME>ACSM_DID_DOP</SHORT-NAME>
+              <LONG-NAME>DataIdentifier</LONG-NAME>
+              <COMPU-METHOD>
+                <CATEGORY>TEXTTABLE</CATEGORY>
+                <COMPU-INTERNAL-TO-PHYS>
+                  <COMPU-SCALES>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>AL_0E80</SHORT-LABEL>
+                      <LOWER-LIMIT>3712</LOWER-LIMIT>
+                      <UPPER-LIMIT>3712</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                        <V>3712.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                        <VT>AirbagLock</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>AL_4080</SHORT-LABEL>
+                      <LOWER-LIMIT>16512</LOWER-LIMIT>
+                      <UPPER-LIMIT>16512</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                        <V>16512.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                        <VT>AirbagLock_NEU</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                  </COMPU-SCALES>
+                </COMPU-INTERNAL-TO-PHYS>
+              </COMPU-METHOD>
+              <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+                <BIT-LENGTH>16</BIT-LENGTH>
+              </DIAG-CODED-TYPE>
+              <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+            </DATA-OBJECT-PROP>
+            <DATA-OBJECT-PROP OID="id-b970fda5-71b5-49bd-a257-b73653dd888f" ID="id-b970fda5-71b5-49bd-a257-b73653dd888f">
+              <SHORT-NAME>PPC_TEXT_DOP</SHORT-NAME>
+              <LONG-NAME>ProgrammingPreCondition default text</LONG-NAME>
+              <COMPU-METHOD>
+                <CATEGORY>TEXTTABLE</CATEGORY>
+                <COMPU-INTERNAL-TO-PHYS>
+                  <COMPU-SCALES>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_00</SHORT-LABEL>
+                      <LOWER-LIMIT>0</LOWER-LIMIT>
+                      <UPPER-LIMIT>0</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                        <V>0.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                        <VT>reserved</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_01</SHORT-LABEL>
+                      <LOWER-LIMIT>1</LOWER-LIMIT>
+                      <UPPER-LIMIT>1</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                        <V>1.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                        <VT>engine speed is not null</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_02</SHORT-LABEL>
+                      <LOWER-LIMIT>2</LOWER-LIMIT>
+                      <UPPER-LIMIT>2</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                        <V>2.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                        <VT>immobilizer system is not unlocked</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_03</SHORT-LABEL>
+                      <LOWER-LIMIT>3</LOWER-LIMIT>
+                      <UPPER-LIMIT>3</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                        <V>3.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                        <VT>gear box input speed is not null</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_04</SHORT-LABEL>
+                      <LOWER-LIMIT>4</LOWER-LIMIT>
+                      <UPPER-LIMIT>4</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                        <V>4.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                        <VT>gear box output speed is not null</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_05</SHORT-LABEL>
+                      <LOWER-LIMIT>5</LOWER-LIMIT>
+                      <UPPER-LIMIT>5</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                        <V>5.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                        <VT>vehicle speed is not null</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_06</SHORT-LABEL>
+                      <LOWER-LIMIT>6</LOWER-LIMIT>
+                      <UPPER-LIMIT>6</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                        <V>6.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                        <VT>control active</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_07</SHORT-LABEL>
+                      <LOWER-LIMIT>7</LOWER-LIMIT>
+                      <UPPER-LIMIT>7</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                          <V>7.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                          <VT>ignition off-on required</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_08</SHORT-LABEL>
+                      <LOWER-LIMIT>8</LOWER-LIMIT>
+                      <UPPER-LIMIT>8</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                          <V>8.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                          <VT>no programming voltage</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_09</SHORT-LABEL>
+                      <LOWER-LIMIT>9</LOWER-LIMIT>
+                      <UPPER-LIMIT>9</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                          <V>9.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                          <VT>ignition not activated (clamp 15 off)</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_0A</SHORT-LABEL>
+                      <LOWER-LIMIT>10</LOWER-LIMIT>
+                      <UPPER-LIMIT>10</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                          <V>10.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                          <VT>vehicle electrical system voltage too low</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_0B</SHORT-LABEL>
+                      <LOWER-LIMIT>11</LOWER-LIMIT>
+                      <UPPER-LIMIT>11</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                          <V>11.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                          <VT>temperature too high</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_0C</SHORT-LABEL>
+                      <LOWER-LIMIT>12</LOWER-LIMIT>
+                      <UPPER-LIMIT>12</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                          <V>12.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                          <VT>temperature too low</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_0D</SHORT-LABEL>
+                      <LOWER-LIMIT>13</LOWER-LIMIT>
+                      <UPPER-LIMIT>13</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                          <V>13.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                          <VT>---</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_0E_7F</SHORT-LABEL>
+                      <LOWER-LIMIT>14</LOWER-LIMIT>
+                      <UPPER-LIMIT>127</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                          <V>14.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                          <VT>HIS reserved</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_80</SHORT-LABEL>
+                      <LOWER-LIMIT>128</LOWER-LIMIT>
+                      <UPPER-LIMIT>128</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                          <V>128.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                          <VT>High Voltage is active</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_81</SHORT-LABEL>
+                      <LOWER-LIMIT>129</LOWER-LIMIT>
+                      <UPPER-LIMIT>129</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                          <V>129.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                          <VT>Electric engine speed is not null</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_82_BF</SHORT-LABEL>
+                      <LOWER-LIMIT>130</LOWER-LIMIT>
+                      <UPPER-LIMIT>191</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                          <V>130.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                          <VT>manufacturer reserved</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_C0</SHORT-LABEL>
+                      <LOWER-LIMIT>192</LOWER-LIMIT>
+                      <UPPER-LIMIT>192</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                          <V>192.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                          <VT>Significant internal error. ECU has to be replaced!</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                    <COMPU-SCALE>
+                      <SHORT-LABEL>PPC_C1_FF</SHORT-LABEL>
+                      <LOWER-LIMIT>193</LOWER-LIMIT>
+                      <UPPER-LIMIT>255</UPPER-LIMIT>
+                      <COMPU-INVERSE-VALUE>
+                          <V>193.0</V>
+                      </COMPU-INVERSE-VALUE>
+                      <COMPU-CONST>
+                          <VT>supplier reserved</VT>
+                      </COMPU-CONST>
+                    </COMPU-SCALE>
+                  </COMPU-SCALES>
+                </COMPU-INTERNAL-TO-PHYS>
+              </COMPU-METHOD>
+              <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+                <BIT-LENGTH>8</BIT-LENGTH>
+              </DIAG-CODED-TYPE>
+              <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+            </DATA-OBJECT-PROP>
+          </DATA-OBJECT-PROPS>
+        </DIAG-DATA-DICTIONARY-SPEC>
+        <DIAG-COMMS>
+          <DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" OID="id-9c5dc4d4-c0e3-4c3a-b323-4f4314b462bd" ID="id-9c5dc4d4-c0e3-4c3a-b323-4f4314b462bd">
+            <SHORT-NAME>RDBI_AL</SHORT-NAME>
+            <LONG-NAME>ReadDataByIdentifier AirbagLock</LONG-NAME>
+            <FUNCT-CLASS-REFS>
+                <FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="ISO_14229_SERVICES_BMW" ID-REF="id-1b25b982-6629-49b2-9e54-b8afe6b364f0"/>
+            </FUNCT-CLASS-REFS>
+            <AUDIENCE/>
+            <REQUEST-REF ID-REF="id-8870d7c3-c1a8-4433-8a79-4dbe754553d3"/>
+            <POS-RESPONSE-REFS>
+                <POS-RESPONSE-REF ID-REF="id-e252823b-6990-4e79-af4f-be27da902dbe"/>
+            </POS-RESPONSE-REFS>
+          </DIAG-SERVICE>
+          <DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" OID="id-6234b42f-1f50-4754-b7e1-9b41ff019c16" ID="id-6234b42f-1f50-4754-b7e1-9b41ff019c16">
+            <SHORT-NAME>WDBI_AL</SHORT-NAME>
+            <LONG-NAME>WriteDataByIdentifier AirbagLock</LONG-NAME>
+            <FUNCT-CLASS-REFS>
+                <FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="ISO_14229_SERVICES_BMW" ID-REF="id-1b25b982-6629-49b2-9e54-b8afe6b364f0"/>
+            </FUNCT-CLASS-REFS>
+            <AUDIENCE/>
+            <REQUEST-REF ID-REF="id-7180695a-ec32-4276-b577-bf8abca17212"/>
+            <POS-RESPONSE-REFS>
+                <POS-RESPONSE-REF DOCTYPE="LAYER" DOCREF="COD_UDS" ID-REF="id-d002d787-3f51-4a2b-a1fc-e27e8174c4ba"/>
+            </POS-RESPONSE-REFS>
+          </DIAG-SERVICE>
+          <DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" OID="id-efa7415a-b72b-46b1-8edd-c9335a8be50e" ID="id-efa7415a-b72b-46b1-8edd-c9335a8be50e">
+            <SHORT-NAME>RDBI_AL_NEU</SHORT-NAME>
+            <LONG-NAME>ReadDataByIdentifier AirbagLock ab ACSM4</LONG-NAME>
+            <FUNCT-CLASS-REFS>
+                <FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="ISO_14229_SERVICES_BMW" ID-REF="id-1b25b982-6629-49b2-9e54-b8afe6b364f0"/>
+            </FUNCT-CLASS-REFS>
+            <AUDIENCE/>
+            <REQUEST-REF ID-REF="id-495998c6-8674-4284-979c-fb9c6d7bd110"/>
+            <POS-RESPONSE-REFS>
+                <POS-RESPONSE-REF ID-REF="id-e252823b-6990-4e79-af4f-be27da902dbe"/>
+            </POS-RESPONSE-REFS>
+          </DIAG-SERVICE>
+          <DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" OID="id-2a7c8158-c206-4801-8b43-18ad209d9662" ID="id-2a7c8158-c206-4801-8b43-18ad209d9662">
+            <SHORT-NAME>WDBI_AL_NEU</SHORT-NAME>
+            <LONG-NAME>WriteDataByIdentifier AirbagLock ab ACSM4</LONG-NAME>
+            <FUNCT-CLASS-REFS>
+                <FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="ISO_14229_SERVICES_BMW" ID-REF="id-1b25b982-6629-49b2-9e54-b8afe6b364f0"/>
+            </FUNCT-CLASS-REFS>
+            <AUDIENCE/>
+            <REQUEST-REF ID-REF="id-d361a17a-bdea-4ffd-bdab-56dc9fb36df0"/>
+            <POS-RESPONSE-REFS>
+                <POS-RESPONSE-REF DOCTYPE="LAYER" DOCREF="COD_UDS" ID-REF="id-d002d787-3f51-4a2b-a1fc-e27e8174c4ba"/>
+            </POS-RESPONSE-REFS>
+          </DIAG-SERVICE>
+          <SINGLE-ECU-JOB OID="id-9d67ec40-5993-4095-954e-017953b09553" ID="id-9d67ec40-5993-4095-954e-017953b09553">
+            <SHORT-NAME>LOCK_AIRBAG</SHORT-NAME>
+            <LONG-NAME>MCD3_LockAirbag</LONG-NAME>
+            <FUNCT-CLASS-REFS>
+                <FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="COD_UDS" ID-REF="id-bdcbf3bd-aa21-42c7-90e9-c356ba8e954c"/>
+            </FUNCT-CLASS-REFS>
+            <AUDIENCE/>
+            <PROG-CODES>
+              <PROG-CODE>
+                <CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+                <SYNTAX>JAR</SYNTAX>
+                <REVISION>001.000.000</REVISION>
+                <ENTRYPOINT>com.bmw.psdz.jobs.coding.acsm.MCD3_LockAirbag</ENTRYPOINT>
+              </PROG-CODE>
+            </PROG-CODES>
+            <OUTPUT-PARAMS>
+              <OUTPUT-PARAM OID="id-a6a37ab4-cc9c-4e71-bdda-c2b09cc605e6" ID="id-a6a37ab4-cc9c-4e71-bdda-c2b09cc605e6">
+                <SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+                <LONG-NAME>PosRespMessage</LONG-NAME>
+                <DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+              </OUTPUT-PARAM>
+              <OUTPUT-PARAM OID="id-fcab987c-e613-43d3-86b1-d3510a71873f" ID="id-fcab987c-e613-43d3-86b1-d3510a71873f">
+                <SHORT-NAME>LOCK_STATUS</SHORT-NAME>
+                <LONG-NAME>AirbagLockStatus</LONG-NAME>
+                <DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-6f94256e-dd3f-4441-b2f6-608f1e03dd86"/>
+              </OUTPUT-PARAM>
+            </OUTPUT-PARAMS>
+            <NEG-OUTPUT-PARAMS>
+              <NEG-OUTPUT-PARAM>
+                <SHORT-NAME>ERROR_CODE</SHORT-NAME>
+                <LONG-NAME>ErrorCode</LONG-NAME>
+                <DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+              </NEG-OUTPUT-PARAM>
+              <NEG-OUTPUT-PARAM>
+                <SHORT-NAME>ERROR_DESC</SHORT-NAME>
+                <LONG-NAME>ErrorDescription</LONG-NAME>
+                <DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+              </NEG-OUTPUT-PARAM>
+              <NEG-OUTPUT-PARAM>
+                <SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+                <LONG-NAME>ErrorSeverity</LONG-NAME>
+                <DOP-BASE-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e"/>
+              </NEG-OUTPUT-PARAM>
+            </NEG-OUTPUT-PARAMS>
+          </SINGLE-ECU-JOB>
+          <SINGLE-ECU-JOB ID="id-84b21238-95d6-4011-8fe8-a470d21285fb" OID="id-84b21238-95d6-4011-8fe8-a470d21285fb">
+          	<SHORT-NAME>PREPARE_ECU_FOR_CODING</SHORT-NAME>
+          	<LONG-NAME>MCD3_PrepareECUforCoding</LONG-NAME>
+          	<FUNCT-CLASS-REFS>
+                <FUNCT-CLASS-REF DOCTYPE="LAYER" DOCREF="COD_UDS" ID-REF="id-bdcbf3bd-aa21-42c7-90e9-c356ba8e954c"/>
+          	</FUNCT-CLASS-REFS>
+          	<AUDIENCE/>
+          	<PROG-CODES>
+          		<PROG-CODE>
+          			<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+          			<SYNTAX>JAR</SYNTAX>
+          			<REVISION>001.001.000</REVISION>
+          			<ENTRYPOINT>com.bmw.psdz.jobs.coding.acsm.MCD3_PrepareECUforCoding</ENTRYPOINT>
+          		</PROG-CODE>
+          	</PROG-CODES>
+          	<INPUT-PARAMS>
+          		<INPUT-PARAM>
+          			<SHORT-NAME>SEEDTYPE</SHORT-NAME>
+          			<LONG-NAME>SeedType</LONG-NAME>
+          			<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+          		</INPUT-PARAM>
+          		<INPUT-PARAM>
+          			<SHORT-NAME>TESTERID</SHORT-NAME>
+          			<LONG-NAME>TesterID</LONG-NAME>
+          			<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+          		</INPUT-PARAM>
+          	</INPUT-PARAMS>
+          	<OUTPUT-PARAMS>
+          		<OUTPUT-PARAM ID="id-05383bc1-9737-40ec-a657-2c3edd2a774f" OID="id-05383bc1-9737-40ec-a657-2c3edd2a774f">
+          			<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+          			<LONG-NAME>PosRespMessage</LONG-NAME>
+          			<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+          		</OUTPUT-PARAM>
+          		<OUTPUT-PARAM ID="id-76511634-2fc8-4b63-89fd-dd3f3e1d293b" OID="id-76511634-2fc8-4b63-89fd-dd3f3e1d293b">
+          			<SHORT-NAME>SEED</SHORT-NAME>
+          			<LONG-NAME>Seed</LONG-NAME>
+          			<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+          		</OUTPUT-PARAM>
+          		<OUTPUT-PARAM ID="id-82eb8d17-c919-49b1-9efc-9c4eb37411bf" OID="id-82eb8d17-c919-49b1-9efc-9c4eb37411bf">
+          			<SHORT-NAME>EAV</SHORT-NAME>
+          			<LONG-NAME>extendedAuthValue</LONG-NAME>
+          			<DOP-BASE-REF ID-REF="id-2d7ea098-7de3-4dd2-ac18-b27183ce116b" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+          		</OUTPUT-PARAM>
+          	</OUTPUT-PARAMS>
+          	<NEG-OUTPUT-PARAMS>
+          		<NEG-OUTPUT-PARAM>
+          			<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+          			<LONG-NAME>ErrorCode</LONG-NAME>
+          			<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+          		</NEG-OUTPUT-PARAM>
+          		<NEG-OUTPUT-PARAM>
+          			<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+          			<LONG-NAME>ErrorDescription</LONG-NAME>
+          			<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+          		</NEG-OUTPUT-PARAM>
+          		<NEG-OUTPUT-PARAM>
+          			<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+          			<LONG-NAME>ErrorSeverity</LONG-NAME>
+          			<DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+          		</NEG-OUTPUT-PARAM>
+          	</NEG-OUTPUT-PARAMS>
+          </SINGLE-ECU-JOB>
+        </DIAG-COMMS>
+        <REQUESTS>
+          <REQUEST OID="id-8870d7c3-c1a8-4433-8a79-4dbe754553d3" ID="id-8870d7c3-c1a8-4433-8a79-4dbe754553d3">
+            <SHORT-NAME>RDBI_AL_REQ</SHORT-NAME>
+            <LONG-NAME>ReadDataByIdentifier AirbagLock Request</LONG-NAME>
+            <PARAMS>
+              <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+                <SHORT-NAME>RDBI</SHORT-NAME>
+                <LONG-NAME>Service Id</LONG-NAME>
+                <BYTE-POSITION>0</BYTE-POSITION>
+                <CODED-VALUE>34</CODED-VALUE>
+                <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+                  <BIT-LENGTH>8</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM xsi:type="PHYS-CONST">
+                <SHORT-NAME>DID</SHORT-NAME>
+                <LONG-NAME>dataIdentifier</LONG-NAME>
+                <BYTE-POSITION>1</BYTE-POSITION>
+                <PHYS-CONSTANT-VALUE>AirbagLock</PHYS-CONSTANT-VALUE>
+                <DOP-REF ID-REF="id-baef4573-a6d1-4e81-af8f-313b2f7d1b47"/>
+              </PARAM>
+            </PARAMS>
+          </REQUEST>
+          <REQUEST OID="id-7180695a-ec32-4276-b577-bf8abca17212" ID="id-7180695a-ec32-4276-b577-bf8abca17212">
+            <SHORT-NAME>WDBI_AL_REQ</SHORT-NAME>
+            <LONG-NAME>WriteDataByIdentifier AirbagLock Request</LONG-NAME>
+            <PARAMS>
+              <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+                <SHORT-NAME>WDBI</SHORT-NAME>
+                <LONG-NAME>Service Id</LONG-NAME>
+                <BYTE-POSITION>0</BYTE-POSITION>
+                <CODED-VALUE>46</CODED-VALUE>
+                <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+                  <BIT-LENGTH>8</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM xsi:type="PHYS-CONST">
+                <SHORT-NAME>DID</SHORT-NAME>
+                <LONG-NAME>dataIdentifier</LONG-NAME>
+                <BYTE-POSITION>1</BYTE-POSITION>
+                <PHYS-CONSTANT-VALUE>AirbagLock</PHYS-CONSTANT-VALUE>
+                <DOP-REF ID-REF="id-baef4573-a6d1-4e81-af8f-313b2f7d1b47"/>
+              </PARAM>
+              <PARAM xsi:type="VALUE">
+                <SHORT-NAME>AL</SHORT-NAME>
+                <LONG-NAME>AirbagLock</LONG-NAME>
+                <BYTE-POSITION>3</BYTE-POSITION>
+                <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+                <DOP-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-b529da6b-f7f6-47ec-bff2-74ecd191c080"/>
+              </PARAM>
+            </PARAMS>
+          </REQUEST>
+          <REQUEST OID="id-495998c6-8674-4284-979c-fb9c6d7bd110" ID="id-495998c6-8674-4284-979c-fb9c6d7bd110">
+            <SHORT-NAME>RDBI_AL_NEU_REQ</SHORT-NAME>
+            <LONG-NAME>ReadDataByIdentifier AirbagLock Request</LONG-NAME>
+            <PARAMS>
+              <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+                <SHORT-NAME>RDBI</SHORT-NAME>
+                <LONG-NAME>Service Id</LONG-NAME>
+                <BYTE-POSITION>0</BYTE-POSITION>
+                <CODED-VALUE>34</CODED-VALUE>
+                <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+                  <BIT-LENGTH>8</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM xsi:type="PHYS-CONST">
+                <SHORT-NAME>DID</SHORT-NAME>
+                <LONG-NAME>dataIdentifier</LONG-NAME>
+                <BYTE-POSITION>1</BYTE-POSITION>
+                <PHYS-CONSTANT-VALUE>AirbagLock_NEU</PHYS-CONSTANT-VALUE>
+                <DOP-REF ID-REF="id-baef4573-a6d1-4e81-af8f-313b2f7d1b47"/>
+              </PARAM>
+            </PARAMS>
+          </REQUEST>
+          <REQUEST OID="id-d361a17a-bdea-4ffd-bdab-56dc9fb36df0" ID="id-d361a17a-bdea-4ffd-bdab-56dc9fb36df0">
+            <SHORT-NAME>WDBI_AL_NEU_REQ</SHORT-NAME>
+            <LONG-NAME>WriteDataByIdentifier AirbagLock Request</LONG-NAME>
+            <PARAMS>
+              <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+                <SHORT-NAME>WDBI</SHORT-NAME>
+                <LONG-NAME>Service Id</LONG-NAME>
+                <BYTE-POSITION>0</BYTE-POSITION>
+                <CODED-VALUE>46</CODED-VALUE>
+                <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+                  <BIT-LENGTH>8</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM xsi:type="PHYS-CONST">
+                <SHORT-NAME>DID</SHORT-NAME>
+                <LONG-NAME>dataIdentifier</LONG-NAME>
+                <BYTE-POSITION>1</BYTE-POSITION>
+                <PHYS-CONSTANT-VALUE>AirbagLock_NEU</PHYS-CONSTANT-VALUE>
+                <DOP-REF ID-REF="id-baef4573-a6d1-4e81-af8f-313b2f7d1b47"/>
+              </PARAM>
+              <PARAM xsi:type="VALUE">
+                <SHORT-NAME>AL</SHORT-NAME>
+                <LONG-NAME>AirbagLock</LONG-NAME>
+                <BYTE-POSITION>3</BYTE-POSITION>
+                <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+                <DOP-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-b529da6b-f7f6-47ec-bff2-74ecd191c080"/>
+              </PARAM>
+            </PARAMS>
+          </REQUEST>
+        </REQUESTS>
+        <POS-RESPONSES>
+          <POS-RESPONSE OID="id-e252823b-6990-4e79-af4f-be27da902dbe" ID="id-e252823b-6990-4e79-af4f-be27da902dbe">
+            <SHORT-NAME>RDBI_AL_RESP</SHORT-NAME>
+            <LONG-NAME>ReadDataByIdentifier AirbagLock Response</LONG-NAME>
+            <PARAMS>
+              <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+                <SHORT-NAME>RDBIPR</SHORT-NAME>
+                <LONG-NAME>Response Service Id</LONG-NAME>
+                <BYTE-POSITION>0</BYTE-POSITION>
+                <CODED-VALUE>98</CODED-VALUE>
+                <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+                  <BIT-LENGTH>8</BIT-LENGTH>
+                </DIAG-CODED-TYPE>
+              </PARAM>
+              <PARAM xsi:type="MATCHING-REQUEST-PARAM">
+                <SHORT-NAME>DID</SHORT-NAME>
+                <LONG-NAME>dataIdentifier</LONG-NAME>
+                <BYTE-POSITION>1</BYTE-POSITION>
+                <REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+                <BYTE-LENGTH>2</BYTE-LENGTH>
+              </PARAM>
+              <PARAM xsi:type="VALUE">
+                <SHORT-NAME>AL</SHORT-NAME>
+                <LONG-NAME>AirbagLock</LONG-NAME>
+                <BYTE-POSITION>3</BYTE-POSITION>
+                <DOP-REF DOCTYPE="LAYER" DOCREF="DOPS_BMW" ID-REF="id-b529da6b-f7f6-47ec-bff2-74ecd191c080"/>
+              </PARAM>
+            </PARAMS>
+          </POS-RESPONSE>
+        </POS-RESPONSES>
+        <COMPARAM-REFS>
+          <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+            <VALUE>62500</VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          </COMPARAM-REF>
+          <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+            <VALUE>4</VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          </COMPARAM-REF>
+          <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+            <VALUE>4</VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+          </COMPARAM-REF>
+          <COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-618e8c0f-654c-473d-995d-701dbc88b662">
+            <VALUE>150</VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          </COMPARAM-REF>
+          <COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-618e8c0f-654c-473d-995d-701dbc88b662">
+            <VALUE>150</VALUE>
+            <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+          </COMPARAM-REF>                    
+        </COMPARAM-REFS>
+        <IMPORT-REFS>
+          <IMPORT-REF DOCTYPE="CONTAINER" DOCREF="DOPS_BMW_DLC" ID-REF="id-cce678a9-19ff-4e38-86ba-22ac18a6270c"/>
+        </IMPORT-REFS>
+        <PARENT-REFS>
+          <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+          <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+        </PARENT-REFS>
+      </BASE-VARIANT>
+    </BASE-VARIANTS>
+  </DIAG-LAYER-CONTAINER>
+</ODX>

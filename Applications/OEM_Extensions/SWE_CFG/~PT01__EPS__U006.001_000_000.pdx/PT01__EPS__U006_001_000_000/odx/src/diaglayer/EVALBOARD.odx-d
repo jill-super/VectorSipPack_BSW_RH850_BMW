@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DIAG-LAYER-CONTAINER ID="id-8a812e92-d078-4b98-8d25-5a9b13872885" OID="id-8a812e92-d078-4b98-8d25-5a9b13872885">
+    <SHORT-NAME>EVALBOARD_DLC</SHORT-NAME>
+    <LONG-NAME>EvalBoard</LONG-NAME>
+    <BASE-VARIANTS>
+      <BASE-VARIANT ID="id-b7385992-667e-4794-be14-437826142641" OID="id-b7385992-667e-4794-be14-437826142641">
+        <SHORT-NAME>EVALBOARD</SHORT-NAME>
+        <LONG-NAME>EvalBoard</LONG-NAME>
+        <DESC>
+          <p>
+automatically generated BASE-VARIANT instance EVALBOARD
+          </p>
+        </DESC>
+        <ADMIN-DATA>
+          <LANGUAGE>eng</LANGUAGE>
+          <DOC-REVISIONS>
+            <DOC-REVISION>
+              <TEAM-MEMBER-REF DOCREF="ISO_14229_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-79529914-0b9d-4eeb-8c46-7030b0fa7054"/>
+              <REVISION-LABEL>001.000.001</REVISION-LABEL>
+              <STATE>Release</STATE>
+              <DATE>2007-08-03T10:20:00</DATE>
+              <MODIFICATIONS>
+                <MODIFICATION>
+                  <CHANGE>Changed</CHANGE>
+                  <REASON>All jobs attached to the functional class "Coding"</REASON>
+                </MODIFICATION>
+              </MODIFICATIONS>
+            </DOC-REVISION>
+            <DOC-REVISION>
+              <TEAM-MEMBER-REF DOCREF="ISO_14229_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-79529914-0b9d-4eeb-8c46-7030b0fa7054"/>
+              <REVISION-LABEL>001.000.002</REVISION-LABEL>
+              <STATE>Release</STATE>
+              <DATE>2007-10-04T16:00:00</DATE>
+              <MODIFICATIONS>
+                <MODIFICATION>
+                  <CHANGE>RDBI_ACT_COND 001.001.000</CHANGE>
+                  <REASON>Changed</REASON>
+                </MODIFICATION>
+              </MODIFICATIONS>
+            </DOC-REVISION>
+          </DOC-REVISIONS>
+        </ADMIN-DATA>
+        <DIAG-DATA-DICTIONARY-SPEC>
+          <DATA-OBJECT-PROPS>
+            <DATA-OBJECT-PROP ID="id-1c2627be-18fa-11dc-8314-0800200c9a66" OID="id-1c2627be-18fa-11dc-8314-0800200c9a66">
+              <SHORT-NAME>COD_1BIT_IDENTICAL_DOP</SHORT-NAME>
+              <LONG-NAME>1 Bit Identical</LONG-NAME>
+              <ADMIN-DATA/>
+              <COMPU-METHOD>
+                <CATEGORY>IDENTICAL</CATEGORY>
+              </COMPU-METHOD>
+              <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+                <BIT-LENGTH>1</BIT-LENGTH>
+              </DIAG-CODED-TYPE>
+              <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+              <INTERNAL-CONSTR>
+                <LOWER-LIMIT>0</LOWER-LIMIT>
+                <UPPER-LIMIT>1</UPPER-LIMIT>
+              </INTERNAL-CONSTR>
+            </DATA-OBJECT-PROP>
+          </DATA-OBJECT-PROPS>
+        </DIAG-DATA-DICTIONARY-SPEC>
+        <DIAG-COMMS>
+          <SINGLE-ECU-JOB ID="id-08f752a5-14a4-423d-af48-f3212369353e" OID="id-08f752a5-14a4-423d-af48-f3212369353e">
+            <SHORT-NAME>RDBI_ACT_COND</SHORT-NAME>
+            <LONG-NAME>MCD3_ReadActivationCondition</LONG-NAME>
+            <ADMIN-DATA>
+              <LANGUAGE>eng</LANGUAGE>
+              <DOC-REVISIONS>
+                <DOC-REVISION>
+                  <TEAM-MEMBER-REF DOCREF="ISO_14229_SERVICES_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-79529914-0b9d-4eeb-8c46-7030b0fa7054"/>
+                  <REVISION-LABEL>001.001.000</REVISION-LABEL>
+                  <STATE>Release</STATE>
+                  <DATE>2007-10-04T16:00:00</DATE>
+                  <MODIFICATIONS>
+                    <MODIFICATION>
+                      <CHANGE>changed</CHANGE>
+                      <REASON>replaced DIAG-SERVICE with SINGLE-ECU-JOB</REASON>
+                    </MODIFICATION>
+                  </MODIFICATIONS>
+                </DOC-REVISION>
+              </DOC-REVISIONS>
+            </ADMIN-DATA>
+            <FUNCT-CLASS-REFS>
+              <FUNCT-CLASS-REF DOCREF="ISO_14229_SERVICES_BMW" DOCTYPE="LAYER" ID-REF="id-1b25b982-6629-49b2-9e54-b8afe6b364f0"/>
+            </FUNCT-CLASS-REFS>
+            <AUDIENCE/>
+            <PROG-CODES>
+              <PROG-CODE>
+                <CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+                <SYNTAX>JAR</SYNTAX>
+                <REVISION>001.001.001</REVISION>
+                <ENTRYPOINT>com.bmw.psdz.jobs.coding.evalboard.MCD3_ReadActivationCondition</ENTRYPOINT>
+              </PROG-CODE>
+            </PROG-CODES>
+            <OUTPUT-PARAMS>
+              <OUTPUT-PARAM ID="id-ceb2a8bc-22ad-474b-bf60-01949fb2642a" OID="id-ceb2a8bc-22ad-474b-bf60-01949fb2642a">
+                <SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+                <LONG-NAME>PosRespMessage</LONG-NAME>
+                <DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+              </OUTPUT-PARAM>
+              <OUTPUT-PARAM ID="id-ec5d8288-c60a-4831-8e83-2afa2e799082" OID="id-ec5d8288-c60a-4831-8e83-2afa2e799082">
+                <SHORT-NAME>ACT_COND</SHORT-NAME>
+                <LONG-NAME>Aktivierungsbedingung</LONG-NAME>
+                <DOP-BASE-REF ID-REF="id-1c2627be-18fa-11dc-8314-0800200c9a66"/>
+              </OUTPUT-PARAM>
+            </OUTPUT-PARAMS>
+            <NEG-OUTPUT-PARAMS>
+              <NEG-OUTPUT-PARAM>
+                <SHORT-NAME>ERROR_CODE</SHORT-NAME>
+                <LONG-NAME>ErrorCode</LONG-NAME>
+                <DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+              </NEG-OUTPUT-PARAM>
+              <NEG-OUTPUT-PARAM>
+                <SHORT-NAME>ERROR_DESC</SHORT-NAME>
+                <LONG-NAME>ErrorDescription</LONG-NAME>
+                <DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+              </NEG-OUTPUT-PARAM>
+              <NEG-OUTPUT-PARAM>
+                <SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+                <LONG-NAME>ErrorSeverity</LONG-NAME>
+                <DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+              </NEG-OUTPUT-PARAM>
+            </NEG-OUTPUT-PARAMS>
+          </SINGLE-ECU-JOB>
+          <SINGLE-ECU-JOB ID="id-67b7f142-18f7-11dc-8314-0800200c9a66" OID="id-67b7f142-18f7-11dc-8314-0800200c9a66">
+            <SHORT-NAME>SCWOP_ACT_COND</SHORT-NAME>
+            <LONG-NAME>MCD3_WOPActivationCondition</LONG-NAME>
+            <FUNCT-CLASS-REFS>
+              <FUNCT-CLASS-REF DOCREF="COD_UDS" DOCTYPE="LAYER" ID-REF="id-bdcbf3bd-aa21-42c7-90e9-c356ba8e954c"/>
+            </FUNCT-CLASS-REFS>
+            <AUDIENCE/>
+            <PROG-CODES>
+              <PROG-CODE>
+                <CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+                <SYNTAX>JAR</SYNTAX>
+                <REVISION>001.001.001</REVISION>
+                <ENTRYPOINT>com.bmw.psdz.jobs.coding.evalboard.MCD3_WOPActivationCondition</ENTRYPOINT>
+              </PROG-CODE>
+            </PROG-CODES>
+            <OUTPUT-PARAMS>
+              <OUTPUT-PARAM ID="id-18ced50c-18f7-11dc-8314-0800200c9a66" OID="id-18ced50c-18f7-11dc-8314-0800200c9a66">
+                <SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+                <LONG-NAME>PosRespMessage</LONG-NAME>
+                <DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+              </OUTPUT-PARAM>
+              <OUTPUT-PARAM ID="id-29f2ef8a-18f7-11dc-8314-0800200c9a66" OID="id-29f2ef8a-18f7-11dc-8314-0800200c9a66">
+                <SHORT-NAME>ACT_COND</SHORT-NAME>
+                <LONG-NAME>Aktivierungsbedingung</LONG-NAME>
+                <DOP-BASE-REF ID-REF="id-1c2627be-18fa-11dc-8314-0800200c9a66"/>
+              </OUTPUT-PARAM>
+            </OUTPUT-PARAMS>
+            <NEG-OUTPUT-PARAMS>
+              <NEG-OUTPUT-PARAM>
+                <SHORT-NAME>ERROR_CODE</SHORT-NAME>
+                <LONG-NAME>ErrorCode</LONG-NAME>
+                <DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+              </NEG-OUTPUT-PARAM>
+              <NEG-OUTPUT-PARAM>
+                <SHORT-NAME>ERROR_DESC</SHORT-NAME>
+                <LONG-NAME>ErrorDescription</LONG-NAME>
+                <DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+              </NEG-OUTPUT-PARAM>
+              <NEG-OUTPUT-PARAM>
+                <SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+                <LONG-NAME>ErrorSeverity</LONG-NAME>
+                <DOP-BASE-REF ID-REF="id-3f99736e-e52a-4ff4-988b-ca8e49a77d2e" DOCTYPE="LAYER" DOCREF="DOPS_BMW"/>
+              </NEG-OUTPUT-PARAM>
+            </NEG-OUTPUT-PARAMS>
+          </SINGLE-ECU-JOB>
+        </DIAG-COMMS>
+        <IMPORT-REFS>
+          <IMPORT-REF DOCREF="DOPS_BMW_DLC" DOCTYPE="CONTAINER" ID-REF="id-cce678a9-19ff-4e38-86ba-22ac18a6270c"/>
+        </IMPORT-REFS>
+        <PARENT-REFS>
+          <PARENT-REF DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="COD_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="PROG_LS_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-4646c54a-1f42-4da6-a628-b66976713291" xsi:type="FUNCTIONAL-GROUP-REF"/>
+          <PARENT-REF DOCREF="SWT_UDS_DLC" DOCTYPE="CONTAINER" ID-REF="id-8cb94aae-551f-41e4-bddd-2ba1232564d5" xsi:type="FUNCTIONAL-GROUP-REF"/>
+        </PARENT-REFS>
+      </BASE-VARIANT>
+    </BASE-VARIANTS>
+  </DIAG-LAYER-CONTAINER>
+</ODX>

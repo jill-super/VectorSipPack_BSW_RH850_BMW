@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER ID="id-d8120524-52ae-4552-b34c-676877885d92" OID="id-d8120524-52ae-4552-b34c-676877885d92">
+        <SHORT-NAME>DSC_VIP2_DLC</SHORT-NAME>
+        <LONG-NAME>Dynamische Stabilitäts Controlle mit dummen VIP Anteil</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT ID="id-2f9ce387-8aa6-4493-a03a-cf943ac76874" OID="id-2f9ce387-8aa6-4493-a03a-cf943ac76874">
+                <SHORT-NAME>DSC_VIP2</SHORT-NAME>
+                <LONG-NAME>Dynamische Stabilitäts Controlle mit dummen VIP Anteil</LONG-NAME>
+                <DESC>
+                    <p>Dummer VIP Anteil</p>
+                </DESC>
+                <COMPARAM-REFS>
+          					<COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-3a3511fd-c553-4dcf-893b-24a15656aac7">
+            						<VALUE>1</VALUE>
+            						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+          					</COMPARAM-REF>
+          					<COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-3a3511fd-c553-4dcf-893b-24a15656aac7">
+            						<VALUE>1</VALUE>
+            						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+          					</COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78" DOCREF="PROG_UDS_DLC" DOCTYPE="CONTAINER"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-2d36761a-6fe0-4758-842c-d5b61ce02910" ID="id-2d36761a-6fe0-4758-842c-d5b61ce02910">
+        <SHORT-NAME>TCB_DLC</SHORT-NAME>
+        <LONG-NAME>Telematics Communication Box</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-bb705a8c-daf2-45f9-b8f6-0fab6f888d68" ID="id-bb705a8c-daf2-45f9-b8f6-0fab6f888d68">
+                <SHORT-NAME>TCB</SHORT-NAME>
+                <LONG-NAME>Telematics Communication Box</LONG-NAME>
+                <DESC>
+                    <p>
+					            Downgraded Combox
+					          </p>
+                </DESC>
+         				<DIAG-COMMS>
+        					<SINGLE-ECU-JOB ID="id-17e3d883-0f87-47b3-90ec-f07cc48f47e6" OID="id-17e3d883-0f87-47b3-90ec-f07cc48f47e6">
+        						<SHORT-NAME>PREPARE_ECU_FOR_BL_UPDATE</SHORT-NAME>
+        						<LONG-NAME>MCD3_PrepareECUforBLUpdate</LONG-NAME>
+        						<FUNCT-CLASS-REFS>
+        							<FUNCT-CLASS-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-4b283c80-4478-43fb-97d0-d7d42d15b749"/>
+        						</FUNCT-CLASS-REFS>
+        						<AUDIENCE/>
+        						<PROG-CODES>
+        							<PROG-CODE>
+        								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+        								<SYNTAX>JAR</SYNTAX>
+        								<REVISION>001.003.009</REVISION>
+        								<ENTRYPOINT>com.bmw.psdz.jobs.programming.tcb.MCD3_PrepareECUforBLUpdate</ENTRYPOINT>
+        							</PROG-CODE>
+        						</PROG-CODES>
+        						<INPUT-PARAMS>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>SEEDTYPE</SHORT-NAME>
+        								<LONG-NAME>SeedType</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>TESTERID</SHORT-NAME>
+        								<LONG-NAME>TesterID</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-2414eb10-330f-48aa-9ec1-056f52101941"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>FLAMODE</SHORT-NAME>
+        								<LONG-NAME>FlaMode</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-f98f6d23-1d93-4858-8f23-01359785e918"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>CPC</SHORT-NAME>
+        								<LONG-NAME>CheckProgrammingCounter</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-f98f6d23-1d93-4858-8f23-01359785e918"/>
+        							</INPUT-PARAM>
+        						</INPUT-PARAMS>
+        						<OUTPUT-PARAMS>
+        							<OUTPUT-PARAM ID="id-72c5fa0b-9da2-4218-9872-6af67a2dfcf4" OID="id-72c5fa0b-9da2-4218-9872-6af67a2dfcf4">
+        								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+        								<LONG-NAME>PosRespMessage</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-6db8252d-d6fb-4016-8a33-a29204a8e46c" OID="id-6db8252d-d6fb-4016-8a33-a29204a8e46c">
+        								<SHORT-NAME>NAF</SHORT-NAME>
+        								<LONG-NAME>needsAuthenticationFlag</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-057522da-62d4-470e-be47-d42dc787994f"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-4c6e42c1-9bd1-4bd5-ac38-686db5d11a42" OID="id-4c6e42c1-9bd1-4bd5-ac38-686db5d11a42">
+        								<SHORT-NAME>SEED</SHORT-NAME>
+        								<LONG-NAME>Seed</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-2414eb10-330f-48aa-9ec1-056f52101941"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-4d613e2d-6c9f-48ae-b9f3-04276c29fddb" OID="id-4d613e2d-6c9f-48ae-b9f3-04276c29fddb">
+        								<SHORT-NAME>EAV</SHORT-NAME>
+        								<LONG-NAME>extendedAuthValue</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-2414eb10-330f-48aa-9ec1-056f52101941"/>
+        							</OUTPUT-PARAM>
+        						</OUTPUT-PARAMS>
+        						<NEG-OUTPUT-PARAMS>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+        								<LONG-NAME>ErrorCode</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+        								<LONG-NAME>ErrorDescription</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+        								<LONG-NAME>ErrorSeverity</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</NEG-OUTPUT-PARAM>
+        						</NEG-OUTPUT-PARAMS>
+        					</SINGLE-ECU-JOB>
+        					<SINGLE-ECU-JOB ID="id-ee987e47-6b9d-456e-96d6-14d0d57e422f" OID="id-ee987e47-6b9d-456e-96d6-14d0d57e422f">
+        						<SHORT-NAME>PREPARE_ECU_FOR_FLASH</SHORT-NAME>
+        						<LONG-NAME>MCD3_PrepareECUforFlash</LONG-NAME>
+        						<FUNCT-CLASS-REFS>
+        							<FUNCT-CLASS-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-4b283c80-4478-43fb-97d0-d7d42d15b749"/>
+        						</FUNCT-CLASS-REFS>
+        						<AUDIENCE/>
+        						<PROG-CODES>
+        							<PROG-CODE>
+        								<CODE-FILE>PSDZ_JOBS.jar</CODE-FILE>
+        								<SYNTAX>JAR</SYNTAX>
+        								<REVISION>001.003.009</REVISION>
+        								<ENTRYPOINT>com.bmw.psdz.jobs.programming.tcb.MCD3_PrepareECUforFlash</ENTRYPOINT>
+        							</PROG-CODE>
+        						</PROG-CODES>
+        						<INPUT-PARAMS>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>SEEDTYPE</SHORT-NAME>
+        								<LONG-NAME>SeedType</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>TESTERID</SHORT-NAME>
+        								<LONG-NAME>TesterID</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-2414eb10-330f-48aa-9ec1-056f52101941"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>FLAMODE</SHORT-NAME>
+        								<LONG-NAME>FlaMode</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-f98f6d23-1d93-4858-8f23-01359785e918"/>
+        							</INPUT-PARAM>
+        							<INPUT-PARAM>
+        								<SHORT-NAME>CPC</SHORT-NAME>
+        								<LONG-NAME>CheckProgrammingCounter</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-f98f6d23-1d93-4858-8f23-01359785e918"/>
+        							</INPUT-PARAM>
+        						</INPUT-PARAMS>
+        						<OUTPUT-PARAMS>
+        							<OUTPUT-PARAM ID="id-3924053a-eed2-4e4a-aedc-e701b033ddf1" OID="id-3924053a-eed2-4e4a-aedc-e701b033ddf1">
+        								<SHORT-NAME>POS_RESP_MESSAGE</SHORT-NAME>
+        								<LONG-NAME>PosRespMessage</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-cbc1d79a-8fdf-488e-a8dc-0a1a5bcf1445" OID="id-cbc1d79a-8fdf-488e-a8dc-0a1a5bcf1445">
+        								<SHORT-NAME>NAF</SHORT-NAME>
+        								<LONG-NAME>needsAuthenticationFlag</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-057522da-62d4-470e-be47-d42dc787994f"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-1e789775-bc76-4831-8355-28ee5f44aaa0" OID="id-1e789775-bc76-4831-8355-28ee5f44aaa0">
+        								<SHORT-NAME>SEED</SHORT-NAME>
+        								<LONG-NAME>Seed</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-2414eb10-330f-48aa-9ec1-056f52101941"/>
+        							</OUTPUT-PARAM>
+        							<OUTPUT-PARAM ID="id-e1a19e88-9624-431f-91d0-f32c3062c5f7" OID="id-e1a19e88-9624-431f-91d0-f32c3062c5f7">
+        								<SHORT-NAME>EAV</SHORT-NAME>
+        								<LONG-NAME>extendedAuthValue</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-2414eb10-330f-48aa-9ec1-056f52101941"/>
+        							</OUTPUT-PARAM>
+        						</OUTPUT-PARAMS>
+        						<NEG-OUTPUT-PARAMS>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_CODE</SHORT-NAME>
+        								<LONG-NAME>ErrorCode</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_DESC</SHORT-NAME>
+        								<LONG-NAME>ErrorDescription</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</NEG-OUTPUT-PARAM>
+        							<NEG-OUTPUT-PARAM>
+        								<SHORT-NAME>ERROR_SEVERITY</SHORT-NAME>
+        								<LONG-NAME>ErrorSeverity</LONG-NAME>
+        								<DOP-BASE-REF DOCREF="PROG_SERVICES_UDS" DOCTYPE="LAYER" ID-REF="id-b4a7a039-498f-4d97-b0e1-7138ecb3e9a9"/>
+        							</NEG-OUTPUT-PARAM>
+        						</NEG-OUTPUT-PARAMS>
+        					</SINGLE-ECU-JOB>
+        				</DIAG-COMMS>
+                <COMPARAM-REFS>
+                    <COMPARAM-REF DOCTYPE="COMPARAM-SPEC" DOCREF="UDS_BMW_CPS" ID-REF="id-e73ad70e-6bed-4a0e-92ef-3543db689a16">
+                        <VALUE>15000</VALUE>
+                        <PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+                    </COMPARAM-REF>
+                </COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

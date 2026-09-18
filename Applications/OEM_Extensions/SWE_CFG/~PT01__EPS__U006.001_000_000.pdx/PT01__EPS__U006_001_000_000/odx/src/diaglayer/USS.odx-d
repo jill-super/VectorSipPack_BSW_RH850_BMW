@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ODX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd">
+    <DIAG-LAYER-CONTAINER OID="id-3dc035b2-3f6a-4c13-85bb-1c4b0bd655a9" ID="id-3dc035b2-3f6a-4c13-85bb-1c4b0bd655a9">
+        <SHORT-NAME>USS_DLC</SHORT-NAME>
+        <LONG-NAME>Ultraschall Sensoren Steuergerät</LONG-NAME>
+        <BASE-VARIANTS>
+            <BASE-VARIANT OID="id-6af878da-7dbb-4122-b241-87cac9019ccc" ID="id-6af878da-7dbb-4122-b241-87cac9019ccc">
+                <SHORT-NAME>USS</SHORT-NAME>
+                <LONG-NAME>Ultraschall Sensoren Steuergerät</LONG-NAME>
+                <DESC>
+                    <p>Ultraschall Sensoren Steuergerät BAC 4.0.3</p>
+                </DESC>
+        				<COMPARAM-REFS>
+        					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+        						<VALUE>2</VALUE>
+        						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_TCP"/>
+        					</COMPARAM-REF>
+        					<COMPARAM-REF DOCREF="UDS_BMW_CPS" DOCTYPE="COMPARAM-SPEC" ID-REF="id-03234824-af82-469e-97f1-295751864447">
+        						<VALUE>2</VALUE>
+        						<PROTOCOL-SNREF SHORT-NAME="ISO_14229_BMW_CAN"/>
+        					</COMPARAM-REF>
+        				</COMPARAM-REFS>
+                <PARENT-REFS>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="PROG_UDS_DLC" ID-REF="id-063e2d04-dd5a-430e-a110-fb679fbb3d78"/>
+                    <PARENT-REF xsi:type="FUNCTIONAL-GROUP-REF" DOCTYPE="CONTAINER" DOCREF="COD_UDS_DLC" ID-REF="id-b4f7fc68-41d7-47e5-b232-79b574a8e9a6"/>
+                </PARENT-REFS>
+            </BASE-VARIANT>
+        </BASE-VARIANTS>
+    </DIAG-LAYER-CONTAINER>
+</ODX>

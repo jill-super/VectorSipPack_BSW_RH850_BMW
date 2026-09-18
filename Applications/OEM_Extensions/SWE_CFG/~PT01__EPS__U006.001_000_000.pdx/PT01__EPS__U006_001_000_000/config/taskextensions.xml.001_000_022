@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Aenderungsdatum:    Version:          Wer:					Aenderungsgrund:
+03.03.2011			                  G.Buecherl			QC6168: Reset HU nach dem BooloaderFlash HU eingetragen, da initial fehlerhaft bedatet an der Stelle
+09.03.2011			                  G.Buecherl			BDC_GW als neues SG hinzugefügt, 
+								      G.Buecherl 			QC6170 ActivateProgramming nach BootloaderFlash ZGW entfernt,
+								      G.Buecherl	        Workaround HU_CIC F020 eingefügt siehe Kommentar unten 
+09.11.2011			                  G.Buecherl			Reset der RSE_NBT wird nun analog HUs auch erst bei FinalizeVehicleFlash gemacht (Fehlermeldung Sascha Hinck EI-4x)
+20.07.2012          001.000.001       S.Zerndl				BDC_GW2 zu den Gateway SGs hinzugefügt
+21.08.2012          001.000.002       S.Zerndl              HU_NBT2 zu den HU SGs hinzugefügt
+02.11.2012          001.000.003       S.Zerndl              RSE_HIGH_NBT2 hinzugefügt. Analog zu RSE_HIGH_NBT
+26.03.2013          001.000.004       S.Zerndl				ATM hinzugefügt, wird behandelt wie die RSE da es am Ethernet-Switch der HU_NBT hängt
+06.06.2013          001.000.005	      S.Zerndl              Evalboard2 0x7d, hinzugefügt.
+18.06.2013          001.000.006       S.Zerndl              DKOMBI2 0x60 hinzugefügt.
+22.07.2013          001.000-007       S.Zerndl				Neuer Alias eingeführt für HSFZ-SGs, EDI hinzugefügt
+19.09.2013          001.000.008       S.Zerndl		     	Evalboard3 0x7D als neues HSFZ-intern hinzugefügt und Evalboard2 entfernt
+07.10.2013          001.000.009       S.Zerndl		     	FRR2, ICAM3, KAFAS3 aus der HSFZ-Grupper entfernt
+11.10.2013          001.000.010       S.Zerndl              Alias Gruppe wieder aufgelöst, HU_ENTRYNAV2 hinzugefügt; Alias für Kombi eingeführt, ICAM3 und KAFAS3 hinzugefügt
+20.01.2014          001.000.011       M.Fischer            FRR2 hinzugefügt, wird behandelt wie KAFAS3
+04.02.2015          001.000.012       M.Fischer            DelayedReset eingefuegt; Reset fuer Blatt SGs nach vorne gezogen
+16.03.2015          001.000.013       M.Fischer            Aliasse für KAFAS und ICAM eingebaut und KAFAS4 hinzugefügt
+23.04.2015          001.000.014       M.Fischer       RSE_MGU, HU_MGU, RAM als neue HSFZ-Intern SGs hinzugefügt - HU_MGU ist KEIN Gateway mehr, daher wie normales SG behandelt
+06.07.2015          001.000.015       M.Fischer       ICAM4 hinzugefügt
+01.09.2015          001.000.016       M.Fischer       BDC_GW3 und ATM2 (Alias eingeführt) hinzugefügt
+25.09.2015          001.000.017       M.Fischer       DKOMBI4 hinzugefügt
+30.10.2015          001.000.018       M.Fischer       Neues Alias für DCS eingefügt und Reset/SwitchToProgSess für dieses Alias angelegt
+27.01.2016          001.000.019       M.Fischer       INGA18_GW hinzugefügt
+20.07.2016          001.000.020       M.Fischer       DKOMBI5 hinzugefügt
+07.10.2016          001.000.021       M.Fischer       Ausführungsbedingungen eingefügt
+14.07.2017          001.000.022       M.Fischer       EVALBOARD3 für 7E und 7F und INGA21_GW eingefügt.
+ -->
+<TaskExtensions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bmw.com/2005/psdz.data.taskextensions taskextensions.xsd" xmlns="http://bmw.com/2005/psdz.data.taskextensions">
+	<Alias name="ZGW">
+		<Ecu>ZGW_10</Ecu>
+		<Ecu>ZGW2_10</Ecu>
+		<Ecu>FEM_GW_10</Ecu>
+		<Ecu>BDC_GW_10</Ecu>
+		<Ecu>BDC_GW2_10</Ecu>
+		<Ecu>BDC_GW3_10</Ecu>
+		<Ecu>EDI_10</Ecu>
+		<Ecu>INGA18_GW_10</Ecu>
+		<Ecu>INGA21_GW_10</Ecu>
+	</Alias>
+	<Alias name="HU">
+		<Ecu>HU_CIC_63</Ecu>
+		<Ecu>HU_CICMID_63</Ecu>
+		<Ecu>HU_CHAMP_63</Ecu>
+		<Ecu>HU_CHAMP2_63</Ecu>
+		<Ecu>HU_ENTRY_63</Ecu>
+		<Ecu>HU_ENTRYNAV_63</Ecu>
+		<Ecu>HU_ENTRYNAV2_63</Ecu>
+		<Ecu>HU_NBT_63</Ecu>
+		<Ecu>HU_NBT2_63</Ecu>
+	</Alias>
+	<Alias name="MOST_SGS_CIC">
+		<Ecu>AMP_TOPHB_37</Ecu>
+		<Ecu>AMP_TOPLR_37</Ecu>
+		<Ecu>AMPT_37</Ecu>
+		<Ecu>CMB_MEDIA_36</Ecu>
+		<Ecu>DKOMBI_60</Ecu>
+		<Ecu>KOMBI_60</Ecu>
+		<Ecu>MMC_UDS_31</Ecu>
+		<Ecu>RSE_MID_26</Ecu>
+		<Ecu>RSE_HIGH_26</Ecu>
+		<Ecu>TV_MODUL_4B</Ecu>
+	</Alias>
+	<Alias name="RSE">
+		<Ecu>RSE_HIGH_NBT_26</Ecu>
+		<Ecu>RSE_HIGH_NBT2_26</Ecu>
+		<Ecu>RSE_MGU_26</Ecu>
+	</Alias>
+	<Alias name="KOMBI">
+		<Ecu>DKOMBI2_60</Ecu>
+		<Ecu>DKOMBI3_60</Ecu>
+		<Ecu>DKOMBI4_60</Ecu>
+		<Ecu>DKOMBI5_60</Ecu>
+	</Alias>
+	<Alias name="KAFAS">
+		<Ecu>KAFAS3_5D</Ecu>
+		<Ecu>KAFAS4_5D</Ecu>
+	</Alias>
+	<Alias name="ICAM">
+		<Ecu>ICAM3_06</Ecu>
+		<Ecu>ICAM4_06</Ecu>
+	</Alias>
+	<Alias name="ATM">
+		<Ecu>ATM_61</Ecu>
+		<Ecu>ATM2_61</Ecu>
+	</Alias>
+	<Alias name="DCS">
+		<Ecu>DCS_45</Ecu>
+	</Alias>
+	<SwitchToProgrammingSession ecu="ZGW">
+		<Before>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+		<Before>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</SwitchToProgrammingSession>
+	<Reset ecu="ZGW">
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<UpdateSvtSoll>
+		<After>
+			<FirstOf>
+				<SoftwareDeploy ecu="ZGW" doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+				<PrepareVehicle doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+			</FirstOf>
+		</After>
+	</UpdateSvtSoll>
+	<Reset ecu="RSE">
+		<After>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<Reset ecu="HU_MGU_63">
+		<After>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<Reset ecu="RAM_37">
+		<After>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<Reset ecu="ATM">
+		<After>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<Reset ecu="DCS">
+		<After>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<Reset ecu="KOMBI">
+		<After>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<Reset ecu="EVALBOARD3_7D">
+		<After>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<Reset ecu="EVALBOARD3_7E">
+		<After>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<Reset ecu="EVALBOARD3_7F">
+		<After>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<Reset ecu="KAFAS">
+		<After>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<Reset ecu="FRR2_21">
+		<After>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<Reset ecu="ICAM">
+		<After>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<Reset ecu="HU">
+		<Before>
+			<FinalizeVehicleFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+			<If>
+				<OneOf>
+					<Exists>
+						<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+					</Exists>
+					<Exists>
+						<IbaDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+					</Exists>
+				</OneOf>
+			</If>
+		</Before>
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</Reset>
+	<ActivateProgrammingMode>
+		<After>
+			<FirstOf>
+				<SoftwareDeploy ecu="ZGW" doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+				<PrepareVehicleFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+			</FirstOf>
+		</After>
+	</ActivateProgrammingMode>
+	<SwitchToProgrammingSession ecu="HU">
+		<After>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+		<After>
+			<FirstOf>
+				<SoftwareDeploy ecu="ZGW" doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+				<PrepareVehicleFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+			</FirstOf>
+			<If>
+				<OneOf>
+					<Exists>
+						<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+					</Exists>
+					<Exists>
+						<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+					</Exists>
+					<Exists>
+						<IbaDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+					</Exists>
+				</OneOf>
+			</If>
+		</After>
+	</SwitchToProgrammingSession>
+	<!-- Workaround HU_CIC F020 das aktuell nur im Bootloader TransferData an bestimmte SGs erlaubt. Wird in der HO PTT eingesetzt und die HU selbst nicht behandelt ist dies nicht gegeben. Diese taskextension soll dies zukünftig gewährleisten.-->
+	<SwitchToProgrammingSession ecu="HU_CIC_63">
+		<After>
+			<FirstOf>
+				<SoftwareDeploy ecu="ZGW" doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+				<PrepareVehicleFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+			</FirstOf>
+			<If>
+				<AllOf>
+					<OneOf>
+						<Exists>
+							<SoftwareDeploy ecu="MOST_SGS_CIC" doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+						</Exists>
+						<Exists>
+							<BootloaderFlash ecu="MOST_SGS_CIC" doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+						</Exists>
+					</OneOf>
+					<NoneOf>
+						<Exists>
+							<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+						</Exists>
+						<Exists>
+							<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+						</Exists>
+						<Exists>
+							<IbaDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+						</Exists>
+					</NoneOf>
+				</AllOf>
+			</If>
+		</After>
+	</SwitchToProgrammingSession>
+	<SwitchToProgrammingSession ecu="RSE">
+		<Before>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+		<Before>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</SwitchToProgrammingSession>
+	<SwitchToProgrammingSession ecu="HU_MGU_63">
+		<Before>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+		<Before>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</SwitchToProgrammingSession>
+	<SwitchToProgrammingSession ecu="RAM_37">
+		<Before>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+		<Before>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</SwitchToProgrammingSession>
+	<SwitchToProgrammingSession ecu="ATM">
+		<Before>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+		<Before>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</SwitchToProgrammingSession>
+	<SwitchToProgrammingSession ecu="DCS">
+		<Before>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+		<Before>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</SwitchToProgrammingSession>
+	<SwitchToProgrammingSession ecu="KOMBI">
+		<Before>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+		<Before>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</SwitchToProgrammingSession>
+	<SwitchToProgrammingSession ecu="EVALBOARD3_7D">
+		<Before>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+		<Before>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</SwitchToProgrammingSession>
+	<SwitchToProgrammingSession ecu="EVALBOARD3_7E">
+		<Before>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+		<Before>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</SwitchToProgrammingSession>
+	<SwitchToProgrammingSession ecu="EVALBOARD3_7F">
+		<Before>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+		<Before>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</SwitchToProgrammingSession>
+	<SwitchToProgrammingSession ecu="KAFAS">
+		<Before>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+		<Before>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</SwitchToProgrammingSession>
+	<SwitchToProgrammingSession ecu="FRR2_21">
+		<Before>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+		<Before>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</SwitchToProgrammingSession>
+	<SwitchToProgrammingSession ecu="ICAM">
+		<Before>
+			<BootloaderFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+		<Before>
+			<SoftwareDeploy doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</SwitchToProgrammingSession>
+	<Reset ecu="MMC_31">
+		<Before>
+			<SoftwareDeploy ecu="MMC_AB" doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</Reset>
+	<Reset ecu="MMC_AB">
+		<Before>
+			<SoftwareDeploy ecu="MMC_31" doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</Reset>
+	<!-- CR1227/CR2061-->
+	<DelayedReset>
+		<Before>
+			<FinalizeVehicleFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</DelayedReset>
+	<!-- CR1227/CR2061-->
+	<DeactivateProgrammingMode>
+		<Before>
+			<FinalizeVehicleFlash doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</DeactivateProgrammingMode>
+	<ActivateCodingMode>
+		<After>
+			<PrepareVehicleCoding doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired,Executable"/>
+		</After>
+	</ActivateCodingMode>
+	<DeactivateCodingMode>
+		<Before>
+			<FinalizeVehicleCoding doNotRunTaskextensionIfStatus="NotExecutable,Inactive,NotRequired"/>
+		</Before>
+	</DeactivateCodingMode>
+</TaskExtensions>

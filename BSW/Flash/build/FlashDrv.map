@@ -1,0 +1,225 @@
+Host OS:	Windows 7 Service Pack 1
+ELXR: Copyright (C) 1983-2015 Green Hills Software.  All Rights Reserved.
+Release: Compiler v2015.1.7
+Build Directory: [Directory] BTOWORKER6:c:/build_2015_1_bto/2015-10-21.2100-2015_1_bto/win64-comp
+Revision: [VCInfo] http://toolsvc/branches/release-branch-70-bto/src@544153 (built by build)
+Revision Date: Thu Oct 22 09:05:22 2015
+
+Release Date: Thu Oct 22 09:32:31 2015
+
+
+
+
+Load Map Wed Jan 10 11:39:28 2018
+Image Summary
+
+  Section              Base      Size(hex)    Size(dec)  SecOffs
+  .rom_start           fede0000  00000000            0   0000000
+  .code_start          fede0000  00000000            0   0000000
+  .sdabase             fede0000  00000000            0   0000000
+  .signature           fede0000  00000014           20   0000180
+  .text                fede0014  00000368          872   0000194
+  .R_FCL_CODE_RAM      fede037c  00000cea         3306   00004fc
+  .R_FCL_CODE_ROMRAM   fede1068  000007f4         2036   00011e8
+  .R_FCL_DATA          fede185c  00000080          128   0000000
+  .R_FCL_CODE_USRINT   fede18dc  00000000            0   0000000
+  .R_FCL_CODE_USR      fede18dc  00000000            0   0000000
+  .R_FCL_CODE_ROM      fede18dc  000000da          218   00019dc
+  .R_FCL_CODE_RAM_EX_PROT fede19b8  00000020           32   0000000
+  .os_text             fede19d8  00000000            0   0000000
+  .R_FDL_Text          fede19d8  00000000            0   0000000
+  .MCU_CODE_RRAM_INTVEC fede19d8  00000000            0   0000000
+  .MCU_CR_CODE_RRAM    fede19d8  00000000            0   0000000
+  .code_end            fede19d8  00000000            0   0000000
+  .const_start         fede19d8  00000000            0   0000000
+  .rozdata             fede19d8  00000000            0   0000000
+  .robase              fede19d8  00000000            0   0000000
+  .rosdata             fede19d8  00000014           20   0001ab8
+  .os_rosdata          fede19ec  00000000            0   0000000
+  .rodata              fede19ec  00000000            0   0000000
+  .os_rodata           fede19ec  00000000            0   0000000
+  .const_end           fede19ec  00000000            0   0000000
+  .fixaddr             fede19ec  00000000            0   0000000
+  .fixtype             fede19ec  00000000            0   0000000
+  .secinfo             fede19ec  00000000            0   0000000
+  .syscall             fede19ec  00000000            0   0000000
+  .data                fede19ec  00000000            0   0000000
+  .bss                 fede19ec  00000000            0   0000000
+  .os_data             fede19ec  00000000            0   0000000
+  .os_bss              fede19ec  00000000            0   0000000
+  .sdata               fede19ec  00000000            0   0000000
+  .sbss                fede19ec  00000028           40   0000000
+  .os_sdata            fede1a14  00000000            0   0000000
+  .os_sbss             fede1a14  00000000            0   0000000
+  .zdata               fede1a14  00000000            0   0000000
+  .zbss                fede1a14  00000000            0   0000000
+  .tdata               fede1a14  00000000            0   0000000
+  .R_FCL_CONST         fede1a14  00000000            0   0000000
+  .rom_end             fede1a20  00000000            0   0000000
+  .stack               fede1a20  00001000         4096   0000000
+  .debug_info          00000000  00004be2        19426   0001acc
+  .debug_abbrev        00000000  000004da         1242   00066ae
+  .debug_line          00000000  000025aa         9642   0006b88
+  .debug_macinfo       00000000  00002412         9234   0009132
+  .debug_frame         00000000  00000740         1856   000b544
+  .note.renesas        00000000  00000050           80   000bc84
+  .linfix              00000000  000000c8          200   000bcd4
+  .gstackfix           00000000  00000000            0   0000000
+
+Load Map Wed Jan 10 11:39:28 2018
+Module Summary
+
+  Origin+Size    Section          Module
+00000000+000050  .note.renesas    <RENESAS ABI INFO>
+fede0014+000368  .text            flashdrv.o
+fede0000+000014  .signature       flashdrv.o
+fede19ec+000028  .sbss            flashdrv.o
+00000000+00100b  .debug_info      flashdrv.o
+00000000+000192  .debug_abbrev    flashdrv.o
+00000000+000538  .debug_line      flashdrv.o
+00000000+0007b3  .debug_macinfo   flashdrv.o
+00000000+00015c  .debug_frame     flashdrv.o
+fede037c+000c2e  .R_FCL_CODE_RAM  r_fcl_hw_access.o
+fede1068+0005e6  .R_FCL_CODE_ROMRAM r_fcl_hw_access.o
+0000100b+001f4b  .debug_info      r_fcl_hw_access.o
+00000192+000192  .debug_abbrev    r_fcl_hw_access.o
+00000538+0014ec  .debug_line      r_fcl_hw_access.o
+000007b3+00196b  .debug_macinfo   r_fcl_hw_access.o
+0000015c+00044c  .debug_frame     r_fcl_hw_access.o
+00000324+000024  .debug_abbrev    r_fcl_hw_access_asm.o
+00002f56+00038c  .debug_info      r_fcl_hw_access_asm.o
+00001a24+00030b  .debug_line      r_fcl_hw_access_asm.o
+fede18dc+00009c  .R_FCL_CODE_ROM  r_fcl_hw_access_asm.o
+fede0faa+000082  .R_FCL_CODE_RAM  r_fcl_hw_access_asm.o
+fede1978+00003e  .R_FCL_CODE_ROM  r_fcl_user_if.o
+fede19d8+000014  .rosdata         r_fcl_user_if.o
+fede102c+00003a  .R_FCL_CODE_RAM  r_fcl_user_if.o
+fede164e+00020e  .R_FCL_CODE_ROMRAM r_fcl_user_if.o
+fede185c+000080  .R_FCL_DATA      r_fcl_user_if.o
+000032e2+001900  .debug_info      r_fcl_user_if.o
+00000348+000192  .debug_abbrev    r_fcl_user_if.o
+00001d2f+00087b  .debug_line      r_fcl_user_if.o
+0000211e+0002f4  .debug_macinfo   r_fcl_user_if.o
+000005a8+000198  .debug_frame     r_fcl_user_if.o
+00000000+0000c8  .linfix          <Linker supplemental debug info>
+
+Load Map Wed Jan 10 11:39:28 2018
+Global Symbols (sorted alphabetically)
+
+ .text            fede0014+00009e _AsmDummy
+ .text            fede0226+00004c _ExpFlashDeinit
+ .text            fede0272+0000a0 _ExpFlashErase
+ .text            fede0172+0000b4 _ExpFlashInit
+ .text            fede0312+00006a _ExpFlashWrite
+ .text            fede00cc+0000a6 _FblDrvFlashGetBlockByAddr..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cflashdrv.
+ .text            fede00b2+00001a _FblDrvFlashHandleWD..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cflashdrv.
+                  00000000+0000b6 _R_FCL_CalcFctAddr
+                  00000000+000080 _R_FCL_CancelRequest
+                  00000000+0000dc _R_FCL_CopySections
+ .R_FCL_CODE_ROMRAM fede164e+00020e _R_FCL_Execute
+ .R_FCL_CODE_ROMRAM fede1160+000016 _R_FCL_FCUFct_CheckMode
+ .R_FCL_CODE_RAM  fede0698+000024 _R_FCL_FCUFct_ChkSuspended..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_RAM  fede0598+000040 _R_FCL_FCUFct_ClearStatus..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_RAM  fede0fbc+000000 _R_FCL_FCUFct_Clear_Cache
+ .R_FCL_CODE_ROMRAM fede13f0+0000da _R_FCL_FCUFct_Erase
+ .R_FCL_CODE_RAM  fede0670+000028 _R_FCL_FCUFct_ForcedStop..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_ROMRAM fede12ee+000022 _R_FCL_FCUFct_GetBlockCnt
+ .R_FCL_CODE_ROMRAM fede1344+0000ac _R_FCL_FCUFct_GetBlockEndAddr
+ .R_FCL_CODE_RAM  fede03d8+000082 _R_FCL_FCUFct_GetConfigArea
+ .R_FCL_CODE_RAM  fede076c+0001a6 _R_FCL_FCUFct_GetDeviceInfo..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_ROMRAM fede1310+000034 _R_FCL_FCUFct_GetDeviceName
+ .R_FCL_CODE_RAM  fede06d0+00009c _R_FCL_FCUFct_GetResult..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_ROMRAM fede1282+00006c _R_FCL_FCUFct_GetSecurityFlag
+ .R_FCL_CODE_ROMRAM fede1586+0000b2 _R_FCL_FCUFct_HandleLockBit
+ .R_FCL_CODE_RAM  fede0a60+00054a _R_FCL_FCUFct_HandleMultiOperation
+ .R_FCL_CODE_ROMRAM fede1088+0000d8 _R_FCL_FCUFct_HandleResume
+ .R_FCL_CODE_ROMRAM fede1638+000016 _R_FCL_FCUFct_LockBitMode
+ .R_FCL_CODE_RAM  fede0912+00014e _R_FCL_FCUFct_PrepareEnvironment
+ .R_FCL_CODE_RAM  fede06bc+000014 _R_FCL_FCUFct_RestoreLastState..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_ROMRAM fede1176+00010c _R_FCL_FCUFct_SetConfigArea
+ .R_FCL_CODE_RAM  fede0528+000070 _R_FCL_FCUFct_SetFrequency..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_RAM  fede064c+000024 _R_FCL_FCUFct_SwitchMode_Check..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_RAM  fede05d8+000074 _R_FCL_FCUFct_SwitchMode_Start
+ .R_FCL_CODE_RAM  fede0faa+000000 _R_FCL_FCUFct_Switch_BFlash
+ .R_FCL_CODE_RAM  fede04aa+00007e _R_FCL_FCUFct_VerifyChecksum..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_RAM  fede045a+000050 _R_FCL_FCUFct_VerifyID..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_ROMRAM fede14ca+0000bc _R_FCL_FCUFct_Write
+ .R_FCL_CODE_ROMRAM fede1068+000020 _R_FCL_Fct_CallFromRAM
+ .R_FCL_CODE_ROM  fede194c+000000 _R_FCL_Fct_CodeExProt_CalcRange
+ .R_FCL_CODE_ROM  fede18f8+000000 _R_FCL_Fct_CodeRam_CalcRange
+ .R_FCL_CODE_ROM  fede18dc+000000 _R_FCL_Fct_CodeRomRam_CalcRange
+ .R_FCL_CODE_ROM  fede1930+000000 _R_FCL_Fct_CodeUsrInt_CalcRange
+ .R_FCL_CODE_ROM  fede1914+000000 _R_FCL_Fct_CodeUsr_CalcRange
+ .R_FCL_CODE_RAM  fede1014+000000 _R_FCL_Fct_Copy_Code
+ .R_FCL_CODE_ROM  fede1968+000000 _R_FCL_Fct_PrgOffset
+                  00000000+000008 _R_FCL_GetVersionString
+ .R_FCL_CODE_RAM  fede102c+00003a _R_FCL_Handler
+ .R_FCL_CODE_RAM  fede0388+000006 _R_FCL_I_read_memory_u08..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_RAM  fede0382+000006 _R_FCL_I_read_memory_u16..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_RAM  fede037c+000006 _R_FCL_I_read_memory_u32..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_RAM  fede038e+000006 _R_FCL_I_write_memory_u08
+ .R_FCL_CODE_RAM  fede03d2+000006 _R_FCL_I_write_memory_u16..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_RAM  fede03cc+000006 _R_FCL_I_write_memory_u32..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_RAM  fede0394+000038 _R_FCL_I_write_unaligned_memory_u32..D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_hw_access.
+ .R_FCL_CODE_ROM  fede1978+00003e _R_FCL_Init
+                  00000000+00004c _R_FCL_ResumeRequest
+                  00000000+00003c _R_FCL_SuspendRequest
+ .text            fede00b2+000000 ___ghs_eofn_AsmDummy
+ .text            fede0272+000000 ___ghs_eofn_ExpFlashDeinit
+ .text            fede0312+000000 ___ghs_eofn_ExpFlashErase
+ .text            fede0226+000000 ___ghs_eofn_ExpFlashInit
+ .text            fede037c+000000 ___ghs_eofn_ExpFlashWrite
+                  00000000+000000 ___ghs_eofn_R_FCL_CalcFctAddr
+                  00000000+000000 ___ghs_eofn_R_FCL_CancelRequest
+                  00000000+000000 ___ghs_eofn_R_FCL_CopySections
+ .R_FCL_CODE_ROMRAM fede185c+000000 ___ghs_eofn_R_FCL_Execute
+ .R_FCL_CODE_ROMRAM fede1176+000000 ___ghs_eofn_R_FCL_FCUFct_CheckMode
+ .R_FCL_CODE_ROMRAM fede14ca+000000 ___ghs_eofn_R_FCL_FCUFct_Erase
+ .R_FCL_CODE_ROMRAM fede1310+000000 ___ghs_eofn_R_FCL_FCUFct_GetBlockCnt
+ .R_FCL_CODE_ROMRAM fede13f0+000000 ___ghs_eofn_R_FCL_FCUFct_GetBlockEndAddr
+ .R_FCL_CODE_RAM  fede045a+000000 ___ghs_eofn_R_FCL_FCUFct_GetConfigArea
+ .R_FCL_CODE_ROMRAM fede1344+000000 ___ghs_eofn_R_FCL_FCUFct_GetDeviceName
+ .R_FCL_CODE_ROMRAM fede12ee+000000 ___ghs_eofn_R_FCL_FCUFct_GetSecurityFlag
+ .R_FCL_CODE_ROMRAM fede1638+000000 ___ghs_eofn_R_FCL_FCUFct_HandleLockBit
+ .R_FCL_CODE_RAM  fede0faa+000000 ___ghs_eofn_R_FCL_FCUFct_HandleMultiOperation
+ .R_FCL_CODE_ROMRAM fede1160+000000 ___ghs_eofn_R_FCL_FCUFct_HandleResume
+ .R_FCL_CODE_ROMRAM fede164e+000000 ___ghs_eofn_R_FCL_FCUFct_LockBitMode
+ .R_FCL_CODE_RAM  fede0a60+000000 ___ghs_eofn_R_FCL_FCUFct_PrepareEnvironment
+ .R_FCL_CODE_ROMRAM fede1282+000000 ___ghs_eofn_R_FCL_FCUFct_SetConfigArea
+ .R_FCL_CODE_RAM  fede064c+000000 ___ghs_eofn_R_FCL_FCUFct_SwitchMode_Start
+ .R_FCL_CODE_ROMRAM fede1586+000000 ___ghs_eofn_R_FCL_FCUFct_Write
+ .R_FCL_CODE_ROMRAM fede1088+000000 ___ghs_eofn_R_FCL_Fct_CallFromRAM
+                  00000000+000000 ___ghs_eofn_R_FCL_GetVersionString
+ .R_FCL_CODE_RAM  fede1066+000000 ___ghs_eofn_R_FCL_Handler
+ .R_FCL_CODE_RAM  fede0394+000000 ___ghs_eofn_R_FCL_I_write_memory_u08
+ .R_FCL_CODE_ROM  fede19b6+000000 ___ghs_eofn_R_FCL_Init
+                  00000000+000000 ___ghs_eofn_R_FCL_ResumeRequest
+                  00000000+000000 ___ghs_eofn_R_FCL_SuspendRequest
+                  00000002+000000 ___ghs_log_fee_level
+ .R_FCL_CODE_RAM  fede037c+000000 ___ghsbegin_R_FCL_CODE_RAM
+ .R_FCL_CODE_RAM_EX_PROT fede19b8+000000 ___ghsbegin_R_FCL_CODE_RAM_EX_PROT
+ .R_FCL_CODE_ROMRAM fede1068+000000 ___ghsbegin_R_FCL_CODE_ROMRAM
+ .R_FCL_CODE_USR  fede18dc+000000 ___ghsbegin_R_FCL_CODE_USR
+ .R_FCL_CODE_USRINT fede18dc+000000 ___ghsbegin_R_FCL_CODE_USRINT
+ .rosdata         fede19d8+000000 ___ghsbegin_rosdata
+ .sdabase         fede0000+000000 ___ghsbegin_sdabase
+ .tdata           fede1a14+000000 ___ghsbegin_tdata
+ .secinfo         fede19ec+000000 ___ghsbinfo_bcopy
+ .secinfo         fede19ec+000000 ___ghseinfo_bcopy
+ .R_FCL_CODE_RAM  fede1066+000000 ___ghsend_R_FCL_CODE_RAM
+ .R_FCL_CODE_RAM_EX_PROT fede19d8+000000 ___ghsend_R_FCL_CODE_RAM_EX_PROT
+ .R_FCL_CODE_ROMRAM fede185c+000000 ___ghsend_R_FCL_CODE_ROMRAM
+ .R_FCL_CODE_USR  fede18dc+000000 ___ghsend_R_FCL_CODE_USR
+ .R_FCL_CODE_USRINT fede18dc+000000 ___ghsend_R_FCL_CODE_USRINT
+ .tdata           fede1a14+000000 __ep
+                  00000000+000000 __ghs_v800_sda_model
+ .sdabase         fede8000+000000 __gp
+ .rosdata         fede99d8+000000 __tp
+ .sbss            fede1a10+000004 _currentFblEP
+ .sbss            fede1a08+000004 _currentFblGP
+ .sbss            fede1a0c+000004 _currentFblTP
+ .rosdata         fede19d8+000014 _fcl_ver_str.R_FCL_GetVersionString.D.3A.5Cusr.5Cusage.5CDelivery.5CCBD17x.5CCBD1700369.5CD04.5Cexternal.5CBSW.5CFlash.5Cbuild.5Cobj.5Cr_fcl_user_if..0
+ .signature       fede0000+000014 _flashHeader
+ .R_FCL_DATA      fede185c+000080 _g_fcl_data_str
+ .sbss            fede19ec+000018 _g_flash_lib_Config
+ .sbss            fede1a04+000004 _pflashParam

@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<testmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.vector-informatik.de/CANoe/TestModule/1.8" xsi:schemaLocation="http://www.vector-informatik.de/CANoe/TestModule/1.8 testmodule.xsd" title="StartApplication" version="1.0">
+    <miscinfo title="Please note">
+         <info>
+            <description>The StartApplication only show special aspects of the software. With regard to the fact
+               that these programs are meant for demonstration purposes only, Vector Informatik liability shall be
+               expressly excluded in cases of ordinary negligence, to the extent admissible by law or statute.</description>
+         </info>
+    </miscinfo>
+    <templates>
+        <!-- ************************************************************************* -->
+        <!-- ***                    COM UseCase Templates                          *** -->
+        <!-- ************************************************************************* -->
+        <testcasetemplate name="DataTransmission template" version="1.0">
+            <paramdef name="parDescription" />
+            <paramdef name="parComSignalPairSelector" />
+            <description>$parDescription$</description>
+            <set title="Initialize variables">
+                <sysvar name="StartApplication::ErrorLog"></sysvar>
+            </set>
+            <set title="Activate Com Tx Only Usecase without auto increment and select channel Tx signal">
+                <sysvar name="StartApplication::UseCaseActivator">3</sysvar>
+                <sysvar name="StartApplication::ComSignalPairSelector">$parComSignalPairSelector$</sysvar>
+                <sysvar name="StartApplication::ComSendCtrl">2</sysvar>
+            </set>
+            <wait title="Wait to allow for transmission of control signals" time="1200"/>
+            <set title="Initialize ComInput">
+                <sysvar name="StartApplication::ComInput">0</sysvar>
+            </set>
+            <awaitvaluematch title="Wait for rx data processing on ECU side." timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <eq>0</eq>
+                </sysvar>
+                <sysvar namespace="StartApplication" name="ComActualOutput">
+                    <eq>0</eq>
+                </sysvar>
+                <sysvar namespace="StartApplication" name="ComExpectedOutput">
+                    <eq>0</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <set title="Set sensor value to 254, this will be scaled to the maximum value of the Rx signal">
+                <sysvar namespace="StartApplication" name="ComInput">254</sysvar>
+            </set>
+            <awaitvaluematch title="Wait until there is a difference between actual and expected output because the Rx signal has been transmitted on the bus but the ECU has not updated the Tx signal yet." timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <ne>0</ne>
+                </sysvar>
+            </awaitvaluematch>
+            <awaitvaluematch title="Wait until there is no difference between actual and expected output because the ECU has updated the Tx signal" timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <eq>0</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <wait title="Wait to allow for visual check in panel" time="1000ms"/>
+            <set title="Set sensor value to 128, this will be scaled to the median value of the Rx signal">
+                <sysvar namespace="StartApplication" name="ComInput">128</sysvar>
+            </set>
+            <awaitvaluematch title="Wait until there is a difference between actual and expected output because the Rx signal has been transmitted on the bus but the ECU has not updated the Tx signal yet." timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <ne>0</ne>
+                </sysvar>
+            </awaitvaluematch>
+            <awaitvaluematch title="Wait until there is no difference between actual and expected output because the ECU has updated the Tx signal" timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <eq>0</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <wait title="Wait to allow for visual check in panel" time="1000ms"/>
+            <set title="Set sensor value to 0, this will be scaled to the minimum value of the Rx signal">
+                <sysvar namespace="StartApplication" name="ComInput">0</sysvar>
+            </set>
+            <awaitvaluematch title="Wait until there is a difference between actual and expected output because the Rx signal has been transmitted on the bus but the ECU has not updated the Tx signal yet." timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <ne>0</ne>
+                </sysvar>
+            </awaitvaluematch>
+            <awaitvaluematch title="Wait until there is no difference between actual and expected output because the ECU has updated the Tx signal" timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <eq>0</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <wait title="Wait to allow for visual check in panel" time="1000ms"/>
+            <completion>
+                <set title="Switch back to Com Rx/Tx usecase">
+                    <sysvar name="StartApplication::UseCaseActivator">0</sysvar>
+                </set>
+                <valuecomment>
+                    <description></description>
+                    <sysvar name="StartApplication::ErrorLog"/>
+                </valuecomment>
+            </completion>
+        </testcasetemplate>
+
+        <testcasetemplate name="DataReception template" version="1.0">
+            <paramdef name="parDescription" />
+            <paramdef name="parComSignalPairSelector" />
+            <description>$parDescription$</description>
+            <set title="Initialize variables">
+                <sysvar name="StartApplication::ErrorLog"></sysvar>
+            </set>
+            <set title="Activate Com Usecase without auto increment and select channel Rx signal">
+                <sysvar name="StartApplication::UseCaseActivator">0</sysvar>
+                <sysvar name="StartApplication::ComSignalPairSelector">$parComSignalPairSelector$</sysvar>
+                <sysvar name="StartApplication::ComSendCtrl">2</sysvar>
+            </set>
+            <wait title="Wait to allow for transmission of control signals" time="1200"/>
+            <set title="Initialize ComInput">
+                <sysvar name="StartApplication::ComInput">0</sysvar>
+            </set>
+            <awaitvaluematch title="Wait for rx data processing on ECU side." timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <eq>0</eq>
+                </sysvar>
+                <sysvar namespace="StartApplication" name="ComActualOutput">
+                    <eq>0</eq>
+                </sysvar>
+                <sysvar namespace="StartApplication" name="ComExpectedOutput">
+                    <eq>0</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <set title="Set sensor value to 254, this will be scaled to the maximum value of the Rx signal">
+                <sysvar namespace="StartApplication" name="ComInput">254</sysvar>
+            </set>
+            <awaitvaluematch title="Wait until there is a difference between actual and expected output because the Rx signal has been transmitted on the bus but the ECU has not updated the Tx signal yet." timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <ne>0</ne>
+                </sysvar>
+            </awaitvaluematch>
+            <awaitvaluematch title="Wait until there is no difference between actual and expected output because the ECU has updated the Tx signal" timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <eq>0</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <wait title="Wait to allow for visual check in panel" time="1000ms"/>
+            <set title="Set sensor value to 128, this will be scaled to the median value of the Rx signal">
+                <sysvar namespace="StartApplication" name="ComInput">128</sysvar>
+            </set>
+            <awaitvaluematch title="Wait until there is a difference between actual and expected output because the Rx signal has been transmitted on the bus but the ECU has not updated the Tx signal yet." timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <ne>0</ne>
+                </sysvar>
+            </awaitvaluematch>
+            <awaitvaluematch title="Wait until there is no difference between actual and expected output because the ECU has updated the Tx signal" timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <eq>0</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <wait title="Wait to allow for visual check in panel" time="1000ms"/>
+            <set title="Set sensor value to 0, this will be scaled to the minimum value of the Rx signal">
+                <sysvar namespace="StartApplication" name="ComInput">0</sysvar>
+            </set>
+            <awaitvaluematch title="Wait until there is a difference between actual and expected output because the Rx signal has been transmitted on the bus but the ECU has not updated the Tx signal yet." timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <ne>0</ne>
+                </sysvar>
+            </awaitvaluematch>
+            <awaitvaluematch title="Wait until there is no difference between actual and expected output because the ECU has updated the Tx signal" timeout="10000" joincondition="all">
+                <sysvar namespace="StartApplication" name="ComCmpOutputs">
+                    <eq>0</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <wait title="Wait to allow for visual check in panel" time="1000ms"/>
+            <completion>
+                <valuecomment>
+                    <description></description>
+                    <sysvar name="StartApplication::ErrorLog"/>
+                </valuecomment>
+            </completion>
+        </testcasetemplate>
+        <!-- ************************************************************************* -->
+        <!-- ***                    DIAGNOSTIC UseCase Templates                   *** -->
+        <!-- ************************************************************************* -->
+        <testcasetemplate name="BasicRequestResponseViaUDS template" version="1.0">
+            <paramdef name="parDescription" />
+            <paramdef name="parDiagChannel" />
+            <description>$parDescription$</description>
+            <set title="Initialize variables">
+                <sysvar name="StartApplication::ErrorLog"></sysvar>
+                <sysvar name="StartApplication::DiagActivator">0</sysvar>
+                <sysvar name="StartApplication::DiagChannel">$parDiagChannel$</sysvar>
+                <sysvar name="StartApplication::DiagActivateDefaultSession">0</sysvar>
+                <sysvar name="StartApplication::DiagResponseCode">0</sysvar>
+            </set>
+            <wait title="Wait to allow System Variables to change" time="10"/>
+            <awaitvaluematch title="Wait until there is no diagnostic request active and no further requests are queued." timeout="30000" joincondition="all">
+                <sysvar namespace="StartApplication" name="DiagRequestState">
+                    <eq>0</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <statechange title="Activate DIAG UseCase" wait="100" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagActivator">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagActivator">1</sysvar>
+                </expected>
+            </statechange>
+            <wait title="Wait to allow for transmission of control signals" time="100"/>
+            <statechange title="Try to activate default session via DSC" wait="1000">
+                <in>
+                    <sysvar name="StartApplication::DiagActivateDefaultSession">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagActivateDefaultSession">1</sysvar>
+                </expected>
+            </statechange>
+            <awaitvaluematch title="Verify that a response can be received: either positive response (0x50) or negative response (0x7F)" timeout="5000" joincondition="any">
+                <sysvar name="StartApplication::DiagResponseCode">
+                    <eq>0x50</eq>
+                </sysvar>
+                <sysvar name="StartApplication::DiagResponseCode">
+                    <eq>0x7F</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <completion>
+                <valuecomment>
+                    <description></description>
+                    <sysvar name="StartApplication::ErrorLog"/>
+                </valuecomment>
+            </completion>
+        </testcasetemplate>
+
+        <testcasetemplate name="ReadDiagnosticDataViaUDS template" version="1.0">
+            <paramdef name="parDescription" />
+            <paramdef name="parDiagChannel" />
+            <description>$parDescription$</description>
+            <set title="Initialize variables">
+                <sysvar name="StartApplication::ErrorLog"></sysvar>
+                <sysvar name="StartApplication::DiagActivator">0</sysvar>
+                <sysvar name="StartApplication::DiagChannel">$parDiagChannel$</sysvar>
+                <sysvar name="StartApplication::DiagSetEventStatusPassed">0</sysvar>
+                <sysvar name="StartApplication::DiagGetCounter">0</sysvar>
+                <sysvar name="StartApplication::DiagResetCounterWithRxData">0</sysvar>
+                <sysvar name="StartApplication::DiagCounterValue">0</sysvar>
+                <sysvar name="StartApplication::DiagResponseCode">0</sysvar>
+            </set>
+            <wait title="Wait to allow System Variables to change" time="10"/>
+            <awaitvaluematch title="Wait until there is no diagnostic request active and no further requests are queued." timeout="30000" joincondition="all">
+                <sysvar namespace="StartApplication" name="DiagRequestState">
+                    <eq>0</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <statechange title="Activate DIAG UseCase" wait="100" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagActivator">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagActivator">1</sysvar>
+                </expected>
+            </statechange>
+            <wait title="Wait to allow for transmission of control signals" time="1200"/>
+            <statechange title="Initialize: Reset DID value to 0 via RxData" wait="100" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagResetCounterWithRxData">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagResetCounterWithRxData">1</sysvar>
+                </expected>
+            </statechange>
+            <wait title="Wait to allow for transmission of control signals" time="1200"/>
+            <statechange title="Get DID value via RDBI and verify that it was reset to 0x0000" wait="1000" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagGetCounter">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagCounterValue">0x0000</sysvar>
+                    <sysvar name="StartApplication::DiagResponseCode">0x62</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Set event status to passed to increment the DID value by 1" wait="100" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagSetEventStatusPassed">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagSetEventStatusPassed">1</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Get DID value via RDBI and verify that it was set to 0x0001" wait="1000" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagGetCounter">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagCounterValue">0x0001</sysvar>
+                    <sysvar name="StartApplication::DiagResponseCode">0x62</sysvar>
+                </expected>
+            </statechange>
+            <completion>
+                <valuecomment>
+                    <description></description>
+                    <sysvar name="StartApplication::ErrorLog"/>
+                </valuecomment>
+            </completion>
+        </testcasetemplate>
+
+        <testcasetemplate name="WriteDiagnosticDataViaUDS template" version="1.0">
+            <paramdef name="parDescription" />
+            <paramdef name="parDiagChannel" />
+            <description>$parDescription$</description>
+            <set title="Initialize variables">
+                <sysvar name="StartApplication::ErrorLog"></sysvar>
+                <sysvar name="StartApplication::DiagActivator">0</sysvar>
+                <sysvar name="StartApplication::DiagRequestState">0</sysvar>
+                <sysvar name="StartApplication::DiagChannel">$parDiagChannel$</sysvar>
+                <sysvar name="StartApplication::DiagSetCounter">0</sysvar>
+                <sysvar name="StartApplication::DiagCounterValueFromTxData">0</sysvar>
+                <sysvar name="StartApplication::DiagResponseCode">0</sysvar>
+                <sysvar name="StartApplication::DiagResetCounterWithRxData">0</sysvar>
+            </set>
+            <wait title="Wait to allow System Variables to change" time="10"/>
+            <awaitvaluematch title="Wait until there is no diagnostic request active and no further requests are queued." timeout="30000" joincondition="all">
+                <sysvar namespace="StartApplication" name="DiagRequestState">
+                    <eq>0</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <statechange title="Activate DIAG UseCase" wait="100" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagActivator">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagActivator">1</sysvar>
+                </expected>
+            </statechange>
+            <wait title="Wait to allow for transmission of control signals" time="1200"/>
+            <statechange title="Initialize: Reset DID value to 0 via RxData" wait="100" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagResetCounterWithRxData">0</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagResetCounterWithRxData">0</sysvar>
+                </expected>
+            </statechange>
+            <wait title="Wait to allow for transmission of control signals" time="1200"/>
+            <awaitvaluematch title="Get DID value via TxData and verify that it was reset to 0x0000" timeout="10000" joincondition="all">
+                <sysvar name="StartApplication::DiagCounterValueFromTxData">
+                    <eq>0</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <statechange title="Set DID value to 0x0005 via WDBI" wait="1000">
+                <in>
+                    <sysvar name="StartApplication::DiagSetCounter">0x0005</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagResponseCode">0x6E</sysvar>
+                </expected>
+            </statechange>
+            <awaitvaluematch title="Get DID value via TxData and verify that it was set to 0x0005" timeout="10000" joincondition="all">
+                <sysvar name="StartApplication::DiagCounterValueFromTxData">
+                    <eq>5</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <completion>
+                <valuecomment>
+                    <description></description>
+                    <sysvar name="StartApplication::ErrorLog"/>
+                </valuecomment>
+            </completion>
+        </testcasetemplate>
+
+        <testcasetemplate name="DiagnosticEventHandlingWithFreezeFrameAndWithoutDebouncing template" version="1.0">
+            <paramdef name="parDescription" />
+            <paramdef name="parDiagChannel" />
+            <description>$parDescription$</description>
+            <set title="Initialize variables">
+                <sysvar name="StartApplication::ErrorLog"></sysvar>
+                <sysvar name="StartApplication::DiagActivator">0</sysvar>
+                <sysvar name="StartApplication::DiagChannel">$parDiagChannel$</sysvar>
+                <sysvar name="StartApplication::DiagSetEventStatusPassed">0</sysvar>
+                <sysvar name="StartApplication::DiagGetCounter">0</sysvar>
+                <sysvar name="StartApplication::DiagGetDTCSnapshot">0</sysvar>
+                <sysvar name="StartApplication::DiagResetCounterWithRxData">0</sysvar>
+                <sysvar name="StartApplication::DiagClearDTC">0</sysvar>
+                <sysvar name="StartApplication::DiagCounterValue">0</sysvar>
+                <sysvar name="StartApplication::DiagSnapshotDataValue">0</sysvar>
+                <sysvar name="StartApplication::DiagResponseCode">0</sysvar>
+            </set>
+            <wait title="Wait to allow System Variables to change" time="10"/>
+            <awaitvaluematch title="Wait until there is no diagnostic request active and no further requests are queued." timeout="30000" joincondition="all">
+                <sysvar namespace="StartApplication" name="DiagRequestState">
+                    <eq>0</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <statechange title="Activate DIAG UseCase and start operation cycle" wait="100" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagActivator">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagActivator">1</sysvar>
+                </expected>
+            </statechange>
+            <wait title="Wait to allow for transmission of control signals" time="1200"/>
+            <statechange title="Initialize: Reset event counter to 0 via RxData" wait="100" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagResetCounterWithRxData">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagResetCounterWithRxData">1</sysvar>
+                </expected>
+            </statechange>
+            <wait title="Wait to allow for transmission of control signals" time="1200"/>
+            <statechange title="Initialize: Clear DTC" wait="1000" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagClearDTC">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagResponseCode">0x54</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Get DTC snapshot and verify that no snapshot record is returned (i.e. -1)" wait="1000" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagGetDTCSnapshot">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagSnapshotDataValue">-1</sysvar>
+                    <sysvar name="StartApplication::DiagResponseCode">0x59</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Set event status to passed" wait="100" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagSetEventStatusPassed">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagSetEventStatusPassed">1</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Get DTC snapshot and verify that still no snapshot record is returned (i.e. -1)" wait="1000" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagGetDTCSnapshot">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagSnapshotDataValue">-1</sysvar>
+                    <sysvar name="StartApplication::DiagResponseCode">0x59</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Set event status to failed" wait="100" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagSetEventStatusFailed">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagSetEventStatusFailed">1</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Get DTC snapshot and verify that a snapshot record with the value 2 is returned" wait="1000" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagGetDTCSnapshot">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagSnapshotDataValue">2</sysvar>
+                    <sysvar name="StartApplication::DiagResponseCode">0x59</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Set event status to passed" wait="100" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagSetEventStatusPassed">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagSetEventStatusPassed">1</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Get DTC snapshot and verify that still a snapshot record with the value 2 is returned" wait="1000" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagGetDTCSnapshot">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagSnapshotDataValue">2</sysvar>
+                    <sysvar name="StartApplication::DiagResponseCode">0x59</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Set event status to failed" wait="100" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagSetEventStatusFailed">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagSetEventStatusFailed">1</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Get DTC snapshot and verify that still a snapshot record with the value 2 is returned" wait="1000" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagGetDTCSnapshot">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagSnapshotDataValue">2</sysvar>
+                    <sysvar name="StartApplication::DiagResponseCode">0x59</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Clear DTC" wait="1000" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagClearDTC">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagResponseCode">0x54</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Get DTC snapshot and verify that no snapshot record is returned (i.e. -1)" wait="1000" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagGetDTCSnapshot">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagSnapshotDataValue">-1</sysvar>
+                    <sysvar name="StartApplication::DiagResponseCode">0x59</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Set event status to failed" wait="100" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagSetEventStatusFailed">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagSetEventStatusFailed">1</sysvar>
+                </expected>
+            </statechange>
+            <statechange title="Get DTC snapshot and verify that a snapshot record with the value 5 is returned" wait="1000" resettime="100">
+                <in>
+                    <sysvar name="StartApplication::DiagGetDTCSnapshot">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::DiagSnapshotDataValue">5</sysvar>
+                    <sysvar name="StartApplication::DiagResponseCode">0x59</sysvar>
+                </expected>
+            </statechange>
+            <completion>
+                <valuecomment>
+                    <description></description>
+                    <sysvar name="StartApplication::ErrorLog"/>
+                </valuecomment>
+            </completion>
+        </testcasetemplate>
+    <!-- ************************************************************************* -->
+    <!-- ***                        NVM TEMPLATE                               *** -->
+    <!-- ************************************************************************* -->
+
+        <testcasetemplate name="Write and Read NV block template" version="1.0">
+            <paramdef name="parDescription" default="Verify that the application can write and read non-volatile data."/>
+            <description>$parDescription$</description>
+            <preparation>
+                <vardef title="The value which is written" name="valueToWrite" type="int">0</vardef>
+            </preparation>
+            <set title="Initialize variables">
+                <sysvar name="StartApplication::ErrorLog"></sysvar>
+                <sysvar name="StartApplication::MemActivator">0</sysvar>
+                <sysvar name="StartApplication::MemNvStore">0</sysvar>
+                <sysvar name="StartApplication::MemNvStoreValue">0</sysvar>
+                <sysvar name="StartApplication::MemNvReadCurrValue">0</sysvar>
+                <sysvar name="StartApplication::MemNvPendingExtended">0</sysvar>
+            </set>
+            <statechange title="Activate MEM UseCase" wait="100" resettime="500">
+                <in>
+                    <sysvar name="StartApplication::MemActivator">1</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::MemActivator">1</sysvar>
+                </expected>
+            </statechange>
+            <awaitvaluematch title="Wait for initial read operation after use case activation to complete" timeout="10000" joincondition="any">
+                <sysvar name="StartApplication::MemNvPendingExtended">
+                    <eq>4</eq>
+                </sysvar>
+                <sysvar name="StartApplication::MemNvPendingExtended">
+                    <eq>6</eq>
+                </sysvar>
+            </awaitvaluematch>
+            <for_loop title="Repeat writing and reading of the NV block with the values 10, 120 and 230" loopvar="valueToWrite" startvalue="10" stopvalue="231" increment="110">
+                <set title="Set the new value to write">
+                    <sysvar name="StartApplication::MemNvStoreValue">
+                        <var name="valueToWrite"/>
+                    </sysvar>
+                </set>
+                <statechange title="Trigger writing of the value. After the write is complete the read operation is started automatically" wait="100" resettime="100">
+                    <in>
+                        <sysvar name="StartApplication::MemNvStore">1</sysvar>
+                    </in>
+                    <expected>
+                        <sysvar name="StartApplication::MemNvStore">1</sysvar>
+                    </expected>
+                </statechange>
+                <wait title="Wait to allow for transmission of control signals" time="1000"/>
+                <awaitvaluematch title="Wait for the read operation to complete and verify that the received value is the one which was previously set to be written" timeout="10000" joincondition="all">
+                    <sysvar name="StartApplication::MemNvReadCurrValue">
+                        <eq>
+                            <var name="valueToWrite"/>
+                        </eq>
+                    </sysvar>
+                    <sysvar name="StartApplication::MemNvPendingExtended">
+                        <eq>4</eq>
+                    </sysvar>
+                </awaitvaluematch>
+            </for_loop>
+            <completion>
+                <valuecomment>
+                    <description></description>
+                    <sysvar name="StartApplication::ErrorLog"/>
+                </valuecomment>
+            </completion>
+        </testcasetemplate>
+        <!-- ************************************************************************* -->
+        <!-- ***                   WDG UseCase Templates                           *** -->
+        <!-- ************************************************************************* -->
+        <testcasetemplate name="AliveSupervisionIndicationWithinAcceptedRange template" version="1.0">
+            <paramdef name="parDescription" />
+            <paramdef name="parInsideRangeCycleTime" />
+            <description>$parDescription$</description>
+            <preparation>
+                <vardef title="counter variable for the for-loop" name="loopCounter" type="int">0</vardef>
+                <vardef title="store the last uptime value" name="oldUptime" type="int">0</vardef>
+            </preparation>
+            <set title="Initialize variables">
+                <sysvar name="StartApplication::ErrorLog"></sysvar>
+                <sysvar name="StartApplication::UseCaseActivator">4</sysvar>
+                <sysvar name="StartApplication::WdgPlayStatus">2</sysvar>
+            </set>
+            <wait title="Wait to allow for transmission of control signals" time="1200"/>
+            <statechange title="Set the initial cycle time" wait="100">
+                <in>
+                    <sysvar name="StartApplication::WdgAliveIndicationCycleTime">$parInsideRangeCycleTime$</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::WdgAliveIndicationCycleTime">$parInsideRangeCycleTime$</sysvar>
+                </expected>
+            </statechange>
+            <for_loop title="Repeat the evaluation of the uptime" loopvar="loopCounter" startvalue="0" stopvalue="5" increment="1">
+                <varset name="oldUptime">
+                    <sysvar name="StartApplication::WdgUptimeCounter" />
+                </varset>
+                <wait title="Wait 1s before next evaluation of the uptime" time="1000"/>
+                <awaitvaluematch title="Verify that the uptime either increases or saturates at 255s" timeout="300" joincondition="any">
+                    <sysvar name="StartApplication::WdgUptimeCounter">
+                        <gt><var name="oldUptime"/></gt>
+                    </sysvar>
+                    <sysvar name="StartApplication::WdgUptimeCounter">
+                        <eq>255</eq>
+                    </sysvar>
+                </awaitvaluematch>
+            </for_loop>
+            <completion>
+                <valuecomment>
+                    <description></description>
+                    <sysvar name="StartApplication::ErrorLog"/>
+                </valuecomment>
+            </completion>
+        </testcasetemplate>
+        <testcasetemplate name="AliveSupervisionIndicationOutsideAcceptedRange template" version="1.0">
+            <paramdef name="parDescription" />
+            <paramdef name="parInsideRangeCycleTime" />
+            <paramdef name="parOutsideRangeCycleTime" />
+            <description>$parDescription$</description>
+            <preparation>
+                <vardef title="counter variable for the for-loop" name="loopCounter" type="int">0</vardef>
+                <vardef title="store the last uptime value" name="oldUptime" type="int">0</vardef>
+            </preparation>
+            <set title="Initialize variables">
+                <sysvar name="StartApplication::ErrorLog"></sysvar>
+                <sysvar name="StartApplication::UseCaseActivator">4</sysvar>
+                <sysvar name="StartApplication::WdgPlayStatus">2</sysvar>
+            </set>
+            <wait title="Wait to allow for transmission of control signals" time="1200"/>
+            <statechange title="Set the initial cycle time" wait="100">
+                <in>
+                    <sysvar name="StartApplication::WdgAliveIndicationCycleTime">$parInsideRangeCycleTime$</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::WdgAliveIndicationCycleTime">$parInsideRangeCycleTime$</sysvar>
+                </expected>
+            </statechange>
+            <for_loop title="Repeat the evaluation of the uptime before the reset" loopvar="loopCounter" startvalue="0" stopvalue="3" increment="1">
+                <varset name="oldUptime">
+                    <sysvar name="StartApplication::WdgUptimeCounter" />
+                </varset>
+                <wait title="Wait 1s before next evaluation of the uptime" time="1000"/>
+                <awaitvaluematch title="Verify that the uptime either increases or saturates at 255s" timeout="300" joincondition="any">
+                    <sysvar name="StartApplication::WdgUptimeCounter">
+                        <gt><var name="oldUptime"/></gt>
+                    </sysvar>
+                    <sysvar name="StartApplication::WdgUptimeCounter">
+                        <eq>255</eq>
+                    </sysvar>
+                </awaitvaluematch>
+            </for_loop>
+            <statechange title="Set the cycle time outside the accepted range" wait="100">
+                <in>
+                    <sysvar name="StartApplication::WdgAliveIndicationCycleTime">$parOutsideRangeCycleTime$</sysvar>
+                </in>
+                <expected>
+                    <sysvar name="StartApplication::WdgAliveIndicationCycleTime">$parOutsideRangeCycleTime$</sysvar>
+                </expected>
+            </statechange>
+            <awaitvaluematch title="Verify that the reset occurs based on an uptime smaller than 2s" timeout="1300" joincondition="all">
+                <sysvar name="StartApplication::WdgUptimeCounter">
+                    <le>2</le>
+                </sysvar>
+            </awaitvaluematch>
+            <for_loop title="Repeat the evaluation of the uptime after the reset" loopvar="loopCounter" startvalue="0" stopvalue="5" increment="1">
+                <varset name="oldUptime">
+                    <sysvar name="StartApplication::WdgUptimeCounter" />
+                </varset>
+                <wait title="Wait 1s before next evaluation of the uptime" time="1000"/>
+                <awaitvaluematch title="Verify that the uptime increases" timeout="300" joincondition="all">
+                    <sysvar name="StartApplication::WdgUptimeCounter">
+                        <gt><var name="oldUptime"/></gt>
+                    </sysvar>
+                </awaitvaluematch>
+            </for_loop>
+            <completion>
+                <valuecomment>
+                    <description></description>
+                    <sysvar name="StartApplication::ErrorLog"/>
+                </valuecomment>
+            </completion>
+        </testcasetemplate>
+    </templates>
+
+    <!-- ************************************************************************* -->
+    <!-- ***                    Template Instances                             *** -->
+    <!-- ************************************************************************* -->
+    
+        <testgroup title="Usecase COM">
+            <testgroup title="FlexRay Data Transmission and Reception">
+                <templateinstances template="DataTransmission template">
+                    <testcaseinstance ident="TCASE-375707" title="FlexRay Data Transmission ( EPS_FR0 )">
+                        <paramvalue name="parDescription">Verify that the application can transmit data on FlexRay using signals or signal groups.
+                        Ecu Rx signal: 'sn_acb3c9a426bf4887ba724efd428ad5a4_3_ad2096213c0c47a78c10b4a8c5667464_7_7e6a2fc7',
+                        Ecu Tx group signal: 'sn_0d521c7c53964f869478fa5c12f4ec50_14_4b5d00d65aef4a05b869d24584abb8c4_1_2f274d97'.</paramvalue>
+                        <paramvalue name="parComSignalPairSelector">0</paramvalue>
+                    </testcaseinstance>
+                </templateinstances>
+                <templateinstances template="DataReception template">
+                    <testcaseinstance ident="TCASE-375708" title="FlexRay Data Reception ( EPS_FR0 )">
+                        <paramvalue name="parDescription">Verify that the application can receive data on FlexRay using signals or signal groups.
+                        Ecu Rx signal: 'sn_acb3c9a426bf4887ba724efd428ad5a4_3_ad2096213c0c47a78c10b4a8c5667464_7_7e6a2fc7',
+                        Ecu Tx group signal: 'sn_0d521c7c53964f869478fa5c12f4ec50_14_4b5d00d65aef4a05b869d24584abb8c4_1_2f274d97'.</paramvalue>
+                        <paramvalue name="parComSignalPairSelector">0</paramvalue>
+                    </testcaseinstance>
+                </templateinstances>
+            </testgroup>
+        </testgroup>
+        <testgroup title="Usecase DIAG">
+            <testgroup title="Diagnostics over FlexRay">
+                <templateinstances template="BasicRequestResponseViaUDS template">
+                    <testcaseinstance ident="TCASE-478916" title="Basic Request/Response via UDS over FlexRay ( EPS_FR0 )">
+                        <paramvalue name="parDescription">Verify that a DCM request can be sent and a response can be received via UDS over FlexRay</paramvalue>
+                        <paramvalue name="parDiagChannel">0</paramvalue>
+                    </testcaseinstance>
+                </templateinstances>
+                <templateinstances template="ReadDiagnosticDataViaUDS template">
+                    <testcaseinstance ident="TCASE-481983" title="Read Diagnostic Data via UDS over FlexRay ( EPS_FR0 )">
+                        <paramvalue name="parDescription">Verify that a diagnostic data record (DID) can be read via UDS over FlexRay</paramvalue>
+                        <paramvalue name="parDiagChannel">0</paramvalue>
+                    </testcaseinstance>
+                </templateinstances>
+                <templateinstances template="WriteDiagnosticDataViaUDS template">
+                    <testcaseinstance ident="TCASE-483096" title="Write Diagnostic Data via UDS over FlexRay ( EPS_FR0 )">
+                        <paramvalue name="parDescription">Verify that a diagnostic data record (DID) can be written via UDS over FlexRay</paramvalue>
+                        <paramvalue name="parDiagChannel">0</paramvalue>
+                    </testcaseinstance>
+                </templateinstances>
+            </testgroup>
+        </testgroup>
+        <testgroup title="Usecase MEM">
+            <testgroup title="Write and Read Nonvolatile Memory">
+                <templateinstances template="Write and Read NV block template">
+                    <testcaseinstance ident="TCASE-379342" title="Write and Read NV block">
+                        <paramvalue name="parDescription">Verify that the application can write and read non-volatile data.</paramvalue>
+                    </testcaseinstance>
+                </templateinstances>
+            </testgroup>
+        </testgroup>
+        <testgroup title="Usecase WDG">
+            <testgroup title="WdgM Alive Supervision">
+                <templateinstances template="AliveSupervisionIndicationWithinAcceptedRange template">
+                    <testcaseinstance ident="TCASE-420589" title="Number of Alive Supervision Indications within the Accepted Range">
+                        <paramvalue name="parDescription">Verify that the DUT does not perform a reset when the number of alive indications issued by the test application complies with the configured acceptance range.</paramvalue>
+                        <paramvalue name="parInsideRangeCycleTime">20</paramvalue>
+                    </testcaseinstance>
+                </templateinstances>
+                <templateinstances template="AliveSupervisionIndicationOutsideAcceptedRange template">
+                    <testcaseinstance ident="TCASE-420590" title="Number of Alive Supervision Indications outside the Accepted Range">
+                        <paramvalue name="parDescription">Verify that the DUT does perform a reset when the number of alive indications issued by the test application does not comply with the configured acceptance range.</paramvalue>
+                        <paramvalue name="parInsideRangeCycleTime">20</paramvalue>
+                        <paramvalue name="parOutsideRangeCycleTime">120</paramvalue>
+                    </testcaseinstance>
+                </templateinstances>
+            </testgroup>
+        </testgroup>
+</testmodule>
+
